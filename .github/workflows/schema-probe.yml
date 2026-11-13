@@ -15,12 +15,13 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - name: Install minimal deps
-        run: pip install -q pyarrow duckdb
+        run: pip install -q pyarrow duckdb gdown
       - name: Download first and last partition (public IDs from Drive listing)
         run: |
           mkdir -p /tmp/partitions
-          curl -L --fail "https://drive.google.com/uc?export=download&id=1xG29NnfqvwVNgOmJvfVkzXgmWbaLeaXq&confirm=t" -o /tmp/partitions/part_000001.parquet
-          curl -L --fail "https://drive.google.com/uc?export=download&id=1RrCh18vGZG6b_W0HChFFJpkjmfWDUWKu&confirm=t" -o /tmp/partitions/part_000348.parquet
+          gdown --output /tmp/partitions/part_000001.parquet 1xG29NnfqvwVNgOmJvfVkzXgmWbaLeaXq
+          gdown --output /tmp/partitions/part_000348.parquet 1RrCh18vGZG6b_W0HChFFJpkjmfWDUWKu
+          head -c 4 /tmp/partitions/part_000001.parquet; echo; head -c 4 /tmp/partitions/part_000348.parquet; echo
           ls -lh /tmp/partitions; sha256sum /tmp/partitions/*.parquet
       - name: Read Parquet footers only (schema + rows, no full scan)
         run: |
