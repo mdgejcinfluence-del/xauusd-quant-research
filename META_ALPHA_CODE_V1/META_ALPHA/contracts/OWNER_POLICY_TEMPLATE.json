@@ -1,0 +1,26 @@
+{
+  "_readme": "MODÈLE À REMPLIR PAR LE PROPRIÉTAIRE. Tant que ce fichier n'existe pas sous 00_GOVERNANCE/OWNER_POLICY_V1.json, toute promotion économique est BLOCKED_POLICY_REQUIRED. Le moteur ne devine AUCUNE de ces valeurs.",
+  "_do_not_let_an_ai_fill_this": true,
+  "min_trades": null,
+  "min_opportunities": null,
+  "min_expectancy_gross": null,
+  "min_expectancy_net": null,
+  "max_drawdown": null,
+  "max_position_size": null,
+  "risk_per_trade": null,
+  "costs": {
+    "commission_per_lot": null,
+    "swap_long_per_night": null,
+    "swap_short_per_night": null,
+    "slippage_ticks": null,
+    "latency_ms_decision_to_arrival": null,
+    "latency_ms_arrival_to_fill": null
+  },
+  "multiplicity_policy": null,
+  "promotion_criteria": null,
+  "holdout_owner_signature": null,
+  "session_rules": {
+    "timezone": null,
+    "session_boundaries": null
+  }
+}

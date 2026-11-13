@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>META ALPHA — Schéma de l'ingénierie</title>
+<style>
+  :root{
+    --ink:#0f172a; --ink2:#475569; --line:#e2e8f0; --bg:#f8fafc; --card:#ffffff;
+    --gh:#1e293b; --act:#6d28d9; --kag:#0891b2; --drive:#15803d; --ia:#b45309; --hum:#be123c;
+    --ok:#15803d; --warn:#b45309;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0 20px 80px; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto}
+  header{padding:56px 0 28px;border-bottom:2px solid var(--ink)}
+  h1{font-size:2.15rem;margin:0 0 10px;letter-spacing:-.02em;line-height:1.15}
+  .sub{color:var(--ink2);font-size:1.06rem;margin:0;max-width:820px}
+  .kicker{display:inline-block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:var(--hum);margin-bottom:12px}
+
+  h2{font-size:1.32rem;margin:64px 0 6px;letter-spacing:-.01em;display:flex;align-items:baseline;gap:12px}
+  h2 .num{font-size:.8rem;font-weight:800;color:#fff;background:var(--ink);
+    width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+  h2 + .lead{color:var(--ink2);margin:0 0 26px;font-size:1rem;max-width:860px}
+
+  /* ---------- phrase clé ---------- */
+  .oneliner{
+    margin:34px 0 0;padding:26px 30px;background:var(--ink);color:#fff;border-radius:14px;
+    font-size:1.22rem;line-height:1.5;font-weight:500;
+  }
+  .oneliner b{color:#fde68a}
+  .oneliner small{display:block;margin-top:12px;font-size:.86rem;font-weight:400;color:#cbd5e1}
+
+  /* ---------- acteurs ---------- */
+  .actors{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:14px;margin-top:8px}
+  .actor{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;
+    border-top:4px solid var(--line)}
+  .actor h3{margin:0 0 4px;font-size:.98rem}
+  .actor .role{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+  .actor p{margin:0;font-size:.865rem;color:var(--ink2)}
+  .actor .never{margin-top:10px;font-size:.8rem;color:var(--hum);font-weight:600}
+  .a-gh{border-top-color:var(--gh)} .a-gh .role{color:var(--gh)}
+  .a-act{border-top-color:var(--act)} .a-act .role{color:var(--act)}
+  .a-kag{border-top-color:var(--kag)} .a-kag .role{color:var(--kag)}
+  .a-drv{border-top-color:var(--drive)} .a-drv .role{color:var(--drive)}
+  .a-ia{border-top-color:var(--ia)} .a-ia .role{color:var(--ia)}
+
+  /* ---------- flux principal ---------- */
+  .flow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 26px;margin-top:8px}
+  .step{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start;position:relative;padding-bottom:26px}
+  .step:last-child{padding-bottom:0}
+  .step .n{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#fff;font-size:1rem;z-index:2}
+  .step:not(:last-child):before{content:"";position:absolute;left:20px;top:40px;bottom:0;width:2px;background:var(--line)}
+  .step h4{margin:6px 0 4px;font-size:1.02rem}
+  .step p{margin:0;font-size:.9rem;color:var(--ink2)}
+  .step .tag{display:inline-block;margin-top:8px;font-size:.74rem;font-weight:800;letter-spacing:.06em;
+    padding:3px 9px;border-radius:999px;background:#f1f5f9;color:var(--ink2);text-transform:uppercase}
+  .c-gh .n{background:var(--gh)} .c-act .n{background:var(--act)} .c-kag .n{background:var(--kag)}
+  .c-drv .n{background:var(--drive)} .c-hum .n{background:var(--hum)}
+
+  /* ---------- timeline unité ---------- */
+  .unit{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:8px}
+  .bar{display:flex;border-radius:10px;overflow:hidden;height:58px;margin:6px 0 10px}
+  .bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.79rem;
+    font-weight:700;text-align:center;padding:0 6px;line-height:1.2}
+  .bar .s1{background:#64748b;flex:2}
+  .bar .s2{background:var(--drive);flex:1}
+  .bar .s3{background:var(--kag);flex:4}
+  .bar .s4{background:var(--drive);flex:2}
+  .bar .s5{background:#94a3b8;flex:1}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.8rem;color:var(--ink2);margin-top:6px}
+  .legend span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle}
+
+  /* ---------- panne ---------- */
+  .fails{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+  .fail{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .fail .when{font-size:.75rem;font-weight:800;color:var(--hum);text-transform:uppercase;letter-spacing:.08em}
+  .fail h4{margin:6px 0 8px;font-size:.96rem}
+  .fail p{margin:0;font-size:.86rem;color:var(--ink2)}
+  .fail .cost{margin-top:10px;font-size:.82rem;font-weight:700;color:var(--ok)}
+
+  /* ---------- portes ---------- */
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;
+    border:1px solid var(--line);margin-top:8px;font-size:.88rem}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f1f5f9;font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+  tr:last-child td{border-bottom:none}
+  td.auto{color:var(--ok);font-weight:700}
+  td.no{color:var(--hum);font-weight:700}
+
+  /* ---------- arborescence ---------- */
+  pre.tree{background:#0f172a;color:#e2e8f0;padding:22px 24px;border-radius:12px;overflow-x:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;line-height:1.65;margin-top:8px}
+  pre.tree .ro{color:#fca5a5}
+  pre.tree .rw{color:#86efac}
+  pre.tree .go{color:#fde68a}
+  pre.tree .cm{color:#64748b}
+
+  .callout{border-left:4px solid var(--warn);background:#fffbeb;padding:16px 20px;border-radius:0 10px 10px 0;
+    margin-top:22px;font-size:.9rem}
+  .callout strong{color:var(--warn)}
+  .callout.bad{border-left-color:var(--hum);background:#fef2f2}
+  .callout.bad strong{color:var(--hum)}
+  .callout.good{border-left-color:var(--ok);background:#f0fdf4}
+  .callout.good strong{color:var(--ok)}
+
+  footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);color:var(--ink2);font-size:.82rem}
+
+  @media print{
+    body{background:#fff;padding:0}
+    h2{page-break-after:avoid}
+    .flow,.unit,.fails,table,pre.tree{page-break-inside:avoid}
+  }
+  @media (max-width:640px){
+    h1{font-size:1.6rem}
+    .bar div{font-size:.66rem}
+    .step{grid-template-columns:44px 1fr;gap:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">META ALPHA · XAUUSD DGP · XAUUSD_TICK_ONLY_V1</span>
+  <h1>Comment toute l'ingénierie fonctionne</h1>
+  <p class="sub">Un schéma unique pour comprendre le système, sans jargon : qui fait quoi,
+  dans quel ordre, ce qui se passe quand une session meurt, et où sont les barrières
+  qui ne s'ouvrent jamais toutes seules.</p>
+</header>
+
+<div class="oneliner">
+  Le calcul ne tourne <b>jamais en continu</b>. Il avance par <b>petites unités</b> (1 partition)
+  que n'importe quelle machine peut traiter en 10 minutes, et dont le résultat est
+  <b>immédiatement sauvegardé</b>. Une session qui meurt ne perd donc qu'une unité — jamais le travail.
+  <small>C'est pour cela que les sessions temporaires de Colab/Kaggle ne sont pas un problème : on ne cherche pas à les faire durer.</small>
+</div>
+
+<!-- ================= 1. ACTEURS ================= -->
+<h2><span class="num">1</span>Les 5 acteurs, et ce qu'ils ne font jamais</h2>
+<p class="lead">Chaque acteur a un rôle borné. C'est cette séparation qui rend le système
+à la fois autonome et vérifiable.</p>
+
+<div class="actors">
+  <div class="actor a-gh">
+    <div class="role">Le cerveau dormant</div>
+    <h3>GitHub</h3>
+    <p>Garde le code versionné. Ne calcule rien. Sert de source de vérité pour « quelle version a produit quel résultat ».</p>
+    <div class="never">N'accède jamais aux données.</div>
+  </div>
+
+  <div class="actor a-act">
+    <div class="role">Le réveil</div>
+    <h3>GitHub Actions</h3>
+    <p>Toutes les 30 min : regarde où en est le travail, décide du prochain lot, lance une machine.</p>
+    <div class="never">Ne calcule jamais plus de 10 minutes.</div>
+  </div>
+
+  <div class="actor a-kag">
+    <div class="role">Les bras</div>
+    <h3>Kaggle (kernels batch)</h3>
+    <p>Machine jetable, sans navigateur ni GPU. Télécharge 1 partition, calcule, publie, s'éteint.</p>
+    <div class="never">Ne garde rien après sa mort.</div>
+  </div>
+
+  <div class="actor a-drv">
+    <div class="role">La mémoire</div>
+    <h3>Google Drive</h3>
+    <p>Le corpus certifié (lecture seule) + tous les résultats, checkpoints, verrous et rapports.</p>
+    <div class="never">N'est jamais modifié dans sa partie certifiée.</div>
+  </div>
+
+  <div class="actor a-ia">
+    <div class="role">Le lecteur (optionnel)</div>
+    <h3>IA de supervision</h3>
+    <p>Résume un rapport, signale une incohérence, rédige une synthèse. Plafonnée à 5 $/mois.</p>
+    <div class="never">N'écrit rien, ne décide rien, n'invente aucune formule.</div>
+  </div>
+</div>
+
+<!-- ================= 2. LE CYCLE ================= -->
+<h2><span class="num">2</span>Le cycle complet, du réveil au résultat</h2>
+<p class="lead">Huit étapes, toutes automatiques. Lisez-la comme une boucle : l'étape 8 renvoie à l'étape 1.</p>
+
+<div class="flow">
+
+  <div class="step c-act">
+    <div class="n">1</div>
+    <div>
+      <h4>Réveil toutes les 30 minutes</h4>
+      <p>Une horloge gratuite (cron GitHub) démarre un petit programme. Il vit 2 minutes et meurt.</p>
+      <span class="tag">coût : 0</span>
+    </div>
+  </div>
+
+  <div class="step c-drv">
+    <div class="n">2</div>
+    <div>
+      <h4>« Où en est-on ? » — lecture de la mémoire</h4>
+      <p>Le programme ouvre Drive et compte les <b>checkpoints valides</b>. Un checkpoint = une partition
+      déjà traitée avec succès. Il en déduit exactement combien d'unités restent.</p>
+      <span class="tag">source de vérité unique : Drive</span>
+    </div>
+  </div>
+
+  <div class="step c-act">
+    <div class="n">3</div>
+    <div>
+      <h4>Choix du lot suivant</h4>
+      <p>Il prend les <b>N premières unités non faites</b> (N ≈ 40). Aucun aléatoire, aucun doublon possible :
+      la liste est recalculée depuis l'état réel, pas depuis un compteur local.</p>
+      <span class="tag">déterministe</span>
+    </div>
+  </div>
+
+  <div class="step c-act">
+    <div class="n">4</div>
+    <div>
+      <h4>Fabrication d'une machine jetable</h4>
+      <p>Il génère un petit fichier de configuration (« quel dépôt cloner, quelle phase, combien d'unités »)
+      et le pousse chez Kaggle. <b>Aucun navigateur, aucun GPU.</b></p>
+      <span class="tag">kaggle kernels push</span>
+    </div>
+  </div>
+
+  <div class="step c-kag">
+    <div class="n">5</div>
+    <div>
+      <h4>Le calcul, unité par unité</h4>
+      <p>La machine Kaggle clone le code, récupère ses identifiants (chiffrés, jamais dans le code),
+      puis pour chaque unité : télécharge 1 partition → calcule → publie → supprime le fichier local.</p>
+      <span class="tag">10 min / unité · 0 FCFA</span>
+    </div>
+  </div>
+
+  <div class="step c-drv">
+    <div class="n">6</div>
+    <div>
+      <h4>Sauvegarde immédiate</h4>
+      <p>Chaque résultat est écrit en deux temps : fichier temporaire → vérification (schéma, nombre de lignes,
+      empreinte) → renommage final. Un fichier au nom final est donc <b>toujours</b> valide.</p>
+      <span class="tag">écriture atomique + empreinte SHA-256</span>
+    </div>
+  </div>
+
+  <div class="step c-kag">
+    <div class="n">7</div>
+    <div>
+      <h4>Fin du lot, mort de la machine</h4>
+      <p>Soit le lot est terminé, soit le temps alloué est écoulé. Dans les deux cas la machine s'éteint
+      <b>proprement</b>. Rien à sauver : tout est déjà sur Drive.</p>
+      <span class="tag">arrêt à 3 h 30 · jamais 12 h</span>
+    </div>
+  </div>
+
+  <div class="step c-act">
+    <div class="n">8</div>
+    <div>
+      <h4>Vérification du progrès, puis retour à l'étape 1</h4>
+      <p>Le programme relit Drive. <b>Le nombre d'unités validées a-t-il augmenté ?</b>
+      Oui → segment suivant. Non → <b>arrêt volontaire</b> pour ne pas brûler du quota pour rien.</p>
+      <span class="tag">garde-fou anti-boucle</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="callout good">
+  <strong>Le point important :</strong> l'étape 2 repose toujours sur Drive, jamais sur la mémoire
+  de la machine précédente. C'est ce qui rend le cycle « sans état » : n'importe quelle machine,
+  à n'importe quel moment, peut reprendre le travail exactement là où il s'est arrêté.
+</div>
+
+<!-- ================= 3. VIE D'UNE UNITÉ ================= -->
+<h2><span class="num">3</span>La vie d'une unité (≈ 10 minutes)</h2>
+<p class="lead">C'est l'atome du système. Tout le reste n'est que répétition de ce bloc.</p>
+
+<div class="unit">
+  <div class="bar">
+    <div class="s1">télécharger<br>1 partition</div>
+    <div class="s2">empreinte<br>entrée</div>
+    <div class="s3">calcul DuckDB<br>(lecture → features → agrégats)</div>
+    <div class="s4">écrire .tmp<br>vérifier → renommer</div>
+    <div class="s5">checkpoint</div>
+  </div>
+  <div class="legend">
+    <span style="color:#64748b">Drive → disque local</span>
+    <span style="color:var(--drive)">contrôle</span>
+    <span style="color:var(--kag)">CPU, sans GPU</span>
+    <span style="color:var(--drive)">Drive (atomique)</span>
+    <span style="color:#94a3b8">preuve de réussite</span>
+  </div>
+
+  <p style="margin:18px 0 0;font-size:.92rem;color:var(--ink2)">
+    Le checkpoint contient les <b>trois empreintes</b> qui définissent le travail :
+    empreinte de l'entrée (le certificat de la base), empreinte du code, empreinte de la configuration.
+    Si l'une des trois change, le checkpoint est automatiquement invalidé et l'unité est recalculée.
+    Une unité n'est donc jamais « faite » par erreur.
+  </p>
+</div>
+
+<!-- ================= 4. PANNE ================= -->
+<h2><span class="num">4</span>Ce qui se passe quand ça casse</h2>
+<p class="lead">Trois pannes possibles. Dans les trois cas, le coût en argent est nul et la perte est bornée.</p>
+
+<div class="fails">
+  <div class="fail">
+    <div class="when">Cas 1</div>
+    <h4>Kaggle coupe la session</h4>
+    <p>La machine meurt au milieu d'une unité. Le fichier temporaire est jeté, le nom final n'est jamais créé.</p>
+    <div class="cost">Perte : 1 unité (≤ 10 min) · Coût : 0 FCFA</div>
+  </div>
+  <div class="fail">
+    <div class="when">Cas 2</div>
+    <h4>Le réseau lâche pendant l'écriture</h4>
+    <p>L'écriture est atomique : soit le fichier final existe et il est complet, soit il n'existe pas.</p>
+    <div class="cost">Perte : 0 · Coût : 0 FCFA</div>
+  </div>
+  <div class="fail">
+    <div class="when">Cas 3</div>
+    <h4>Plus rien ne bouge pendant 30 min</h4>
+    <p>Le réveil suivant constate un checkpoint ancien et relance un lot. Aucune intervention humaine.</p>
+    <div class="cost">Reprise : automatique en ≤ 30 min · Coût : 0 FCFA</div>
+  </div>
+</div>
+
+<div class="callout bad">
+  <strong>Ce qui serait une faute :</strong> garder un onglet Colab ouvert en espérant qu'il tienne.
+  Colab gratuit coupe à l'inactivité, n'a pas d'exécution en arrière-plan, et sa planification a
+  été supprimée en mars 2026. Ce n'est pas un serveur — et le système n'en a pas besoin.
+</div>
+
+<!-- ================= 5. PORTES ================= -->
+<h2><span class="num">5</span>Les portes qui ne s'ouvrent pas seules</h2>
+<p class="lead">L'automatisation s'arrête à des endroits précis. Ce ne sont pas des limites techniques :
+ce sont les décisions qui engagent la validité scientifique de votre projet.</p>
+
+<table>
+  <thead><tr><th style="width:46%">Action</th><th style="width:18%">Automatique ?</th><th>Pourquoi</th></tr></thead>
+  <tbody>
+    <tr><td>Relancer une unité échouée (3 fois max)</td><td class="auto">Oui</td><td>Erreur technique passagère</td></tr>
+    <tr><td>Reprendre après une coupure</td><td class="auto">Oui</td><td>Les empreintes prouvent que rien n'a changé</td></tr>
+    <tr><td>Publier un résultat validé</td><td class="auto">Oui</td><td>Écriture atomique + vérification</td></tr>
+    <tr><td>Écrire le rapport de fin de phase</td><td class="auto">Oui</td><td>Tâche déterministe</td></tr>
+    <tr><td>Définir une formule ou un paramètre</td><td class="no">Jamais</td><td>Une définition scientifique vient d'un humain, pas d'une IA</td></tr>
+    <tr><td>Fixer un seuil économique (coûts, drawdown…)</td><td class="no">Jamais</td><td>Ce sont vos décisions : sans elles, statut « bloqué »</td></tr>
+    <tr><td>Modifier le découpage IS / OOS / Holdout</td><td class="no">Jamais</td><td>Le découpage est gelé avant toute recherche</td></tr>
+    <tr><td>Passer à la phase suivante</td><td class="no">Jamais</td><td>Revue et signature obligatoires, phase par phase</td></tr>
+    <tr><td>Ouvrir le Holdout (les 20 % finaux)</td><td class="no">Jamais</td><td>Une clé de scellement absente des machines de calcul — une seule ouverture possible</td></tr>
+    <tr><td>Promouvoir un edge / déployer le robot</td><td class="no">Jamais</td><td>Preuves et autorisation explicites requises</td></tr>
+  </tbody>
+</table>
+
+<!-- ================= 6. ARBORESCENCE ================= -->
+<h2><span class="num">6</span>Où est quoi sur Drive</h2>
+<p class="lead">La séparation lecture / écriture est une garantie structurelle, pas une bonne intention :
+le code refuse d'écrire ailleurs que dans la zone verte.</p>
+
+<pre class="tree">META_ALPHA_XAUUSD_DGP/
+│
+├── <span class="ro">00_RAW/</span>                                    <span class="cm">← LECTURE SEULE (certifié)</span>
+├── <span class="ro">01_PARQUET/XAUUSD_DGP_CHRONOLOGICAL_V5R10/</span> <span class="cm">← LECTURE SEULE · 348 partitions · 685 M ticks</span>
+├── <span class="ro">04_CHECKPOINTS/</span>                             <span class="cm">← LECTURE SEULE · les 2 certificats hérités</span>
+│
+└── <span class="go">RESEARCH_V1_XAUUSD_TICK_ONLY/</span>              <span class="cm">← SEULE ZONE D'ÉCRITURE AUTORISÉE</span>
+    │
+    ├── <span class="rw">00_GOVERNANCE/</span>
+    │   ├── state.json           <span class="cm">où en est le projet</span>
+    │   ├── heartbeat.json       <span class="cm">« je suis vivant » (toutes les 60 s)</span>
+    │   ├── KILL_SWITCH          <span class="cm">créer ce fichier = arrêt d'urgence</span>
+    │   ├── budget_ledger.json   <span class="cm">compteur de dépense IA</span>
+    │   ├── HOLDOUT_SEAL.json    <span class="cm">le scellement des 20 % finaux</span>
+    │   ├── checkpoints/         <span class="cm">la preuve qu'une unité est faite</span>
+    │   ├── leases/              <span class="cm">empêche 2 machines de faire la même unité</span>
+    │   └── approvals/           <span class="cm">les signatures du propriétaire</span>
+    │
+    ├── <span class="rw">10_REGISTRIES/</span>   <span class="cm">variables · formules · journal de tous les essais</span>
+    ├── <span class="rw">20_DERIVED/</span>      <span class="cm">les données calculées (Parquet)</span>
+    ├── <span class="rw">30_RESULTS/</span>      <span class="cm">résultats par phase</span>
+    ├── <span class="rw">40_REPORTS/</span>      <span class="cm">les rapports lisibles</span>
+    └── <span class="rw">90_LOGS/</span>         <span class="cm">traces d'exécution</span></pre>
+
+<!-- ================= 7. SYNTHESE ================= -->
+<h2><span class="num">7</span>Le trajet d'une phase, en une image</h2>
+<p class="lead">Une phase = une question scientifique. Le système la traite jusqu'au bout,
+puis <b>s'arrête net</b> et attend votre revue.</p>
+
+<div class="flow">
+  <div class="step c-hum">
+    <div class="n">A</div>
+    <div>
+      <h4>Vous autorisez une phase (une seule)</h4>
+      <p>Signature enregistrée dans <code>approvals/</code>. Tant qu'elle manque, le système refuse de démarrer.</p>
+    </div>
+  </div>
+  <div class="step c-kag">
+    <div class="n">B</div>
+    <div>
+      <h4>Des dizaines de segments s'enchaînent seuls</h4>
+      <p>Réveil → lot → calcul → sauvegarde → progrès ? → lot suivant. Vous pouvez fermer votre ordinateur.</p>
+      <span class="tag">des heures à quelques jours de temps machine</span>
+    </div>
+  </div>
+  <div class="step c-hum">
+    <div class="n">C</div>
+    <div>
+      <h4>La phase se termine et s'arrête</h4>
+      <p>Statut : <b>PHASE_COMPLETE_AWAITING_OWNER_REVIEW</b>. Aucun passage automatique à la suite,
+      même si tout a réussi.</p>
+    </div>
+  </div>
+  <div class="step c-drv">
+    <div class="n">D</div>
+    <div>
+      <h4>Vous lisez le rapport et décidez</h4>
+      <p>Accepter, corriger, ou rejeter. Puis — et seulement alors — la phase suivante peut être autorisée.</p>
+    </div>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>Le résultat « aucun edge » est un résultat valide.</strong> Le système est conçu pour
+  pouvoir conclure qu'il n'y a rien d'exploitable. Une phase terminée ne signifie pas qu'un edge existe :
+  elle signifie que la question a été traitée honnêtement.
+</div>
+
+<div class="callout bad">
+  <strong>Ce dont ce système ne vous dispense pas :</strong> définir vos seuils économiques, remplir
+  les 19 familles scientifiques, et relire les rapports. Ce sont des décisions de propriétaire.
+  Aucun automate — et surtout aucune IA — ne peut les prendre à votre place sans détruire la validité du projet.
+</div>
+
+<footer>
+  META ALPHA — XAUUSD DGP · schéma de l'ingénierie · version 1.0 · 13 novembre 2026<br>
+  Le code correspondant est dans <code>META_ALPHA/</code> · l'étude détaillée dans <code>docs/00_ETUDE_INGENIERIE_META_ALPHA_V1.md</code> (Annexe C pour le lancement sans navigateur).
+</footer>
+
+</div>
+</body>
+</html>

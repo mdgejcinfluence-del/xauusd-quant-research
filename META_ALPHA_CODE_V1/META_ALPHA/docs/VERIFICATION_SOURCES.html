@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>META ALPHA — Vérification des sources : pilotage à distance</title>
+<style>
+  :root{--ink:#0f172a;--ink2:#475569;--line:#e2e8f0;--bg:#f8fafc;--card:#fff;
+        --ok:#15803d;--warn:#b45309;--bad:#be123c;--kag:#0891b2;--col:#c2410c}
+  *{box-sizing:border-box}
+  body{margin:0;padding:0 20px 80px;background:var(--bg);color:var(--ink);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.62}
+  .wrap{max-width:960px;margin:0 auto}
+  header{padding:52px 0 24px;border-bottom:2px solid var(--ink)}
+  .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ok)}
+  h1{font-size:1.95rem;margin:10px 0 12px;letter-spacing:-.02em;line-height:1.16}
+  .sub{color:var(--ink2);font-size:1.03rem;margin:0;max-width:780px}
+  h2{font-size:1.22rem;margin:54px 0 8px;display:flex;align-items:baseline;gap:11px}
+  h2 .num{font-size:.76rem;font-weight:800;color:#fff;background:var(--ink);width:24px;height:24px;
+    border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .lead{color:var(--ink2);margin:0 0 20px;max-width:800px}
+
+  .verdict{border-radius:14px;padding:26px 28px;margin-top:28px;color:#fff}
+  .verdict.yes{background:#14532d}
+  .verdict .big{font-size:1.6rem;font-weight:800;line-height:1.15;color:#bbf7d0;letter-spacing:-.01em}
+  .verdict p{margin:12px 0 0;color:#dcfce7;font-size:1.02rem}
+  .verdict b{color:#fde68a}
+
+  blockquote{margin:14px 0 0;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:18px 22px;
+    font-size:.88rem;line-height:1.6;font-family:ui-monospace,Menlo,Consolas,monospace;overflow-x:auto}
+  blockquote .hl{background:#422006;color:#fde68a;padding:0 4px;border-radius:3px}
+  .src{font-size:.78rem;color:var(--ink2);margin:6px 0 0}
+  .src a{color:#0369a1;word-break:break-all}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;
+        border:1px solid var(--line);margin-top:12px;font-size:.87rem}
+  th,td{text-align:left;padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f1f5f9;font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2)}
+  tr:last-child td{border-bottom:none}
+  .yes-t{color:var(--ok);font-weight:800}
+  .no-t{color:var(--bad);font-weight:800}
+  .mid-t{color:var(--warn);font-weight:800}
+
+  .correct{border-left:4px solid var(--warn);background:#fffbeb;padding:18px 22px;border-radius:0 10px 10px 0;margin-top:20px}
+  .correct strong{color:var(--warn);display:block;margin-bottom:6px}
+  .danger{border-left:4px solid var(--bad);background:#fef2f2;padding:18px 22px;border-radius:0 10px 10px 0;margin-top:20px}
+  .danger strong{color:var(--bad);display:block;margin-bottom:6px}
+  .good{border-left:4px solid var(--ok);background:#f0fdf4;padding:18px 22px;border-radius:0 10px 10px 0;margin-top:20px}
+  .good strong{color:var(--ok);display:block;margin-bottom:6px}
+
+  code{background:#f1f5f9;padding:1px 6px;border-radius:4px;font-size:.87em}
+  ul{margin:10px 0 0;padding-left:22px} li{margin-bottom:7px;font-size:.93rem}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink2);font-size:.82rem}
+  @media print{body{background:#fff;padding:0}.verdict,table,blockquote{page-break-inside:avoid}}
+  @media(max-width:620px){h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="kicker">Vérification des sources · 13 novembre 2026</span>
+  <h1>Peut-on vraiment piloter Kaggle et Colab à distance, avec une clé ?</h1>
+  <p class="sub">Vous avez demandé de vérifier. Je suis allé chercher les documentations officielles
+  et je cite les phrases exactes. Une de mes affirmations précédentes était trop absolue :
+  je la corrige plus bas.</p>
+</header>
+
+<div class="verdict yes">
+  <div class="big">OUI — vérifié pour Kaggle.</div>
+  <p><b>Kaggle est officiellement conçu pour ça.</b> La documentation ne dit pas seulement que c'est
+  possible : elle classe explicitement l'usage par <b>jeton API dans un environnement CI/CD</b>
+  comme un cas d'usage prévu. Une commande suffit à faire créer <i>et</i> exécuter une machine
+  distante, sans navigateur.</p>
+</div>
+
+<!-- ===== 1 ===== -->
+<h2><span class="num">1</span>Kaggle : les 3 preuves officielles</h2>
+<p class="lead">Trois extraits, tirés de la documentation Kaggle elle-même. Aucune interprétation.</p>
+
+<p style="font-size:.93rem"><b>Preuve 1 — la commande crée le kernel <i>et</i> l'exécute</b></p>
+<blockquote>"This command uploads your local kernel file and its metadata to a Kaggle.
+If the kernel specified in the metadata exists under your account, it will be updated.
+<span class="hl">Otherwise, a new kernel will be created.</span> After uploading,
+Kaggle will attempt to <span class="hl">run</span> the kernel."</blockquote>
+<p class="src">Source : documentation officielle du Kaggle CLI →
+<a href="https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md">github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md</a>
+(section <code>kaggle kernels push</code>)</p>
+
+<p style="font-size:.93rem;margin-top:22px"><b>Preuve 2 — les jetons sont prévus pour l'automatisation</b></p>
+<blockquote>"<b>API Keys &amp; Personal Tokens:</b> For automated scripts, notebook workflows,
+<span class="hl">CI/CD environments</span>, and direct SDK calls, create an API token from your
+Kaggle account API tokens settings page."</blockquote>
+<p class="src">Source : documentation officielle de l'API Kaggle →
+<a href="https://www.kaggle.com/docs/api">kaggle.com/docs/api</a> (section Authentication)</p>
+
+<p style="font-size:.93rem;margin-top:22px"><b>Preuve 3 — Kaggle a même un serveur MCP distant officiel</b></p>
+<blockquote>"The remote server URL is <span class="hl">https://www.kaggle.com/mcp</span>"<br>
+Authentification : OAuth 2.0 <i>ou</i> jeton Bearer (préfixe <code>KGAT</code>)<br>
+Outils exposés : <span class="hl">create_notebook_session</span>,
+<span class="hl">get_notebook_session_status</span>,
+<span class="hl">cancel_notebook_session</span>,
+<span class="hl">download_notebook_output</span>…</blockquote>
+<p class="src">Source : documentation officielle →
+<a href="https://www.kaggle.com/docs/mcp">kaggle.com/docs/mcp</a></p>
+
+<p style="font-size:.93rem;margin-top:20px">
+Concrètement : un agent (ou votre script) muni d'un jeton peut <b>créer une session de notebook,
+suivre son état, récupérer sa sortie et l'annuler</b> — entièrement par API.
+C'est exactement le mécanisme que notre chaîne utilise.</p>
+
+<!-- ===== 2 ===== -->
+<h2><span class="num">2</span>Colab : ma correction</h2>
+
+<div class="correct">
+  <strong>Ce que j'avais dit, et qui était trop absolu</strong>
+  J'ai écrit : « Colab n'a pas d'API d'exécution publique ». <b>C'est vrai pour le lancement
+  headless officiel</b>, mais <b>incomplet</b> : un serveur MCP communautaire, configuré avec OAuth,
+  exécute bien du code dans un runtime Colab <b>sans onglet de navigateur</b>.
+</div>
+
+<p style="font-size:.93rem;margin-top:22px"><b>Ce que dit le dépôt officiel de Google (colab-mcp)</b></p>
+<blockquote>"An MCP server for bridging your <span class="hl">local agent</span>
+to a Colab session <span class="hl">in the browser</span>."<br><br>
+"This MCP server requires client support for <code>notifications/tools/list_changed</code>
+and for the <span class="hl">client to be running locally on your device</span>."</blockquote>
+<p class="src">Source : <a href="https://github.com/googlecolab/colab-mcp">github.com/googlecolab/colab-mcp</a> (README officiel)</p>
+
+<p style="font-size:.93rem;margin-top:20px"><b>Ce que fait un fork communautaire (non officiel)</b></p>
+<blockquote>"With OAuth configured it connects <span class="hl">directly to the Colab Jupyter runtime</span>,
+so code execution and output streaming <span class="hl">do not require a browser tab</span>."<br><br>
+"<code>change_runtime</code> tool (GPU control) — <span class="hl">Removed in official</span>,
+working via OAuth in this fork."</blockquote>
+<p class="src">Source : <a href="https://github.com/ats05/colab-mcp">github.com/ats05/colab-mcp</a> et le fork
+<a href="https://github.com/SebastianGilPinzon/colab-mcp">SebastianGilPinzon/colab-mcp</a> —
+projets communautaires, non maintenus par Google</p>
+
+<div class="danger">
+  <strong>Pourquoi Colab reste un repli, pas le pivot</strong>
+  <ul>
+    <li><b>Non officiel</b> : le pilotage sans navigateur passe par du code communautaire, qui peut casser à chaque mise à jour de Colab.</li>
+    <li><b>Le runtime meurt quand même</b> : coupure à l'inactivité (~90 min constatés par les utilisateurs) et plafond de 12 h. Le pilotage à distance ne change pas la durée de vie de la machine.</li>
+    <li><b>Risque de conditions d'utilisation</b> : Colab réserve son offre gratuite à un usage interactif et documente des restrictions sur l'automatisation non interactive ; Kaggle, lui, <b>documente</b> l'usage CI/CD. C'est la différence décisive.</li>
+  </ul>
+</div>
+
+<!-- ===== 3 ===== -->
+<h2><span class="num">3</span>Le tableau de vérité</h2>
+<table>
+  <thead><tr>
+    <th style="width:23%">Plateforme</th><th style="width:15%">Pilotage sans navigateur</th>
+    <th style="width:14%">Officiel ?</th><th>Ce qu'il faut accepter</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Kaggle — CLI + jeton</b></td>
+      <td class="yes-t">OUI</td>
+      <td class="yes-t">Oui, documenté</td>
+      <td>Usage personnel non commercial ; quotas dynamiques ; limitation de débit (HTTP 429) si boucle mal écrite.</td>
+    </tr>
+    <tr>
+      <td><b>Kaggle — MCP distant</b></td>
+      <td class="yes-t">OUI</td>
+      <td class="yes-t">Oui</td>
+      <td>Mêmes conditions. Permet aussi des sessions interactives pilotées par un agent.</td>
+    </tr>
+    <tr>
+      <td><b>Colab — MCP officiel</b></td>
+      <td class="no-t">NON</td>
+      <td class="mid-t">Oui, mais local</td>
+      <td>Exige un client tournant sur votre machine et une session dans le navigateur. Pas d'autonomie.</td>
+    </tr>
+    <tr>
+      <td><b>Colab — fork OAuth</b></td>
+      <td class="yes-t">OUI</td>
+      <td class="no-t">Non (communautaire)</td>
+      <td>Fragile, non supporté, et le runtime reste limité à 12 h / inactivité. Correct comme secours manuel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 4 ===== -->
+<h2><span class="num">4</span>« Les clés » — ce que c'est vraiment, et le risque</h2>
+<p class="lead">Le mot « clé » recouvre deux choses très différentes. La distinction est essentielle pour votre sécurité.</p>
+
+<table>
+  <thead><tr><th style="width:22%">Type</th><th>Ce que ça permet</th><th style="width:26%">À faire / ne jamais faire</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>Mot de passe</b></td>
+      <td>Tout. Y compris changer le mot de passe, fermer le compte, accéder aux moyens de paiement.</td>
+      <td class="no-t">Ne jamais donner, à personne, à aucun agent.</td>
+    </tr>
+    <tr>
+      <td><b>Jeton API</b><br><span style="font-size:.82rem;color:#475569">(ce dont on parle)</span></td>
+      <td>Uniquement les actions prévues par la plateforme : lancer un kernel, lire un statut, télécharger une sortie.</td>
+      <td class="yes-t">Révoquable en 1 clic, sans changer votre mot de passe.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="good">
+  <strong>Le modèle de sécurité de notre chaîne, en 4 règles</strong>
+  <ul>
+    <li><b>Le jeton ne vit que dans les « secrets »</b> de GitHub, chiffrés, jamais dans le code, jamais dans un fichier versionné, jamais dans un kernel.</li>
+    <li><b>Un jeton par usage</b> : si quelque chose fuit, on révoque un seul jeton, pas tout.</li>
+    <li><b>Révocation immédiate</b> : un clic sur Kaggle → Settings → API → révoquer. La chaîne s'arrête net.</li>
+    <li><b>Je ne dois jamais détenir vos jetons.</b> Ni moi, ni aucun agent dans cette conversation. Vous les déposez dans GitHub, et le système les lit à l'exécution.</li>
+  </ul>
+</div>
+
+<div class="danger">
+  <strong>Le vrai danger n'est pas le pilotage, c'est la clé exposée</strong>
+  Un jeton publié dans un dépôt public est <b>scrapé en quelques minutes</b>. C'est pourquoi le dépôt
+  contient un test automatique qui <b>échoue</b> si un fichier ressemblant à une clé ou un jeu de données
+  est versionné (<code>test_kernel_script_contains_no_secret_and_no_formula</code> + contrôle en CI).
+</div>
+
+<!-- ===== 5 ===== -->
+<h2><span class="num">5</span>Ce que ça change dans notre chaîne</h2>
+<table>
+  <thead><tr><th style="width:26%">Élément</th><th>Avant vérification</th><th>Après vérification</th></tr></thead>
+  <tbody>
+    <tr><td>Lancement automatique de Kaggle</td><td>Créance raisonnable</td><td class="yes-t"><b>Confirmé, documenté officiellement</b></td></tr>
+    <tr><td>Création du kernel</td><td>« à faire une fois à la main »</td><td class="yes-t"><b>Automatique dès le premier push</b> — aucune action manuelle</td></tr>
+    <tr><td>Colab comme repli sans navigateur</td><td>« impossible »</td><td class="mid-t"><b>Possible via un fork communautaire</b>, mais fragile et sous réserve des conditions</td></tr>
+    <tr><td>Architecture retenue</td><td>Kaggle en pivot</td><td class="yes-t"><b>Inchangée — et désormais justifiée par les sources</b></td></tr>
+  </tbody>
+</table>
+
+<div class="good">
+  <strong>Conclusion</strong>
+  Votre intuition était juste : <b>oui, un système peut piloter une plateforme de calcul à distance
+  avec un jeton, de façon automatisée, sans vous</b>. Ce n'est pas un contournement : c'est un usage
+  prévu et documenté par Kaggle. La seule chose qui reste hors d'atteinte, et qui doit le rester,
+  ce sont vos <b>décisions scientifiques</b> — pas les machines.
+</div>
+
+<div class="correct">
+  <strong>Ce que je ne peux toujours pas affirmer</strong>
+  Je n'ai pas exécuté cette chaîne avec un vrai jeton Kaggle (je n'en ai pas, et je ne dois pas en avoir).
+  La documentation prouve que <b>le mécanisme existe</b> ; elle ne prouve pas que <b>votre</b> compte,
+  dans <b>votre</b> région, obtiendra la machine immédiatement. La preuve finale est le test
+  de 10 minutes décrit dans le document « Qui lance quoi », section 4.
+</div>
+
+<footer>
+  META ALPHA — vérification des sources · version 1.0 · 13 novembre 2026<br>
+  Citations vérifiées le 13/11/2026 sur : documentation Kaggle CLI (kernels.md), documentation API Kaggle
+  (docs/api), documentation du serveur MCP Kaggle (docs/mcp), README officiel googlecolab/colab-mcp,
+  README du fork communautaire ats05/colab-mcp. Les offres et conditions évoluent : re-vérifiez avant engagement.
+</footer>
+
+</div>
+</body>
+</html>

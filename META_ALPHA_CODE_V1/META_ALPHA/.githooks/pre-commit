@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Refuse tout commit contenant un secret. Installé par scripts/install_hooks.py
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+if ! python3 metaalpha/secrets_guard.py . > /tmp/secrets_guard.json 2>/dev/null; then
+  echo "COMMIT REFUSÉ — secret détecté dans l'arbre :"
+  python3 - <<'PY'
+import json
+d = json.load(open("/tmp/secrets_guard.json"))
+for f in d["findings"][:20]:
+    print(f"  {f['file']}:{f['line']}  ({f['kind']})")
+PY
+  echo
+  echo "Retirer le secret, puis : git add -A && git commit"
+  exit 1
+fi
+
+# Fichiers de credentials : refus dur, même ignorés
+BLOCKED=$(git diff --cached --name-only | grep -Ei '(^|/)(sa\.json|service_account[^/]*\.json|\.env|\.env\..*|.*\.pem|.*\.key)$' || true)
+if [ -n "$BLOCKED" ]; then
+  echo "COMMIT REFUSÉ — fichiers de credentials :"
+  echo "$BLOCKED"
+  exit 1
+fi
+
+echo "garde-fou secrets : OK"

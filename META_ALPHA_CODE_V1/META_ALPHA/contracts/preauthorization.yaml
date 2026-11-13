@@ -1,0 +1,44 @@
+# Préautorisation des tâches répétitives (point 11 du cahier des charges).
+# Toute tâche absente de cette liste est BLOCKED : elle exige un OWNER_APPROVAL.
+version: "1.0"
+scope: XAUUSD_TICK_ONLY_V1
+
+auto_executable:
+  - id: retry_transient_unit
+    description: "Relancer une unité échouée pour erreur transitoire"
+    max_attempts: 3
+    conditions: ["error_class == TRANSIENT", "phase_approved == true"]
+
+  - id: resume_from_checkpoint
+    description: "Reprendre à la première unité non checkpointée"
+    conditions: ["checkpoint_hashes_match == true"]
+
+  - id: recompute_unit_after_code_change
+    description: "Rejouer une unité si code_hash a changé"
+    conditions: ["phase_approved == true"]
+
+  - id: write_derived_artifact
+    description: "Publier un dérivé validé dans RESEARCH_V1_*"
+    conditions: ["schema_validated == true", "sha256_written == true"]
+
+  - id: emit_report
+    description: "Écrire un rapport de phase en JSON/MD dans 40_REPORTS"
+    conditions: ["phase_approved == true"]
+
+never_auto:
+  - id: define_formula
+    reason: "OWNER_POLICY_REQUIRED — une définition scientifique vient d'un humain"
+  - id: set_economic_threshold
+    reason: "OWNER_POLICY_REQUIRED"
+  - id: change_split
+    reason: "Le split est gelé avant P3"
+  - id: open_holdout
+    reason: "Clé de scellement + approbation explicite, une seule fois"
+  - id: promote_edge_to_locked
+    reason: "Revue propriétaire obligatoire (P6)"
+  - id: deploy_live_robot
+    reason: "Preuves demo/shadow séparées + approbation"
+  - id: modify_certificate
+    reason: "Les certificats hérités sont immuables"
+  - id: enable_paid_service
+    reason: "Interdit sans PAYMENT_APPROVED_<date>.json"

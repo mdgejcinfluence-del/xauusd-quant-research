@@ -1,0 +1,108 @@
+{
+  "engine": {
+    "name": "META ALPHA Segmented Research Engine",
+    "version": "1.0.0",
+    "scope": "XAUUSD_TICK_ONLY_V1",
+    "one_phase_at_a_time": true,
+    "synthetic_data_forbidden": true
+  },
+  "paths": {
+    "logical_root": "META_ALPHA_XAUUSD_DGP",
+    "research_subdir": "RESEARCH_V1_XAUUSD_TICK_ONLY",
+    "certified_readonly": [
+      "00_RAW",
+      "01_PARQUET",
+      "04_CHECKPOINTS"
+    ],
+    "partitions_rel": "01_PARQUET/XAUUSD_DGP_CHRONOLOGICAL_V5R10/PARTITIONS",
+    "cert_p1_rel": "04_CHECKPOINTS/PHASE_01_XAUUSD_PRIMARY_CERTIFIED.json",
+    "cert_p2_rel": "04_CHECKPOINTS/PHASE_02_DGP_BASE_CHRONOLOGICAL_VALIDATED_V5R10.json",
+    "sealed_globs": [
+      "04_CHECKPOINTS/HOLDOUT/*",
+      "04_CHECKPOINTS/*HOLDOUT*"
+    ]
+  },
+  "duckdb": {
+    "memory_limit": "4GB",
+    "threads": 2,
+    "temp_dir": "/tmp/duckdb_spill",
+    "preserve_insertion_order": false,
+    "require_explicit_memory_limit": true
+  },
+  "orchestrator": {
+    "retries": 3,
+    "unit_max_seconds": 600,
+    "max_runtime_seconds": 12600,
+    "lease_ttl_seconds": 1800,
+    "min_free_gb": 2.0,
+    "disk_guard_ratio": 0.15,
+    "disk_guard_note": "on refuse de démarrer une unité si l'espace libre < max(min_free_gb, 15% du disque) : protège les runtimes à petit disque (Kaggle 20 Go)",
+    "heartbeat_seconds": 60,
+    "max_runtime_note": "12600 s = 3 h 30, sous le plafond de 4 h des segments et sous le job max de 6 h"
+  },
+  "budget": {
+    "cap_usd": 5.0,
+    "no_llm": false,
+    "currency_local": "XOF",
+    "local_budget_total": 6000,
+    "local_budget_used_allowed": 655,
+    "note": "cap_usd=5.00 = 3280 FCFA. La reserve totale reste sous 6000 FCFA.",
+    "payment_activation_requires_approval": true
+  },
+  "ai": {
+    "model": "deepseek-chat",
+    "max_calls_per_run": 20,
+    "max_input_tokens": 120000,
+    "max_output_tokens": 4000,
+    "fallback_chain": [
+      "gemini",
+      "nvidia",
+      "deepseek",
+      "NO_LLM"
+    ],
+    "may_define_formulas": false,
+    "may_write_artifacts": false,
+    "may_open_holdout": false,
+    "may_promote_edges": false
+  },
+  "governance": {
+    "terminal_statuses": [
+      "PHASE_COMPLETE_AWAITING_OWNER_REVIEW",
+      "BLOCKED_WITH_RESUME",
+      "FAILED_TECHNICAL",
+      "INCOMPLETE",
+      "NO_EDGE"
+    ],
+    "holdout": {
+      "sealed_until_phase": "PHASE_8_HOLDOUT",
+      "single_open": true,
+      "requires_env_key": "HOLDOUT_SEAL_KEY"
+    },
+    "splits": {
+      "is_fraction": 0.6,
+      "oos_fraction": 0.2,
+      "holdout_fraction": 0.2,
+      "rule": "CALENDAR_DURATION_NOT_ROW_COUNT",
+      "purge_rule": "MAX_OF_LABEL_HORIZON_TRADE_HOLDING_EXECUTION_HORIZON_IN_SECONDS"
+    },
+    "policy_file": "00_GOVERNANCE/OWNER_POLICY_V1.json",
+    "economic_promotion_without_policy": "BLOCKED_POLICY_REQUIRED"
+  },
+  "cost_semantics": {
+    "allowed": ["OBSERVED", "SCENARIO"],
+    "unknown_is_zero": false,
+    "costs": {
+      "spread": "OBSERVED",
+      "commission": "SCENARIO",
+      "swap": "SCENARIO",
+      "slippage": "SCENARIO",
+      "latency_ms": "SCENARIO"
+    }
+  },
+  "monitoring": {
+    "heartbeat_rel": "00_GOVERNANCE/heartbeat.json",
+    "stale_after_seconds": 1800,
+    "notify_on": ["FAILED_TECHNICAL", "BLOCKED_WITH_RESUME", "KILL_SWITCH"],
+    "kill_switch_rel": "00_GOVERNANCE/KILL_SWITCH"
+  }
+}

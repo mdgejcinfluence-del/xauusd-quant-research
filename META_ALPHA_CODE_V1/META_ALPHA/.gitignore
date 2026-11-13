@@ -1,0 +1,31 @@
+# Secrets et données — JAMAIS versionnés
+*.parquet
+*.feather
+*.arrow
+*.bi5
+sa.json
+*-sa.json
+service_account*.json
+.env
+.env.*
+*.pem
+*.key
+!requirements.txt
+
+# État local / artefacts
+*.tmp
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+/tmp_bench/
+BENCHMARK_REPORT.json
+SAMPLE_RUN_REPORT.json
+
+# Ne jamais versionner le corpus ni un certificat
+00_RAW/
+01_PARQUET/
+04_CHECKPOINTS/

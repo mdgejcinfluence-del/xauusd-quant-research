@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>META ALPHA — Architecture complète V2</title><style>
+:root{--bg:#070a0e;--card:#111820;--card2:#0d131a;--lin:#1f2b38;--tx:#e8eef4;--mut:#8497a9;
+--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff;--vio:#a371f7;--cy:#39c5cf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:34px 18px 80px}
+.wrap{max-width:1320px;margin:0 auto}
+h1{font-size:30px;margin:0 0 8px;letter-spacing:-.025em;line-height:1.25}
+h2{font-size:20px;margin:46px 0 6px;letter-spacing:-.015em}
+h2 .num{color:var(--acc);font-family:ui-monospace,Menlo,monospace;font-size:14px;margin-right:10px;opacity:.8}
+h2+.lede{color:var(--mut);margin:0 0 18px;font-size:14.5px;max-width:940px}
+h3{font-size:14px;margin:0 0 10px;letter-spacing:.01em}
+.sub{color:var(--mut);margin:0 0 16px;font-size:14.5px;max-width:940px}
+.card{background:var(--card);border:1px solid var(--lin);border-radius:12px;padding:20px;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--mut);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--lin);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+td{padding:9px 10px;border-bottom:1px solid #18212b;vertical-align:top}
+tr:last-child td{border-bottom:none}
+code{background:#0a0f15;padding:2px 6px;border-radius:4px;font-size:11.5px;color:var(--cy);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;margin:20px 0}
+.kpi div{background:var(--card2);border:1px solid var(--lin);border-radius:11px;padding:15px}
+.kpi b{display:block;font-size:26px;line-height:1.05;letter-spacing:-.03em}
+.kpi span{color:var(--mut);font-size:11.5px;display:block;margin-top:4px;line-height:1.35}
+.note{border-left:3px solid var(--acc);padding:12px 16px;background:#0c1420;border-radius:0 9px 9px 0;font-size:14px;margin:16px 0}
+.note.ok{border-left-color:var(--ok);background:#0a1a10}
+.note.bad{border-left-color:var(--bad);background:#1d0f10}
+.note.warn{border-left-color:var(--warn);background:#1a1508}
+.note.vio{border-left-color:var(--vio)}
+.tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:.04em;white-space:nowrap}
+.t-ok{background:#0d2a17;color:var(--ok);border:1px solid #1f6f36}
+.t-h{background:#2b2208;color:var(--warn);border:1px solid #7a5c14}
+.t-bad{background:#2a0f11;color:var(--bad);border:1px solid #7a2226}
+.t-mut{background:#141d26;color:var(--mut);border:1px solid #26323f}
+.t-cy{background:#08252a;color:var(--cy);border:1px solid #17545c}
+.mono{font-family:ui-monospace,Menlo,monospace}
+/* chaîne */
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:20px 0}
+.chain .step{background:var(--card);border:1px solid var(--lin);border-radius:8px;padding:9px 12px;font-size:11.5px;font-weight:600;letter-spacing:.03em}
+.chain .arw{color:#2f3f4f;font-size:15px}
+.chain .step.hi{border-color:#1f6f36;background:#0a1a10;color:#7ee2a0}
+.chain .step.lock{border-color:#7a5c14;background:#1a1508;color:#e8c05a}
+/* couches */
+.layers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:18px 0}
+@media(max-width:980px){.layers{grid-template-columns:1fr}}
+.layer{background:var(--card);border:1px solid var(--lin);border-radius:12px;padding:17px;position:relative;overflow:hidden}
+.layer:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.layer.A:before{background:var(--acc)}.layer.B:before{background:var(--vio)}.layer.C:before{background:var(--cy)}
+.layer .lid{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--mut);letter-spacing:.1em}
+.layer h3{margin:5px 0 8px;font-size:15px}
+.layer .q{color:var(--mut);font-size:13px;min-height:52px}
+.layer .obj{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--cy);margin-top:8px;word-break:break-all}
+.layer .inf{font-size:11.5px;margin-top:10px;padding-top:10px;border-top:1px solid var(--lin);color:var(--mut)}
+/* phases */
+.ph{display:flex;gap:0;margin-bottom:7px;align-items:stretch}
+.ph .rail{width:34px;flex:none;display:flex;flex-direction:column;align-items:center}
+.ph .dot{width:11px;height:11px;border-radius:50%;margin-top:15px;flex:none}
+.ph .line{width:2px;flex:1;background:#1f2b38}
+.ph .body{flex:1;background:var(--card);border:1px solid var(--lin);border-radius:10px;padding:13px 16px;margin-left:4px}
+.ph:last-child .line{display:none}
+.ph .head{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ph .pid{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;letter-spacing:.03em}
+.ph .ttl{font-size:13.5px;font-weight:600}
+.ph .qq{color:var(--mut);font-size:13px;margin-top:5px}
+.ph .gates{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:820px){.ph .gates{grid-template-columns:1fr}}
+.ph .g{background:#0a0f15;border:1px solid #1a232d;border-radius:7px;padding:8px 10px;font-size:11.5px;color:#a9bacb}
+.ph .g b{display:block;color:var(--mut);font-size:9.5px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;font-weight:700}
+.ph .acts{margin-top:9px;font-size:11.5px;color:var(--mut);line-height:1.7}
+.ph .acts .a{display:inline-block;background:#0d1520;border:1px solid #1c2836;border-radius:5px;padding:2px 7px;margin:2px 3px 0 0;font-size:11px}
+.ph .arts{margin-top:9px;font-size:11px;color:#6f8497;line-height:1.8}
+.ph .arts code{font-size:10.5px;background:#0a0f15;color:#5fa8d3}
+.done{border-color:#1f6f36!important;background:#0a150e!important}
+.hum{border-color:#7a5c14!important}
+.block{border-color:#7a2226!important}
+/* runtime */
+.rt{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:16px 0}
+.rt .box{background:var(--card);border:1px solid var(--lin);border-radius:11px;padding:16px}
+.rt .box h3{font-size:13px;margin-bottom:4px}
+.rt .box .role{color:var(--cy);font-size:11px;font-family:ui-monospace,Menlo,monospace;margin-bottom:10px}
+.rt .box ul{margin:0;padding-left:16px;font-size:12.5px;color:#a9bacb;line-height:1.75}
+pre{background:#080d12;border:1px solid var(--lin);border-radius:10px;padding:16px;overflow-x:auto;font-size:11.5px;line-height:1.65;color:#b9c9d8;font-family:ui-monospace,Menlo,monospace}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:880px){.grid2{grid-template-columns:1fr}}
+ul.clean{margin:8px 0;padding-left:18px;font-size:13px;color:#a9bacb;line-height:1.8}
+.mini{font-size:12px;color:var(--mut)}
+</style></head><body><div class="wrap">
+
+<h1>Architecture complète — META ALPHA V2</h1>
+<p class="sub">Adaptée à la fiche <span class="mono" style="font-size:13px">MISSION_SCIENTIFIQUE_BLUE_GUARDIAN_AGENT_V2</span>. Ce schéma n'est pas dessiné à la main : il est <b>rendu depuis <code>metaalpha/mission.py</code></b>, la structure qui décrit réellement le système. Si une phase n'existe pas dans le code, elle n'apparaît pas ici.</p>
+
+<div class="kpi">
+<div><b>10</b><span>phases dans la mission</span></div>
+<div><b>2</b><span>déjà certifiées, jamais reconstruites</span></div>
+<div><b>8</b><span>à exécuter par l'ingénierie</span></div>
+<div><b>43</b><span>artéfacts, 0 doublon</span></div>
+<div><b>49</b><span>étapes automatisées</span></div>
+<div><b>11</b><span>points où vous êtes requis</span></div>
+<div><b>3</b><span>règles BG bloquantes</span></div>
+<div><b>18</b><span>paramètres serveur non publiés</span></div>
+</div>
+
+<h2><span class="num">01</span>La chaîne complète</h2>
+<p class="lede">Les onze étapes de la fiche §1. En vert : produites par la recherche seule. En ambre : produites après le gel et uniquement sous autorisation. Rien ne saute d'étape, et le robot n'est jamais atteignable directement depuis un backtest.</p>
+<div class="chain"><span class="step">TICKS NATIFS BID/ASK</span><span class="arw">→</span><span class="step">DGP ANALYTIQUE</span><span class="arw">→</span><span class="step">VARIABLES</span><span class="arw">→</span><span class="step">HYPOTHÈSES</span><span class="arw">→</span><span class="step">ANOMALIES</span><span class="arw">→</span><span class="step">STRATÉGIES CANDIDATES</span><span class="arw">→</span><span class="step">EDGES QUALIFIÉS</span><span class="arw">→</span><span class="step">PORTEFEUILLE META-ALPHA</span><span class="arw">→</span><span class="step lock">VALIDATION FINALE</span><span class="arw">→</span><span class="step lock">ADAPTATEUR BLUE GUARDIAN</span><span class="arw">→</span><span class="step lock">ROBOT</span></div>
+
+<h2><span class="num">02</span>Les trois couches, jamais confondues</h2>
+<p class="lede">La contrainte structurante de la fiche §2 : le challenge ne doit pas dicter ce que le moteur trouve. La couche C intervient après le gel. Une incompatibilité produit une version d'adaptation séparée, elle-même testée — jamais une retouche silencieuse du résultat scientifique.</p>
+<div class="layers"><div class="layer A">
+<div class="lid">COUCHE A</div>
+<h3>RECHERCHE SCIENTIFIQUE</h3>
+<div class="q">Quelles régularités existent, sont causales, stables et survivent aux coûts ?</div>
+<div class="obj">META_ALPHA_RESEARCH_PORTFOLIO</div>
+<div class="inf"><b>Phases :</b> P2 → P6<br><b>Influence :</b> AUCUNE — le challenge ne dicte pas ce que le moteur trouve</div>
+</div><div class="layer B">
+<div class="lid">COUCHE B</div>
+<h3>PORTEFEUILLE</h3>
+<div class="q">Quels edges se complètent réellement, et avec quels poids gelés sans fuite ?</div>
+<div class="obj">META_ALPHA_PORTFOLIO</div>
+<div class="inf"><b>Phases :</b> P7<br><b>Influence :</b> AUCUNE — les poids viennent des données autorisées, jamais du challenge</div>
+</div><div class="layer C">
+<div class="lid">COUCHE C</div>
+<h3>ADAPTATEUR BLUE GUARDIAN</h3>
+<div class="q">Ce portefeuille gelé est-il exécutable dans les règles confirmées du compte ?</div>
+<div class="obj">BLUE_GUARDIAN_CHALLENGE_ADAPTER</div>
+<div class="inf"><b>Phases :</b> P8 → P9<br><b>Influence :</b> RÈGLES DU CHALLENGE — postérieures, jamais rétroactives sur A et B</div>
+</div></div>
+
+<h2><span class="num">03</span>Les phases et leurs gates</h2>
+<p class="lede">P1 et P2 historique sont certifiées : l'agent les relit, recalcule les SHA-256, confirme les 348 partitions, et n'y touche pas. Les huit autres phases ont un gate d'entrée, un gate de sortie et un comportement en cas d'échec.</p>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#3fb950"></div><div class="line"></div></div>
+<div class="body done">
+<div class="head"><span class="pid">P1_CERTIFIED</span><span class="ttl">Source primaire XAUUSD (héritée)</span><span class="tag t-ok">DÉJÀ CERTIFIÉ</span></div>
+<div class="qq">La source native Dukascopy Bid/Ask est-elle certifiée ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>—</div>
+<div class="g"><b>Sortie</b>CERTIFIED (déjà acquis)</div>
+</div>
+<div class="acts"><span class="a">relire le certificat</span><span class="a">recalculer le SHA-256</span><span class="a">confirmer les 11 136 fichiers</span></div>
+<div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> reconstruire la source · re-télécharger · modifier le certificat</div>
+<div class="arts"><code>04_CHECKPOINTS/PHASE_01_XAUUSD_PRIMARY_CERTIFIED.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#3fb950"></div><div class="line"></div></div>
+<div class="body done">
+<div class="head"><span class="pid">P2H_CERTIFIED</span><span class="ttl">DGP Base chronologique V5R10 (héritée)</span><span class="tag t-ok">DÉJÀ CERTIFIÉ</span></div>
+<div class="qq">La base 685 118 625 ticks / 348 partitions est-elle certifiée ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>—</div>
+<div class="g"><b>Sortie</b>CERTIFIED (déjà acquis)</div>
+</div>
+<div class="acts"><span class="a">relire le certificat</span><span class="a">recalculer le SHA-256</span><span class="a">compter les 348 partitions</span></div>
+<div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> reconstruire la DGP · ouvrir le Holdout · modifier le certificat</div>
+<div class="arts"><code>04_CHECKPOINTS/PHASE_02_DGP_BASE_CHRONOLOGICAL_VALIDATED_V5R10.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#d29922"></div><div class="line"></div></div>
+<div class="body hum">
+<div class="head"><span class="pid">P2_ANALYTICAL</span><span class="ttl">Phase 2 analytique V1 — construire la couche scientifique</span><span class="tag t-h">GATE HUMAIN</span></div>
+<div class="qq">Les variables tick-only sont-elles définies, causales et disponibles au mining ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>P1 + P2H CERTIFIED, hashes reconfirmés, 348 partitions lisibles</div>
+<div class="g"><b>Sortie</b>GATE P2→P3 : toutes les variables AVAILABLE_FOR_MINING ont un audit causal PASS</div>
+</div>
+<div class="acts"><span class="a">préflight hashé (certificats + partitions)</span><span class="a">inventaire et détection de schéma réel</span><span class="a">sémantique des quotes (fuseau, précision, doublons, gaps, quotes invalides)</span><span class="a">granularité et dérivés Parquet versionnés</span><span class="a">instanciation des 8 familles et des variables dérivables</span><span class="a">split temporel 60/20/20 calculé et gelé</span><span class="a">purge/embargo fondé sur le plus long horizon</span><span class="a">audit causal automatique de chaque variable</span><span class="a">rapport de fin de phase</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> répondre aux 9 décisions de définition (10 min, une fois) · accepter ou refuser la Phase 2 après revue</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> inventer une formule pour remplir une famille · modifier une variable après avoir vu un résultat · ouvrir le Holdout · split aléatoire</div>
+<div class="arts"><code>BASELINE_HASH_MANIFEST.json</code> <code>QUOTE_DGP_SPEC_V1.md</code> <code>GRANULARITY_SPEC_V1.json</code> <code>DGP_VARIABLE_REGISTRY_V1.json</code> <code>FORMULA_REGISTRY_V1.json</code> <code>VALIDATION_SPLITS_V1.json</code> <code>DGP_REPORT.json</code> <code>P2_TO_P3_GATE_V1.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#58a6ff"></div><div class="line"></div></div>
+<div class="body ">
+<div class="head"><span class="pid">P3_MINING</span><span class="ttl">Mining préenregistré</span><span class="tag t-cy">AUTOMATIQUE</span></div>
+<div class="qq">Quelles anomalies apparaissent dans les données, sur les seules variables disponibles ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>P2_TO_P3_GATE_V1 = PASS et revue propriétaire</div>
+<div class="g"><b>Sortie</b>tous les essais enregistrés (positifs, négatifs, nuls) + candidats listés</div>
+</div>
+<div class="acts"><span class="a">inscrire chaque essai au Trial Ledger AVANT exécution</span><span class="a">exécuter uniquement sur variables AVAILABLE_FOR_MINING</span><span class="a">calculer baseline et contrôle négatif pour chaque essai</span><span class="a">conserver les essais négatifs et non concluants</span><span class="a">produire le registre des anomalies candidates</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> accepter la Phase 3</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> ouvrir le Holdout · essai non préenregistré · supprimer un essai négatif · appeler un candidat un edge</div>
+<div class="arts"><code>ANOMALY_CANDIDATE_REGISTRY.json</code> <code>REJECTED_AND_INCONCLUSIVE.csv</code> <code>TRIAL_LEDGER.csv</code> <code>MINING_REPORT.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#58a6ff"></div><div class="line"></div></div>
+<div class="body ">
+<div class="head"><span class="pid">P4_VALIDATION</span><span class="ttl">Candidat → stratégie, et causalité</span><span class="tag t-cy">AUTOMATIQUE</span></div>
+<div class="qq">Le pouvoir prédictif survit-il au OOS, au walk-forward et au replay Bid/Ask ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>Phase 3 acceptée</div>
+<div class="g"><b>Sortie</b>chaque candidat a un contrat d'exécution et des tests anti-look-ahead PASS</div>
+</div>
+<div class="acts"><span class="a">spécifier activation/direction/timestamp de décision/entrée/sortie/invalidation</span><span class="a">vérifier la disponibilité de chaque feature au timestamp de décision</span><span class="a">IS + OOS chronologique + walk-forward</span><span class="a">statistiques adaptées à la dépendance temporelle et à la multiplicité</span><span class="a">replay événementiel Bid/Ask (achat à l'Ask, vente au Bid)</span><span class="a">séparer spread / commission / swap / slippage / latence</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> accepter la Phase 4</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> remplir au même quote que le signal sans modèle de latence · appeler NET un résultat sans coût complet confirmé · tuner hors préenregistrement</div>
+<div class="arts"><code>CAUSALITY_REPORT.json</code> <code>WALK_FORWARD_RESULTS.parquet</code> <code>TRADE_LEDGER.parquet</code> <code>TRIAL_STATISTICS.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#58a6ff"></div><div class="line"></div></div>
+<div class="body ">
+<div class="head"><span class="pid">P5_STRESS</span><span class="ttl">Stress et stabilité</span><span class="tag t-cy">AUTOMATIQUE</span></div>
+<div class="qq">Le résultat résiste-t-il aux coûts adverses et aux sous-périodes ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>Phase 4 acceptée</div>
+<div class="g"><b>Sortie</b>stress préenregistrés exécutés, scénarios marqués comme scénarios</div>
+</div>
+<div class="acts"><span class="a">spread observé + scénarios adverses</span><span class="a">commission, swap, slippage, latence</span><span class="a">stabilité par sous-période et par régime</span><span class="a">contrôles négatifs</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> accepter la Phase 5</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> présenter un scénario hypothétique comme un fait historique</div>
+<div class="arts"><code>STRESS_RESULTS.parquet</code> <code>COST_SENSITIVITY.json</code> <code>REGIME_STABILITY.parquet</code> <code>NEGATIVE_CONTROLS.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#58a6ff"></div><div class="line"></div></div>
+<div class="body ">
+<div class="head"><span class="pid">P6_QUALIFICATION</span><span class="ttl">Qualifier les edges</span><span class="tag t-cy">AUTOMATIQUE</span></div>
+<div class="qq">Quels candidats franchissent les critères gelés, sans nouveau tuning ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>Phase 5 acceptée</div>
+<div class="g"><b>Sortie</b>chaque candidat porte LOCKED_FOR_HOLDOUT, REJECTED ou DEFERRED</div>
+</div>
+<div class="acts"><span class="a">appliquer les critères gelés</span><span class="a">conserver les motifs de rejet et de report</span><span class="a">produire le manifeste de verrouillage</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> accepter la Phase 6</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> déclarer un edge certifié avant Holdout et miroir · nouveau tuning · masquer un NO_EDGE</div>
+<div class="arts"><code>QUALIFIED_EDGE_REGISTRY.json</code> <code>REJECTED_AND_DEFERRED.csv</code> <code>CANDIDATE_LOCK_MANIFEST.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#58a6ff"></div><div class="line"></div></div>
+<div class="body ">
+<div class="head"><span class="pid">P7_PORTFOLIO</span><span class="ttl">Portefeuille META-ALPHA et gel des poids</span><span class="tag t-cy">AUTOMATIQUE</span></div>
+<div class="qq">Les sleeves se complètent-elles réellement, et les poids sont-ils stables sans fuite ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>Phase 6 acceptée ; au moins un edge LOCKED_FOR_HOLDOUT</div>
+<div class="g"><b>Sortie</b>poids estimés sur données autorisées puis GELÉS avant test final</div>
+</div>
+<div class="acts"><span class="a">corrélation des rendements par période et par régime</span><span class="a">chevauchenent des signaux et positions</span><span class="a">pertes simultanées et co-drawdowns</span><span class="a">concentration temporelle et turnover</span><span class="a">contribution marginale au risque et au rendement</span><span class="a">test de chaque sleeve seule puis des combinaisons</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> accepter la Phase 7</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> optimisation full-sample · régler quoi que ce soit sur le Holdout · assembler des sleeves qui sont des variantes corrélées · fabriquer un portefeuille pour atteindre une cible</div>
+<div class="arts"><code>SLEEVE_RETURNS.parquet</code> <code>CORRELATION_EXPOSURE_REPORT.json</code> <code>PORTFOLIO_POLICY.json</code> <code>PORTFOLIO_LEDGER.parquet</code> <code>PORTFOLIO_REPORT.json</code> <code>FINAL_LOCK_MANIFEST.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#f85149"></div><div class="line"></div></div>
+<div class="body block">
+<div class="head"><span class="pid">P8_HOLDOUT</span><span class="ttl">Holdout unique et miroir indépendant</span><span class="tag t-h">GATE HUMAIN</span></div>
+<div class="qq">Le système entièrement gelé survit-il au dernier 20 % jamais consulté ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>AUTORISATION EXPLICITE DU PROPRIÉTAIRE + FINAL_LOCK_MANIFEST</div>
+<div class="g"><b>Sortie</b>Holdout ouvert UNE fois, aucun retuning, miroir sans écart inexpliqué</div>
+</div>
+<div class="acts"><span class="a">vérifier le sceau et le hash du manifeste gelé</span><span class="a">ouvrir le segment Holdout une seule fois</span><span class="a">produire performance, incertitude, coûts, risques</span><span class="a">construire une implémentation indépendante des éléments critiques</span><span class="a">comparer timestamps, signaux, directions, fills, coûts, P&L</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> AUTORISER l'ouverture du Holdout — jamais automatique · accepter la Phase 8</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> ouvrir le Holdout deux fois · retuner après ouverture · ignorer un écart de miroir</div>
+<div class="arts"><code>FINAL_HOLDOUT_REPORT.json</code> <code>GOLDEN_VECTORS.parquet</code> <code>INDEPENDENT_MIRROR_REPORT.json</code> <code>FINAL_CERTIFICATE.json</code></div>
+</div></div>
+<div class="ph"><div class="rail">
+<div class="dot" style="background:#d29922"></div><div class="line"></div></div>
+<div class="body hum">
+<div class="head"><span class="pid">P9_MQL5</span><span class="ttl">Robot MQL5, parité, shadow/demo, readiness</span><span class="tag t-h">GATE HUMAIN</span></div>
+<div class="qq">Le robot reproduit-il la logique gelée sur les mêmes quotes, dans les limites du compte ?</div>
+<div class="gates">
+<div class="g"><b>Entrée</b>Phase 8 validée + AUTORISATION DISTINCTE</div>
+<div class="g"><b>Sortie</b>parité Python/MQL5 prouvée + shadow/demo + DEPLOYMENT_READINESS</div>
+</div>
+<div class="acts"><span class="a">traduction mécanique de la logique gelée</span><span class="a">comparaison Python/MQL5 sur les mêmes quotes</span><span class="a">tests de rejets serveur, redémarrage, état, quotes périmées, limites de volume</span><span class="a">lecture des paramètres runtime du compte attribué</span><span class="a">simulation du challenge sur règles confirmées</span></div>
+<div class="note warn" style="margin:10px 0 0;padding:9px 13px;font-size:12.5px"><b>Vous uniquement :</b> fournir BLUE_GUARDIAN_ACCOUNT_SPEC (donnée propriétaire) · AUTORISER le déploiement réel — distinct de l'autorisation Holdout</div><div class="note bad" style="margin:8px 0 0;padding:9px 13px;font-size:12px"><b>Interdit dans cette phase :</b> déployer en réel sur la seule base de la compilation · inventer un paramètre serveur · contourner la règle des 2 minutes · fractionner des ordres pour masquer du HFT</div>
+<div class="arts"><code>EA_SPEC.json</code> <code>MQL5_PARITY_REPORT.json</code> <code>DEPLOYMENT_READINESS.json</code> <code>BLUE_GUARDIAN_RULES_UNCERTAINTY_REGISTER.json</code> <code>BLUE_GUARDIAN_ACCOUNT_SPEC.json</code> <code>BLUE_GUARDIAN_CHALLENGE_SIMULATION.json</code> <code>EXECUTION_COST_MODEL.json</code> <code>SYMBOL_RUNTIME_SPEC.json</code></div>
+</div></div>
+
+<h2><span class="num">04</span>Qui exécute quoi, où</h2>
+<p class="lede">L'orchestrateur n'est pas un agent IA. Il ne raisonne pas : il applique un graphe déterministe, vérifie des hashes et bloque des gates. Le calcul lourd part sur un runtime jetable. Le Drive ne sert que de stockage durable.</p>
+<div class="rt">
+<div class="box"><h3>GitHub Actions</h3><div class="role">ORCHESTRATEUR — déterministe</div>
+<ul><li>déclenche la phase autorisée</li><li>vérifie les gates et les hashes</li><li>écrit les checkpoints</li><li>reprend les unités inachevées</li><li>bloque tout si un gate échoue</li></ul>
+<div class="mini" style="margin-top:9px">Ne calcule pas. Ne décide pas. Ne dépasse jamais 6 h par job.</div></div>
+<div class="box"><h3>Kaggle / Colab</h3><div class="role">CALCUL JETABLE</div>
+<ul><li>exécute une partition ou un segment</li><li>écrit le résultat + son hash</li><li>meurt sans conséquence</li><li>piloté par token, sans navigateur</li></ul>
+<div class="mini" style="margin-top:9px">Rien d'irremplaçable ne vit ici. Tout est reprenable.</div></div>
+<div class="box"><h3>Google Drive</h3><div class="role">STOCKAGE DURABLE</div>
+<ul><li>certificats P1 et P2 (lecture seule)</li><li>348 partitions certifiées</li><li>registres, splits, manifestes</li><li>checkpoints et reprises</li></ul>
+<div class="mini" style="margin-top:9px">Goulot réel : la latence Drive. Elle est mesurée, pas supposée.</div></div>
+<div class="box"><h3>Vous</h3><div class="role">PROPRIÉTAIRE — 11 points</div>
+<ul><li>9 définitions scientifiques, une fois</li><li>7 acceptations de phase</li><li>1 autorisation Holdout</li><li>1 spécification de compte</li><li>1 autorisation de déploiement</li></ul>
+<div class="mini" style="margin-top:9px">Rien d'autre. Aucune formule, aucun poids, aucun edge à fournir.</div></div>
+</div>
+
+<h2><span class="num">05</span>Le cycle autonome, une fois lancé</h2>
+<pre>  03:00 UTC  ORCHESTRATEUR réveille la phase autorisée
+             │
+             ├── vérifie KILL_SWITCH, budget, leases
+             ├── recalcule le SHA-256 des 2 certificats
+             ├── confirme 348 partitions + schéma inchangé
+             │
+  03:05      ├── découpe en unités (partition / segment d'hypothèses)
+             │
+  03:06      ├── dispatch vers le runtime jetable, N unités en parallèle
+             │      chaque unité écrit : résultat + hash + checkpoint
+             │      une unité perdue est replanifiée, jamais dupliquée
+             │
+  04:20      ├── agrège, vérifie la cohérence, écrit les rapports
+             ├── évalue le gate de sortie de phase
+             │
+             ├── GATE PASS  → statut PHASE_COMPLETE_AWAITING_OWNER_REVIEW
+             │                et ATTEND. Il n'enchaîne pas seul sur la phase suivante.
+             └── GATE FAIL  → statut BLOCKED_WITH_RESUME
+                              cause exacte écrite, aucune phase suivante
+
+  À tout moment : une coupure ne coûte que l'unité en cours.
+  Le lendemain, la même commande reprend exactement où elle s'était arrêtée.</pre>
+<div class="note ok">C'est la réponse à « ça fonctionne sans moi » : le système avance seul <b>à l'intérieur</b> d'une phase autorisée, aussi loin que les gates le permettent. Il s'arrête de lui-même au gate, avec un dossier complet. Vous ne relancez jamais rien à la main — vous lisez et vous signez.</div>
+
+<h2><span class="num">06</span>Ce qui est automatisé, et ce qui ne le sera jamais</h2>
+<div class="grid2">
+<div class="card"><h3 style="color:var(--ok)">Automatisé (fiche §11)</h3><ul class="clean"><li>exécutions de calcul</li><li>contrôles déterministes</li><li>checkpoints</li><li>reprises</li><li>logs</li><li>génération des rapports</li><li>blocage automatique des gates échoués</li><li>vérification des hashes</li><li>surveillance des ressources</li></ul>
+<div class="note" style="margin-top:12px;font-size:12.5px">C'est exactement la liste de la fiche. Rien de plus n'est revendiqué.</div></div>
+<div class="card"><h3 style="color:var(--bad)">Jamais automatisé</h3><ul class="clean"><li>inventer une formule pour remplir une famille</li><li>modifier silencieusement un paramètre scientifique</li><li>supprimer un résultat négatif</li><li>ouvrir le Holdout sans autorisation explicite</li><li>modifier un certificat hérité</li><li>inventer une valeur serveur</li><li>déployer en réel sans autorisation distincte</li><li>accepter une phase à la place du propriétaire</li></ul>
+<div class="note bad" style="margin-top:12px;font-size:12.5px">Ces huit interdictions sont écrites dans le code, pas dans une consigne. Elles lèvent une exception si on les contourne.</div></div>
+</div>
+
+<h2><span class="num">07</span>Les 11 points où vous êtes réellement requis</h2>
+<p class="lede">Tout le reste est technique. Ces onze points ne sont pas des tâches qu'on pourrait vous éviter : ce sont des décisions qui n'appartiennent qu'au propriétaire, par construction.</p>
+<table><thead><tr><th>Phase</th><th>Ce que vous faites</th><th>Nature</th></tr></thead><tbody><tr><td class="mono" style="font-size:12px">P2_ANALYTICAL</td><td>répondre aux 9 décisions de définition (10 min, une fois)</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P2_ANALYTICAL</td><td>accepter ou refuser la Phase 2 après revue</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P3_MINING</td><td>accepter la Phase 3</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P4_VALIDATION</td><td>accepter la Phase 4</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P5_STRESS</td><td>accepter la Phase 5</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P6_QUALIFICATION</td><td>accepter la Phase 6</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P7_PORTFOLIO</td><td>accepter la Phase 7</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P8_HOLDOUT</td><td>AUTORISER l'ouverture du Holdout — jamais automatique</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P8_HOLDOUT</td><td>accepter la Phase 8</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P9_MQL5</td><td>fournir BLUE_GUARDIAN_ACCOUNT_SPEC (donnée propriétaire)</td><td><span class="tag t-h">BLOQUANT</span></td></tr><tr><td class="mono" style="font-size:12px">P9_MQL5</td><td>AUTORISER le déploiement réel — distinct de l'autorisation Holdout</td><td><span class="tag t-h">BLOQUANT</span></td></tr></tbody></table>
+
+<h2><span class="num">08</span>Blue Guardian : compatibilité, pas moteur de découverte</h2>
+<p class="lede">23 règles rapportées par le PDF daté du 20/09/2026. Aucune n'est traitée comme une vérité actuelle : le registre d'incertitude les marque, et les contradictions documentaires restent ouvertes.</p>
+<table><thead><tr><th>Règle rapportée</th><th>Valeur</th><th>Statut</th></tr></thead><tbody><tr><td>Phase 1 objectif</td><td class="mono" style="font-size:12px">10 %</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Phase 2 objectif</td><td class="mono" style="font-size:12px">4 %</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Durée</td><td class="mono" style="font-size:12px">illimitée</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Jours rentables minimum</td><td class="mono" style="font-size:12px">4 jours à 0,5 %/jour</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Daily loss</td><td class="mono" style="font-size:12px">4 % du solde initial, reset 17:00 EST</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Drawdown maximum</td><td class="mono" style="font-size:12px">10 % trailing puis verrouillage au solde de départ</td><td><span class="tag t-bad">CONTRADICTION_DOCUMENTAIRE</span></td></tr><tr><td>Profit split</td><td class="mono" style="font-size:12px">85 % / add-on 90 %</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Premier payout</td><td class="mono" style="font-size:12px">14 jours (add-on 7 jours)</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Consistency funded</td><td class="mono" style="font-size:12px">25 %</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Retrait minimum</td><td class="mono" style="font-size:12px">100 USD crypto / 500 USD Rise</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>EA</td><td class="mono" style="font-size:12px">autorisés</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Overnight / week-end</td><td class="mono" style="font-size:12px">autorisé</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>News challenge</td><td class="mono" style="font-size:12px">autorisé</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>News funded</td><td class="mono" style="font-size:12px">restreint, fenêtre 5 min avant/après high-impact</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Durée minimale de détention</td><td class="mono" style="font-size:12px">2 minutes</td><td><span class="tag t-bad">BLOQUANT_POUR_L_ARCHITECTURE</span></td></tr><tr><td>HFT / tick scalping / arbitrage</td><td class="mono" style="font-size:12px">interdits</td><td><span class="tag t-bad">BLOQUANT</span></td></tr><tr><td>Commission Commodities</td><td class="mono" style="font-size:12px">5 USD/lot</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Mode de facturation commission</td><td class="mono" style="font-size:12px">non publié</td><td><span class="tag t-mut">NOT_PUBLIC</span></td></tr><tr><td>Swap et taux</td><td class="mono" style="font-size:12px">non publiés</td><td><span class="tag t-mut">NOT_PUBLIC</span></td></tr><tr><td>Stop Out</td><td class="mono" style="font-size:12px">100 %</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Guardian Shield funded</td><td class="mono" style="font-size:12px">2 % de PnL flottant global</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Compte personnel / appareil non partagé</td><td class="mono" style="font-size:12px">exigé</td><td><span class="tag t-cy">REPORTED</span></td></tr><tr><td>Changement de plateforme</td><td class="mono" style="font-size:12px">impossible après le premier trade</td><td><span class="tag t-cy">REPORTED</span></td></tr></tbody></table>
+<div class="note bad"><b>Conséquence architecturale majeure — la règle des 2 minutes.</b> La stratégie est <i>tick-informed</i> : elle observe des ticks. Elle ne doit pas <i>trader</i> au tick. Toute règle dont la détention prévue est inférieure à 2 minutes est <b>exclue du périmètre Blue Guardian</b> — sans pour autant être supprimée de la recherche, qui reste indépendante. Fractionner des ordres pour contourner la règle est une fraude : c'est une interdiction dure du code.</div>
+<div class="card"><h3>Paramètres serveur <span class="mono" style="font-size:12px;color:var(--bad)">NOT_PUBLIC</span></h3>
+<p class="mini" style="margin:6px 0 0">Ces 18 éléments ne sont pas publiés. Le système ne doit jamais les inventer : il les lit dans le MT5 du compte réellement attribué, ou il marque la règle bloquante. Le PDF est un point de départ daté, pas un substitut aux conditions actuelles.</p>
+<p style="margin-top:10px;font-size:12px;color:#8497a9;line-height:1.9">taille de contrat · digits · tick size · tick value · volume minimum · volume maximum · volume step · stops level · freeze level · mode d'exécution · types d'ordres · modes de remplissage · heures de cotation/trading · conversion risque → volume · règles détaillées de slippage/deviation · politique retry · limites de fréquence · causes et règles de rejet/requote</p></div>
+
+<h2><span class="num">09</span>Ce que les ticks ne peuvent pas prouver</h2>
+<p class="lede">Fiche §4.2. Un tick de cotation n'est pas une transaction. Ces huit affirmations sont interdites au système, sauf à recevoir la donnée externe correspondante.</p>
+<table><thead><tr><th>Affirmation</th><th>Statut imposé</th></tr></thead><tbody><tr><td>volume réellement échangé</td><td><span class="tag t-bad">UNAVAILABLE</span></td></tr><tr><td>delta acheteur/vendeur</td><td><span class="tag t-bad">UNAVAILABLE</span></td></tr><tr><td>profondeur du carnet</td><td><span class="tag t-bad">UNAVAILABLE</span></td></tr><tr><td>files d'attente</td><td><span class="tag t-bad">UNAVAILABLE</span></td></tr><tr><td>taux de remplissage des ordres limites</td><td><span class="tag t-bad">UNAVAILABLE</span></td></tr><tr><td>slippage réel Blue Guardian</td><td><span class="tag t-bad">DEFERRED_EXTERNAL_DEPENDENCY</span></td></tr><tr><td>latence réelle du serveur</td><td><span class="tag t-bad">DEFERRED_EXTERNAL_DEPENDENCY</span></td></tr><tr><td>coûts complets réels</td><td><span class="tag t-bad">DEFERRED_EXTERNAL_DEPENDENCY</span></td></tr></tbody></table>
+<div class="note vio">Conséquence directe sur le portefeuille : tout modèle d'exécution est <b>CONDITIONAL ou GROSS</b>, jamais NET, tant que commission réelle, swap, slippage et latence ne sont pas confirmés. Le code refuse l'étiquette NET sans ces quatre preuves.</div>
+
+<h2><span class="num">10</span>Le budget et la contrainte matérielle</h2>
+<div class="grid2">
+<div class="card"><h3>6 000 FCFA ≈ 9,95 USD — ce qui est payé</h3>
+<table><tbody>
+<tr><td>GitHub Actions (dépôt privé)</td><td class="mono">0 FCFA</td></tr>
+<tr><td>Kaggle (token, kernels)</td><td class="mono">0 FCFA</td></tr>
+<tr><td>Google Drive (déjà en place)</td><td class="mono">0 FCFA</td></tr>
+<tr><td>DuckDB / PyArrow / Polars</td><td class="mono">0 FCFA</td></tr>
+<tr><td>Coût mensuel de la chaîne</td><td class="mono" style="color:var(--ok)">0 FCFA</td></tr>
+</tbody></table>
+<div class="note ok" style="margin-top:12px;font-size:12.5px">Les 6 000 FCFA ne sont <b>pas</b> consommés par l'infrastructure. Ils restent disponibles comme marge, non dépensés.</div></div>
+<div class="card"><h3>Matériel — ce que les statistiques exigent vraiment</h3>
+<table><tbody>
+<tr><td>DuckDB out-of-core</td><td class="mono">2 threads, 4 GB</td></tr>
+<tr><td>Empreinte par unité</td><td class="mono">1 partition</td></tr>
+<tr><td>CPU suffisant</td><td><span class="tag t-ok">OUI</span></td></tr>
+<tr><td>GPU nécessaire</td><td><span class="tag t-bad">NON</span></td></tr>
+<tr><td>RAM requise</td><td class="mono">≤ 4 GB par job</td></tr>
+</tbody></table>
+<div class="note warn" style="margin-top:12px;font-size:12.5px">Pas de GPU : les tests de la fiche sont des statistiques de séries temporelles, du bootstrap et du replay — pas du calcul matriciel dense. Un GPU n'accélérerait rien d'utile.</div></div>
+</div>
+
+<h2><span class="num">11</span>Les 43 artéfacts et la phase qui les produit</h2>
+<p class="lede">Chaque artéfact a une et une seule phase propriétaire. Le modèle lève une erreur si un artéfact est produit par deux phases — c'est un contrôle de cohérence, pas une convention.</p>
+<div class="card" style="max-height:520px;overflow-y:auto">
+<table><thead><tr><th>Artéfact</th><th>Phase propriétaire</th></tr></thead><tbody><tr><td><code>04_CHECKPOINTS/PHASE_01_XAUUSD_PRIMARY_CERTIFIED.json</code></td><td class="mono mini">P1_CERTIFIED</td></tr><tr><td><code>04_CHECKPOINTS/PHASE_02_DGP_BASE_CHRONOLOGICAL_VALIDATED_V5R10.json</code></td><td class="mono mini">P2H_CERTIFIED</td></tr><tr><td><code>ANOMALY_CANDIDATE_REGISTRY.json</code></td><td class="mono mini">P3_MINING</td></tr><tr><td><code>BASELINE_HASH_MANIFEST.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>BLUE_GUARDIAN_ACCOUNT_SPEC.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>BLUE_GUARDIAN_CHALLENGE_SIMULATION.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>BLUE_GUARDIAN_RULES_UNCERTAINTY_REGISTER.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>CANDIDATE_LOCK_MANIFEST.json</code></td><td class="mono mini">P6_QUALIFICATION</td></tr><tr><td><code>CAUSALITY_REPORT.json</code></td><td class="mono mini">P4_VALIDATION</td></tr><tr><td><code>CORRELATION_EXPOSURE_REPORT.json</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>COST_SENSITIVITY.json</code></td><td class="mono mini">P5_STRESS</td></tr><tr><td><code>DEPLOYMENT_READINESS.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>DGP_REPORT.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>DGP_VARIABLE_REGISTRY_V1.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>EA_SPEC.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>EXECUTION_COST_MODEL.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>FINAL_CERTIFICATE.json</code></td><td class="mono mini">P8_HOLDOUT</td></tr><tr><td><code>FINAL_HOLDOUT_REPORT.json</code></td><td class="mono mini">P8_HOLDOUT</td></tr><tr><td><code>FINAL_LOCK_MANIFEST.json</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>FORMULA_REGISTRY_V1.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>GOLDEN_VECTORS.parquet</code></td><td class="mono mini">P8_HOLDOUT</td></tr><tr><td><code>GRANULARITY_SPEC_V1.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>INDEPENDENT_MIRROR_REPORT.json</code></td><td class="mono mini">P8_HOLDOUT</td></tr><tr><td><code>MINING_REPORT.json</code></td><td class="mono mini">P3_MINING</td></tr><tr><td><code>MQL5_PARITY_REPORT.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>NEGATIVE_CONTROLS.json</code></td><td class="mono mini">P5_STRESS</td></tr><tr><td><code>P2_TO_P3_GATE_V1.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>PORTFOLIO_LEDGER.parquet</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>PORTFOLIO_POLICY.json</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>PORTFOLIO_REPORT.json</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>QUALIFIED_EDGE_REGISTRY.json</code></td><td class="mono mini">P6_QUALIFICATION</td></tr><tr><td><code>QUOTE_DGP_SPEC_V1.md</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>REGIME_STABILITY.parquet</code></td><td class="mono mini">P5_STRESS</td></tr><tr><td><code>REJECTED_AND_DEFERRED.csv</code></td><td class="mono mini">P6_QUALIFICATION</td></tr><tr><td><code>REJECTED_AND_INCONCLUSIVE.csv</code></td><td class="mono mini">P3_MINING</td></tr><tr><td><code>SLEEVE_RETURNS.parquet</code></td><td class="mono mini">P7_PORTFOLIO</td></tr><tr><td><code>STRESS_RESULTS.parquet</code></td><td class="mono mini">P5_STRESS</td></tr><tr><td><code>SYMBOL_RUNTIME_SPEC.json</code></td><td class="mono mini">P9_MQL5</td></tr><tr><td><code>TRADE_LEDGER.parquet</code></td><td class="mono mini">P4_VALIDATION</td></tr><tr><td><code>TRIAL_LEDGER.csv</code></td><td class="mono mini">P3_MINING</td></tr><tr><td><code>TRIAL_STATISTICS.json</code></td><td class="mono mini">P4_VALIDATION</td></tr><tr><td><code>VALIDATION_SPLITS_V1.json</code></td><td class="mono mini">P2_ANALYTICAL</td></tr><tr><td><code>WALK_FORWARD_RESULTS.parquet</code></td><td class="mono mini">P4_VALIDATION</td></tr></tbody></table></div>
+
+<h2><span class="num">12</span>Où en est le code aujourd'hui</h2>
+<div class="grid2">
+<div class="card"><h3 style="color:var(--ok)">Construit et testé</h3>
+<table><tbody>
+<tr><td>Gouvernance : phases, gates, sceau Holdout, kill switch, budget</td><td><span class="tag t-ok">OK</span></td></tr>
+<tr><td>Extraction : inventaire, échelle L0-L7, matrice, manifeste</td><td><span class="tag t-ok">OK</span></td></tr>
+<tr><td>Familles §4.2 et 9 décisions sans défaut</td><td><span class="tag t-ok">OK</span></td></tr>
+<tr><td>Segmentation, dispatch, checkpoints, reprises</td><td><span class="tag t-ok">OK</span></td></tr>
+<tr><td>Contrat de mission V2 (ce schéma)</td><td><span class="tag t-ok">OK</span></td></tr>
+</tbody></table></div>
+<div class="card"><h3 style="color:var(--warn)">Pas encore écrit</h3>
+<table><tbody>
+<tr><td>Moteur P3 : mining préenregistré + Trial Ledger</td><td><span class="tag t-h">À FAIRE</span></td></tr>
+<tr><td>Moteur P4 : walk-forward + replay Bid/Ask</td><td><span class="tag t-h">À FAIRE</span></td></tr>
+<tr><td>Moteur P5 : stress + contrôles négatifs</td><td><span class="tag t-h">À FAIRE</span></td></tr>
+<tr><td>Moteur P7 : corrélation + poids gelés</td><td><span class="tag t-h">À FAIRE</span></td></tr>
+<tr><td>Adaptateur BG + génération MQL5</td><td><span class="tag t-h">À FAIRE</span></td></tr>
+<tr><td>Accès au corpus réel (348 partitions)</td><td><span class="tag t-bad">BLOQUÉ</span></td></tr>
+</tbody></table></div>
+</div>
+<div class="note bad" style="margin-top:14px">Le corpus certifié n'est pas accessible depuis cette session. Tout ce qui est au-dessus a été prouvé sur corpus synthétique de structure identique, et le système refuse de démarrer sur une racine vide plutôt que d'improviser. Les moteurs P3-P7 seront écrits contre le schéma réel dès qu'il est lisible — pas avant, pour ne pas figer des hypothèses fausses.</div>
+
+<h2><span class="num">13</span>Le critère de réussite, tel que la fiche le définit</h2>
+<div class="note ok">Le projet ne réussit pas parce qu'il produit beaucoup de fichiers, d'indicateurs ou une courbe séduisante. Il progresse quand : les données sont traçables, les variables causales, les hypothèses préenregistrées, les résultats négatifs conservés, les anomalies résistantes, les coûts honnêtes, les edges stables, les poids sans fuite, le portefeuille gelé survivant au Holdout et au miroir.<br><br><b>Si aucune stratégie ne franchit les critères, la conclusion correcte est <span class="mono">NO_EDGE</span>. C'est une conclusion scientifique utile, pas un échec informatique.</b></div>
+
+<p class="mini" style="margin-top:40px;border-top:1px solid var(--lin);padding-top:16px">
+Rendu depuis <code>metaalpha/mission.py</code> par <code>scripts/render_architecture.py</code>. Contrôle d'intégrité : 43 artéfacts, 0 doublon(s).<br>
+Modules liés : <code>governance.py</code> (gates) · <code>extraction_ladder.py</code> · <code>extract.py</code> · <code>families.py</code> · <code>decisions.py</code> · <code>dispatch.py</code> · <code>leases.py</code> · <code>preflight.py</code></p>
+
+</div></body></html>

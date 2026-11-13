@@ -1,0 +1,135 @@
+name: dispatch-segments
+
+# LE MAILLON MANQUANT : un serveur de contrôle qui n'a PAS besoin de durer.
+#
+# Toutes les 30 min (et à la demande), GitHub Actions :
+#   1. calcule combien d'unités restent d'après les checkpoints sur Drive
+#   2. pousse un kernel Kaggle jetable qui traitera le lot suivant
+#   3. attend, récupère le rapport, et recommence si nécessaire
+#
+# Chaque exécution de ce workflow dure ~2 min (bien sous les 10 min visées).
+# C'est le kernel Kaggle qui travaille des heures, pas le runner GitHub.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Phase approuvée"
+        required: true
+        default: PHASE_2_ANALYTICAL
+        type: string
+      n_units:
+        description: "Unités par segment"
+        required: true
+        default: "40"
+        type: string
+      dry_run:
+        description: "Simulation (aucun push)"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+
+concurrency:
+  group: dispatch-segments      # un seul dispatcher à la fois
+  cancel-in-progress: false
+
+env:
+  PHASE: ${{ github.event.inputs.phase || 'PHASE_2_ANALYTICAL' }}
+  N_UNITS: ${{ github.event.inputs.n_units || '40' }}
+  DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt kaggle
+
+      - name: Garde-fou — pas de dépense non autorisée
+        run: |
+          echo "Aucun GPU demandé : enable_gpu=false (inutile, cf. étude §10.1)."
+          echo "Plafond LLM : 5 USD/mois. Aucune ressource payante n'est créée."
+
+      - name: Construire le lot à partir de l'état réel sur Drive
+        env:
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_ROOT_FOLDER_ID: ${{ secrets.GDRIVE_ROOT_FOLDER_ID }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, ".")
+          from metaalpha.remote import remote_from_env
+          from metaalpha.dispatch import read_done_from_drive
+
+          phase = os.environ["PHASE"]
+          remote = remote_from_env()
+          parts = [n for n in remote.listdir("01_PARQUET/XAUUSD_DGP_CHRONOLOGICAL_V5R10/PARTITIONS")
+                   if n.endswith(".parquet")]
+          done = read_done_from_drive(phase, remote=remote)
+          units = [p.replace(".parquet", "") for p in parts]
+          todo = [u for u in units if u not in done]
+          Path("/tmp/units.json").write_text(json.dumps(units))
+          print(f"total={len(units)} faites={len(done)} restantes={len(todo)}")
+          Path("/tmp/todo.txt").write_text(f"{len(todo)}")
+          if not todo:
+              Path("/tmp/ALL_DONE").write_text("1")
+          PY
+
+      - name: Pousser le segment Kaggle (aucun navigateur)
+        if: hashFiles('/tmp/ALL_DONE') == ''
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_OWNER: ${{ secrets.KAGGLE_USERNAME }}
+        run: |
+          ARGS=""
+          if [ "$DRY_RUN" = "true" ]; then ARGS="--dry-run"; fi
+          python -m metaalpha.dispatch \
+            --phase "$PHASE" \
+            --kernel-id "${KAGGLE_OWNER}/meta-alpha-segment" \
+            --units /tmp/units.json \
+            --n-units "$N_UNITS" \
+            --segment-minutes 210 \
+            --max-segments 2 \
+            --git-url "${{ github.server_url }}/${{ github.repository }}.git" \
+            --git-ref "${{ github.ref_name }}" \
+            $ARGS | tee /tmp/dispatch.json
+
+      - name: Publier le rapport de dispatch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dispatch-report
+          path: |
+            /tmp/dispatch.json
+            /tmp/units.json
+          retention-days: 7
+
+      - name: Alerter en cas d'échec
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `[META ALPHA] dispatch échoué — ${process.env.PHASE || 'phase'}`,
+              body: [
+                "Le dispatcher n'a pas pu pousser ou suivre un segment.",
+                "Aucune perte : la prochaine exécution relira les checkpoints sur Drive.",
+                "",
+                `Run : ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              ].join("\n"),
+              labels: ["meta-alpha", "dispatch"]
+            });

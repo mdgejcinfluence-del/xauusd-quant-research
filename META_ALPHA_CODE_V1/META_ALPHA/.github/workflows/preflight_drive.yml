@@ -1,0 +1,81 @@
+name: Préflight Drive — accès aux 348 partitions
+
+# Vérifie que le corpus certifié est atteignable AVANT toute phase scientifique.
+# Ne lit aucune donnée : seulement les certificats, leurs SHA-256 et la liste
+# des partitions. Coût : quelques secondes, aucun calcul.
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_partitions:
+        description: "Nombre de partitions attendu (certificat Phase 2)"
+        required: false
+        default: "348"
+  schedule:
+    # Chaque nuit à 02:40 UTC : détecte une perte d'accès ou une dérive du corpus
+    - cron: "40 2 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preflight-drive
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    name: Vérifier la baseline certifiée
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install google-api-python-client google-auth
+
+      - name: Préflight
+        env:
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_ROOT_FOLDER_ID: ${{ secrets.GDRIVE_ROOT_FOLDER_ID }}
+          EXPECTED_PARTITIONS: ${{ github.event.inputs.expected_partitions || '348' }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from metaalpha.drive_preflight import run_preflight
+          rep = run_preflight(expected_partitions=int(os.environ["EXPECTED_PARTITIONS"]))
+          print(json.dumps(rep, indent=2, ensure_ascii=False))
+          if rep["status"] != "PASS":
+              print("::error::Préflight non PASS — la phase scientifique reste fermée.")
+              sys.exit(1)
+          PY
+
+      - name: Publier le manifeste de baseline
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-hash-manifest
+          path: |
+            00_GOVERNANCE/BASELINE_HASH_MANIFEST.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Résumé lisible
+        if: always()
+        run: |
+          {
+            echo "## Préflight Drive"
+            echo ""
+            echo "| Étape | Résultat |"
+            echo "|---|---|"
+            echo "| Backend | ${{ job.status }} |"
+            echo ""
+            echo "Aucune donnée lue. Seuls les certificats et la liste des partitions ont été vérifiés."
+          } >> $GITHUB_STEP_SUMMARY

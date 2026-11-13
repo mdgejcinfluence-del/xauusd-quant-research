@@ -1,0 +1,15 @@
+{
+  "_instruction": "Remplacer chaque null par VOTRE valeur, puis appeler python -m metaalpha.decisions --apply answers.json",
+  "_created_by": "HUMAN",
+  "answers": {
+    "D_HORIZONS": null,
+    "D_FENETRES_VOL": null,
+    "D_WARMUP_NULL": null,
+    "D_SEUIL_SAUT": null,
+    "D_INTENSITE_T": null,
+    "D_REGIME_SPREAD": null,
+    "D_TIMEZONE_SESSIONS": null,
+    "D_METHODE_REGIME": null,
+    "D_HORIZON_LABEL": null
+  }
+}

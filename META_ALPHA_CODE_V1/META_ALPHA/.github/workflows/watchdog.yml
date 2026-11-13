@@ -1,0 +1,85 @@
+name: watchdog
+
+# Surveillance permanente SANS serveur : relit le heartbeat sur Drive et
+# signale (ou relance) si le travail s'est arrêté.
+#
+# ⚠ Arithmétique des minutes gratuites (dépôt privé = 2 000 min/mois) :
+#    un cron toutes les 30 min = 48 runs/jour. Avec un job < 60 s,
+#    cela consomme ~1 440 min/mois maximum théorique (facturation arrondie
+#    à la minute) — rester à 30 min, JAMAIS 5 min.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Installer (minimal)
+        run: pip install -r requirements.txt
+
+      - name: Lire l'état sur Drive (via compte de service)
+        env:
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          METAALPHA_ROOT: ${{ secrets.METAALPHA_ROOT }}
+        run: |
+          if [ -z "$GDRIVE_SA_JSON" ]; then
+            echo "::warning::secrets absents — le watchdog ne peut pas lire Drive"
+            exit 0
+          fi
+          python - <<'PY'
+          import json, os, sys, datetime as dt
+          from pathlib import Path
+          sa = json.loads(os.environ["GDRIVE_SA_JSON"])
+          (Path("/tmp/sa.json")).write_text(json.dumps(sa))
+          print("compte de service chargé pour", sa.get("client_email"))
+          # le montage réel dépend du runtime : rclone/gcsfuse ou API Drive.
+          # On ne prétend pas que c'est monté ici : le script échoue proprement.
+          root = os.environ.get("METAALPHA_ROOT", "")
+          if not root or not Path(root).exists():
+              print("::warning::racine non montée dans ce runner — watchdog informatif seulement")
+              sys.exit(0)
+          hb = Path(root) / "RESEARCH_V1_XAUUSD_TICK_ONLY/00_GOVERNANCE/heartbeat.json"
+          if not hb.exists():
+              print("::error::aucun heartbeat")
+              sys.exit(1)
+          data = json.loads(hb.read_text())
+          age = (dt.datetime.now(dt.timezone.utc)
+                 - dt.datetime.fromisoformat(data["utc"])).total_seconds()
+          print(f"heartbeat: {data} (âge {age:.0f}s)")
+          if age > 1800:
+              print(f"::error::heartbeat périmé ({age:.0f}s) — travail interrompu")
+              sys.exit(1)
+          PY
+
+      - name: Ouvrir une Issue en cas d'échec
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = [
+              "Le watchdog n'a pas trouvé de progression récente.",
+              "",
+              "**Action attendue** : relancer le segment (Colab/Kaggle) ou le worker.",
+              "Le moteur reprendra à la dernière unité checkpointée : aucun calcul perdu n'est rejoué.",
+              "",
+              `Run : ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+            ].join("\n");
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: "[META ALPHA] Travail interrompu — heartbeat périmé",
+              body, labels: ["meta-alpha", "watchdog"]
+            });

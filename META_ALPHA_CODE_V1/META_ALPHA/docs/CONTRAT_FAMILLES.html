@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<title>META ALPHA - Le systeme instancie les familles lui-meme</title>
+<style>
+:root{--bg:#0b0f14;--card:#141b23;--lin:#243140;--tx:#e6edf3;--mut:#8b9db0;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:32px 20px}
+.wrap{max-width:1180px;margin:0 auto}h1{font-size:28px;margin:0 0 6px}h2{font-size:19px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--lin)}
+.sub{color:var(--mut);margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--lin);border-radius:10px;padding:18px;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px}th{text-align:left;color:var(--mut);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--lin);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:8px 10px;border-bottom:1px solid #1c242e;vertical-align:top}
+tr:last-child td{border-bottom:none}
+code{background:#0d1319;padding:2px 6px;border-radius:4px;font-size:12.5px;color:var(--acc)}
+.st{font-size:12px;font-weight:600}
+.SPECIFIED{color:var(--ok)}.PENDING_OWNER_DECISION{color:var(--warn)}.UNAVAILABLE_FIELD,.DEFERRED{color:var(--bad)}
+.nodef{color:var(--bad);font-size:12px}td.src{color:var(--mut);font-size:12px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpi div{background:var(--card);border:1px solid var(--lin);border-radius:10px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.1}.kpi span{color:var(--mut);font-size:12px}
+pre{background:#0d1319;border:1px solid var(--lin);border-radius:8px;padding:14px;overflow-x:auto;font-size:12.5px;line-height:1.5;color:#c9d6e2}
+.note{border-left:3px solid var(--acc);padding:10px 14px;background:#101820;border-radius:0 8px 8px 0;font-size:14px;margin:14px 0}
+.bad-note{border-left-color:var(--bad)}.ok-note{border-left-color:var(--ok)}
+</style></head><body><div class="wrap">
+<h1>Le systeme instancie les familles lui-meme</h1>
+<p class="sub">Correction de cadrage : les familles ne sont pas a definir par le proprietaire. Elles sont extraites du dossier (section 4.2), puis instanciees, derivees et mesurees par le code. Le proprietaire ne voit que le residu irreductible.</p>
+<div class="kpi">
+<div><b>8</b><span>familles extraites de 4.2</span></div>
+<div><b>4</b><span>variables derivees sans aucune decision</span></div>
+<div><b>9</b><span>decisions irreductibles</span></div>
+<div><b>0</b><span>valeur par defaut inventee</span></div>
+<div><b>72</b><span>tests verts</span></div>
+</div>
+<h2>1. L'erreur de cadrage corrigee</h2>
+<div class="card">
+<p>Le compteur <code>scientific_families_undefined = 19</code> (lignes 168, 676, 770 du dossier) n'est pas une liste de taches. C'est un <b>champ du certificat Phase 2 herite</b>, decrivant l'ancien Formula Registry, classe <code>PARTIAL</code> et <b>hors perimetre</b> (consigne : ne pas reconstruire les Phases 1-2).</p>
+<div class="note ok-note">Les familles du livrable sont les <b>8</b> de la section 4.2, deja ecrites dans le dossier. Le code les lit, les instancie et les met a l'epreuve du schema reel. Aucune question du type "quelles sont les 19 familles" n'est posee au proprietaire.</div>
+</div>
+<h2>2. Les 8 familles, etat reel apres instanciation</h2>
+<table><thead><tr><th>Famille</th><th>Nom</th><th>Statut</th><th>Variables</th><th>Source</th></tr></thead>
+<tbody><tr><td><code>F1_PRIX_COTATIONS</code></td><td>Prix et cotations</td><td class='st SPECIFIED'>SPECIFIED</td><td>SPREAD_ABS, SPREAD_REL, MID</td><td class='src'>§4.2</td></tr><tr><td><code>F2_RENDEMENTS</code></td><td>Rendements et direction</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>RET_TICK, RET_H</td><td class='src'>§4.2</td></tr><tr><td><code>F3_VOLATILITE</code></td><td>Volatilité et variation</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>ROLL_STD_MID, ROLL_RANGE_MID</td><td class='src'>§4.2</td></tr><tr><td><code>F4_SAUTS_EXTREMES</code></td><td>Sauts et extrêmes</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>ZSCORE_ROBUST</td><td class='src'>§4.2</td></tr><tr><td><code>F5_MICROSTRUCTURE</code></td><td>Microstructure des cotations</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>UPDATE_INTENSITY, INTERARRIVAL_MEAN, SPREAD_REGIME</td><td class='src'>§4.2</td></tr><tr><td><code>F6_STRUCTURE_TEMPORELLE</code></td><td>Structure temporelle</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>SUBPERIODE</td><td class='src'>§4.2</td></tr><tr><td><code>F7_REGIMES</code></td><td>Régimes et transitions</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>REGIME_CLASS</td><td class='src'>§4.2</td></tr><tr><td><code>F8_LABELS</code></td><td>Labels de résultat futur</td><td class='st PENDING_OWNER_DECISION'>PENDING_OWNER_DECISION</td><td>MFE_H, MAE_H</td><td class='src'>§4.2</td></tr></tbody></table>
+<div class="note">F1 est <b>specifiee immediatement</b> : <code>MID</code>, <code>SPREAD_ABS</code>, <code>SPREAD_REL</code>, <code>RET_TICK</code> ne dependent d'aucun parametre libre. Le systeme les calcule seul, sans attendre personne.</div>
+<h2>3. Les 9 decisions irreductibles</h2>
+<p class="sub">Ce qui reste ne peut pas etre deduit : c'est un choix de definition scientifique. Chaque question porte ses exemples et l'absence de defaut.</p>
+<table><thead><tr><th>ID</th><th>Famille</th><th>Question</th><th>Requise par</th><th>Exemples</th><th>Defaut</th></tr></thead>
+<tbody><tr><td><code>D_HORIZONS</code></td><td>F2_RENDEMENTS</td><td>Quels horizons temporels de label préenregistrer ?</td><td>SPECIFIED</td><td class='src'>('1s', '5s', '30s', '1min', '5min')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_FENETRES_VOL</code></td><td>F3_VOLATILITE</td><td>Quelles fenêtres roulantes (en événements, pas en secondes) ?</td><td>SPECIFIED</td><td class='src'>('50', '100', '500', '1000')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_WARMUP_NULL</code></td><td>F3_VOLATILITE</td><td>Politique pendant le warm-up : NULL ou première valeur valide ?</td><td>SPECIFIED</td><td class='src'>('NULL', 'DROP_ROWS')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_SEUIL_SAUT</code></td><td>F4_SAUTS_EXTREMES</td><td>Quel seuil définit un « saut » (en z robuste) ?</td><td>SPECIFIED</td><td class='src'>('3', '4', '5', '6')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_INTENSITE_T</code></td><td>F5_MICROSTRUCTURE</td><td>Sur quelle durée mesurer l'intensité des mises à jour ?</td><td>SPECIFIED</td><td class='src'>('1s', '5s', '30s')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_REGIME_SPREAD</code></td><td>F5_MICROSTRUCTURE</td><td>Combien de classes de spread, et sur quelle fenêtre les estimer ?</td><td>SPECIFIED</td><td class='src'>('3 classes / 1 jour', '3 classes / 1 semaine', '5 classes / 1 jour')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_TIMEZONE_SESSIONS</code></td><td>F6_STRUCTURE_TEMPORELLE</td><td>Timezone de référence et règles de session : documentées ou non ?</td><td>SPECIFIED</td><td class='src'>('UTC + aucune session', 'UTC + sessions documentées', 'DEFERRED')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_METHODE_REGIME</code></td><td>F7_REGIMES</td><td>Quelle méthode de détection de régime (et combien de régimes) ?</td><td>SPECIFIED</td><td class='src'>('quantiles de volatilité / 3', 'HMM / 3', 'DEFERRED')</td><td class='nodef'>AUCUN_DEFAUT</td></tr><tr><td><code>D_HORIZON_LABEL</code></td><td>F8_LABELS</td><td>Quel horizon de détention pour MFE/MAE ?</td><td>SPECIFIED</td><td class='src'>('30s', '5min', '1h')</td><td class='nodef'>AUCUN_DEFAUT</td></tr></tbody></table>
+<h2>4. Les 8 dependances externes : differees, jamais remplacees</h2>
+<table><thead><tr><th>Dependance</th><th>Statut</th><th>Substitution</th></tr></thead>
+<tbody><tr><td><code>COMEX / GC futures</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>DXY exact</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>LBMA fixings</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>Macro point-in-time</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>Taux d'intérêt</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>VIX</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>Indices actions</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr><tr><td><code>Autres marchés</code></td><td>hors périmètre §2.2 — aucune donnée interne ne la remplace</td><td class='nodef'>INTERDIT</td></tr></tbody></table>
+<h2>5. Preuve d'execution (sortie reelle)</h2>
+<pre>=== ÉTAT DES 8 FAMILLES ===
+  F1_PRIX_COTATIONS        SPECIFIED              3 vars
+  F2_RENDEMENTS            PENDING_OWNER_DECISION 2 vars
+  F3_VOLATILITE            PENDING_OWNER_DECISION 2 vars
+  F4_SAUTS_EXTREMES        PENDING_OWNER_DECISION 1 vars
+  F5_MICROSTRUCTURE        PENDING_OWNER_DECISION 3 vars
+  F6_STRUCTURE_TEMPORELLE  PENDING_OWNER_DECISION 1 vars
+  F7_REGIMES               PENDING_OWNER_DECISION 1 vars
+  F8_LABELS                PENDING_OWNER_DECISION 2 vars
+
+=== QUESTIONS IRREDUCTIBLES ===
+  D_HORIZONS          bloque ['RET_H']
+  D_FENETRES_VOL      bloque ['ROLL_RANGE_MID', 'ROLL_STD_MID']
+  D_WARMUP_NULL       bloque ['ROLL_RANGE_MID', 'ROLL_STD_MID']
+  D_SEUIL_SAUT        bloque ['ZSCORE_ROBUST']
+  D_INTENSITE_T       bloque ['INTERARRIVAL_MEAN', 'SPREAD_REGIME', 'UPDATE_INTENSITY']
+  D_REGIME_SPREAD     bloque ['INTERARRIVAL_MEAN', 'SPREAD_REGIME', 'UPDATE_INTENSITY']
+  D_TIMEZONE_SESSIONS bloque ['SUBPERIODE']
+  D_METHODE_REGIME    bloque ['REGIME_CLASS']
+  D_HORIZON_LABEL     bloque ['MAE_H', 'MFE_H']
+
+echantillon borne : 5000 evenements
+derivables sans decision : ['SPREAD_ABS', 'SPREAD_REL', 'MID', 'RET_TICK']
+phase_status : BLOCKED_WITH_RESUME
+
+=== APRES 3 REPONSES DU PROPRIETAIRE ===
+  instanciees : ['ROLL_STD_MID', 'ROLL_RANGE_MID', 'ZSCORE_ROBUST', 'INTERARRIVAL_MEAN']
+  echantillon recalcule : MEASURED 5000</pre>
+<h2>6. Ce que le systeme refuse de faire</h2>
+<div class="card"><table><tbody>
+<tr><td>Attribuer une reponse au proprietaire sans lui</td><td class="nodef">refuse : OwnerAttributionError si answered_by != "HUMAN"</td></tr>
+<tr><td>Deviner un parametre manquant</td><td class="nodef">refuse : la variable reste PENDING_OWNER_DECISION</td></tr>
+<tr><td>Remplacer une source externe par un proxy</td><td class="nodef">refuse : replaced_by_proxy = INTERDIT</td></tr>
+<tr><td>Preremplir le formulaire de reponses</td><td class="nodef">refuse : tous les champs du template sont null</td></tr>
+<tr><td>Calculer une variable a parametre libre sur l'echantillon</td><td class="nodef">refuse : listee dans not_computed_by_design</td></tr>
+<tr><td>Charger tout le corpus en memoire</td><td class="nodef">refuse : echantillon borne par max_events</td></tr>
+</tbody></table></div>
+<h2>7. Le cycle, en une phrase</h2>
+<div class="note">Le systeme pose 9 questions une seule fois, le proprietaire repond en une dizaine de minutes, et <b>le systeme reprend seul</b> : instanciation des variables, ecriture des deux registres, recalcul des echantillons, changement de statut. Aucune intervention ensuite pour les taches techniques.</div>
+<h2>8. Colab : reponse a la question posee</h2>
+<div class="card">
+<p><b>Kaggle : oui, controlable a distance.</b> Le CLI officiel cree-ou-met-a-jour un kernel et le lance. Les tokens <code>KGAT...</code> sont documentes pour les "automated scripts, notebook workflows, CI/CD". Un serveur MCP distant officiel expose le statut et le telechargement des sorties. Un systeme muni d'un token peut donc le piloter sans navigateur.</p>
+<p style="margin-top:10px"><b>Colab : partiellement.</b> Le MCP officiel est lie a l'onglet du navigateur et exige un client local. Un fork communautaire execute sans onglet, mais il n'est pas officiel et le runtime meurt quand meme a 12 h ou a l'inactivite. C'est un <b>fallback</b>, pas un pivot.</p>
+<div class="note bad-note">Dans les deux cas, le token est revocable en un clic, contrairement a un mot de passe. <b>Je ne detiens jamais vos tokens</b> : le secret reste dans votre depot prive.</div>
+</div>
+<p class="sub" style="margin-top:34px;border-top:1px solid var(--lin);padding-top:14px">
+Fichiers : <code>metaalpha/families.py</code> - <code>metaalpha/contracts_engine.py</code> - <code>metaalpha/decisions.py</code> - <code>tests/test_contracts_engine.py</code> - <code>scripts/demo_contracts.py</code> - <code>00_GOVERNANCE/OWNER_DECISIONS_TEMPLATE.json</code></p>
+</div></body></html>

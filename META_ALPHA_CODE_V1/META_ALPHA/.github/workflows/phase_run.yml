@@ -1,0 +1,99 @@
+name: Phase autorisée — exécution segmentée
+
+# N'exécute QUE la phase autorisée par la gouvernance. Refuse de démarrer si :
+#   - la phase précédente n'est pas acceptée par le propriétaire
+#   - le sceau du Holdout est rompu
+#   - le kill switch est actif
+#   - le budget est dépassé
+#
+# CPU uniquement. Aucun GPU. Aucun accélérateur Kaggle.
+
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Phase à exécuter (doit être la prochaine autorisée)"
+        required: true
+        type: choice
+        options:
+          - PHASE_2_ANALYTICAL
+          - PHASE_3_MINING
+          - PHASE_4_VALIDATION
+          - PHASE_5_STRESS
+          - PHASE_6_QUALIFICATION
+          - PHASE_7_PORTFOLIO
+          - PHASE_8_HOLDOUT
+          - PHASE_9_MQL5
+      max_units:
+        description: "Nombre maximum d'unités de travail (borne le coût)"
+        required: false
+        default: "20"
+  schedule:
+    # Réveil quotidien : reprend la phase autorisée là où elle s'est arrêtée.
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase-${{ github.event.inputs.phase || 'scheduled' }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    name: Contrôle de gouvernance
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+      phase: ${{ steps.check.outputs.phase }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - id: check
+        env:
+          PHASE: ${{ github.event.inputs.phase || 'PHASE_2_ANALYTICAL' }}
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_ROOT_FOLDER_ID: ${{ secrets.GDRIVE_ROOT_FOLDER_ID }}
+        run: |
+          cat > /tmp/gate.py <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          from metaalpha.fs import Storage
+          from metaalpha.governance import (
+              assert_not_killed, assert_phase_authorized, load_budget, load_state,
+          )
+          from metaalpha.remote import remote_from_env
+
+          phase = os.environ["PHASE"]
+          allowed, reason = True, "phase autorisée"
+
+          # L'état de gouvernance vit sur Drive (zone de recherche), jamais dans
+          # le dépôt public : un dépôt public ne doit contenir aucune décision.
+          try:
+              remote = remote_from_env()
+              local = Path("/tmp/metaalpha_governance")
+              local.mkdir(parents=True, exist_ok=True)
+              remote.download("RESEARCH_V1_XAUUSD_TICK_ONLY/00_GOVERNANCE/state.json",
+                              local / "state.json")
+          except Exception as exc:
+              allowed, reason = False, f"état de gouvernance inaccessible : {type(exc).__name__}"
+
+          if allowed:
+              storage = Storage.open("/tmp/metaalpha_governance")
+              try:
+                  assert_not_killed(storage)
+                  assert_phase_authorized(storage, phase)
+              except Exception as exc:
+                  allowed, reason = False, f"{type(exc).__name__}: {exc}"
+
+          print(f"::notice::phase={phase} allowed={allowed} reason={reason}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"allowed={'true' if allowed else 'false'}\n")
+              f.write(f"phase={phase}\n")
+          if not allowed:
+              print("::warning::Aucune unité exécutée.")
+          PY
+          python /tmp/gate.py

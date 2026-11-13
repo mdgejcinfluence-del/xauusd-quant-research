@@ -1,0 +1,79 @@
+name: CI — tests + garde-fou secrets
+
+# Aucune clé n'est nécessaire ici : la CI doit être verte sur un fork public
+# sans le moindre secret. C'est volontaire — un projet public dont la CI exige
+# des secrets est un projet qui ne peut pas être audité.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    name: Garde-fou secrets (dépôt public)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Scan de l'arbre
+        run: python metaalpha/secrets_guard.py .
+      - name: Interdire les fichiers de credentials versionnés
+        run: |
+          BAD=$(git ls-files | grep -Ei '(^|/)(sa\.json|service_account[^/]*\.json|\.env$|\.env\.[^/]+|.*\.pem|.*\.key)$' || true)
+          if [ -n "$BAD" ]; then
+            echo "::error::Fichiers de credentials versionnés : $BAD"
+            exit 1
+          fi
+          echo "Aucun fichier de credentials versionné."
+
+  tests:
+    name: Tests (CPU, sans GPU)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Installer
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Vérifier qu'aucun GPU n'est requis
+        run: |
+          if grep -rniE 'cuda|torch|cupy|nvidia-smi' metaalpha/ config/ 2>/dev/null | grep -v ai_supervisor; then
+            echo "::error::Référence GPU trouvée dans le code de calcul"
+            exit 1
+          fi
+          echo "Aucune dépendance GPU. Exécution CPU uniquement."
+      - name: Tests
+        run: python -m pytest tests/ -q --timeout=300 || python -m pytest tests/ -q
+
+  architecture:
+    name: Cohérence de l'architecture
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Le schéma doit être reproductible depuis le modèle
+        run: |
+          python -m pip install -r requirements.txt
+          PYTHONPATH=. python scripts/render_architecture.py
+          git diff --exit-code docs/ARCHITECTURE_COMPLETE_V2.html \
+            || { echo "::error::Le schéma HTML a dérivé de metaalpha/mission.py — régénérer."; exit 1; }
