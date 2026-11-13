@@ -49,6 +49,12 @@ with open(csv_path,'a') as csv:
         vals=[name]+[('' if v is None else str(v)) for v in r]
         csv.write(','.join(vals)+'\n'); csv.flush()
         state['done'][name]={'rows': int(r[0])}
+        # Checkpoint GitHub periodique: le travail survit a toute coupure.
+        if len(state['done']) % 20 == 0 and pathlib.Path('.git').exists():
+            subprocess.run(['git','config','user.name','github-actions[bot]']); subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
+            subprocess.run(['git','add','reports/meta_alpha/phase2'])
+            subprocess.run(['git','commit','-q','-m',f"Checkpoint automatique Phase 2: {len(state['done'])}/348 partitions mesurees"])
+            subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
         state_path.write_text(json.dumps(state, indent=1))
         print(name, 'rows', r[0], 'regressions', r[3], 'invalid', r[5], flush=True)
 print('batch termine')
