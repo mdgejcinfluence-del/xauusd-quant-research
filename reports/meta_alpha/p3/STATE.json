@@ -1,0 +1,27 @@
+{
+ "pass": "A",
+ "done": [
+  "part_000001.parquet",
+  "part_000002.parquet",
+  "part_000003.parquet",
+  "part_000004.parquet",
+  "part_000005.parquet",
+  "part_000006.parquet",
+  "part_000007.parquet",
+  "part_000008.parquet",
+  "part_000009.parquet",
+  "part_000010.parquet",
+  "part_000011.parquet",
+  "part_000012.parquet",
+  "part_000013.parquet",
+  "part_000014.parquet",
+  "part_000015.parquet",
+  "part_000016.parquet",
+  "part_000017.parquet",
+  "part_000018.parquet",
+  "part_000019.parquet",
+  "part_000020.parquet"
+ ],
+ "thresholds": {},
+ "buckets": {}
+}
