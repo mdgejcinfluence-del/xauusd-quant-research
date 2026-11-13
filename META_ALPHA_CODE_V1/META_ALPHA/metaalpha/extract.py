@@ -64,18 +64,58 @@ def _expr_for(variable_id: str, params: dict[str, Any]) -> str | None:
         n = _as_int(w)
         if n is None:
             raise _MissingParameter(f"ROLL_STD_MID : fenêtre absente ou non entière ({w!r})")
-        return (f"stddev_samp((ask + bid) / 2.0) OVER (ORDER BY t "
-                f"ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW)")
+        # Politique NULL de warm-up: DuckDB reduit la fenetre en debut de serie,
+        # donc on masque explicitement tant que N evenements ne sont pas atteints.
+        return (f"CASE WHEN row_number() OVER (ORDER BY t) >= {n} THEN "
+                f"stddev_samp((ask + bid) / 2.0) OVER (ORDER BY t "
+                f"ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW) END")
 
     if v == "ROLL_RANGE_MID":
         w = params.get(PARAM_NAME["ROLL_RANGE_MID"])
         n = _as_int(w)
         if n is None:
             raise _MissingParameter(f"ROLL_RANGE_MID : fenêtre absente ou non entière ({w!r})")
-        return (f"(max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW)"
-                f" - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW))")
+        return (f"CASE WHEN row_number() OVER (ORDER BY t) >= {n} THEN "
+                f"(max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW)"
+                f" - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW)) END")
+
+    if v == "UPDATE_INTENSITY":
+        w = params.get("T")
+        n = _as_seconds(w)
+        if n is None:
+            raise _MissingParameter(f"UPDATE_INTENSITY : duree T absente ou non entiere ({w!r})")
+        # fenetre temps causale [t-T, t] : RANGE sur le timestamp, passe + present.
+        return (f"count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL {n} SECOND PRECEDING AND CURRENT ROW)")
+
+    if v == "INTERARRIVAL_MEAN":
+        w = params.get("N")
+        n = _as_int(w)
+        if n is None:
+            raise _MissingParameter(f"INTERARRIVAL_MEAN : fenetre N absente ou non entiere ({w!r})")
+        # moyenne des N derniers inter-arrivees = (t - t[t-N]) / N (somme telescopique exacte).
+        # NULL tant que t[t-N] n'existe pas (warm-up NULL, aucune valeur fabriquee).
+        return (f"(epoch(t) - epoch(lag(t, {n}) OVER (ORDER BY t))) / {n}.0")
+
+    if v == "RET_H":
+        raise _NotTranslatable(
+            "RET_H : alignement temporel soumis au proprietaire, non valide - activation interdite")
 
     raise _NotTranslatable(f"{variable_id} : pas de traduction SQL certifiée à ce stade")
+
+
+def _as_seconds(x: Any) -> int | None:
+    """Duree proprietaire ('1s', '5s', '30s', '1min') -> secondes entieres."""
+    if isinstance(x, (int, float)) and not isinstance(x, bool):
+        return int(x) if int(x) > 0 else None
+    s = str(x).strip().lower()
+    try:
+        if s.endswith("min"):
+            return int(float(s[:-3]) * 60)
+        if s.endswith("s"):
+            return int(float(s[:-1]))
+        return int(float(s))
+    except (TypeError, ValueError):
+        return None
 
 
 class _MissingParameter(RuntimeError):
@@ -111,15 +151,28 @@ def plan_extraction(storage: Storage) -> dict[str, Any]:
     for key, var in reg.get("variables", {}).items():
         vid = var.get("variable_id") or key.split("@")[0]
         params = var.get("parameters") or {}
-        try:
-            expr = _expr_for(vid, params)
-        except _MissingParameter as exc:
-            refused.append({"variable_id": vid, "reason": str(exc), "cause": "PARAMETRE_MANQUANT"})
-            continue
-        except _NotTranslatable as exc:
-            refused.append({"variable_id": vid, "reason": str(exc), "cause": "FORMULE_NON_CERTIFIEE"})
-            continue
-        extractible.append({"variable_id": vid, "sql": expr, "parameters": params})
+        # Remediation audit: chaque couple (variable, fenetre) est une entree
+        # distincte, certifiable separement, sans ecraser les autres fenetres.
+        window_key = {"ROLL_STD_MID": "N", "ROLL_RANGE_MID": "N",
+                      "UPDATE_INTENSITY": "T", "INTERARRIVAL_MEAN": "N"}.get(vid)
+        windows = [None]
+        if window_key and isinstance(params.get(window_key), (list, tuple)):
+            windows = list(params[window_key])
+        for w in windows:
+            p_one = dict(params)
+            entry_id = vid
+            if w is not None:
+                p_one[window_key] = w
+                entry_id = f"{vid}_{window_key}{w}"
+            try:
+                expr = _expr_for(vid, p_one)
+            except _MissingParameter as exc:
+                refused.append({"variable_id": vid, "entry_id": entry_id, "reason": str(exc), "cause": "PARAMETRE_MANQUANT"})
+                continue
+            except _NotTranslatable as exc:
+                refused.append({"variable_id": vid, "entry_id": entry_id, "reason": str(exc), "cause": "FORMULE_NON_CERTIFIEE"})
+                continue
+            extractible.append({"variable_id": vid, "entry_id": entry_id, "sql": expr, "parameters": p_one})
 
     return {
         "status": "PLANNED",
@@ -149,7 +202,7 @@ def extract_partition(
     if not feats:
         return {"status": "NOTHING_TO_EXTRACT", "reason": "aucune variable extractible"}
 
-    select_list = ",\n        ".join(f"{f['sql']} AS {f['variable_id']}" for f in feats)
+    select_list = ",\n        ".join(f"{f['sql']} AS {f.get('entry_id', f['variable_id'])}" for f in feats)
     src = Path(parquet_path).as_posix()
     dst = Path(out_path)
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -176,7 +229,7 @@ def extract_partition(
         "source": str(parquet_path),
         "output": str(dst),
         "rows": int(rows),
-        "columns": [f["variable_id"] for f in feats],
+        "columns": [f.get("entry_id", f["variable_id"]) for f in feats],
         "sha256": sha256_file(dst),
         "size_bytes": dst.stat().st_size,
     }
