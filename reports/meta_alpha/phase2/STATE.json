@@ -2,6 +2,60 @@
  "done": {
   "part_000001.parquet": {
    "rows": 40112
+  },
+  "part_000002.parquet": {
+   "rows": 48504
+  },
+  "part_000003.parquet": {
+   "rows": 40163
+  },
+  "part_000004.parquet": {
+   "rows": 37147
+  },
+  "part_000005.parquet": {
+   "rows": 53645
+  },
+  "part_000006.parquet": {
+   "rows": 37035
+  },
+  "part_000007.parquet": {
+   "rows": 39978
+  },
+  "part_000008.parquet": {
+   "rows": 48684
+  },
+  "part_000009.parquet": {
+   "rows": 39761
+  },
+  "part_000010.parquet": {
+   "rows": 41898
+  },
+  "part_000011.parquet": {
+   "rows": 51801
+  },
+  "part_000012.parquet": {
+   "rows": 38448
+  },
+  "part_000013.parquet": {
+   "rows": 38863
+  },
+  "part_000014.parquet": {
+   "rows": 54456
+  },
+  "part_000015.parquet": {
+   "rows": 39031
+  },
+  "part_000016.parquet": {
+   "rows": 42393
+  },
+  "part_000017.parquet": {
+   "rows": 49783
+  },
+  "part_000018.parquet": {
+   "rows": 42399
+  },
+  "part_000019.parquet": {
+   "rows": 39036
   }
  }
 }
