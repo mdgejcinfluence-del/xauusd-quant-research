@@ -30,3 +30,14 @@ Secrets GitHub à déposer par le propriétaire (jamais dans le code) :
   scan propre) — aucune poussée publique faite en silence.
 - Moteurs P3–P7 : à écrire contre le schéma réel désormais connu, phase par phase, gate par gate.
 - Holdout : scellé. Aucune ouverture. Aucune acceptation de phase à la place du propriétaire.
+
+## Ajout — Kaggle opérationnel (13 novembre)
+- Secrets présents dans le dépôt de travail : `KAGGLE_USERNAME` ✅, `KAGGLE_KEY` ✅.
+- Format détecté : **token moderne `KGAT`** (pas une clé legacy) — authentification
+  réussie en mode Bearer (`KAGGLE_API_TOKEN`), vérifiée par appel API réel
+  (`kaggle kernels list --mine`) : voir `reports/meta_alpha/KAGGLE_CHECK.json`.
+- Le workflow de dispatch a été branché sur ce mode token (+ correctif `six`,
+  dépendance manquante du CLI Kaggle récent).
+- Reste, pour le lancement des phases : les secrets de compte de service Drive
+  (`GDRIVE_SA_JSON`, `GDRIVE_ROOT_FOLDER_ID`) — lecture déjà couverte par les liens
+  publics, écriture des checkpoints à brancher à ce moment-là.
