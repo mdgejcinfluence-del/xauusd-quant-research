@@ -1,6 +1,5 @@
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase2_batch.py", line 32, in <module>
-    subprocess.run(['gdown','-q','--output',local,fid], check=True)
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['gdown', '-q', '--output', '/tmp/part_000220.parquet', '1ZOxrjNdHuHi3Okfm4ITCtDle8KWelt6a']' returned non-zero exit status 1.
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase2_batch.py", line 36, in <module>
+    else: raise RuntimeError(f'telechargement impossible apres 4 essais: {name}')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: telechargement impossible apres 4 essais: part_000257.parquet
