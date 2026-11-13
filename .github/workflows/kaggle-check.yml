@@ -13,7 +13,7 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q kaggle
+      - run: pip install -q "kaggle==1.6.17"
       - name: Presence des secrets et authentification Kaggle
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
@@ -32,7 +32,7 @@ jobs:
           if rep["kaggle_username_present"] and rep["kaggle_key_present"]:
               r=subprocess.run(["kaggle","kernels","list","--mine","--page-size","1"],capture_output=True,text=True,timeout=120)
               rep["kaggle_auth_ok"]=(r.returncode==0)
-              rep["kaggle_auth_detail"]="OK - API Kaggle authentifiee" if r.returncode==0 else (r.stderr or r.stdout)[:300]
+              rep["kaggle_auth_detail"]="OK - API Kaggle authentifiee" if r.returncode==0 else (r.stderr or r.stdout)[-1500:]
           pathlib.Path("reports/meta_alpha/KAGGLE_CHECK.json").write_text(json.dumps(rep,indent=2))
           print(json.dumps(rep,indent=2))
           PY
