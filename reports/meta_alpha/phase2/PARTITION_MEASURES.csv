@@ -1,1 +1,2 @@
 partition,rows,min_ts,max_ts,ts_regressions,dup_timestamps,invalid_quotes,max_mid_diff,max_spread_diff,gaps_gt_60s,max_gap_s,mean_spread_rel,p50_spread_rel,p95_spread_rel,mean_ret_tick,std_ret_tick
+part_000001.parquet,40112,2010-01-04 00:01:10.457000+00:00,2010-01-05 07:59:48.864000+00:00,0,0,0,0.0,0.0,16,201.791,0.0004266083846379761,0.00044881756089432486,0.0005395605358397583,7.387018023233237e-07,6.679089591925937e-05
