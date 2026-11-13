@@ -33,6 +33,30 @@ Plan machine-readable : `PLAN_EXTRACTION_CONSOLIDE.json` (22 extractibles, 6 ref
   pas encore implémentée — la variable reste donc bloquée pour le calcul,
   approbation de configuration ≠ activation.
 
+### SQL exact des 22 entrees certifiees
+- `INTERARRIVAL_MEAN_N50` (feature) : `(epoch(t) - epoch(lag(t, 50) OVER (ORDER BY t))) / 50.0`
+- `INTERARRIVAL_MEAN_N100` (feature) : `(epoch(t) - epoch(lag(t, 100) OVER (ORDER BY t))) / 100.0`
+- `INTERARRIVAL_MEAN_N500` (feature) : `(epoch(t) - epoch(lag(t, 500) OVER (ORDER BY t))) / 500.0`
+- `INTERARRIVAL_MEAN_N1000` (feature) : `(epoch(t) - epoch(lag(t, 1000) OVER (ORDER BY t))) / 1000.0`
+- `RET_H_H1s` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 1 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H5s` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 5 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H30s` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 30 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H1min` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 60 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H5min` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 300 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H15min` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 900 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `RET_H_H1h` (label) : `(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 3600 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))`
+- `ROLL_RANGE_MID_N50` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 50 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW)) END`
+- `ROLL_RANGE_MID_N100` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 100 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW)) END`
+- `ROLL_RANGE_MID_N500` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 500 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW)) END`
+- `ROLL_RANGE_MID_N1000` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 1000 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW)) END`
+- `ROLL_STD_MID_N50` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 51 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW) END`
+- `ROLL_STD_MID_N100` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 101 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW) END`
+- `ROLL_STD_MID_N500` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 501 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW) END`
+- `ROLL_STD_MID_N1000` (feature) : `CASE WHEN row_number() OVER (ORDER BY t) >= 1001 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW) END`
+- `UPDATE_INTENSITY_T1s` (feature) : `count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 1 SECOND PRECEDING AND CURRENT ROW)`
+- `UPDATE_INTENSITY_T5s` (feature) : `count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 5 SECOND PRECEDING AND CURRENT ROW)`
+- `UPDATE_INTENSITY_T30s` (feature) : `count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 30 SECOND PRECEDING AND CURRENT ROW)`
+
 ## 3. Tests
 - Certification SQL : chaque traduction exécutée sous DuckDB sur données contrôlées,
   comparée à des références Python indépendantes (dont RET_H : horizons 5s exacts,

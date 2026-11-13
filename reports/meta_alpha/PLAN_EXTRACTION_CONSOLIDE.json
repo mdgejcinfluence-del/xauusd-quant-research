@@ -1,0 +1,243 @@
+{
+ "status": "PLANNED",
+ "extractible_total": 22,
+ "refused_total": 6,
+ "extractible": [
+  {
+   "variable_id": "INTERARRIVAL_MEAN",
+   "entry_id": "INTERARRIVAL_MEAN_N50",
+   "sql": "(epoch(t) - epoch(lag(t, 50) OVER (ORDER BY t))) / 50.0",
+   "parameters": {
+    "N": 50
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "INTERARRIVAL_MEAN",
+   "entry_id": "INTERARRIVAL_MEAN_N100",
+   "sql": "(epoch(t) - epoch(lag(t, 100) OVER (ORDER BY t))) / 100.0",
+   "parameters": {
+    "N": 100
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "INTERARRIVAL_MEAN",
+   "entry_id": "INTERARRIVAL_MEAN_N500",
+   "sql": "(epoch(t) - epoch(lag(t, 500) OVER (ORDER BY t))) / 500.0",
+   "parameters": {
+    "N": 500
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "INTERARRIVAL_MEAN",
+   "entry_id": "INTERARRIVAL_MEAN_N1000",
+   "sql": "(epoch(t) - epoch(lag(t, 1000) OVER (ORDER BY t))) / 1000.0",
+   "parameters": {
+    "N": 1000
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H1s",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 1 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "1s"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H5s",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 5 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "5s"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H30s",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 30 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "30s"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H1min",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 60 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "1min"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H5min",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 300 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "5min"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H15min",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 900 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "15min"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "RET_H",
+   "entry_id": "RET_H_H1h",
+   "sql": "(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL 3600 SECOND ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))",
+   "parameters": {
+    "H": "1h"
+   },
+   "kind": "label"
+  },
+  {
+   "variable_id": "ROLL_RANGE_MID",
+   "entry_id": "ROLL_RANGE_MID_N50",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 50 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW)) END",
+   "parameters": {
+    "N": 50
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_RANGE_MID",
+   "entry_id": "ROLL_RANGE_MID_N100",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 100 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW)) END",
+   "parameters": {
+    "N": 100
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_RANGE_MID",
+   "entry_id": "ROLL_RANGE_MID_N500",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 500 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW)) END",
+   "parameters": {
+    "N": 500
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_RANGE_MID",
+   "entry_id": "ROLL_RANGE_MID_N1000",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 1000 THEN (max((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW) - min((ask + bid) / 2.0) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW)) END",
+   "parameters": {
+    "N": 1000
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_STD_MID",
+   "entry_id": "ROLL_STD_MID_N50",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 51 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 49 PRECEDING AND CURRENT ROW) END",
+   "parameters": {
+    "N": 50
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_STD_MID",
+   "entry_id": "ROLL_STD_MID_N100",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 101 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 99 PRECEDING AND CURRENT ROW) END",
+   "parameters": {
+    "N": 100
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_STD_MID",
+   "entry_id": "ROLL_STD_MID_N500",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 501 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 499 PRECEDING AND CURRENT ROW) END",
+   "parameters": {
+    "N": 500
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "ROLL_STD_MID",
+   "entry_id": "ROLL_STD_MID_N1000",
+   "sql": "CASE WHEN row_number() OVER (ORDER BY t) >= 1001 THEN stddev_samp(ret_mid) OVER (ORDER BY t ROWS BETWEEN 999 PRECEDING AND CURRENT ROW) END",
+   "parameters": {
+    "N": 1000
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "UPDATE_INTENSITY",
+   "entry_id": "UPDATE_INTENSITY_T1s",
+   "sql": "count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 1 SECOND PRECEDING AND CURRENT ROW)",
+   "parameters": {
+    "T": "1s"
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "UPDATE_INTENSITY",
+   "entry_id": "UPDATE_INTENSITY_T5s",
+   "sql": "count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 5 SECOND PRECEDING AND CURRENT ROW)",
+   "parameters": {
+    "T": "5s"
+   },
+   "kind": "feature"
+  },
+  {
+   "variable_id": "UPDATE_INTENSITY",
+   "entry_id": "UPDATE_INTENSITY_T30s",
+   "sql": "count(*) OVER (ORDER BY t RANGE BETWEEN INTERVAL 30 SECOND PRECEDING AND CURRENT ROW)",
+   "parameters": {
+    "T": "30s"
+   },
+   "kind": "feature"
+  }
+ ],
+ "refused": [
+  {
+   "variable_id": "MAE_H",
+   "entry_id": "MAE_H",
+   "reason": "MAE_H : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  },
+  {
+   "variable_id": "MFE_H",
+   "entry_id": "MFE_H",
+   "reason": "MFE_H : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  },
+  {
+   "variable_id": "REGIME_CLASS",
+   "entry_id": "REGIME_CLASS",
+   "reason": "REGIME_CLASS : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  },
+  {
+   "variable_id": "SPREAD_REGIME",
+   "entry_id": "SPREAD_REGIME",
+   "reason": "SPREAD_REGIME : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  },
+  {
+   "variable_id": "SUBPERIODE",
+   "entry_id": "SUBPERIODE",
+   "reason": "SUBPERIODE : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  },
+  {
+   "variable_id": "ZSCORE_ROBUST",
+   "entry_id": "ZSCORE_ROBUST",
+   "reason": "ZSCORE_ROBUST : pas de traduction SQL certifiée à ce stade",
+   "cause": "FORMULE_NON_CERTIFIEE"
+  }
+ ]
+}
