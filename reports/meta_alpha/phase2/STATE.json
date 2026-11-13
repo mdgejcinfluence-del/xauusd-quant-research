@@ -896,6 +896,66 @@
   },
   "part_000299.parquet": {
    "rows": 4475864
+  },
+  "part_000300.parquet": {
+   "rows": 5582001
+  },
+  "part_000301.parquet": {
+   "rows": 4916689
+  },
+  "part_000302.parquet": {
+   "rows": 4402125
+  },
+  "part_000303.parquet": {
+   "rows": 5201451
+  },
+  "part_000304.parquet": {
+   "rows": 7586849
+  },
+  "part_000305.parquet": {
+   "rows": 6332932
+  },
+  "part_000306.parquet": {
+   "rows": 5193330
+  },
+  "part_000307.parquet": {
+   "rows": 5413409
+  },
+  "part_000308.parquet": {
+   "rows": 5406073
+  },
+  "part_000309.parquet": {
+   "rows": 5398944
+  },
+  "part_000310.parquet": {
+   "rows": 5897197
+  },
+  "part_000311.parquet": {
+   "rows": 4407750
+  },
+  "part_000312.parquet": {
+   "rows": 4467320
+  },
+  "part_000313.parquet": {
+   "rows": 4390130
+  },
+  "part_000314.parquet": {
+   "rows": 4925937
+  },
+  "part_000315.parquet": {
+   "rows": 4462256
+  },
+  "part_000316.parquet": {
+   "rows": 3954609
+  },
+  "part_000317.parquet": {
+   "rows": 3572308
+  },
+  "part_000318.parquet": {
+   "rows": 2950783
+  },
+  "part_000319.parquet": {
+   "rows": 2565650
   }
  }
 }
