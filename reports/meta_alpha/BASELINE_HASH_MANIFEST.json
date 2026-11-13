@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "source": "lien public Drive META_ALPHA_XAUUSD_DGP (lecture seule)",
+  "p1_sha256_canonical": "9bbeb9a22acb5a12b36a337c1797c74f40330f8ac19517dbf6f72e90cd242248",
+  "p2_sha256_canonical": "bb3b63f1a15395ea3cd13b489091c7b8a83557e1725e50613ada2f3e38e774e1",
+  "p1_file_sha256": "430e31020dac374d43d6026c6b7fec65a45f14f1aa11b95215210729a155b5b9",
+  "p2_file_sha256": "f277802c985ecadf85e6056c05af4ff8f2cb179f3e17ca6794edbec1680e4f16",
+  "partitions_count": 348,
+  "partitions_listing_sha256": "sha256:2b21ef603a6a6c74943e4c9cc959399a0c6670b34cb3813d510c291d3e025438",
+  "total_rows_footers": 685070398,
+  "ticks_expected_by_certificate": 685118625,
+  "schema_signatures": {
+    "fa1e4b2b96a29903": {
+      "partitions": 293,
+      "rows": 357818895
+    },
+    "bee1fc6dc6b43616": {
+      "partitions": 54,
+      "rows": 327251503
+    }
+  }
+}
