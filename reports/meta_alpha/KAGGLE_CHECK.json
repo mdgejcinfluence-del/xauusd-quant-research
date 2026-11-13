@@ -4,5 +4,5 @@
   "gdrive_sa_present": false,
   "gdrive_root_id_present": false,
   "kaggle_auth_ok": false,
-  "kaggle_auth_detail": "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/bin/kaggle\", line 3, in <module>\n    from kaggle.cli import main\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/__init__.py\", line 3, in <module>\n    from kaggle.api.kaggle_api_ext"
+  "kaggle_auth_detail": "401 - Unauthorized - Unauthenticated\n"
 }
