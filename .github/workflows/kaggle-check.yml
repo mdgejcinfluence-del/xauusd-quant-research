@@ -1,0 +1,44 @@
+name: Verification acces Kaggle (presence + authentification, aucune valeur affichee)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/kaggle_check.txt"]
+permissions: { contents: write }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q kaggle
+      - name: Presence des secrets et authentification Kaggle
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_ROOT_FOLDER_ID: ${{ secrets.GDRIVE_ROOT_FOLDER_ID }}
+        run: |
+          mkdir -p reports/meta_alpha
+          python3 - <<'PY'
+          import os, json, subprocess, pathlib
+          rep={"kaggle_username_present": bool(os.environ.get("KAGGLE_USERNAME")),
+               "kaggle_key_present": bool(os.environ.get("KAGGLE_KEY")),
+               "gdrive_sa_present": bool(os.environ.get("GDRIVE_SA_JSON")),
+               "gdrive_root_id_present": bool(os.environ.get("GDRIVE_ROOT_FOLDER_ID")),
+               "kaggle_auth_ok": False, "kaggle_auth_detail": ""}
+          if rep["kaggle_username_present"] and rep["kaggle_key_present"]:
+              r=subprocess.run(["kaggle","kernels","list","--mine","--page-size","1"],capture_output=True,text=True,timeout=120)
+              rep["kaggle_auth_ok"]=(r.returncode==0)
+              rep["kaggle_auth_detail"]="OK - API Kaggle authentifiee" if r.returncode==0 else (r.stderr or r.stdout)[:300]
+          pathlib.Path("reports/meta_alpha/KAGGLE_CHECK.json").write_text(json.dumps(rep,indent=2))
+          print(json.dumps(rep,indent=2))
+          PY
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/KAGGLE_CHECK.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Verification Kaggle: presence des secrets et authentification (aucune valeur exposee)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
