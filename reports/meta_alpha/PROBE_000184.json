@@ -1,0 +1,74 @@
+{
+  "name": "part_000184.parquet",
+  "drive_id": "11TKJcp1Aj7n0kQY_bUBJb2yfPVq5ROdp",
+  "bytes": 1478981,
+  "sha256": "2c96b22329d4335a13f1319dad42de3d8dff3a143799fa8514aeaf6132b84e11",
+  "rows": 48227,
+  "row_groups": 1,
+  "schema": [
+    {
+      "name": "observation_id",
+      "type": "int64"
+    },
+    {
+      "name": "timestamp_utc",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "bid",
+      "type": "double"
+    },
+    {
+      "name": "ask",
+      "type": "double"
+    },
+    {
+      "name": "mid",
+      "type": "double"
+    },
+    {
+      "name": "spread_abs",
+      "type": "double"
+    },
+    {
+      "name": "spread_rel",
+      "type": "double"
+    },
+    {
+      "name": "bid_volume",
+      "type": "double"
+    },
+    {
+      "name": "ask_volume",
+      "type": "double"
+    },
+    {
+      "name": "symbol",
+      "type": "string"
+    },
+    {
+      "name": "source_file",
+      "type": "string"
+    },
+    {
+      "name": "file_row_number",
+      "type": "int64"
+    },
+    {
+      "name": "previous_timestamp",
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "previous_mid",
+      "type": "double"
+    },
+    {
+      "name": "log_return",
+      "type": "double"
+    },
+    {
+      "name": "abs_log_return",
+      "type": "double"
+    }
+  ]
+}
