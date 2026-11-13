@@ -1,0 +1,153 @@
+{
+  "source": "public Drive link, partitions 1 and 348",
+  "files": [
+    {
+      "name": "part_000001.parquet",
+      "bytes": 1763664,
+      "sha256": "66954ecc688c304c72f4971b942bb56ceeb4fe4c30be42b9facd0e8d7c8708b9",
+      "rows": 40112,
+      "row_groups": 1,
+      "created_by": "DuckDB version v1.3.2 (build 0b83e5d2f6)",
+      "schema": [
+        {
+          "name": "observation_id",
+          "type": "int64"
+        },
+        {
+          "name": "timestamp_utc",
+          "type": "timestamp[us, tz=UTC]"
+        },
+        {
+          "name": "bid",
+          "type": "double"
+        },
+        {
+          "name": "ask",
+          "type": "double"
+        },
+        {
+          "name": "mid",
+          "type": "double"
+        },
+        {
+          "name": "spread_abs",
+          "type": "double"
+        },
+        {
+          "name": "spread_rel",
+          "type": "double"
+        },
+        {
+          "name": "bid_volume",
+          "type": "double"
+        },
+        {
+          "name": "ask_volume",
+          "type": "double"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "type": "string"
+        },
+        {
+          "name": "file_row_number",
+          "type": "int64"
+        },
+        {
+          "name": "previous_timestamp",
+          "type": "timestamp[us, tz=UTC]"
+        },
+        {
+          "name": "previous_mid",
+          "type": "double"
+        },
+        {
+          "name": "log_return",
+          "type": "double"
+        },
+        {
+          "name": "abs_log_return",
+          "type": "double"
+        }
+      ]
+    },
+    {
+      "name": "part_000348.parquet",
+      "bytes": 291913210,
+      "sha256": "aa18a6821ad4ab78bae9f73c833783a59d4a4c7b5f01f375608381ae9efbe42c",
+      "rows": 7896153,
+      "row_groups": 65,
+      "created_by": "DuckDB version v1.3.2 (build 0b83e5d2f6)",
+      "schema": [
+        {
+          "name": "timestamp_utc",
+          "type": "timestamp[us, tz=UTC]"
+        },
+        {
+          "name": "bid",
+          "type": "double"
+        },
+        {
+          "name": "ask",
+          "type": "double"
+        },
+        {
+          "name": "bid_volume",
+          "type": "uint32"
+        },
+        {
+          "name": "ask_volume",
+          "type": "uint32"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "type": "string"
+        },
+        {
+          "name": "file_row_number",
+          "type": "int64"
+        },
+        {
+          "name": "mid",
+          "type": "double"
+        },
+        {
+          "name": "spread_abs",
+          "type": "double"
+        },
+        {
+          "name": "spread_rel",
+          "type": "double"
+        },
+        {
+          "name": "previous_timestamp",
+          "type": "timestamp[us, tz=UTC]"
+        },
+        {
+          "name": "previous_mid",
+          "type": "double"
+        },
+        {
+          "name": "log_return",
+          "type": "double"
+        },
+        {
+          "name": "abs_log_return",
+          "type": "double"
+        },
+        {
+          "name": "observation_id",
+          "type": "int64"
+        }
+      ]
+    }
+  ]
+}
