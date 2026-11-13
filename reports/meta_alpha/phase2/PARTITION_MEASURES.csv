@@ -1,0 +1,1 @@
+partition,rows,min_ts,max_ts,ts_regressions,dup_timestamps,invalid_quotes,max_mid_diff,max_spread_diff,gaps_gt_60s,max_gap_s,mean_spread_rel,p50_spread_rel,p95_spread_rel,mean_ret_tick,std_ret_tick
