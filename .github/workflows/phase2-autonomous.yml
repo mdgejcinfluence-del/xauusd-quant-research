@@ -1,0 +1,28 @@
+name: Phase 2 autonome (L2-L4 par lot)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/phase2_batch.txt"]
+permissions: { contents: write }
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q gdown duckdb
+      - name: Executer le lot demande
+        run: |
+          read START END < import_trigger/phase2_batch.txt
+          python3 ci_tools/phase2_batch.py $START $END
+      - name: Commit mesures + etat (reprise)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/phase2 || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Phase 2 autonome: mesures L2-L4 du lot (etat de reprise mis a jour)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
