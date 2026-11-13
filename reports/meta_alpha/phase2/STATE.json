@@ -56,6 +56,66 @@
   },
   "part_000019.parquet": {
    "rows": 39036
+  },
+  "part_000020.parquet": {
+   "rows": 54695
+  },
+  "part_000021.parquet": {
+   "rows": 39076
+  },
+  "part_000022.parquet": {
+   "rows": 42080
+  },
+  "part_000023.parquet": {
+   "rows": 49100
+  },
+  "part_000024.parquet": {
+   "rows": 41436
+  },
+  "part_000025.parquet": {
+   "rows": 44585
+  },
+  "part_000026.parquet": {
+   "rows": 52662
+  },
+  "part_000027.parquet": {
+   "rows": 41235
+  },
+  "part_000028.parquet": {
+   "rows": 41547
+  },
+  "part_000029.parquet": {
+   "rows": 55303
+  },
+  "part_000030.parquet": {
+   "rows": 41316
+  },
+  "part_000031.parquet": {
+   "rows": 44376
+  },
+  "part_000032.parquet": {
+   "rows": 49785
+  },
+  "part_000033.parquet": {
+   "rows": 44267
+  },
+  "part_000034.parquet": {
+   "rows": 41886
+  },
+  "part_000035.parquet": {
+   "rows": 55592
+  },
+  "part_000036.parquet": {
+   "rows": 42033
+  },
+  "part_000037.parquet": {
+   "rows": 45007
+  },
+  "part_000038.parquet": {
+   "rows": 47344
+  },
+  "part_000039.parquet": {
+   "rows": 47825
   }
  }
 }
