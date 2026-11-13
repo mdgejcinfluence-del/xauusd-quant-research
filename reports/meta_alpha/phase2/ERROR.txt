@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase2_batch.py", line 48, in <module>
+    r = con.execute(q).fetchone(); os.remove(local)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.InvalidInputException: Invalid Input Error: Required module 'pytz' failed to import, due to the following Python exception:
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase2_batch.py", line 48, in <module>
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'pytz'
