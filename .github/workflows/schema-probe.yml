@@ -24,6 +24,7 @@ jobs:
           ls -lh /tmp/partitions; sha256sum /tmp/partitions/*.parquet
       - name: Read Parquet footers only (schema + rows, no full scan)
         run: |
+          mkdir -p reports/meta_alpha
           python3 - <<'PY'
           import pyarrow.parquet as pq, json, hashlib, pathlib
           out={"source":"public Drive link, partitions 1 and 348", "files":[]}
