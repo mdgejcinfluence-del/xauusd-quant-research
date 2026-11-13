@@ -175,7 +175,15 @@ def _match_parameter(family_id: str, parameter: str, answers: dict[str, Any]) ->
     entry = answers.get(did)
     if entry is None:
         return None
-    return entry["answer"] if isinstance(entry, dict) else entry
+    if isinstance(entry, dict):
+        # l'appelant passe deja la VALEUR de la reponse (pas l'enveloppe) :
+        # une reponse structuree peut nommer explicitement le parametre vise.
+        if "answer" in entry:
+            return entry["answer"]
+        if parameter in entry:
+            return entry[parameter]
+        return entry
+    return entry
 
 
 # ---------------------------------------------------------------------------

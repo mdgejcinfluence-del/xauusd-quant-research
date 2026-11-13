@@ -1,0 +1,291 @@
+{
+  "formulas": {
+    "INTERARRIVAL_MEAN@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.469667+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "INTERARRIVAL_MEAN",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "moyenne des écarts temporels entre événements sur N événements",
+      "name": "INTERARRIVAL_MEAN",
+      "nan_policy": "NULL",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "MAE_H@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.486002+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "MAE_H",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "excursion adverse maximale sur l'horizon H",
+      "name": "MAE_H",
+      "nan_policy": "NULL",
+      "parameters": {
+        "H": [
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "MFE_H@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.482441+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "MFE_H",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "excursion favorable maximale sur l'horizon H",
+      "name": "MFE_H",
+      "nan_policy": "NULL",
+      "parameters": {
+        "H": [
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "REGIME_CLASS@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.479038+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "REGIME_CLASS",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "classe de régime apprise sur le PASSÉ autorisé uniquement",
+      "name": "REGIME_CLASS",
+      "nan_policy": "NULL",
+      "parameters": {
+        "fenetre_entrainement": {
+          "comparatif_ulterieur_distinct": "HMM",
+          "methode": "quantiles de volatilite",
+          "n_regimes": 3
+        },
+        "methode": "quantiles de volatilite",
+        "n_regimes": 3
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "RET_H@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.543989+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "RET_H",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "mid[t+H] / mid[t] - 1",
+      "name": "RET_H",
+      "nan_policy": "NULL",
+      "parameters": {
+        "H": [
+          "1s",
+          "5s",
+          "30s",
+          "1min",
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "ROLL_RANGE_MID@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.550114+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "ROLL_RANGE_MID",
+      "history": [],
+      "inputs": [
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "max(mid) - min(mid) sur fenêtre N",
+      "name": "ROLL_RANGE_MID",
+      "nan_policy": "NULL",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "ROLL_STD_MID@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.546812+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "ROLL_STD_MID",
+      "history": [],
+      "inputs": [
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "écart-type roulant des variations de mid sur N événements",
+      "name": "ROLL_STD_MID",
+      "nan_policy": "NULL",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "warmup": "NULL"
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "SPREAD_REGIME@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.472529+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "SPREAD_REGIME",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "classe de spread observé (quantiles sur le PASSÉ uniquement)",
+      "name": "SPREAD_REGIME",
+      "nan_policy": "NULL",
+      "parameters": {
+        "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+        "n_classes": 3
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "SUBPERIODE@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.475657+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "SUBPERIODE",
+      "history": [],
+      "inputs": [
+        "timestamp"
+      ],
+      "mathematical_definition": "découpage en sous-périodes calendaires",
+      "name": "SUBPERIODE",
+      "nan_policy": "NULL",
+      "parameters": {
+        "granularite": "UTC + sessions documentees (horaires a documenter, ne pas inventer)"
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "UPDATE_INTENSITY@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.466900+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "UPDATE_INTENSITY",
+      "history": [],
+      "inputs": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "nombre de mises à jour de cotation sur T secondes",
+      "name": "UPDATE_INTENSITY",
+      "nan_policy": "NULL",
+      "parameters": {
+        "T": [
+          "1s",
+          "5s",
+          "30s"
+        ]
+      },
+      "status": "DRAFT",
+      "version": "1"
+    },
+    "ZSCORE_ROBUST@1": {
+      "cost_definition": "non applicable — feature, pas un trade",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.464016+00:00",
+      "event_alignment_rule": "aligné sur l'événement t, sans regard futur",
+      "execution_definition": "non applicable avant Phase 4",
+      "formula_id": "ZSCORE_ROBUST",
+      "history": [],
+      "inputs": [
+        "bid",
+        "ask"
+      ],
+      "mathematical_definition": "(retour - médiane roulante) / MAD roulante",
+      "name": "ZSCORE_ROBUST",
+      "nan_policy": "NULL",
+      "parameters": {
+        "fenetre_retour": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "seuil": 4
+      },
+      "status": "DRAFT",
+      "version": "1"
+    }
+  },
+  "schema_version": "1.0"
+}

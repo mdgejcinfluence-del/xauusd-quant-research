@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0",
+  "variables": {
+    "INTERARRIVAL_MEAN@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.468248+00:00",
+      "definition": "moyenne des écarts temporels entre événements sur N événements",
+      "derived_from_decision": {
+        "D_INTENSITE_T": [
+          "1s",
+          "5s",
+          "30s"
+        ],
+        "D_REGIME_SPREAD": {
+          "classes": [
+            "faible",
+            "normal",
+            "eleve"
+          ],
+          "fallback_si_non_supporte": "3 classes / 1 semaine (limitation documentee)",
+          "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+          "n_classes": 3
+        }
+      },
+      "family": "F5_MICROSTRUCTURE",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "INTERARRIVAL_MEAN",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ]
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "INTERARRIVAL_MEAN",
+      "version": "1"
+    },
+    "MAE_H@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.484270+00:00",
+      "definition": "excursion adverse maximale sur l'horizon H",
+      "derived_from_decision": {
+        "D_HORIZON_LABEL": {
+          "H": [
+            "5min",
+            "15min",
+            "1h"
+          ],
+          "controler_chevauchements_et_dependances": true,
+          "horizons": [
+            "5min",
+            "15min",
+            "1h"
+          ],
+          "purge_minimale": "1h"
+        }
+      },
+      "family": "F8_LABELS",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "MAE_H",
+      "parameters": {
+        "H": [
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "role": "label",
+      "status": "SPECIFIED",
+      "variable_id": "MAE_H",
+      "version": "1"
+    },
+    "MFE_H@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.480656+00:00",
+      "definition": "excursion favorable maximale sur l'horizon H",
+      "derived_from_decision": {
+        "D_HORIZON_LABEL": {
+          "H": [
+            "5min",
+            "15min",
+            "1h"
+          ],
+          "controler_chevauchements_et_dependances": true,
+          "horizons": [
+            "5min",
+            "15min",
+            "1h"
+          ],
+          "purge_minimale": "1h"
+        }
+      },
+      "family": "F8_LABELS",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "MFE_H",
+      "parameters": {
+        "H": [
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "role": "label",
+      "status": "SPECIFIED",
+      "variable_id": "MFE_H",
+      "version": "1"
+    },
+    "REGIME_CLASS@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.477265+00:00",
+      "definition": "classe de régime apprise sur le PASSÉ autorisé uniquement",
+      "derived_from_decision": {
+        "D_METHODE_REGIME": {
+          "comparatif_ulterieur_distinct": "HMM",
+          "methode": "quantiles de volatilite",
+          "n_regimes": 3
+        }
+      },
+      "family": "F7_REGIMES",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "REGIME_CLASS",
+      "parameters": {
+        "fenetre_entrainement": {
+          "comparatif_ulterieur_distinct": "HMM",
+          "methode": "quantiles de volatilite",
+          "n_regimes": 3
+        },
+        "methode": "quantiles de volatilite",
+        "n_regimes": 3
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "REGIME_CLASS",
+      "version": "1"
+    },
+    "RET_H@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.542641+00:00",
+      "definition": "mid[t+H] / mid[t] - 1",
+      "derived_from_decision": {
+        "D_HORIZONS": [
+          "1s",
+          "5s",
+          "30s",
+          "1min",
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "family": "F2_RENDEMENTS",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "RET_H",
+      "parameters": {
+        "H": [
+          "1s",
+          "5s",
+          "30s",
+          "1min",
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "role": "label",
+      "status": "SPECIFIED",
+      "variable_id": "RET_H",
+      "version": "1"
+    },
+    "ROLL_RANGE_MID@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.548650+00:00",
+      "definition": "max(mid) - min(mid) sur fenêtre N",
+      "derived_from_decision": {
+        "D_FENETRES_VOL": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "D_WARMUP_NULL": "NULL"
+      },
+      "family": "F3_VOLATILITE",
+      "input_fields": [
+        "bid",
+        "ask"
+      ],
+      "name": "ROLL_RANGE_MID",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ]
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "ROLL_RANGE_MID",
+      "version": "1"
+    },
+    "ROLL_STD_MID@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:02:50.545318+00:00",
+      "definition": "écart-type roulant des variations de mid sur N événements",
+      "derived_from_decision": {
+        "D_FENETRES_VOL": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "D_WARMUP_NULL": "NULL"
+      },
+      "family": "F3_VOLATILITE",
+      "input_fields": [
+        "bid",
+        "ask"
+      ],
+      "name": "ROLL_STD_MID",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "warmup": "NULL"
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "ROLL_STD_MID",
+      "version": "1"
+    },
+    "SPREAD_REGIME@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.471054+00:00",
+      "definition": "classe de spread observé (quantiles sur le PASSÉ uniquement)",
+      "derived_from_decision": {
+        "D_INTENSITE_T": [
+          "1s",
+          "5s",
+          "30s"
+        ],
+        "D_REGIME_SPREAD": {
+          "classes": [
+            "faible",
+            "normal",
+            "eleve"
+          ],
+          "fallback_si_non_supporte": "3 classes / 1 semaine (limitation documentee)",
+          "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+          "n_classes": 3
+        }
+      },
+      "family": "F5_MICROSTRUCTURE",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "SPREAD_REGIME",
+      "parameters": {
+        "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+        "n_classes": 3
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "SPREAD_REGIME",
+      "version": "1"
+    },
+    "SUBPERIODE@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.473929+00:00",
+      "definition": "découpage en sous-périodes calendaires",
+      "derived_from_decision": {
+        "D_TIMEZONE_SESSIONS": "UTC + sessions documentees (horaires a documenter, ne pas inventer)"
+      },
+      "family": "F6_STRUCTURE_TEMPORELLE",
+      "input_fields": [
+        "timestamp"
+      ],
+      "name": "SUBPERIODE",
+      "parameters": {
+        "granularite": "UTC + sessions documentees (horaires a documenter, ne pas inventer)"
+      },
+      "role": "diagnostic",
+      "status": "SPECIFIED",
+      "variable_id": "SUBPERIODE",
+      "version": "1"
+    },
+    "UPDATE_INTENSITY@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.465492+00:00",
+      "definition": "nombre de mises à jour de cotation sur T secondes",
+      "derived_from_decision": {
+        "D_INTENSITE_T": [
+          "1s",
+          "5s",
+          "30s"
+        ],
+        "D_REGIME_SPREAD": {
+          "classes": [
+            "faible",
+            "normal",
+            "eleve"
+          ],
+          "fallback_si_non_supporte": "3 classes / 1 semaine (limitation documentee)",
+          "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+          "n_classes": 3
+        }
+      },
+      "family": "F5_MICROSTRUCTURE",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "UPDATE_INTENSITY",
+      "parameters": {
+        "T": [
+          "1s",
+          "5s",
+          "30s"
+        ]
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "UPDATE_INTENSITY",
+      "version": "1"
+    },
+    "ZSCORE_ROBUST@1": {
+      "availability_ts_rule": "disponible à t, calculé avec les données <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:03:22.462263+00:00",
+      "definition": "(retour - médiane roulante) / MAD roulante",
+      "derived_from_decision": {
+        "D_SEUIL_SAUT": {
+          "conserver_resultats_comparatifs": true,
+          "principal": 4,
+          "sensibilite": [
+            3,
+            5
+          ],
+          "seuil": 4
+        }
+      },
+      "family": "F4_SAUTS_EXTREMES",
+      "input_fields": [
+        "bid",
+        "ask"
+      ],
+      "name": "ZSCORE_ROBUST",
+      "parameters": {
+        "fenetre_retour": [
+          50,
+          100,
+          500,
+          1000
+        ],
+        "seuil": 4
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "ZSCORE_ROBUST",
+      "version": "1"
+    }
+  }
+}

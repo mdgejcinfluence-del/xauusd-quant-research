@@ -1,0 +1,120 @@
+{
+  "answers": {
+    "D_FENETRES_VOL": {
+      "answer": [
+        50,
+        100,
+        500,
+        1000
+      ],
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459628+00:00",
+      "family_id": "F3_VOLATILITE",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_HORIZONS": {
+      "answer": [
+        "1s",
+        "5s",
+        "30s",
+        "1min",
+        "5min",
+        "15min",
+        "1h"
+      ],
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459592+00:00",
+      "family_id": "F2_RENDEMENTS",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_HORIZON_LABEL": {
+      "answer": {
+        "H": [
+          "5min",
+          "15min",
+          "1h"
+        ],
+        "controler_chevauchements_et_dependances": true,
+        "horizons": [
+          "5min",
+          "15min",
+          "1h"
+        ],
+        "purge_minimale": "1h"
+      },
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459658+00:00",
+      "family_id": "F8_LABELS",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_INTENSITE_T": {
+      "answer": [
+        "1s",
+        "5s",
+        "30s"
+      ],
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459640+00:00",
+      "family_id": "F5_MICROSTRUCTURE",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_METHODE_REGIME": {
+      "answer": {
+        "comparatif_ulterieur_distinct": "HMM",
+        "methode": "quantiles de volatilite",
+        "n_regimes": 3
+      },
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459654+00:00",
+      "family_id": "F7_REGIMES",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_REGIME_SPREAD": {
+      "answer": {
+        "classes": [
+          "faible",
+          "normal",
+          "eleve"
+        ],
+        "fallback_si_non_supporte": "3 classes / 1 semaine (limitation documentee)",
+        "fenetre": "20 jours de marche, historique glissant, donnees passees uniquement",
+        "n_classes": 3
+      },
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459643+00:00",
+      "family_id": "F5_MICROSTRUCTURE",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_SEUIL_SAUT": {
+      "answer": {
+        "conserver_resultats_comparatifs": true,
+        "principal": 4,
+        "sensibilite": [
+          3,
+          5
+        ],
+        "seuil": 4
+      },
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459636+00:00",
+      "family_id": "F4_SAUTS_EXTREMES",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_TIMEZONE_SESSIONS": {
+      "answer": "UTC + sessions documentees (horaires a documenter, ne pas inventer)",
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459647+00:00",
+      "family_id": "F6_STRUCTURE_TEMPORELLE",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    },
+    "D_WARMUP_NULL": {
+      "answer": "NULL",
+      "answered_by": "HUMAN",
+      "answered_utc": "2026-11-13T14:03:22.459632+00:00",
+      "family_id": "F3_VOLATILITE",
+      "note": "Configuration initiale de recherche (pas des parametres optimaux). Sensibilite seuil saut 3 et 5 conservee. Spread: calibration 20 jours passes uniquement, fallback 1 semaine documente. Sessions UTC documentees, horaires a documenter sans invention. HMM = comparatif ulterieur distinct. Labels MFE/MAE purge minimale 1h, chevauchements controles. Aucune optimisation sur Holdout."
+    }
+  },
+  "schema_version": "1.0",
+  "updated_utc": "2026-11-13T14:03:22.459661+00:00"
+}
