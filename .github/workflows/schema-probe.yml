@@ -1,0 +1,46 @@
+name: Schema probe partitions reelles (lien public)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/schema_probe.txt"]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Install minimal deps
+        run: pip install -q pyarrow duckdb
+      - name: Download first and last partition (public IDs from Drive listing)
+        run: |
+          mkdir -p /tmp/partitions
+          curl -L --fail "https://drive.google.com/uc?export=download&id=1xG29NnfqvwVNgOmJvfVkzXgmWbaLeaXq&confirm=t" -o /tmp/partitions/part_000001.parquet
+          curl -L --fail "https://drive.google.com/uc?export=download&id=1RrCh18vGZG6b_W0HChFFJpkjmfWDUWKu&confirm=t" -o /tmp/partitions/part_000348.parquet
+          ls -lh /tmp/partitions; sha256sum /tmp/partitions/*.parquet
+      - name: Read Parquet footers only (schema + rows, no full scan)
+        run: |
+          python3 - <<'PY'
+          import pyarrow.parquet as pq, json, hashlib, pathlib
+          out={"source":"public Drive link, partitions 1 and 348", "files":[]}
+          for p in sorted(pathlib.Path('/tmp/partitions').glob('*.parquet')):
+              f=pq.ParquetFile(str(p)); md=f.metadata
+              out["files"].append({"name":p.name,"bytes":p.stat().st_size,
+                "sha256":hashlib.sha256(p.read_bytes()).hexdigest(),
+                "rows":md.num_rows,"row_groups":md.num_row_groups,
+                "created_by":md.created_by,
+                "schema":[{"name":f.schema_arrow.names[i],"type":str(f.schema_arrow.types[i])} for i in range(len(f.schema_arrow.names))]})
+          pathlib.Path('reports/meta_alpha/SCHEMA_PROBE_V1.json').write_text(json.dumps(out,indent=2))
+          print(json.dumps(out,indent=2)[:4000])
+          PY
+      - name: Commit report (never the parquet)
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/SCHEMA_PROBE_V1.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Schema reel: footers des partitions 001 et 348 lus (premiere decouverte, passation etape 5)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
