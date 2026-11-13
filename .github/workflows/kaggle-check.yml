@@ -13,7 +13,7 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q "kaggle==1.6.17"
+      - run: pip install -q --upgrade kaggle
       - name: Presence des secrets et authentification Kaggle
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
@@ -30,9 +30,22 @@ jobs:
                "gdrive_root_id_present": bool(os.environ.get("GDRIVE_ROOT_FOLDER_ID")),
                "kaggle_auth_ok": False, "kaggle_auth_detail": ""}
           if rep["kaggle_username_present"] and rep["kaggle_key_present"]:
-              r=subprocess.run(["kaggle","kernels","list","--mine","--page-size","1"],capture_output=True,text=True,timeout=120)
-              rep["kaggle_auth_ok"]=(r.returncode==0)
-              rep["kaggle_auth_detail"]="OK - API Kaggle authentifiee" if r.returncode==0 else (r.stderr or r.stdout)[-1500:]
+              key=os.environ["KAGGLE_KEY"]
+              rep["key_format"]="api_token_KGAT" if key.startswith("KGAT") else "legacy_key"
+              def attempt(mode, env_extra):
+                  env=dict(os.environ); env.update(env_extra)
+                  if mode=="api_token":
+                      env.pop("KAGGLE_USERNAME",None); env.pop("KAGGLE_KEY",None); env["KAGGLE_API_TOKEN"]=key
+                  r=subprocess.run(["kaggle","kernels","list","--mine","--page-size","1"],capture_output=True,text=True,timeout=120,env=env)
+                  return r.returncode==0, (r.stderr or r.stdout)[-800:]
+              ok,detail=attempt("legacy",{})
+              rep["auth_mode"]="legacy_username_key"
+              if not ok:
+                  ok2,detail2=attempt("api_token",{})
+                  if ok2: rep["auth_mode"]="api_token_bearer"; ok,detail=True,detail2
+                  else: detail=detail+" | mode token: "+detail2
+              rep["kaggle_auth_ok"]=ok
+              rep["kaggle_auth_detail"]="OK - API Kaggle authentifiee" if ok else detail
           pathlib.Path("reports/meta_alpha/KAGGLE_CHECK.json").write_text(json.dumps(rep,indent=2))
           print(json.dumps(rep,indent=2))
           PY
