@@ -5,6 +5,12 @@ import json, sys, pathlib, subprocess, os
 import duckdb
 
 START, END = int(sys.argv[1]), int(sys.argv[2])
+import traceback
+_err = pathlib.Path('reports/meta_alpha/phase2'); _err.mkdir(parents=True, exist_ok=True)
+def _hook(exc_type, exc, tb):
+    pathlib.Path('reports/meta_alpha/phase2/ERROR.txt').write_text(''.join(traceback.format_exception(exc_type, exc, tb)))
+    raise exc
+sys.excepthook = _hook
 inv = json.load(open('reports/meta_alpha/INVENTORY_348.json'))
 by_name = {p['name']: p for p in inv['partitions']}
 # la 000184 a ete re-sondee a part: son identifiant est connu
