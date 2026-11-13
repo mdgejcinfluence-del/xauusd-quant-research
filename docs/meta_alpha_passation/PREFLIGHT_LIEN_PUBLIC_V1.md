@@ -95,3 +95,37 @@ le lieu de travail jusqu'à cette bascule.
   deux dépendances non déclarées — `google-auth-oauthlib` (utilisée par
   `oauth_drive.py`, absente de `requirements-drive.txt`) et `pytz` (requise par
   DuckDB sur les colonnes timezone). Sans elles : 8 échecs d'import. Avec : 143/143.
+
+## 7. Schéma réel découvert (étape 5) — ÉCART CONSTATÉ, ARRÊT PROTOCOLE
+
+Sonde par footers Parquet uniquement (GitHub Actions + gdown, aucun chargement complet) :
+
+| | part_000001 | part_000348 |
+|---|---|---|
+| SHA-256 | `66954ecc…c8708b9` | `aa18a682…fbe42c` |
+| Taille | 1 763 664 o | 291 913 210 o |
+| Lignes (footer) | 40 112 | 7 896 153 |
+| Row groups | 1 | 65 |
+| Créé par | DuckDB v1.3.2 | DuckDB v1.3.2 |
+| Colonnes | 16 | 16 (mêmes noms) |
+| `bid_volume`/`ask_volume` | **double** | **uint32** |
+| Ordre des colonnes | observation_id en tête | observation_id en fin |
+
+Colonnes : observation_id, timestamp_utc (us, UTC), bid, ask, mid, spread_abs,
+spread_rel, bid_volume, ask_volume, symbol, source_file, file_row_number,
+previous_timestamp, previous_mid, log_return, abs_log_return.
+
+**Écarts par rapport à l'attendu « un schéma unique » (§3.6 de la passation) :**
+1. Signatures de schéma **différentes** entre la première et la dernière partition
+   (ordre des colonnes + type de `bid_volume`/`ask_volume`).
+2. Tailles/nombre de lignes très inégaux entre partitions extrêmes (40 k vs 7,9 M lignes) —
+   le total certifié de 685 118 625 lignes reste à confirmer par l'inventaire complet
+   des 348 footers (somme des `num_rows`), pas par extrapolation.
+3. Présence de `bid_volume`/`ask_volume` : conformément aux pièges §11, ces champs ne
+   seront **pas** appelés « volume réel » sans preuve de sémantique ; un tick reste
+   un changement de cotation, pas une transaction.
+
+**Décision (protocole §3.6) : STOP.** Aucune correction silencieuse, aucune hypothèse
+bénigne. La prochaine étape légitime est l'inventaire complet des 348 footers
+(noms, lignes, signatures) pour mesurer l'ampleur exacte de l'hétérogénéité, puis
+rapport au propriétaire avant toute montée de l'échelle L2+.
