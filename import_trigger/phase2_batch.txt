@@ -1,1 +1,2 @@
 2 348
+# relance avec checkpoint periodique
