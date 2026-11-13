@@ -1,0 +1,49 @@
+name: Import META_ALPHA_CODE_V1 (public Drive link)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/code_v1.txt"]
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - name: Download ZIP from public Drive file ID
+        run: |
+          FILE_ID=1jL206TGVv0H-akAcZEJpPdxXI2h9Y4l9
+          curl -L --fail "https://drive.google.com/uc?export=download&id=${FILE_ID}&confirm=t" -o /tmp/META_ALPHA_CODE_V1.zip
+          ls -l /tmp/META_ALPHA_CODE_V1.zip
+          sha256sum /tmp/META_ALPHA_CODE_V1.zip | tee /tmp/code_sha256.txt
+          file /tmp/META_ALPHA_CODE_V1.zip
+      - name: Inspect and extract (archive listing kept as proof)
+        run: |
+          mkdir -p /tmp/stage META_ALPHA_CODE_V1
+          unzip -l /tmp/META_ALPHA_CODE_V1.zip | tee META_ALPHA_CODE_V1/ARCHIVE_LISTING.txt
+          unzip -q /tmp/META_ALPHA_CODE_V1.zip -d /tmp/stage
+          # flatten single top-level folder if present
+          count=$(find /tmp/stage -mindepth 1 -maxdepth 1 | wc -l)
+          if [ "$count" = "1" ] && [ -d "$(find /tmp/stage -mindepth 1 -maxdepth 1)" ]; then
+            cp -a "$(find /tmp/stage -mindepth 1 -maxdepth 1)/." META_ALPHA_CODE_V1/
+          else
+            cp -a /tmp/stage/. META_ALPHA_CODE_V1/
+          fi
+          cp /tmp/code_sha256.txt META_ALPHA_CODE_V1/SOURCE_SHA256.txt
+          find META_ALPHA_CODE_V1 -type f | sort | tee META_ALPHA_CODE_V1/EXTRACTED_FILES.txt
+          wc -l META_ALPHA_CODE_V1/EXTRACTED_FILES.txt
+      - name: Refuse secrets before commit (passation §8)
+        run: |
+          if find META_ALPHA_CODE_V1 -type f \( -name 'sa.json' -o -name 'service_account*.json' -o -name '*.pem' -o -name '*.key' -o -name '.env*' \) | grep .; then echo "SECRET-LIKE FILE FOUND - STOP"; exit 1; fi
+          if grep -rInE --exclude-dir=.git '-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|GOCSPX-|KGAT_|ghp_[A-Za-z0-9]{20,}|AIza[A-Za-z0-9_-]{20,}' META_ALPHA_CODE_V1/ ; then echo "SECRET PATTERN FOUND - STOP"; exit 1; fi
+          echo "secrets pre-scan: clean"
+      - name: Commit extracted code back to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add META_ALPHA_CODE_V1
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "Import META_ALPHA_CODE_V1 depuis le lien public Drive (extraction verifiee, pre-scan secrets propre)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
