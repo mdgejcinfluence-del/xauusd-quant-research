@@ -1016,6 +1016,33 @@
   },
   "part_000339.parquet": {
    "rows": 10141018
+  },
+  "part_000340.parquet": {
+   "rows": 9079378
+  },
+  "part_000341.parquet": {
+   "rows": 8861331
+  },
+  "part_000342.parquet": {
+   "rows": 12200133
+  },
+  "part_000343.parquet": {
+   "rows": 10440068
+  },
+  "part_000344.parquet": {
+   "rows": 9363187
+  },
+  "part_000345.parquet": {
+   "rows": 10688430
+  },
+  "part_000346.parquet": {
+   "rows": 9692435
+  },
+  "part_000347.parquet": {
+   "rows": 6658483
+  },
+  "part_000348.parquet": {
+   "rows": 7896153
   }
  }
 }
