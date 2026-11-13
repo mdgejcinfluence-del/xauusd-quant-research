@@ -75,3 +75,19 @@ découverte du schéma réel, comme la passation l'exige.
 - Aucun préflight : ni certificats, ni partitions accessibles.
 - Aucun nouveau dépôt créé : le travail se fait sur le dépôt et la branche de cette session.
 - Aucune valeur devinée, aucun garde-fou contourné.
+
+## 7. Ajout du 13 novembre — seconde vérification
+
+À la demande du propriétaire (« c'est déjà dans mon Drive »), recherches refaites :
+nom exact, `CODE/ALPHA/V1`, tous les ZIP par date décroissante, fichiers modifiés
+après le 12 novembre, Drive partagés. Résultat inchangé : **0 fichier du 13 novembre**
+sur le compte connecté `j9028379@gmail.com` (plus récent : 12 novembre).
+
+Diagnostic confirmé : le compte Google de la capture d'écran ≠ compte connecté à Arena.
+Le propriétaire a choisi la voie « reconnecter Arena au bon compte ».
+Après ce choix, nouvelle recherche : toujours 0 — la reconnexion n'a pas encore été
+effectuée dans l'interface Arena (choisir l'option ici ne la réalise pas).
+
+**Action restante (propriétaire, interface Arena) :** déconnecter Google Drive puis le
+reconnecter en sélectionnant, dans la fenêtre Google, le compte de la capture d'écran.
+Dès que c'est fait, dire « reconnecté » : la recherche est relancée immédiatement.
