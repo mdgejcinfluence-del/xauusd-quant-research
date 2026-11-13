@@ -3,8 +3,8 @@
   "kaggle_key_present": true,
   "gdrive_sa_present": false,
   "gdrive_root_id_present": false,
-  "kaggle_auth_ok": false,
-  "kaggle_auth_detail": "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/bin/kaggle\", line 3, in <module>\n    from kaggle.cli import main\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/__init__.py\", line 3, in <module>\n    from kaggle.api.kaggle_api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n | mode token: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/bin/kaggle\", line 3, in <module>\n    from kaggle.cli import main\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/__init__.py\", line 3, in <module>\n    from kaggle.api.kaggle_api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n",
+  "kaggle_auth_ok": true,
+  "kaggle_auth_detail": "OK - API Kaggle authentifiee",
   "key_format": "api_token_KGAT",
-  "auth_mode": "legacy_username_key"
+  "auth_mode": "api_token_bearer"
 }
