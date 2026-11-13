@@ -156,6 +156,28 @@
       "variable_id": "REGIME_CLASS",
       "version": "1"
     },
+    "REGIME_CLASS@2": {
+      "availability_ts_rule": "disponible a t, calcule avec les donnees <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:25:37.185589+00:00",
+      "definition": "terciles de volatilite sur 20 jours de marche glissants, recalcules chaque jour, appliques au lendemain; 20 premiers jours NULL. Configuration EXPERIMENTALE approuvee, non presumee optimale; comparatif HMM conserve.",
+      "family": "DECISIONS_PROPRIETAIRE_2026-11-13",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "REGIME_CLASS",
+      "parameters": {
+        "fenetre_entrainement": "20 jours de marche glissants, application lendemain",
+        "methode": "quantiles de volatilite",
+        "n_regimes": 3
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "REGIME_CLASS",
+      "version": "2"
+    },
     "RET_H@1": {
       "availability_ts_rule": "disponible à t, calculé avec les données <= t",
       "created_by": "HUMAN",
@@ -194,6 +216,34 @@
       "status": "SPECIFIED",
       "variable_id": "RET_H",
       "version": "1"
+    },
+    "RET_H@2": {
+      "availability_ts_rule": "disponible a t, calcule avec les donnees <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:25:37.161771+00:00",
+      "definition": "RET_H(t) = (MID(t_H) - MID(t)) / MID(t), t_H = premier tick a ou apres t+H (RET_H_ALIGN_V1 validee). Label, jamais feature.",
+      "family": "DECISIONS_PROPRIETAIRE_2026-11-13",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "RET_H",
+      "parameters": {
+        "H": [
+          "1s",
+          "5s",
+          "30s",
+          "1min",
+          "5min",
+          "15min",
+          "1h"
+        ]
+      },
+      "role": "label",
+      "status": "SPECIFIED",
+      "variable_id": "RET_H",
+      "version": "2"
     },
     "ROLL_RANGE_MID@1": {
       "availability_ts_rule": "disponible à t, calculé avec les données <= t",
@@ -261,6 +311,31 @@
       "status": "SPECIFIED",
       "variable_id": "ROLL_STD_MID",
       "version": "1"
+    },
+    "ROLL_STD_MID@2": {
+      "availability_ts_rule": "disponible a t, calcule avec les donnees <= t",
+      "created_by": "HUMAN",
+      "created_utc": "2026-11-13T14:25:37.181823+00:00",
+      "definition": "ecart-type echantillon (stddev_samp) des rendements mid consecutifs r_i=(mid_i-mid_{i-1})/mid_{i-1} sur N evenements; warm-up NULL (N rendements requis)",
+      "family": "DECISIONS_PROPRIETAIRE_2026-11-13",
+      "input_fields": [
+        "timestamp",
+        "bid",
+        "ask"
+      ],
+      "name": "ROLL_STD_MID",
+      "parameters": {
+        "N": [
+          50,
+          100,
+          500,
+          1000
+        ]
+      },
+      "role": "feature",
+      "status": "SPECIFIED",
+      "variable_id": "ROLL_STD_MID",
+      "version": "2"
     },
     "SPREAD_REGIME@1": {
       "availability_ts_rule": "disponible à t, calculé avec les données <= t",

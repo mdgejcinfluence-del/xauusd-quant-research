@@ -64,10 +64,12 @@ def _expr_for(variable_id: str, params: dict[str, Any]) -> str | None:
         n = _as_int(w)
         if n is None:
             raise _MissingParameter(f"ROLL_STD_MID : fenêtre absente ou non entière ({w!r})")
-        # Politique NULL de warm-up: DuckDB reduit la fenetre en debut de serie,
-        # donc on masque explicitement tant que N evenements ne sont pas atteints.
-        return (f"CASE WHEN row_number() OVER (ORDER BY t) >= {n} THEN "
-                f"stddev_samp((ask + bid) / 2.0) OVER (ORDER BY t "
+        # Decision proprietaire: ecart-type des RENDEMENTS mid consecutifs
+        # r_i = (mid_i - mid_{i-1}) / mid_{i-1}, PAS des niveaux de mid.
+        # ret_mid est calcule par l'etage enrichi de extract_partition.
+        # Warm-up NULL: il faut N rendements, donc premiere valeur a l'evenement N+1.
+        return (f"CASE WHEN row_number() OVER (ORDER BY t) >= {n + 1} THEN "
+                f"stddev_samp(ret_mid) OVER (ORDER BY t "
                 f"ROWS BETWEEN {n - 1} PRECEDING AND CURRENT ROW) END")
 
     if v == "ROLL_RANGE_MID":
@@ -97,8 +99,15 @@ def _expr_for(variable_id: str, params: dict[str, Any]) -> str | None:
         return (f"(epoch(t) - epoch(lag(t, {n}) OVER (ORDER BY t))) / {n}.0")
 
     if v == "RET_H":
-        raise _NotTranslatable(
-            "RET_H : alignement temporel soumis au proprietaire, non valide - activation interdite")
+        # RET_H_ALIGN_V1 (validee par le proprietaire): RET_H(t) = (MID(t_H)-MID(t))/MID(t),
+        # t_H = premier tick a ou apres t+H. Label uniquement, jamais une feature.
+        # NULL si aucun tick n'existe avant la fin du segment (horizon incomplet).
+        w = params.get("H")
+        n = _as_seconds(w)
+        if n is None:
+            raise _MissingParameter(f"RET_H : horizon H absent ou illisible ({w!r})")
+        return (f"(((SELECT b2.mid FROM enriched b2 WHERE b2.t >= e.t + INTERVAL {n} SECOND "
+                f"ORDER BY b2.t LIMIT 1) - e.mid) / NULLIF(e.mid, 0))")
 
     raise _NotTranslatable(f"{variable_id} : pas de traduction SQL certifiée à ce stade")
 
@@ -111,6 +120,8 @@ def _as_seconds(x: Any) -> int | None:
     try:
         if s.endswith("min"):
             return int(float(s[:-3]) * 60)
+        if s.endswith("h"):
+            return int(float(s[:-1]) * 3600)
         if s.endswith("s"):
             return int(float(s[:-1]))
         return int(float(s))
@@ -154,7 +165,8 @@ def plan_extraction(storage: Storage) -> dict[str, Any]:
         # Remediation audit: chaque couple (variable, fenetre) est une entree
         # distincte, certifiable separement, sans ecraser les autres fenetres.
         window_key = {"ROLL_STD_MID": "N", "ROLL_RANGE_MID": "N",
-                      "UPDATE_INTENSITY": "T", "INTERARRIVAL_MEAN": "N"}.get(vid)
+                      "UPDATE_INTENSITY": "T", "INTERARRIVAL_MEAN": "N",
+                      "RET_H": "H"}.get(vid)
         windows = [None]
         if window_key and isinstance(params.get(window_key), (list, tuple)):
             windows = list(params[window_key])
@@ -172,8 +184,19 @@ def plan_extraction(storage: Storage) -> dict[str, Any]:
             except _NotTranslatable as exc:
                 refused.append({"variable_id": vid, "entry_id": entry_id, "reason": str(exc), "cause": "FORMULE_NON_CERTIFIEE"})
                 continue
-            extractible.append({"variable_id": vid, "entry_id": entry_id, "sql": expr, "parameters": p_one})
+            extractible.append({"variable_id": vid, "entry_id": entry_id, "sql": expr, "parameters": p_one,
+                                "kind": "label" if vid in ("RET_H", "MFE_H", "MAE_H") else "feature"})
 
+    # Plusieurs versions d'une variable peuvent coexister au registre (v1, v2...):
+    # un meme couple (variable, fenetre) ne doit apparaitre qu'une fois dans le plan.
+    _seen: dict[str, dict[str, Any]] = {}
+    for e in extractible:
+        _seen[e.get("entry_id", e["variable_id"])] = e
+    extractible = list(_seen.values())
+    _seen_r: dict[str, dict[str, Any]] = {}
+    for e in refused:
+        _seen_r[e.get("entry_id", e["variable_id"])] = e
+    refused = list(_seen_r.values())
     return {
         "status": "PLANNED",
         "extractible_total": len(extractible),
@@ -213,10 +236,18 @@ def extract_partition(
             SELECT "{ts_col}" AS t, "{bid_col}" AS bid, "{ask_col}" AS ask
             FROM read_parquet('{src}')
             ORDER BY "{ts_col}"
+        ),
+        with_mid AS (
+            SELECT t, bid, ask, ((ask + bid) / 2.0) AS mid FROM base
+        ),
+        enriched AS (
+            SELECT t, bid, ask, mid,
+                   (mid / NULLIF(lag(mid) OVER (ORDER BY t), 0) - 1) AS ret_mid
+            FROM with_mid
         )
         SELECT t, bid, ask,
         {select_list}
-        FROM base
+        FROM enriched e
     ) TO '{dst.as_posix()}' (FORMAT PARQUET, COMPRESSION ZSTD)
     """
 
