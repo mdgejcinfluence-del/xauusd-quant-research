@@ -15,10 +15,11 @@ S = requests.Session(); S.headers.update({"User-Agent":"Mozilla/5.0"})
 def listing():
     url = f"https://drive.google.com/embeddedfolderview?id={FOLDER}#list"
     html = S.get(url, timeout=60).text
-    pairs = re.findall(r'part_(\d{6})\.parquet\]\(https://drive\.google\.com/file/d/([A-Za-z0-9_-]+)', html)
-    if not pairs:  # fallback: raw href pattern in HTML
-        pairs = re.findall(r'(part_(\d{6})\.parquet).*?/file/d/([A-Za-z0-9_-]+)', html, re.S)
-        pairs = [(n,i) for _,n,i in pairs]
+    # HTML reel : l'ancre contient l'ID puis le nom du fichier dans la meme balise.
+    pairs = [(num, fid) for fid, num in re.findall(
+        r'href="https://drive\.google\.com/file/d/([A-Za-z0-9_-]+)[^"]*"[^>]*>(?:(?!</a>).)*?part_(\d{6})\.parquet',
+        html, re.S)]
+    if len(pairs) < 300: raise RuntimeError(f"parseur de liste: {len(pairs)} paires seulement - structure Drive inattendue")
     out = {}
     for num, fid in pairs:
         out[f"part_{num}.parquet"] = fid
