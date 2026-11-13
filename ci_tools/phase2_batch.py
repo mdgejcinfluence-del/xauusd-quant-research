@@ -29,11 +29,29 @@ with open(csv_path,'a') as csv:
         if name in state['done']: print('skip', name); continue
         fid = by_name[name]['drive_id']
         local = f'/tmp/{name}'
-        for _try in range(4):
+        ok=False
+        for _try in range(3):
             r=subprocess.run(['gdown','-q','--output',local,fid])
-            if r.returncode==0: break
-            import time as _t; _t.sleep(15*(_try+1))
-        else: raise RuntimeError(f'telechargement impossible apres 4 essais: {name}')
+            if r.returncode==0: ok=True; break
+            import time as _t; _t.sleep(30*(_try+1))
+        if not ok:
+            # Repli: flux HTTP direct (contourne les limites propres a gdown), verifie PAR1 + taille inventaire.
+            import requests as _rq, time as _t
+            _exp=json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))
+            _sz={x['name']:x['file_bytes'] for x in _exp['partitions']}[name]
+            _url=f'https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t'
+            for _try in range(3):
+                try:
+                    with _rq.get(_url, stream=True, timeout=120, headers={'User-Agent':'Mozilla/5.0'}) as _r:
+                        _r.raise_for_status()
+                        with open(local,'wb') as _f:
+                            for _chunk in _r.iter_content(1<<20): _f.write(_chunk)
+                    _b=open(local,'rb').read(4)
+                    if _b==b'PAR1' and pathlib.Path(local).stat().st_size==_sz: ok=True; break
+                except Exception: pass
+                _t.sleep(60*(_try+1))
+        if not ok: raise RuntimeError(f'telechargement impossible (gdown + repli HTTP): {name}')
+        import time as _t; _t.sleep(3)
         q = f"""
         WITH s AS (SELECT * FROM read_parquet('{local}') ORDER BY observation_id),
         d AS (SELECT *, lag(timestamp_utc) OVER (ORDER BY observation_id) AS pts,

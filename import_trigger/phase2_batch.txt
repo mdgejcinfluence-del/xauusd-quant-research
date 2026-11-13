@@ -1,2 +1,2 @@
-220 348
-# reprise apres echec transitoire gdown sur 220
+257 348
+# reprise 257 avec repli HTTP direct verifie PAR1+taille
