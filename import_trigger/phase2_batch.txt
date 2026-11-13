@@ -1,2 +1,2 @@
-2 348
-# relance avec checkpoint periodique
+220 348
+# reprise apres echec transitoire gdown sur 220

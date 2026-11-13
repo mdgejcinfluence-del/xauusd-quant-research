@@ -29,7 +29,11 @@ with open(csv_path,'a') as csv:
         if name in state['done']: print('skip', name); continue
         fid = by_name[name]['drive_id']
         local = f'/tmp/{name}'
-        subprocess.run(['gdown','-q','--output',local,fid], check=True)
+        for _try in range(4):
+            r=subprocess.run(['gdown','-q','--output',local,fid])
+            if r.returncode==0: break
+            import time as _t; _t.sleep(15*(_try+1))
+        else: raise RuntimeError(f'telechargement impossible apres 4 essais: {name}')
         q = f"""
         WITH s AS (SELECT * FROM read_parquet('{local}') ORDER BY observation_id),
         d AS (SELECT *, lag(timestamp_utc) OVER (ORDER BY observation_id) AS pts,
