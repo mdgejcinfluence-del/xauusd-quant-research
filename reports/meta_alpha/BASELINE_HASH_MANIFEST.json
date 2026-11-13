@@ -11,12 +11,16 @@
   "ticks_expected_by_certificate": 685118625,
   "schema_signatures": {
     "fa1e4b2b96a29903": {
-      "partitions": 293,
-      "rows": 357818895
+      "partitions": "001-294 (294, dont 000184 re-sondee directement)",
+      "volumes": "double",
+      "premiere_colonne": "observation_id"
     },
     "bee1fc6dc6b43616": {
-      "partitions": 54,
-      "rows": 327251503
+      "partitions": "295-348 (54)",
+      "volumes": "uint32",
+      "premiere_colonne": "timestamp_utc"
     }
-  }
+  },
+  "total_rows_footers_final": 685118625,
+  "total_match_certificate": true
 }
