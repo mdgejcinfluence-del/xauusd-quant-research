@@ -1,0 +1,22 @@
+name: Orchestrateur de continuite (gates autorises uniquement)
+on:
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["P3-001 exploration conditionnelle IS (preenregistree)"]
+    types: [completed]
+permissions: { contents: write }
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - run: python3 ci_tools/orchestrate.py
+      - name: Commit journal d'orchestration
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/ORCHESTRATION_LOG.md || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Orchestrateur: decision de continuite journalisee"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
