@@ -82,3 +82,16 @@ après les trois barrières du §8 (`.gitignore`, hook pre-commit, scan `secrets
 créer un dépôt public vide maintenant n'apporterait rien, et pousser avant le scan
 serait exactement le risque que la passation interdit. Le présent dépôt de session reste
 le lieu de travail jusqu'à cette bascule.
+
+## 6. Code V1 récupéré et vérifié (13 novembre, suite)
+
+- Lien « pour arena » reçu : dossier `1SY-2KGuHc66HDQfbCs1BcoQtnkJwRYyd`,
+  fichier `META_ALPHA_CODE_V1.zip`, ID `1jL206TGVv0H-akAcZEJpPdxXI2h9Y4l9`.
+- Téléchargement réalisé par GitHub Actions (la sandbox n'a pas d'accès sortant Drive) :
+  SHA-256 du ZIP `0511a7d47665f74c69d5cccefc47027115b7bd817b096ea990a13c21d1fb0a76`,
+  extraction 77 fichiers, pré-scan secrets propre, code commité sous `META_ALPHA_CODE_V1/`.
+- **Tests : `143 passed` — conforme exactement à la passation (§7 étape 1).**
+- Écart mineur trouvé et corrigé (reproductibilité d'installation, pas de logique) :
+  deux dépendances non déclarées — `google-auth-oauthlib` (utilisée par
+  `oauth_drive.py`, absente de `requirements-drive.txt`) et `pytz` (requise par
+  DuckDB sur les colonnes timezone). Sans elles : 8 échecs d'import. Avec : 143/143.

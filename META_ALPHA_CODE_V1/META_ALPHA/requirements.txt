@@ -10,3 +10,4 @@ pip-audit>=2.7
 # Accès Google Drive par compte de service (préflight, dispatch, checkpoints).
 # Installé par les workflows qui en ont besoin, pas par la CI de test.
 #   pip install -r requirements-drive.txt
+pytz>=2024.1
