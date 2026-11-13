@@ -767,6 +767,15 @@
   },
   "part_000256.parquet": {
    "rows": 4756837
+  },
+  "part_000257.parquet": {
+   "rows": 4337762
+  },
+  "part_000258.parquet": {
+   "rows": 4005986
+  },
+  "part_000259.parquet": {
+   "rows": 4051046
   }
  }
 }
