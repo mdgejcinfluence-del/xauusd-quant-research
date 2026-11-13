@@ -9,10 +9,10 @@ Mis à jour automatiquement à chaque gate. Source de vérité de reprise.
 |---|---|---|
 | P1 Corpus certifié | CERTIFIED (hérité, jamais reconstruit) | BASELINE_HASH_MANIFEST.json |
 | P2 Inventaire 348 | CERTIFIED — COMPATIBLE SOUS CONDITIONS | RAPPORT_INVENTAIRE_348_EXHAUSTIF.md (ebd0ff1) |
-| P2 Moteur L2-L4 (mesures par partition) | EN COURS — reprise depuis partition 002 (001 déjà faite) | phase2/STATE.json, phase2/PARTITION_MEASURES.csv |
+| P2 Moteur L2-L4 (mesures par partition) | **GATE PASS — 348/348, écart 0, 0 régression, dérivation exacte** | GATE_PHASE2_MESURES.md, phase2/PARTITION_MEASURES.csv |
 | P2 Variables certifiées | 5/11 variables, 22 entrées SQL | RAPPORT_CONSOLIDE_PHASE2_V1.md |
 | P2 Variables bloquées | ZSCORE_ROBUST, SPREAD_REGIME, REGIME_CLASS (traductions étagées), SUBPERIODE (sessions non documentées), MFE_H/MAE_H (convention direction) | motifs dans les rapports |
-| P3 Exploration anomalies | EN ATTENTE du gate P2 mesures | préenregistrement obligatoire au Trial Ledger avant tout test |
+| P3 Exploration anomalies | PRÉENREGISTRÉE (P3-001), exécution à suivre sur IS seul | TRIAL_LEDGER.md |
 | P4 Candidats déterministes | EN ATTENTE P3 | — |
 | P5 Robustesse/coûts | EN ATTENTE P4 | coûts: GROSS/CONDITIONAL, jamais NET |
 | P6 Qualification indépendante | EN ATTENTE P5 | IS/OOS calendaires, purge ≥ 1 h |
