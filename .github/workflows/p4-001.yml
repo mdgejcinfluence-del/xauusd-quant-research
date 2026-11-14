@@ -1,0 +1,26 @@
+name: P4-001 candidat H-P3-A (Bid/Ask, walk-forward, OOS)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/p4_001.txt"]
+  workflow_dispatch: {}
+permissions: { contents: write }
+jobs:
+  p4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q gdown duckdb pytz requests
+      - run: python3 ci_tools/p4_001.py
+      - name: Commit resultats (toujours)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/p4 || true
+          git diff --cached --quiet && exit 0
+          git commit -m "P4-001: trades/checkpoint (bruts, conserves quels qu'ils soient)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
