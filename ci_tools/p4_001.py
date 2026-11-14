@@ -9,8 +9,11 @@ inconnus (slippage/commission INCONNUS -> classement CONDITIONAL, jamais NET).
 Origines: observation_id % 500 = 0. Purge: origines a moins de 1 h des frontieres
 IS/OOS et OOS/fin exclues. Holdout JAMAIS lu: seules les partitions entierement
 avant la fin OOS sont telechargees. Checkpoint Git periodique, reprise par etat."""
-import json, pathlib, subprocess, os, time, datetime as dt
+import json, pathlib, subprocess, os, time, datetime as dt, traceback, sys
 import duckdb
+def _hook(a,b,c):
+    pathlib.Path('reports/meta_alpha/p4/ERROR.txt').write_text(''.join(traceback.format_exception(a,b,c))); raise b
+sys.excepthook=_hook
 
 ROOT = pathlib.Path('reports/meta_alpha/p4'); ROOT.mkdir(parents=True, exist_ok=True)
 STATE_P = ROOT/'STATE.json'; TRADES = ROOT/'trades.csv'
