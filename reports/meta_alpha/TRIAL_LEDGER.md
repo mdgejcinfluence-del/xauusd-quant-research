@@ -29,3 +29,11 @@ Statut P4-001: EXÉCUTÉ — **REJETÉ** (gate GATE_P4_001.md). Net de spread OO
 blocs mensuels). Résultat négatif conservé intégralement (trades.csv, 33 243 trades).
 Interdiction de « réparer » ce candidat par optimisation: toute nouvelle hypothèse
 exige un nouvel essai préenregistré (P3-002+).
+
+## P3-002 (préenregistré, génération massive)
+126 hypothèses (105 cellules + 21 contrastes) sur 7 features causales x 3 horizons,
+registre: p3/P3_002_REGISTRY.json (généré par ci_tools/gen_p3_002.py, déterministe).
+Critère de succès double préenregistré: FDR q<0,05 ET amplitude > spread médian IS
+(filtre économique hérité de l'échec P4-001). Aucune hypothèse ne sera modifiée
+après observation; les échecs restent conservés.
+Statut: PRÉENREGISTRÉ — exécution lancée ce jour.
