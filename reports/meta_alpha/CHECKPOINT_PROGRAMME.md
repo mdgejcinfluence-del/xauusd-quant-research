@@ -12,7 +12,7 @@ Mis à jour automatiquement à chaque gate. Source de vérité de reprise.
 | P2 Moteur L2-L4 (mesures par partition) | **GATE PASS — 348/348, écart 0, 0 régression, dérivation exacte** | GATE_PHASE2_MESURES.md, phase2/PARTITION_MEASURES.csv |
 | P2 Variables certifiées | 5/11 variables, 22 entrées SQL | RAPPORT_CONSOLIDE_PHASE2_V1.md |
 | P2 Variables bloquées | ZSCORE_ROBUST, SPREAD_REGIME, REGIME_CLASS (traductions étagées), SUBPERIODE (sessions non documentées), MFE_H/MAE_H (convention direction) | motifs dans les rapports |
-| P3 Exploration anomalies | **P3-001 TERMINÉ** (run 43495787484, 4 h 41) — hypothèse H-P3-A générée, aucun edge qualifié | GATE_P3_001.md, p3/P3_001_RESULTS.json |
+| P3 Exploration anomalies | P3-001 TERMINÉ (H-P3-A rejetée en P4); **P3-002 EN COURS** run 43600799780, 126 hypothèses | GATE_P3_001.md, p3/P3_002_REGISTRY.json, ETAT_PERMANENT.md |
 | P4 Candidats déterministes | **P4-001 REJETÉ** (net de spread négatif IS+OOS, critère préenregistré) | GATE_P4_001.md, p4/trades.csv |
 | P5 Robustesse/coûts | EN ATTENTE P4 | coûts: GROSS/CONDITIONAL, jamais NET |
 | P6 Qualification indépendante | EN ATTENTE P5 | IS/OOS calendaires, purge ≥ 1 h |

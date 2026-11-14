@@ -1,7 +1,8 @@
 # ÉTAT PERMANENT — META ALPHA XAUUSD DGP (consultable à tout moment, mis à jour par les workflows)
 
 ## Mission en cours
-- **P3-002** : 126 hypothèses préenregistrées (registre `p3/P3_002_REGISTRY.json`), exécution distante GitHub Actions.
+- **P3-002** : 126 hypothèses préenregistrées (registre `p3/P3_002_REGISTRY.json`), exécution distante GitHub Actions **run 43600799780** (en cours, checkpoints `p3/STATE_002.json`).
+- **Chaînage automatique : PROUVÉ** — run 43600799707: workflow A (13:38:51Z) puis workflow B consommant son checkpoint (13:39:03Z), sans humain (`chain/CHAIN_PROOF.txt`). Le calcul P3-002 continue sur GitHub même PC éteint.
 - Dernier gate : **P4-001 REJETÉ** (immuable) — `GATE_P4_001.md`.
 
 ## Compteurs d'hypothèses (réels)
