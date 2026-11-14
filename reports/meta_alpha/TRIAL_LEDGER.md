@@ -23,3 +23,9 @@ Inférence: bootstrap par blocs temporels; validation OOS chronologique
 (20% central), purge >= 1 h; Holdout toujours scellé.
 Critère de rejet préenregistré: si l'intervalle bootstrap du rendement net
 de spread inclut 0 en OOS, le candidat est REJETÉ et conservé comme négatif.
+
+Statut P4-001: EXÉCUTÉ — **REJETÉ** (gate GATE_P4_001.md). Net de spread OOS:
+15 min -2,90 bp IC95 [-3,78;-1,92]; 1 h -2,47 bp IC95 [-3,18;-1,76] (bootstrap
+blocs mensuels). Résultat négatif conservé intégralement (trades.csv, 33 243 trades).
+Interdiction de « réparer » ce candidat par optimisation: toute nouvelle hypothèse
+exige un nouvel essai préenregistré (P3-002+).
