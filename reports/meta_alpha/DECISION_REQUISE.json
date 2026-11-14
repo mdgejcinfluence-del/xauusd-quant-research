@@ -1,0 +1,19 @@
+{
+  "etat": "EN_ATTENTE_ARENA",
+  "cree_par": "gate_engine / processus deterministe",
+  "consommation": "A traiter en PREMIER a l'ouverture de toute session Arena, avant tout autre travail scientifique.",
+  "contexte": {
+    "vague_en_cours": "P3-002 (run 43600799780, protocole intouche)",
+    "base_connaissances": "reports/meta_alpha/BASE_CONNAISSANCES_PHASE2.md (K1-K10)",
+    "compteur_cumulatif_hypotheses": 127,
+    "holdout": "scelle"
+  },
+  "taches_arena": [
+    "1. Lire GATE_P3-002.json des sa production et verifier les survivants (FDR cumulatif + filtre economique).",
+    "2. Classer les causes d'echec par famille/horizon a partir des diagnostics chiffres (pas d'interpretation libre sans chiffres).",
+    "3. Formuler la vague suivante UNIQUEMENT depuis la base K et les diagnostics; chaque hypothese cite K + experience parente.",
+    "4. Preenregistrer (registre + lock dans TRIAL_LEDGER_CHAIN.json), puis declencher le workflow de la vague.",
+    "5. Regenerer ETAT_PERMANENT.md depuis les JSON d'etat."
+  ],
+  "interdits_rappeles": ["reparametrage d'une hypothese rejetee", "modification d'un registre verrouille", "ouverture Holdout", "depense", "ordres reels"]
+}

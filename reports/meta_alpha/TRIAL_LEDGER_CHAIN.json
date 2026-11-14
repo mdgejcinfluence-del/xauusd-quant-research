@@ -1,0 +1,48 @@
+{
+ "entries": [
+  {
+   "seq": 1,
+   "prev_hash": "GENESIS",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/p3/P3_002_REGISTRY.json",
+    "sha256": "68defe4c16e198e70c8f6cfef274c5d6de40bd089825c4cae3f120148991ef6e"
+   },
+   "entry_hash": "6e677162875bb0c04ba9a3e0089f9dd9ddcc8bd4601575539bc7af70401a7a30"
+  },
+  {
+   "seq": 2,
+   "prev_hash": "6e677162875bb0c04ba9a3e0089f9dd9ddcc8bd4601575539bc7af70401a7a30",
+   "entry": {
+    "type": "VERDICT",
+    "vague": "P3-001",
+    "verdict": "HYPOTHESE_GENEREE_NON_QUALIFIEE",
+    "ref": "GATE_P3_001.md"
+   },
+   "entry_hash": "855cb113ae6698c8c67f9b7946cd3d9d065d43c3b98f5d8a553ab16480401451"
+  },
+  {
+   "seq": 3,
+   "prev_hash": "855cb113ae6698c8c67f9b7946cd3d9d065d43c3b98f5d8a553ab16480401451",
+   "entry": {
+    "type": "VERDICT",
+    "vague": "P4-001",
+    "verdict": "REJETE",
+    "ref": "GATE_P4_001.md",
+    "immuable": true
+   },
+   "entry_hash": "39acfc9be08a8c6957f8dffd8f0e557113ea5d22444910de4aac34f5267c069f"
+  },
+  {
+   "seq": 4,
+   "prev_hash": "39acfc9be08a8c6957f8dffd8f0e557113ea5d22444910de4aac34f5267c069f",
+   "entry": {
+    "type": "REGISTRY",
+    "vague": "P3-002",
+    "n_hypotheses": 126,
+    "ref": "p3/P3_002_REGISTRY.json"
+   },
+   "entry_hash": "13c4f07ca6669b9f476e27aebe6159e68fb6d9f0e9a8211ce57e0096cdd24b02"
+  }
+ ]
+}

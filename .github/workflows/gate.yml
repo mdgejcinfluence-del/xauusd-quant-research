@@ -1,0 +1,29 @@
+name: Gate scientifique deterministe (verifie le registre puis juge)
+on:
+  workflow_call:
+    inputs:
+      mode: { required: true, type: string }
+      resultats: { required: true, type: string }
+      m_prior: { required: true, type: string }
+      sortie: { required: true, type: string }
+permissions: { contents: write }
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - name: Verifier la chaine du registre (refus si falsifiee)
+        run: |
+          python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "REGISTRE FALSIFIE OU CHAINE CASSEE: calcul interdit"; exit 1; }
+      - run: python3 ci_tools/gate_engine.py "${{ inputs.mode }}" "${{ inputs.resultats }}" "${{ inputs.m_prior }}" "${{ inputs.sortie }}"
+      - name: Commit du verdict de gate (toujours)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.sortie }}" || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Gate deterministe: verdict produit apres verification du registre"
+          git pull --rebase -q origin arena/afe12737-xauusd-quant-research || true
+          git push -q origin HEAD:arena/afe12737-xauusd-quant-research
