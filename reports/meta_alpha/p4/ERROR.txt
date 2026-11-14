@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/p4_001.py", line 96, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/p4_001.py", line 66, in main
+    local=f"/tmp/{p['name']}"; dl(p['drive_id'], local, p['name'])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/p4_001.py", line 40, in dl
+    raise RuntimeError(f'telechargement impossible: {name}')
+RuntimeError: telechargement impossible: part_000261.parquet
