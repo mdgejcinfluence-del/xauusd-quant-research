@@ -1,5 +1,11 @@
 # GOUVERNANCE DE GÉNÉRATION DES VAGUES (contraignante, dès P3-003)
 
+## Mécanismes implémentés (versions isolées, effet après P3-002)
+- `ci_tools/anomaly_registry.py`: registre d'anomalies à 15 champs obligatoires,
+  statut DESCRIPTIVE par défaut, hashes code/config/données exigés.
+- `ci_tools/gate_engine_v2.py`: BY + compteur cumulatif (v1 conservée intacte).
+- Validité et limites du dispositif: `MULTIPLICITE_VALIDITE.md`.
+
 ## Admission d'une hypothèse (toutes conditions requises)
 1. Citation d'au moins un item K de BASE_CONNAISSANCES_PHASE2.md, lui-même
    fondé sur les 5 mesures de qualification phénoménologique.
