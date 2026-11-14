@@ -74,6 +74,11 @@ def main():
     print(f'partitions traitees (IS+OOS, Holdout exclu): {len(parts)}; derniere={parts[-1]["name"]}', flush=True)
     state=json.loads(STATE_P.read_text()) if STATE_P.exists() else {'done':[],'hist':[],'last15':None,'last1h':None}
     con=duckdb.connect(); con.execute("SET memory_limit='4GB'"); con.execute("SET threads=2")
+    seen=set()
+    if TRADES.exists():
+        for line in TRADES.read_text().splitlines()[1:]:
+            parts=line.split(','); 
+            if len(parts)>=3: seen.add((parts[0],parts[1],parts[2]))
     new_trades = not TRADES.exists()
     with open(TRADES,'a') as tf:
         if new_trades: tf.write("segment,horizon,entry_ts,ret_net_spread,ret_mid\n")
@@ -97,6 +102,8 @@ def main():
                         last = dt.datetime.fromisoformat(state[lastk]) if state[lastk] else None
                         if last is not None and t.replace(tzinfo=None) < last + H: continue
                         state[lastk]=t.replace(tzinfo=None).isoformat()
+                        if (seg,hz,t.isoformat()) in seen: continue
+                        seen.add((seg,hz,t.isoformat()))
                         tf.write(f"{seg},{hz},{t.isoformat()},{float(bidx)/float(ask)-1:.10f},{float(midx)/float(mid)-1:.10f}\n")
                 tf.flush()
             # mise a jour causale de l'historique APRES traitement de la partition
@@ -105,6 +112,7 @@ def main():
             os.remove(local); state['done'].append(p['name'])
             if len(state['done'])%20==0: checkpoint(state)
             print('fait', p['name'], 'hist', len(state['hist']), 'q80 actif' if q80 else 'warm-up', flush=True)
+            time.sleep(5)
     checkpoint(state)
     (ROOT/'P4_001_STATE_FINAL.json').write_text(json.dumps({'is_end':IS_END.isoformat(),'oos_end':OOS_END.isoformat(),'partitions':len(parts),'hist_n':len(state['hist'])}))
     print('P4-001 collecte terminee')
