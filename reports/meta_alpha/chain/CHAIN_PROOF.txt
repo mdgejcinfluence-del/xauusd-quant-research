@@ -1,1 +1,2 @@
 A termine a 2026-11-14T13:38:51Z, run 43600799707
+B termine a 2026-11-14T13:39:03Z, apres lecture du checkpoint de A
