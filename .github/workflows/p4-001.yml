@@ -24,4 +24,4 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "P4-001: trades/checkpoint (bruts, conserves quels qu'ils soient)"
           git pull --rebase origin arena/afe12737-xauusd-quant-research || true
-git push origin HEAD:arena/afe12737-xauusd-quant-research
+          git push origin HEAD:arena/afe12737-xauusd-quant-research

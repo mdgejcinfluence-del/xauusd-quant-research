@@ -26,4 +26,4 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Phase 2 autonome: mesures L2-L4 du lot (etat de reprise mis a jour)"
           git pull --rebase origin arena/afe12737-xauusd-quant-research || true
-git push origin HEAD:arena/afe12737-xauusd-quant-research
+          git push origin HEAD:arena/afe12737-xauusd-quant-research

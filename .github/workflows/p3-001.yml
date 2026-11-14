@@ -24,7 +24,7 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "P3-001: resultats/checkpoint (bruts, conserves quels qu'ils soient)"
           git pull --rebase origin arena/afe12737-xauusd-quant-research || true
-git push origin HEAD:arena/afe12737-xauusd-quant-research
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
       - name: Declencher l'orchestrateur (enchainement automatique autorise)
         if: success()
         env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
