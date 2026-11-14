@@ -77,8 +77,8 @@ def main():
     seen=set()
     if TRADES.exists():
         for line in TRADES.read_text().splitlines()[1:]:
-            parts=line.split(','); 
-            if len(parts)>=3: seen.add((parts[0],parts[1],parts[2]))
+            flds=line.split(',')
+            if len(flds)>=3: seen.add((flds[0],flds[1],flds[2]))
     new_trades = not TRADES.exists()
     with open(TRADES,'a') as tf:
         if new_trades: tf.write("segment,horizon,entry_ts,ret_net_spread,ret_mid\n")

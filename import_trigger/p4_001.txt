@@ -4,3 +4,4 @@ relance P4 apres fix indentation YAML
 reprise P4 a 261 apres echec (capture erreur ajoutee)
 reprise P4 261 avec repli Range sequentiel
 reprise P4 261 (anti-duplication des trades active)
+reprise P4 apres fix shadowing
