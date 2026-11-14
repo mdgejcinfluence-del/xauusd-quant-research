@@ -1,0 +1,12 @@
+name: Demonstration chainage automatique A puis B (sans humain)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/chain_demo.txt"]
+permissions: { contents: write }
+jobs:
+  step-a:
+    uses: ./.github/workflows/chain-a.yml
+  step-b:
+    needs: step-a
+    uses: ./.github/workflows/chain-b.yml
