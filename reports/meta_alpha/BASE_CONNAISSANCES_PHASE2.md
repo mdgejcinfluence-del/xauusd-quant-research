@@ -29,3 +29,31 @@ hors de cette base ne peut justifier une hypothèse. Sources entre parenthèses.
 - **K10 Variables certifiées** : RET_H (label), ROLL_STD_MID, ROLL_RANGE_MID,
   UPDATE_INTENSITY, INTERARRIVAL_MEAN + base. Bloquées avec motifs: ZSCORE_ROBUST,
   SPREAD_REGIME, REGIME_CLASS, SUBPERIODE (sessions non documentées), MFE/MAE.
+
+---
+
+## CHARTE FONDAMENTALE (directive propriétaire, intégrée sans exception)
+
+**Les hypothèses sont un PRODUIT de la recherche, pas son point de départ.**
+Chaîne scientifique obligatoire, strictement ascendante :
+Données brutes (685M ticks) → Analyse approfondie (distributions, rythmes,
+dépendances, régimes) → Détection et extraction d'anomalies réelles →
+Formulation d'hypothèses justifiées → Tests préenregistrés → Preuves.
+
+**Règle de qualification phénoménologique**: lorsqu'une structure/anomalie est
+observée, il est INTERDIT de générer immédiatement un signal de trading. Le
+phénomène doit d'abord devenir un item K documenté par des mesures:
+(1) existence et fréquence sur IS; (2) distribution et stabilité temporelle;
+(3) conditions exactes d'apparition; (4) dynamique avant/pendant/après;
+(5) anomalies associées. Sans ces cinq mesures, pas d'item K; sans item K,
+pas d'hypothèse.
+
+**Volume des vagues**: INTERDICTION de tout quota arbitraire de combinaisons.
+Le nombre d'hypothèses d'une vague dépend uniquement du nombre de phénomènes
+réellement documentés dans la base K. Un produit cartésien mécanique n'est
+pas une extraction d'hypothèses (le lot P3-002, antérieur à cette charte,
+reste valide comme exploration mais ne constitue pas un modèle à répéter).
+
+**Échec au gate**: retour obligatoire à l'exploration des données
+(approfondir l'analyse, extraire de nouveaux phénomènes) — jamais un simple
+ajustement de seuils/paramètres des hypothèses rejetées.
