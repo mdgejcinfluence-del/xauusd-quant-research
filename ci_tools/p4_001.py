@@ -41,7 +41,7 @@ def checkpoint(state):
     if pathlib.Path('.git').exists():
         subprocess.run(['git','config','user.name','github-actions[bot]']); subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
         subprocess.run(['git','add','reports/meta_alpha/p4']); subprocess.run(['git','commit','-q','-m',f"Checkpoint P4-001: {len(state['done'])}/348 partitions"])
-        subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
+        subprocess.run(['git','pull','--rebase','-q','origin','arena/afe12737-xauusd-quant-research']); subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
 
 FEATS = """
 WITH s AS (SELECT observation_id, timestamp_utc AS t, bid, ask, mid FROM read_parquet('{f}')),

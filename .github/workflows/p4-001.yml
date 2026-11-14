@@ -23,4 +23,5 @@ jobs:
           git add reports/meta_alpha/p4 || true
           git diff --cached --quiet && exit 0
           git commit -m "P4-001: trades/checkpoint (bruts, conserves quels qu'ils soient)"
-          git push origin HEAD:arena/afe12737-xauusd-quant-research
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+git push origin HEAD:arena/afe12737-xauusd-quant-research

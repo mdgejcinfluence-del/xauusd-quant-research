@@ -76,7 +76,7 @@ with open(csv_path,'a') as csv:
             subprocess.run(['git','config','user.name','github-actions[bot]']); subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
             subprocess.run(['git','add','reports/meta_alpha/phase2'])
             subprocess.run(['git','commit','-q','-m',f"Checkpoint automatique Phase 2: {len(state['done'])}/348 partitions mesurees"])
-            subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
+            subprocess.run(['git','pull','--rebase','-q','origin','arena/afe12737-xauusd-quant-research']); subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
         state_path.write_text(json.dumps(state, indent=1))
         print(name, 'rows', r[0], 'regressions', r[3], 'invalid', r[5], flush=True)
 print('batch termine')

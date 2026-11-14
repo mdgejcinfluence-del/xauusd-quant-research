@@ -38,7 +38,7 @@ def checkpoint(state):
     if pathlib.Path('.git').exists():
         subprocess.run(['git','config','user.name','github-actions[bot]']); subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'])
         subprocess.run(['git','add','reports/meta_alpha/p3']); subprocess.run(['git','commit','-q','-m',f"Checkpoint P3-001: passe {state['pass']} {len(state['done'])}/348"])
-        subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
+        subprocess.run(['git','pull','--rebase','-q','origin','arena/afe12737-xauusd-quant-research']); subprocess.run(['git','push','-q','origin','HEAD:arena/afe12737-xauusd-quant-research'])
 
 FEATS = """
 WITH s AS (SELECT observation_id, timestamp_utc AS t, mid, spread_rel FROM read_parquet('{f}')),
