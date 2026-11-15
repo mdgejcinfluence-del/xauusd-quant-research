@@ -1,0 +1,121 @@
+{
+ "controles": [
+  {
+   "controle": "S1_GARCH_aucun_regime",
+   "succes": true,
+   "details": {
+    "repetitions": 8,
+    "series_avec_ruptures_spurieuses(>1)": 0,
+    "critere": "<=1/8",
+    "duree_s": 0.1
+   }
+  },
+  {
+   "controle": "S2_fractionnaire_H07",
+   "succes": true,
+   "details": {
+    "H_vrai": 0.7,
+    "H_estime_moyen": 0.686,
+    "ecart_moitiees_max": 0.066,
+    "critere": "|H-0.7|<0.10 et stabilite<0.20",
+    "duree_s": 0.0
+   }
+  },
+  {
+   "controle": "S3_MSM_echelles",
+   "succes": true,
+   "details": {
+    "exactitude_etat_volatilite_moyenne": 0.775,
+    "critere": "0.65 (etats de volatilite seulement, echelles non garanties)",
+    "duree_s": 0.5
+   }
+  },
+  {
+   "controle": "S4_HMM_volatilite",
+   "succes": true,
+   "details": {
+    "exactitude_moyenne": 0.887,
+    "ratio_vol_estime": [
+     2.74,
+     3.36,
+     3.01,
+     3.44
+    ],
+    "vrai_ratio": 3.0,
+    "critere": "exactitude>0.70",
+    "duree_s": 1.6
+   }
+  },
+  {
+   "controle": "S5_regimes_spread_meme_vol",
+   "succes": true,
+   "details": {
+    "exactitude_moyenne": 1.0,
+    "critere": "exactitude>0.75",
+    "duree_s": 27.9
+   }
+  }
+ ],
+ "tentatives": [
+  {
+   "controle": "S1_GARCH",
+   "seed": 100,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 101,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 102,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 103,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 104,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 105,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 106,
+   "ruptures": 0
+  },
+  {
+   "controle": "S1_GARCH",
+   "seed": 107,
+   "ruptures": 0
+  },
+  {
+   "controle": "S5_spread",
+   "seed": 500,
+   "ruptures_dp": 15
+  },
+  {
+   "controle": "S5_spread",
+   "seed": 501,
+   "ruptures_dp": 15
+  },
+  {
+   "controle": "S5_spread",
+   "seed": 502,
+   "ruptures_dp": 9
+  },
+  {
+   "controle": "S5_spread",
+   "seed": 503,
+   "ruptures_dp": 13
+  }
+ ]
+}
