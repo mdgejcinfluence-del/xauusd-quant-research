@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install -q gdown duckdb pytz requests
-      - run: python3 ci_tools/phase0.py
+      - run: python3 ci_tools/phase0_hygiene.py
       - name: Commit resultats (toujours)
         if: always()
         run: |
