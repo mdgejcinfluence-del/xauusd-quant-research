@@ -16,7 +16,15 @@
    "incertitude_stabilite": "existence stable et reproductible (deux tris identiques); mecanisme explicatif NON encore mesure directement",
    "dependances": "lie a la construction mid=(bid+ask)/2 et aux mises a jour separees bid/ask (hypothese de mecanisme a verifier par decomposition bid-only/ask-only)",
    "limites": "DESCRIPTIF: ne dit rien d executable; les prix Bid/Ask reels ne presentent pas necessairement ce demi-pas. Statut: OBSERVATION A VERIFIER (mecanisme)",
-   "statut": "DESCRIPTIVE"
+   "statut": "DESCRIPTIVE",
+   "historique": [
+    {
+     "date": "2026-11-15",
+     "etape": "validation profonde (run deep_is, 282/282)",
+     "preuve_directe": "evenements: both-change 98,52%, bid-only 0,59%, ask-only 0,59%, aucun 0,2%. Autocorrelations lag-1: mid 0,487; bid-only 0,063; ask-only 0,060. Meme signe apres evenement simple 0,61 vs apres evenement double 0,65 (pas de difference utile).",
+     "decision": "Hypothese de mecanisme (mises a jour separees creant des demi-pas) REFUTEE par la preuve directe. Le phenomene mid persiste; piste ouverte: correlation croisee decalee bid<->ask (lead-lag), a mesurer. Statut maintenu: OBSERVATION A VERIFIER."
+    }
+   ]
   },
   {
    "partitions_sources": "282 partitions IS (liste dans INVENTORY_348_EXHAUSTIVE.json, borne IS_END 2020-01-20)",
@@ -34,7 +42,15 @@
    "incertitude_stabilite": "stable en mediane; dispersion inter-partitions documentee (IQR lag1 [0,265; 0,488])",
    "dependances": "relie aux regimes de volatilite (K3) et a l activite (K4); aucune causalite etablie",
    "limites": "DESCRIPTIF DOCUMENTE: phenomene connu de la litterature; aucune valeur predictive demontree a ce stade.",
-   "statut": "DESCRIPTIVE"
+   "statut": "DESCRIPTIVE",
+   "historique": [
+    {
+     "date": "2026-11-15",
+     "etape": "validation profonde (282/282)",
+     "preuve_directe": "autocorrelation |r|: lag1 0,457, lag5 0,184, lag20 0,132, lag50 0,086: persistance longue decroissante, stable en mediane inter-partitions.",
+     "decision": "DESCRIPTIF DOCUMENTE confirme et approfondi. Aucune capacite predictive attribuee."
+    }
+   ]
   }
  ]
 }
