@@ -1,0 +1,40 @@
+{
+ "anomalies": [
+  {
+   "partitions_sources": "282 partitions IS (liste dans INVENTORY_348_EXHAUSTIVE.json, borne IS_END 2020-01-20)",
+   "periode": "2010-01-04 -> 2020-01-20 (IS)",
+   "hash_code": "9dbd0988509a599480a748502d58e005cbb729b560987401dc414c9e74b422f5",
+   "hash_config": "ded525d71ee0678a0cdd87307f977a7a93e03c000a40ffa1e4df25fdfbf8ff53",
+   "hash_donnees": "3fceb939857850005b3566242d1e6fa050523c17e39a665616767bf149c6a0f9",
+   "anomaly_id": "ANOM-001",
+   "granularite": "tick (rendements mid consecutifs)",
+   "definition_mesure": "autocorrelation lag-1 des rendements mid par partition, tri observation_id et tri timestamp compares",
+   "distribution_frequence": "mediane partitions 0,487; IQR [0,125; 0,507]; ecart max entre les deux tris = 0,0; rendements nuls 1,25%; timestamps dupliques ~0",
+   "conditions_apparition": "toutes partitions IS; plus faible sur une minorite de partitions anciennes (IQR basse 0,125)",
+   "comportement_reference": "marche aleatoire: autocorrelation ~0",
+   "ecart_observe": "+0,487 au lag 1, puis lag2 ~-0,087, lag5 ~-0,055, lag10 ~0: signature d un mecanisme a un pas",
+   "incertitude_stabilite": "existence stable et reproductible (deux tris identiques); mecanisme explicatif NON encore mesure directement",
+   "dependances": "lie a la construction mid=(bid+ask)/2 et aux mises a jour separees bid/ask (hypothese de mecanisme a verifier par decomposition bid-only/ask-only)",
+   "limites": "DESCRIPTIF: ne dit rien d executable; les prix Bid/Ask reels ne presentent pas necessairement ce demi-pas. Statut: OBSERVATION A VERIFIER (mecanisme)",
+   "statut": "DESCRIPTIVE"
+  },
+  {
+   "partitions_sources": "282 partitions IS (liste dans INVENTORY_348_EXHAUSTIVE.json, borne IS_END 2020-01-20)",
+   "periode": "2010-01-04 -> 2020-01-20 (IS)",
+   "hash_code": "9dbd0988509a599480a748502d58e005cbb729b560987401dc414c9e74b422f5",
+   "hash_config": "ded525d71ee0678a0cdd87307f977a7a93e03c000a40ffa1e4df25fdfbf8ff53",
+   "hash_donnees": "3fceb939857850005b3566242d1e6fa050523c17e39a665616767bf149c6a0f9",
+   "anomaly_id": "ANOM-002",
+   "granularite": "tick (valeurs absolues des rendements mid)",
+   "definition_mesure": "autocorrelation des |rendements| aux retards 1, 5, 20 par partition",
+   "distribution_frequence": "lag1 mediane 0,457; lag5 0,184; lag20 0,132 (decroissance lente)",
+   "conditions_apparition": "toutes partitions IS",
+   "comportement_reference": "volatilite constante: autocorrelations ~0 a tous retards",
+   "ecart_observe": "persistance forte et decroissante de la volatilite (regroupement)",
+   "incertitude_stabilite": "stable en mediane; dispersion inter-partitions documentee (IQR lag1 [0,265; 0,488])",
+   "dependances": "relie aux regimes de volatilite (K3) et a l activite (K4); aucune causalite etablie",
+   "limites": "DESCRIPTIF DOCUMENTE: phenomene connu de la litterature; aucune valeur predictive demontree a ce stade.",
+   "statut": "DESCRIPTIVE"
+  }
+ ]
+}
