@@ -7,4 +7,4 @@ Traceback (most recent call last):
                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 32, in dl
     raise RuntimeError(f'telechargement impossible: {name}')
-RuntimeError: telechargement impossible: part_000254.parquet
+RuntimeError: telechargement impossible: part_000243.parquet
