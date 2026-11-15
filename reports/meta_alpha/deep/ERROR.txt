@@ -1,10 +1,10 @@
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 113, in <module>
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 114, in <module>
     if __name__=='__main__': main()
                              ^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 101, in main
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 102, in main
     local=f"/tmp/{p['name']}"; dl(p['drive_id'], local, p['name'])
                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/deep_is.py", line 47, in dl
     raise RuntimeError(f'telechargement impossible: {name}')
-RuntimeError: telechargement impossible: part_000241.parquet
+RuntimeError: telechargement impossible: part_000282.parquet
