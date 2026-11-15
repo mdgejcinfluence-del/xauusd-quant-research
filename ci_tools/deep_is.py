@@ -29,6 +29,21 @@ def dl(fid, local, name):
             if open(local,'rb').read(4)==b'PAR1' and pathlib.Path(local).stat().st_size==exp[name]: return
         except Exception: pass
         time.sleep(60*(_t+1))
+    import requests as rq
+    exp={x['name']:x['file_bytes'] for x in json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']}
+    size=exp[name]; url=f'https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t'
+    for _t in range(3):
+        try:
+            with open(local,'wb') as f:
+                pos=0
+                while pos<size:
+                    end=min(pos+(1<<23)-1, size-1)
+                    r=rq.get(url, headers={'Range':f'bytes={pos}-{end}','User-Agent':'Mozilla/5.0'}, timeout=120)
+                    if r.status_code!=206: raise RuntimeError(f'HTTP {r.status_code}')
+                    f.write(r.content); pos+=len(r.content)
+            if open(local,'rb').read(4)==b'PAR1' and pathlib.Path(local).stat().st_size==size: return
+        except Exception: pass
+        time.sleep(60*(_t+1))
     raise RuntimeError(f'telechargement impossible: {name}')
 
 def checkpoint(state):

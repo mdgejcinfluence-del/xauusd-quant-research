@@ -1,2 +1,3 @@
 2026-11-15T09:22:25Z
 reprise deep a 254 apres throttling telechargement
+reprise deep avec repli Range
