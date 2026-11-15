@@ -88,3 +88,64 @@ génération d'hypothèses gouvernée (§7), séparation IS/OOS/Holdout (§8),
 critères d'arrêt incluant l'arrêt global (§9), point de départ exact (§11):
 séries descriptives granulées causales sur IS, uniquement après décision
 explicite du propriétaire sur CE document final.
+
+---
+
+## SECTION COMPLÉMENTAIRE — GOUVERNANCE DE LA MULTIPLICITÉ (ajout obligatoire)
+
+Trois mécanismes distincts, jamais confondus. Le premier est comptable, le
+deuxième est statistique, le troisième est épistémologique.
+
+### A. Registre cumulatif (mécanisme comptable, pas une correction)
+`TRIAL_LEDGER_CHAIN.json` conserve TOUTES les analyses: vagues descriptives,
+hypothèses, simulations de validation d'outils (comptées à part), résultats
+positifs, négatifs et non concluants, avec inscription préalable à l'exécution
+et chaîne de hash vérifiée avant chaque calcul. Son rôle: rendre la sélection
+cumulative **visible et auditable**. Il ne corrige statistiquement rien.
+
+### B. Correction statistique par famille de tests (mécanisme statistique)
+Une "famille" est un ensemble de tests définis dans UN préenregistrement, sur
+un même échantillon, répondant à une même question scientifique. Pour chaque
+famille, le préenregistrement doit expliciter, avant exécution:
+- sa composition exacte (liste des tests) et son nombre m_famille;
+- la procédure appliquée: **Benjamini-Yekutieli** (dépendance arbitraire entre
+  tests d'une famille — les p-values issues de labels chevauchants ou de
+  features corrélées ne satisfont pas les hypothèses de BH);
+- le seuil de décision unique (q < 0,05 sauf justification contraire gelée);
+- le format des résultats corrigés publiés (p brute, q_BY, verdict par test);
+- la liste des analyses exploratoires/descritives qui ne relèvent PAS de cette
+  famille (elles n'ont ni p-value ni verdict de gate; les leur en attribuer
+  après coup est interdit).
+Les familles sont disjointes par construction: un même test ne peut pas être
+déplacé d'une famille à l'autre après observation des résultats.
+
+### C. Contrôle entre vagues adaptatives (mécanisme épistémologique)
+- Le simple cumul du nombre de tests (compteur du registre A) n'est PAS une
+  correction statistique: additionner des m de vagues successives choisies
+  adaptativement ne contrôle aucun taux d'erreur reconnu. Il est conservé
+  comme **indice de pression de sélection**, cité dans chaque rapport.
+- Règle de statut: toute découverte issue d'une ou plusieurs vagues IS,
+  quel que soit son q_BY intra-famille, plafonne au statut **"découverte
+  candidate"** (Correction 4). Les vagues IS successives ne se confirment
+  jamais entre elles, même indirectement (même échantillon, sélection héritée).
+- Promotion au statut "confirmation indépendante": uniquement par le Temps 2
+  (OOS verrouillé) pour les hypothèses concernées, puis par le Holdout en
+  finale autorisée. Aucun raccourci par accumulation de vagues IS.
+- Discipline de conception: chaque nouvelle vague doit déclarer, dans son
+  préenregistrement, en quoi ses questions ne sont pas des reparamétrages des
+  vagues antérieures (gouvernance des vagues, condition d'admission n°4);
+  cette déclaration est relue au gate contre le registre A.
+
+### D. Famille de confirmation OOS (multiplicité de la confirmation)
+- Les hypothèses verrouillées et évaluées **simultanément** sur l'OOS
+  constituent elles-mêmes une famille de confirmation, distincte des familles
+  de découverte IS: son m, sa procédure (BY, dépendance arbitraire entre
+  hypothèses partageant le même OOS) et son seuil sont verrouillés par hash
+  AVANT la consultation unique de l'OOS (Correction 3, Temps 2).
+- Un résultat OOS, favorable ou défavorable, ne peut ni sélectionner un
+  sous-ensemble d'hypothèses à "garder", ni modifier une hypothèse, ni
+  rouvrir la découverte sur IS avec un avantage informationnel: après lecture
+  de l'OOS, toute nouvelle confirmation exige un échantillon indépendant
+  nouveau (Holdout, autorisation finale distincte).
+- Les verdicts OOS sont publiés pour TOUTE la famille, y compris les échecs,
+  dans le registre A.
