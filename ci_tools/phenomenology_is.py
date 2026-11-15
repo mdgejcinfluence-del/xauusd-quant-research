@@ -4,8 +4,11 @@ rendements tick, sauts, rythme, autocorrelations, dynamique autour des trous,
 relations conditionnelles spread/volatilite/activite. Aucune hypothese, aucun label
 futur exploite comme signal: les ecarts apres trou sont decrits, pas testes.
 Checkpoint Git periodique, reprise par etat."""
-import json, pathlib, subprocess, os, time, datetime as dt
+import json, pathlib, subprocess, os, time, datetime as dt, traceback, sys
 import duckdb
+def _hook(a,b,c):
+    pathlib.Path('reports/meta_alpha/phenomenology/ERROR.txt').write_text(''.join(traceback.format_exception(a,b,c))); raise b
+sys.excepthook=_hook
 ROOT=pathlib.Path('reports/meta_alpha/phenomenology'); ROOT.mkdir(parents=True, exist_ok=True)
 STATE_P=ROOT/'STATE.json'; CSV=ROOT/'PARTITION_PHENOMENA.csv'
 _s=dt.datetime.fromisoformat("2010-01-04 00:01:10.457"); _e=dt.datetime.fromisoformat("2026-09-30 23:59:58.864")
@@ -51,11 +54,11 @@ def main():
             WITH s AS (SELECT timestamp_utc AS t, mid, spread_rel FROM read_parquet('{local}') ORDER BY observation_id),
             e AS (SELECT *, (mid-lag(mid) OVER w)/NULLIF(lag(mid) OVER w,0) AS r,
                         epoch(t-lag(t) OVER w) AS dt_s FROM s WINDOW w AS (ORDER BY t)),
-            j AS (SELECT *, lag(r) OVER (ORDER BY t) AS r_prev, abs(r) AS ar FROM e)
+            j AS (SELECT *, lag(r) OVER (ORDER BY t) AS r_prev, abs(r) AS ar, lag(abs(r)) OVER (ORDER BY t) AS ar_prev FROM e)
             SELECT count(*),
               approx_quantile(spread_rel,0.01), approx_quantile(spread_rel,0.25), approx_quantile(spread_rel,0.5), approx_quantile(spread_rel,0.75), approx_quantile(spread_rel,0.99),
               stddev_samp(r), skewness(r), kurtosis(r),
-              corr(r, r_prev), corr(ar, lag(ar) OVER (ORDER BY t)),
+              corr(r, r_prev), corr(ar, ar_prev),
               10000.0*avg(CASE WHEN ar>0.0005 THEN 1 ELSE 0 END),
               sum(CASE WHEN dt_s>60 THEN 1 ELSE 0 END),
               avg(CASE WHEN dt_s>60 THEN ar END), avg(CASE WHEN dt_s<=60 THEN ar END),
