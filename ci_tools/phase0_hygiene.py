@@ -43,10 +43,10 @@ def main():
     parts=[p for p in inv['partitions'] if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z','+00:00')).replace(tzinfo=None)<=IS_END]
     state=json.loads(STATE_P.read_text()) if STATE_P.exists() else {'done':[]}
     con=duckdb.connect(); con.execute("SET memory_limit='4GB'"); con.execute("SET threads=2")
-    newa=not AGG.exists(); newg=not GAPS.exists()
-    with open(AGG,'a') as af, open(GAPS,'a') as gf:
-        if newa: af.write("partition,n,crossed,locked,nonpositive,spread_rel_max,spread_rel_p999,min_pos_dmid,dup_ts_events\n")
-        if newg: gf.write("partition,gap_start,gap_end,dur_s\n")
+    if not AGG.exists(): AGG.write_text("partition,n,crossed,locked,nonpositive,spread_rel_max,spread_rel_p999,min_pos_dmid,dup_ts_events\n")
+    if not GAPS.exists(): GAPS.write_text("partition,gap_start,gap_end,dur_s\n")
+    if True:
+        af=open(AGG,'a'); gf=open(GAPS,'a'); af.close(); gf.close()
         for p in parts:
             if p['name'] in state['done']: continue
             local=f"/tmp/{p['name']}"; dl(p['drive_id'], local, p['name'])
@@ -59,13 +59,14 @@ def main():
               (SELECT coalesce(sum(c-1),0) FROM (SELECT t, count(*) c FROM s GROUP BY t HAVING c>1))
             FROM e"""
             r=con.execute(q).fetchone()
-            af.write(p['name']+','+','.join('' if v is None else str(float(v)) for v in r)+'\n'); af.flush()
+            with open(AGG,'a') as af: af.write(p['name']+','+','.join('' if v is None else str(float(v)) for v in r)+'\n')
             qg=f"""
             WITH s AS (SELECT timestamp_utc AS t, epoch(timestamp_utc - lag(timestamp_utc) OVER (ORDER BY observation_id)) AS d, lag(timestamp_utc) OVER (ORDER BY observation_id) AS tp FROM read_parquet('{local}'))
             SELECT tp, t, d FROM s WHERE d>60 ORDER BY t"""
-            for a,b,d in con.execute(qg).fetchall():
-                gf.write(f"{p['name']},{a},{b},{float(d)}\n")
-            gf.flush(); os.remove(local); state['done'].append(p['name'])
+            with open(GAPS,'a') as gf:
+                for a,b,d in con.execute(qg).fetchall():
+                    gf.write(f"{p['name']},{a},{b},{float(d)}\n")
+            os.remove(local); state['done'].append(p['name'])
             if len(state['done'])%20==0: checkpoint(state)
             print('phase0', p['name'], flush=True)
     checkpoint(state); print('phase 0 terminee:', len(state['done']))
