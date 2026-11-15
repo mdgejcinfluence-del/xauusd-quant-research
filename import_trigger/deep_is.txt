@@ -2,3 +2,4 @@
 reprise deep a 254 apres throttling telechargement
 reprise deep avec repli Range
 reprise deep ordre inverse (contournement quota fichier)
+reprise deep apres pause quota Drive
