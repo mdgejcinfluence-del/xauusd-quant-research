@@ -1,0 +1,1 @@
+partition,n,spread_p1,spread_p25,spread_p50,spread_p75,spread_p99,ret_std,ret_skew,ret_kurt,autocorr_lag1,autocorr_abs_lag1,jump_5bp_per_10k,gaps60,absret_after_gap,absret_normal,spread_after_jump,spread_normal,interarr_p50,interarr_p95
