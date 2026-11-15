@@ -90,6 +90,7 @@ FROM y"""
 def main():
     inv=json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))
     parts=[p for p in inv['partitions'] if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z','+00:00')).replace(tzinfo=None)<=IS_END]
+    parts=list(reversed(parts))  # ordre inverse: contourne un quota Drive ponctuel sur un fichier sans bloquer les autres (mesures par partition independantes de l'ordre)
     state=json.loads(STATE_P.read_text()) if STATE_P.exists() else {'done':[]}
     con=duckdb.connect(); con.execute("SET memory_limit='4GB'"); con.execute("SET threads=2")
     new=not CSV.exists()
