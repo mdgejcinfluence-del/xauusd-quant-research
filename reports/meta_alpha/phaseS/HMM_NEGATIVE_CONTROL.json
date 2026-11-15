@@ -1,0 +1,413 @@
+{
+ "config": {
+  "generateur": "GARCH(1,1) omega=0.05 alpha=0.10 beta=0.85, n=4000, echelle 1e-4",
+  "graines": "2000-2011 (neuves)",
+  "barres": [
+   10,
+   50
+  ],
+  "sticky": [
+   10.0,
+   50.0,
+   200.0
+  ],
+  "K": [
+   2,
+   3
+  ],
+  "critere": "HMM invente des regimes si BIC(K=2) < BIC(K=1) dans > 50% des repetitions (config de reference barres=10, sticky=50)"
+ },
+ "repetitions": [
+  {
+   "seed": 2000,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5635.0,
+   "bic2": -5708.7,
+   "k2_prefere": true,
+   "occupation_min": 0.435,
+   "bascules": 60,
+   "duree_moyenne_etat": 6.7
+  },
+  {
+   "seed": 2000,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1014.3,
+   "bic2": -995.9,
+   "k2_prefere": false,
+   "occupation_min": 0.375,
+   "bascules": 2,
+   "duree_moyenne_etat": 40.0
+  },
+  {
+   "seed": 2001,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5705.8,
+   "bic2": -5755.3,
+   "k2_prefere": true,
+   "occupation_min": 0.338,
+   "bascules": 16,
+   "duree_moyenne_etat": 25.0
+  },
+  {
+   "seed": 2001,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -997.3,
+   "bic2": -984.8,
+   "k2_prefere": false,
+   "occupation_min": 0.4,
+   "bascules": 4,
+   "duree_moyenne_etat": 20.0
+  },
+  {
+   "seed": 2002,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5694.5,
+   "bic2": -5761.5,
+   "k2_prefere": true,
+   "occupation_min": 0.297,
+   "bascules": 36,
+   "duree_moyenne_etat": 11.1
+  },
+  {
+   "seed": 2002,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -999.5,
+   "bic2": -984.3,
+   "k2_prefere": false,
+   "occupation_min": 0.325,
+   "bascules": 1,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2003,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5598.1,
+   "bic2": -5691.1,
+   "k2_prefere": true,
+   "occupation_min": 0.255,
+   "bascules": 26,
+   "duree_moyenne_etat": 15.4
+  },
+  {
+   "seed": 2003,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1007.7,
+   "bic2": -992.4,
+   "k2_prefere": false,
+   "occupation_min": 0.338,
+   "bascules": 2,
+   "duree_moyenne_etat": 40.0
+  },
+  {
+   "seed": 2004,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5649.1,
+   "bic2": -5726.5,
+   "k2_prefere": true,
+   "occupation_min": 0.32,
+   "bascules": 37,
+   "duree_moyenne_etat": 10.8
+  },
+  {
+   "seed": 2004,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1024.6,
+   "bic2": -1015.3,
+   "k2_prefere": false,
+   "occupation_min": 0.438,
+   "bascules": 9,
+   "duree_moyenne_etat": 8.9
+  },
+  {
+   "seed": 2005,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5588.8,
+   "bic2": -5661.2,
+   "k2_prefere": true,
+   "occupation_min": 0.058,
+   "bascules": 12,
+   "duree_moyenne_etat": 33.3
+  },
+  {
+   "seed": 2005,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -993.7,
+   "bic2": -981.4,
+   "k2_prefere": false,
+   "occupation_min": 0.312,
+   "bascules": 5,
+   "duree_moyenne_etat": 16.0
+  },
+  {
+   "seed": 2006,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5661.0,
+   "bic2": -5721.9,
+   "k2_prefere": true,
+   "occupation_min": 0.207,
+   "bascules": 36,
+   "duree_moyenne_etat": 11.1
+  },
+  {
+   "seed": 2006,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1010.9,
+   "bic2": -991.0,
+   "k2_prefere": false,
+   "occupation_min": 0.487,
+   "bascules": 1,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2007,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5665.1,
+   "bic2": -5745.1,
+   "k2_prefere": true,
+   "occupation_min": 0.16,
+   "bascules": 22,
+   "duree_moyenne_etat": 18.2
+  },
+  {
+   "seed": 2007,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1008.5,
+   "bic2": -988.9,
+   "k2_prefere": false,
+   "occupation_min": 0.338,
+   "bascules": 1,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2008,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5679.9,
+   "bic2": -5735.3,
+   "k2_prefere": true,
+   "occupation_min": 0.425,
+   "bascules": 63,
+   "duree_moyenne_etat": 6.3
+  },
+  {
+   "seed": 2008,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1022.0,
+   "bic2": -1007.6,
+   "k2_prefere": false,
+   "occupation_min": 0.15,
+   "bascules": 2,
+   "duree_moyenne_etat": 40.0
+  },
+  {
+   "seed": 2009,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5668.9,
+   "bic2": -5729.5,
+   "k2_prefere": true,
+   "occupation_min": 0.323,
+   "bascules": 53,
+   "duree_moyenne_etat": 7.5
+  },
+  {
+   "seed": 2009,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -1012.9,
+   "bic2": -998.7,
+   "k2_prefere": false,
+   "occupation_min": 0.125,
+   "bascules": 1,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2010,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5648.8,
+   "bic2": -5715.1,
+   "k2_prefere": true,
+   "occupation_min": 0.352,
+   "bascules": 55,
+   "duree_moyenne_etat": 7.3
+  },
+  {
+   "seed": 2010,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -994.5,
+   "bic2": -982.0,
+   "k2_prefere": false,
+   "occupation_min": 0.35,
+   "bascules": 1,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2011,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -5692.1,
+   "bic2": -5741.5,
+   "k2_prefere": true,
+   "occupation_min": 0.125,
+   "bascules": 15,
+   "duree_moyenne_etat": 26.7
+  },
+  {
+   "seed": 2011,
+   "barre": 50,
+   "sticky": 50.0,
+   "K": 2,
+   "bic1": -972.1,
+   "bic2": -950.2,
+   "k2_prefere": false,
+   "occupation_min": 0.0,
+   "bascules": 0,
+   "duree_moyenne_etat": 80.0
+  },
+  {
+   "seed": 2000,
+   "barre": 10,
+   "sticky": 10.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 127
+  },
+  {
+   "seed": 2000,
+   "barre": 10,
+   "sticky": 200.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 12
+  },
+  {
+   "seed": 2000,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 3,
+   "k3_prefere": true,
+   "bascules": 54
+  },
+  {
+   "seed": 2001,
+   "barre": 10,
+   "sticky": 10.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 54
+  },
+  {
+   "seed": 2001,
+   "barre": 10,
+   "sticky": 200.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 16
+  },
+  {
+   "seed": 2001,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 3,
+   "k3_prefere": true,
+   "bascules": 24
+  },
+  {
+   "seed": 2002,
+   "barre": 10,
+   "sticky": 10.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 46
+  },
+  {
+   "seed": 2002,
+   "barre": 10,
+   "sticky": 200.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 26
+  },
+  {
+   "seed": 2002,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 3,
+   "k3_prefere": true,
+   "bascules": 29
+  },
+  {
+   "seed": 2003,
+   "barre": 10,
+   "sticky": 10.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 177
+  },
+  {
+   "seed": 2003,
+   "barre": 10,
+   "sticky": 200.0,
+   "K": 2,
+   "k2_prefere": true,
+   "bascules": 18
+  },
+  {
+   "seed": 2003,
+   "barre": 10,
+   "sticky": 50.0,
+   "K": 3,
+   "k3_prefere": true,
+   "bascules": 23
+  }
+ ],
+ "synthese": {
+  "config_reference": "barre=10, sticky=50, K=2",
+  "repetitions": 12,
+  "fraction_K2_prefere_par_BIC": 1.0,
+  "verdict_selon_critere": "INVENTE_DES_REGIMES",
+  "duree_totale_s": 15.2
+ }
+}
