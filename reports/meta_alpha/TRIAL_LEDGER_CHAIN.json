@@ -43,6 +43,24 @@
     "ref": "p3/P3_002_REGISTRY.json"
    },
    "entry_hash": "13c4f07ca6669b9f476e27aebe6159e68fb6d9f0e9a8211ce57e0096cdd24b02"
+  },
+  {
+   "seq": 5,
+   "prev_hash": "13c4f07ca6669b9f476e27aebe6159e68fb6d9f0e9a8211ce57e0096cdd24b02",
+   "entry": {
+    "type": "VERDICT",
+    "vague": "P3-002",
+    "verdict": "AUCUN_SURVIVANT",
+    "survivants": 0,
+    "contrastes_testes": 21,
+    "causes": {
+     "AUCUN_SIGNAL": 11,
+     "AMPLITUDE_INSUFFISANTE_OU_ABSORBEE_PAR_SPREAD": 10
+    },
+    "methode": "gate_engine_v2 BY + compteur cumulatif (m=37) + filtre spread median 2,17 bp",
+    "ref": "p3/GATE_P3_002.json"
+   },
+   "entry_hash": "fba97ccf4f280141e153ea481ea62e88b5370bd41daaee631365d234341f49a2"
   }
  ]
 }
