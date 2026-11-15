@@ -1,0 +1,25 @@
+{
+  "mission": "PHASE_1R tâche 1 — séries descriptives granulées causales sur IS (exploration descriptive, statut maximal: découverte candidate; aucune confirmation indépendante possible)",
+  "perimetre": "282 partitions IS (timestamp_max <= 2020-01-20T09:36:27), lecture seule, aucun OOS, aucun Holdout",
+  "granularites": {
+    "G_EVT100": "barres de 100 événements consécutifs (ordre observation_id), refermées à chaque gap > 60 s",
+    "G_ACT500": "barres de 500 mises à jour de cotation (activité), refermées à chaque gap > 60 s",
+    "G_VOL10bp": "barres refermées dès que la somme des |rendements mid tick| atteint 0,001 (10 bp), refermées aussi à chaque gap > 60 s"
+  },
+  "regles": "aucune interpolation; aucun OHLC; aucun franchissement de gap > 60 s par une barre; ordre = observation_id (ordre réel du corpus certifié); formules: rendement de barre = mid_fin/mid_debut - 1; volatilité réalisée = sqrt(somme r_i^2); spread = moyenne du spread_rel des ticks de la barre; intensité = n/durée (événements/s); parts d'événements bid-seul/ask-seul/les-deux sur les ticks de la barre",
+  "statistiques": "par granularité et par partition puis agrégées (médiane des partitions, quantiles, par tiers d'IS et par mois): nombre de barres, quantiles du rendement de barre (p1/p25/p50/p75/p99), quantiles de volatilité réalisée, spread moyen, intensité, parts de types d'événements, autocorrélation lag-1 des rendements de barres (descriptive, seuil adapté: stabilité de signe sur 2/3 tiers + bootstrap par blocs mensuel)",
+  "seuils_verrouilles": {
+    "variation_non_triviale": "écart Q1-Q5 > seuil d'unité propre (Correction 1 du protocole FINAL) ET |R| >= 25% avec R = D/max(|S_ref|, epsilon_S)",
+    "epsilon_S": "1% de l'écart interquartile IS de la statistique (mesuré sur les agrégats de cette tâche, déclaré avant tout verdict)",
+    "stabilite": "même signe sur au moins 2 des 3 tiers d'IS; pente intra-condition non significative après BY (famille déclarée ci-dessous)",
+    "comparaison_spread": "pertinente uniquement pour les rendements (même unité bp); non pertinente pour autocorrélations/intensités (seuils adaptés du protocole)"
+  },
+  "famille_de_tests": {
+    "composition": "autocorrélations lag-1 des rendements de barres, 3 granularités = 3 tests descriptifs évalués; aucune autre inférence dans cette tâche",
+    "m": 3,
+    "procedure": "BY (dépendance arbitraire) + compteur cumulatif historique cité (148 tests + 3 vagues descriptives + Phase S)",
+    "seuil": "q_BY < 0,05 ET stabilité de signe 2/3 tiers pour le statut découverte candidate; sinon descriptif simple"
+  },
+  "incertitude": "bootstrap par blocs mensuels (1000 réplications, graine 7) sur les séries mensuelles agrégées, calculé à l'agrégation finale",
+  "statut_maximal": "découverte candidate (jamais confirmation indépendante en Phase 1R)"
+}

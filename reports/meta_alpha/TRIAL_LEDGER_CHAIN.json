@@ -61,6 +61,28 @@
     "ref": "p3/GATE_P3_002.json"
    },
    "entry_hash": "fba97ccf4f280141e153ea481ea62e88b5370bd41daaee631365d234341f49a2"
+  },
+  {
+   "seq": 6,
+   "prev_hash": "fba97ccf4f280141e153ea481ea62e88b5370bd41daaee631365d234341f49a2",
+   "entry": {
+    "type": "MISSION",
+    "id": "PHASE_1R_TACHE1",
+    "perimetre": "IS 282 partitions",
+    "protocole": "META_ALPHA_PHASE_1R_REVISED_PROTOCOL_FINAL.md",
+    "statut_maximal": "decouverte candidate"
+   },
+   "entry_hash": "b51243749ea97e872699e248c736a9d86b70d16d4ced9351318174dbee9fc2a5"
+  },
+  {
+   "seq": 7,
+   "prev_hash": "b51243749ea97e872699e248c736a9d86b70d16d4ced9351318174dbee9fc2a5",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/phase1r/PHASE_1R_PREREG.json",
+    "sha256": "ddd09ef3c0ed46e540b1930162a4b9262f69fd961a118e5f3f9fa32ca58fff1f"
+   },
+   "entry_hash": "fb65b4f2d2af6dccc8c5f017a3d7c5b76dade0e6a3c384f960bd87b6c0db7ef0"
   }
  ]
 }
