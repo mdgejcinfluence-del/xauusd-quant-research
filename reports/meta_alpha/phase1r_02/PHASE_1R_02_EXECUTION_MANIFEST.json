@@ -1,0 +1,43 @@
+{
+ "mission": "PHASE_1R_02",
+ "type": "exploration descriptive sur artefacts existants",
+ "perimetre_respecte": {
+  "partitions_relues": 0,
+  "ticks_relus": 0,
+  "oos": false,
+  "holdout": false,
+  "cout_fcfa": 0
+ },
+ "verification_initiale": {
+  "commit_distant": "6663913051f266c60893c0d05aa6fd00a02597cf",
+  "run_43752027483": "success (GitHub API)",
+  "chaine_a_l_ouverture": "8 entrees, valide, tete eb7b4d2690b86f87",
+  "mission_inscrite_seq": 9
+ },
+ "artefacts_examines": {
+  "reports/meta_alpha/phase1r/PARTITION_GRANULARITY.csv": "df08a6ba002a04c0d27a14ea4762d10b7082a035984713ccd28fee946e785626",
+  "reports/meta_alpha/phase1r/MONTHLY_SERIES.csv": "de97a9a06f62c1cfcdfa2bdb6a0642c3fd8bf22357279d49169f0068542871d0",
+  "reports/meta_alpha/phase1r/PHASE_1R_PREREG.json": "ddd09ef3c0ed46e540b1930162a4b9262f69fd961a118e5f3f9fa32ca58fff1f",
+  "ci_tools/phase1r_series.py": "049f238c7acd5f5e33f51f894bcc5120329bb48534398e6196f7cd93e31023e7"
+ },
+ "lignes_examinees": {
+  "PARTITION_GRANULARITY.csv": 846,
+  "MONTHLY_SERIES.csv": 1191
+ },
+ "livrables": [
+  "reports/meta_alpha/META_ALPHA_PHASE_1R_02_DESCRIPTIVE_DEEP_DIVE_REPORT.md",
+  "reports/meta_alpha/phase1r_02/ANOM_001_DEEP_REVIEW.md",
+  "reports/meta_alpha/phase1r_02/MULTI_GRANULARITY_COMPARISON.md",
+  "reports/meta_alpha/phase1r_02/DESCRIPTIVE_PHENOMENA_REGISTER.json",
+  "reports/meta_alpha/phase1r_02/PHASE_1R_02_EXECUTION_MANIFEST.json"
+ ],
+ "statut_maximal": "EXPLORATION DESCRIPTIVE",
+ "phenomenes_enregistres": "F01-F09, aucun promu anomalie candidate, aucune hypothese generee",
+ "non_realise_faute_d_artefacts": [
+  "correlation croisee bid/ask -5..+5 / lead-lag",
+  "autocorrelations par jambe",
+  "distributions d'inter-arrivees",
+  "comportement post-gap fin",
+  "relations intra-periode de-confoundues"
+ ]
+}

@@ -108,6 +108,17 @@
     "analyses": "A ANOM-001 revue artefacts; B multi-granularite derivee; C phenomenes inattendus; formules Spearman/mediane/IQR sur agregats partitions et mois; aucune p-value hors famille preenregistree (aucune nouvelle famille inferentielle)"
    },
    "entry_hash": "4fd47465a9c83a1c1d4eb8cf569cb344e7dab7196b2848df7d3c57e2c3cbdd19"
+  },
+  {
+   "seq": 10,
+   "prev_hash": "4fd47465a9c83a1c1d4eb8cf569cb344e7dab7196b2848df7d3c57e2c3cbdd19",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE_1R_02",
+    "verdict": "ANOM-001: phenomene tick reproduit, mecanisme refute, lead-lag NON calculable depuis agregats; VOL10bp ac1 non concluant; relations Spearman ecologiques confondues par tiers; 9 phenomenes F01-F09 tous EXPLORATION DESCRIPTIVE; aucune anomalie candidate, aucune hypothese",
+    "ref": "META_ALPHA_PHASE_1R_02_DESCRIPTIVE_DEEP_DIVE_REPORT.md"
+   },
+   "entry_hash": "ae1da86cfe467e4bb778831b00317408f1fddcfb27efecf7c92b6435315bbefb"
   }
  ]
 }
