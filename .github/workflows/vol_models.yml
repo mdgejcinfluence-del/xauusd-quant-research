@@ -17,7 +17,7 @@ jobs:
       - run: pip install -q gdown duckdb pytz requests
       - name: Verifier la chaine avant calcul
         run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
-      - run: python3 ci_tools/vol_models.py
+      - run: python3 ci_tools/daily_vol.py
       - name: Commit resultats (toujours)
         if: always()
         run: |
