@@ -40,14 +40,14 @@ e AS (SELECT *, lag(bid) OVER w AS bid0, lag(ask) OVER w AS ask0, lag(mid) OVER 
 v AS (SELECT *, (mid-mid0)/NULLIF(mid0,0)*10000 AS rbp, epoch(t-t0) AS dt_s, (bid=bid0 AND ask=ask0) AS nochange FROM e),
 f AS (SELECT * FROM v WHERE NOT coalesce(nochange,false) AND rbp IS NOT NULL),
 x AS (SELECT *, lag(rbp) OVER (ORDER BY oid) AS rp FROM f),
-b AS (SELECT {qs('rbp',PS)} FROM v WHERE rbp IS NOT NULL)
+b AS (SELECT approx_quantile(rbp,0.001) AS bq0, approx_quantile(rbp,0.01) AS bq1, approx_quantile(rbp,0.05) AS bq2, approx_quantile(rbp,0.25) AS bq3, approx_quantile(rbp,0.5) AS bq4, approx_quantile(rbp,0.75) AS bq5, approx_quantile(rbp,0.95) AS bq6, approx_quantile(rbp,0.99) AS bq7, approx_quantile(rbp,0.999) AS bq8 FROM v WHERE rbp IS NOT NULL)
 SELECT (SELECT count(*) FROM v) AS n_brut, (SELECT count(*) FROM f) AS n_filtre,
- {qs('rbp',PS)},
+ (SELECT bq0 FROM b), (SELECT bq1 FROM b), (SELECT bq2 FROM b), (SELECT bq3 FROM b), (SELECT bq4 FROM b), (SELECT bq5 FROM b), (SELECT bq6 FROM b), (SELECT bq7 FROM b), (SELECT bq8 FROM b), {qs('rbp',PS)},
  {', '.join(f"approx_quantile(abs(rbp),{q})" for q in [0.5,0.95,0.99])},
  {', '.join(f"approx_quantile(dt_s,{q})" for q in [0.05,0.25,0.5,0.75,0.95,0.99])},
  {', '.join(f"approx_quantile(spread_rel*10000,{q})" for q in [0.05,0.5,0.95,0.99])},
  corr(rbp, rp)
-FROM x CROSS JOIN b"""
+FROM x"""
 COLS="partition,n_brut,n_filtre,"+",".join(f"brut_p{int(p*1000)}" for p in PS)+","+",".join(f"filt_p{int(p*1000)}" for p in PS)+",filt_abs_p50,filt_abs_p95,filt_abs_p99,dt_p5,dt_p25,dt_p50,dt_p75,dt_p95,dt_p99,spread_p5,spread_p50,spread_p95,spread_p99,ac1_filtre\n"
 def main():
     inv=json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))
