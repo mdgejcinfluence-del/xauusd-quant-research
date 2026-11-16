@@ -1,0 +1,10 @@
+{
+ "mission": "DIST_REGIME",
+ "run": 43920488453,
+ "statut": "success 2h04",
+ "sha256": {
+  "ci_tools/dist_regime.py": "fe6441f172298f70cf6e10f7c879046ffd04a03d3826b75205129b19a8b8131f",
+  "reports/meta_alpha/dist_regime/DIST_REGIME_PARTITION.csv": "8985ba9018b3f65026ad29ac81baa978d70401284d61b27ec0e1330c60d60b44",
+  "reports/meta_alpha/dist_regime/DIST_REGIME_SYNTHESIS.json": "0b05fe5c8f34aee080b2b92ab664c8de153a9ce163449f3d1e899406354c1454"
+ }
+}

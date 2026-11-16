@@ -9,10 +9,10 @@ Reference mensuelle: monthly_reference/MONTHLY_REFERENCE_SERIES.json (120 mois).
 | Structure des cotations | COMPRISE (descriptif) | mecanique changee: bilateraux 99% (janv. 2010, mensuel) -> passage durable sous 50% des oct. 2012 -> ~31-37% (2019); unilaterales symetriques bid/ask |
 | Prix construit (mid) | COMPRIS (descriptif) | ac1 tick era-dependante (0.497 T1 -> 0.034 T3), non conditionnee par le spread; s'eteint a 100 evt/60 s |
 | Spread | COMPRIS (descriptif) | median ~4 bp (2010) -> ~1.9 bp (2019); persistance tick ac1 0.633 croissante entre tiers; relation a l'intensite negative aussi INTRA-regime de cotation (rho -0.60 bilateral, -0.47 unilateral; mixte n=15 non concluant) |
-| Activite / inter-arrivees | PARTIEL | dt moyen mensuel 3.7 s (2010) -> 0.6-0.9 s (2019); distributions fines non cartographiees |
+| Activite / inter-arrivees | COMPRISE (descriptif) | queue lourde dans les 3 regimes: p50 0.26-0.49 s, p95 2.5-7.9 s, p99 6.7-19.5 s; activite en rafales et silences, aucun calendrier suppose |
 | Dependances croisees bid/ask | COMPRISES (descriptif) | aucun leader a aucune epoque; motif +/-1 evenement (ancien regime) -> contemporain (regime recent) |
 | Volatilite | PARTIEL | memoire continue (ac|r| 0.457/0.184/0.132), era-dependante; mois extremes: 2010-04, 2012-05, 2012-06 (vol realisee mensuelle z>4); comparaison formelle de modeles continus NON faite (protocole gele a autoriser) |
-| Distributions | PARTIEL | queues de rendements de barres symetriques (p99/|p1| 1.05-1.11); queues tick non cartographiees finement |
+| Distributions | COMPRISE par regime (run DIST 43920488453, republications filtrees) | amplitude |r| p50: 0.214 (bilateral) -> 0.124 (mixte) -> 0.066 bp (unilateral); queues symetriques partout (0.97-0.99); epaisseur relative de queue croissante 10.4 -> 18.5; filtrage des republications sans effet sur quantiles/ac1 |
 | Granularites naturelles | COMPRISE (descriptif) | microstructure <=10 evt/30 s; extinction ~100 evt/60 s; memoire de volatilite a toutes echelles |
 | Episodes anormaux | EN COURS | voir registre |
 | Regimes discrets | AUCUN DEMONTRE | les changements observes sont progressifs (cotation) ou continus (volatilite) |
@@ -31,5 +31,5 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
-2. Distributions fines et inter-arrivees par regime de cotation.
-3. Comparaison gelee de modeles continus de volatilite (front le plus solide) — protocole a soumettre car il engage la gouvernance des tests.
+2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).
+3. Comparaison gelee de modeles continus de volatilite: protocole redige et SOUMIS (PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE.md) — en attente de validation proprietaire, execution non commencee.

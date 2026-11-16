@@ -269,6 +269,29 @@
     "sha256": "591f9ee346a017667f6eaed3aecbd2a8698e00dfe0099527e76829a6e5afd18a"
    },
    "entry_hash": "d38896f912be23cbfff2048cdfdc604638c00082d0ffa74b17ee31bb53de1694"
+  },
+  {
+   "seq": 25,
+   "prev_hash": "d38896f912be23cbfff2048cdfdc604638c00082d0ffa74b17ee31bb53de1694",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "DIST_REGIME",
+    "run": 43920488453,
+    "verdict": "distributions par regime: amplitude mouvements /3 entre regimes, queues symetriques, epaisseur relative croissante (10.4->18.5), inter-arrivees queue lourde; filtrage republications sans effet sur ac1/quantiles",
+    "ref": "dist_regime/DIST_REGIME_SYNTHESIS.json"
+   },
+   "entry_hash": "98def77e1dfac23b066a125af6b01a643987b4bd44ce0003cf4425b6d4e87231"
+  },
+  {
+   "seq": 26,
+   "prev_hash": "98def77e1dfac23b066a125af6b01a643987b4bd44ce0003cf4425b6d4e87231",
+   "entry": {
+    "type": "DOCUMENT",
+    "id": "PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE",
+    "statut": "PROPOSE A VALIDER, non execute",
+    "ref": "PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE.md"
+   },
+   "entry_hash": "d7b5b454c33b13f28c74f577734fd11bacb6652fb2bc3ab1322c1efff7580727"
   }
  ]
 }
