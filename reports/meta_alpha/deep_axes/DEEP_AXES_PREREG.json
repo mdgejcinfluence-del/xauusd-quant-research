@@ -1,0 +1,10 @@
+{
+ "mission":"DEEP AXES A/B/C — investigation autonome (ordre proprietaire, autonomie etendue)",
+ "perimetre":"282 partitions IS, lecture seule; OOS/Holdout interdits; 0 FCFA",
+ "constats_locaux_sans_relecture":"Axe C par tiers depuis GLOBAL_TICK_PARTITION.csv: profil croise bid/ask T1 domine par +/-1 evenement (0.538) vs contemporain 0.349; T2/T3 contemporain dominant (0.564/0.588) vs +/-1 (0.18/0.13): changement d'epoque de synchronisation a caracteriser",
+ "mesures_par_partition":{
+  "A_mecanisme":["parts evenements aucun/bid-seul/ask-seul/bilateraux (lag correct lag(bid), lag(ask))","rendement mid suivant signe par la direction de l'evenement, par type (bp): continuation moyenne, |r suivant| moyen, probabilite de meme signe","ac1 mid conditionnee spread haut/bas (seuil = mediane de partition du spread_rel)"],
+  "B_reversion":["barres EVT10, EVT50, TIME30s, TIME60s (gaps>60s jamais franchis en EVT): ac1, |rendement de barre| moyen (bp), proxy descriptif de reversion = moyenne(-sign(r_t)*r_{t+1}) en bp — DESCRIPTIF, pas une performance de strategie; comparaison au spread median de la meme partition (artefact global tick) faite a l'agregation"],
+  "C":"par tiers a l'agregation depuis les artefacts tick existants + mesures A par tiers"},
+ "statut":"EXPLORATION DESCRIPTIVE / caracterisation; aucune hypothese testee; proxy de reversion jamais presente comme rentabilite"
+}
