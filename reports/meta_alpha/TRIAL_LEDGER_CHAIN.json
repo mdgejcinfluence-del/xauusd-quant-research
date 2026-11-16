@@ -185,6 +185,26 @@
     "ref": "META_ALPHA_DEEP_AXES_INVESTIGATION_REPORT.md"
    },
    "entry_hash": "e8c6a4b41a20b0ea52afb680e316894f185d3053cfbdf973ecc05f3dd1b9b71d"
+  },
+  {
+   "seq": 17,
+   "prev_hash": "e8c6a4b41a20b0ea52afb680e316894f185d3053cfbdf973ecc05f3dd1b9b71d",
+   "entry": {
+    "type": "MISSION",
+    "id": "MONTHLY_REFERENCE",
+    "perimetre": "IS 282; serie mensuelle calendaire de reference (composition, spread, volatilite, activite)"
+   },
+   "entry_hash": "1b72685a92211048fe62654e766aa2d389f0dd7d54e9a59c65c7dff634c8ae60"
+  },
+  {
+   "seq": 18,
+   "prev_hash": "1b72685a92211048fe62654e766aa2d389f0dd7d54e9a59c65c7dff634c8ae60",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/monthly_reference/MONTHLY_PREREG.json",
+    "sha256": "bdce574d6387b9b1b2f55e5763eb8eb36c45b348bc4e2f1c5d6fa166639b45eb"
+   },
+   "entry_hash": "19273148d7ac027ede8b86c62c3b9eaba45676415cead07a08c3312d892c679e"
   }
  ]
 }
