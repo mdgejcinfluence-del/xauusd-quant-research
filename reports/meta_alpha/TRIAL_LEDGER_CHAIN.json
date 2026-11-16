@@ -217,6 +217,26 @@
     "ref": "MARKET_CARTOGRAPHY_LIVING.md"
    },
    "entry_hash": "e0931f5b9469f45b610ec36702333d3e59ced0e087d1471e65d507d0f6510551"
+  },
+  {
+   "seq": 20,
+   "prev_hash": "e0931f5b9469f45b610ec36702333d3e59ced0e087d1471e65d507d0f6510551",
+   "entry": {
+    "type": "MISSION",
+    "id": "GD07_CHARACTERISATION",
+    "perimetre": "55 partitions IS 2012-07..2018-03 ciblees GD-07/GD-08 + temoins"
+   },
+   "entry_hash": "eef5b4a939a123f32bb2e405df470625582b920ecfe1ee1f7e9679e3f721eca6"
+  },
+  {
+   "seq": 21,
+   "prev_hash": "eef5b4a939a123f32bb2e405df470625582b920ecfe1ee1f7e9679e3f721eca6",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/gd07/GD07_PREREG.json",
+    "sha256": "e95f7f24590a439b613a45050b77f197027c36defd4b839d9b74d8a74697a3c1"
+   },
+   "entry_hash": "7abcb6f4223077fbd42d82717789b8a4207b5dffa3b6114d9641f2e48dc517eb"
   }
  ]
 }
