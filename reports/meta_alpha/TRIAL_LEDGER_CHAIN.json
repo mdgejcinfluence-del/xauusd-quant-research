@@ -292,6 +292,26 @@
     "ref": "PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE.md"
    },
    "entry_hash": "d7b5b454c33b13f28c74f577734fd11bacb6652fb2bc3ab1322c1efff7580727"
+  },
+  {
+   "seq": 27,
+   "prev_hash": "d7b5b454c33b13f28c74f577734fd11bacb6652fb2bc3ab1322c1efff7580727",
+   "entry": {
+    "type": "MISSION",
+    "id": "VOL_MODELS_STEP1",
+    "protocole": "PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE.md VALIDE par proprietaire + AMENDEMENT_EXECUTION auto-valide (serie journaliere a construire)"
+   },
+   "entry_hash": "ea93b6bf78dd76ef233204d497f86e53d172cf35b89a6bbb19e8c713403e4514"
+  },
+  {
+   "seq": 28,
+   "prev_hash": "ea93b6bf78dd76ef233204d497f86e53d172cf35b89a6bbb19e8c713403e4514",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/vol_models/AMENDEMENT_EXECUTION.json",
+    "sha256": "81478e5b79c6c6686541cd1053f1256e6abf4b399ca600ff8559bf6bf77e8901"
+   },
+   "entry_hash": "e8bcefe36481d0b24dc4431ce890af2d375b216ca987ae4555576a4fd22b0884"
   }
  ]
 }
