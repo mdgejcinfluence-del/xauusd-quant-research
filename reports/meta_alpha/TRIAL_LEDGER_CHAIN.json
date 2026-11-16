@@ -323,6 +323,26 @@
     "ref": "META_ALPHA_VOL_MODELS_STEP1_REPORT.md"
    },
    "entry_hash": "33edf612ae1ab31896f7a9ad2d92fb76ebbdaaa2866ffc9d7ddbfbdbcb9aa656"
+  },
+  {
+   "seq": 30,
+   "prev_hash": "33edf612ae1ab31896f7a9ad2d92fb76ebbdaaa2866ffc9d7ddbfbdbcb9aa656",
+   "entry": {
+    "type": "MISSION",
+    "id": "MARKET_DIMENSIONS",
+    "perimetre": "IS 282; horaires UTC (aucune session supposee), sauts/queues, asymetrie, echelles 300/900/3600s"
+   },
+   "entry_hash": "63709742b6adb7a937b4703ffee89f47e9585d73bcc3eca8bb59df5ed726f23b"
+  },
+  {
+   "seq": 31,
+   "prev_hash": "63709742b6adb7a937b4703ffee89f47e9585d73bcc3eca8bb59df5ed726f23b",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/market_dimensions/DIMENSIONS_PREREG.json",
+    "sha256": "16bdb78a3a4c680e311b19115ce174923fff97e0451e9032e277b1effc977d77"
+   },
+   "entry_hash": "7af5af0bba2b5a54e07572054aeb365d6e9aca40e046fdbe37eae34de17170ee"
   }
  ]
 }
