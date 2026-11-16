@@ -33,7 +33,8 @@ Q="""
 WITH s AS (SELECT observation_id AS oid, timestamp_utc AS t, bid, ask, mid, spread_rel FROM read_parquet('{f}')),
 e AS (SELECT *, lag(bid) OVER w AS bid0, lag(ask) OVER w AS ask0, lag(mid) OVER w AS mid0, lag(t) OVER w AS t0 FROM s WINDOW w AS (ORDER BY oid)),
 v AS (SELECT *, (mid-mid0)/NULLIF(mid0,0) AS r, epoch(t-t0) AS dt_s, (bid=bid0 AND ask=ask0) AS nochange, ((mid-mid0)=0) AS z FROM e),
-g AS (SELECT *, sum(CASE WHEN z IS DISTINCT FROM lag(z) OVER (ORDER BY oid) THEN 1 ELSE 0 END) OVER (ORDER BY oid) AS grp FROM v),
+v2 AS (SELECT *, lag(z) OVER (ORDER BY oid) AS zprev FROM v),
+g AS (SELECT *, sum(CASE WHEN z IS DISTINCT FROM zprev THEN 1 ELSE 0 END) OVER (ORDER BY oid) AS grp FROM v2),
 runs AS (SELECT grp, count(*) AS len, epoch(max(t)-min(t)) AS dur FROM g WHERE z GROUP BY grp)
 SELECT (SELECT avg(CASE WHEN z THEN 1.0 WHEN r IS NULL THEN NULL ELSE 0 END) FROM v),
  (SELECT approx_quantile(len,0.5) FROM runs), (SELECT approx_quantile(len,0.95) FROM runs), (SELECT max(len) FROM runs), (SELECT max(dur) FROM runs),
