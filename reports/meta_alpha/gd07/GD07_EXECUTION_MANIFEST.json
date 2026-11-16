@@ -1,0 +1,12 @@
+{
+ "mission": "GD07_CHARACTERISATION",
+ "run": 43913545702,
+ "run_statut": "success 29m43 (tentative 1: 43913487014 failure fenetre imbriquee, conservee)",
+ "partitions": "55 IS ciblees",
+ "sha256": {
+  "ci_tools/gd07.py": "85d42d83d0605ee9f76adbda0c1dcbcd6488dcdbdc1d5185aad53eb876d403a2",
+  "reports/meta_alpha/gd07/GD07_PARTITION.csv": "581807ea504b8a2b6d3a4f68a2d1d9cb1fdeae5af9c87dbd49ce4f2eacfda789",
+  "reports/meta_alpha/MARKET_CARTOGRAPHY_LIVING.md": "e8d4b050375129dbda88d4d521553d983b44a1abff118b1f344ff91735a243a9"
+ },
+ "verdict": "GD-07 = republications exactes de cotations (artefact de flux); GD-08 = ajustements bid/ask a mid constant (mecanisme different)"
+}

@@ -237,6 +237,18 @@
     "sha256": "e95f7f24590a439b613a45050b77f197027c36defd4b839d9b74d8a74697a3c1"
    },
    "entry_hash": "7abcb6f4223077fbd42d82717789b8a4207b5dffa3b6114d9641f2e48dc517eb"
+  },
+  {
+   "seq": 22,
+   "prev_hash": "7abcb6f4223077fbd42d82717789b8a4207b5dffa3b6114d9641f2e48dc517eb",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "GD07_CHARACTERISATION",
+    "run": 43913545702,
+    "verdict": "GD-07 republications exactes de cotations oct-dec 2012 (18-23%, sequences p95=5, spread normal): artefact de flux; GD-08 ajustements a mid constant 2015-2018: mecanisme distinct",
+    "ref": "MARKET_CARTOGRAPHY_LIVING.md"
+   },
+   "entry_hash": "8f95071291ef2713b2aa8510546ae2b824f135d4fab69cac699b677f0472dbec"
   }
  ]
 }

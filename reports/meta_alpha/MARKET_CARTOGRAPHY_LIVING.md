@@ -19,8 +19,8 @@ Reference mensuelle: monthly_reference/MONTHLY_REFERENCE_SERIES.json (120 mois).
 
 ## Registre des anomalies et episodes (contextuels, vs reference mensuelle)
 - GD-06 CONFIRME DESCRIPTIVEMENT: transition de mecanique de cotation 2010-2015, durable sous 50% de bilateraux des 2012-10 (serie mensuelle ponderee ticks).
-- GD-07 EPISODE A CARACTERISER: oct. 2012 - janv. 2013, part de ticks sans mouvement du mid 12-23% (reference ~0.5-1.5%), part d'evenements sans changement de prix elevee (12.4% en janv. 2013). Cotations repetees/figees? A caracteriser (durees, spread pendant l'episode) — piste ouverte par la cartographie, non tranchee.
-- GD-08 EPISODES SECONDAIRES: parts de rendements nuls elevees (~7-8%) en grappes 2016-04/05, 2017-09 a 2018-01. Meme famille possible que GD-07.
+- GD-07 CARACTERISE (run GD07 43913545702, 55 partitions): oct.-dec. 2012, 18-23% de ticks sans mouvement du mid sont des REPUBLICATIONS EXACTES de la meme cotation (bid et ask inchanges: parts identiques 18.1/22.6/18.8%); sequences courtes (p95 = 5 evenements, max 37-98, duree max 3-7 min), spread inchange (2.29 vs 2.19 bp), inter-arrivees plus courtes (0.89 vs 1.39 s). Qualification: artefact de flux (republication de cotations), PAS un marche fige — les prix continuent entre les repetitions.
+- GD-08 CARACTERISE, MECANISME DIFFERENT: grappes 2015-12 a 2018-01 (et 2016-04/05, 2017-08 a 2018-01), rendements mid nuls 5-8% mais republications ~0.1%: le mid reste fixe pendant que bid/ask bougent de maniere compensatrice (ajustements de spread a mid constant). Sequences p95 4-12 evenements. Deux familles distinctes que la seule part de rendements nuls confondait.
 - GD-09 MOIS DE VOLATILITE EXTREME (descriptif): 2010-04 (9.34%), 2012-05 (8.97%), 2012-06 (8.79%) de volatilite realisee mensuelle.
 - Refutes/conserves: lead-lag directionnel (absent), reversion < spread (0/282), regimes discrets (non demontres), ac1 tick invariant (refute).
 
@@ -30,6 +30,6 @@ Tout phenomene se rapporte a son contexte: mois, regime de cotation
 melangent au moins deux processus de cotation: a eviter sans mention explicite.
 
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
-1. Caracteriser GD-07/GD-08 (episodes de cotations sans mouvement): duree des repetitions, contexte spread/activite — requiert une lecture tick ciblee sur les mois concernes, a preenregistrer.
+1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. Distributions fines et inter-arrivees par regime de cotation.
 3. Comparaison gelee de modeles continus de volatilite (front le plus solide) — protocole a soumettre car il engage la gouvernance des tests.
