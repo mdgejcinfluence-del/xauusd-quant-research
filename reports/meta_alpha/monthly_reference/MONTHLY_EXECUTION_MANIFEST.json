@@ -1,0 +1,17 @@
+{
+ "mission": "MONTHLY_REFERENCE",
+ "run": 43893078431,
+ "statut": "success 1h48",
+ "mois": 120,
+ "sha256": {
+  "ci_tools/monthly_reference.py": "f06fc70bbac87744d21a9fe5647caf739eb4d68564976362178f1d5557b3b58b",
+  "reports/meta_alpha/monthly_reference/PARTITION_MONTH.csv": "43646c220c76be77157c4b90c897b2778070b3a51233f7ee4ac835328ce383be",
+  "reports/meta_alpha/monthly_reference/MONTHLY_REFERENCE_SERIES.json": "971bb540903bed9732c07a05748315ad2da6094b50a66c1aab67fbc2124ec88a",
+  "reports/meta_alpha/MARKET_CARTOGRAPHY_LIVING.md": "ecaf910bc3a7d09a31f69d29f909ff0808627323b1ed043fdc0ecc65962a676d"
+ },
+ "decouvertes": [
+  "transition bilateraux durable <50% des 2012-10 (mensuel pondere)",
+  "GD-07 episode 2012-10..2013-01 rendements nuls 12-23%",
+  "relations spread-intensite intra-regime (local): -0.60/-0.47"
+ ]
+}

@@ -205,6 +205,18 @@
     "sha256": "bdce574d6387b9b1b2f55e5763eb8eb36c45b348bc4e2f1c5d6fa166639b45eb"
    },
    "entry_hash": "19273148d7ac027ede8b86c62c3b9eaba45676415cead07a08c3312d892c679e"
+  },
+  {
+   "seq": 19,
+   "prev_hash": "19273148d7ac027ede8b86c62c3b9eaba45676415cead07a08c3312d892c679e",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "MONTHLY_REFERENCE",
+    "run": 43893078431,
+    "verdict": "reference mensuelle 120 mois construite; transition cotation datee 2012-10; GD-07 episode cotations sans mouvement 2012-10..2013-01 (12-23% vs ~1%); cartographie vivante creee",
+    "ref": "MARKET_CARTOGRAPHY_LIVING.md"
+   },
+   "entry_hash": "e0931f5b9469f45b610ec36702333d3e59ced0e087d1471e65d507d0f6510551"
   }
  ]
 }
