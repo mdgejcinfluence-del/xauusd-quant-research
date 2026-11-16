@@ -119,6 +119,27 @@
     "ref": "META_ALPHA_PHASE_1R_02_DESCRIPTIVE_DEEP_DIVE_REPORT.md"
    },
    "entry_hash": "ae1da86cfe467e4bb778831b00317408f1fddcfb27efecf7c92b6435315bbefb"
+  },
+  {
+   "seq": 11,
+   "prev_hash": "ae1da86cfe467e4bb778831b00317408f1fddcfb27efecf7c92b6435315bbefb",
+   "entry": {
+    "type": "MISSION",
+    "id": "GLOBAL_DISCOVERY",
+    "perimetre": "IS 282 partitions lecture seule, OOS/Holdout interdits",
+    "etapes": "1 observation globale tick (dont lead-lag bid/ask -5..+5), 2 scan granularites evt 10-1000 + temps 30/60/300s, 3-5 synthese anomalies/structures/hypotheses candidates documentees sans tests"
+   },
+   "entry_hash": "6e159c7b8d3f03462cb17bfccf978cfa030518bf0ddb05cde4464b7a2cf59566"
+  },
+  {
+   "seq": 12,
+   "prev_hash": "6e159c7b8d3f03462cb17bfccf978cfa030518bf0ddb05cde4464b7a2cf59566",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/global_discovery/GLOBAL_PREREG.json",
+    "sha256": "ccc872a09d98f30dbd0ca27483a7c39d8c3372d53b19a28957e6ba1fb7c6163b"
+   },
+   "entry_hash": "3bb944eec93ed7f13cd2e3aa512b23535fe239ef415c79fa6cb81c60b573849f"
   }
  ]
 }

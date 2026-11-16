@@ -1,0 +1,9 @@
+{
+ "mission":"GLOBAL MARKET BEHAVIOUR DISCOVERY (ordre proprietaire, exploration globale autonome)",
+ "perimetre":"282 partitions IS uniquement (timestamp_max_footer <= borne IS 2020-01-20T09:36:27), lecture seule; OOS/Holdout interdits; cout 0 FCFA",
+ "statut_maximal":"EXPLORATION DESCRIPTIVE / decouverte candidate selon protocole 1R FINAL; aucune confirmation independante; aucun regime discret affirme sans distinction vs modeles continus (hors perimetre de calcul de cette mission: confrontation qualitative documentee)",
+ "etape1_observation_globale_tick":{"par_partition":["n ticks, duree","inter-arrivees: moyenne, quantiles p50/p95 (s)","rendements mid: quantiles p1/p50/p99, part de zeros","ac1 rendements mid, bid, ask (formule Pearson lag-1 sur rendements par jambe)","ac des |r| mid lags 1,5,20","spread_rel: p50/p95/p99, ac1","parts evenements bid-seul/ask-seul/bilateraux (changements vs tick precedent)","correlation croisee rendements bid_t vs ask decale de -5..+5 evenements (Pearson, descriptive, AUCUNE conclusion causale/predictive sans tests ulterieurs)"]},
+ "etape2_granularites":{"echelles_evenements":[10,50,100,500,1000],"echelles_temps_s":[30,60,300],"regle":"question = a quelle echelle l'ac1 des rendements de barres s'eteint / persiste; barres evenements refermees a chaque gap>60s; barres temps par seau epoch; par echelle: nombre de barres, ac1 rendements de barres, volatilite mediane de barre (bp)"},
+ "seuils_descriptifs_verrouilles":"stabilite = meme signe de mediane sur >=2/3 tiers d'IS (T1/T2/T3 par timestamp_min de partition); amplitude rapportee sans seuil de qualification invente; aucune p-value nouvelle hors famille preenregistree (famille: aucune inferee dans cette mission, tout est descriptif)",
+ "interdits":["HMM detecteur autonome","segmentation BIC preuve de regime","MSM identification d'echelles","interpolation","OHLC synthetique","volume/transactions/carnet inventes","sessions non documentees"]
+}
