@@ -1,0 +1,134 @@
+{
+ "perimetre": "282 partitions IS, 288 086 588 ticks, 2010-01-04 a 2020-01-20 (borne IS certifiee); OOS/Holdout jamais ouverts",
+ "run": "43820220182 success 2h14",
+ "colonnes_invalides_connues": "share_bonly/share_aonly/share_both de GLOBAL_TICK_PARTITION.csv: bug d'operateur (bid-lag(bid) lu comme difference au lieu du lag) prouve sur fixture; colonnes EXCLUES de toute analyse; parts validees utilisees = validation profonde + Phase 1R (0.59%/0.59%, bilateraux 98.52%). Script corrige apres coup pour usage futur, resultats lead-lag et autres colonnes non affectes (verifie sur fixture a jambes independantes: correlations croisees ~0).",
+ "tick": {
+  "ac1_mid": 0.4872,
+  "ac1_mid_par_tiers": {
+   "T1": 0.4965,
+   "T2": 0.1132,
+   "T3": 0.0337
+  },
+  "ac1_bid": 0.0626,
+  "ac1_ask": 0.06,
+  "ac_abs_r_lags_1_5_20": [
+   0.4573,
+   0.1836,
+   0.1315
+  ],
+  "ac_abs1_par_tiers": {
+   "T1": 0.4715,
+   "T2": 0.184,
+   "T3": 0.1584
+  },
+  "spread_bp_p50_p95_p99": [
+   3.988,
+   5.063,
+   5.693
+  ],
+  "ac1_spread": 0.6326,
+  "ac1_spread_par_tiers": {
+   "T1": 0.5826,
+   "T2": 0.8259,
+   "T3": 0.7565
+  },
+  "ret_p1_p99_bp": [
+   -1.21,
+   1.22
+  ],
+  "part_rendements_nuls": 0.0125,
+  "interarrivee_p50_s": 0.4333,
+  "interarrivee_p95_s": 5.8509
+ },
+ "leadlag_bid_ask": {
+  "definition": "corr(rendement bid a t, rendement ask decale de k evenements), mediane 282 partitions; k negatif = ask passe, k positif = ask futur",
+  "corr_bid_vers_ask_par_decalage": {
+   "m5": -0.0164,
+   "m4": -0.1078,
+   "m3": -0.0756,
+   "m2": -0.1246,
+   "m1": 0.5281,
+   "0": 0.4122,
+   "p1": 0.53,
+   "p2": -0.1244,
+   "p3": -0.0735,
+   "p4": -0.109,
+   "p5": -0.0158
+  },
+  "lecture_descriptive": "profil SYMETRIQUE: +/-1 evenement = 0.528/0.530, contemporain 0.412, +/-2 = -0.125, +/-3 = -0.075, +/-4 = -0.11, +/-5 = -0.016. Aucune asymetrie directionnelle: aucune jambe ne precede descriptivement l'autre. Motif compatible avec mises a jour quasi synchrones + oscillation microstructurelle a 1-2 evenements. AUCUNE conclusion predictive ou causale."
+ },
+ "echelles_ac1_barres": {
+  "EVT_10": {
+   "ac1_mediane": -0.1376,
+   "ac1_par_tiers": {
+    "T1": -0.1713,
+    "T2": 0.0055,
+    "T3": -0.0123
+   },
+   "barres_totales": 28821392
+  },
+  "EVT_50": {
+   "ac1_mediane": -0.0167,
+   "ac1_par_tiers": {
+    "T1": -0.0399,
+    "T2": -0.0006,
+    "T3": -0.0032
+   },
+   "barres_totales": 5777279
+  },
+  "EVT_100": {
+   "ac1_mediane": -0.0003,
+   "ac1_par_tiers": {
+    "T1": 0.01,
+    "T2": -0.005,
+    "T3": -0.0088
+   },
+   "barres_totales": 2897878
+  },
+  "EVT_500": {
+   "ac1_mediane": -0.017,
+   "ac1_par_tiers": {
+    "T1": -0.0187,
+    "T2": -0.0107,
+    "T3": -0.0201
+   },
+   "barres_totales": 596616
+  },
+  "EVT_1000": {
+   "ac1_mediane": -0.0313,
+   "ac1_par_tiers": {
+    "T1": -0.0516,
+    "T2": -0.0182,
+    "T3": -0.0168
+   },
+   "barres_totales": 309824
+  },
+  "TIME_30": {
+   "ac1_mediane": -0.1258,
+   "ac1_par_tiers": {
+    "T1": -0.1602,
+    "T2": -0.0064,
+    "T3": -0.0153
+   },
+   "barres_totales": 7017472
+  },
+  "TIME_60": {
+   "ac1_mediane": -0.0232,
+   "ac1_par_tiers": {
+    "T1": -0.0263,
+    "T2": -0.0131,
+    "T3": -0.023
+   },
+   "barres_totales": 3540993
+  },
+  "TIME_300": {
+   "ac1_mediane": -0.011,
+   "ac1_par_tiers": {
+    "T1": -0.0016,
+    "T2": -0.0239,
+    "T3": -0.0251
+   },
+   "barres_totales": 712458
+  }
+ }
+}

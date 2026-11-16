@@ -1,0 +1,21 @@
+{
+ "mission": "GLOBAL_DISCOVERY",
+ "run": 43820220182,
+ "run_statut": "success 2h14",
+ "partitions_lues": "282 IS uniquement",
+ "oos_holdout": "jamais ouverts",
+ "cout_fcfa": 0,
+ "sha256": {
+  "ci_tools/global_discovery.py": "a0431dcb968d1ed253c53cb0027cba9e9a98ecf9b65bb01f79c5c1ff67893364",
+  "reports/meta_alpha/global_discovery/GLOBAL_TICK_PARTITION.csv": "d4d06e93ca84fdd8d7677848e88015c04543a41bd0522ae5a3d39554faa8712a",
+  "reports/meta_alpha/global_discovery/GLOBAL_SCALE_PARTITION.csv": "1c74a9cb94a251bcf9d5ae48fc312f631c342914e5d8db94de6e3713f7511d71",
+  "reports/meta_alpha/global_discovery/GLOBAL_MARKET_OBSERVATION.json": "ffdf47d36eee512f060ff3d499b19a9f037076fe3dca66083841a7e726efe5e6",
+  "reports/meta_alpha/global_discovery/NATURAL_GRANULARITY_MAP.json": "0c7ce92c661bfbf743f5eb0cccc02655f7285cf283214ea32c79ed71c3c9db58",
+  "reports/meta_alpha/global_discovery/MARKET_ANOMALY_REGISTER.json": "e841bd771607d4eaa9c48351c15d6fa07f1a641a6aba21a5c9f735cb468c16fe",
+  "reports/meta_alpha/global_discovery/BEHAVIOURAL_STRUCTURE_MAP.json": "1abd1e2796953b945ac703dcb1a5d86bb50227848850ae01d1b9a1f00dcac127",
+  "reports/meta_alpha/global_discovery/MARKET_DISCOVERY_LEDGER.json": "b9bf541fac40f8ef51e4ccef584e4df89d1eb8dcc9fd15eb9f10a1a8b957b872",
+  "reports/meta_alpha/META_ALPHA_GLOBAL_MARKET_BEHAVIOUR_DISCOVERY_REPORT.md": "5ec835594148903cbbdeea8bae93a4ea8992ad0964abaf49c4846ffd8ebfb4b8"
+ },
+ "bug": "colonnes shares tick CSV invalides (fixture), exclues, script corrige",
+ "statut": "EXPLORATION DESCRIPTIVE terminee"
+}

@@ -37,7 +37,7 @@ WITH s AS (SELECT observation_id AS oid, timestamp_utc AS t, bid, ask, mid, spre
 e AS (SELECT *, (mid-lag(mid) OVER w)/NULLIF(lag(mid) OVER w,0) AS r,
         (bid-lag(bid) OVER w)/NULLIF(lag(bid) OVER w,0) AS rb,
         (ask-lag(ask) OVER w)/NULLIF(lag(ask) OVER w,0) AS ra,
-        epoch(t-lag(t) OVER w) AS dt_s, bid-lag(bid) OVER w AS bid0, ask-lag(ask) OVER w AS ask0
+        epoch(t-lag(t) OVER w) AS dt_s, lag(bid) OVER w AS bid0, lag(ask) OVER w AS ask0
       FROM s WINDOW w AS (ORDER BY oid)),
 x AS (SELECT *, lag(r) OVER (ORDER BY oid) AS r1, lag(rb) OVER (ORDER BY oid) AS rb1, lag(ra) OVER (ORDER BY oid) AS ra1,
         lag(abs(r),1) OVER (ORDER BY oid) AS a1, lag(abs(r),5) OVER (ORDER BY oid) AS a5, lag(abs(r),20) OVER (ORDER BY oid) AS a20,

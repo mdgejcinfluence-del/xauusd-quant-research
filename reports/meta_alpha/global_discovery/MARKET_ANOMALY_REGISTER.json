@@ -1,0 +1,48 @@
+{
+ "registre": [
+  {
+   "id": "GD-01",
+   "description": "Autocorrelation tick mid elevee mais en effondrement historique: ac1 mediane par tiers 0.497 (T1) -> 0.113 (T2) -> 0.034 (T3)",
+   "granularite": "tick",
+   "mesure": "ac1 rendements mid, medianes de partitions (218/33/31)",
+   "explications_concurrentes": "changement de densite/nature du flux fournisseur, evolution du marche, artefact de construction mid variable selon l'epoque",
+   "statut": "PHENOMENE DESCRIPTIF ERA-DEPENDANT, mecanisme initial deja refute (validation profonde); a ne pas traiter comme invariant du marche"
+  },
+  {
+   "id": "GD-02",
+   "description": "Correlation croisee bid/ask symetrique a +/-1 evenement (0.53) superieure au contemporain (0.41), negative a +/-2 (-0.12)",
+   "granularite": "tick-evenements -5..+5",
+   "mesure": "corr Pearson rendements par jambe, mediane 282 partitions",
+   "explications_concurrentes": "synchronisation quasi simultanee des deux jambes + oscillation a court terme; aucune direction",
+   "statut": "PHENOMENE DESCRIPTIF NOUVEAU; lead-lag directionnel NON observe"
+  },
+  {
+   "id": "GD-03",
+   "description": "Reversion descriptive a tres petite echelle: ac1 barres -0.138 (10 evenements) et -0.126 (30 s), s'eteignant vers 100 evenements/60 s",
+   "granularite": "EVT10/TIME30 -> EVT100/TIME60",
+   "mesure": "ac1 rendements de barres, mediane 282",
+   "explications_concurrentes": "microstructure (rebond bid/ask dans le mid), construction des barres",
+   "statut": "PHENOMENE DESCRIPTIF dependant de l'echelle; aucune valeur economique testee (jamais comparee au spread dans un test)"
+  },
+  {
+   "id": "GD-04",
+   "description": "Persistance du spread: ac1 tick 0.633, en hausse par tiers (0.583 -> 0.826 -> 0.757)",
+   "granularite": "tick",
+   "mesure": "ac1 spread_rel",
+   "statut": "PHENOMENE DESCRIPTIF stable"
+  },
+  {
+   "id": "GD-05",
+   "description": "Memoire de la volatilite decroissante avec l'epoque: ac|r| lag1 par tiers 0.472 -> 0.184 -> 0.158",
+   "granularite": "tick",
+   "mesure": "ac des |r| lags 1/5/20 = 0.457/0.184/0.132 global",
+   "explications_concurrentes": "regroupement de volatilite continu (GARCH/memoire longue) reste l'explication par defaut",
+   "statut": "PHENOMENE DESCRIPTIF connu, explication continue privilegiee"
+  }
+ ],
+ "rejetes_ou_non_concluants": [
+  "regimes discrets: AUCUN demontre dans cette mission (aucune structure discrete testee contre les modeles continus a protocole gele)",
+  "lead-lag directionnel bid->ask ou ask->bid: non observe (symetrie)",
+  "parts bid/ask du run global: invalides (bug documente), remplacees par les mesures validees anterieures"
+ ]
+}

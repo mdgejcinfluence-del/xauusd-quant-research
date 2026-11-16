@@ -1,0 +1,20 @@
+{
+ "granularites_naturelles_descriptives": [
+  {
+   "echelle": "tick a ~10 evenements / 30 s",
+   "phenomene": "ac1 des rendements de barres negative (-0.138 EVT10; -0.126 TIME30), dependances tick fortes",
+   "justification": "echelle ou la microstructure domine"
+  },
+  {
+   "echelle": "50-100 evenements / 60 s",
+   "phenomene": "extinction de l'ac1 des rendements (EVT100 -0.0003; TIME60 -0.023)",
+   "justification": "frontiere descriptive dependance -> quasi-independance des rendements diriges"
+  },
+  {
+   "echelle": "500-1000 evenements / 300 s",
+   "phenomene": "ac1 legerement negative persistante (-0.017 a -0.031), volatilite de barre structuree",
+   "justification": "echelle d'agregation ou seule la volatilite garde de la memoire (ac|r| tick 0.457/0.184/0.132)"
+  }
+ ],
+ "regle": "aucune granularite imposee a toutes les variables; chaque phenomene garde son echelle propre; pas de produit cartesien"
+}

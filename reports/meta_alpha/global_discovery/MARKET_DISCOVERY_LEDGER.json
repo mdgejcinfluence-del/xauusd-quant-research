@@ -1,0 +1,17 @@
+{
+ "mission": "GLOBAL_DISCOVERY",
+ "chaine_avant": 12,
+ "resultats": "GLOBAL_MARKET_OBSERVATION.json",
+ "phenomenes": "GD-01 a GD-05",
+ "non_concluants": [
+  "regimes discrets",
+  "lead-lag directionnel"
+ ],
+ "bug_documente": "colonnes shares du tick CSV invalides (fixture), exclues",
+ "hypotheses_pour_phase_ulterieure_non_testees": [
+  "Le changement d'epoque de l'ac1 tick reflete-t-il un changement de flux ou de marche? (question a preenregistrer, donnees de flux requises)",
+  "Le motif croise bid/ask +/-1 evenement est-il stable par epoque?",
+  "La reversion a 10 evenements/30 s survit-elle a une comparaison au spread a protocole gele?"
+ ],
+ "statut": "EXPLORATION DESCRIPTIVE, aucune hypothese testee, aucun test de strategie"
+}

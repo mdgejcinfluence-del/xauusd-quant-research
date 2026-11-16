@@ -1,0 +1,23 @@
+{
+ "structures": [
+  {
+   "structure": "Volatilite a memoire (regroupement continu)",
+   "evidence": "ac|r| 0.457/0.184/0.132, decroissance lente",
+   "explication_continue": "GARCH/FIGARCH/volatilite stochastique continue = explication par defaut, non refutee",
+   "regime_discret": "NON DEMONTRE"
+  },
+  {
+   "structure": "Microstructure tick era-dependante",
+   "evidence": "ac1 mid 0.497->0.034 entre tiers; ac1 par jambe ~0.06 global",
+   "explication_continue": "mecanique de cotation/flux, pas un regime de marche",
+   "regime_discret": "NON DEMONTRE"
+  },
+  {
+   "structure": "Dependance d'echelle des rendements",
+   "evidence": "ac1 barres negative a 10 evt/30 s, nulle a 100 evt/60 s",
+   "explication_continue": "effet d'agregation de microstructure",
+   "regime_discret": "NON DEMONTRE"
+  }
+ ],
+ "conclusion": "Aucun regime discret n'est demontrable a l'issue de cette exploration. Les modeles continus restent les explications de reference. L'absence de regimes discrets demontres est une conclusion recevable."
+}

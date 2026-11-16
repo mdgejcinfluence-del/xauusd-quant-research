@@ -140,6 +140,18 @@
     "sha256": "ccc872a09d98f30dbd0ca27483a7c39d8c3372d53b19a28957e6ba1fb7c6163b"
    },
    "entry_hash": "3bb944eec93ed7f13cd2e3aa512b23535fe239ef415c79fa6cb81c60b573849f"
+  },
+  {
+   "seq": 13,
+   "prev_hash": "3bb944eec93ed7f13cd2e3aa512b23535fe239ef415c79fa6cb81c60b573849f",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "GLOBAL_DISCOVERY",
+    "run": 43820220182,
+    "verdict": "ac1 tick era-dependante 0.497->0.034; lead-lag bid/ask SYMETRIQUE (pas de leader, piste refermee descriptivement); reversion 10evt/30s eteinte a 100evt/60s; aucun regime discret demontrable; bug colonnes shares documente et exclu",
+    "ref": "META_ALPHA_GLOBAL_MARKET_BEHAVIOUR_DISCOVERY_REPORT.md"
+   },
+   "entry_hash": "480d4daae9ad10f726903b5010557f24c3328cb9b1925ae3f6e2959e6143cf3b"
   }
  ]
 }
