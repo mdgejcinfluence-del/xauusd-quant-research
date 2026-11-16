@@ -249,6 +249,26 @@
     "ref": "MARKET_CARTOGRAPHY_LIVING.md"
    },
    "entry_hash": "8f95071291ef2713b2aa8510546ae2b824f135d4fab69cac699b677f0472dbec"
+  },
+  {
+   "seq": 23,
+   "prev_hash": "8f95071291ef2713b2aa8510546ae2b824f135d4fab69cac699b677f0472dbec",
+   "entry": {
+    "type": "MISSION",
+    "id": "DIST_REGIME",
+    "perimetre": "IS 282; distributions fines + inter-arrivees par regime de cotation, republications filtrees"
+   },
+   "entry_hash": "2e6dec1aec288aa2a49bceb7e72de381e9afefa348475c720173350ff92b1df9"
+  },
+  {
+   "seq": 24,
+   "prev_hash": "2e6dec1aec288aa2a49bceb7e72de381e9afefa348475c720173350ff92b1df9",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/dist_regime/DIST_REGIME_PREREG.json",
+    "sha256": "591f9ee346a017667f6eaed3aecbd2a8698e00dfe0099527e76829a6e5afd18a"
+   },
+   "entry_hash": "d38896f912be23cbfff2048cdfdc604638c00082d0ffa74b17ee31bb53de1694"
   }
  ]
 }
