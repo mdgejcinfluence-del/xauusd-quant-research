@@ -1,0 +1,15 @@
+{
+ "mission": "VOL_MODELS_STEP1",
+ "run_serie": 43948461635,
+ "echecs_conserves": [
+  43943944772
+ ],
+ "sha256": {
+  "ci_tools/daily_vol.py": "19fd9e3837767fb1a9d06eb1895e34eb84362a7d51b5dde9739ee0b5b8ab24ce",
+  "ci_tools/fit_vol_models.py": "4a433a4ec531c8bed61d08cc4d28c1913f562c7052adc0df79d485ad69e917ce",
+  "reports/meta_alpha/vol_models/DAILY_VOL.csv": "9bb8c23cae35644b809a3530af3b56dfe9b03bbf8313da087ae80c42a2d44c5e",
+  "reports/meta_alpha/vol_models/VOL_MODELS_RESULTS.json": "e05506a4f41c94249c2e6e3b6dd06e447e7c5141df125c566745bb9ee5c44cad",
+  "reports/meta_alpha/META_ALPHA_VOL_MODELS_STEP1_REPORT.md": "f8f116e24beccb9989cf1cc3419d2ac7fd5a0a311ceb6989c6719f07be07f7e4"
+ },
+ "verdict": "NON DEPARTAGE sur les 3 perimetres"
+}

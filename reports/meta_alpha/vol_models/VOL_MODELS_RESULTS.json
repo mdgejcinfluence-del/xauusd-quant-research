@@ -1,0 +1,335 @@
+{
+ "IS_COMPLET": {
+  "perimetre": "IS_COMPLET",
+  "jours": 3097,
+  "blocs_evalues": 4,
+  "perte_QLIKE_moyenne": {
+   "GARCH_N": -8.4816,
+   "GARCH_T": -8.4656,
+   "FIGARCH": -8.3818,
+   "ARFIMA_LOGVOL": -8.2055,
+   "SV_AR1_LOGVOL": -8.3863,
+   "NAIF": -8.5426
+  },
+  "blocs_gagnes": {
+   "GARCH_N": 0,
+   "GARCH_T": 2,
+   "FIGARCH": 0,
+   "ARFIMA_LOGVOL": 1,
+   "SV_AR1_LOGVOL": 1,
+   "NAIF": 0
+  },
+  "verdict_protocole": "NON DEPARTAGE",
+  "details": [
+   {
+    "bloc": 2,
+    "jours": 620,
+    "d_ARFIMA": 0.409,
+    "pertes": {
+     "GARCH_N": -7.1755,
+     "GARCH_T": -7.1125,
+     "FIGARCH": -6.8669,
+     "ARFIMA_LOGVOL": -6.1429,
+     "SV_AR1_LOGVOL": -7.9887,
+     "NAIF": -7.8076
+    },
+    "gagnant": "SV_AR1_LOGVOL"
+   },
+   {
+    "bloc": 3,
+    "jours": 619,
+    "d_ARFIMA": 0.42,
+    "pertes": {
+     "GARCH_N": -8.8695,
+     "GARCH_T": -8.8702,
+     "FIGARCH": -8.8341,
+     "ARFIMA_LOGVOL": -8.8616,
+     "SV_AR1_LOGVOL": -8.3266,
+     "NAIF": -8.7011
+    },
+    "gagnant": "GARCH_T"
+   },
+   {
+    "bloc": 4,
+    "jours": 619,
+    "d_ARFIMA": 0.364,
+    "pertes": {
+     "GARCH_N": -8.6719,
+     "GARCH_T": -8.6946,
+     "FIGARCH": -8.6121,
+     "ARFIMA_LOGVOL": -8.6017,
+     "SV_AR1_LOGVOL": -8.4769,
+     "NAIF": -8.6666
+    },
+    "gagnant": "GARCH_T"
+   },
+   {
+    "bloc": 5,
+    "jours": 619,
+    "d_ARFIMA": 0.326,
+    "pertes": {
+     "GARCH_N": -9.2116,
+     "GARCH_T": -9.1872,
+     "FIGARCH": -9.2166,
+     "ARFIMA_LOGVOL": -9.219,
+     "SV_AR1_LOGVOL": -8.7537,
+     "NAIF": -8.9961
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   }
+  ],
+  "comparaisons_paires_bootstrap": {
+   "GARCH_N vs GARCH_T": {
+    "diff_moyenne": -0.016,
+    "IC95_bootstrap_blocs21j": [
+     -0.0257,
+     -0.0059
+    ]
+   },
+   "GARCH_N vs FIGARCH": {
+    "diff_moyenne": -0.0998,
+    "IC95_bootstrap_blocs21j": [
+     -0.1395,
+     -0.0693
+    ]
+   },
+   "GARCH_N vs ARFIMA_LOGVOL": {
+    "diff_moyenne": -0.2761,
+    "IC95_bootstrap_blocs21j": [
+     -0.4092,
+     -0.1675
+    ]
+   },
+   "GARCH_N vs SV_AR1_LOGVOL": {
+    "diff_moyenne": -0.0953,
+    "IC95_bootstrap_blocs21j": [
+     -0.2294,
+     0.0793
+    ]
+   },
+   "GARCH_N vs NAIF": {
+    "diff_moyenne": 0.061,
+    "IC95_bootstrap_blocs21j": [
+     -0.0248,
+     0.1588
+    ]
+   },
+   "GARCH_T vs FIGARCH": {
+    "diff_moyenne": -0.0837,
+    "IC95_bootstrap_blocs21j": [
+     -0.1171,
+     -0.0541
+    ]
+   },
+   "GARCH_T vs ARFIMA_LOGVOL": {
+    "diff_moyenne": -0.2601,
+    "IC95_bootstrap_blocs21j": [
+     -0.3955,
+     -0.1574
+    ]
+   },
+   "GARCH_T vs SV_AR1_LOGVOL": {
+    "diff_moyenne": -0.0792,
+    "IC95_bootstrap_blocs21j": [
+     -0.2205,
+     0.0884
+    ]
+   },
+   "GARCH_T vs NAIF": {
+    "diff_moyenne": 0.077,
+    "IC95_bootstrap_blocs21j": [
+     -0.0137,
+     0.1951
+    ]
+   },
+   "FIGARCH vs ARFIMA_LOGVOL": {
+    "diff_moyenne": -0.1764,
+    "IC95_bootstrap_blocs21j": [
+     -0.2756,
+     -0.0963
+    ]
+   },
+   "FIGARCH vs SV_AR1_LOGVOL": {
+    "diff_moyenne": 0.0045,
+    "IC95_bootstrap_blocs21j": [
+     -0.1675,
+     0.1937
+    ]
+   },
+   "FIGARCH vs NAIF": {
+    "diff_moyenne": 0.1608,
+    "IC95_bootstrap_blocs21j": [
+     0.044,
+     0.2908
+    ]
+   },
+   "ARFIMA_LOGVOL vs SV_AR1_LOGVOL": {
+    "diff_moyenne": 0.1809,
+    "IC95_bootstrap_blocs21j": [
+     -0.0775,
+     0.4561
+    ]
+   },
+   "ARFIMA_LOGVOL vs NAIF": {
+    "diff_moyenne": 0.3371,
+    "IC95_bootstrap_blocs21j": [
+     0.1434,
+     0.56
+    ]
+   },
+   "SV_AR1_LOGVOL vs NAIF": {
+    "diff_moyenne": 0.1563,
+    "IC95_bootstrap_blocs21j": [
+     0.0972,
+     0.2099
+    ]
+   }
+  }
+ },
+ "ANCIEN_REGIME": {
+  "perimetre": "ANCIEN_REGIME",
+  "jours": 855,
+  "blocs_evalues": 3,
+  "perte_QLIKE_moyenne": {
+   "GARCH_N": -8.2773,
+   "GARCH_T": -8.3042,
+   "FIGARCH": -8.2907,
+   "ARFIMA_LOGVOL": -7.7829,
+   "SV_AR1_LOGVOL": -8.1719,
+   "NAIF": -8.2414
+  },
+  "blocs_gagnes": {
+   "GARCH_N": 0,
+   "GARCH_T": 1,
+   "FIGARCH": 0,
+   "ARFIMA_LOGVOL": 1,
+   "SV_AR1_LOGVOL": 1,
+   "NAIF": 0
+  },
+  "verdict_protocole": "NON DEPARTAGE",
+  "details": [
+   {
+    "bloc": 3,
+    "jours": 171,
+    "d_ARFIMA": 0.336,
+    "pertes": {
+     "GARCH_N": -9.3313,
+     "GARCH_T": -9.401,
+     "FIGARCH": -9.4837,
+     "ARFIMA_LOGVOL": -9.7114,
+     "SV_AR1_LOGVOL": -8.5332,
+     "NAIF": -8.948
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   },
+   {
+    "bloc": 4,
+    "jours": 171,
+    "d_ARFIMA": 0.393,
+    "pertes": {
+     "GARCH_N": -8.6372,
+     "GARCH_T": -8.6441,
+     "FIGARCH": -8.6303,
+     "ARFIMA_LOGVOL": -7.9515,
+     "SV_AR1_LOGVOL": -8.3821,
+     "NAIF": -8.6248
+    },
+    "gagnant": "GARCH_T"
+   },
+   {
+    "bloc": 5,
+    "jours": 171,
+    "d_ARFIMA": 0.345,
+    "pertes": {
+     "GARCH_N": -6.8633,
+     "GARCH_T": -6.8676,
+     "FIGARCH": -6.7581,
+     "ARFIMA_LOGVOL": -5.6857,
+     "SV_AR1_LOGVOL": -7.6003,
+     "NAIF": -7.1513
+    },
+    "gagnant": "SV_AR1_LOGVOL"
+   }
+  ]
+ },
+ "REGIME_RECENT": {
+  "perimetre": "REGIME_RECENT",
+  "jours": 2242,
+  "blocs_evalues": 4,
+  "perte_QLIKE_moyenne": {
+   "GARCH_N": -8.9148,
+   "GARCH_T": -8.9172,
+   "FIGARCH": -8.9084,
+   "ARFIMA_LOGVOL": -8.9046,
+   "SV_AR1_LOGVOL": -8.6903,
+   "NAIF": -8.8369
+  },
+  "blocs_gagnes": {
+   "GARCH_N": 0,
+   "GARCH_T": 0,
+   "FIGARCH": 1,
+   "ARFIMA_LOGVOL": 2,
+   "SV_AR1_LOGVOL": 0,
+   "NAIF": 1
+  },
+  "verdict_protocole": "NON DEPARTAGE",
+  "details": [
+   {
+    "bloc": 2,
+    "jours": 449,
+    "d_ARFIMA": 0.318,
+    "pertes": {
+     "GARCH_N": -8.8815,
+     "GARCH_T": -8.8768,
+     "FIGARCH": -8.8726,
+     "ARFIMA_LOGVOL": -8.8881,
+     "SV_AR1_LOGVOL": -8.4839,
+     "NAIF": -8.7194
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   },
+   {
+    "bloc": 3,
+    "jours": 448,
+    "d_ARFIMA": 0.296,
+    "pertes": {
+     "GARCH_N": -8.4806,
+     "GARCH_T": -8.5691,
+     "FIGARCH": -8.4657,
+     "ARFIMA_LOGVOL": -8.419,
+     "SV_AR1_LOGVOL": -8.5222,
+     "NAIF": -8.5863
+    },
+    "gagnant": "NAIF"
+   },
+   {
+    "bloc": 4,
+    "jours": 448,
+    "d_ARFIMA": 0.325,
+    "pertes": {
+     "GARCH_N": -9.0732,
+     "GARCH_T": -9.0362,
+     "FIGARCH": -9.0749,
+     "ARFIMA_LOGVOL": -9.0731,
+     "SV_AR1_LOGVOL": -8.8114,
+     "NAIF": -8.9554
+    },
+    "gagnant": "FIGARCH"
+   },
+   {
+    "bloc": 5,
+    "jours": 448,
+    "d_ARFIMA": 0.305,
+    "pertes": {
+     "GARCH_N": -9.2239,
+     "GARCH_T": -9.1871,
+     "FIGARCH": -9.2207,
+     "ARFIMA_LOGVOL": -9.2384,
+     "SV_AR1_LOGVOL": -8.9441,
+     "NAIF": -9.0868
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   }
+  ]
+ }
+}

@@ -312,6 +312,17 @@
     "sha256": "81478e5b79c6c6686541cd1053f1256e6abf4b399ca600ff8559bf6bf77e8901"
    },
    "entry_hash": "e8bcefe36481d0b24dc4431ce890af2d375b216ca987ae4555576a4fd22b0884"
+  },
+  {
+   "seq": 29,
+   "prev_hash": "e8bcefe36481d0b24dc4431ce890af2d375b216ca987ae4555576a4fd22b0884",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "VOL_MODELS_STEP1",
+    "verdict": "NON DEPARTAGE sur IS complet, ancien regime et regime recent (aucun modele continu a 4/5 blocs; ARFIMA meilleure moyenne IS/ancien, ecarts minces en recent). Etape 2 OOS non engagee (ordre requis).",
+    "ref": "META_ALPHA_VOL_MODELS_STEP1_REPORT.md"
+   },
+   "entry_hash": "33edf612ae1ab31896f7a9ad2d92fb76ebbdaaa2866ffc9d7ddbfbdbcb9aa656"
   }
  ]
 }

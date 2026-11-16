@@ -11,7 +11,7 @@ Reference mensuelle: monthly_reference/MONTHLY_REFERENCE_SERIES.json (120 mois).
 | Spread | COMPRIS (descriptif) | median ~4 bp (2010) -> ~1.9 bp (2019); persistance tick ac1 0.633 croissante entre tiers; relation a l'intensite negative aussi INTRA-regime de cotation (rho -0.60 bilateral, -0.47 unilateral; mixte n=15 non concluant) |
 | Activite / inter-arrivees | COMPRISE (descriptif) | queue lourde dans les 3 regimes: p50 0.26-0.49 s, p95 2.5-7.9 s, p99 6.7-19.5 s; activite en rafales et silences, aucun calendrier suppose |
 | Dependances croisees bid/ask | COMPRISES (descriptif) | aucun leader a aucune epoque; motif +/-1 evenement (ancien regime) -> contemporain (regime recent) |
-| Volatilite | PARTIEL | memoire continue (ac|r| 0.457/0.184/0.132), era-dependante; mois extremes: 2010-04, 2012-05, 2012-06 (vol realisee mensuelle z>4); comparaison formelle de modeles continus NON faite (protocole gele a autoriser) |
+| Volatilite | COMPAREE (etape 1 IS) | memoire reelle mais forme NON DEPARTAGEE entre GARCH/FIGARCH/ARFIMA/SV (protocole gele, QLIKE journalier, 3 perimetres: aucun modele a 4/5 blocs); avantage des modeles a memoire mince en regime recent; mois extremes 2010-04, 2012-05/06 |
 | Distributions | COMPRISE par regime (run DIST 43920488453, republications filtrees) | amplitude |r| p50: 0.214 (bilateral) -> 0.124 (mixte) -> 0.066 bp (unilateral); queues symetriques partout (0.97-0.99); epaisseur relative de queue croissante 10.4 -> 18.5; filtrage des republications sans effet sur quantiles/ac1 |
 | Granularites naturelles | COMPRISE (descriptif) | microstructure <=10 evt/30 s; extinction ~100 evt/60 s; memoire de volatilite a toutes echelles |
 | Episodes anormaux | EN COURS | voir registre |
@@ -32,4 +32,4 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).
-3. Comparaison gelee de modeles continus de volatilite: protocole redige et SOUMIS (PROTOCOLE_MODELES_CONTINUS_VOLATILITE_GELE.md) — en attente de validation proprietaire, execution non commencee.
+3. FAIT: comparaison gelee executee apres validation proprietaire — verdict NON DEPARTAGE (META_ALPHA_VOL_MODELS_STEP1_REPORT.md). Etape 2 OOS: ordre explicite requis, non engagee.
