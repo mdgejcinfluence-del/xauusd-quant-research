@@ -96,6 +96,18 @@
     "ref": "META_ALPHA_PHASE_1R_DESCRIPTIVE_SERIES_REPORT.md"
    },
    "entry_hash": "eb7b4d2690b86f874dc8e2dbce642cfb6a91b878a99e8599a8c41f89a31cf659"
+  },
+  {
+   "seq": 9,
+   "prev_hash": "eb7b4d2690b86f874dc8e2dbce642cfb6a91b878a99e8599a8c41f89a31cf659",
+   "entry": {
+    "type": "MISSION",
+    "id": "PHASE_1R_02",
+    "perimetre": "artefacts phase1r existants uniquement (PARTITION_GRANULARITY.csv, MONTHLY_SERIES.csv), ANOMALY_REGISTRY; aucune relecture partitions/ticks/OOS/Holdout",
+    "statut_maximal": "EXPLORATION DESCRIPTIVE",
+    "analyses": "A ANOM-001 revue artefacts; B multi-granularite derivee; C phenomenes inattendus; formules Spearman/mediane/IQR sur agregats partitions et mois; aucune p-value hors famille preenregistree (aucune nouvelle famille inferentielle)"
+   },
+   "entry_hash": "4fd47465a9c83a1c1d4eb8cf569cb344e7dab7196b2848df7d3c57e2c3cbdd19"
   }
  ]
 }
