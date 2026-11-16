@@ -1,0 +1,13 @@
+{
+ "mission": "DEEP_AXES_ABC",
+ "run": 43869516686,
+ "statut_run": "success 1h59",
+ "partitions": "282 IS",
+ "oos_holdout": "jamais ouverts",
+ "sha256": {
+  "ci_tools/deep_axes.py": "ec3a638f12c035ed59988bbe11ec6b54876aa2f764fe13224341e88c82c3bbcf",
+  "reports/meta_alpha/deep_axes/DEEP_AXES_PARTITION.csv": "4002e808b956300038c601679d87dee42f5f778e16e0cf147ce0de80a24340e3",
+  "reports/meta_alpha/deep_axes/DEEP_AXES_SYNTHESIS.json": "3c792e5088c62d436261dff2b7aed08517437260264b037be8ac8b0cb8aebac2",
+  "reports/meta_alpha/META_ALPHA_DEEP_AXES_INVESTIGATION_REPORT.md": "2300c9bc24604330624e6a78093599e3df66ad0ab5cf1c7f479854ebc7cca85a"
+ }
+}

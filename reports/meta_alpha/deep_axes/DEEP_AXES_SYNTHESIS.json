@@ -1,0 +1,18 @@
+{
+ "mission":"DEEP_AXES_ABC","run":"43869516686 success 1h59, 282 partitions IS",
+ "axe_A_mecanisme":{
+  "composition_evenements_par_annee_bilateraux_pct_median":{"2010":98.6,"2011":92.7,"2012":78.1,"2013":54.0,"2014":53.5,"2015":27.3,"2016":42.2,"2017":39.0,"2018":35.6,"2019":31.9},
+  "lecture":"transition PROGRESSIVE 2010->2015+ (pas une rupture unique datee); les mises a jour unilaterales passent de ~1% a ~65% des evenements. La mecanique de production des cotations (ou le comportement de cotation) a change de nature pendant l'IS.",
+  "continuation_apres_evenement":"rendement suivant signe par la direction de l'evenement: bid-seul +0.067 bp, ask-seul +0.067 bp, bilateraux +0.132 bp (medianes); P(meme signe) 0.61-0.65; decroissance par tiers (bilateraux: 0.146 -> 0.035 -> 0.010 bp). Amplitudes minuscules devant le spread (~4 bp).",
+  "ac1_conditionnelle_spread":"spread haut 0.483 vs spread bas 0.491: l'ac1 tick n'est PAS portee par un regime de spread.",
+  "qualification":"phenomene confirme descriptivement (changement de mecanique de cotation); l'ac1 tick historique est en grande partie un produit de l'ancien regime de cotation bilaterale, pas un invariant du marche"},
+ "axe_B_reversion":{
+  "proxy_descriptif_bp_median":{"EVT10":0.193,"EVT50":0.091,"TIME30":0.192,"TIME60":0.009},
+  "comparaison_spread":"spread median meme partition 3.99 bp; ratio reversion/spread ~0.05; partitions ou le proxy depasse le spread: 0/282 a toutes les echelles",
+  "par_tiers":"proxy concentre en T1 (0.21-0.24 bp), ~0 en T2/T3: la reversion apparente appartient a l'ancien regime de cotation",
+  "qualification":"RESULTAT NEGATIF ROBUSTE: reversion descriptive absorbee ~20x par le spread, non presente comme performance; aucune strategie justifiee"},
+ "axe_C_bid_ask":{
+  "par_tiers":"motif croise +/-1 evenement dominant en T1 (0.538 vs contemporain 0.349), contemporain dominant en T2/T3 (0.564/0.588 vs +/-1 0.13-0.18), decalages >=2 evanescents apres T1",
+  "lecture":"coherent avec la composition: ancien regime = jambes decalees d'un evenement; regime recent = mises a jour unilaterales frequentes mais rendements contemporains correles. Toujours aucune asymetrie directionnelle (pas de leader).",
+  "qualification":"relation bid/ask NON stable historiquement: propriete du regime de cotation, pas loi permanente"}
+}

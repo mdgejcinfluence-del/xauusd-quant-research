@@ -173,6 +173,18 @@
     "sha256": "a58e21e9425407b01b4e477db5909ede0af49c891142b3eaf74c2958ff74b2fd"
    },
    "entry_hash": "44a6a76bdaf2ed5577fa6d24cc1e4d3db64dda4efd4d337590d507f73ce5e683"
+  },
+  {
+   "seq": 16,
+   "prev_hash": "44a6a76bdaf2ed5577fa6d24cc1e4d3db64dda4efd4d337590d507f73ce5e683",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "DEEP_AXES_ABC",
+    "run": 43869516686,
+    "verdict": "GD-06 changement progressif de mecanique de cotation (bilateraux 98.6% 2010 -> ~35% 2019); reversion petite echelle absorbee 20x par le spread (negatif robuste, 0/282); relation bid/ask sans leader et non stable; aucun regime discret",
+    "ref": "META_ALPHA_DEEP_AXES_INVESTIGATION_REPORT.md"
+   },
+   "entry_hash": "e8c6a4b41a20b0ea52afb680e316894f185d3053cfbdf973ecc05f3dd1b9b71d"
   }
  ]
 }
