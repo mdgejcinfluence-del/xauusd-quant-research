@@ -10,7 +10,7 @@ _s=dt.datetime.fromisoformat("2010-01-04 00:01:10.457"); _e=dt.datetime.fromisof
 IS_END=_s+0.6*(_e-_s)
 def dl(fid, local, name):
     for _t in range(3):
-        if subprocess.run(['gdown','-q','--output',local,fid]).returncode==0: return
+        if subprocess.run(['gdown','-q','--output',local,fid]).returncode==0: return True
         time.sleep(30*(_t+1))
     import requests as rq
     exp={x['name']:x['file_bytes'] for x in json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']}
@@ -21,10 +21,10 @@ def dl(fid, local, name):
                 r.raise_for_status()
                 with open(local,'wb') as f:
                     for ch in r.iter_content(1<<20): f.write(ch)
-            if open(local,'rb').read(4)==b'PAR1' and pathlib.Path(local).stat().st_size==exp[name]: return
+            if open(local,'rb').read(4)==b'PAR1' and pathlib.Path(local).stat().st_size==exp[name]: return True
         except Exception: pass
         time.sleep(60*(_t+1))
-    raise RuntimeError(f'telechargement impossible: {name}')
+    return False
 def checkpoint(state):
     STATE_P.write_text(json.dumps(state))
     if pathlib.Path('.git').exists():
@@ -63,7 +63,10 @@ def main():
     if not SCALE.exists(): SCALE.write_text("partition,scale_s,bars,ac1,absret_p50_bp,ret_p99_bp,ret_p1_bp,vol_p50\n")
     for p in parts:
         if p['name'] in state['done']: continue
-        local=f"/tmp/{p['name']}"; dl(p['drive_id'], local, p['name'])
+        local=f"/tmp/{p['name']}"
+        if not dl(p['drive_id'], local, p['name']):
+            state.setdefault('skipped',[]).append(p['name']); (ROOT/'SKIPPED.json').write_text(json.dumps(state['skipped']))
+            checkpoint(state); print('SKIP telechargement:', p['name'], flush=True); continue
         with open(HOUR,'a') as fh:
             for row in con.execute(QH.format(f=local)).fetchall():
                 fh.write(p['name']+','+str(int(row[0]))+','+','.join('' if v is None else str(float(v)) for v in row[1:])+'\n')
