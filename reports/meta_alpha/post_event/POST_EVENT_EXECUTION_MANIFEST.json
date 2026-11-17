@@ -1,0 +1,11 @@
+{
+ "mission": "POST_EVENT",
+ "run": 44132346231,
+ "duree": "4m06",
+ "couverture": "282/282 via Kaggle",
+ "sha256": {
+  "ci_tools/post_event.py": "255a44797ca65284cb761ede08c32ac7bda0f4be4c685655ed30ff039519dcc2",
+  "reports/meta_alpha/post_event/POST_EVENT_PARTITION.csv": "32865475c23951c1f875f5482cbebb3affed1b3c5643256efe935e75d9693ce2",
+  "reports/meta_alpha/post_event/POST_EVENT_SYNTHESIS.json": "e284d451766aff0529a30a17cf750c304adc9254390315d385f47703bcd82d76"
+ }
+}

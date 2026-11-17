@@ -37,6 +37,11 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 - Couverture dimensions: **282/282** (2026-11-17). Corpus IS migre sur Kaggle (8 datasets prives verifies 282/282 noms+tailles, VERIFY.json); completion des 13 dernieres partitions via le connecteur Kaggle bascule (run 44115203094, 5 min). Synthese horaires/sauts/echelles regeneree a couverture complete: pic 14h UTC (8.35% des ticks, spread 2.20 bp), creux 21h (0.55%), spread max 22h (3.33 bp); ac1 300/900/3600s = -0.011/-0.019/-0.040.
 - Par regime: continuation d'amplitude tick (+0.218) et ac1 horaire negative (-0.090 a 3600s) = traits de l'ancien regime bilateral, ~0 en regime recent; queues plus concentrees en regime recent (top1% 37% vs 18%, prudence: partitions plus grandes); cycle horaire present dans les 3 regimes.
 
+## Post-evenement (POST_EVENT, 282/282 via Kaggle en 4 min)
+- Apres un saut tick |r|>10 bp (2 916 evenements): reversion signee -0.31/-1.05/-1.97 bp a +10/+50/+100 ticks, concentree dans l'ancien regime (bilateral -4.21 bp a +100) et inferieure au spread a l'evenement (6.70 bp).
+- Apres une barre EVT100 extreme (26 582): suite +1 barre +0.22 bp de signe incoherent entre regimes (bilateral +0.66, autres -0.24): rien de qualifiable.
+- Qualification: aucune hypothese de strategie justifiee; resultats negatifs/conditionnels consignes.
+
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).

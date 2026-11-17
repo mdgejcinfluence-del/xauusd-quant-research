@@ -416,6 +416,18 @@
     "sha256": "fc9cbb16cadebb920a399ec2383382b49b1aa646a0e5295060f59da8e3e45688"
    },
    "entry_hash": "4967104c14119b2d952e0698a083f401200c5395c54b8017fd8304cfb2753698"
+  },
+  {
+   "seq": 39,
+   "prev_hash": "4967104c14119b2d952e0698a083f401200c5395c54b8017fd8304cfb2753698",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "POST_EVENT",
+    "run": 44132346231,
+    "verdict": "reversion post-saut tick (-1.97bp a +100) concentree ancien regime et < spread evenement 6.7bp; barres extremes signe incoherent: AUCUNE hypothese de strategie justifiee",
+    "ref": "post_event/POST_EVENT_SYNTHESIS.json"
+   },
+   "entry_hash": "4ebe1c11d49f0b97e78f5f19dc15649031a178b310b737fc8d9ebc8cc4b0b46e"
   }
  ]
 }
