@@ -1,0 +1,55 @@
+{
+ "username": "shalom5123",
+ "batches": {
+  "xauusd-is-b01": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b02": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b03": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b04": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b05": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b06": {
+   "attendus": 40,
+   "distants": 40,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-b07": {
+   "attendus": 29,
+   "distants": 29,
+   "manquants": [],
+   "tailles_differentes": []
+  },
+  "xauusd-is-missing13": {
+   "attendus": 13,
+   "distants": 13,
+   "manquants": [],
+   "tailles_differentes": []
+  }
+ },
+ "total_verified_files": 282,
+ "all_ok": true
+}
