@@ -21,6 +21,26 @@
    ],
    "failed": [],
    "when": "2026-11-17T12:38:23.144903"
+  },
+  {
+   "batch": "xauusd-is-missing13",
+   "ok": [
+    "part_000269.parquet",
+    "part_000270.parquet",
+    "part_000271.parquet",
+    "part_000273.parquet",
+    "part_000274.parquet",
+    "part_000275.parquet",
+    "part_000276.parquet",
+    "part_000277.parquet",
+    "part_000278.parquet",
+    "part_000279.parquet",
+    "part_000280.parquet",
+    "part_000281.parquet",
+    "part_000282.parquet"
+   ],
+   "failed": [],
+   "when": "2026-11-17T12:53:18.526505"
   }
  ],
  "last_batch": "xauusd-is-missing13 (UPLOAD ECHEC)"
