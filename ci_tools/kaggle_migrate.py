@@ -71,11 +71,20 @@ def main():
         (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('API dataset_create_new OK: '+str(res))
         print('kaggle create via API OK:', res, flush=True)
     except Exception as e:
-        (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('API dataset_create_new ECHEC: '+repr(e))
-        state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise
-    time.sleep(20)
-    files=api.dataset_list_files(f'{username}/{batch_name}')
-    remote=[f.name for f in files.files]
+        if 'exist' in str(e).lower():
+            (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('dataset deja existant (reprise): '+repr(e))
+            print('dataset deja existant, reprise verification', flush=True)
+        else:
+            (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('API dataset_create_new ECHEC: '+repr(e))
+            state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise
+    remote=[]
+    for _att in range(4):
+        time.sleep(45)
+        try:
+            files=api.dataset_list_files(f'{username}/{batch_name}')
+            remote=[f.name for f in files.files]; break
+        except Exception as e:
+            print('verification distante en attente:', str(e)[:120], flush=True)
     print('fichiers distants verifies:', len(remote), flush=True)
     for o in ok: state['uploaded'][o['name']]={'batch':batch_name,'sha256':o['sha256'],'bytes':o['bytes'],'remote_verified': o['name'] in remote}
     state['batches'][batch_name]={'files':len(ok),'remote_files':len(remote)}
