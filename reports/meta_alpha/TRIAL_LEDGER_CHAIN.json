@@ -396,6 +396,26 @@
     "ref": "kaggle_migration/VERIFY.json + market_dimensions/DIMENSIONS_SYNTHESIS.json"
    },
    "entry_hash": "5ba559bb09c43beb27a888d7c4ab425c6bce22167936a5dd8a70074427dda3c2"
+  },
+  {
+   "seq": 37,
+   "prev_hash": "5ba559bb09c43beb27a888d7c4ab425c6bce22167936a5dd8a70074427dda3c2",
+   "entry": {
+    "type": "MISSION",
+    "id": "POST_EVENT",
+    "perimetre": "IS 282 via Kaggle; caracterisation post-mouvements extremes (tick 10/20bp, barres EVT100), descriptif, aucun PnL"
+   },
+   "entry_hash": "cc0ce121240e233a934ce51ea46aa4208257fe64850fee0ba5c58ebb44dfe846"
+  },
+  {
+   "seq": 38,
+   "prev_hash": "cc0ce121240e233a934ce51ea46aa4208257fe64850fee0ba5c58ebb44dfe846",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/post_event/POST_EVENT_PREREG.json",
+    "sha256": "fc9cbb16cadebb920a399ec2383382b49b1aa646a0e5295060f59da8e3e45688"
+   },
+   "entry_hash": "4967104c14119b2d952e0698a083f401200c5395c54b8017fd8304cfb2753698"
   }
  ]
 }
