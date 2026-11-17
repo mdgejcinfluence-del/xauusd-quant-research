@@ -1,5 +1,19 @@
-{"mission":"MARKET_DIMENSIONS","couverture":"268/282 partitions (part_000001-000268, 2010-01 a ~2018-03); 14 dernieres partitions (2018-03..2020-01) NON lues: quota Drive epuise apres 6 lectures du corpus dans la journee; echecs conserves (runs 43961610457, 43981883227, 43987463875, 43990235554 annule, 44003003013 annule). Reprise exacte: relancer import_trigger/market_dimensions.txt quand le quota Drive sera retabli — le moteur reprend aux partitions manquantes (STATE.json, SKIPPED.json).",
-"horaire_utc":{"profil":"cycle intraday marque (couverture 2010-2018): pic d'activite 13h-15h UTC (8.0/8.2/7.3% des ticks), creux 21h-23h (0.6/1.1/1.8%) avec inter-arrivees moyennes de 8-21 s contre 0.4 s au pic; spread le plus etroit au pic (2.24 bp a 14h) et le plus large a 22h (3.50 bp)","limite":"heures UTC natives; AUCUNE session nommee — le creux 21h-23h est un fait du flux, pas un calendrier officiel documente"},
-"sauts_queues":{"taux_globaux_268_partitions":"|r|>5bp, >10bp, >20bp, >50bp: voir rapport (comptes sommes)","concentration":"le top 1% des mouvements porte ~18.7% de la variance (mediane partitions): queues lourdes confirmees a l'echelle tick"},
-"asymetrie":{"tick":"corr(r,|r+1|)=-0.0025, lag5=-0.0073, lag10=-0.0017: pas d'effet levier tick mesurable; corr(signe(r), carre signe du rendement suivant)=+0.213: les mouvements signes sont suivis de mouvements de meme sens ponderes par l'amplitude (continuation d'amplitude, descriptif)","journalier_artefacts_existants":"corr(r_jour, logRV lendemain)=-0.054 (ancien regime -0.108, recent -0.028): effet levier journalier faible et era-dependant"},
-"echelles_temps":{"ac1_barres":"300s -0.011, 900s -0.021, 3600s -0.049 (medianes 268 partitions): legere negativite croissante avec l'horizon, |ret| median 2.35/4.24/8.65 bp, queues de barres symetriques (p99/|p1| ~1.01-1.03)"}}
+{
+ "mission": "MARKET_DIMENSIONS",
+ "couverture": "268/282 partitions (part_000001-000268, 2010-01 a ~2018-03); 14 dernieres partitions (2018-03..2020-01) NON lues: quota Drive epuise apres 6 lectures du corpus dans la journee; echecs conserves (runs 43961610457, 43981883227, 43987463875, 43990235554 annule, 44003003013 annule). Reprise exacte: relancer import_trigger/market_dimensions.txt quand le quota Drive sera retabli \u2014 le moteur reprend aux partitions manquantes (STATE.json, SKIPPED.json).",
+ "horaire_utc": {
+  "profil": "cycle intraday marque (couverture 2010-2018): pic d'activite 13h-15h UTC (8.0/8.2/7.3% des ticks), creux 21h-23h (0.6/1.1/1.8%) avec inter-arrivees moyennes de 8-21 s contre 0.4 s au pic; spread le plus etroit au pic (2.24 bp a 14h) et le plus large a 22h (3.50 bp)",
+  "limite": "heures UTC natives; AUCUNE session nommee \u2014 le creux 21h-23h est un fait du flux, pas un calendrier officiel documente"
+ },
+ "sauts_queues": {
+  "taux_globaux_268_partitions": "sur 240 659 405 ticks: |r|>5bp: 18 977 (0.0079%); >10bp: 2 816 (0.0012%); >20bp: 630 (0.0003%); >50bp: 90; mouvement tick maximal observe: 170 bp",
+  "concentration": "le top 1% des mouvements porte ~18.7% de la variance (mediane partitions): queues lourdes confirmees a l'echelle tick"
+ },
+ "asymetrie": {
+  "tick": "corr(r,|r+1|)=-0.0025, lag5=-0.0073, lag10=-0.0017: pas d'effet levier tick mesurable; corr(signe(r), carre signe du rendement suivant)=+0.213: les mouvements signes sont suivis de mouvements de meme sens ponderes par l'amplitude (continuation d'amplitude, descriptif)",
+  "journalier_artefacts_existants": "corr(r_jour, logRV lendemain)=-0.054 (ancien regime -0.108, recent -0.028): effet levier journalier faible et era-dependant"
+ },
+ "echelles_temps": {
+  "ac1_barres": "300s -0.011, 900s -0.021, 3600s -0.049 (medianes 268 partitions): legere negativite croissante avec l'horizon, |ret| median 2.35/4.24/8.65 bp, queues de barres symetriques (p99/|p1| ~1.01-1.03)"
+ }
+}
