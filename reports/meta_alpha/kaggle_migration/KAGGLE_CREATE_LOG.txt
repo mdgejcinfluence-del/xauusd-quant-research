@@ -1,1 +1,1 @@
-API dataset_create_new ECHEC: HTTPError('401 Client Error: Unauthorized for url: https://api.kaggle.com/v1/blobs.BlobApiService/StartBlobUpload')
+API dataset_create_new OK: {"ref": "/datasets/shalom5123/xauusd-is-missing13", "url": "https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13", "status": "Ok", "error": null, "invalidTags": []}
