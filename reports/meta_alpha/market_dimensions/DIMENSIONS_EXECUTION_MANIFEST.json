@@ -1,0 +1,11 @@
+{
+ "mission": "MARKET_DIMENSIONS",
+ "couverture": "268/282",
+ "sha256": {
+  "ci_tools/market_dimensions.py": "fe4c7f869375902a4e0c3ddff633be8e4a6965e0b0bb8f134653259871b53bf9",
+  "reports/meta_alpha/market_dimensions/PARTITION_HOUR.csv": "f1a0aea33c0e4c736727a5bed023175cf6abe887626927f87e262171fd1531cb",
+  "reports/meta_alpha/market_dimensions/PARTITION_JUMPS.csv": "5ae2770966ab522a1be4043be6178b90795ec2b925113bc4db2be17974068aef",
+  "reports/meta_alpha/market_dimensions/PARTITION_SCALE2.csv": "2902c5a4765cef9e9f9967dcbbc5c73368c1234f545e68573f627eeacef46390",
+  "reports/meta_alpha/market_dimensions/DIMENSIONS_SYNTHESIS.json": "44daf2573454dd3d67a77b2b7c0f2a606c5bed54710367bad06be2fc1c9cb7f8"
+ }
+}

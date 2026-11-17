@@ -29,6 +29,13 @@ Tout phenomene se rapporte a son contexte: mois, regime de cotation
 (bilateral/mixte/unilateral), granularite. Les statistiques poolees 2010-2020
 melangent au moins deux processus de cotation: a eviter sans mention explicite.
 
+## Dimensions ajoutees (run MARKET_DIMENSIONS, couverture 268/282, 2010-2018)
+- Cycle horaire UTC marque: pic 13h-15h (spread minimal 2.24 bp, dt 0.4 s), creux 21h-23h (dt 8-21 s, spread jusqu'a 3.50 bp). Aucune session nommee (UTC natif).
+- Queues tick: le top 1% des mouvements porte ~18.7% de la variance.
+- Asymetrie: pas de levier tick; levier journalier faible (-0.054) et era-dependant (ancien -0.108, recent -0.028). Continuation d'amplitude tick (corr signe/carre signe suivant +0.213, descriptif).
+- Echelles M5/M15/H1: ac1 -0.011/-0.021/-0.049, queues de barres symetriques.
+- REPRISE EXACTE: 14 partitions (part_000269-000282) manquent (quota Drive); relancer import_trigger/market_dimensions.txt ulterieurement, le moteur reprend aux manquantes.
+
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).

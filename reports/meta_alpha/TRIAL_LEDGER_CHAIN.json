@@ -343,6 +343,17 @@
     "sha256": "16bdb78a3a4c680e311b19115ce174923fff97e0451e9032e277b1effc977d77"
    },
    "entry_hash": "7af5af0bba2b5a54e07572054aeb365d6e9aca40e046fdbe37eae34de17170ee"
+  },
+  {
+   "seq": 32,
+   "prev_hash": "7af5af0bba2b5a54e07572054aeb365d6e9aca40e046fdbe37eae34de17170ee",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "MARKET_DIMENSIONS",
+    "verdict": "couverture 268/282 (quota Drive, reprise exacte consignee); cycle UTC 13-15h pic / 21-23h creux (spread 2.24 vs 3.50 bp); top1% mouvements = 18.7% variance; levier journalier faible era-dependant; ac1 M5/M15/H1 -0.011/-0.021/-0.049",
+    "ref": "market_dimensions/DIMENSIONS_SYNTHESIS.json"
+   },
+   "entry_hash": "a653dba041f77dddc12d57b0422e783a80084be82f8a4d556fb19c0abf68f7fb"
   }
  ]
 }
