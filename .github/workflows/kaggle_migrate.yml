@@ -14,7 +14,7 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q gdown requests kaggle
+      - run: pip install -q gdown requests kaggle six
       - name: Verifier la chaine avant calcul
         run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
       - name: Migrer un lot vers Kaggle
