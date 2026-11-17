@@ -1,5 +1,8 @@
 name: Kaggle Verification distante
 on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/kaggle_verify.txt"]
   workflow_dispatch: {}
 permissions: { contents: write }
 jobs:
