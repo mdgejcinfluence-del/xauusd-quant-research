@@ -34,7 +34,7 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 - Queues tick: le top 1% des mouvements porte ~18.7% de la variance.
 - Asymetrie: pas de levier tick; levier journalier faible (-0.054) et era-dependant (ancien -0.108, recent -0.028). Continuation d'amplitude tick (corr signe/carre signe suivant +0.213, descriptif).
 - Echelles M5/M15/H1: ac1 -0.011/-0.021/-0.049, queues de barres symetriques.
-- Couverture dimensions: 269/282 (manquent part_000269-271, 273-282). Reprise du 2026-11-16 (run 44030454801, timeout 5h50): telechargements Drive toujours en echec massif depuis CI (voir synthese) — reprise exacte inchangee quand le quota fournisseur sera reellement retabli.
+- Couverture dimensions: **282/282** (2026-11-17). Corpus IS migre sur Kaggle (8 datasets prives verifies 282/282 noms+tailles, VERIFY.json); completion des 13 dernieres partitions via le connecteur Kaggle bascule (run 44115203094, 5 min). Synthese horaires/sauts/echelles regeneree a couverture complete: pic 14h UTC (8.35% des ticks, spread 2.20 bp), creux 21h (0.55%), spread max 22h (3.33 bp); ac1 300/900/3600s = -0.011/-0.019/-0.040.
 - Par regime: continuation d'amplitude tick (+0.218) et ac1 horaire negative (-0.090 a 3600s) = traits de l'ancien regime bilateral, ~0 en regime recent; queues plus concentrees en regime recent (top1% 37% vs 18%, prudence: partitions plus grandes); cycle horaire present dans les 3 regimes.
 
 ## Prochaines investigations (decidees en autonomie, perimetre IS)

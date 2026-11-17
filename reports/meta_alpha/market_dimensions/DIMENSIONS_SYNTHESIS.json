@@ -1,12 +1,12 @@
 {
  "mission": "MARKET_DIMENSIONS",
- "couverture": "269/282 partitions (part_000001-000268 + part_000272). Manquantes: part_000269, 270, 271, 273-282 (13). Tentative de reprise du 2026-11-16 (run 44030454801, annule au timeout 350 min apres 5h50): les telechargements Drive depuis GitHub Actions echouent toujours pour la plupart des fichiers 242+ (SKIPPED.json), malgre l'annonce de quota retabli \u2014 le quota effectif cote fournisseur/CI n'est pas retabli pour ce corpus. Reprise exacte inchangee: relancer import_trigger/market_dimensions.txt; les lignes dupliquees eventuelles se deduisent par partition (fait dans les syntheses).",
+ "couverture": "282/282 partitions (deduplique par partition; lignes brutes avec doublons de reprise conservees dans les CSV). Completion obtenue le 2026-11-17 via Kaggle: run 44115203094 success en 5 min, connecteur bascule Kaggle prioritaire (lot xauusd-is-missing13), Drive en repli.",
  "horaire_utc": {
   "profil": "cycle intraday marque (couverture 2010-2018): pic d'activite 13h-15h UTC (8.0/8.2/7.3% des ticks), creux 21h-23h (0.6/1.1/1.8%) avec inter-arrivees moyennes de 8-21 s contre 0.4 s au pic; spread le plus etroit au pic (2.24 bp a 14h) et le plus large a 22h (3.50 bp)",
   "limite": "heures UTC natives; AUCUNE session nommee \u2014 le creux 21h-23h est un fait du flux, pas un calendrier officiel documente"
  },
  "sauts_queues": {
-  "taux_globaux_268_partitions": "sur 240 659 405 ticks: |r|>5bp: 18 977 (0.0079%); >10bp: 2 816 (0.0012%); >20bp: 630 (0.0003%); >50bp: 90; mouvement tick maximal observe: 170 bp",
+  "taux_globaux_268_partitions": "sur 288 086 306 rendements tick (282 partitions): |r|>5bp 0.0068%; >10bp 0.0010%; >20bp 0.0002%; >50bp ~0.0000% (90+ occurrences); max 170 bp; top 1% des mouvements ~18.8% de la variance",
   "concentration": "le top 1% des mouvements porte ~18.7% de la variance (mediane partitions): queues lourdes confirmees a l'echelle tick"
  },
  "asymetrie": {
@@ -14,7 +14,7 @@
   "journalier_artefacts_existants": "corr(r_jour, logRV lendemain)=-0.054 (ancien regime -0.108, recent -0.028): effet levier journalier faible et era-dependant"
  },
  "echelles_temps": {
-  "ac1_barres": "300s -0.011, 900s -0.021, 3600s -0.049 (medianes 268 partitions): legere negativite croissante avec l'horizon, |ret| median 2.35/4.24/8.65 bp, queues de barres symetriques (p99/|p1| ~1.01-1.03)"
+  "ac1_barres": "300s -0.0110, 900s -0.0194, 3600s -0.0404 (medianes 282 partitions); |ret| median 2.34/4.16/8.58 bp (synthese 282/282)"
  },
  "par_regime": {
   "sauts": {

@@ -1,1 +1,17 @@
-{"plan":"Migration Drive -> Kaggle Datasets (prive) par lots, puis consolidation","contraintes_reelles":{"runner_ephemere":"aucun stockage entre runs: accumulation directe de 9.73 Go impossible en plusieurs runs dans un seul dataset","disque_runner":"~14 Go libres: un lot a la fois","source":"Drive reste la seule source; la migration exige un telechargement reussi par fichier, avec reprises","kaggle_auth":"verifiee OK (KAGGLE_CHECK.json: kaggle_username_present, kaggle_key_present, kaggle_auth_ok)"},"lots":["missing13 (prioritaire): part_000269,270,271,273-282","puis lots de 40 partitions IS dans l'ordre, datasets prives xauusd-is-b01, b02, ...","consolidation finale: telechargement des lots depuis Kaggle (sans quota Drive) puis dataset unique xauusd-tick-partitions-282, si les quotas Kaggle le permettent"],"integrite":"taille attendue (INVENTORY) + PAR1 verifies au telechargement; SHA-256 de chaque fichier calcule et consigne dans STATE.json avant upload; verification post-upload via API Kaggle (liste des fichiers du dataset)","bascule_code":"apres consolidation (ou par lot): les moteurs liront Kaggle en priorite (kaggle datasets download du lot contenant la partition, fichier cible extrait), Drive en repli; changement consigne quand il sera effectif, pas avant"}
+{
+ "plan": "Migration Drive -> Kaggle Datasets (prive) par lots, puis consolidation",
+ "contraintes_reelles": {
+  "runner_ephemere": "aucun stockage entre runs: accumulation directe de 9.73 Go impossible en plusieurs runs dans un seul dataset",
+  "disque_runner": "~14 Go libres: un lot a la fois",
+  "source": "Drive reste la seule source; la migration exige un telechargement reussi par fichier, avec reprises",
+  "kaggle_auth": "verifiee OK (KAGGLE_CHECK.json: kaggle_username_present, kaggle_key_present, kaggle_auth_ok)"
+ },
+ "lots": [
+  "missing13 (prioritaire): part_000269,270,271,273-282",
+  "puis lots de 40 partitions IS dans l'ordre, datasets prives xauusd-is-b01, b02, ...",
+  "consolidation finale: telechargement des lots depuis Kaggle (sans quota Drive) puis dataset unique xauusd-tick-partitions-282, si les quotas Kaggle le permettent"
+ ],
+ "integrite": "taille attendue (INVENTORY) + PAR1 verifies au telechargement; SHA-256 de chaque fichier calcule et consigne dans STATE.json avant upload; verification post-upload via API Kaggle (liste des fichiers du dataset)",
+ "bascule_code": "EFFECTIVE pour ci_tools/market_dimensions.py (Kaggle prioritaire pour les 13, Drive en repli, secrets en env CI); les autres moteurs historiques restent sur Drive (deja executes, aucune relecture requise).",
+ "etat": "MIGRATION TERMINEE: 282/282 fichiers sur 8 datasets Kaggle prives (xauusd-is-missing13 + xauusd-is-b01..b07, compte shalom5123), verification distante complete noms+tailles (VERIFY.json, all_ok=true, run 44114390403). SHA-256 par fichier dans STATE.json. Consolidation en un dataset unique xauusd-tick-partitions-282: possible (telechargement des lots depuis Kaggle dans un runner, ~9.7 Go) mais non bloquante; les lots font foi."
+}

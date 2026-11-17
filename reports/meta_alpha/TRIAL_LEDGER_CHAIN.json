@@ -385,6 +385,17 @@
     "sha256": "9e1ed73c0fb648dc3d591468fa99ca863533aafb00d1fa2bbf15847fe88a3945"
    },
    "entry_hash": "57d1c49a999636983e1505f7c63a63de4e969545fda3ec848d9f570e4a60d69a"
+  },
+  {
+   "seq": 36,
+   "prev_hash": "57d1c49a999636983e1505f7c63a63de4e969545fda3ec848d9f570e4a60d69a",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "KAGGLE_MIGRATION+DIM_282",
+    "verdict": "corpus IS migre Kaggle: 282/282 fichiers verifies noms+tailles sur 8 datasets prives; market_dimensions complete a 282/282 via connecteur Kaggle (run 44115203094); syntheses regenerees (pic 14h UTC spread 2.20bp, ac1 H1 -0.040)",
+    "ref": "kaggle_migration/VERIFY.json + market_dimensions/DIMENSIONS_SYNTHESIS.json"
+   },
+   "entry_hash": "5ba559bb09c43beb27a888d7c4ab425c6bce22167936a5dd8a70074427dda3c2"
   }
  ]
 }

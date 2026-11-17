@@ -1,17 +1,12 @@
 {
  "mission": "MARKET_DIMENSIONS",
- "couverture": "269/282",
- "manquantes": [
-  "part_000269",
-  "part_000270",
-  "part_000271",
-  "part_000273-282"
- ],
+ "couverture": "282/282",
+ "migration_kaggle": "282/282 verifies (VERIFY.json)",
  "sha256": {
-  "ci_tools/market_dimensions.py": "fe4c7f869375902a4e0c3ddff633be8e4a6965e0b0bb8f134653259871b53bf9",
-  "reports/meta_alpha/market_dimensions/PARTITION_HOUR.csv": "787113846447bc80dfa248c1e6e619505cdfa3b68ce401ee51eefa6cda6bb59b",
-  "reports/meta_alpha/market_dimensions/PARTITION_JUMPS.csv": "de6085d3249d9d6d0a955a9890a1d61f09e3aae579cd55c5ccd49262820534e7",
-  "reports/meta_alpha/market_dimensions/PARTITION_SCALE2.csv": "6b8ba1db3c23709877a4bfadfcf21c3bb167a3af6a8020666c15755b1e31bec1",
-  "reports/meta_alpha/market_dimensions/DIMENSIONS_SYNTHESIS.json": "32ba7b7a24b716b6bd518081ec7c69938b16efbd6c14efcc847be4fda50a945d"
+  "ci_tools/market_dimensions.py": "023bfc54fdbc72637a9327d8c08407768233bce7023d30d0eb22669eee1aca78",
+  "ci_tools/kaggle_migrate.py": "57f93c9aef654265c667c3cc1ad7625341bdb83e3ae94cf8fb10bdbec1f58f20",
+  "reports/meta_alpha/kaggle_migration/STATE.json": "a6d2fb56d7e638ab7199396c1646ad71965c4b7d556b1e8ea298df23181f664d",
+  "reports/meta_alpha/kaggle_migration/VERIFY.json": "beab67c7509d7917519033dcac4e32d28490fc25283270e201656f2e7f4e51bc",
+  "reports/meta_alpha/market_dimensions/DIMENSIONS_SYNTHESIS.json": "541a4c79423394d54d2e10b4e70d4a3dc3949679d0c3037211654510b374877c"
  }
 }
