@@ -66,11 +66,13 @@ def main():
     username=api.config_values.get('username')
     meta={'title':batch_name,'id':f'{username}/{batch_name}','licenses':[{'name':'other'}]}
     (folder/'dataset-metadata.json').write_text(json.dumps(meta))
-    r=subprocess.run(['kaggle','datasets','create','-p',str(folder),'-q'], capture_output=True, text=True)
-    (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('rc='+str(r.returncode)+'\n'+r.stdout+'\n'+r.stderr)
-    print('kaggle create rc:', r.returncode, (r.stdout+r.stderr)[-500:], flush=True)
-    if r.returncode!=0:
-        state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise RuntimeError('kaggle datasets create a echoue')
+    try:
+        res=api.dataset_create_new(str(folder), public=False, quiet=True)
+        (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('API dataset_create_new OK: '+str(res))
+        print('kaggle create via API OK:', res, flush=True)
+    except Exception as e:
+        (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('API dataset_create_new ECHEC: '+repr(e))
+        state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise
     time.sleep(20)
     files=api.dataset_list_files(f'{username}/{batch_name}')
     remote=[f.name for f in files.files]
