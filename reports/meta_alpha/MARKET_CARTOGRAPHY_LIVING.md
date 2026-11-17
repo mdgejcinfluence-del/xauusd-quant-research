@@ -34,7 +34,8 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 - Queues tick: le top 1% des mouvements porte ~18.7% de la variance.
 - Asymetrie: pas de levier tick; levier journalier faible (-0.054) et era-dependant (ancien -0.108, recent -0.028). Continuation d'amplitude tick (corr signe/carre signe suivant +0.213, descriptif).
 - Echelles M5/M15/H1: ac1 -0.011/-0.021/-0.049, queues de barres symetriques.
-- REPRISE EXACTE: 14 partitions (part_000269-000282) manquent (quota Drive); relancer import_trigger/market_dimensions.txt ulterieurement, le moteur reprend aux manquantes.
+- Couverture dimensions: 269/282 (manquent part_000269-271, 273-282). Reprise du 2026-11-16 (run 44030454801, timeout 5h50): telechargements Drive toujours en echec massif depuis CI (voir synthese) — reprise exacte inchangee quand le quota fournisseur sera reellement retabli.
+- Par regime: continuation d'amplitude tick (+0.218) et ac1 horaire negative (-0.090 a 3600s) = traits de l'ancien regime bilateral, ~0 en regime recent; queues plus concentrees en regime recent (top1% 37% vs 18%, prudence: partitions plus grandes); cycle horaire present dans les 3 regimes.
 
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.

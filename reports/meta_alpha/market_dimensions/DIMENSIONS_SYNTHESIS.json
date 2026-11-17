@@ -1,6 +1,6 @@
 {
  "mission": "MARKET_DIMENSIONS",
- "couverture": "268/282 partitions (part_000001-000268, 2010-01 a ~2018-03); 14 dernieres partitions (2018-03..2020-01) NON lues: quota Drive epuise apres 6 lectures du corpus dans la journee; echecs conserves (runs 43961610457, 43981883227, 43987463875, 43990235554 annule, 44003003013 annule). Reprise exacte: relancer import_trigger/market_dimensions.txt quand le quota Drive sera retabli \u2014 le moteur reprend aux partitions manquantes (STATE.json, SKIPPED.json).",
+ "couverture": "269/282 partitions (part_000001-000268 + part_000272). Manquantes: part_000269, 270, 271, 273-282 (13). Tentative de reprise du 2026-11-16 (run 44030454801, annule au timeout 350 min apres 5h50): les telechargements Drive depuis GitHub Actions echouent toujours pour la plupart des fichiers 242+ (SKIPPED.json), malgre l'annonce de quota retabli \u2014 le quota effectif cote fournisseur/CI n'est pas retabli pour ce corpus. Reprise exacte inchangee: relancer import_trigger/market_dimensions.txt; les lignes dupliquees eventuelles se deduisent par partition (fait dans les syntheses).",
  "horaire_utc": {
   "profil": "cycle intraday marque (couverture 2010-2018): pic d'activite 13h-15h UTC (8.0/8.2/7.3% des ticks), creux 21h-23h (0.6/1.1/1.8%) avec inter-arrivees moyennes de 8-21 s contre 0.4 s au pic; spread le plus etroit au pic (2.24 bp a 14h) et le plus large a 22h (3.50 bp)",
   "limite": "heures UTC natives; AUCUNE session nommee \u2014 le creux 21h-23h est un fait du flux, pas un calendrier officiel documente"
@@ -15,5 +15,15 @@
  },
  "echelles_temps": {
   "ac1_barres": "300s -0.011, 900s -0.021, 3600s -0.049 (medianes 268 partitions): legere negativite croissante avec l'horizon, |ret| median 2.35/4.24/8.65 bp, queues de barres symetriques (p99/|p1| ~1.01-1.03)"
+ },
+ "par_regime": {
+  "sauts": {
+   "BILATERAL": "top1% variance 18.2%, absmax median 4 bp",
+   "MIXTE": "top1% 35.9% (n=15 partitions, a confirmer)",
+   "UNILATERAL": "top1% 37.3%, absmax median 65 bp: queues relativement plus concentrees dans le regime recent (partitions plus grandes, prudence)"
+  },
+  "continuation_amplitude": "corr(signe, carre signe suivant) = +0.218 en regime bilateral, ~0.00 en mixte/unilateral: la continuation d'amplitude tick appartient a l'ancien regime de cotation",
+  "echelles_par_regime": "ac1 3600s: bilateral -0.090 vs unilateral -0.008: la negativite horaire aussi est un trait de l'ancien regime",
+  "horaire_par_regime": "cycle present dans les 3 regimes: spread creux 21-23h vs pic 13-15h = 4.13/2.72 (bilateral), 3.04/2.13 (mixte), 2.88/2.15 bp (unilateral)"
  }
 }

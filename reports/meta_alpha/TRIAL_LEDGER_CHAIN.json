@@ -354,6 +354,17 @@
     "ref": "market_dimensions/DIMENSIONS_SYNTHESIS.json"
    },
    "entry_hash": "a653dba041f77dddc12d57b0422e783a80084be82f8a4d556fb19c0abf68f7fb"
+  },
+  {
+   "seq": 33,
+   "prev_hash": "a653dba041f77dddc12d57b0422e783a80084be82f8a4d556fb19c0abf68f7fb",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "MARKET_DIMENSIONS_COMPLETION",
+    "verdict": "couverture 269/282 (+part_000272); telechargements Drive toujours en echec massif depuis CI (run 44030454801 timeout 5h50) malgre annonce de quota; analyses par regime (dedupliquees): continuation amplitude et ac1 horaire = traits ancien regime; cycle horaire present dans les 3 regimes",
+    "ref": "market_dimensions/DIMENSIONS_SYNTHESIS.json"
+   },
+   "entry_hash": "d7451a262e2c30e33e6b0f3769c71d324c4bb84313b6e171d74dc59357ffe70e"
   }
  ]
 }
