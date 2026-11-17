@@ -1,8 +1,35 @@
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/kaggle_migrate.py", line 82, in <module>
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/kaggle_migrate.py", line 84, in <module>
     if __name__=='__main__': main()
                              ^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/kaggle_migrate.py", line 73, in main
-    state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise RuntimeError('kaggle datasets create a echoue')
-                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: kaggle datasets create a echoue
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/kaggle_migrate.py", line 70, in main
+    res=api.dataset_create_new(str(folder), public=False, quiet=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 6178, in dataset_create_new
+    self.upload_files(
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 9360, in upload_files
+    upload_file = self._upload_file_or_folder(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 9399, in _upload_file_or_folder
+    upload_file = self._upload_file(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 9458, in _upload_file
+    token = self._upload_blob(full_path, quiet, blob_type, upload_context, content_type)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 5810, in _upload_blob
+    start_blob_upload_response = self.with_retry(method)(file_upload.start_blob_upload_request)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 1365, in retriable_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kagglesdk/blobs/services/blob_api_service.py", line 25, in start_blob_upload
+    return self._client.call("blobs.BlobApiService", "StartBlobUpload", request, ApiStartBlobUploadResponse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kagglesdk/kaggle_http_client.py", line 106, in call
+    response = self._prepare_response(response_type, http_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kagglesdk/kaggle_http_client.py", line 134, in _prepare_response
+    http_response.raise_for_status()
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.kaggle.com/v1/blobs.BlobApiService/StartBlobUpload
