@@ -25,6 +25,23 @@ def dl(fid, local, name):
         except Exception: pass
         time.sleep(60*(_t+1))
     return False
+
+KAGGLE_DIR=pathlib.Path('/tmp/kaggle_dl')
+def kaggle_fetch(name):
+    """Bascule connecteur: priorite Kaggle (lot xauusd-is-missing13), repli Drive gere par l'appelant."""
+    try:
+        target=KAGGLE_DIR/name
+        if target.exists() and open(target,'rb').read(4)==b'PAR1': return str(target)
+        if not os.environ.get('KAGGLE_API_TOKEN') and not os.environ.get('KAGGLE_KEY'): return None
+        from kaggle.api.kaggle_api_extended import KaggleApi
+        api=KaggleApi(); api.authenticate(); username=api.config_values.get('username')
+        KAGGLE_DIR.mkdir(exist_ok=True)
+        api.dataset_download_files(f'{username}/xauusd-is-missing13', path=str(KAGGLE_DIR), unzip=True, quiet=True)
+        if target.exists() and open(target,'rb').read(4)==b'PAR1': return str(target)
+    except Exception as e:
+        print('Kaggle fetch indisponible:', str(e)[:150], flush=True)
+    return None
+
 def checkpoint(state):
     STATE_P.write_text(json.dumps(state))
     if pathlib.Path('.git').exists():
@@ -63,8 +80,9 @@ def main():
     if not SCALE.exists(): SCALE.write_text("partition,scale_s,bars,ac1,absret_p50_bp,ret_p99_bp,ret_p1_bp,vol_p50\n")
     for p in parts:
         if p['name'] in state['done']: continue
-        local=f"/tmp/{p['name']}"
-        if not dl(p['drive_id'], local, p['name']):
+        kf=kaggle_fetch(p['name']) if p['name'] in {f'part_{i:06d}.parquet' for i in [269,270,271]+list(range(273,283))} else None
+        local=kf if kf else f"/tmp/{p['name']}"
+        if not kf and not dl(p['drive_id'], local, p['name']):
             state.setdefault('skipped',[]).append(p['name']); (ROOT/'SKIPPED.json').write_text(json.dumps(state['skipped']))
             checkpoint(state); print('SKIP telechargement:', p['name'], flush=True); continue
         with open(HOUR,'a') as fh:
@@ -76,7 +94,7 @@ def main():
             for n in (300,900,3600):
                 rr=con.execute(QT.format(f=local,n=n)).fetchone()
                 fh.write(f"{p['name']},{n},"+','.join('' if v is None else str(float(v)) for v in rr)+'\n')
-        os.remove(local); state['done'].append(p['name'])
+        (os.remove(local) if local.startswith('/tmp/part_') else None); state['done'].append(p['name'])
         if len(state['done'])%40==0: checkpoint(state)
         print('DIM',p['name'],flush=True)
     checkpoint(state); print('dimensions termine:',len(state['done']))

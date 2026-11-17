@@ -14,10 +14,15 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q gdown duckdb pytz requests
+      - run: pip install -q gdown duckdb pytz requests kaggle six
       - name: Verifier la chaine avant calcul
         run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
-      - run: python3 ci_tools/market_dimensions.py
+      - name: Dimensions (Kaggle prioritaire, Drive en repli)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+        run: python3 ci_tools/market_dimensions.py
       - name: Commit resultats (toujours)
         if: always()
         run: |
