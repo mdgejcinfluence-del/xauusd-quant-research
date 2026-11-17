@@ -1,1 +1,1 @@
-API dataset_create_new OK: {"ref": "/datasets/shalom5123/xauusd-is-b04", "url": "https://www.kaggle.com/datasets/shalom5123/xauusd-is-b04", "status": "Ok", "error": null, "invalidTags": []}
+API dataset_create_new OK: {"ref": "/datasets/shalom5123/xauusd-is-b05", "url": "https://www.kaggle.com/datasets/shalom5123/xauusd-is-b05", "status": "Ok", "error": null, "invalidTags": []}

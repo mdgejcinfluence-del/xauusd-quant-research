@@ -1037,6 +1037,246 @@
    "sha256": "973381deb789b5e4df71742fb47871a5fb2729e4882df6e17832df8aba119a36",
    "bytes": 4462048,
    "remote_verified": false
+  },
+  "part_000161.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "bda57eecb7137063e794f6a7e684f3642c696143d8e9643bffb092cf5823ecce",
+   "bytes": 4414567,
+   "remote_verified": true
+  },
+  "part_000162.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "d8564027e66ee44aff2af2aed28376714ce797e8114855a7d007fd0bf8079cac",
+   "bytes": 4462209,
+   "remote_verified": true
+  },
+  "part_000163.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "ff0b08adf44ef21035323ef95b0f92fd4be0fa4489d9e3b010670ca80e29a449",
+   "bytes": 4165284,
+   "remote_verified": true
+  },
+  "part_000164.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "4fc78c2aa35272f717c4cf4e2500c6fe0b90a642200e11931b73d156a45bca8b",
+   "bytes": 5367546,
+   "remote_verified": true
+  },
+  "part_000165.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "5645a7b68ac6478c0c251421b739735bff32ba21fabcc120ae3086fd9e15f8ee",
+   "bytes": 4632359,
+   "remote_verified": true
+  },
+  "part_000166.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "bcd4dff426b282384fdbc1cf965b65e759bb9ce72b5cbaee14c9ff9d9a11994b",
+   "bytes": 4887848,
+   "remote_verified": true
+  },
+  "part_000167.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "17a9f4a15ce801dbed4577803c900d4110caa2d5fd28fcaa795ac8e40b8ca86e",
+   "bytes": 4292684,
+   "remote_verified": true
+  },
+  "part_000168.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "62b77bc427f2a7cbb7b05cc53b099e6771abbbdda6007dd9b4efa9ce93d7364a",
+   "bytes": 5062253,
+   "remote_verified": true
+  },
+  "part_000169.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "cf421a3a0c1b5af5462248a8f6216d0578aa123c4d8a55a86cd4b62b131fa620",
+   "bytes": 4079247,
+   "remote_verified": true
+  },
+  "part_000170.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "9b6559382241e3efe1007392d23541beb407f59f20cb73a5cbe9cc9b91fba64a",
+   "bytes": 4093219,
+   "remote_verified": true
+  },
+  "part_000171.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "c10c4d9f6e8d0cffef2e546a35187f5742ffb5c588e12c07964e698b3a4f9cbd",
+   "bytes": 3226387,
+   "remote_verified": true
+  },
+  "part_000172.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "19e998380fc951dd4221001230b42ba9b34f8a930adae88dd2e9911cd40bf48c",
+   "bytes": 2396058,
+   "remote_verified": true
+  },
+  "part_000173.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "03a1fb22026fa7a1eb1d2a1a34aa2694e9b2c833a35529a0d25b6f5228ec23b9",
+   "bytes": 3003786,
+   "remote_verified": true
+  },
+  "part_000174.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "90feb213d60d2b7beac7d4fff5f1c09f53328976d2cd232fbdfe60c2328389db",
+   "bytes": 3243246,
+   "remote_verified": true
+  },
+  "part_000175.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "1b82f0dd4d739097bde54a696d2c1aaf988505c5a44a32a659a918db9123f839",
+   "bytes": 2066970,
+   "remote_verified": true
+  },
+  "part_000176.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "bf2f6abd72917bd3facbde50551424fd1ee738de3a0367a78c60030c7bd0f2ff",
+   "bytes": 1948687,
+   "remote_verified": true
+  },
+  "part_000177.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "4c51bd484e641562483768ae0adbd15b730e90af9f6a0b9a9953224aecbe1077",
+   "bytes": 2432027,
+   "remote_verified": true
+  },
+  "part_000178.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "e2228d049d10e77137676271efb94f8562b4384714fdef207fa8d3184864cb86",
+   "bytes": 2764427,
+   "remote_verified": true
+  },
+  "part_000179.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "4bd47a51c0533a13c384ac68f1286574c7ba43795dfd1b4d6edf3d0c32cf68dc",
+   "bytes": 3301484,
+   "remote_verified": true
+  },
+  "part_000180.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "f50d990cf642e62952a02c3e35da3342392b38954808652b41f001d9a2eee28d",
+   "bytes": 2758242,
+   "remote_verified": true
+  },
+  "part_000181.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "90e6f0fb31c0ca9f2f661eb3331d3964ffb113b1b9f55163cd3b44bd7188bf5a",
+   "bytes": 2225650,
+   "remote_verified": false
+  },
+  "part_000182.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "6dd51f5a21abeae66ad12cd91e25231d9e74b2054611584b8bfdbe257197af7d",
+   "bytes": 3553056,
+   "remote_verified": false
+  },
+  "part_000183.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "99a0811c17d9956ab85d56bd644ce086387877c82b80c0979266322f440d627d",
+   "bytes": 2493092,
+   "remote_verified": false
+  },
+  "part_000184.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "2c96b22329d4335a13f1319dad42de3d8dff3a143799fa8514aeaf6132b84e11",
+   "bytes": 1478981,
+   "remote_verified": false
+  },
+  "part_000185.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "f07d9e5a5aeee0d5e21355ba53b5545d5523e31d8a5a4812e8915ce6d9a4f6e5",
+   "bytes": 2098905,
+   "remote_verified": false
+  },
+  "part_000186.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "6077e5b8b567c5dc8de072e5b819cdfcfc1c1835f256aeaf285146882fc9da73",
+   "bytes": 1767951,
+   "remote_verified": false
+  },
+  "part_000187.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "0e7cf0c9388bad4810bf0cbee83af502c9a3e997281ac1b89034e9e801044224",
+   "bytes": 1894509,
+   "remote_verified": false
+  },
+  "part_000188.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "7dbe45fd96c13a77a1af304a4564871c61833fe8ba45db0deb60060c7a601202",
+   "bytes": 2565932,
+   "remote_verified": false
+  },
+  "part_000189.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "f9b4dc3b81e16ed5bad035c4eec5b4b2713994d18ce72a54d68f8ada6125f573",
+   "bytes": 1858959,
+   "remote_verified": false
+  },
+  "part_000190.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "dd0950e216d41e09a7877d8393538cd71bbc2e66551fe0c70b170925cd02fd49",
+   "bytes": 1310288,
+   "remote_verified": false
+  },
+  "part_000191.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "9706e2d6bcdc7a53647c304af3ec0bcdc3d3f0bb495186b23ad3dfc5f103586e",
+   "bytes": 1193811,
+   "remote_verified": false
+  },
+  "part_000192.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "6ffc4acda47c0f6d970747e494ec12543edc2fa9a663f3d3485801b32340dd86",
+   "bytes": 1002448,
+   "remote_verified": false
+  },
+  "part_000193.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "68ff70237c2b3ea828faff62e2db9ac3133dcede1904fd68ca8877df0b2ea76a",
+   "bytes": 1640655,
+   "remote_verified": false
+  },
+  "part_000194.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "ea4960761db4f3d203caffcba99f2eab0749c8af9af9b5516861e610d25d7dba",
+   "bytes": 1795071,
+   "remote_verified": false
+  },
+  "part_000195.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "ce50196bf9821421a35fd5c56021ee82abc5d201946a1b6da5cf25c242e251c1",
+   "bytes": 2974451,
+   "remote_verified": false
+  },
+  "part_000196.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "ac3658f3717c3b3450430f720311e7227839f82f175b4f0384e82a14d3eeb95d",
+   "bytes": 44960895,
+   "remote_verified": false
+  },
+  "part_000197.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "e218d250936037f7c0df2fdf23a020d5ec5f2e143fa25c3474957ef7d0f31cb5",
+   "bytes": 50843098,
+   "remote_verified": false
+  },
+  "part_000198.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "6fbf803a3153cea6f3043c8120d966948191e4092b0b12b0534bf1b07323e3f0",
+   "bytes": 44313581,
+   "remote_verified": false
+  },
+  "part_000199.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "7209ab41e5a98ca81efccd40203981de7698123a9fa4479a481765c0a913e87e",
+   "bytes": 71948262,
+   "remote_verified": false
+  },
+  "part_000200.parquet": {
+   "batch": "xauusd-is-b05",
+   "sha256": "06524d59810048c2511bfd2252bf9d56254fad07f6e8369a3bc2bce8c0960fa0",
+   "bytes": 56185580,
+   "remote_verified": false
   }
  },
  "batches": {
@@ -1057,6 +1297,10 @@
    "remote_files": 20
   },
   "xauusd-is-b04": {
+   "files": 40,
+   "remote_files": 20
+  },
+  "xauusd-is-b05": {
    "files": 40,
    "remote_files": 20
   }
@@ -1329,7 +1573,54 @@
    ],
    "failed": [],
    "when": "2026-11-17T14:36:46.955755"
+  },
+  {
+   "batch": "xauusd-is-b05",
+   "ok": [
+    "part_000161.parquet",
+    "part_000162.parquet",
+    "part_000163.parquet",
+    "part_000164.parquet",
+    "part_000165.parquet",
+    "part_000166.parquet",
+    "part_000167.parquet",
+    "part_000168.parquet",
+    "part_000169.parquet",
+    "part_000170.parquet",
+    "part_000171.parquet",
+    "part_000172.parquet",
+    "part_000173.parquet",
+    "part_000174.parquet",
+    "part_000175.parquet",
+    "part_000176.parquet",
+    "part_000177.parquet",
+    "part_000178.parquet",
+    "part_000179.parquet",
+    "part_000180.parquet",
+    "part_000181.parquet",
+    "part_000182.parquet",
+    "part_000183.parquet",
+    "part_000184.parquet",
+    "part_000185.parquet",
+    "part_000186.parquet",
+    "part_000187.parquet",
+    "part_000188.parquet",
+    "part_000189.parquet",
+    "part_000190.parquet",
+    "part_000191.parquet",
+    "part_000192.parquet",
+    "part_000193.parquet",
+    "part_000194.parquet",
+    "part_000195.parquet",
+    "part_000196.parquet",
+    "part_000197.parquet",
+    "part_000198.parquet",
+    "part_000199.parquet",
+    "part_000200.parquet"
+   ],
+   "failed": [],
+   "when": "2026-11-17T14:46:52.369249"
   }
  ],
- "last_batch": "xauusd-is-b04"
+ "last_batch": "xauusd-is-b05"
 }
