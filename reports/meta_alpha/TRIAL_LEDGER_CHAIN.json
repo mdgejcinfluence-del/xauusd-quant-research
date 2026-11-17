@@ -365,6 +365,26 @@
     "ref": "market_dimensions/DIMENSIONS_SYNTHESIS.json"
    },
    "entry_hash": "d7451a262e2c30e33e6b0f3769c71d324c4bb84313b6e171d74dc59357ffe70e"
+  },
+  {
+   "seq": 34,
+   "prev_hash": "d7451a262e2c30e33e6b0f3769c71d324c4bb84313b6e171d74dc59357ffe70e",
+   "entry": {
+    "type": "MISSION",
+    "id": "KAGGLE_MIGRATION",
+    "plan": "lots prives Kaggle (missing13 prioritaire), integrite SHA-256 par fichier, consolidation ensuite; voir MIGRATION_PLAN.json"
+   },
+   "entry_hash": "a0b89eeffc6f32c0fae3470d1bc2dd6453e7f3378b51c3049f88fc1471c4bd4a"
+  },
+  {
+   "seq": 35,
+   "prev_hash": "a0b89eeffc6f32c0fae3470d1bc2dd6453e7f3378b51c3049f88fc1471c4bd4a",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/kaggle_migration/MIGRATION_PLAN.json",
+    "sha256": "9e1ed73c0fb648dc3d591468fa99ca863533aafb00d1fa2bbf15847fe88a3945"
+   },
+   "entry_hash": "57d1c49a999636983e1505f7c63a63de4e969545fda3ec848d9f570e4a60d69a"
   }
  ]
 }
