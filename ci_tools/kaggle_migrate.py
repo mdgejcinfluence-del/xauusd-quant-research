@@ -66,7 +66,8 @@ def main():
     username=api.config_values.get('username')
     meta={'title':batch_name,'id':f'{username}/{batch_name}','licenses':[{'name':'other'}]}
     (folder/'dataset-metadata.json').write_text(json.dumps(meta))
-    r=subprocess.run(['kaggle','datasets','create','-p',str(folder),'--private','-q'], capture_output=True, text=True)
+    r=subprocess.run(['kaggle','datasets','create','-p',str(folder),'-q'], capture_output=True, text=True)
+    (ROOT/'KAGGLE_CREATE_LOG.txt').write_text('rc='+str(r.returncode)+'\n'+r.stdout+'\n'+r.stderr)
     print('kaggle create rc:', r.returncode, (r.stdout+r.stderr)[-500:], flush=True)
     if r.returncode!=0:
         state['last_batch']=batch_name+' (UPLOAD ECHEC)'; checkpoint(state); raise RuntimeError('kaggle datasets create a echoue')
