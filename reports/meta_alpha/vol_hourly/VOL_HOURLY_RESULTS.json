@@ -1,0 +1,170 @@
+{
+ "IS_COMPLET": {
+  "perimetre": "IS_COMPLET_HORAIRE",
+  "heures": 60025,
+  "perte_QLIKE": {
+   "GARCH_N": -11.5437,
+   "GARCH_T": -11.3572,
+   "FIGARCH": -11.6728,
+   "ARFIMA_LOGVOL": -11.4268,
+   "SV_AR1_LOGVOL": -11.3751,
+   "NAIF": -11.5004
+  },
+  "blocs_gagnes": {
+   "GARCH_N": 0,
+   "GARCH_T": 0,
+   "FIGARCH": 1,
+   "ARFIMA_LOGVOL": 2,
+   "SV_AR1_LOGVOL": 1,
+   "NAIF": 0
+  },
+  "verdict": "NON DEPARTAGE",
+  "details": [
+   {
+    "bloc": 2,
+    "d": 0.273,
+    "pertes": {
+     "GARCH_N": -11.094,
+     "GARCH_T": -10.7723,
+     "FIGARCH": -10.9475,
+     "ARFIMA_LOGVOL": -9.9851,
+     "SV_AR1_LOGVOL": -11.1204,
+     "NAIF": -10.7681
+    },
+    "gagnant": "SV_AR1_LOGVOL"
+   },
+   {
+    "bloc": 3,
+    "d": 0.335,
+    "pertes": {
+     "GARCH_N": -11.5894,
+     "GARCH_T": -11.0283,
+     "FIGARCH": -11.9,
+     "ARFIMA_LOGVOL": -11.9499,
+     "SV_AR1_LOGVOL": -11.2658,
+     "NAIF": -11.6663
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   },
+   {
+    "bloc": 4,
+    "d": 0.28,
+    "pertes": {
+     "GARCH_N": -11.5583,
+     "GARCH_T": -11.6289,
+     "FIGARCH": -11.679,
+     "ARFIMA_LOGVOL": -11.5083,
+     "SV_AR1_LOGVOL": -11.4032,
+     "NAIF": -11.6152
+    },
+    "gagnant": "FIGARCH"
+   },
+   {
+    "bloc": 5,
+    "d": 0.296,
+    "pertes": {
+     "GARCH_N": -11.9331,
+     "GARCH_T": -11.9992,
+     "FIGARCH": -12.1647,
+     "ARFIMA_LOGVOL": -12.2638,
+     "SV_AR1_LOGVOL": -11.711,
+     "NAIF": -11.9521
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   }
+  ]
+ },
+ "REGIME_RECENT": {
+  "perimetre": "REGIME_RECENT_HORAIRE",
+  "heures": 43041,
+  "perte_QLIKE": {
+   "GARCH_N": -11.7651,
+   "GARCH_T": -11.3035,
+   "FIGARCH": -11.9465,
+   "ARFIMA_LOGVOL": -11.9027,
+   "SV_AR1_LOGVOL": -11.6333,
+   "NAIF": -11.7905
+  },
+  "blocs_gagnes": {
+   "GARCH_N": 0,
+   "GARCH_T": 1,
+   "FIGARCH": 0,
+   "ARFIMA_LOGVOL": 3,
+   "SV_AR1_LOGVOL": 0,
+   "NAIF": 0
+  },
+  "verdict": "NON DEPARTAGE",
+  "details": [
+   {
+    "bloc": 2,
+    "d": 0.247,
+    "pertes": {
+     "GARCH_N": -11.6191,
+     "GARCH_T": -11.1871,
+     "FIGARCH": -11.9796,
+     "ARFIMA_LOGVOL": -12.0076,
+     "SV_AR1_LOGVOL": -11.326,
+     "NAIF": -11.6844
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   },
+   {
+    "bloc": 3,
+    "d": 0.256,
+    "pertes": {
+     "GARCH_N": -11.5068,
+     "GARCH_T": -11.5733,
+     "FIGARCH": -11.5454,
+     "ARFIMA_LOGVOL": -11.235,
+     "SV_AR1_LOGVOL": -11.4888,
+     "NAIF": -11.5392
+    },
+    "gagnant": "GARCH_T"
+   },
+   {
+    "bloc": 4,
+    "d": 0.264,
+    "pertes": {
+     "GARCH_N": -11.8734,
+     "GARCH_T": -11.0058,
+     "FIGARCH": -12.0294,
+     "ARFIMA_LOGVOL": -12.0811,
+     "SV_AR1_LOGVOL": -11.7626,
+     "NAIF": -11.9006
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   },
+   {
+    "bloc": 5,
+    "d": 0.245,
+    "pertes": {
+     "GARCH_N": -12.0613,
+     "GARCH_T": -11.4479,
+     "FIGARCH": -12.2315,
+     "ARFIMA_LOGVOL": -12.287,
+     "SV_AR1_LOGVOL": -11.9556,
+     "NAIF": -12.0379
+    },
+    "gagnant": "ARFIMA_LOGVOL"
+   }
+  ]
+ },
+ "couplage_spread": {
+  "corr_contemporaine_logRV_spread": -0.1644,
+  "cross_corr_logRV_vers_spread_lags_-5..+5": {
+   "-5": 0.0681,
+   "-4": 0.0731,
+   "-3": 0.0719,
+   "-2": 0.053,
+   "-1": 0.0272,
+   "0": -0.1644,
+   "1": -0.0127,
+   "2": 0.0407,
+   "3": 0.0955,
+   "4": 0.1269,
+   "5": 0.1516
+  },
+  "ancien_avant_2012_10": -0.0464,
+  "recent_apres_2012_10": -0.2925
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "mission": "VOL_HOURLY",
+ "run": 44190381343,
+ "verdict": "NON DEPARTAGE (2 perimetres horaires; concordant avec le journalier)",
+ "sha256": {
+  "ci_tools/hourly_series.py": "5dd6ad9c34d9223ed691db0c219a557207e317af4cc85de1de3d832a4e0c0e8a",
+  "ci_tools/fit_vol_hourly.py": "de68bd99711b7e55814cbc79c4bc56959207d529a959ee820011ff8a4de47d7d",
+  "reports/meta_alpha/vol_hourly/PARTITION_HOUR_TS.csv": "57bae381c2e20b9c12571bd2f41b7eda1db40391bb87c0587e1fdf6597ac4da4",
+  "reports/meta_alpha/vol_hourly/VOL_HOURLY_RESULTS.json": "247c055e0bb23079a13f423fde0752ff65e3609f11b52578efd2a6cabe15c14d",
+  "reports/meta_alpha/META_ALPHA_VOL_HOURLY_REPORT.md": "c0380ae4f34ca61407e418a77861f3ded3900624be5e6b63e5f0730168ed4566"
+ }
+}
