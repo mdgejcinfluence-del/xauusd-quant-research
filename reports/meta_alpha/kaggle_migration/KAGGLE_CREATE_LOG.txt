@@ -1,1 +1,1 @@
-API dataset_create_new OK: {"ref": "/datasets/shalom5123/xauusd-is-missing13", "url": "https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13", "status": "Ok", "error": null, "invalidTags": []}
+API dataset_create_new OK: {"ref": null, "url": null, "status": "error", "error": "The requested slug \"xauusd-is-missing13\" is already in use by a dataset. Please choose another slug.", "invalidTags": []}
