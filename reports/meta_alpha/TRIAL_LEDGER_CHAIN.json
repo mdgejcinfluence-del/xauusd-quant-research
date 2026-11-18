@@ -543,6 +543,20 @@
     "sha256": "bcbb6f1e37d854fbedc717ac03ccd7f1df9dc64babcc8841a6da3e61082cb50d"
    },
    "entry_hash": "8721796c79b0e4403c309b895c57a33f56c2d3b4b8e91c722ee2eb645f25b612"
+  },
+  {
+   "seq": 50,
+   "prev_hash": "8721796c79b0e4403c309b895c57a33f56c2d3b4b8e91c722ee2eb645f25b612",
+   "entry": {
+    "type": "INCIDENT",
+    "mission": "PHASE2_DEMARRAGE",
+    "incident": "CONFIG_PROPRIETAIRE_ABSENTE",
+    "detail": "Section 1.8 suppose CHALLENGE_CONFIG/BROKER_CONFIG connues; verification depot: seul OWNER_POLICY_TEMPLATE.json existe (valeurs null, _do_not_let_an_ai_fill_this=true, BLOCKED_POLICY_REQUIRED, le moteur ne devine aucune valeur). Aucune cle reelle dans le depot.",
+    "regle_appliquee": "1.8: cle manquante = mission bloquee + incident consigne; aucune valeur devinee",
+    "perimetre_bloque": "Qualification C1 ancree (1.3), simulateur challenge 5.3, toute mission exigeant le hash de config au prereg",
+    "perimetre_non_bloque": "aucune execution Phase 2 engagee avant reception config; OOS/HOLDOUT inchanges fermes"
+   },
+   "entry_hash": "766a12d0a8149157c1c10a85316e82d8c99ca6cbd01081f444baec25c5042c80"
   }
  ]
 }
