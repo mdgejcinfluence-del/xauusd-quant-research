@@ -753,6 +753,18 @@
     "resultat": "v1 bug alignement MEME heure consigne seq67 et REJETE; v2 corrigee (signal i -> i+1): {\"note_correction\": \"v1 alignee sur la meme heure (bug, -|ret| mecanique) rejetee; v2 signal i -> rendement i+1\", \"inconditionnel\": {\"2010-2012\": {\"n\": 18508, \"moy_bp\": -2.73, \"sharpe_ann\": -9.62}, \"2013-2015\": {\"n\": 18087, \"moy_bp\": -2.565, \"sharpe_ann\": -9.618}, \"2016-2020\": {\"n\": 23429, \"moy_bp\": -2.077, \"sharpe_ann\": -10.293}}, \"conditionnel\": {\"2010-2012\": {\"n\": 5527, \"moy_bp\": -2.049, \"sharp"
    },
    "entry_hash": "1f25ecff008b1fb103cdb6ac5df5799def8a760612211f6e0bac796a7b6b2369"
+  },
+  {
+   "seq": 69,
+   "prev_hash": "1f25ecff008b1fb103cdb6ac5df5799def8a760612211f6e0bac796a7b6b2369",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F1_REVERSION_CONDITIONNELLE",
+    "registry": "reports/meta_alpha/phase2/F1_PREREG.json",
+    "sha256": "25e30e6ce45c88c6959c5333b1e01ef815784d5a17eacdfc59e79adbdd273a7a",
+    "n_essais": 4
+   },
+   "entry_hash": "cab1667caa7f6c6c17efd48a8b3583b79a0b1379b67b657d5f363504184a715a"
   }
  ]
 }

@@ -1,0 +1,13 @@
+{
+ "mission": "F1_REVERSION_CONDITIONNELLE - reouverture ciblee de POST_EVENT (Phase 2)",
+ "perimetre": "IS 282/282; evenements saut tick |r| > 10 bp",
+ "operationalisation_gelee": {
+  "spread_serre": "spread a l'evenement <= 2 bp (episode serre documente Phase 1; remplace spread_state<=0.25 non calculable au tick sans fuite - adaptation consignee)",
+  "tod": "heure UTC de l'evenement dans 13-16 vs hors",
+  "cellules": "2 (tod) x 2 (serre) = 4 cellules x 3 eres; N essais declares = 4 cellules (horizons = mesure, pas essais separes)",
+  "mesure": "retour executable CONTRE le choc a H in {20,50,200} ticks: choc haussier -> short (Bid_t - Ask_{t+H})/Bid_t; choc baissier -> long (Bid_{t+H} - Ask_t)/Ask_t, en bp"
+ },
+ "succes_gele": "moyenne > 0 avec n >= 200 dans >= 1 cellule, stabilite de signe entre eres presentes, lecture C1 = ces bp sont deja nets du spread d'entree/sortie (retours executables), CONDITIONNEL commission/slippage inconnus (seq55)",
+ "rejet_gele": "aucune cellule positive a n>=200 -> reversion post-choc classee non exploitable a couts retail, fermee definitivement",
+ "essais_declares": 4
+}
