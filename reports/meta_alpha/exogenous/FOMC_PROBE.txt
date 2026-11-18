@@ -78,3 +78,46 @@ par annee reunion: {'2017': 2, '2018': 8, '2019': 8, '2020': 7, '2021': 8, '2022
 minutes 20151216 liens fomcminutes: ['20151216']
 minutes 20151216 liens monetary: []
 SONDE4 TERMINEE
+archives hrefs pertinents (98):
+  /monetarypolicy.htm
+  /monetarypolicy/fomc.htm
+  /monetarypolicy/fomc_historical.htm
+  /monetarypolicy/fomc_projectionsfaqs.htm
+  /monetarypolicy/fomccalendars.htm
+  /monetarypolicy/fomchistorical1936.htm
+  /monetarypolicy/fomchistorical1937.htm
+  /monetarypolicy/fomchistorical1938.htm
+  /monetarypolicy/fomchistorical1939.htm
+  /monetarypolicy/fomchistorical1940.htm
+  /monetarypolicy/fomchistorical1941.htm
+  /monetarypolicy/fomchistorical1942.htm
+  /monetarypolicy/fomchistorical1943.htm
+  /monetarypolicy/fomchistorical1944.htm
+  /monetarypolicy/fomchistorical1945.htm
+  /monetarypolicy/fomchistorical1946.htm
+  /monetarypolicy/fomchistorical1947.htm
+  /monetarypolicy/fomchistorical1948.htm
+  /monetarypolicy/fomchistorical1949.htm
+  /monetarypolicy/fomchistorical1950.htm
+  /monetarypolicy/fomchistorical1951.htm
+  /monetarypolicy/fomchistorical1952.htm
+  /monetarypolicy/fomchistorical1953.htm
+  /monetarypolicy/fomchistorical1954.htm
+  /monetarypolicy/fomchistorical1955.htm
+  /monetarypolicy/fomchistorical1956.htm
+  /monetarypolicy/fomchistorical1957.htm
+  /monetarypolicy/fomchistorical1958.htm
+  /monetarypolicy/fomchistorical1959.htm
+  /monetarypolicy/fomchistorical1960.htm
+  /monetarypolicy/fomchistorical1961.htm
+  /monetarypolicy/fomchistorical1962.htm
+  /monetarypolicy/fomchistorical1963.htm
+  /monetarypolicy/fomchistorical1964.htm
+  /monetarypolicy/fomchistorical1965.htm
+  /monetarypolicy/fomchistorical1966.htm
+  /monetarypolicy/fomchistorical1967.htm
+  /monetarypolicy/fomchistorical1968.htm
+  /monetarypolicy/fomchistorical1969.htm
+  /monetarypolicy/fomchistorical1970.htm
+texte autour de historical: ï»¿ The Fed - Historical Materials by Year .gradient { filter: none; } Skip to main content An official website of the United States Government Here&#x27;s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock Locked padlock icon ) or https:// means you&#x27;ve safely connected to the .gov website.
+SONDE5 TERMINEE
