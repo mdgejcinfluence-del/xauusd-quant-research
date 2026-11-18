@@ -788,6 +788,28 @@
     "n_essais_declares": 12
    },
    "entry_hash": "805d7ffb702dda28537d3f408c73b4ec7b3e003d24f75676c28e3ba63754cbd5"
+  },
+  {
+   "seq": 72,
+   "prev_hash": "805d7ffb702dda28537d3f408c73b4ec7b3e003d24f75676c28e3ba63754cbd5",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F1_REVERSION_CONDITIONNELLE",
+    "run": "44274668013 succes 282/282 (v2)",
+    "resultat": "v1 rejetee (bug leads post-filtre, 13 evenements); v2 cellules dans F1_SYNTHESIS.json"
+   },
+   "entry_hash": "9318f2ea5b558dac1d4b3b89285ba65d3695e1a23d79573831f2779102cda3c0"
+  },
+  {
+   "seq": 73,
+   "prev_hash": "9318f2ea5b558dac1d4b3b89285ba65d3695e1a23d79573831f2779102cda3c0",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F2_ORI",
+    "run": "44274646401 succes 282/282",
+    "resultat": "corr ORI50->retours Mid 20/50 ticks et deciles par ere dans F2_SYNTHESIS.json"
+   },
+   "entry_hash": "718f0c359c10d7aab3b18c68dd33b4d4057f5775a86784a19866070724efcaa3"
   }
  ]
 }
