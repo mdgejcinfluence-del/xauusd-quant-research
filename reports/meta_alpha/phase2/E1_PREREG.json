@@ -1,0 +1,14 @@
+{
+ "mission": "E1_BARRES - barres de recherche multi-echelles (Phase 2, fondations)",
+ "perimetre": "IS 282/282, borne certifiee 2020-01-20T09:36:27 fail-closed; OOS/HOLDOUT interdits",
+ "config": "OWNER_CONFIG_V1 hashee seq51; E1 ne consomme aucune cle broker/challenge",
+ "familles_de_barres_gelees": {
+  "tick": {"N": [50, 200, 1000], "definition": "barres evenementielles par rang d'observation_id"},
+  "secondes": {"largeurs_s": [1, 5, 60], "definition": "buckets epoch; close = dernier mid, spread de cloture, nb_ticks"},
+  "range": {"seuils_bp": [2, 5], "definition": "barre = indice entier de la somme cumulee des |rendements tick bp| divisee par le seuil (barre de variation cumulee, approximation documentee)"}
+ },
+ "sorties_par_partition": ["n_barres, duree_moy_s, ticks_par_barre, amplitude_moy_bp par famille", "spread_med_cloture (barres secondes)", "recomptage ticks (controle vs 288086306+282)"],
+ "flags_synthese": {"GD07": "2012-10-01 a 2013-01-31 (republications, exclusion stats tick)", "GD08": "2015-12-01 a 2018-01-31 (Mid constant compensatoire, sensibilite avec/sans)"},
+ "architecture": "Le feature store materiel geant n'est pas versionne: le moteur de construction versionne + statistiques par partition 282/282 sont l'artefact; chaque famille F reconstruit ses barres a la volee depuis ce moteur (runs Phase 1: 2-6 min).",
+ "definition_of_done": ["282/282, recomptage exact", "durees/ticks par barre coherents par construction (tick bars = N)", "synthese par ere + flags GD07/GD08"]
+}

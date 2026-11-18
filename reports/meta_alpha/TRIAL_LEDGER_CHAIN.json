@@ -557,6 +557,39 @@
     "perimetre_non_bloque": "aucune execution Phase 2 engagee avant reception config; OOS/HOLDOUT inchanges fermes"
    },
    "entry_hash": "766a12d0a8149157c1c10a85316e82d8c99ca6cbd01081f444baec25c5042c80"
+  },
+  {
+   "seq": 51,
+   "prev_hash": "766a12d0a8149157c1c10a85316e82d8c99ca6cbd01081f444baec25c5042c80",
+   "entry": {
+    "type": "CONFIG_LOCK",
+    "config": "reports/meta_alpha/phase2/OWNER_CONFIG_V1.json",
+    "sha256": "c2d8926bbe52c6b11d0e15f24ca6af28b4ecff980f37e2f7da8bb710522e1215",
+    "contenu": "Blue Guardian 2-Step Pro 5k: challenge COMPLET (10%/4%, -4%/jour reset 17h EST, -10% total trailing, 4 jours rentables >=+0.5%, duree illimitee); broker PARTIEL: commission 5 USD/lot Commodities convention UNKNOWN, slippage UNKNOWN (interdit nul), contrat UNKNOWN"
+   },
+   "entry_hash": "f9032d48e0972b0f24a89bbaf7a6d3467bc2b77d7a6b16cdb4a8e58461b5a76a"
+  },
+  {
+   "seq": 52,
+   "prev_hash": "f9032d48e0972b0f24a89bbaf7a6d3467bc2b77d7a6b16cdb4a8e58461b5a76a",
+   "entry": {
+    "type": "DECISION",
+    "mission": "PHASE2_CONFIG",
+    "decision": "Config chargee et hachee avec cles UNKNOWN explicites: fondations E1-E5 et predictions F3/F4 autorisees; ancrage C1 definitif, sizing et simulateur 5.3 BLOQUES jusqu a specification serveur MT5; verdicts economiques CONDITIONNELS (scenarios parametriques declares)"
+   },
+   "entry_hash": "cf7e317833e8c5b6174d106b655468d58e16568accf72dcb6101e41d4fa30742"
+  },
+  {
+   "seq": 53,
+   "prev_hash": "cf7e317833e8c5b6174d106b655468d58e16568accf72dcb6101e41d4fa30742",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "E1_BARRES",
+    "registry": "reports/meta_alpha/phase2/E1_PREREG.json",
+    "sha256": "7a946e085a22e27202f597d108c1ce10766eaf712f9b9d982ea0e9c6e3e79298",
+    "config_ref": "seq51"
+   },
+   "entry_hash": "91f058f620e04f71acd319cf2807d46a03fb1d4c9eb4ef8983f815e12ba505b4"
   }
  ]
 }
