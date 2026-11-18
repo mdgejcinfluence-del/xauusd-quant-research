@@ -2,7 +2,7 @@ name: Hourly Vol ABC IS (preenregistre)
 on:
   push:
     branches: ["arena/afe12737-xauusd-quant-research"]
-    paths: ["import_trigger/vol_hourly.txt"]
+    paths: ["import_trigger/spread_episodes.txt"]
   workflow_dispatch: {}
 permissions: { contents: write }
 jobs:
