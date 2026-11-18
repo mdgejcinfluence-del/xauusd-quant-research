@@ -58,10 +58,11 @@ def pit_series(sid):
     h, mnt = H_PUB[sid]
     rows = []
     for an in range(2009, dt.date.today().year + 1):
+        fin = min(dt.date(an, 12, 31), dt.date.today()).isoformat()
         offset = 0
         while True:
             o = api_get('/series/observations', {'series_id': sid, 'realtime_start': f'{an}-01-01',
-                                                 'realtime_end': f'{an}-12-31', 'observation_start': '2009-01-01',
+                                                 'realtime_end': fin, 'observation_start': '2009-01-01',
                                                  'limit': 100000, 'offset': offset})
             obs = o.get('observations', [])
             for ob in obs:
@@ -92,6 +93,22 @@ if KEY:
         except Exception as e:
             log(f'ECHEC PIT {sid}: {type(e).__name__} {str(e)[:100]}')
             meta[f'macro_{sid.lower()}_pit'] = {'source': f'ALFRED {sid}', 'statut': 'ECHEC COLLECTE', 'motif': sanitize(e)[:200]}
+            if sid == 'DFEDTARU' and 'does not exist in ALFRED' in str(e):
+                try:
+                    o = api_get('/series/observations', {'series_id': sid, 'observation_start': '2009-01-01', 'limit': 100000})
+                    rows = [(ob['date'], ob['date'], dispo(dt.date.fromisoformat(ob['date']), 14, 0), float(ob['value']))
+                            for ob in o.get('observations', []) if ob['value'] != '.']
+                    d = pd.DataFrame(rows, columns=['reference_date', 'vintage_date', 'available_at_utc', 'value']).drop_duplicates()
+                    frames[f'macro_{sid.lower()}_pit'] = d
+                    meta[f'macro_{sid.lower()}_pit'] = {
+                        'source': 'FRED API DFEDTARU (ALFRED: serie absente, message FRED consigne au journal)',
+                        'frequence': 'daily (borne cible, change aux decisions)',
+                        'convention_available_at': 'jour de decision 14:00 America/New_York converti UTC date par date (DST)',
+                        'note_pit': 'serie d evenement de politique monetaire (valeur fixee par le communique FOMC, non revisee); pas de panel de vintages ALFRED disponible',
+                        'lignes': int(len(d)), 'plage_reference': [str(d.reference_date.min()), str(d.reference_date.max())]}
+                    log(f'OK macro_dfedtaru_pit (repli documente): {len(d)} lignes')
+                except Exception as e2:
+                    log(f'ECHEC repli DFEDTARU: {type(e2).__name__} {sanitize(e2)[:100]}')
     # C2: series officielles courantes
     for sid, nom in [('DFII10', 'fred_dfii10_officiel'), ('GVZCLS', 'fred_gvz_officiel'),
                      ('DGS10', 'fred_dgs10_officiel'), ('DGS2', 'fred_dgs2_officiel')]:
@@ -152,6 +169,10 @@ def fomc_events_archives():
                 for mm in re.finditer(r'fomcminutes(20\d\d)(\d\d)(\d\d)\.htm', html):
                     d2 = dt.date(int(mm.group(1)), int(mm.group(2)), int(mm.group(3)))
                     if d2 not in ev: ev[d2] = d2; trouve += 1
+                for mm in re.finditer(r'monetary(20\d\d)(\d\d)(\d\d)[a-z]\.htm', html):
+                    d2 = dt.date(int(mm.group(1)), int(mm.group(2)), int(mm.group(3)))
+                    if d2 not in ev: ev[d2] = d2; trouve += 1
+                log(f'FOMC archives {y}: longueur html={len(html)}')
                 log(f'FOMC archives {y} {url[45:75]}: +{trouve} (cumule {len(ev)})')
             except Exception as e:
                 log(f'FOMC archives ECHEC {y}: {type(e).__name__}')
@@ -186,6 +207,7 @@ mani = json.loads(mani_path.read_text()) if mani_path.exists() else {}
 mani.setdefault('series', {}).update(meta)
 mani['completion_seq103'] = {'genere_utc': str(pd.Timestamp.now(tz='UTC')), 'journal': [sanitize(x) for x in LOG],
                              'note_c2': 'versions FRED officielles = reference primaire; proxys Yahoo seq102 conserves et consignes'}
+mani['series']['macro_calendrier_pit'] = {'statut': 'SUPERSEDE par la completion seq103 (series macro_*_pit ALFRED ci-dessus)'}
 mani['series']['etf_gld_iau_shares'] = {'statut': 'CLOTURE DEFINITIVE (C3, seq104)',
     'motif': 'historique des flux (shares outstanding) non certifiable gratuitement - manquant definitif',
     'interdiction': 'le volume daily GLD existe mais volume != flux: interdiction absolue de l utiliser comme substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable'}

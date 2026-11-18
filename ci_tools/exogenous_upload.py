@@ -31,7 +31,7 @@ for pk, (slug, folder) in JOBS.items():
         try:
             r = api.dataset_list_files(f'{user}/{slug}', page_size=100)
             dist = {f.name: f.total_bytes for f in r.files}
-            if len(dist) >= len(files): break
+            if all(dist.get(f.name) == f.stat().st_size for f in files): break
         except Exception: pass
         time.sleep(30)
     local = {f.name: f.stat().st_size for f in files}
