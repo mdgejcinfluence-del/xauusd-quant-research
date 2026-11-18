@@ -1,0 +1,32 @@
+{
+ "F3_L2": {
+  "walk_forward": "rolling origin 500 j, passe strict (deja out-of-fold)",
+  "blocs_QLIKE_gagnes": 5,
+  "blocs_total": 5,
+  "R2_MZ_median": 0.199509947331726,
+  "PBO_DSR": "non applicables (famille N=1, aucun parametrage concurrent; pas de selection a deflater)",
+  "statut": "CANDIDATE VALIDEE L2 (adaptation documentee)"
+ },
+ "F7_L2": {
+  "forward_chaining_annuel": {
+   "2017": {
+    "AUC": 0.6837605513423347,
+    "n": 5912,
+    "taux_saut": 0.08474289580514209
+   },
+   "2018": {
+    "AUC": 0.6957302645995062,
+    "n": 5906,
+    "taux_saut": 0.10396207246867592
+   },
+   "2019": {
+    "AUC": 0.6869875704396045,
+    "n": 5685,
+    "taux_saut": 0.10870712401055409
+   }
+  },
+  "AUC_min": 0.6837605513423347,
+  "stabilite": "3/3 annees > 0.60",
+  "statut": "CANDIDATE VALIDEE L2"
+ }
+}

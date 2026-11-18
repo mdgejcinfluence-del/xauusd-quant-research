@@ -1,0 +1,8 @@
+{
+ "jours": 2572,
+ "annees": 10.21,
+ "SE_sharpe_SR0.5": 0.332002267226046,
+ "MDE_sharpe_80pct": 0.9301325718264821,
+ "effet_vise_sharpe": 0.5,
+ "verdict": "NON TESTABLE EN L ETAT si MDE > 0.5"
+}

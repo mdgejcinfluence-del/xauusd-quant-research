@@ -875,6 +875,67 @@
     "resultat": "Budget essais 144/150 consommes; directionnel clos (criteres instruction sec.7); candidats L1 gestion: F3 (HAR) + F7 (sauts); L2 executable sous memes preregs; OOS ferme sans ordre proprietaire; synthese PHASE2_SYNTHESE.md"
    },
    "entry_hash": "f480ce69313cbb7b7ed1aa81b81ab9e9e1432aec7f53371cf4f69708fdea36c4"
+  },
+  {
+   "seq": 80,
+   "prev_hash": "f480ce69313cbb7b7ed1aa81b81ab9e9e1432aec7f53371cf4f69708fdea36c4",
+   "entry": {
+    "type": "MDE_GATE",
+    "mission": "F9_TSMOM",
+    "resultat": "{\"jours\": 2572, \"annees\": 10.21, \"SE_sharpe_SR0.5\": 0.332002267226046, \"MDE_sharpe_80pct\": 0.9301325718264821, \"effet_vise_sharpe\": 0.5, \"verdict\": \"NON TESTABLE EN L ETAT si MDE > 0.5\"}",
+    "regle": "R3 instruction Phase 3 sec.2: MDE calcule AVANT test; si MDE > effet vise -> NON TESTABLE, budget non consomme"
+   },
+   "entry_hash": "72ea3e1b43985a79c44cb43219e5a56f54ceab66171a2c0045df6435b4a28deb"
+  },
+  {
+   "seq": 81,
+   "prev_hash": "72ea3e1b43985a79c44cb43219e5a56f54ceab66171a2c0045df6435b4a28deb",
+   "entry": {
+    "type": "VERDICT",
+    "mission": "F9_TSMOM",
+    "resultat": "NON TESTABLE EN L ETAT (gate MDE sec.2/R3): MDE Sharpe 0.93 > 0.5 vise sur 10.2 ans / ~10-43 paris independants; budget 6 essais NON consomme (144/150 inchange); aucune variante v1-v6 executee; pivot sec.6 documente, non lance (nouveau programme = decision proprietaire)"
+   },
+   "entry_hash": "dd941ba6a57a3a72ec9e57f04edc4e247640af0d5c7a8bbb3ed819052fe9b712"
+  },
+  {
+   "seq": 82,
+   "prev_hash": "dd941ba6a57a3a72ec9e57f04edc4e247640af0d5c7a8bbb3ed819052fe9b712",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F3_L2",
+    "resultat": "CANDIDATE VALIDEE L2: walk-forward rolling-origin OOF, 5/5 blocs QLIKE, R2 MZ 0.200; PBO/DSR non applicables (N=1) consigne"
+   },
+   "entry_hash": "80d43f8e24dacd116938cb93175a3780dc7cf959dcf0182b9f1f46a9ae38f22f"
+  },
+  {
+   "seq": 83,
+   "prev_hash": "80d43f8e24dacd116938cb93175a3780dc7cf959dcf0182b9f1f46a9ae38f22f",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F7_L2",
+    "resultat": "CANDIDATE VALIDEE L2: forward-chaining annuel AUC 0.684/0.696/0.687 (2017/2018/2019), stabilite 3/3"
+   },
+   "entry_hash": "05b553a62538b6e66ed87692ab9ce1ea350562b0711a879d0e6278c8d3fb8155"
+  },
+  {
+   "seq": 84,
+   "prev_hash": "05b553a62538b6e66ed87692ab9ce1ea350562b0711a879d0e6278c8d3fb8155",
+   "entry": {
+    "type": "LIVRAISON",
+    "mission": "CHASSIS+SIMULATEUR",
+    "resultat": "meta_chassis.py (sec 5.1-5.2, tests passes) + challenge_sim.py (Monte Carlo bootstrap, parametre CHALLENGE_CONFIG); compatibilite: duree illimitee COMPATIBLE basse frequence; decision frais: AUCUN engageable (aucune composante directionnelle qualifiee; P(passer) incalculable)"
+   },
+   "entry_hash": "a1bb1f29448ce40664f8f56e48060d22f4213d23161dec9da36694af4199828d"
+  },
+  {
+   "seq": 85,
+   "prev_hash": "a1bb1f29448ce40664f8f56e48060d22f4213d23161dec9da36694af4199828d",
+   "entry": {
+    "type": "BILAN",
+    "mission": "PHASE3_CLOTURE",
+    "resultat": "F9 NON TESTABLE (MDE 0.93>0.5), budget toujours 144/150; F3+F7 validees L2; chassis pret; pivot externe sec.6 documente non lance (ordre proprietaire requis, nouveau perimetre); OOS/HOLDOUT fermes"
+   },
+   "entry_hash": "44850679a96e34db1cbbd834234dfe545d132f540eeb6fdb2373e580183fed7d"
   }
  ]
 }
