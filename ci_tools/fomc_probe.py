@@ -25,3 +25,19 @@ for u in URLS:
         emit(f'== {u}\n   ECHEC {type(e).__name__} {str(e)[:120]}')
 emit('SONDE TERMINEE')
 pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
+
+# --- profondeur FOMC dans calendar.json ---
+import json as _json, collections as _c
+try:
+    r = requests.get('https://www.federalreserve.gov/json/calendar.json', timeout=60, headers={'User-Agent': 'Mozilla/5.0'})
+    evs = _json.loads(r.text).get('events', [])
+    emit(f'calendar.json: {len(evs)} evenements, cles={list(evs[0]) if evs else []}')
+    fomc = [e for e in evs if 'FOMC' in str(e.get('description','')) or 'FOMC' in str(e.get('title',''))]
+    emit(f'evenements FOMC: {len(fomc)}')
+    def annee(e): return str(e.get('start_date', e.get('date','')))[:4]
+    emit(f'par annee: {dict(sorted(_c.Counter(annee(e) for e in fomc).items()))}')
+    for e in fomc[:3] + fomc[-3:]: emit(f"exemple: {e}")
+except Exception as e:
+    emit(f'calendar ECHEC {type(e).__name__} {str(e)[:120]}')
+emit('SONDE2 TERMINEE')
+pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
