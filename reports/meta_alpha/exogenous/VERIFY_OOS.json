@@ -13,8 +13,8 @@
    "taille": 48538
   },
   "fomc_events.parquet": {
-   "sha256": "707ab3320d2bd8abc57f9c1c490647e4add0437e931bd9eb74ce4f3a47a25cc3",
-   "taille": 5324
+   "sha256": "4fba80ceb098171e595d079ec5534ca8e2ea312bacb1731c30e66cd6cc3bb107",
+   "taille": 5382
   },
   "fred_dfii10_officiel.parquet": {
    "sha256": "91fee3052128de54612058d04732141c03db24ccdb8eccb724007d64aa4ac7c7",
