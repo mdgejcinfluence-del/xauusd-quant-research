@@ -1,0 +1,24 @@
+{
+ "mission": "F10_XSMOM_PANEL",
+ "ordre": "Phase 4 proprietaire (pivot externe autorise)",
+ "budget_panel": "16 essais F10 (total 60)",
+ "perimetre": "IS panel <= 2014-12-31 fail-closed; OOS 2015-2019 et HOLDOUT >=2020 FERMES",
+ "univers_principal": "31 series debut certifie <= 1999-12-31 (manifeste PANEL_MANIFEST.json); univers recent separe, jamais melange au verdict",
+ "gate_MDE": {
+  "fenetre_evaluation": "2000-01-01 a 2014-12-31 (IS panel, borne gelee)",
+  "actifs_univers_principal": 31,
+  "annees": 15.0,
+  "SE_sharpe": 0.2581988897471611,
+  "MDE_80pct": 0.7233661365323004,
+  "effet_vise_sharpe": 0.8,
+  "verdict": "TESTABLE"
+ },
+ "variantes_gelees_16": "L in {21,63,126,252} x construction {quintile L/S, tercile L/S} x ponderation {risk-parity 1/sigma, equiponderee} = 16",
+ "sizing": "w_i prop construction x (1/sigma_i EWMA 0.94 causal), normalise vol portefeuille ex-ante (diag) = 10% annualise; rebalancement hebdomadaire (5 jours de bourse)",
+ "couts": "2 bp par cote tous futures (table gelee); stress x2 et x3 rapportes; cout = turnover unidirectionnel x 2bp",
+ "succes_gele": "Sharpe net OOF (5 blocs, embargo 252j) >= 0.8 ET >=65% annees positives ET DSR>=0.95 (N=16) ET PBO<0.20 ET survie stress x2",
+ "controles": [
+  "placebo cote (signal inverse doit perdre)",
+  "placebo rangs melanges (seed 42)"
+ ]
+}

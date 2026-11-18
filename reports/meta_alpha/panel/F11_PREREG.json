@@ -1,0 +1,8 @@
+{
+ "mission": "F11_TSMOM_PANEL",
+ "budget_panel": "12 essais F11 (cumul 28/60 si F10 consomme 16)",
+ "perimetre": "IS panel <= 2014-12-31 fail-closed",
+ "variantes_gelees_12": "L in {63,126,252} x vol {EWMA 0.94, HAR-jour (blend RV 5j/22j, portage F3)} x cap par classe {20%,30%} = 12",
+ "sizing": "w_i = signe(ret_L) x sigma_cible/sigma_i, cap actif, cap classe, vol portefeuille 10%",
+ "succes_gele": "identique F10 (Sharpe OOF >= 0.8, annees >= 65%, DSR N=12, PBO < 0.20, stress x2)"
+}

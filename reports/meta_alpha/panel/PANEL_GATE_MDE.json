@@ -1,0 +1,9 @@
+{
+ "fenetre_evaluation": "2000-01-01 a 2014-12-31 (IS panel, borne gelee)",
+ "actifs_univers_principal": 31,
+ "annees": 15.0,
+ "SE_sharpe": 0.2581988897471611,
+ "MDE_80pct": 0.7233661365323004,
+ "effet_vise_sharpe": 0.8,
+ "verdict": "TESTABLE"
+}

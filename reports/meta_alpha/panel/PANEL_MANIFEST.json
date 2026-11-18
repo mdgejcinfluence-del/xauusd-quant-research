@@ -1,0 +1,265 @@
+{
+ "source": "github.com/JuBaMan/Time-Series-Momentum-Study (master, codeload zip)",
+ "zip_sha256": "e31dc2da6ff677fcf8e1e810670dce167e8ecbe6f10c2939809bb1977af67ff7",
+ "note_prix": "prix = colonne 'low' des fichiers ajustes ratio (convention du depot source, verifiee dans Code/AdjustedContracts.py); serie de rendements continus ajustee des rolls - pas un prix executable",
+ "fichiers": {
+  "AD": {
+   "sha256": "8c9035433a364a6e931a25f71e3165d63bc338812daab47be0cf1b000ce8a343",
+   "debut": "1987-01-13",
+   "fin": "2019-11-27",
+   "n": 8297
+  },
+  "B": {
+   "sha256": "a07a29cf273e8ab95048ee094e589156da4e1110a0cb2129e38868ed3bd7a725",
+   "debut": "1993-03-17",
+   "fin": "2020-02-14",
+   "n": 6807
+  },
+  "BO": {
+   "sha256": "1ec7695deb4dd488b031ff274e600662c627c33e60f60c34e82b85c3b295c081",
+   "debut": "1959-07-01",
+   "fin": "2019-11-27",
+   "n": 15182
+  },
+  "BP": {
+   "sha256": "51ef55026161e3d7081a747159315268e734fc4567082e8fa647b5bf499c95b8",
+   "debut": "1975-02-13",
+   "fin": "2019-11-27",
+   "n": 11305
+  },
+  "CC": {
+   "sha256": "3b4755d83955b264bfd9207cdab80c19c1929c2315b1f000075ccc7557aff8e5",
+   "debut": "1972-09-26",
+   "fin": "2020-02-18",
+   "n": 11662
+  },
+  "CL": {
+   "sha256": "2b8853dd1008abfbbaf95349c40ca96f297ac746a3a111d0320cfeb350dfb418",
+   "debut": "1983-03-30",
+   "fin": "2019-11-27",
+   "n": 9215
+  },
+  "DX": {
+   "sha256": "88b0dc3ce710f33911af2e2f2b3b49d1751e5bb7b3498812b1d0b28f3d03410b",
+   "debut": "1985-11-20",
+   "fin": "2019-11-28",
+   "n": 8690
+  },
+  "EC": {
+   "sha256": "ab85482d6216d0a392f541a2202febb7a6a105f7fbf2e0497b0ad7ae83d29398",
+   "debut": "1999-01-04",
+   "fin": "2019-11-27",
+   "n": 5251
+  },
+  "EMA": {
+   "sha256": "ad3cbede4fdbb66574b2100b6e515a694e8ed71933fa6caec85db21081ccfddc",
+   "debut": "2013-10-08",
+   "fin": "2020-02-17",
+   "n": 1619
+  },
+  "ES": {
+   "sha256": "6c91791c7a4d6a6fc9c6c5b13e211afad55faf5f451eca213c57fb5b59b9cfa0",
+   "debut": "1997-09-09",
+   "fin": "2019-11-27",
+   "n": 5678
+  },
+  "FC": {
+   "sha256": "002d77b16b1c4d5823a3325f76750e67631526708b47e936e554748da52a2a6d",
+   "debut": "1973-09-06",
+   "fin": "2019-11-27",
+   "n": 11626
+  },
+  "FCE": {
+   "sha256": "03c732389fc0c7d09b69e65d8d9db783ad0f37a3832510e54412c3e626e09ae0",
+   "debut": "2008-12-22",
+   "fin": "2019-11-28",
+   "n": 2785
+  },
+  "FDAX": {
+   "sha256": "12d38856946c6ca6413ae6fae394de422460699eabd04bfc5394ee8d18b939dd",
+   "debut": "1996-12-20",
+   "fin": "2019-11-28",
+   "n": 5821
+  },
+  "FGBL": {
+   "sha256": "150382d478f4d58f2e6846bade0f620961895827b142a747b70eb5791825446c",
+   "debut": "2012-12-07",
+   "fin": "2020-02-14",
+   "n": 1835
+  },
+  "FV": {
+   "sha256": "4f5bda6a822b2f027716dbec59e2b668f29a3c797e7d6cbf5018d5c97cb2f844",
+   "debut": "1988-05-20",
+   "fin": "2020-02-14",
+   "n": 7934
+  },
+  "GC": {
+   "sha256": "b7e1c35d2f11c8f54b19e552a5c94e1a49cfe96fefd3b49832c843fe63dd3c62",
+   "debut": "1980-09-08",
+   "fin": "2019-11-27",
+   "n": 9816
+  },
+  "HG": {
+   "sha256": "7a4570def063073b2e2f2239ba6a4fcea49f22b04a0cdde7b8f82b0f1330168e",
+   "debut": "1988-10-26",
+   "fin": "2019-11-27",
+   "n": 7773
+  },
+  "HO": {
+   "sha256": "a8bdcf1453be768cf827ef3c978c8d8528a5047f109825c6318044066bfa2cad",
+   "debut": "1979-03-06",
+   "fin": "2019-11-27",
+   "n": 10219
+  },
+  "HSI": {
+   "sha256": "b1e711f08a74fc9142d60b497f8113e7c47d742dbd3a7a53489c6a4a50fbc69a",
+   "debut": "2015-07-16",
+   "fin": "2019-11-28",
+   "n": 1072
+  },
+  "JO": {
+   "sha256": "864fc54c76fc39a0547b11b961ae1d0237d087e8caa148360a0a29bb65269ff8",
+   "debut": "1967-02-01",
+   "fin": "2020-02-14",
+   "n": 12741
+  },
+  "KC": {
+   "sha256": "fc1557cbc48796b03ba1f2bd9cf1551c53c1ef32002e8029b955fb5d0e6bc1ca",
+   "debut": "1975-05-21",
+   "fin": "2020-02-14",
+   "n": 10981
+  },
+  "KW": {
+   "sha256": "d6286d38f61756caf8342a6d73010e2d0995fcb435d45e8e023f1115afce7d45",
+   "debut": "1976-04-09",
+   "fin": "2019-11-27",
+   "n": 10968
+  },
+  "LB": {
+   "sha256": "b51d11f83298e84d91c14c0251ae1de7ccc4a2d7d5f0b24960d5c8a0cd796901",
+   "debut": "1972-11-16",
+   "fin": "2019-11-27",
+   "n": 11837
+  },
+  "LC": {
+   "sha256": "a5cf34ce99734acae397a465e6a2168c5e3d81785b1e1a2eaa4ba4d4827db954",
+   "debut": "1964-11-30",
+   "fin": "2019-11-27",
+   "n": 13841
+  },
+  "LN": {
+   "sha256": "ec721af97f93de55790ec236aaeaa2a7fd3d27d0ecacbd6460ecec86dd197447",
+   "debut": "1969-06-25",
+   "fin": "2020-02-14",
+   "n": 12721
+  },
+  "MD": {
+   "sha256": "b5fe57821a696905df144cb5161b661bcecab57bac46c9e701ed175d3b5fdaa5",
+   "debut": "1992-02-13",
+   "fin": "2019-11-27",
+   "n": 7000
+  },
+  "MW": {
+   "sha256": "5ce3b2a8e423cbc2c01d3003e17b6807a19432032b3cc3782f769434c659f4d8",
+   "debut": "1994-06-14",
+   "fin": "2019-11-28",
+   "n": 6014
+  },
+  "NG": {
+   "sha256": "687561c2f6b8bbba1d4d52517115bc07bd231c31b7fae8097bd86b3c09f079b0",
+   "debut": "1990-04-03",
+   "fin": "2019-11-27",
+   "n": 7437
+  },
+  "O": {
+   "sha256": "d9d979117d19c94e1cc065082c69024ccb5c967f71a5811ca4aff703df34973a",
+   "debut": "1959-07-01",
+   "fin": "2019-11-27",
+   "n": 15126
+  },
+  "PA": {
+   "sha256": "f7402063dbc7e9c61369eba4d324102e4040cc4a869b5026c7dc60e7da1f2d88",
+   "debut": "2009-12-28",
+   "fin": "2019-11-27",
+   "n": 2303
+  },
+  "PL": {
+   "sha256": "5916f41a35b140b3deef373cca93cb5a2092e47fa1e46ba59f9abdd6d494b2f0",
+   "debut": "2008-12-23",
+   "fin": "2019-11-27",
+   "n": 2571
+  },
+  "RB": {
+   "sha256": "b2497d8f17218d3448bd50f2e36395a4f20c823634fe413fda95cec34d6a57b8",
+   "debut": "2005-10-03",
+   "fin": "2019-11-27",
+   "n": 3556
+  },
+  "RR": {
+   "sha256": "81634496f7822a89f92cc9d1dafa5a7f1910dedbb464575ec5606b45cd54e707",
+   "debut": "1986-08-20",
+   "fin": "2020-02-14",
+   "n": 8341
+  },
+  "S": {
+   "sha256": "cf484a7cff617cdda89c72531ae20ef97476140df060f7acbf1af88a5218773a",
+   "debut": "1959-07-01",
+   "fin": "2019-11-27",
+   "n": 15212
+  },
+  "SB": {
+   "sha256": "2613f98aaff4547134c800ed19c4d0ae1699ba7e92ca5f4e9a5bffd7b1b8f104",
+   "debut": "1966-04-22",
+   "fin": "2019-11-27",
+   "n": 12743
+  },
+  "SI": {
+   "sha256": "ef5132a53b06fe5c8bd6c1fea6da5354ab9d82e0c88383978d2f0b9d89da5131",
+   "debut": "2005-10-26",
+   "fin": "2019-11-27",
+   "n": 3491
+  },
+  "SM": {
+   "sha256": "29c7fc4c13e8a7a59bfa9dea0e6669b3ffdf2729d66e8c98dc6fc11a2892e03c",
+   "debut": "1959-07-02",
+   "fin": "2019-11-27",
+   "n": 15187
+  },
+  "TF": {
+   "sha256": "b0b97414e25348cd3f172e7ea37e955f29e1dfd0bb1c263bb84dbbd21cc814a5",
+   "debut": "2006-12-18",
+   "fin": "2018-03-14",
+   "n": 2874
+  },
+  "TU": {
+   "sha256": "fcc8d5c54acf252da47625eecd80e7755adaa37e2f88c80ce021ae1a2f2353ff",
+   "debut": "2007-10-01",
+   "fin": "2019-11-27",
+   "n": 3020
+  },
+  "TY": {
+   "sha256": "c49d1172f78304082ad931e059c7f48008f62a1dd4dc439692718ad013cce8d3",
+   "debut": "1982-05-03",
+   "fin": "2019-11-27",
+   "n": 9441
+  },
+  "W": {
+   "sha256": "04df5c74e77c2391d03c99c614544f0ab7240c17fbf67c19fe0b4b81c527ed7e",
+   "debut": "1959-07-01",
+   "fin": "2019-11-27",
+   "n": 15205
+  },
+  "YM": {
+   "sha256": "f4eb4a3b98ec18420940b4e022f9003bcb736971971034d94a6f1ed697a6ff3e",
+   "debut": "2007-10-01",
+   "fin": "2019-11-27",
+   "n": 3047
+  },
+  "Z": {
+   "sha256": "98a5ba29a212b29d199f3e3cc0733dcc8aa1ac8f4c1a2ec1005c576ab98ec12a",
+   "debut": "2013-12-23",
+   "fin": "2020-02-14",
+   "n": 1643
+  }
+ }
+}

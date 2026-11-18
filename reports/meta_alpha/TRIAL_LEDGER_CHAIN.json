@@ -936,6 +936,84 @@
     "resultat": "F9 NON TESTABLE (MDE 0.93>0.5), budget toujours 144/150; F3+F7 validees L2; chassis pret; pivot externe sec.6 documente non lance (ordre proprietaire requis, nouveau perimetre); OOS/HOLDOUT fermes"
    },
    "entry_hash": "44850679a96e34db1cbbd834234dfe545d132f540eeb6fdb2373e580183fed7d"
+  },
+  {
+   "seq": 86,
+   "prev_hash": "44850679a96e34db1cbbd834234dfe545d132f540eeb6fdb2373e580183fed7d",
+   "entry": {
+    "type": "PANEL_DATA_CERTIFICATION",
+    "source": "JuBaMan/Time-Series-Momentum-Study master zip",
+    "zip_sha256": "e31dc2da6ff677fcf8e1e810670dce167e8ecbe6f10c2939809bb1977af67ff7",
+    "actifs": 43,
+    "bornes": "IS panel <=2014-12-31; OOS/HOLDOUT fermes, moteurs fail-closed"
+   },
+   "entry_hash": "a88bb140d64b65be1dffe15f05dc4211b17dcc805fca4f8f0f82b32cb4329ce7"
+  },
+  {
+   "seq": 87,
+   "prev_hash": "a88bb140d64b65be1dffe15f05dc4211b17dcc805fca4f8f0f82b32cb4329ce7",
+   "entry": {
+    "type": "MDE_GATE",
+    "mission": "PANEL",
+    "resultat": "{\"fenetre_evaluation\": \"2000-01-01 a 2014-12-31 (IS panel, borne gelee)\", \"actifs_univers_principal\": 31, \"annees\": 15.0, \"SE_sharpe\": 0.2581988897471611, \"MDE_80pct\": 0.7233661365323004, \"effet_vise_sharpe\": 0.8, \"verdict\": \"TESTABLE\"}"
+   },
+   "entry_hash": "6023ed6a8b9df0e2e3627b42292ba1da192e1a5dd74cf8dc7b51b5819825b8c5"
+  },
+  {
+   "seq": 88,
+   "prev_hash": "6023ed6a8b9df0e2e3627b42292ba1da192e1a5dd74cf8dc7b51b5819825b8c5",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F10_XSMOM_PANEL",
+    "registry": "reports/meta_alpha/panel/F10_PREREG.json",
+    "sha256": "ec196e71b30874a690ea855a6f9221629976bb0d587ba902d9f56817b9a84e5a",
+    "n_essais": 16,
+    "budget_panel": "16/60"
+   },
+   "entry_hash": "0841c1d49fe9ba2e2debd45396727bf54bdb8518d6c1ffe18d0461e9959b8db4"
+  },
+  {
+   "seq": 89,
+   "prev_hash": "0841c1d49fe9ba2e2debd45396727bf54bdb8518d6c1ffe18d0461e9959b8db4",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F11_TSMOM_PANEL",
+    "registry": "reports/meta_alpha/panel/F11_PREREG.json",
+    "sha256": "f7ca02d5fa87290547ed4a2a9fedf5b168b11d86ec35cf685d97c0403473ef8a",
+    "n_essais": 12,
+    "budget_panel": "28/60 cumul"
+   },
+   "entry_hash": "7e4b011d880b36de72d74e287a601918f211919da7596085962b501949becae1"
+  },
+  {
+   "seq": 90,
+   "prev_hash": "7e4b011d880b36de72d74e287a601918f211919da7596085962b501949becae1",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F10_XSMOM_PANEL",
+    "resultat": "ECHEC GELE: meilleure (63,tercile,riskparity) Sharpe 0.56<0.8, annees 60%<65%, DSR 0.878<0.95, PBO 0.557>0.20; placebos sains (inverse -1.01, melange -1.29); 16 essais consommes"
+   },
+   "entry_hash": "11344dde636f7ca930803f97ded809bc9cfe189c2456e57e5d31b020f89bc575"
+  },
+  {
+   "seq": 91,
+   "prev_hash": "11344dde636f7ca930803f97ded809bc9cfe189c2456e57e5d31b020f89bc575",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F11_TSMOM_PANEL",
+    "resultat": "ECHEC GELE: meilleure (126,ewma,cap30) Sharpe 0.28, annees 53%, DSR 0.586, PBO 0.821; blocs tardifs negatifs (decroissance); 12 essais consommes (cumul panel 28/60)"
+   },
+   "entry_hash": "ce8c5429c4078f3e6c63836663dc560c5d0275a4a0de89845b19df2f10f607fc"
+  },
+  {
+   "seq": 92,
+   "prev_hash": "ce8c5429c4078f3e6c63836663dc560c5d0275a4a0de89845b19df2f10f607fc",
+   "entry": {
+    "type": "BILAN",
+    "mission": "PHASE4_CLOTURE",
+    "resultat": "F12 SANS OBJET; regle arret sec.6: aucun re-grillage, solde panel 32 essais non depenses; aucun frais de challenge; actifs permanents F3/F7 L2 + chassis + simulateur + chaine; OOS/HOLDOUT fermes intacts"
+   },
+   "entry_hash": "b9e1783b860cfec167c644a5553cce73a3403b94fe4c0228ed6757b2a89d913a"
   }
  ]
 }
