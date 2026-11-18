@@ -179,11 +179,35 @@ def fomc_events_archives():
     rows = [{'reference_date': pd.Timestamp(d2), 'available_at_utc': dispo(d2, 14, 0),
              'event': 'FOMC_statement', 'meeting_start': '', 'meeting_end': str(d2)} for d2 in sorted(ev)]
     return pd.DataFrame(rows)
+def fomc_calendar_json():
+    """Calendrier officiel federalreserve.gov/json/calendar.json: evenements 'FOMC Meeting',
+    jour 2 = month (AAAA-MM) + days. Source officielle, aucune date inventee."""
+    import json as _json
+    r = requests.get('https://www.federalreserve.gov/json/calendar.json', timeout=60, headers={'User-Agent': 'Mozilla/5.0'})
+    evs = _json.loads(r.content.decode('utf-8-sig')).get('events', [])
+    rows = []
+    for e in evs:
+        if e.get('title') != 'FOMC Meeting': continue
+        mth, dys = str(e.get('month', '')), str(e.get('days', ''))
+        if len(mth) != 7 or not dys.isdigit(): continue
+        d2 = dt.date(int(mth[:4]), int(mth[5:7]), int(dys))
+        desc = re.sub(r'<[^>]+>', ' ', str(e.get('description', '')))
+        mm = re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})\s*[-\u2013]\s*(?:(January|February|March|April|May|June|July|August|September|October|November|December)\s+)?(\d{1,2})', desc)
+        d1 = ''
+        if mm:
+            m1 = MOIS[mm.group(1).lower()]; j1 = int(mm.group(2))
+            y1 = d2.year - (1 if (m1 == 12 and d2.month == 1) else 0)
+            d1 = str(dt.date(y1, m1, j1))
+        rows.append({'reference_date': pd.Timestamp(d2), 'available_at_utc': dispo(d2, 14, 0),
+                     'event': 'FOMC_statement', 'meeting_start': d1, 'meeting_end': str(d2)})
+    log(f'FOMC calendar.json: {len(rows)} reunions')
+    return pd.DataFrame(rows)
+
 try:
-    fe = pd.concat([fomc_events(), fomc_events_archives()]).drop_duplicates('reference_date').sort_values('reference_date')
+    fe = pd.concat([fomc_events(), fomc_events_archives(), fomc_calendar_json()]).drop_duplicates('reference_date').sort_values('reference_date')
     if len(fe):
         frames['fomc_events'] = fe
-        meta['fomc_events'] = {'source': 'federalreserve.gov (calendriers FOMC officiels)', 'frequence': 'evenement',
+        meta['fomc_events'] = {'source': 'federalreserve.gov (calendriers FOMC officiels + json/calendar.json officiel)', 'frequence': 'evenement',
                                'convention_available_at': 'jour 2 de reunion, 14:00 America/New_York converti UTC date par date (DST)',
                                'lignes': int(len(fe)), 'plage_reference': [str(fe.reference_date.min()), str(fe.reference_date.max())]}
         log(f'OK fomc_events: {len(fe)} reunions')

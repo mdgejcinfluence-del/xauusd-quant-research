@@ -3,3 +3,4 @@ run2 cle strippee + FOMC elargi + purge incident
 run3 ALFRED natif toutes-vintages
 run4 DFEDTAR annuel + FOMC archives
 run5 realtime_end borne + FOMC communiques + verify attente egalite
+run6 FOMC calendar.json officiel
