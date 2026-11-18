@@ -1,0 +1,64 @@
+== https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm?year=2015
+   statut=200 len=89979 type=text/html
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1"/> 
+== https://www.federalreserve.gov/monetarypolicy/fomcminutes20151216.htm
+   statut=200 len=131138 type=text/html
+   motif fomcminutes20\d{6}: 6
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 4
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1"/> 
+== https://www.federalreserve.gov/newsevents/pressreleases/monetary20151216a.htm
+   statut=200 len=83797 type=text/html
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 4
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1"> <meta n
+== https://www.federalreserve.gov/feeds/press_monetary.xml
+   statut=200 len=9749 type=text/xml
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 30
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: ï»¿<?xml version="1.0" encoding="utf-8" ?> <rss version="2.0"> <channel> <title>FRB: Press Release - Monetary Policy</title> <link><![CDATA[https://www.federalreserve.gov/feeds/feeds.htm]]></link> <description><![CDATA[Press releases about monetary policy from the Fe
+== https://www.federalreserve.gov/json/calendar.json
+   statut=200 len=550540 type=application/json
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 74
+   motif December 15[-–]16: 2
+   extrait: ﻿{"events":[{"description":"Economic Shocks","live":"https://teams.microsoft.com/meet/2130457444862160?p=ynp4cqfcaAtsBBBsTM","location":"At the International Monetary Fund (IMF) and Central Bank of Brazil conference &quot;A Quarter Century of Inflation Targeting in Latin America: Progress, Challenge
+== https://www.federalreserve.gov/data.json
+   statut=200 len=315141 type=application/json
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: { "conformsTo": { "@type": "Standard", "identifier": "https://resources.data.gov/dcat-us/3.0.0", "title": "DCAT-US 3.0" }, "dataset": [ { "accessLevel": "public", "accessRights": "public", "accrualPeriodicity":
+== https://www.federalreserve.gov/monetarypolicy/files/fomc_meeting_calendar_2015.pdf
+   statut=404 len=81196 type=text/html
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1" 
+== https://www.federalreserve.gov/monetarypolicy/files/FOMC_Meeting_Calendar_2015.pdf
+   statut=404 len=81196 type=text/html
+   motif fomcminutes20\d{6}: 0
+   motif monetary20\d{6}[a-z]\.htm: 0
+   motif FOMC Meeting: 0
+   motif December 15[-–]16: 0
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1" 
+== https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+   statut=200 len=166359 type=text/html
+   motif fomcminutes20\d{6}: 94
+   motif monetary20\d{6}[a-z]\.htm: 55
+   motif FOMC Meeting: 7
+   motif December 15[-–]16: 0
+   extrait: ï»¿<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"/> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.6, user-scalable=1"/> 
+SONDE TERMINEE
