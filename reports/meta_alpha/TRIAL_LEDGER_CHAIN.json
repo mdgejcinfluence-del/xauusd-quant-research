@@ -1014,6 +1014,19 @@
     "resultat": "F12 SANS OBJET; regle arret sec.6: aucun re-grillage, solde panel 32 essais non depenses; aucun frais de challenge; actifs permanents F3/F7 L2 + chassis + simulateur + chaine; OOS/HOLDOUT fermes intacts"
    },
    "entry_hash": "b9e1783b860cfec167c644a5553cce73a3403b94fe4c0228ed6757b2a89d913a"
+  },
+  {
+   "seq": 93,
+   "prev_hash": "b9e1783b860cfec167c644a5553cce73a3403b94fe4c0228ed6757b2a89d913a",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F13_DERNIERE_CARTOUCHE",
+    "registry": "reports/meta_alpha/phase2/F13_PREREG.json",
+    "sha256": "71ce585e837630948a6ab2d96101d57ab51b9ca911109ca2623c833705c725c9",
+    "n_essais": 4,
+    "budget": "148/150 max, solde 2 jamais depenses"
+   },
+   "entry_hash": "51c1a1f92e05ee33ac6187a64a89c0d01f79a725b0b4a77648426e936d84de5a"
   }
  ]
 }

@@ -1,0 +1,14 @@
+{
+ "mission": "F13_DERNIERE_CARTOUCHE - gap week-end et direction des sauts dans fenetres F7 (Phase 5)",
+ "budget": "N=4 essais declares (144/150 -> 148/150 max); essais 5-6 du solde jamais depenses",
+ "perimetre": "IS tick 282/282 borne certifiee; OOS/HOLDOUT fermes",
+ "cellules_gelees": {
+  "F13-A": "gap week-end (dernier Mid vendredi -> premier Mid dimanche), |gap| >= 2 x spread du premier tick dimanche; FADE contre le gap; entree executable premier tick dimanche; sortie au premier de {comblement (Mid rejoint le Mid de vendredi), lundi 14h UTC, stop adverse 1x|gap|}",
+  "F13-B": "identique, cote SUIVI (continuation); sortie au premier de {lundi 14h UTC, retour du Mid au niveau de vendredi (= stop 1x|gap|)}",
+  "F13-C": "gate F7 alerte (modele logistique gele entraine 2013-2016, applique 2017+, alerte = top 5% des probabilites horaires - aucune recalibration); signal = signe ORI50 pre-saut (fenetre 50 ticks precedant le saut, E3); trade dans le sens ORI si spread entree <= p50 contextuel (mediane de partition); sortie H=200 ticks executable",
+  "F13-D": "gate F7 alerte + saut tick |r|>10bp realise; rendement executable dans le sens du saut a H=200 et 1000 ticks, condition spread au saut <= p75 contextuel (mediane partition x1.5 approxime par p75 des spreads d'evenements de la partition - consigne)"
+ },
+ "gates_R3": "par cellule: n et n_eff (rafales) calcules AVANT agregation de performance; n_eff < 200 -> NON TESTABLE, aucune performance lue",
+ "succes_gele": "n_eff>=200; esperance nette (retours executables, deja nets de spread) > 0, IC95 bootstrap borne basse > 0; signe stable 3/3 sous-periodes; CONDITIONNEL commission/slippage (BROKER_CONFIG partiel seq55)",
+ "ordre": "A puis B puis C puis D, verdict consigne avant la suivante"
+}
