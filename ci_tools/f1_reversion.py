@@ -37,7 +37,8 @@ EQ="""
 WITH s AS (SELECT observation_id AS oid, timestamp_utc AS t, bid, ask, mid, spread_rel*10000 AS spbp FROM read_parquet('{f}')),
 v AS (SELECT *, lag(mid) OVER (ORDER BY oid) AS pm FROM s),
 d AS (SELECT *, (mid-pm)/pm*10000 AS rbp FROM v WHERE pm IS NOT NULL),
-e AS (SELECT *, lead(bid,20) OVER (ORDER BY oid) AS b20, lead(ask,20) OVER (ORDER BY oid) AS a20, lead(bid,50) OVER (ORDER BY oid) AS b50, lead(ask,50) OVER (ORDER BY oid) AS a50, lead(bid,200) OVER (ORDER BY oid) AS b200, lead(ask,200) OVER (ORDER BY oid) AS a200 FROM d WHERE abs(rbp)>10)
+w AS (SELECT *, lead(bid,20) OVER (ORDER BY oid) AS b20, lead(ask,20) OVER (ORDER BY oid) AS a20, lead(bid,50) OVER (ORDER BY oid) AS b50, lead(ask,50) OVER (ORDER BY oid) AS a50, lead(bid,200) OVER (ORDER BY oid) AS b200, lead(ask,200) OVER (ORDER BY oid) AS a200 FROM d),
+e AS (SELECT * FROM w WHERE abs(rbp)>10)
 SELECT (CASE WHEN hour(t) BETWEEN 13 AND 16 THEN 'TOD_IN' ELSE 'TOD_OUT' END)||'_'||(CASE WHEN spbp<=2 THEN 'TIGHT' ELSE 'WIDE' END) AS cell, count(*),
  sum(CASE WHEN rbp>0 THEN (bid-a20)/bid*10000 ELSE (b20-ask)/ask*10000 END),
  sum(CASE WHEN rbp>0 THEN (bid-a50)/bid*10000 ELSE (b50-ask)/ask*10000 END),
