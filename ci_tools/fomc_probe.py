@@ -80,3 +80,17 @@ try:
 except Exception as e: emit(f'sonde4b ECHEC {e}')
 emit('SONDE4 TERMINEE')
 pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
+
+# --- sonde5: structure des liens de la page archives historiques ---
+try:
+    h = requests.get('https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm?year=2015', timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
+    hrefs = sorted(set(re.findall(r'href="([^"]+)"', h)))
+    sel = [x for x in hrefs if any(k in x.lower() for k in ['fomc', 'minutes', 'calendar', 'monetary'])]
+    emit('archives hrefs pertinents (' + str(len(sel)) + '):')
+    for x in sel[:40]: emit('  ' + x)
+    txt = re.sub(r'<[^>]+>', ' ', h); txt = re.sub(r'\s+', ' ', txt)
+    i = txt.lower().find('historical')
+    emit('texte autour de historical: ' + txt[max(0,i-100):i+400])
+except Exception as e: emit('sonde5 ECHEC ' + type(e).__name__ + ' ' + str(e)[:100])
+emit('SONDE5 TERMINEE')
+pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
