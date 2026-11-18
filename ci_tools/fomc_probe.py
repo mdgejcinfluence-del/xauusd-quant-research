@@ -67,8 +67,9 @@ try:
     r = requests.get('https://www.federalreserve.gov/json/calendar.json', timeout=60, headers={'User-Agent': 'Mozilla/5.0'})
     evs = _json.loads(r.content.decode('utf-8-sig')).get('events', [])
     mtg = [e for e in evs if e.get('title') == 'FOMC Meeting']
-    emit(f'FOMC Meeting: {len(mtg)}; mois min={min(e["month"] for e in mtg)} max={max(e["month"] for e in mtg)}')
-    emit(f'par annee reunion: {dict(sorted(_c.Counter(e["month"][:4] for e in mtg).items()))}')
+    mois = [e.get('month','') for e in mtg if e.get('month')]
+    emit(f'FOMC Meeting: {len(mtg)}; mois min={min(mois)} max={max(mois)}')
+    emit(f'par annee reunion: {dict(sorted(_c.Counter(m[:4] for m in mois).items()))}')
 except Exception as e: emit(f'sonde4a ECHEC {e}')
 try:
     h = requests.get('https://www.federalreserve.gov/monetarypolicy/fomcminutes20151216.htm', timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
