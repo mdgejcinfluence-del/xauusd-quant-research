@@ -1,0 +1,30 @@
+{
+ "GATE_AB": {
+  "evenements_gap_qualifies": 157,
+  "n_eff_fade": 134.7,
+  "seuil_R1": 200,
+  "testable": false
+ },
+ "F13-A_FADE": {
+  "verdict": "NON TESTABLE (gate R1)"
+ },
+ "F13-B_SUIVI": {
+  "verdict": "NON TESTABLE (gate R1)"
+ },
+ "GATE_C": {
+  "evenements": 80,
+  "n_eff": 38.1,
+  "testable": false
+ },
+ "F13-C_ORI_F7": {
+  "verdict": "NON TESTABLE (gate R1)"
+ },
+ "GATE_D": {
+  "evenements": 111,
+  "n_eff": 153.2,
+  "testable": false
+ },
+ "F13-D_POSTSAUT": {
+  "verdict": "NON TESTABLE (gate R1)"
+ }
+}

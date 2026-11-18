@@ -1027,6 +1027,56 @@
     "budget": "148/150 max, solde 2 jamais depenses"
    },
    "entry_hash": "51c1a1f92e05ee33ac6187a64a89c0d01f79a725b0b4a77648426e936d84de5a"
+  },
+  {
+   "seq": 94,
+   "prev_hash": "51c1a1f92e05ee33ac6187a64a89c0d01f79a725b0b4a77648426e936d84de5a",
+   "entry": {
+    "type": "VERDICT",
+    "mission": "F13-A_FADE",
+    "resultat": "NON TESTABLE (gate R1 avant performance): 157 evenements gap qualifies, n_eff 135 < 200; aucune performance agregée ni lue; cellule fermee"
+   },
+   "entry_hash": "8e2bad5e547fb14c3a0a5eca5739a2dc0d1ece50cee73c62507abde46ecaba07"
+  },
+  {
+   "seq": 95,
+   "prev_hash": "8e2bad5e547fb14c3a0a5eca5739a2dc0d1ece50cee73c62507abde46ecaba07",
+   "entry": {
+    "type": "VERDICT",
+    "mission": "F13-B_SUIVI",
+    "resultat": "NON TESTABLE (gate R1): memes 157 evenements, n_eff 135 < 200; cellule fermee"
+   },
+   "entry_hash": "14a17d118bda605ad1b45d03a11a4e22a4eb3dd443d829cf8985c62de6a34246"
+  },
+  {
+   "seq": 96,
+   "prev_hash": "14a17d118bda605ad1b45d03a11a4e22a4eb3dd443d829cf8985c62de6a34246",
+   "entry": {
+    "type": "VERDICT",
+    "mission": "F13-C_ORI_F7",
+    "resultat": "NON TESTABLE (gate R1): 80 evenements (F7 alerte 2017+ x spread<=p50), n_eff 38 < 200; cellule fermee"
+   },
+   "entry_hash": "86f4ddc81f4f47bd5ddf232b0278c59bff3835e29d6231c8760a1f8f5d97ce05"
+  },
+  {
+   "seq": 97,
+   "prev_hash": "86f4ddc81f4f47bd5ddf232b0278c59bff3835e29d6231c8760a1f8f5d97ce05",
+   "entry": {
+    "type": "VERDICT",
+    "mission": "F13-D_POSTSAUT_F7",
+    "resultat": "NON TESTABLE (gate R1): 111 evenements, n_eff 153 (formule R2; n brut 111) < 200; cellule fermee"
+   },
+   "entry_hash": "b5cd7e4fc52f768f82fa5dbcfe55d947468ec8cdf5767a9da178aaae5d81831b"
+  },
+  {
+   "seq": 98,
+   "prev_hash": "b5cd7e4fc52f768f82fa5dbcfe55d947468ec8cdf5767a9da178aaae5d81831b",
+   "entry": {
+    "type": "BILAN",
+    "mission": "CLOTURE_PROGRAMME_RECHERCHE",
+    "resultat": "Phase 5 close: 4/4 cellules NON TESTABLES aux gates; recherche directionnelle systematique close definitivement (tick 148/150, panel 28/60, soldes non depenses); voie B = chassis + F3/F7 L2 comme discipline de risque; OOS/HOLDOUT fermes intacts; ouverture future uniquement sur hypothese nouvelle + ordre explicite"
+   },
+   "entry_hash": "35f55f7944aeea0308947bf7f28114b6be18e9168a3c6bd056fbced66bf99c7a"
   }
  ]
 }
