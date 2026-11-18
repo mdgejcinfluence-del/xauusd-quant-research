@@ -5,47 +5,43 @@
    "taille": 24383
   },
   "comex_gc_ohlcv.parquet": {
-   "sha256": "716160f438b46ec434daf4207952201d2a6404573f1659e243fa16222f2ddca8",
+   "sha256": "9a5141fa650d15dbae0220854f839d86de9a8997873f659f3d91772a7085fe8c",
    "taille": 40280
   },
   "comex_si_ohlcv.parquet": {
-   "sha256": "c4ed146090ff2b30d0e4c9a1cc9f0032f6005f27c2aa323113e52bb74b693e6b",
+   "sha256": "d4fe54db4dbfe1aa3844d85eee5526815a2a745cb0a52c006240b5f90dc645dd",
    "taille": 38865
   },
-  "fomc_events.parquet": {
-   "sha256": "18aab4719e143d570446f086d0c9c5b8dc5f55ae0b382eec7961d68e67019b9c",
-   "taille": 4763
-  },
   "fred_dollar_broad.parquet": {
-   "sha256": "b8f923e112759832071a16650ba7f850df5d2cd16fab9acd1940818b2c6aa61d",
+   "sha256": "2331bfdf116d4db9e4529c8249ccbcfcb3fa162616dcc08428d76712fc89c4fb",
    "taille": 17893
   },
   "fred_eurusd.parquet": {
-   "sha256": "76067136d9aa89219f8acbc467d27e9302bad825b0dcebceee678dd35f716d39",
+   "sha256": "efcc96554a557b3b7d9e10d42f0c3dbf7f2c7ba59f0ee8ec544b18761c7b1738",
    "taille": 19178
   },
   "fred_spx.parquet": {
-   "sha256": "4ffec24fdaed8c6b11b3ef5b735eaff8e46e45c0b06b477beebe445429f7f3a3",
-   "taille": 19046
+   "sha256": "b722e8f1f3c17629d3fdc268e6d77f1b54b0f3cd9f1b4052995359914ab17a0c",
+   "taille": 19064
   },
   "fred_taux_10a.parquet": {
-   "sha256": "f5d845ebbbd45ffc68e1533e07cc654f6df5e23bb6910c7bfbce9eb9a12eccfc",
-   "taille": 17740
+   "sha256": "3221e20439d93ea21d4f05b45599a7cfca2c6c0982fe0711aec9c932b52fc2a5",
+   "taille": 17759
   },
   "fred_taux_court_3m_proxy.parquet": {
-   "sha256": "566cb70f3353224922cce8cb66af55f3288901105253140d41f02e96620cfc03",
-   "taille": 16546
+   "sha256": "355241c56f03ba62e2cf5f565bb7d2b7a86fc373dc5dc0a4f4f207a2ca860c21",
+   "taille": 16565
   },
   "fred_usdjpy.parquet": {
-   "sha256": "47cabafffb4459380c12bca72760c72fe912276e2f9802ce7b94906d1fdaa3e2",
+   "sha256": "330383f8c6fa1982475d13935d35f7f15d7c476b53bc6a637a3bc96e5c562fa0",
    "taille": 19354
   },
   "fred_vix.parquet": {
-   "sha256": "60c42950a073852d690701b087822f869250c0ee95becba5a0dc06215625e43a",
+   "sha256": "3f3adfc52f50e24f20830f70e4f67cca828c57eef3d0fd6014a071d98c20458f",
    "taille": 18052
   },
   "fred_wti.parquet": {
-   "sha256": "2d42171a92d0a1673d752c305a322e51a09e19f84ae035db24d7e9a5cd8cc3cb",
+   "sha256": "78d28c604c7f74d3742cc855c072409aa5fe92bff0278abc5ea8fdb2aa3b2890",
    "taille": 18798
   }
  },

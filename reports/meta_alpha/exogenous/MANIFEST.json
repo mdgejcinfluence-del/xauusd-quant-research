@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 13:38:42.177779+00:00",
+ "genere_utc": "2026-11-18 15:15:41.546295+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -16,9 +16,9 @@
    "famille": "F2_taux_vol",
    "plage_reference": [
     "1996-11-18 00:00:00+00:00",
-    "2026-11-17 00:00:00+00:00"
+    "2026-11-18 00:00:00+00:00"
    ],
-   "lignes": 7534,
+   "lignes": 7535,
    "manquants_par_colonne": {
     "reference_date": 0,
     "available_at_utc": 0,
@@ -32,9 +32,9 @@
    "famille": "F2_taux_vol",
    "plage_reference": [
     "1996-11-18 00:00:00+00:00",
-    "2026-11-17 00:00:00+00:00"
+    "2026-11-18 00:00:00+00:00"
    ],
-   "lignes": 7534,
+   "lignes": 7535,
    "manquants_par_colonne": {
     "reference_date": 0,
     "available_at_utc": 0,
@@ -117,9 +117,9 @@
    "famille": "F6_contexte",
    "plage_reference": [
     "1996-11-18 00:00:00+00:00",
-    "2026-11-17 00:00:00+00:00"
+    "2026-11-18 00:00:00+00:00"
    ],
-   "lignes": 7547,
+   "lignes": 7548,
    "manquants_par_colonne": {
     "reference_date": 0,
     "available_at_utc": 0,
@@ -218,101 +218,16 @@
    "motif": "les dates de vintage ALFRED exigent une cle API FRED (gratuite mais personnelle, absente des secrets CI); toute approximation de available_at violerait la regle anti-revision du \u00a73. Champs laisses vides, aucune imputation. A collecter des que le proprietaire fournit une cle API FRED en secret CI."
   },
   "etf_gld_iau_shares": {
-   "statut": "CLOTURE DEFINITIVE (C3, seq104)",
-   "motif": "historique des flux (shares outstanding) non certifiable gratuitement - manquant definitif",
-   "interdiction": "le volume daily GLD existe mais volume != flux: interdiction absolue de l utiliser comme substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable"
-  },
-  "macro_payems_pit": {
-   "source": "ALFRED PAYEMS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PAYEMS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_unrate_pit": {
-   "source": "ALFRED UNRATE",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=UNRATE&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_cpiaucsl_pit": {
-   "source": "ALFRED CPIAUCSL",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCSL&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_cpiaucns_pit": {
-   "source": "ALFRED CPIAUCNS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCNS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_pcepi_pit": {
-   "source": "ALFRED PCEPI",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPI&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_pcepilfe_pit": {
-   "source": "ALFRED PCEPILFE",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPILFE&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_gdp_pit": {
-   "source": "ALFRED GDP",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=GDP&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_icsa_pit": {
-   "source": "ALFRED ICSA",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=ICSA&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_dfedtaru_pit": {
-   "source": "ALFRED DFEDTARU",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARU&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_dfedtarl_pit": {
-   "source": "ALFRED DFEDTARL",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARL&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "macro_fedfunds_pit": {
-   "source": "ALFRED FEDFUNDS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=FEDFUNDS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
-  },
-  "fred_dfii10_officiel": {
-   "source": "FRED DFII10",
-   "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DFII10&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_typ"
-  },
-  "fred_gvz_officiel": {
-   "source": "FRED GVZCLS",
-   "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=GVZCLS&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_typ"
-  },
-  "fred_dgs10_officiel": {
-   "source": "FRED DGS10",
-   "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS10&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_type"
-  },
-  "fred_dgs2_officiel": {
-   "source": "FRED DGS2",
-   "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS2&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_type="
-  },
-  "fomc_events": {
-   "source": "federalreserve.gov (calendriers FOMC officiels)",
-   "frequence": "evenement",
-   "convention_available_at": "jour 2 de reunion, 14:00 America/New_York converti UTC date par date (DST)",
-   "lignes": 55,
-   "plage_reference": [
-    "2021-01-27 00:00:00",
-    "2027-11-17 00:00:00"
-   ]
+   "source": "Yahoo shares outstanding GLD/IAU",
+   "statut": "NON COLLECTE",
+   "motif": "historique lacunaire non certifiable gratuitement; consigne conformement a l instruction (famille 5, limite connue)."
   }
  },
  "journal_collecte": [
   "ECHEC FRED DGS10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_taux_10a: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "OK fred_taux_10a: 7535 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED DGS2: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_taux_court_3m_proxy: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "OK fred_taux_court_3m_proxy: 7535 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED DFII10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "ECHEC FRED VIXCLS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_vix: 7550 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
@@ -323,7 +238,7 @@
   "ECHEC FRED DEXJPUS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_usdjpy: 7783 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED SP500: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_spx: 7547 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "OK fred_spx: 7548 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_wti: 6589 lignes 2000-08-23 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC Stooq gc.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
@@ -348,120 +263,5 @@
   "COT 2025: 102 semaines or",
   "COT 2026: 90 semaines or",
   "OK cftc_cot_gold_disagg: 880 lignes 2010-01-05 00:00:00+00:00 -> 2026-11-10 00:00:00+00:00"
- ],
- "completion_seq103": {
-  "genere_utc": "2026-11-18 14:56:44.473982+00:00",
-  "journal": [
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT PAYEMS: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT UNRATE: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT CPIAUCSL: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT CPIAUCNS: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT PCEPI: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT PCEPILFE: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT GDP: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT ICSA: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT DFEDTARU: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT DFEDTARL: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/vintagedates: HTTPError",
-   "retry 2 /series/vintagedates: HTTPError",
-   "retry 3 /series/vintagedates: HTTPError",
-   "retry 4 /series/vintagedates: HTTPError",
-   "retry 5 /series/vintagedates: HTTPError",
-   "ECHEC PIT FEDFUNDS: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id",
-   "retry 1 /series/observations: HTTPError",
-   "retry 2 /series/observations: HTTPError",
-   "retry 3 /series/observations: HTTPError",
-   "retry 4 /series/observations: HTTPError",
-   "retry 5 /series/observations: HTTPError",
-   "ECHEC C2 DFII10: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id",
-   "retry 1 /series/observations: HTTPError",
-   "retry 2 /series/observations: HTTPError",
-   "retry 3 /series/observations: HTTPError",
-   "retry 4 /series/observations: HTTPError",
-   "retry 5 /series/observations: HTTPError",
-   "ECHEC C2 GVZCLS: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id",
-   "retry 1 /series/observations: HTTPError",
-   "retry 2 /series/observations: HTTPError",
-   "retry 3 /series/observations: HTTPError",
-   "retry 4 /series/observations: HTTPError",
-   "retry 5 /series/observations: HTTPError",
-   "ECHEC C2 DGS10: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id",
-   "retry 1 /series/observations: HTTPError",
-   "retry 2 /series/observations: HTTPError",
-   "retry 3 /series/observations: HTTPError",
-   "retry 4 /series/observations: HTTPError",
-   "retry 5 /series/observations: HTTPError",
-   "ECHEC C2 DGS2: HTTPError 400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 55 reunions)",
-   "OK fomc_events: 55 reunions"
-  ],
-  "note_c2": "versions FRED officielles = reference primaire; proxys Yahoo seq102 conserves et consignes"
- }
+ ]
 }
