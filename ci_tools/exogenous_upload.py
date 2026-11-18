@@ -15,19 +15,25 @@ for pk, (slug, folder) in JOBS.items():
     (meta_dir / 'dataset-metadata.json').write_text(json.dumps(
         {'title': slug, 'id': f'{user}/{slug}', 'licenses': [{'name': 'other'}]}))
     try:
-        api.dataset_create_new(str(meta_dir), public=False, quiet=True); statut = 'cree'
+        existants = {f.name for f in api.dataset_list_files(f'{user}/{slug}', page_size=100).files}
+    except Exception:
+        existants = set()
+    try:
+        if existants:
+            api.dataset_create_version(str(meta_dir), version_notes='maj pack exogene', quiet=True); statut = 'version maj'
+        else:
+            api.dataset_create_new(str(meta_dir), public=False, quiet=True); statut = 'cree'
     except Exception as e:
-        try: api.dataset_create_version(str(meta_dir), version_notes='maj pack exogene', quiet=True); statut = 'version maj'
-        except Exception as e2: res[pk] = {'statut': f'ECHEC upload: {str(e)[:100]} / {str(e2)[:100]}'}; continue
+        res[pk] = {'statut': f'ECHEC upload: {str(e)[:150]}'}; continue
     # verification noms + tailles (metadonnees uniquement pour les scelles)
     dist = {}
-    for essai in range(6):
+    for essai in range(30):
         try:
             r = api.dataset_list_files(f'{user}/{slug}', page_size=100)
             dist = {f.name: f.total_bytes for f in r.files}
             if len(dist) >= len(files): break
         except Exception: pass
-        time.sleep(20)
+        time.sleep(30)
     local = {f.name: f.stat().st_size for f in files}
     res[pk] = {'dataset': f'{user}/{slug}', 'statut_upload': statut,
                'fichiers_locaux': local, 'fichiers_distants': dist,

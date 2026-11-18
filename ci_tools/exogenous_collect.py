@@ -37,7 +37,7 @@ def register(nom, df, source, freq, convention_dispo, famille):
 
 # ---------- Famille 2+6+1(daily): FRED fredgraph ----------
 FRED = {
- 'DGS10': ('taux', 'F2_taux_vol'), 'DGS2': ('taux', 'F2_taux_vol'), 'DFII10': ('taux_reel', 'F2_taux_vol'),
+ 'DGS10': ('taux_10a', 'F2_taux_vol'), 'DGS2': ('taux_court_3m_proxy', 'F2_taux_vol'), 'DFII10': ('taux_reel', 'F2_taux_vol'),
  'VIXCLS': ('vix', 'F2_taux_vol'), 'DTWEXBGS': ('dollar_broad', 'F1_dollar'), 'DEXUSEU': ('eurusd', 'F1_dollar'),
  'DEXJPUS': ('usdjpy', 'F1_dollar'), 'SP500': ('spx', 'F6_contexte'), 'DCOILWTICO': ('wti', 'F6_contexte')}
 YAHOO_FALLBACK = {'DGS10': '^TNX', 'VIXCLS': '^VIX', 'DTWEXBGS': 'DX-Y.NYB', 'DEXUSEU': 'EURUSD=X', 'DEXJPUS': 'JPY=X', 'SP500': '^GSPC', 'DCOILWTICO': 'CL=F', 'DGS2': '^IRX'}

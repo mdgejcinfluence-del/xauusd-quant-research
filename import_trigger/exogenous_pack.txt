@@ -1,3 +1,4 @@
 exogenous_pack seq101 ingenierie seule
 run2 FRED retries
 run3 fallback Yahoo FRED
+run4 upload corrige + taux distincts
