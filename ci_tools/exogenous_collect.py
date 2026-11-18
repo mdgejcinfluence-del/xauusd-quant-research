@@ -12,12 +12,12 @@ OOS_END = pd.Timestamp('2023-12-31 23:59:59', tz='UTC')
 LOG = []
 def log(m): print(m, flush=True); LOG.append(m)
 def sha(b): return hashlib.sha256(b).hexdigest()
-def get(url, timeout=60):
+def get(url, timeout=30, essais=2):
     import time
     last=None
-    for essai in range(4):
+    for essai in range(essais):
         try:
-            r = requests.get(url, timeout=max(timeout,120), headers={'User-Agent': 'Mozilla/5.0 (META ALPHA data engineering)'})
+            r = requests.get(url, timeout=timeout, headers={'User-Agent': 'Mozilla/5.0 (META ALPHA data engineering)'})
             r.raise_for_status(); return r.content
         except Exception as e:
             last=e; print(f'reessai {essai+1} {url[:60]}: {type(e).__name__}', flush=True); time.sleep(15*(essai+1))
@@ -40,6 +40,7 @@ FRED = {
  'DGS10': ('taux', 'F2_taux_vol'), 'DGS2': ('taux', 'F2_taux_vol'), 'DFII10': ('taux_reel', 'F2_taux_vol'),
  'VIXCLS': ('vix', 'F2_taux_vol'), 'DTWEXBGS': ('dollar_broad', 'F1_dollar'), 'DEXUSEU': ('eurusd', 'F1_dollar'),
  'DEXJPUS': ('usdjpy', 'F1_dollar'), 'SP500': ('spx', 'F6_contexte'), 'DCOILWTICO': ('wti', 'F6_contexte')}
+YAHOO_FALLBACK = {'DGS10': '^TNX', 'VIXCLS': '^VIX', 'DTWEXBGS': 'DX-Y.NYB', 'DEXUSEU': 'EURUSD=X', 'DEXJPUS': 'JPY=X', 'SP500': '^GSPC', 'DCOILWTICO': 'CL=F', 'DGS2': '^IRX'}
 for sid, (nom, fam) in FRED.items():
     try:
         raw = get(f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}')
@@ -49,7 +50,21 @@ for sid, (nom, fam) in FRED.items():
         register(f'fred_{nom}', d[['reference_date', 'available_at_utc', 'value']], f'FRED fredgraph id={sid}', 'daily',
                  'reference_date + 1 jour 00:00 UTC (conservateur: connaissable le lendemain)', fam)
     except Exception as e:
-        log(f'ECHEC FRED {sid}: {type(e).__name__} {str(e)[:120]}'); meta[f'fred_{nom}'] = {'source': f'FRED {sid}', 'statut': 'ECHEC COLLECTE', 'motif': str(e)[:200]}
+        log(f'ECHEC FRED {sid}: {type(e).__name__} {str(e)[:120]}')
+        sym = YAHOO_FALLBACK.get(sid)
+        if sym:
+            try:
+                raw = get(f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=30y&interval=1d')
+                j = json.loads(raw)['chart']['result'][0]; q = j['indicators']['quote'][0]
+                d = pd.DataFrame({'reference_date': pd.to_datetime(j['timestamp'], unit='s', utc=True).date, 'value': q['close']})
+                d = d.dropna()
+                d['available_at_utc'] = pd.to_datetime(d.reference_date, utc=True) + pd.Timedelta(days=1)
+                register(f'fred_{nom}', d[['reference_date', 'available_at_utc', 'value']], f'Yahoo chart {sym} (fallback FRED consigne; FRED injoignable depuis CI)', 'daily',
+                         'reference_date + 1 jour 00:00 UTC (conservateur)', fam)
+                continue
+            except Exception as e2:
+                log(f'ECHEC fallback Yahoo {sid}: {str(e2)[:100]}')
+        meta[f'fred_{nom}'] = {'source': f'FRED {sid}', 'statut': 'ECHEC COLLECTE', 'motif': str(e)[:200]}
 
 # ---------- Famille 3: volume futures Stooq -> fallback Yahoo ----------
 def stooq(sym, nom, fam):
