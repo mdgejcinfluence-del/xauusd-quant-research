@@ -1117,6 +1117,25 @@
     "resultat": "3 datasets Kaggle all_ok=true (is EXPOSE 12 fichiers, oos/holdout SCELLES 11); audit anti-fuite PASSE (max available_at expose 2020-01-18 <= borne); familles: dollar/taux/VIX/SPX/WTI daily (Yahoo, FRED injoignable CI consigne), GC/SI OHLCV, COT or 880 semaines; NON collectes consignes: DFII10, GVZ, calendrier macro PIT (cle ALFRED absente), flux GLD/IAU; 0 essai consomme; STOP - aucune analyse"
    },
    "entry_hash": "b5c3dcf763efb76a40602cc699d46d81cd0f5d70897bfb023a2413d2a0eeaf7a"
+  },
+  {
+   "seq": 103,
+   "prev_hash": "b5c3dcf763efb76a40602cc699d46d81cd0f5d70897bfb023a2413d2a0eeaf7a",
+   "entry": {
+    "type": "MISSION",
+    "mission": "EXOGENOUS_PACK_COMPLETION",
+    "ordre": "proprietaire 2026-11-13 - complete le pack seq102: C1 calendrier macro PIT ALFRED (PAYEMS, UNRATE, CPIAUCSL/CPIAUCNS, PCEPI/PCEPILFE, GDP, ICSA, DFEDTARU/L+FEDFUNDS) avec available_at = vintage + heure de publication convertie America/New_York date par date (DST, jamais decalage fixe), table evenements FOMC (J2 14:00 ET); C2 DFII10 + GVZCLS via FRED, upgrade DGS10/DGS2 officiels si canal FRED OK (proxys Yahoo seq102 conserves au manifeste); C3 GLD/IAU cloture definitive (volume != flux, substitut interdit); FRED_API_KEY desormais en secret CI (jamais affichee/loguee/versionnee); canaux: 1 GitHub Actions, 2 kernel Kaggle si IP bloquees, bascule consignee; integration aux 3 datasets scelles par available_at_utc, VERIFY integral all_ok=true, audit anti-fuite rejoue (<=2020-01-20T09:36:27); INGENIERIE SEULE: 0 analyse, 0 essai (budgets tick 148/150, panel 28/60 figes); STOP apres certification"
+   },
+   "entry_hash": "c0c8dca85c11b9b32957889d09019f1c7ac5d08d677d108e5a1d231cba4e83ae"
+  },
+  {
+   "seq": 104,
+   "prev_hash": "c0c8dca85c11b9b32957889d09019f1c7ac5d08d677d108e5a1d231cba4e83ae",
+   "entry": {
+    "type": "NOTE",
+    "note": "C3 GLD/IAU clos definitivement: flux non certifiables gratuitement; le volume daily GLD existe mais volume != flux - interdiction absolue de substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable"
+   },
+   "entry_hash": "b35685d8999b55d734a25daca53081124dd0208b39068558f7e45854891801a9"
   }
  ]
 }

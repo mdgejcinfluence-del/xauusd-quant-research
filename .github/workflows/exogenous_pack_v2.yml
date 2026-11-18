@@ -1,0 +1,40 @@
+name: Exogenous Pack Completion (seq 103, ingenierie seule)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/exogenous_pack_v2.txt"]
+  workflow_dispatch: {}
+permissions: { contents: write }
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q pandas pyarrow requests kaggle six
+      - name: Verifier la chaine avant calcul
+        run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
+      - name: Regenerer les dossiers v1 (seq102) dans ce job
+        run: python3 ci_tools/exogenous_collect.py
+      - name: Completion C1/C2/C3 (FRED_API_KEY jamais affichee)
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python3 ci_tools/exogenous_complete.py
+      - name: Publication Kaggle scellee par perimetre (datasets complets)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+        run: python3 ci_tools/exogenous_upload.py
+      - name: Commit certification (toujours)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/exogenous || true
+          git diff --cached --quiet && exit 0
+          git commit -m "EXOGENOUS PACK COMPLETION: manifestes, VERIFY (bruts)"
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
