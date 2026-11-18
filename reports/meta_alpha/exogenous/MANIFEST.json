@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 20:47:09.614678+00:00",
+ "genere_utc": "2026-11-18 22:09:24.203221+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -116,10 +116,10 @@
    "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
    "famille": "F6_contexte",
    "plage_reference": [
-    "1996-11-18 00:00:00+00:00",
+    "1996-11-19 00:00:00+00:00",
     "2026-11-18 00:00:00+00:00"
    ],
-   "lignes": 7548,
+   "lignes": 7547,
    "manquants_par_colonne": {
     "reference_date": 0,
     "available_at_utc": 0,
@@ -213,9 +213,7 @@
    }
   },
   "macro_calendrier_pit": {
-   "source": "ALFRED vintage (fred.stlouisfed.org)",
-   "statut": "NON COLLECTE \u2014 aucune exposition",
-   "motif": "les dates de vintage ALFRED exigent une cle API FRED (gratuite mais personnelle, absente des secrets CI); toute approximation de available_at violerait la regle anti-revision du \u00a73. Champs laisses vides, aucune imputation. A collecter des que le proprietaire fournit une cle API FRED en secret CI."
+   "statut": "SUPERSEDE par la completion seq103 (series macro_*_pit ALFRED ci-dessus)"
   },
   "etf_gld_iau_shares": {
    "statut": "CLOTURE DEFINITIVE (C3, seq104)",
@@ -223,59 +221,165 @@
    "interdiction": "le volume daily GLD existe mais volume != flux: interdiction absolue de l utiliser comme substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable"
   },
   "macro_payems_pit": {
-   "source": "ALFRED PAYEMS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=PAYEMS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 3917,
+   "vintages": 231,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-02-06",
+    "2026-11-06"
+   ]
   },
   "macro_unrate_pit": {
-   "source": "ALFRED UNRATE",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=UNRATE (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 2209,
+   "vintages": 231,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-02-06",
+    "2026-11-06"
+   ]
   },
   "macro_cpiaucsl_pit": {
-   "source": "ALFRED CPIAUCSL",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=CPIAUCSL (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 2932,
+   "vintages": 243,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-02-20",
+    "2026-11-10"
+   ]
   },
   "macro_cpiaucns_pit": {
-   "source": "ALFRED CPIAUCNS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=CPIAUCNS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 2035,
+   "vintages": 230,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-02-20",
+    "2026-11-10"
+   ]
   },
   "macro_pcepi_pit": {
-   "source": "ALFRED PCEPI",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=PCEPI (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 3766,
+   "vintages": 229,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-09-01"
+   ],
+   "plage_vintage": [
+    "2009-03-02",
+    "2026-10-29"
+   ]
   },
   "macro_pcepilfe_pit": {
-   "source": "ALFRED PCEPILFE",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=PCEPILFE (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 3764,
+   "vintages": 229,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-09-01"
+   ],
+   "plage_vintage": [
+    "2009-03-02",
+    "2026-10-29"
+   ]
   },
   "macro_gdp_pit": {
-   "source": "ALFRED GDP",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=GDP (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 1207,
+   "vintages": 225,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-07-01"
+   ],
+   "plage_vintage": [
+    "2009-04-29",
+    "2026-10-29"
+   ]
   },
   "macro_icsa_pit": {
-   "source": "ALFRED ICSA",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=ICSA (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 13172,
+   "vintages": 923,
+   "plage_reference": [
+    "2009-01-03",
+    "2026-11-07"
+   ],
+   "plage_vintage": [
+    "2009-05-28",
+    "2026-11-12"
+   ]
   },
   "macro_dfedtaru_pit": {
-   "source": "ALFRED DFEDTARU",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  The series does not exist in ALFRED but may exist in FRED.  Try setting realtime_start and realtime_end to today's date or removing the realtime_start and realtime_end var"
+   "source": "FRED API DFEDTARU (ALFRED: serie absente, message FRED consigne au journal)",
+   "frequence": "daily (borne cible, change aux decisions)",
+   "convention_available_at": "jour de decision 14:00 America/New_York converti UTC date par date (DST)",
+   "note_pit": "serie d evenement de politique monetaire (valeur fixee par le communique FOMC, non revisee); pas de panel de vintages ALFRED disponible",
+   "lignes": 6531,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-11-18"
+   ]
   },
   "macro_dfedtarl_pit": {
-   "source": "ALFRED DFEDTARL",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=DFEDTARL (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 14:00 America/New_York converti UTC date par date (DST)",
+   "lignes": 62391,
+   "vintages": 5170,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-11-18"
+   ],
+   "plage_vintage": [
+    "2009-01-02",
+    "2026-11-18"
+   ]
   },
   "macro_fedfunds_pit": {
-   "source": "ALFRED FEDFUNDS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless it's equal to the real-time max date 9999-12-31."
+   "source": "ALFRED/FRED API series_id=FEDFUNDS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 14:00 America/New_York converti UTC date par date (DST)",
+   "lignes": 2035,
+   "vintages": 233,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-02-02",
+    "2026-11-02"
+   ]
   },
   "fred_dfii10_officiel": {
    "source": "FRED API series_id=DFII10 (officiel, remplace le proxy Yahoo seq102 comme reference primaire)",
@@ -343,12 +447,12 @@
   "ECHEC FRED DEXJPUS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_usdjpy: 7783 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED SP500: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_spx: 7548 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "OK fred_spx: 7547 lignes 1996-11-19 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_wti: 6589 lignes 2000-08-23 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
-  "ECHEC Stooq gc.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
+  "ECHEC Stooq gc.f: HTTPSConnectionPool(host='stooq.com', port=443): Max retries exceeded with url: /q/d/l/?s=gc.f&i=d (Caused by ConnectTim \u2014 fallback Yahoo",
   "OK comex_gc_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
-  "ECHEC Stooq si.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
+  "ECHEC Stooq si.f: HTTPSConnectionPool(host='stooq.com', port=443): Max retries exceeded with url: /q/d/l/?s=si.f&i=d (Caused by ConnectTim \u2014 fallback Yahoo",
   "OK comex_si_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "COT 2010: 52 semaines or",
   "COT 2011: 52 semaines or",
@@ -370,7 +474,7 @@
   "OK cftc_cot_gold_disagg: 880 lignes 2010-01-05 00:00:00+00:00 -> 2026-11-10 00:00:00+00:00"
  ],
  "completion_seq103": {
-  "genere_utc": "2026-11-18 21:45:19.709307+00:00",
+  "genere_utc": "2026-11-18 22:15:48.366609+00:00",
   "journal": [
    "PAYEMS: millesime 2009 traite (cumule 30 versions)",
    "PAYEMS: millesime 2010 traite (cumule 91 versions)",
@@ -389,12 +493,8 @@
    "PAYEMS: millesime 2023 traite (cumule 2814 versions)",
    "PAYEMS: millesime 2024 traite (cumule 3153 versions)",
    "PAYEMS: millesime 2025 traite (cumule 3559 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT PAYEMS: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "PAYEMS: millesime 2026 traite (cumule 3917 versions)",
+   "OK macro_payems_pit: 3917 obs, 231 vintages",
    "UNRATE: millesime 2009 traite (cumule 11 versions)",
    "UNRATE: millesime 2010 traite (cumule 38 versions)",
    "UNRATE: millesime 2011 traite (cumule 80 versions)",
@@ -412,12 +512,8 @@
    "UNRATE: millesime 2023 traite (cumule 1567 versions)",
    "UNRATE: millesime 2024 traite (cumule 1776 versions)",
    "UNRATE: millesime 2025 traite (cumule 1988 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT UNRATE: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "UNRATE: millesime 2026 traite (cumule 2209 versions)",
+   "OK macro_unrate_pit: 2209 obs, 231 vintages",
    "CPIAUCSL: millesime 2009 traite (cumule 11 versions)",
    "CPIAUCSL: millesime 2010 traite (cumule 46 versions)",
    "CPIAUCSL: millesime 2011 traite (cumule 105 versions)",
@@ -435,12 +531,8 @@
    "CPIAUCSL: millesime 2023 traite (cumule 2147 versions)",
    "CPIAUCSL: millesime 2024 traite (cumule 2398 versions)",
    "CPIAUCSL: millesime 2025 traite (cumule 2660 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT CPIAUCSL: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "CPIAUCSL: millesime 2026 traite (cumule 2932 versions)",
+   "OK macro_cpiaucsl_pit: 2932 obs, 243 vintages",
    "CPIAUCNS: millesime 2009 traite (cumule 11 versions)",
    "CPIAUCNS: millesime 2010 traite (cumule 34 versions)",
    "CPIAUCNS: millesime 2011 traite (cumule 69 versions)",
@@ -458,12 +550,8 @@
    "CPIAUCNS: millesime 2023 traite (cumule 1429 versions)",
    "CPIAUCNS: millesime 2024 traite (cumule 1620 versions)",
    "CPIAUCNS: millesime 2025 traite (cumule 1822 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT CPIAUCNS: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "CPIAUCNS: millesime 2026 traite (cumule 2035 versions)",
+   "OK macro_cpiaucns_pit: 2035 obs, 230 vintages",
    "PCEPI: millesime 2009 traite (cumule 40 versions)",
    "PCEPI: millesime 2010 traite (cumule 113 versions)",
    "PCEPI: millesime 2011 traite (cumule 211 versions)",
@@ -481,12 +569,8 @@
    "PCEPI: millesime 2023 traite (cumule 2873 versions)",
    "PCEPI: millesime 2024 traite (cumule 3163 versions)",
    "PCEPI: millesime 2025 traite (cumule 3458 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT PCEPI: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "PCEPI: millesime 2026 traite (cumule 3766 versions)",
+   "OK macro_pcepi_pit: 3766 obs, 229 vintages",
    "PCEPILFE: millesime 2009 traite (cumule 41 versions)",
    "PCEPILFE: millesime 2010 traite (cumule 115 versions)",
    "PCEPILFE: millesime 2011 traite (cumule 213 versions)",
@@ -504,12 +588,8 @@
    "PCEPILFE: millesime 2023 traite (cumule 2872 versions)",
    "PCEPILFE: millesime 2024 traite (cumule 3161 versions)",
    "PCEPILFE: millesime 2025 traite (cumule 3456 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT PCEPILFE: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "PCEPILFE: millesime 2026 traite (cumule 3764 versions)",
+   "OK macro_pcepilfe_pit: 3764 obs, 229 vintages",
    "GDP: millesime 2009 traite (cumule 10 versions)",
    "GDP: millesime 2010 traite (cumule 29 versions)",
    "GDP: millesime 2011 traite (cumule 57 versions)",
@@ -527,12 +607,8 @@
    "GDP: millesime 2023 traite (cumule 922 versions)",
    "GDP: millesime 2024 traite (cumule 1014 versions)",
    "GDP: millesime 2025 traite (cumule 1108 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT GDP: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "GDP: millesime 2026 traite (cumule 1207 versions)",
+   "OK macro_gdp_pit: 1207 obs, 225 vintages",
    "ICSA: millesime 2009 traite (cumule 85 versions)",
    "ICSA: millesime 2010 traite (cumule 309 versions)",
    "ICSA: millesime 2011 traite (cumule 634 versions)",
@@ -550,18 +626,15 @@
    "ICSA: millesime 2023 traite (cumule 9913 versions)",
    "ICSA: millesime 2024 traite (cumule 10981 versions)",
    "ICSA: millesime 2025 traite (cumule 12051 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT ICSA: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "ICSA: millesime 2026 traite (cumule 13172 versions)",
+   "OK macro_icsa_pit: 13172 obs, 923 vintages",
    "retry 1 /series/observations: ValueError",
    "retry 2 /series/observations: ValueError",
    "retry 3 /series/observations: ValueError",
    "retry 4 /series/observations: ValueError",
    "retry 5 /series/observations: ValueError",
    "ECHEC PIT DFEDTARU: ValueError FRED HTTP 400: Bad Request.  The series does not exist in ALFRED but may exist in FRED.  Try setting",
+   "OK macro_dfedtaru_pit (repli documente): 6531 lignes",
    "DFEDTARL: millesime 2009 traite (cumule 364 versions)",
    "DFEDTARL: millesime 2010 traite (cumule 1093 versions)",
    "DFEDTARL: millesime 2011 traite (cumule 2186 versions)",
@@ -579,12 +652,8 @@
    "DFEDTARL: millesime 2023 traite (cumule 43807 versions)",
    "DFEDTARL: millesime 2024 traite (cumule 49651 versions)",
    "DFEDTARL: millesime 2025 traite (cumule 55860 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT DFEDTARL: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "DFEDTARL: millesime 2026 traite (cumule 62391 versions)",
+   "OK macro_dfedtarl_pit: 62391 obs, 5170 vintages",
    "FEDFUNDS: millesime 2009 traite (cumule 11 versions)",
    "FEDFUNDS: millesime 2010 traite (cumule 34 versions)",
    "FEDFUNDS: millesime 2011 traite (cumule 71 versions)",
@@ -602,12 +671,8 @@
    "FEDFUNDS: millesime 2023 traite (cumule 1427 versions)",
    "FEDFUNDS: millesime 2024 traite (cumule 1618 versions)",
    "FEDFUNDS: millesime 2025 traite (cumule 1821 versions)",
-   "retry 1 /series/observations: ValueError",
-   "retry 2 /series/observations: ValueError",
-   "retry 3 /series/observations: ValueError",
-   "retry 4 /series/observations: ValueError",
-   "retry 5 /series/observations: ValueError",
-   "ECHEC PIT FEDFUNDS: ValueError FRED HTTP 400: Bad Request.  Variable realtime_end can not be after today's date (2026-11-18) unless",
+   "FEDFUNDS: millesime 2026 traite (cumule 2035 versions)",
+   "OK macro_fedfunds_pit: 2035 obs, 233 vintages",
    "OK fred_dfii10_officiel: 5973 lignes",
    "OK fred_gvz_officiel: 4647 lignes",
    "OK fred_dgs10_officiel: 5973 lignes",
@@ -648,39 +713,73 @@
    "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
    "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
    "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC archives 2010: longueur html=89979",
    "FOMC archives 2010 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2010: longueur html=82310",
    "FOMC archives 2010 /fomcminutes2010index.htm: +0 (cumule 0)",
+   "FOMC archives 2011: longueur html=89979",
    "FOMC archives 2011 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2011: longueur html=82310",
    "FOMC archives 2011 /fomcminutes2011index.htm: +0 (cumule 0)",
+   "FOMC archives 2012: longueur html=89979",
    "FOMC archives 2012 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2012: longueur html=82310",
    "FOMC archives 2012 /fomcminutes2012index.htm: +0 (cumule 0)",
+   "FOMC archives 2013: longueur html=89979",
    "FOMC archives 2013 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2013: longueur html=82310",
    "FOMC archives 2013 /fomcminutes2013index.htm: +0 (cumule 0)",
+   "FOMC archives 2014: longueur html=89979",
    "FOMC archives 2014 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2014: longueur html=82310",
    "FOMC archives 2014 /fomcminutes2014index.htm: +0 (cumule 0)",
+   "FOMC archives 2015: longueur html=89979",
    "FOMC archives 2015 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2015: longueur html=82310",
    "FOMC archives 2015 /fomcminutes2015index.htm: +0 (cumule 0)",
+   "FOMC archives 2016: longueur html=89979",
    "FOMC archives 2016 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2016: longueur html=82310",
    "FOMC archives 2016 /fomcminutes2016index.htm: +0 (cumule 0)",
+   "FOMC archives 2017: longueur html=89979",
    "FOMC archives 2017 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2017: longueur html=82310",
    "FOMC archives 2017 /fomcminutes2017index.htm: +0 (cumule 0)",
+   "FOMC archives 2018: longueur html=89979",
    "FOMC archives 2018 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2018: longueur html=82310",
    "FOMC archives 2018 /fomcminutes2018index.htm: +0 (cumule 0)",
+   "FOMC archives 2019: longueur html=89979",
    "FOMC archives 2019 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2019: longueur html=82310",
    "FOMC archives 2019 /fomcminutes2019index.htm: +0 (cumule 0)",
+   "FOMC archives 2020: longueur html=89979",
    "FOMC archives 2020 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2020: longueur html=82310",
    "FOMC archives 2020 /fomcminutes2020index.htm: +0 (cumule 0)",
+   "FOMC archives 2021: longueur html=89979",
    "FOMC archives 2021 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2021: longueur html=82310",
    "FOMC archives 2021 /fomcminutes2021index.htm: +0 (cumule 0)",
+   "FOMC archives 2022: longueur html=89979",
    "FOMC archives 2022 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2022: longueur html=82310",
    "FOMC archives 2022 /fomcminutes2022index.htm: +0 (cumule 0)",
+   "FOMC archives 2023: longueur html=89979",
    "FOMC archives 2023 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2023: longueur html=82310",
    "FOMC archives 2023 /fomcminutes2023index.htm: +0 (cumule 0)",
+   "FOMC archives 2024: longueur html=89979",
    "FOMC archives 2024 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2024: longueur html=82310",
    "FOMC archives 2024 /fomcminutes2024index.htm: +0 (cumule 0)",
+   "FOMC archives 2025: longueur html=89979",
    "FOMC archives 2025 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2025: longueur html=82310",
    "FOMC archives 2025 /fomcminutes2025index.htm: +0 (cumule 0)",
+   "FOMC archives 2026: longueur html=89979",
    "FOMC archives 2026 /fomc_historical_year.htm?year: +0 (cumule 0)",
+   "FOMC archives 2026: longueur html=82310",
    "FOMC archives 2026 /fomcminutes2026index.htm: +0 (cumule 0)",
    "OK fomc_events: 104 reunions"
   ],
