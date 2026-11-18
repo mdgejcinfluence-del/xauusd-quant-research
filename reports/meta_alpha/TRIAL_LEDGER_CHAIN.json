@@ -480,6 +480,18 @@
     "sha256": "dc89344206ca5a430d33f87e796f0d66d161d6f19d771ae23b19b90d29170da0"
    },
    "entry_hash": "850a77af1bab468291762981924db35f06fec19de31cc28aa2bf80838f1070f3"
+  },
+  {
+   "seq": 45,
+   "prev_hash": "850a77af1bab468291762981924db35f06fec19de31cc28aa2bf80838f1070f3",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "SPREAD_EPISODES_CYCLES",
+    "run": 44250684673,
+    "verdict": "episodes larges rares/brefs, serres structurels en regime recent (21-37% vs 0.68%); samedi absent/dimanche partiel (flux); couplage vol-spread desaisonnalise ~0 contemporain et symetrique: elargissement differe REFUTE en l etat",
+    "ref": "spread_episodes/EPISODES_SYNTHESIS.json"
+   },
+   "entry_hash": "c779297e576e8b0f444057c4eb5700154a340803505d53176c1de71d764f4a1c"
   }
  ]
 }

@@ -42,6 +42,12 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 - Apres une barre EVT100 extreme (26 582): suite +1 barre +0.22 bp de signe incoherent entre regimes (bilateral +0.66, autres -0.24): rien de qualifiable.
 - Qualification: aucune hypothese de strategie justifiee; resultats negatifs/conditionnels consignes.
 
+## Cycles et episodes (cycle actuel)
+- Jour de semaine (flux observe): lun-ven ~identiques; samedi absent; dimanche partiel a spread large (3.51 bp). Aucune session officielle supposee.
+- Spread annuel: 3.97 bp (2010) -> 1.83-2.09 bp (2017-2019); activite x3.
+- Episodes de spread (seuils fixes 6/2 bp): larges rares et brefs (0.02-0.10% des ticks, 2-4 evenements); serres structurellement frequents en regime recent (21-37% des ticks vs 0.68%).
+- Couplage vol/spread desaisonnalise: contemporain ~0 (-0.029); decalage symetrique ~+0.15 = persistance, pas de mecanisme differe demontre. L'hypothese d'elargissement differe est REFUTEE en l'etat (confondu diurne).
+
 ## Prochaines investigations (decidees en autonomie, perimetre IS)
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).
