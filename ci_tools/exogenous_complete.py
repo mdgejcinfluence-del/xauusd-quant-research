@@ -161,7 +161,8 @@ def fomc_events_archives():
     d'archives federalreserve.gov (la date du lien = jour 2 de reunion). Aucune date inventee."""
     ev = {}
     for y in range(2010, 2027):
-        for url in [f'https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm?year={y}',
+        for url in [f'https://www.federalreserve.gov/monetarypolicy/fomchistorical{y}.htm',
+                    f'https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm?year={y}',
                     f'https://www.federalreserve.gov/monetarypolicy/fomcminutes{y}index.htm']:
             try:
                 html = requests.get(url, timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text

@@ -4,3 +4,4 @@ run3 ALFRED natif toutes-vintages
 run4 DFEDTAR annuel + FOMC archives
 run5 realtime_end borne + FOMC communiques + verify attente egalite
 run6 FOMC calendar.json officiel
+run7 FOMC fomchistorical par annee
