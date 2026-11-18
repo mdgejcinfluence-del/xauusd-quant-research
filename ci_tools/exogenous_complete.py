@@ -52,23 +52,25 @@ H_PUB = {'PAYEMS': (8, 30), 'UNRATE': (8, 30), 'CPIAUCSL': (8, 30), 'CPIAUCNS': 
 frames, meta = {}, {}
 
 def pit_series(sid):
+    """ALFRED natif: un appel toutes-vintages; chaque ligne = une VERSION d'observation,
+    vintage_date = realtime_start (date d'apparition de cette version). Point-in-time exact,
+    sans requeter l'historique complet a chaque vintage (run2: timeout 300 min, consigne)."""
     h, mnt = H_PUB[sid]
-    j = api_get('/series/vintagedates', {'series_id': sid})
-    vds = [dt.date.fromisoformat(v) for v in j.get('vintage_dates', [])]
-    vds = [v for v in vds if v >= dt.date(2009, 6, 1)]
-    log(f'{sid}: {len(vds)} vintages a interroger (depuis 2009-06)')
-    rows = []
-    for i, v in enumerate(vds):
-        o = api_get('/series/observations', {'series_id': sid, 'realtime_start': str(v), 'realtime_end': str(v),
-                                             'observation_start': '2009-01-01', 'limit': 100000})
-        av = dispo(v, h, mnt)
-        for ob in o.get('observations', []):
+    rows, offset = [], 0
+    while True:
+        o = api_get('/series/observations', {'series_id': sid, 'realtime_start': '2009-06-01',
+                                             'realtime_end': '9999-12-31', 'observation_start': '2009-01-01',
+                                             'limit': 100000, 'offset': offset})
+        obs = o.get('observations', [])
+        for ob in obs:
             if ob['value'] != '.':
-                rows.append((ob['date'], str(v), av, float(ob['value'])))
-        if (i + 1) % 50 == 0: log(f'{sid}: {i+1}/{len(vds)} vintages')
+                v = dt.date.fromisoformat(ob['realtime_start'])
+                rows.append((ob['date'], str(v), dispo(v, h, mnt), float(ob['value'])))
+        offset += len(obs)
+        log(f'{sid}: {offset}/{o.get("count", "?")} versions')
+        if len(obs) < 100000: break
         time.sleep(0.55)
-    d = pd.DataFrame(rows, columns=['reference_date', 'vintage_date', 'available_at_utc', 'value'])
-    return d
+    return pd.DataFrame(rows, columns=['reference_date', 'vintage_date', 'available_at_utc', 'value'])
 
 if KEY:
     for sid in H_PUB:
