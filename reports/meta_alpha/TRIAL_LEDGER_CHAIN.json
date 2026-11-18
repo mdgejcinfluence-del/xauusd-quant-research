@@ -460,6 +460,26 @@
     "ref": "META_ALPHA_VOL_HOURLY_REPORT.md"
    },
    "entry_hash": "a7a026b3c7c2a9a6d8a22381df451dbf08f4f3e56ae8473eb04f30ac3b2e695e"
+  },
+  {
+   "seq": 43,
+   "prev_hash": "a7a026b3c7c2a9a6d8a22381df451dbf08f4f3e56ae8473eb04f30ac3b2e695e",
+   "entry": {
+    "type": "MISSION",
+    "id": "SPREAD_EPISODES",
+    "perimetre": "IS 282 via Kaggle; episodes spread >6bp / <2bp (seuils fixes), durees evenements et secondes"
+   },
+   "entry_hash": "7455757f76488ba9acc28e502d1c1be08f38417db463be2be7804b7f48004b7b"
+  },
+  {
+   "seq": 44,
+   "prev_hash": "7455757f76488ba9acc28e502d1c1be08f38417db463be2be7804b7f48004b7b",
+   "entry": {
+    "type": "REGISTRY_LOCK",
+    "registry": "reports/meta_alpha/spread_episodes/EPISODES_PREREG.json",
+    "sha256": "dc89344206ca5a430d33f87e796f0d66d161d6f19d771ae23b19b90d29170da0"
+   },
+   "entry_hash": "850a77af1bab468291762981924db35f06fec19de31cc28aa2bf80838f1070f3"
   }
  ]
 }
