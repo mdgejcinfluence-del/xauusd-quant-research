@@ -5,11 +5,11 @@
    "taille": 24383
   },
   "comex_gc_ohlcv.parquet": {
-   "sha256": "1d246cfb539316ffa90ab7eac6f6e7fc4d6488e0fe6407cfcc6aebd4748cefd6",
+   "sha256": "da5860ff11849e183a80a2078e68c3d506114d1cea18c02a3083a0835757b860",
    "taille": 40280
   },
   "comex_si_ohlcv.parquet": {
-   "sha256": "817f5858cd3b81348420a1543b032d706b28ad56031a6293a7d0d40ace6adca1",
+   "sha256": "bb9fc665f68b031b8fdc30e4f5954c172cf93dfc6891b75552f43869f8dcd9c2",
    "taille": 38865
   },
   "fomc_events.parquet": {
@@ -29,11 +29,11 @@
    "taille": 16027
   },
   "fred_dollar_broad.parquet": {
-   "sha256": "e5232e8083814c391d5503bc01c30850efc4a402d3c7ce6423951dd36d670589",
+   "sha256": "c8ec3837816624751e386317ac98c7c9c6a670533878e505ea509be0c314930b",
    "taille": 17893
   },
   "fred_eurusd.parquet": {
-   "sha256": "8fe121f58aa3b7f19518b74563319dc79800d48cd88e87c224f38391d75c68d3",
+   "sha256": "efcc96554a557b3b7d9e10d42f0c3dbf7f2c7ba59f0ee8ec544b18761c7b1738",
    "taille": 19178
   },
   "fred_gvz_officiel.parquet": {
@@ -53,7 +53,7 @@
    "taille": 16565
   },
   "fred_usdjpy.parquet": {
-   "sha256": "15adf1578c472848f4e10f80e9af1dd8c4e1361621932aadcceb41948007d4b6",
+   "sha256": "b4a72b2236d4194b05ef2b320b00040aaaf07f419a60e53654a13eef90ab9e10",
    "taille": 19354
   },
   "fred_vix.parquet": {
@@ -61,7 +61,7 @@
    "taille": 18052
   },
   "fred_wti.parquet": {
-   "sha256": "17a26d8f42ec411086db2a472ca6ccce15c3be530b62493dfa89cc9418226b99",
+   "sha256": "8856a4bd97c86502827e308d88fbf5f2603b83f35b2cceee22c74a538fba0629",
    "taille": 18798
   },
   "macro_cpiaucns_pit.parquet": {

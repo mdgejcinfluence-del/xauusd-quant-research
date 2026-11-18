@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 22:09:24.203221+00:00",
+ "genere_utc": "2026-11-18 22:51:33.726306+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -422,12 +422,12 @@
    ]
   },
   "fomc_events": {
-   "source": "federalreserve.gov (calendriers FOMC officiels)",
+   "source": "federalreserve.gov (calendriers FOMC officiels + json/calendar.json officiel)",
    "frequence": "evenement",
    "convention_available_at": "jour 2 de reunion, 14:00 America/New_York converti UTC date par date (DST)",
-   "lignes": 104,
+   "lignes": 129,
    "plage_reference": [
-    "2021-01-27 00:00:00",
+    "2017-02-01 00:00:00",
     "2028-01-26 00:00:00"
    ]
   }
@@ -450,9 +450,9 @@
   "OK fred_spx: 7547 lignes 1996-11-19 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_wti: 6589 lignes 2000-08-23 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
-  "ECHEC Stooq gc.f: HTTPSConnectionPool(host='stooq.com', port=443): Max retries exceeded with url: /q/d/l/?s=gc.f&i=d (Caused by ConnectTim \u2014 fallback Yahoo",
+  "ECHEC Stooq gc.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
   "OK comex_gc_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
-  "ECHEC Stooq si.f: HTTPSConnectionPool(host='stooq.com', port=443): Max retries exceeded with url: /q/d/l/?s=si.f&i=d (Caused by ConnectTim \u2014 fallback Yahoo",
+  "ECHEC Stooq si.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
   "OK comex_si_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "COT 2010: 52 semaines or",
   "COT 2011: 52 semaines or",
@@ -474,7 +474,7 @@
   "OK cftc_cot_gold_disagg: 880 lignes 2010-01-05 00:00:00+00:00 -> 2026-11-10 00:00:00+00:00"
  ],
  "completion_seq103": {
-  "genere_utc": "2026-11-18 22:15:48.366609+00:00",
+  "genere_utc": "2026-11-18 22:57:47.272699+00:00",
   "journal": [
    "PAYEMS: millesime 2009 traite (cumule 30 versions)",
    "PAYEMS: millesime 2010 traite (cumule 91 versions)",
@@ -781,7 +781,8 @@
    "FOMC archives 2026 /fomc_historical_year.htm?year: +0 (cumule 0)",
    "FOMC archives 2026: longueur html=82310",
    "FOMC archives 2026 /fomcminutes2026index.htm: +0 (cumule 0)",
-   "OK fomc_events: 104 reunions"
+   "FOMC calendar.json: 57 reunions",
+   "OK fomc_events: 129 reunions"
   ],
   "note_c2": "versions FRED officielles = reference primaire; proxys Yahoo seq102 conserves et consignes"
  }
