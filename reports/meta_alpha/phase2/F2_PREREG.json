@@ -1,0 +1,12 @@
+{
+ "mission": "F2_ORI - imbalance de revision des quotes -> direction court terme (Phase 2)",
+ "perimetre": "IS 282/282; signal au tick, barres non requises",
+ "definitions_gelees": {
+  "ORI50": "fenetre 50 ticks (E3), serie tick complete",
+  "mesure_signal": "par partition: corr(ORI50, rendement Mid forward 20 et 50 ticks); moyennes de rendement forward par decile d'ORI50 (monotonie)",
+  "grille_instruction": "W x H complete declaree N=12 dans l'instruction; cette passe execute le coeur W=50 x H={20,50} + deciles (les autres W/H restent des essais declares non executes si le coeur est nul - economie du budget d'essais, consigne)",
+  "succes_gele": "IC median (regime recent) >= 0.02, deciles monotones en moyenne, signe stable entre eres; sinon rejet",
+  "essais_declares": 12,
+  "note": "IC tick attendu faible (ac1 recent +0.05); la question est la queue |ORI| elevee - les deciles extremes le diront"
+ }
+}
