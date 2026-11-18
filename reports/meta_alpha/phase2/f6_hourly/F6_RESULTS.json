@@ -1,0 +1,43 @@
+{
+ "note_correction": "v1 alignee sur la meme heure (bug, -|ret| mecanique) rejetee; v2 signal i -> rendement i+1",
+ "inconditionnel": {
+  "2010-2012": {
+   "n": 18508,
+   "moy_bp": -2.73,
+   "sharpe_ann": -9.62
+  },
+  "2013-2015": {
+   "n": 18087,
+   "moy_bp": -2.565,
+   "sharpe_ann": -9.618
+  },
+  "2016-2020": {
+   "n": 23429,
+   "moy_bp": -2.077,
+   "sharpe_ann": -10.293
+  }
+ },
+ "conditionnel": {
+  "2010-2012": {
+   "n": 5527,
+   "moy_bp": -2.049,
+   "sharpe_ann": -6.088
+  },
+  "2013-2015": {
+   "n": 6069,
+   "moy_bp": -2.853,
+   "sharpe_ann": -9.461
+  },
+  "2016-2020": {
+   "n": 8081,
+   "moy_bp": -2.02,
+   "sharpe_ann": -8.457
+  }
+ },
+ "stabilite_recent_3tiers_moy_bp": [
+  -2.159,
+  -1.691,
+  -2.211
+ ],
+ "succes_gele": false
+}

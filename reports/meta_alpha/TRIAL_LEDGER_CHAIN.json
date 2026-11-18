@@ -721,6 +721,38 @@
     "resultat": "{\"modele\": \"AR(2) log-spread horaire, entrainement roulant causal, regime recent\", \"rmse_AR2\": 0.1290901530016159, \"rmse_EWMA\": 0.13109857732047164, \"gain_pct\": 1.5319955104822758, \"succes_gele_gain_10pct\": false, \"n\": 22928}"
    },
    "entry_hash": "2ee02330ca0a68cf4cce49864c2b9b4b1b505fef7aff72f11162ee79e35a2b05"
+  },
+  {
+   "seq": 66,
+   "prev_hash": "2ee02330ca0a68cf4cce49864c2b9b4b1b505fef7aff72f11162ee79e35a2b05",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F6_REVERSION_HORAIRE",
+    "registry": "reports/meta_alpha/phase2/F6_PREREG.json",
+    "sha256": "af7cdcd09cc4266b04d7875af5ac76d8a5d1d56a10e85ac6f30484ad00cc7309",
+    "n_essais": 4
+   },
+   "entry_hash": "88022c61be4c41f5400d0239d2fa5f9fc9d831915ae068ddeeb483403563a91d"
+  },
+  {
+   "seq": 67,
+   "prev_hash": "88022c61be4c41f5400d0239d2fa5f9fc9d831915ae068ddeeb483403563a91d",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F6_REVERSION_HORAIRE",
+    "resultat": "{\"inconditionnel\": {\"2010-2012\": {\"n\": 18508, \"moy_bp\": -17.228426468357444, \"sharpe_ann\": -78.51562235409627}, \"2013-2015\": {\"n\": 18087, \"moy_bp\": -15.151206824523562, \"sharpe_ann\": -71.10414536437051}, \"2016-2020\": {\"n\": 23429, \"moy_bp\": -12.28260141437934, \"sharpe_ann\": -79.67685715985729}}, \"conditionnel\": {\"2010-2012\": {\"n\": 5527, \"moy_bp\": -20.576139626527308, \"sharpe_ann\": -82.59922173194848}, \"2013-2015\": {\"n\": 6069, \"moy_bp\": -17.36917842582559, \"sharpe_ann\": -74.5438293581958}, \"2016-2"
+   },
+   "entry_hash": "4c2075efc54eb10879abcc2e72ebe440b44658916ca40db1eb3b26f38df41e0f"
+  },
+  {
+   "seq": 68,
+   "prev_hash": "4c2075efc54eb10879abcc2e72ebe440b44658916ca40db1eb3b26f38df41e0f",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F6_REVERSION_HORAIRE",
+    "resultat": "v1 bug alignement MEME heure consigne seq67 et REJETE; v2 corrigee (signal i -> i+1): {\"note_correction\": \"v1 alignee sur la meme heure (bug, -|ret| mecanique) rejetee; v2 signal i -> rendement i+1\", \"inconditionnel\": {\"2010-2012\": {\"n\": 18508, \"moy_bp\": -2.73, \"sharpe_ann\": -9.62}, \"2013-2015\": {\"n\": 18087, \"moy_bp\": -2.565, \"sharpe_ann\": -9.618}, \"2016-2020\": {\"n\": 23429, \"moy_bp\": -2.077, \"sharpe_ann\": -10.293}}, \"conditionnel\": {\"2010-2012\": {\"n\": 5527, \"moy_bp\": -2.049, \"sharp"
+   },
+   "entry_hash": "1f25ecff008b1fb103cdb6ac5df5799def8a760612211f6e0bac796a7b6b2369"
   }
  ]
 }

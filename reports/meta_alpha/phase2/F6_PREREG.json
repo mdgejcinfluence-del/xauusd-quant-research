@@ -1,0 +1,8 @@
+{
+ "mission": "F6_REVERSION_HORAIRE - ac1 3600s conditionnel (Phase 2)",
+ "perimetre": "serie horaire IS 60 025 h; couts: spread horaire de l'heure d'entree (executable approche: rendement Mid horaire - spread a l'entree), scenarios C1/C2 = spread x1 / x1+slippage declare inconnu -> presente en bp nets de spread, CONDITIONNEL commission/slippage (config seq55)",
+ "strategie_gelee": "position = -signe(rendement horaire ecoule); conditions: spread_state causal (quantile passe strict 500 h) <= 0.25 ET vol_state (quantile RV passee) <= 0.75 ET heure UTC 13-20",
+ "mesure": "rendement net bp par trade, Sharpe annualise (x sqrt(24*252)), par ere, stabilite 3 sous-periodes du regime recent",
+ "succes_gele": "Sharpe net >= 0.5, stabilite de signe 3/3; N essais declares = 4 (conditions on/off comptees dans le registre de famille)",
+ "essais_declares": 4
+}
