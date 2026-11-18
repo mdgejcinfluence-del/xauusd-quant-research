@@ -64,3 +64,12 @@
 SONDE TERMINEE
 calendar ECHEC JSONDecodeError Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
 SONDE2 TERMINEE
+calendars: 47 dates minutes, de ('2021', '01', '27') a ('2026', '10', '28')
+calendars: 48 dates communiques, de ('2021', '01', '27') a ('2026', '10', '28')
+calendar: 2618 evts, FOMC=168
+ex: {'description': '&lt;p&gt;Meeting of December 8-9&lt;/p&gt;', 'title': 'FOMC Minutes', 'time': '2:00 p.m.', 'month': '2026-12', 'days': '30', 'type': 'FOMC'}
+ex: {'description': '&lt;p&gt;Meeting of October 27-28&lt;/p&gt;', 'title': 'FOMC Minutes', 'time': '2:00 p.m.', 'month': '2026-11', 'days': '18', 'type': 'FOMC'}
+ex: {'description': '&lt;p&gt;Two-day meeting, March 14 - 15&lt;br /&gt;&#10;Press Conference&lt;/p&gt;', 'title': 'FOMC Meeting', 'time': '2:00 p.m.', 'month': '2017-03', 'days': '15', 'type': 'FOMC'}
+ex: {'description': '&lt;p&gt;&lt;span&gt;&lt;span&gt;Two-day meeting, January 31 - February 1&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;', 'title': 'FOMC Meeting', 'time': '2:00 p.m.', 'month': '2017-02', 'days': '1', 'type': 'FOMC'}
+calendar FOMC dates: ['', '', ''] ... ['', '', '']
+SONDE3 TERMINEE
