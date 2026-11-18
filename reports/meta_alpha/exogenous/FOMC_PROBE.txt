@@ -73,3 +73,8 @@ ex: {'description': '&lt;p&gt;Two-day meeting, March 14 - 15&lt;br /&gt;&#10;Pre
 ex: {'description': '&lt;p&gt;&lt;span&gt;&lt;span&gt;Two-day meeting, January 31 - February 1&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;', 'title': 'FOMC Meeting', 'time': '2:00 p.m.', 'month': '2017-02', 'days': '1', 'type': 'FOMC'}
 calendar FOMC dates: ['', '', ''] ... ['', '', '']
 SONDE3 TERMINEE
+FOMC Meeting: 73; mois min=2017-02 max=2026-12
+par annee reunion: {'2017': 2, '2018': 8, '2019': 8, '2020': 7, '2021': 8, '2022': 8, '2025': 8, '2026': 8}
+minutes 20151216 liens fomcminutes: ['20151216']
+minutes 20151216 liens monetary: []
+SONDE4 TERMINEE
