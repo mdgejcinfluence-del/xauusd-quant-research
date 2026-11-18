@@ -1,0 +1,8 @@
+{
+ "mission": "E3_MESURES",
+ "run": "44272700522",
+ "sha256": {
+  "reports/meta_alpha/phase2/e3_measures/E3_PARTITION.csv": "2d30de93f92297f8ac81c7da4dcaf9035ece144420099609f87098af7498f57a",
+  "reports/meta_alpha/phase2/e3_measures/E3_SYNTHESIS.json": "c90ccda694f06c1c01c18e76ddbbbbd8c10da69ab87d632f07e004c2b7020903"
+ }
+}

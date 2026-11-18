@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+  File "/home/user/xauusd-quant-research/ci_tools/e4_fwd.py", line 46, in process
+    out += [float(rl.mean()), float(rl.quantile(0.1)), float(rl.quantile(0.9))]
+                                    ^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/series.py", line 3004, in quantile
+    result = df.quantile(q=q, interpolation=interpolation, numeric_only=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/frame.py", line 19729, in quantile
+    res_df = self.quantile(
+             ^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/frame.py", line 19774, in quantile
+    res = data._mgr.quantile(qs=q, interpolation=interpolation)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/internals/managers.py", line 1773, in quantile
+    blocks = [
+             ^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/internals/managers.py", line 1774, in <listcomp>
+    blk.quantile(qs=qs, interpolation=interpolation) for blk in self.blocks
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/internals/blocks.py", line 1620, in quantile
+    result = quantile_compat(self.values, np.asarray(qs._values), interpolation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/array_algos/quantile.py", line 39, in quantile_compat
+    return quantile_with_mask(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/array_algos/quantile.py", line 103, in quantile_with_mask
+    result = _nanquantile(
+             ^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/array_algos/quantile.py", line 204, in _nanquantile
+    result_list = [
+                  ^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/array_algos/quantile.py", line 205, in <listcomp>
+    _nanquantile_1d(val, m, qs, na_value, interpolation=interpolation)
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/pandas/core/array_algos/quantile.py", line 151, in _nanquantile_1d
+    return np.quantile(
+           ^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4496, in quantile
+    return _quantile_unchecked(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4510, in _quantile_unchecked
+    return _ureduce(a,
+           ^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 3880, in _ureduce
+    r = func(a, **kwargs)
+        ^^^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4669, in _quantile_ureduce_func
+    result = _quantile(arr,
+             ^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4807, in _quantile
+    result = _lerp(previous,
+             ^^^^^^^^^^^^^^^
+  File "/tmp/metaalpha-venv/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4597, in _lerp
+    lerp_interpolation = add(a, diff_b_a * t, out=... if out is None else out)
+                                ~~~~~~~~~^~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'

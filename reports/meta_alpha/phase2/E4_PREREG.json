@@ -1,0 +1,13 @@
+{
+ "mission": "E4_FORWARD - rendements forward executables sans fuite + gate E5 (Phase 2)",
+ "perimetre": "IS 282/282 borne certifiee fail-closed",
+ "definitions_gelees": {
+  "barres": "60 s; clotures Bid/Ask/Mid par barre (dernier tick)",
+  "horizons_barres": [1, 5, 15, 60],
+  "ret_fwd_long_H": "(Bid(t+H) - Ask(t)) / Ask(t) en bp (cout complet aller-retour inclus)",
+  "ret_fwd_short_H": "(Bid(t) - Ask(t+H)) / Bid(t) en bp",
+  "convention": "ces series sont le referentiel de verite economique; aucune famille ne les recalcule"
+ },
+ "sorties_par_partition": ["par horizon: moyenne et quantiles (p10/p50/p90) des retours long et short", "moyenne du spread de cloture"],
+ "gate_E5_fuite": "les memes moyennes recalculees avec signaux decales d'une barre doivent s'effondrer; le gate formel (features decalees) est consigne dans E5_SYNTHESIS: critere = |moyenne decalee| <= |moyenne| et aucune structure nouvelle; le test discriminant complet se fera sur les features E2 (corr decalee ~0 attendue)"
+}
