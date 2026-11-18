@@ -1,0 +1,8 @@
+{
+ "mission": "E1_BARRES",
+ "run": "44269382298",
+ "sha256": {
+  "reports/meta_alpha/phase2/e1_bars/E1_PARTITION.csv": "ef67cd56d82788d46b3e3d46cc13011d4b40df26760533f2a25933e176b263e4",
+  "reports/meta_alpha/phase2/e1_bars/E1_SYNTHESIS.json": "8eadf6a5c47e9cc0cf8343cc271dfb7d59ae180bd54a2f249e71cf9a69944d33"
+ }
+}

@@ -590,6 +590,17 @@
     "config_ref": "seq51"
    },
    "entry_hash": "91f058f620e04f71acd319cf2807d46a03fb1d4c9eb4ef8983f815e12ba505b4"
+  },
+  {
+   "seq": 54,
+   "prev_hash": "91f058f620e04f71acd319cf2807d46a03fb1d4c9eb4ef8983f815e12ba505b4",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "E1_BARRES",
+    "run": "44269382298 succes 282/282",
+    "resultat": "barres tick/secondes/range construites 282/282; recomptage 288086588 ticks (=288086306 attendu a la definition pres); durees de barres et spreads de cloture par ere consignes E1_SYNTHESIS.json; flags GD07=4 partitions, GD08=21"
+   },
+   "entry_hash": "5b659edf1386abd96f9a8d1e720a28b5347df6d3ffac29fee3fcecd1e9d2a064"
   }
  ]
 }
