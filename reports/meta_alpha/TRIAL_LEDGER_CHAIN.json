@@ -492,6 +492,30 @@
     "ref": "spread_episodes/EPISODES_SYNTHESIS.json"
    },
    "entry_hash": "c779297e576e8b0f444057c4eb5700154a340803505d53176c1de71d764f4a1c"
+  },
+  {
+   "seq": 46,
+   "prev_hash": "c779297e576e8b0f444057c4eb5700154a340803505d53176c1de71d764f4a1c",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "INTEGRAL_SCAN",
+    "registry": "reports/meta_alpha/integral_scan/INTEGRAL_PREREG.json",
+    "sha256": "365e092c4d1c908b92b642712a8891af90accf56ce4485a993d6dfc218643338",
+    "scope": "IS 282/282, ordre proprietaire 2026-11-13, metriques gelees avant calcul"
+   },
+   "entry_hash": "8d7f63d08ea58d400b8fbddda376b4a3998a3e509d0a30b73e95d589f75df73d"
+  },
+  {
+   "seq": 47,
+   "prev_hash": "8d7f63d08ea58d400b8fbddda376b4a3998a3e509d0a30b73e95d589f75df73d",
+   "entry": {
+    "type": "EXECUTION_PLAN",
+    "mission": "INTEGRAL_SCAN",
+    "engine": "ci_tools/integral_scan.py",
+    "infra": "Kaggle prioritaire, Drive repli, checkpoints Git tous les 40",
+    "deliverable": "META_ALPHA_RAPPORT_SCIENTIFIQUE_GLOBAL.md (sections A-M)"
+   },
+   "entry_hash": "323f5793b896f0c759e6ecfb6012cc2434bbc6c1ce388ed73407cbde52d63a19"
   }
  ]
 }

@@ -1,0 +1,24 @@
+{
+ "mission": "INTEGRAL_SCAN - analyse integrale autonome des 282 partitions IS (ordre proprietaire 2026-11-13)",
+ "perimetre": "IS seul, 282 partitions certifiees (timestamp_max <= 2020-01-20). OOS/HOLDOUT interdits, jamais lus.",
+ "budget": "0 FCFA, Kaggle prioritaire (282/282 verifies), Drive en repli",
+ "statut": "PREENREGISTRE avant tout calcul de cette mission; metriques gelees ci-dessous",
+ "reutilisation": "Ne recalcule pas ce qui est deja valide: reference mensuelle 120 mois, dimensions horaires/sauts, post-evenement, vol journaliere+horaire (NON DEPARTAGE), episodes de spread, GD-07/GD-08, distributions par regime. Cette mission ajoute les dimensions non encore mesurees a couverture 282/282 et les interactions.",
+ "nouvelles_metriques_par_partition_gelees": {
+  "mecanique_cotations": ["part_bilaterales", "part_bid_seul", "part_ask_seul", "part_republication_exacte", "part_mid_constant_compensatoire", "part_bid_ge_ask (croisees/verrouillees)", "taille_moy_|dBid|_bp", "taille_moy_|dAsk|_bp", "asymetrie_tailles_bid_ask"],
+  "mouvements_mid": ["part_rendements_nuls", "quantiles_|r|_p50_p90_p99_max_bp", "part_positifs_parmi_non_nuls", "longueur_moyenne_series_de_signe", "grille_min_|dMid|_prix", "grille_min_|dBid|_prix"],
+  "inter_arrivees": ["dt_p50_p95_p99_max_s", "part_dt>10s", "part_dt>60s", "CV_dt (rafales/silences)"],
+  "spread": ["spread_bp_p10_p50_p90_p99", "|dSpread|_moyen_bp"],
+  "volatilite_partition": ["RV_bp (somme r^2)", "somme_|r|_bp"],
+  "dependances": ["ac1_r_signe", "ac1_|r|", "ac1_spread", "corr_contemporaine_dBid_dAsk", "corr_dBid_t__dAsk_t+1", "corr_dAsk_t__dBid_t+1"]
+ },
+ "synthese_prevue_gelees": [
+  "evolution chronologique de chaque metrique (par partition, ordre temporel, contexte mensuel existant)",
+  "comparaison par regime de cotation (bilateral/mixte/unilateral, classification existante, descriptive)",
+  "matrice de correlations entre metriques au niveau partition (descriptive, aucune p-value de decouverte)",
+  "detection d'anomalies contextuelles: ecart de chaque partition a la mediane de ses voisines temporelles (+-6 partitions) > 5 ecarts robustes (MAD), consignees par metrique, sans verdict causal",
+  "integration au rapport scientifique global consolide + cartographie vivante"
+ ],
+ "interdits": ["OOS/HOLDOUT", "HMM detecteur de regimes", "segmentation comme preuve", "p-values de decouverte hors famille", "couts inconnus supposes nuls", "sessions officielles supposees", "volumes/transactions inventes"],
+ "qualification_max": "decouverte candidate descriptive (gouvernance multiplicite ba9195e); aucune hypothese economique sans phenomene observe et couts documentes"
+}

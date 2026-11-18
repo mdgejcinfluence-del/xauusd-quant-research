@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+_duckdb.BinderException: Binder Error: window function calls cannot be nested
+
+LINE 6: g AS (SELECT *, sum(CASE WHEN sg<>coalesce(lag(sg) OVER (ORDER BY oid),0) THEN 1 ELSE 0 END) OVER (ORDER...
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
