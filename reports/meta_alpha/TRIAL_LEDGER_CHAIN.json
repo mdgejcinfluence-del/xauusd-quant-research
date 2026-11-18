@@ -1077,6 +1077,26 @@
     "resultat": "Phase 5 close: 4/4 cellules NON TESTABLES aux gates; recherche directionnelle systematique close definitivement (tick 148/150, panel 28/60, soldes non depenses); voie B = chassis + F3/F7 L2 comme discipline de risque; OOS/HOLDOUT fermes intacts; ouverture future uniquement sur hypothese nouvelle + ordre explicite"
    },
    "entry_hash": "35f55f7944aeea0308947bf7f28114b6be18e9168a3c6bd056fbced66bf99c7a"
+  },
+  {
+   "seq": 99,
+   "prev_hash": "35f55f7944aeea0308947bf7f28114b6be18e9168a3c6bd056fbced66bf99c7a",
+   "entry": {
+    "type": "PLAN",
+    "mission": "VOIE_B",
+    "resultat": "Plan proprietaire versionne (PLAN_VOIE_B.md): recherche systematique close (regle 0, aucun re-grillage); architecture humain/chassis/simulateur; phase demo seule ouverte; gate GO/NO-GO gele. Note agent consignee: ruine a derive nulle aux parametres reels Blue Guardian = 50% phase1, ~36% cumule (vs illustration 8% du plan)"
+   },
+   "entry_hash": "a1d0ce1c857a92302658270631c9314d5ff3ce043b4c275428ba81997ba4ae4b"
+  },
+  {
+   "seq": 100,
+   "prev_hash": "a1d0ce1c857a92302658270631c9314d5ff3ce043b4c275428ba81997ba4ae4b",
+   "entry": {
+    "type": "LIVRAISON",
+    "mission": "VOIE_B_PHASE_DEMO",
+    "resultat": "demo_journal.py livre et teste (journal -> win rate/R moyen/esperance/maxDD/respect -> challenge_sim -> gate GO/NO-GO sec.6); template JOURNAL_DEMO_TEMPLATE.csv; chassis F3/F7 = validation forward en demo, consignee session par session via le journal"
+   },
+   "entry_hash": "43801038dd81535c55e360e4b0fe8db3ee5770f7f607f496acb81f57da3d38ed"
   }
  ]
 }
