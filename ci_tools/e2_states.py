@@ -70,8 +70,8 @@ def process(rows):
     def m(x): 
         v=pd.Series(x).dropna(); return float(v.median()) if len(v) else float('nan')
     return (len(df), m(ss), float((pd.Series(ss)<=0.25).mean()), m(vq), float((pd.Series(vq)>0.8).mean()), m(aq),
-            float(c1['vq'].corr(c1['nx'], method='spearman')) if len(c1)>50 else float('nan'),
-            float(c2['ss'].corr(c2['ns'], method='spearman')) if len(c2)>50 else float('nan'),
+            float(c1['vq'].rank().corr(c1['nx'].rank())) if len(c1)>50 else float('nan'),
+            float(c2['ss'].rank().corr(c2['ns'].rank())) if len(c2)>50 else float('nan'),
             runlen, float((ret.abs()>10).mean()))
 def main():
     inv=json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']
