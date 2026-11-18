@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 11:13:18.850275+00:00",
+ "genere_utc": "2026-11-18 12:18:45.666509+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -10,44 +10,121 @@
  "regle_jointure_future": "toute jointure avec le corpus tick utilisera available_at_utc, jamais reference_date",
  "series": {
   "fred_taux": {
-   "source": "FRED DGS2",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart ^IRX (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F2_taux_vol",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-17 00:00:00+00:00"
+   ],
+   "lignes": 7534,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_taux_reel": {
    "source": "FRED DFII10",
    "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
   },
   "fred_vix": {
-   "source": "FRED VIXCLS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart ^VIX (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F2_taux_vol",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 7550,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_dollar_broad": {
-   "source": "FRED DTWEXBGS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart DX-Y.NYB (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F1_dollar",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 7603,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_eurusd": {
-   "source": "FRED DEXUSEU",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart EURUSD=X (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F1_dollar",
+   "plage_reference": [
+    "2003-12-01 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 5959,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_usdjpy": {
-   "source": "FRED DEXJPUS",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart JPY=X (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F1_dollar",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 7783,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_spx": {
-   "source": "FRED SP500",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart ^GSPC (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F6_contexte",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-17 00:00:00+00:00"
+   ],
+   "lignes": 7547,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "fred_wti": {
-   "source": "FRED DCOILWTICO",
-   "statut": "ECHEC COLLECTE",
-   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+   "source": "Yahoo chart CL=F (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F6_contexte",
+   "plage_reference": [
+    "2000-08-23 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 6589,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
   },
   "comex_gc_ohlcv": {
    "source": "Yahoo chart gc.f (fallback consigne)",
@@ -131,15 +208,23 @@
   }
  },
  "journal_collecte": [
-  "ECHEC FRED DGS10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DGS2: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DFII10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED VIXCLS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DTWEXBGS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DEXUSEU: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DEXJPUS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED SP500: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
-  "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DGS10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_taux: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "ECHEC FRED DGS2: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_taux: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "ECHEC FRED DFII10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "ECHEC FRED VIXCLS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_vix: 7550 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "ECHEC FRED DTWEXBGS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_dollar_broad: 7603 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "ECHEC FRED DEXUSEU: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_eurusd: 5959 lignes 2003-12-01 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "ECHEC FRED DEXJPUS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_usdjpy: 7783 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "ECHEC FRED SP500: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_spx: 7547 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "OK fred_wti: 6589 lignes 2000-08-23 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC Stooq gc.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
   "OK comex_gc_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
   "ECHEC Stooq si.f: reponse Stooq inexploitable \u2014 fallback Yahoo",

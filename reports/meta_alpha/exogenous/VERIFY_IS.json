@@ -11,10 +11,38 @@
   "comex_si_ohlcv.parquet": {
    "sha256": "5992da28035b45c83fb991f6b9387fc22b2240ecf5f5adc7991f28ac0c367943",
    "taille": 210521
+  },
+  "fred_dollar_broad.parquet": {
+   "sha256": "c1106beac51e429a1cf4d5925878fc65c3fd9c6973cd51b1a4cc66eb93cff464",
+   "taille": 124275
+  },
+  "fred_eurusd.parquet": {
+   "sha256": "70144a5e5fc038f7e6aa5a2b96a05182f0da133a420376463009bfe47723bf3b",
+   "taille": 96456
+  },
+  "fred_spx.parquet": {
+   "sha256": "539dfcfb21a423c1044f3ade03df7358d74807203f44dffcd068955ae0b2d25e",
+   "taille": 139322
+  },
+  "fred_taux.parquet": {
+   "sha256": "f52431385a03c0a22b7f39d056c70c134880852140eb967efcde4344d944e51b",
+   "taille": 114367
+  },
+  "fred_usdjpy.parquet": {
+   "sha256": "ffa800c9ee1ca803c7b674429407385f8ea2c9a5a99852dd6fa0558e27b206d7",
+   "taille": 135551
+  },
+  "fred_vix.parquet": {
+   "sha256": "ae854994b7dc15b3070daf10f1a8027a78928c2a42d2179252d5c96b5a32873d",
+   "taille": 120025
+  },
+  "fred_wti.parquet": {
+   "sha256": "287d9db7b6f5b648547922a1fc5afa9c52923a0cc473f406b3be33bd2e8f8422",
+   "taille": 110867
   }
  },
  "audit_anti_fuite": {
-  "max_available_at_utc_expose": "2020-01-17 22:00:00+00:00",
+  "max_available_at_utc_expose": "2020-01-18 00:00:00+00:00",
   "borne": "2020-01-20 09:36:27+00:00",
   "passe": true
  },

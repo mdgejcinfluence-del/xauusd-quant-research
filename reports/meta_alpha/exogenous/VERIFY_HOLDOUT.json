@@ -5,12 +5,40 @@
    "taille": 24383
   },
   "comex_gc_ohlcv.parquet": {
-   "sha256": "9f068d49972fc15dbea45ad974722cc10245753b113f2544c9fe78ebc42609b5",
+   "sha256": "566d7b1b9a73127cc98945cc0557cd8163f58547f02ba4f664ac4d865189aee7",
    "taille": 40280
   },
   "comex_si_ohlcv.parquet": {
-   "sha256": "9b6deb5a3479fad5f60bb3c03bfc34ac179c004d6ac973af9c5045b3021018ab",
+   "sha256": "610e0de9d9048248887925fade6da244f7e0188508f13bc5967745d45b4d34dd",
    "taille": 38865
+  },
+  "fred_dollar_broad.parquet": {
+   "sha256": "72fab39d61f7e37d0293839f4c52dcb4e6cd69d16e0f8ff552b8849c0d557fb5",
+   "taille": 17893
+  },
+  "fred_eurusd.parquet": {
+   "sha256": "9d70fa6fe01c3ef1682a8c0b8e4147f9f374c99b82217fb624d73459da7c1444",
+   "taille": 19178
+  },
+  "fred_spx.parquet": {
+   "sha256": "4ffec24fdaed8c6b11b3ef5b735eaff8e46e45c0b06b477beebe445429f7f3a3",
+   "taille": 19046
+  },
+  "fred_taux.parquet": {
+   "sha256": "566cb70f3353224922cce8cb66af55f3288901105253140d41f02e96620cfc03",
+   "taille": 16546
+  },
+  "fred_usdjpy.parquet": {
+   "sha256": "2eeedceed8f3e31a0a17518d0032ad3ac5b681fbba80cc0fff064acf3e080b96",
+   "taille": 19354
+  },
+  "fred_vix.parquet": {
+   "sha256": "3c7392986eed4d4babfbf65d42ded865421cd4c089ba574ad2225778d15495d3",
+   "taille": 18052
+  },
+  "fred_wti.parquet": {
+   "sha256": "00125b8da3c4c7e176dc531759b9ce8f7c87a973f475f9e4897d467efe6df236",
+   "taille": 18798
   }
  },
  "audit_anti_fuite": null,
