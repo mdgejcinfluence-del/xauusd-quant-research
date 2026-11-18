@@ -1,7 +1,7 @@
 {
  "is": {
   "dataset": "shalom5123/xauusd-exogenous-pack-is",
-  "statut_upload": "cree",
+  "statut_upload": "version maj",
   "fichiers_locaux": {
    "cftc_cot_gold_disagg.parquet": 53993,
    "comex_gc_ohlcv.parquet": 209442,
@@ -10,6 +10,8 @@
    "fred_eurusd.parquet": 96456,
    "fred_spx.parquet": 139322,
    "fred_taux.parquet": 114367,
+   "fred_taux_10a.parquet": 125831,
+   "fred_taux_court_3m_proxy.parquet": 114367,
    "fred_usdjpy.parquet": 135551,
    "fred_vix.parquet": 120025,
    "fred_wti.parquet": 110867
@@ -17,14 +19,23 @@
   "fichiers_distants": {
    "cftc_cot_gold_disagg.parquet": 53993,
    "comex_gc_ohlcv.parquet": 209442,
-   "comex_si_ohlcv.parquet": 210521
+   "comex_si_ohlcv.parquet": 210521,
+   "fred_dollar_broad.parquet": 124275,
+   "fred_eurusd.parquet": 96456,
+   "fred_spx.parquet": 139322,
+   "fred_taux.parquet": 114367,
+   "fred_taux_10a.parquet": 125831,
+   "fred_taux_court_3m_proxy.parquet": 114367,
+   "fred_usdjpy.parquet": 135551,
+   "fred_vix.parquet": 120025,
+   "fred_wti.parquet": 110867
   },
-  "all_ok": false,
+  "all_ok": true,
   "role": "EXPOSE"
  },
  "oos": {
   "dataset": "shalom5123/xauusd-exogenous-pack-oos",
-  "statut_upload": "cree",
+  "statut_upload": "version maj",
   "fichiers_locaux": {
    "cftc_cot_gold_disagg.parquet": 28548,
    "comex_gc_ohlcv.parquet": 50951,
@@ -32,7 +43,8 @@
    "fred_dollar_broad.parquet": 23848,
    "fred_eurusd.parquet": 25709,
    "fred_spx.parquet": 25178,
-   "fred_taux.parquet": 22120,
+   "fred_taux_10a.parquet": 24362,
+   "fred_taux_court_3m_proxy.parquet": 22120,
    "fred_usdjpy.parquet": 25960,
    "fred_vix.parquet": 24069,
    "fred_wti.parquet": 24890
@@ -40,14 +52,22 @@
   "fichiers_distants": {
    "cftc_cot_gold_disagg.parquet": 28548,
    "comex_gc_ohlcv.parquet": 50951,
-   "comex_si_ohlcv.parquet": 48538
+   "comex_si_ohlcv.parquet": 48538,
+   "fred_dollar_broad.parquet": 23848,
+   "fred_eurusd.parquet": 25709,
+   "fred_spx.parquet": 25178,
+   "fred_taux_10a.parquet": 24362,
+   "fred_taux_court_3m_proxy.parquet": 22120,
+   "fred_usdjpy.parquet": 25960,
+   "fred_vix.parquet": 24069,
+   "fred_wti.parquet": 24890
   },
-  "all_ok": false,
+  "all_ok": true,
   "role": "SCELLE (liste de metadonnees seulement, contenu jamais telecharge)"
  },
  "holdout": {
   "dataset": "shalom5123/xauusd-exogenous-pack-holdout",
-  "statut_upload": "cree",
+  "statut_upload": "version maj",
   "fichiers_locaux": {
    "cftc_cot_gold_disagg.parquet": 24383,
    "comex_gc_ohlcv.parquet": 40280,
@@ -55,7 +75,8 @@
    "fred_dollar_broad.parquet": 17893,
    "fred_eurusd.parquet": 19178,
    "fred_spx.parquet": 19046,
-   "fred_taux.parquet": 16546,
+   "fred_taux_10a.parquet": 17740,
+   "fred_taux_court_3m_proxy.parquet": 16546,
    "fred_usdjpy.parquet": 19354,
    "fred_vix.parquet": 18052,
    "fred_wti.parquet": 18798
@@ -63,9 +84,17 @@
   "fichiers_distants": {
    "cftc_cot_gold_disagg.parquet": 24383,
    "comex_gc_ohlcv.parquet": 40280,
-   "comex_si_ohlcv.parquet": 38865
+   "comex_si_ohlcv.parquet": 38865,
+   "fred_dollar_broad.parquet": 17893,
+   "fred_eurusd.parquet": 19178,
+   "fred_spx.parquet": 19046,
+   "fred_taux_10a.parquet": 17740,
+   "fred_taux_court_3m_proxy.parquet": 16546,
+   "fred_usdjpy.parquet": 19354,
+   "fred_vix.parquet": 18052,
+   "fred_wti.parquet": 18798
   },
-  "all_ok": false,
+  "all_ok": true,
   "role": "SCELLE (liste de metadonnees seulement, contenu jamais telecharge)"
  }
 }

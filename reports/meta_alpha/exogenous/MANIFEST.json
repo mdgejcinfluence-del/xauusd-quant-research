@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 12:18:45.666509+00:00",
+ "genere_utc": "2026-11-18 12:41:38.344946+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -9,7 +9,23 @@
  },
  "regle_jointure_future": "toute jointure avec le corpus tick utilisera available_at_utc, jamais reference_date",
  "series": {
-  "fred_taux": {
+  "fred_taux_10a": {
+   "source": "Yahoo chart ^TNX (fallback FRED consigne; FRED injoignable depuis CI)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "famille": "F2_taux_vol",
+   "plage_reference": [
+    "1996-11-18 00:00:00+00:00",
+    "2026-11-17 00:00:00+00:00"
+   ],
+   "lignes": 7534,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "available_at_utc": 0,
+    "value": 0
+   }
+  },
+  "fred_taux_court_3m_proxy": {
    "source": "Yahoo chart ^IRX (fallback FRED consigne; FRED injoignable depuis CI)",
    "frequence": "daily",
    "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
@@ -209,9 +225,9 @@
  },
  "journal_collecte": [
   "ECHEC FRED DGS10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_taux: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "OK fred_taux_10a: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
   "ECHEC FRED DGS2: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
-  "OK fred_taux: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
+  "OK fred_taux_court_3m_proxy: 7534 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-17 00:00:00+00:00",
   "ECHEC FRED DFII10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "ECHEC FRED VIXCLS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
   "OK fred_vix: 7550 lignes 1996-11-18 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",

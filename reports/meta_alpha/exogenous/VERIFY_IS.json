@@ -28,6 +28,14 @@
    "sha256": "f52431385a03c0a22b7f39d056c70c134880852140eb967efcde4344d944e51b",
    "taille": 114367
   },
+  "fred_taux_10a.parquet": {
+   "sha256": "f4cf1847219b049b5a9396fd6b829d63dd1ccb8b74626c0a18999eabc0724286",
+   "taille": 125831
+  },
+  "fred_taux_court_3m_proxy.parquet": {
+   "sha256": "f52431385a03c0a22b7f39d056c70c134880852140eb967efcde4344d944e51b",
+   "taille": 114367
+  },
   "fred_usdjpy.parquet": {
    "sha256": "ffa800c9ee1ca803c7b674429407385f8ea2c9a5a99852dd6fa0558e27b206d7",
    "taille": 135551
