@@ -41,3 +41,23 @@ except Exception as e:
     emit(f'calendar ECHEC {type(e).__name__} {str(e)[:120]}')
 emit('SONDE2 TERMINEE')
 pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
+
+# --- sonde3: dates fomcminutes dans fomccalendars + calendar decode ---
+try:
+    h = requests.get('https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm', timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
+    ds = sorted(set(re.findall(r'fomcminutes(20\d\d)(\d\d)(\d\d)\.htm', h)))
+    emit(f'calendars: {len(ds)} dates minutes, de {ds[0]} a {ds[-1]}')
+    ms = sorted(set(re.findall(r'monetary(20\d\d)(\d\d)(\d\d)[a-z]\.htm', h)))
+    emit(f'calendars: {len(ms)} dates communiques, de {ms[0]} a {ms[-1]}')
+except Exception as e: emit(f'sonde3a ECHEC {e}')
+try:
+    r = requests.get('https://www.federalreserve.gov/json/calendar.json', timeout=60, headers={'User-Agent': 'Mozilla/5.0'})
+    evs = _json.loads(r.content.decode('utf-8-sig')).get('events', [])
+    fomc = [e for e in evs if 'FOMC' in str(e.get('description','')) or 'FOMC' in str(e.get('event_type','')) or 'FOMC' in str(e.get('title',''))]
+    emit(f'calendar: {len(evs)} evts, FOMC={len(fomc)}')
+    for e in fomc[:2] + fomc[-2:]: emit(f'ex: {e}')
+    dates = sorted(str(e.get('start_date',''))[:10] for e in fomc)
+    emit(f'calendar FOMC dates: {dates[:3]} ... {dates[-3:]}' if dates else 'calendar FOMC: aucune date')
+except Exception as e: emit(f'sonde3b ECHEC {type(e).__name__} {str(e)[:120]}')
+emit('SONDE3 TERMINEE')
+pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
