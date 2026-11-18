@@ -78,16 +78,7 @@
    "fred_taux_court_3m_proxy.parquet": 22120,
    "fred_usdjpy.parquet": 25960,
    "fred_vix.parquet": 24069,
-   "fred_wti.parquet": 24890,
-   "macro_cpiaucns_pit.parquet": 4721,
-   "macro_cpiaucsl_pit.parquet": 7302,
-   "macro_fedfunds_pit.parquet": 4493,
-   "macro_gdp_pit.parquet": 6283,
-   "macro_icsa_pit.parquet": 15904,
-   "macro_payems_pit.parquet": 9568,
-   "macro_pcepi_pit.parquet": 10749,
-   "macro_pcepilfe_pit.parquet": 10714,
-   "macro_unrate_pit.parquet": 4787
+   "fred_wti.parquet": 24890
   },
   "fichiers_distants": {
    "cftc_cot_gold_disagg.parquet": 28548,
@@ -127,9 +118,9 @@
    "comex_gc_ohlcv.parquet": 40280,
    "comex_si_ohlcv.parquet": 38865,
    "fomc_events.parquet": 5482,
-   "fred_dfii10_officiel.parquet": 15855,
-   "fred_dgs10_officiel.parquet": 15964,
-   "fred_dgs2_officiel.parquet": 16013,
+   "fred_dfii10_officiel.parquet": 15871,
+   "fred_dgs10_officiel.parquet": 15978,
+   "fred_dgs2_officiel.parquet": 16027,
    "fred_dollar_broad.parquet": 17893,
    "fred_eurusd.parquet": 19178,
    "fred_gvz_officiel.parquet": 18289,
@@ -138,16 +129,7 @@
    "fred_taux_court_3m_proxy.parquet": 16565,
    "fred_usdjpy.parquet": 19354,
    "fred_vix.parquet": 18052,
-   "fred_wti.parquet": 18798,
-   "macro_cpiaucns_pit.parquet": 4310,
-   "macro_cpiaucsl_pit.parquet": 6423,
-   "macro_fedfunds_pit.parquet": 4128,
-   "macro_gdp_pit.parquet": 4977,
-   "macro_icsa_pit.parquet": 10771,
-   "macro_payems_pit.parquet": 9562,
-   "macro_pcepi_pit.parquet": 7307,
-   "macro_pcepilfe_pit.parquet": 7371,
-   "macro_unrate_pit.parquet": 4481
+   "fred_wti.parquet": 18798
   },
   "fichiers_distants": {
    "cftc_cot_gold_disagg.parquet": 24383,
@@ -176,7 +158,7 @@
    "macro_pcepilfe_pit.parquet": 7371,
    "macro_unrate_pit.parquet": 4481
   },
-  "all_ok": true,
+  "all_ok": false,
   "role": "SCELLE (liste de metadonnees seulement, contenu jamais telecharge)"
  }
 }

@@ -5,11 +5,11 @@
    "taille": 24383
   },
   "comex_gc_ohlcv.parquet": {
-   "sha256": "82810ed455efb0c875efe78595d004cfc21626e8fbf5fdfbe8f4edc305a410ed",
+   "sha256": "8f10c3560cab2ab5700c8805ed8eabac7d9c854b8ceb69d2a770e9b02a12b535",
    "taille": 40280
   },
   "comex_si_ohlcv.parquet": {
-   "sha256": "80a18dde9d927623017526581b96598e6de75ac558c3776ea19b63a103c35524",
+   "sha256": "b37f3577bc4a147745bc47f7aaf4f39960c728e1b24379102db52d47857d37d4",
    "taille": 38865
   },
   "fomc_events.parquet": {
@@ -17,23 +17,23 @@
    "taille": 5482
   },
   "fred_dfii10_officiel.parquet": {
-   "sha256": "572746cd1462cac4c198f901a6f88da3db66906983f8cce7181bc0b5b3196d05",
-   "taille": 15855
+   "sha256": "165a7f5e6391a7e4b3b6d552951ed577f3fe645a9bff1c5481000b1433c59dce",
+   "taille": 15871
   },
   "fred_dgs10_officiel.parquet": {
-   "sha256": "7bc23ed8981b9ff437c8626cf5aa0c5cac4d8d0adcff8eba59471413abb68af6",
-   "taille": 15964
+   "sha256": "74dcdfb5216f16503b834fa3fcb83d55fc24f8d06e2265afc0d9dadee7995452",
+   "taille": 15978
   },
   "fred_dgs2_officiel.parquet": {
-   "sha256": "15d5b2fcfe4098c632eae0bc87f3ba5a46679b315ae9faaab37db39e21a07357",
-   "taille": 16013
+   "sha256": "c2a52675d53b1e3ef3390c25c3e98a37b3788674758b79b8dfa9cff64889731f",
+   "taille": 16027
   },
   "fred_dollar_broad.parquet": {
-   "sha256": "9ffabf9f56f52f44efcb59c76d00c36d59ca681dd8960db3ae7b0c41df047921",
+   "sha256": "85620f7b8b85e88ddea3d1d26b6a171b0701ea5bca920bd7034371c091500b48",
    "taille": 17893
   },
   "fred_eurusd.parquet": {
-   "sha256": "b314784b812246c1cfab7bd13dc7159b0446bfd453425ce9c0bdf4b9cf31fad9",
+   "sha256": "669eeff5578149b3598eac31fa32773104b0aa24c2e1c2a92def1dc9834ad67e",
    "taille": 19178
   },
   "fred_gvz_officiel.parquet": {
@@ -41,11 +41,11 @@
    "taille": 18289
   },
   "fred_spx.parquet": {
-   "sha256": "fb431be8cec0308281466d41f6a777cd8560a6fe63e2afb0f67e1fff0a271f93",
+   "sha256": "547605ce1432e55273e02e91a7fad880a55b4695ddb89c3d74284beaa942e29f",
    "taille": 19064
   },
   "fred_taux_10a.parquet": {
-   "sha256": "3221e20439d93ea21d4f05b45599a7cfca2c6c0982fe0711aec9c932b52fc2a5",
+   "sha256": "000250a4cacf028559ea2833f66e339e616dc0dce807f6c045e7b3fa534cafab",
    "taille": 17759
   },
   "fred_taux_court_3m_proxy.parquet": {
@@ -53,52 +53,16 @@
    "taille": 16565
   },
   "fred_usdjpy.parquet": {
-   "sha256": "f4e6452de5f394da7116791c4cc5195adba810c5c5f7d53c6e88038eeff4e8b5",
+   "sha256": "3ff0a418416bf56c18d41f4da8e6e2efd204b4ae9b2bf51af77a077e33927418",
    "taille": 19354
   },
   "fred_vix.parquet": {
-   "sha256": "4ff32ca9b7ee7998ea7870e3819c28dd9b5a608ccacc3cbdbdb496f64f316dbc",
+   "sha256": "683e0553c03f17f9ac5ce9f2e2ee172a134e8120fe850660a81102e5f5d2f30f",
    "taille": 18052
   },
   "fred_wti.parquet": {
-   "sha256": "b079dbc8db78a177dde614702ba449f6ec84121aef15f950a48bd0dd231e2739",
+   "sha256": "f941fefb9bed155cc493d881df0e167d7cc231aaac7f32add26dc62bce2f4d3e",
    "taille": 18798
-  },
-  "macro_cpiaucns_pit.parquet": {
-   "sha256": "b6eadcc92b1488678d99e6969186770b99d33b07792c3b9900be744844af4ae4",
-   "taille": 4310
-  },
-  "macro_cpiaucsl_pit.parquet": {
-   "sha256": "e5863ca287be42fdc0818613d66a03cae792d2de0cca357b383704b345064332",
-   "taille": 6423
-  },
-  "macro_fedfunds_pit.parquet": {
-   "sha256": "5323b97c8638d50bb56eb8043d82ec3b17f720376e00e8a77052121731af9d8c",
-   "taille": 4128
-  },
-  "macro_gdp_pit.parquet": {
-   "sha256": "f6097f02efc52bf97d8ffbf8809e7b151c31be6cc18e29eda0397509ac5b43a2",
-   "taille": 4977
-  },
-  "macro_icsa_pit.parquet": {
-   "sha256": "0260f7eb966aed66683e433e6510d063fa74b360016f57bb134ef37bdfdbc3fd",
-   "taille": 10771
-  },
-  "macro_payems_pit.parquet": {
-   "sha256": "9163af2ea4bb100a5161f3f95392ada801dfa27e52746a2c755174016a666324",
-   "taille": 9562
-  },
-  "macro_pcepi_pit.parquet": {
-   "sha256": "8cf4116fe44bd35e2e10d8e62d7da69cf6d147df696928a3ac7388eeeef37e25",
-   "taille": 7307
-  },
-  "macro_pcepilfe_pit.parquet": {
-   "sha256": "6a5b8e45a96821e82dd7208203a5482317eacda8688e648934c250f4d7504204",
-   "taille": 7371
-  },
-  "macro_unrate_pit.parquet": {
-   "sha256": "ac5c6971a83b28215e8b98575449da8c9daba1c9e947258d004d869a27237e36",
-   "taille": 4481
   }
  },
  "audit_anti_fuite": null,
