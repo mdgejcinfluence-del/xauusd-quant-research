@@ -52,3 +52,11 @@ melangent au moins deux processus de cotation: a eviter sans mention explicite.
 1. FAIT: GD-07/GD-08 caracterises (deux mecanismes separes ci-dessus). Toute statistique tick future devrait exclure ou flaguer les republications exactes (GD-07) pour ne pas gonfler les effectifs.
 2. FAIT: distributions fines et inter-arrivees par regime (ci-dessus).
 3. FAIT: comparaison gelee executee apres validation proprietaire — verdict NON DEPARTAGE (META_ALPHA_VOL_MODELS_STEP1_REPORT.md). Etape 2 OOS: ordre explicite requis, non engagee.
+
+## Analyse integrale (INTEGRAL_SCAN, 282/282, runs 44253274284 + 44254224163; rapport META_ALPHA_RAPPORT_SCIENTIFIQUE_GLOBAL.md)
+- Mecanique: bilaterales 98.6% (2010) -> 28-42% (2016-2019), unilaterales symetriques bid/ask; ZERO cotation croisee (bid>=ask) sur 288M ticks; grille 0.001$ (mid 0.0005); tailles |dBid|/|dAsk| ratio 1.00; part haussiere 0.500 toutes eres.
+- Series de signe: 2.89 -> 1.82 evenements; motif croise +-1 symetrique (0.538) ancien -> contemporain (0.56-0.60) recent; aucun leader.
+- Inter-arrivees: CV domine par la composition des partitions (gaps du flux) apres 2010 - ne pas interpreter comme rafale; dt p50 0.49 -> 0.15-0.30 s.
+- Anomalies contextuelles (MAD voisines): 257 excedents/8 526 cellules, domines par l'artefact CV; extremes part_000062 (2010, |r| max 149.6 bp, rv 206k bp2) = episode reel deja connu, pas une decouverte.
+- sh_pos v1 etait invalide (CASE sans ELSE), corrigee et recalculee 282/282; grille mid seuillee 1e-9.
+- Verdict global: description du processus de cotation subst. achevee au niveau partition; rien de qualifiable economiquement; OOS jamais ouvert.

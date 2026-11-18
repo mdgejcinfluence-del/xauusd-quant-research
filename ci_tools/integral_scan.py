@@ -55,7 +55,7 @@ def main():
     batchof={name: info['batch'] for name, info in kstate['uploaded'].items()}
     state=json.loads(STATE_P.read_text()) if STATE_P.exists() else {'done':[]}
     con=duckdb.connect(); con.execute("SET memory_limit='4GB'"); con.execute("SET threads=2")
-    if not OUT.exists(): OUT.write_text("partition,w_n,w_len,w_len95,w_dur,w_dur95,w_share,w_spread,t_n,t_len,t_len95,t_dur,t_dur95,t_share,t_spread\n")
+    if not OUT.exists(): OUT.write_text("partition,"+COLS+"\n")
     # grouper les partitions restantes par lot Kaggle pour un seul telechargement par lot
     remaining=[p for p in parts if p['name'] not in state['done']]
     from collections import OrderedDict

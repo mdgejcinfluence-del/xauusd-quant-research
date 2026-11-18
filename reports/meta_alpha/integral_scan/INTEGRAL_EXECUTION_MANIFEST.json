@@ -1,0 +1,14 @@
+{
+ "mission": "INTEGRAL_SCAN",
+ "runs": [
+  "44253130278 (echec, conserve)",
+  "44253274284 (succes 282/282)",
+  "44254224163 (succes 282/282, passe corrigee)"
+ ],
+ "sha256": {
+  "reports/meta_alpha/integral_scan/INTEGRAL_PARTITION.csv": "ab88803b36df2dba113662f6c756d0b9c896aee7dfbd159972600dabc901084b",
+  "reports/meta_alpha/integral_scan/INTEGRAL_SYNTHESIS.json": "7cba6ec36ef1da6fa17c81303b0e8743eb58fa2dfb30f7b2363fbe85bfcaa940",
+  "reports/meta_alpha/META_ALPHA_RAPPORT_SCIENTIFIQUE_GLOBAL.md": "bcbb6f1e37d854fbedc717ac03ccd7f1df9dc64babcc8841a6da3e61082cb50d"
+ },
+ "chain_head": "49 entrees"
+}

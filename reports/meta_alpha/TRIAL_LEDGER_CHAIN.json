@@ -516,6 +516,33 @@
     "deliverable": "META_ALPHA_RAPPORT_SCIENTIFIQUE_GLOBAL.md (sections A-M)"
    },
    "entry_hash": "323f5793b896f0c759e6ecfb6012cc2434bbc6c1ce388ed73407cbde52d63a19"
+  },
+  {
+   "seq": 48,
+   "prev_hash": "323f5793b896f0c759e6ecfb6012cc2434bbc6c1ce388ed73407cbde52d63a19",
+   "entry": {
+    "type": "RESULTS",
+    "mission": "INTEGRAL_SCAN",
+    "runs": [
+     "44253130278 echec conserve",
+     "44253274284 succes",
+     "44254224163 succes corrige"
+    ],
+    "coverage": "282/282",
+    "synthesis": "reports/meta_alpha/integral_scan/INTEGRAL_SYNTHESIS.json",
+    "verdict": "cartographie partition complete; decouverte candidate descriptive max; aucun edge qualifie"
+   },
+   "entry_hash": "9b43eafaaabb0f757546b2703994b8782963554d264423a88541fadadca9d825"
+  },
+  {
+   "seq": 49,
+   "prev_hash": "9b43eafaaabb0f757546b2703994b8782963554d264423a88541fadadca9d825",
+   "entry": {
+    "type": "REPORT_LOCK",
+    "report": "META_ALPHA_RAPPORT_SCIENTIFIQUE_GLOBAL.md",
+    "sha256": "bcbb6f1e37d854fbedc717ac03ccd7f1df9dc64babcc8841a6da3e61082cb50d"
+   },
+   "entry_hash": "8721796c79b0e4403c309b895c57a33f56c2d3b4b8e91c722ee2eb645f25b612"
   }
  ]
 }
