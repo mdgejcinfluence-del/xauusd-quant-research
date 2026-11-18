@@ -1,8 +1,3 @@
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/integral_scan.py", line 94, in <module>
-    if __name__=='__main__': main()
-                             ^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/integral_scan.py", line 86, in main
-    r=con.execute(EQ.format(f=local)).fetchone()
-                  ^^
-NameError: name 'EQ' is not defined
+  File "<string>", line 4, in <module>
+AssertionError

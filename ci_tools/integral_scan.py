@@ -83,7 +83,7 @@ def main():
                 local=f"/tmp/{p['name']}"
                 if not dl_drive(p['drive_id'], local, p['name'], p['file_bytes']):
                     state.setdefault('skipped',[]).append(p['name']); checkpoint(state); print('SKIP', p['name'], flush=True); continue
-            r=con.execute(EQ.format(f=local)).fetchone()
+            r=tuple(con.execute(EQ1.format(f=local)).fetchone())+tuple(con.execute(EQ2.format(f=local)).fetchone())
             with open(OUT,'a') as fh: fh.write(p['name']+','+','.join('' if v is None else str(float(v)) for v in r)+'\n')
             if local.startswith('/tmp/part_'): os.remove(local)
             state['done'].append(p['name'])
