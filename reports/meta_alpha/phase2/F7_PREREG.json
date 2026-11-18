@@ -1,0 +1,14 @@
+{
+ "mission": "F7_ANTICIPATION_SAUTS - classification (Phase 2)",
+ "perimetre": "serie horaire IS; cible: |rendement heure suivante| > quantile 90 causal de son passe (adaptation horaire de la cible 200 ticks, consignee)",
+ "features": [
+  "vol_state causal",
+  "spread_state causal",
+  "act_state (n ticks heure) causal",
+  "|ret| passe",
+  "heure UTC (sin/cos)"
+ ],
+ "modele": "logistique regularisee L2 (implementation numpy), validation 5 plis contigus purges (embargo 24 h)",
+ "succes_gele": "AUC out-of-fold >= 0.60 ET lift >= 2x au taux d'alerte 5%",
+ "essais_declares": 2
+}

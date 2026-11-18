@@ -1,0 +1,7 @@
+{
+ "mission": "F5_SAISONNALITES - interactions jour x heure apres desaisonnalisation (Phase 2)",
+ "perimetre": "serie horaire IS; rendement forward = heure suivante (adaptation d'echelle consignee vs H=300s)",
+ "mesure": "moyenne du rendement forward desaisonnalise (retrait mediane par heure) par cellule jour(5) x heure(24)=120 cellules declarees; amplitude et stabilite de signe par tiers du regime recent",
+ "succes_gele": "cellule |moyenne| >= 0.5 bp, signe stable 3/3 tiers; sinon descriptif seulement",
+ "essais_declares": 120
+}

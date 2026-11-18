@@ -810,6 +810,71 @@
     "resultat": "corr ORI50->retours Mid 20/50 ticks et deciles par ere dans F2_SYNTHESIS.json"
    },
    "entry_hash": "718f0c359c10d7aab3b18c68dd33b4d4057f5775a86784a19866070724efcaa3"
+  },
+  {
+   "seq": 74,
+   "prev_hash": "718f0c359c10d7aab3b18c68dd33b4d4057f5775a86784a19866070724efcaa3",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F5_SAISONNALITES",
+    "registry": "reports/meta_alpha/phase2/F5_PREREG.json",
+    "sha256": "f53edc634f0e4cab83e3cd4c080caf732e32646d58601f6b0dd01e81b1de5c39",
+    "n_essais_declares": 120,
+    "note": "cellules declarees au budget meme si lecture descriptive"
+   },
+   "entry_hash": "eb4baf0125f547de1ddeb88637013afdc128852e5a14adf6db8d1abef78882c2"
+  },
+  {
+   "seq": 75,
+   "prev_hash": "eb4baf0125f547de1ddeb88637013afdc128852e5a14adf6db8d1abef78882c2",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F7_ANTICIPATION_SAUTS",
+    "registry": "reports/meta_alpha/phase2/F7_PREREG.json",
+    "sha256": "51658af826df1d5525a2994d5c46e529d9fffa5bd49dc61f94520ed25f9115c2",
+    "n_essais_declares": 2
+   },
+   "entry_hash": "fa7eb68d0dba2ee63fe93e9ff7b884ea0c7f0c01c5d6cfc52ca9ce5126704436"
+  },
+  {
+   "seq": 76,
+   "prev_hash": "fa7eb68d0dba2ee63fe93e9ff7b884ea0c7f0c01c5d6cfc52ca9ce5126704436",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F5_SAISONNALITES",
+    "resultat": "NON QUALIFIEE: meilleure cellule mer 12h -3.07bp n=206, signe retourne au 3e tiers (+0.79); 120 cellules declarees au budget"
+   },
+   "entry_hash": "0ef5b1c448f646f4f78ec47c6410eb6e0dce1959963641803c5ce03b4c6447a6"
+  },
+  {
+   "seq": 77,
+   "prev_hash": "0ef5b1c448f646f4f78ec47c6410eb6e0dce1959963641803c5ce03b4c6447a6",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F7_ANTICIPATION_SAUTS",
+    "resultat": "SUCCES GELE L1: AUC OOF purge 0.684 >= 0.60, lift 2.85x a 5pct alerte (n=23429, base 10.1%); composant evitement/gating, pas de direction"
+   },
+   "entry_hash": "1788f0b5ecaa5a1593f4479d181775f45afee3679438b8ffb9cdfe5f9cc5f62d"
+  },
+  {
+   "seq": 78,
+   "prev_hash": "1788f0b5ecaa5a1593f4479d181775f45afee3679438b8ffb9cdfe5f9cc5f62d",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F8_META_LABELING",
+    "resultat": "SANS OBJET: aucun primaire directionnel candidat (F1/F2/F6 rejetees)"
+   },
+   "entry_hash": "ce7761b21c17aa8c6b5246e204fc85dbea518d8f6d1175668b6e5484dd115961"
+  },
+  {
+   "seq": 79,
+   "prev_hash": "ce7761b21c17aa8c6b5246e204fc85dbea518d8f6d1175668b6e5484dd115961",
+   "entry": {
+    "type": "BILAN",
+    "mission": "PHASE2_CLOTURE_IS",
+    "resultat": "Budget essais 144/150 consommes; directionnel clos (criteres instruction sec.7); candidats L1 gestion: F3 (HAR) + F7 (sauts); L2 executable sous memes preregs; OOS ferme sans ordre proprietaire; synthese PHASE2_SYNTHESE.md"
+   },
+   "entry_hash": "f480ce69313cbb7b7ed1aa81b81ab9e9e1432aec7f53371cf4f69708fdea36c4"
   }
  ]
 }

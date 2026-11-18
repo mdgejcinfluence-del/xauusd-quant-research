@@ -1,0 +1,7 @@
+{
+ "n_recent": 23429,
+ "taux_base_saut": 0.10111400401212173,
+ "AUC_oof": 0.6844789475646377,
+ "lift_top5pct": 2.8461756411721426,
+ "succes_gele": true
+}
