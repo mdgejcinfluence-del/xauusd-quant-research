@@ -1,0 +1,16 @@
+{
+ "mission": "E2_ETATS - variables d'etat causales sur barres 60 s (Phase 2, fondations)",
+ "perimetre": "IS 282/282 borne certifiee fail-closed; OOS/HOLDOUT interdits",
+ "granularite_gelee": "barres 60 s (E1: 34-122 ticks/barre selon ere)",
+ "definitions_gelees": {
+  "spread_state": "quantile causal du spread moyen de la barre dans les 20 000 barres precedentes (defaut ~20 jours de flux actif), minimum 500 barres d'historique, passe strict uniquement",
+  "vol_state": "EWMA (lambda=0.94) de la RV de barre (somme des r^2 tick intra-barre), puis quantile causal meme fenetre",
+  "act_state": "quantile causal du nombre de ticks par barre, meme fenetre",
+  "tod": "heure UTC de la barre (descriptif)",
+  "run_state": "longueur moyenne des series de signe des rendements de barre (descriptif par partition)",
+  "jump_state": "part des barres |rendement de cloture| > 10 bp"
+ },
+ "sorties_par_partition": ["n_barres", "mediane et part <=0.25 de spread_state", "mediane et part >0.8 de vol_state_q", "mediane act_state_q", "corr(vol_state_q, |ret| barre suivante)", "corr(spread_state, spread barre suivante)", "run moyen barres", "part sauts"],
+ "controles": ["les quantiles causaux doivent etre ~uniformes (mediane ~0.5) - ecart = bug ou derive, consigne", "aucune fenetre future: passe strict verifie dans le code (fenetre PRECEDING uniquement)"],
+ "suite": "E3 (mesures RV/BPV/ORI/fracdiff) reutilise ces barres; E5 testera la fuite"
+}

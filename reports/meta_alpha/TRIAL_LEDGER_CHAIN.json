@@ -601,6 +601,29 @@
     "resultat": "barres tick/secondes/range construites 282/282; recomptage 288086588 ticks (=288086306 attendu a la definition pres); durees de barres et spreads de cloture par ere consignes E1_SYNTHESIS.json; flags GD07=4 partitions, GD08=21"
    },
    "entry_hash": "5b659edf1386abd96f9a8d1e720a28b5347df6d3ffac29fee3fcecd1e9d2a064"
+  },
+  {
+   "seq": 55,
+   "prev_hash": "5b659edf1386abd96f9a8d1e720a28b5347df6d3ffac29fee3fcecd1e9d2a064",
+   "entry": {
+    "type": "CONFIG_LOCK",
+    "config": "OWNER_CONFIG_V1 maj",
+    "sha256": "e95a4b39bfa816fdffb57eefc834ea22cc19a3d2a37fcc43e75e580f0ef5b7a2",
+    "decision": "Specification serveur MT5 XAUUSD NON DISPONIBLE: contract size, volume min/pas, tick size/value, digits = UNKNOWN; dimensionnement et risque definitifs CONDITIONNELS; aucune substitution de valeurs standard"
+   },
+   "entry_hash": "524aa7710d074896adfc0f64f2bc3e7b131633e313ff9c546f7334433a59155f"
+  },
+  {
+   "seq": 56,
+   "prev_hash": "524aa7710d074896adfc0f64f2bc3e7b131633e313ff9c546f7334433a59155f",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "E2_ETATS",
+    "registry": "reports/meta_alpha/phase2/E2_PREREG.json",
+    "sha256": "855f0a98e03bf69bbea97373842714234589cc8d858f054c43c2af984ead4903",
+    "config_ref": "seq55"
+   },
+   "entry_hash": "9c2931593dfd6e079e28dc5994e0121e4b032f53f5c8d4c7127244b8631ee53b"
   }
  ]
 }

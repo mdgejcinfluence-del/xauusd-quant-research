@@ -26,11 +26,25 @@
   "contract_size_oz_per_lot": "UNKNOWN - non publie; a relever dans MT5 (Market Watch > XAUUSD > Specification) sur le serveur du compte",
   "volume_min_lot": "UNKNOWN",
   "volume_step_lot": "UNKNOWN",
-  "statut": "PARTIEL - trois cles UNKNOWN explicites"
+  "statut": "PARTIEL - trois cles UNKNOWN explicites",
+  "tick_size": "UNKNOWN",
+  "tick_value": "UNKNOWN",
+  "digits": "UNKNOWN",
+  "mt5_server_spec": "NON DISPONIBLE ACTUELLEMENT (proprietaire, 2026-11-13) - a recuperer dans MT5: Market Watch > XAUUSD > Specification, serveur du compte Blue Guardian 2-Step Pro 5K"
  },
  "consequences_gelées": {
-  "bloque": ["ancrage C1 definitif (1.3)", "commission_bp_per_side (depend de la convention et du contrat)", "dimensionnement des positions", "simulateur de challenge 5.3 en mode definitif"],
-  "autorise_avec_mention": ["fondations E1-E5 (aucune consommation de ces cles)", "F3/F4 (previsions, pas de cout)", "tests directionnels exprimes en bp bruts + scenarios de commission parametriques declares, verdict economique CONDITIONNEL tant que les cles sont UNKNOWN"],
-  "document_joint_proprietaire": "BLUE_GUARDIAN_2STEP_PRO_5K_XAUUSD_EXTERNAL_EXECUTION_SPEC(1).pdf (spec externe; ne remplace pas la specification serveur MT5)"
+  "bloque": [
+   "ancrage C1 definitif (1.3)",
+   "commission_bp_per_side (depend de la convention et du contrat)",
+   "dimensionnement des positions",
+   "simulateur de challenge 5.3 en mode definitif"
+  ],
+  "autorise_avec_mention": [
+   "fondations E1-E5 (aucune consommation de ces cles)",
+   "F3/F4 (previsions, pas de cout)",
+   "tests directionnels exprimes en bp bruts + scenarios de commission parametriques declares, verdict economique CONDITIONNEL tant que les cles sont UNKNOWN"
+  ],
+  "document_joint_proprietaire": "BLUE_GUARDIAN_2STEP_PRO_5K_XAUUSD_EXTERNAL_EXECUTION_SPEC(1).pdf (spec externe; ne remplace pas la specification serveur MT5)",
+  "sizing_et_risque_definitif": "CONDITIONNEL jusqu a recuperation et verification de la specification serveur; aucune valeur standard d un autre courtier ne sera substituee"
  }
 }

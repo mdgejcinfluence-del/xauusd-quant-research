@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+_duckdb.BinderException: Binder Error: Ambiguous reference to column name "t" (use: 's.t' or 'd.t')
+
+LINE 4: SELECT floor(epoch(t)/60) AS bkt, avg(spbp), sum(coalesce(rbp,0)*coalesce(rbp...
+                            ^
