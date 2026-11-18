@@ -56,21 +56,23 @@ def pit_series(sid):
     vintage_date = realtime_start (date d'apparition de cette version). Point-in-time exact,
     sans requeter l'historique complet a chaque vintage (run2: timeout 300 min, consigne)."""
     h, mnt = H_PUB[sid]
-    rows, offset = [], 0
-    while True:
-        o = api_get('/series/observations', {'series_id': sid, 'realtime_start': '2009-06-01',
-                                             'realtime_end': '9999-12-31', 'observation_start': '2009-01-01',
-                                             'limit': 100000, 'offset': offset})
-        obs = o.get('observations', [])
-        for ob in obs:
-            if ob['value'] != '.':
-                v = dt.date.fromisoformat(ob['realtime_start'])
-                rows.append((ob['date'], str(v), dispo(v, h, mnt), float(ob['value'])))
-        offset += len(obs)
-        log(f'{sid}: {offset}/{o.get("count", "?")} versions')
-        if len(obs) < 100000: break
-        time.sleep(0.55)
-    return pd.DataFrame(rows, columns=['reference_date', 'vintage_date', 'available_at_utc', 'value'])
+    rows = []
+    for an in range(2009, dt.date.today().year + 1):
+        offset = 0
+        while True:
+            o = api_get('/series/observations', {'series_id': sid, 'realtime_start': f'{an}-01-01',
+                                                 'realtime_end': f'{an}-12-31', 'observation_start': '2009-01-01',
+                                                 'limit': 100000, 'offset': offset})
+            obs = o.get('observations', [])
+            for ob in obs:
+                if ob['value'] != '.':
+                    v = dt.date.fromisoformat(ob['realtime_start'])
+                    rows.append((ob['date'], str(v), dispo(v, h, mnt), float(ob['value'])))
+            offset += len(obs)
+            if len(obs) < 100000: break
+            time.sleep(0.55)
+        log(f'{sid}: millesime {an} traite (cumule {len(rows)} versions)')
+    return pd.DataFrame(rows, columns=['reference_date', 'vintage_date', 'available_at_utc', 'value']).drop_duplicates()
 
 if KEY:
     for sid in H_PUB:
@@ -136,8 +138,28 @@ def fomc_events():
     rows = [{'reference_date': pd.Timestamp(d2), 'available_at_utc': dispo(d2, 14, 0),
              'event': 'FOMC_statement', 'meeting_start': str(d1), 'meeting_end': str(d2)} for d2, d1 in sorted(ev.items())]
     return pd.DataFrame(rows)
+
+def fomc_events_archives():
+    """Dates de reunion pre-2021: liens officiels fomcminutesAAAAMMJJ.htm des pages
+    d'archives federalreserve.gov (la date du lien = jour 2 de reunion). Aucune date inventee."""
+    ev = {}
+    for y in range(2010, 2027):
+        for url in [f'https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm?year={y}',
+                    f'https://www.federalreserve.gov/monetarypolicy/fomcminutes{y}index.htm']:
+            try:
+                html = requests.get(url, timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
+                trouve = 0
+                for mm in re.finditer(r'fomcminutes(20\d\d)(\d\d)(\d\d)\.htm', html):
+                    d2 = dt.date(int(mm.group(1)), int(mm.group(2)), int(mm.group(3)))
+                    if d2 not in ev: ev[d2] = d2; trouve += 1
+                log(f'FOMC archives {y} {url[45:75]}: +{trouve} (cumule {len(ev)})')
+            except Exception as e:
+                log(f'FOMC archives ECHEC {y}: {type(e).__name__}')
+    rows = [{'reference_date': pd.Timestamp(d2), 'available_at_utc': dispo(d2, 14, 0),
+             'event': 'FOMC_statement', 'meeting_start': '', 'meeting_end': str(d2)} for d2 in sorted(ev)]
+    return pd.DataFrame(rows)
 try:
-    fe = fomc_events()
+    fe = pd.concat([fomc_events(), fomc_events_archives()]).drop_duplicates('reference_date').sort_values('reference_date')
     if len(fe):
         frames['fomc_events'] = fe
         meta['fomc_events'] = {'source': 'federalreserve.gov (calendriers FOMC officiels)', 'frequence': 'evenement',
