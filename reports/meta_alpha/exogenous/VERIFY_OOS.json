@@ -12,6 +12,22 @@
    "sha256": "a827d51c615afa9e10756f5cb862eab53583f7e2a6315bfd0caffe4fb7dcd6c2",
    "taille": 48538
   },
+  "fomc_events.parquet": {
+   "sha256": "3175d013d33866e264b544e3a4405b1de60a29fc7930313813325407660dc11d",
+   "taille": 5098
+  },
+  "fred_dfii10_officiel.parquet": {
+   "sha256": "91fee3052128de54612058d04732141c03db24ccdb8eccb724007d64aa4ac7c7",
+   "taille": 21574
+  },
+  "fred_dgs10_officiel.parquet": {
+   "sha256": "7ea0e12d8f45ce6ffd79de31de2bbccc486f2449dfc9c66ad495f1ba54b416f9",
+   "taille": 21648
+  },
+  "fred_dgs2_officiel.parquet": {
+   "sha256": "3a701ad61329a771b6945022804b529de5867ed2590bfaacac5afb28212b2453",
+   "taille": 21604
+  },
   "fred_dollar_broad.parquet": {
    "sha256": "c8c581d0cc9f06d4666b9c845ddf421d3be559b7ffea5e0db39a9edb11f9db62",
    "taille": 23848
@@ -19,6 +35,10 @@
   "fred_eurusd.parquet": {
    "sha256": "d3844b6006c3773429525f4af18a86f715c7b052be3e221fc8729cc2efd2010b",
    "taille": 25709
+  },
+  "fred_gvz_officiel.parquet": {
+   "sha256": "5652e8e106c6cbacd0d0ac3fec322ac8b59b1f955d291009324d14ae5803aeb6",
+   "taille": 23451
   },
   "fred_spx.parquet": {
    "sha256": "39110ba250a3cbbf765ca14912acb6d59c3d39fc640b5c0b88961ee6f24f6354",
@@ -43,6 +63,42 @@
   "fred_wti.parquet": {
    "sha256": "6fde29c4698f861f8548640a09b59445e5f1bf0d937177e9a3ade7116bd89848",
    "taille": 24890
+  },
+  "macro_cpiaucns_pit.parquet": {
+   "sha256": "081e1d8cbccf125df7fa1ad12aa5e1402c8d5f2238195c780da3ce9988a076f5",
+   "taille": 4721
+  },
+  "macro_cpiaucsl_pit.parquet": {
+   "sha256": "8f919416984022bf14581d3e7fd7139ee1981e887efd626f4a2db88dfb06d6be",
+   "taille": 7302
+  },
+  "macro_fedfunds_pit.parquet": {
+   "sha256": "59f7bd213613d849fe90a779d8cc3e0f6d17147dfb5af1d0b0f3fd3f54c69d5e",
+   "taille": 4493
+  },
+  "macro_gdp_pit.parquet": {
+   "sha256": "a52aa51c77a7f6af956a8a68ba7f2dd6dedce02af531d81ee3e0272351455bff",
+   "taille": 6283
+  },
+  "macro_icsa_pit.parquet": {
+   "sha256": "59e4cd517edb6f4e30b842dcf3c93e05a10aae9ed5f5f12713a251be0c822321",
+   "taille": 15904
+  },
+  "macro_payems_pit.parquet": {
+   "sha256": "dd591fe710b7ae4e8ba5fb7b1641ebd45c9ec2f7b39d5d7da24d71df3e6f0617",
+   "taille": 9568
+  },
+  "macro_pcepi_pit.parquet": {
+   "sha256": "6135f35660056a64c2bbf72b7db1ec83a454aa657392b894e323cd7021970d7e",
+   "taille": 10749
+  },
+  "macro_pcepilfe_pit.parquet": {
+   "sha256": "4ef9f10824865a3b2f90d99438eb4a547c1c87037f499482e422f5651382944e",
+   "taille": 10714
+  },
+  "macro_unrate_pit.parquet": {
+   "sha256": "dee2ed4130cb8b6769edf3d1756815dccb5d0c36d3e6f464f9460d58c4ccf2c1",
+   "taille": 4787
   }
  },
  "audit_anti_fuite": null,

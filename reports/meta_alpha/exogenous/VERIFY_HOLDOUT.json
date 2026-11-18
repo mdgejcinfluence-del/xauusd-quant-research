@@ -5,23 +5,43 @@
    "taille": 24383
   },
   "comex_gc_ohlcv.parquet": {
-   "sha256": "9a5141fa650d15dbae0220854f839d86de9a8997873f659f3d91772a7085fe8c",
+   "sha256": "82810ed455efb0c875efe78595d004cfc21626e8fbf5fdfbe8f4edc305a410ed",
    "taille": 40280
   },
   "comex_si_ohlcv.parquet": {
-   "sha256": "d4fe54db4dbfe1aa3844d85eee5526815a2a745cb0a52c006240b5f90dc645dd",
+   "sha256": "80a18dde9d927623017526581b96598e6de75ac558c3776ea19b63a103c35524",
    "taille": 38865
   },
+  "fomc_events.parquet": {
+   "sha256": "50b1e99bbe6b35ac62b8b658ce9f96d83857d78539a4231095073a9ec7ee366d",
+   "taille": 5482
+  },
+  "fred_dfii10_officiel.parquet": {
+   "sha256": "572746cd1462cac4c198f901a6f88da3db66906983f8cce7181bc0b5b3196d05",
+   "taille": 15855
+  },
+  "fred_dgs10_officiel.parquet": {
+   "sha256": "7bc23ed8981b9ff437c8626cf5aa0c5cac4d8d0adcff8eba59471413abb68af6",
+   "taille": 15964
+  },
+  "fred_dgs2_officiel.parquet": {
+   "sha256": "15d5b2fcfe4098c632eae0bc87f3ba5a46679b315ae9faaab37db39e21a07357",
+   "taille": 16013
+  },
   "fred_dollar_broad.parquet": {
-   "sha256": "2331bfdf116d4db9e4529c8249ccbcfcb3fa162616dcc08428d76712fc89c4fb",
+   "sha256": "9ffabf9f56f52f44efcb59c76d00c36d59ca681dd8960db3ae7b0c41df047921",
    "taille": 17893
   },
   "fred_eurusd.parquet": {
-   "sha256": "efcc96554a557b3b7d9e10d42f0c3dbf7f2c7ba59f0ee8ec544b18761c7b1738",
+   "sha256": "b314784b812246c1cfab7bd13dc7159b0446bfd453425ce9c0bdf4b9cf31fad9",
    "taille": 19178
   },
+  "fred_gvz_officiel.parquet": {
+   "sha256": "c852a81343fadbbda87056457e14ecb5cd89c0e82dd68a3f32430bdd2c37bc15",
+   "taille": 18289
+  },
   "fred_spx.parquet": {
-   "sha256": "b722e8f1f3c17629d3fdc268e6d77f1b54b0f3cd9f1b4052995359914ab17a0c",
+   "sha256": "fb431be8cec0308281466d41f6a777cd8560a6fe63e2afb0f67e1fff0a271f93",
    "taille": 19064
   },
   "fred_taux_10a.parquet": {
@@ -29,20 +49,56 @@
    "taille": 17759
   },
   "fred_taux_court_3m_proxy.parquet": {
-   "sha256": "355241c56f03ba62e2cf5f565bb7d2b7a86fc373dc5dc0a4f4f207a2ca860c21",
+   "sha256": "b6106282e2120492f1f1ad3d3c032006fa6c71c226887de006a89377e00ef611",
    "taille": 16565
   },
   "fred_usdjpy.parquet": {
-   "sha256": "330383f8c6fa1982475d13935d35f7f15d7c476b53bc6a637a3bc96e5c562fa0",
+   "sha256": "f4e6452de5f394da7116791c4cc5195adba810c5c5f7d53c6e88038eeff4e8b5",
    "taille": 19354
   },
   "fred_vix.parquet": {
-   "sha256": "3f3adfc52f50e24f20830f70e4f67cca828c57eef3d0fd6014a071d98c20458f",
+   "sha256": "4ff32ca9b7ee7998ea7870e3819c28dd9b5a608ccacc3cbdbdb496f64f316dbc",
    "taille": 18052
   },
   "fred_wti.parquet": {
-   "sha256": "78d28c604c7f74d3742cc855c072409aa5fe92bff0278abc5ea8fdb2aa3b2890",
+   "sha256": "b079dbc8db78a177dde614702ba449f6ec84121aef15f950a48bd0dd231e2739",
    "taille": 18798
+  },
+  "macro_cpiaucns_pit.parquet": {
+   "sha256": "b6eadcc92b1488678d99e6969186770b99d33b07792c3b9900be744844af4ae4",
+   "taille": 4310
+  },
+  "macro_cpiaucsl_pit.parquet": {
+   "sha256": "e5863ca287be42fdc0818613d66a03cae792d2de0cca357b383704b345064332",
+   "taille": 6423
+  },
+  "macro_fedfunds_pit.parquet": {
+   "sha256": "5323b97c8638d50bb56eb8043d82ec3b17f720376e00e8a77052121731af9d8c",
+   "taille": 4128
+  },
+  "macro_gdp_pit.parquet": {
+   "sha256": "f6097f02efc52bf97d8ffbf8809e7b151c31be6cc18e29eda0397509ac5b43a2",
+   "taille": 4977
+  },
+  "macro_icsa_pit.parquet": {
+   "sha256": "0260f7eb966aed66683e433e6510d063fa74b360016f57bb134ef37bdfdbc3fd",
+   "taille": 10771
+  },
+  "macro_payems_pit.parquet": {
+   "sha256": "9163af2ea4bb100a5161f3f95392ada801dfa27e52746a2c755174016a666324",
+   "taille": 9562
+  },
+  "macro_pcepi_pit.parquet": {
+   "sha256": "8cf4116fe44bd35e2e10d8e62d7da69cf6d147df696928a3ac7388eeeef37e25",
+   "taille": 7307
+  },
+  "macro_pcepilfe_pit.parquet": {
+   "sha256": "6a5b8e45a96821e82dd7208203a5482317eacda8688e648934c250f4d7504204",
+   "taille": 7371
+  },
+  "macro_unrate_pit.parquet": {
+   "sha256": "ac5c6971a83b28215e8b98575449da8c9daba1c9e947258d004d869a27237e36",
+   "taille": 4481
   }
  },
  "audit_anti_fuite": null,

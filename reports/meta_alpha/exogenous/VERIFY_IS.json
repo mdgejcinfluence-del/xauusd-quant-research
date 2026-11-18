@@ -12,6 +12,18 @@
    "sha256": "5992da28035b45c83fb991f6b9387fc22b2240ecf5f5adc7991f28ac0c367943",
    "taille": 210521
   },
+  "fred_dfii10_officiel.parquet": {
+   "sha256": "8805853e20a1f30b4b6097474f4f6d0298855dec1e9fccbdfb8509ca96a41129",
+   "taille": 82818
+  },
+  "fred_dgs10_officiel.parquet": {
+   "sha256": "2138fc8cbbf96c4b1927e393ecafd5ef206c1d3b3c926238875dc2077a19d4c4",
+   "taille": 82743
+  },
+  "fred_dgs2_officiel.parquet": {
+   "sha256": "29688ea52a2d451da8e52f2cb1ab20b1019d99e5c221ac430f8f7055a574c659",
+   "taille": 83178
+  },
   "fred_dollar_broad.parquet": {
    "sha256": "c1106beac51e429a1cf4d5925878fc65c3fd9c6973cd51b1a4cc66eb93cff464",
    "taille": 124275
@@ -19,6 +31,10 @@
   "fred_eurusd.parquet": {
    "sha256": "70144a5e5fc038f7e6aa5a2b96a05182f0da133a420376463009bfe47723bf3b",
    "taille": 96456
+  },
+  "fred_gvz_officiel.parquet": {
+   "sha256": "f827972409d8faa6bfa771ea01c7b789b88ce419f9e9844afa931525b44ca5cc",
+   "taille": 63250
   },
   "fred_spx.parquet": {
    "sha256": "539dfcfb21a423c1044f3ade03df7358d74807203f44dffcd068955ae0b2d25e",
@@ -47,6 +63,42 @@
   "fred_wti.parquet": {
    "sha256": "287d9db7b6f5b648547922a1fc5afa9c52923a0cc473f406b3be33bd2e8f8422",
    "taille": 110867
+  },
+  "macro_cpiaucns_pit.parquet": {
+   "sha256": "450647f9fd69892dd10d855787b130e1b0d123b9d654286ae933967822a0c5d2",
+   "taille": 7505
+  },
+  "macro_cpiaucsl_pit.parquet": {
+   "sha256": "95867d9e0fde15a54899f3b5d8ec859458108aa42ae05fd8cd8b229c45cf40a7",
+   "taille": 11527
+  },
+  "macro_fedfunds_pit.parquet": {
+   "sha256": "f4b66c7e039bcc69d35ae01a1a8ccdd08c96ed9a6cf90f5e55da2e61dc683804",
+   "taille": 6809
+  },
+  "macro_gdp_pit.parquet": {
+   "sha256": "d7df66183290ee0e4a42bbc232966d7933efebba76378cb9a8eeea097b77b9eb",
+   "taille": 8225
+  },
+  "macro_icsa_pit.parquet": {
+   "sha256": "4d37ce1d7386aeea656f900e085f8ef051fc73b7b67697f360f8a977313da2d2",
+   "taille": 29161
+  },
+  "macro_payems_pit.parquet": {
+   "sha256": "cb7c8ef5608bd5b921459eed08ab7babd0e375fbfc9c1c3a920a59c721a402d5",
+   "taille": 13639
+  },
+  "macro_pcepi_pit.parquet": {
+   "sha256": "33b3044c0fb27b1cff382d2b14b3e3a8143199868441246214169569251ae871",
+   "taille": 14023
+  },
+  "macro_pcepilfe_pit.parquet": {
+   "sha256": "f396e2f5ff0cb079faa7f8a13354e73591dcc5d0fe529762797a0809fe50763b",
+   "taille": 14134
+  },
+  "macro_unrate_pit.parquet": {
+   "sha256": "f395021eeda7946cb8d70288d666d0a62757244edd6c74f5a107349affd5ac6c",
+   "taille": 7209
   }
  },
  "audit_anti_fuite": {

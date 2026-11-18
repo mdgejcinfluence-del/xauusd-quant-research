@@ -1,6 +1,6 @@
 {
  "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
- "genere_utc": "2026-11-18 15:15:41.546295+00:00",
+ "genere_utc": "2026-11-18 20:17:01.980452+00:00",
  "bornes": {
   "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
   "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
@@ -218,9 +218,204 @@
    "motif": "les dates de vintage ALFRED exigent une cle API FRED (gratuite mais personnelle, absente des secrets CI); toute approximation de available_at violerait la regle anti-revision du \u00a73. Champs laisses vides, aucune imputation. A collecter des que le proprietaire fournit une cle API FRED en secret CI."
   },
   "etf_gld_iau_shares": {
-   "source": "Yahoo shares outstanding GLD/IAU",
-   "statut": "NON COLLECTE",
-   "motif": "historique lacunaire non certifiable gratuitement; consigne conformement a l instruction (famille 5, limite connue)."
+   "statut": "CLOTURE DEFINITIVE (C3, seq104)",
+   "motif": "historique des flux (shares outstanding) non certifiable gratuitement - manquant definitif",
+   "interdiction": "le volume daily GLD existe mais volume != flux: interdiction absolue de l utiliser comme substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable"
+  },
+  "macro_payems_pit": {
+   "source": "ALFRED/FRED API series_id=PAYEMS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 2093,
+   "vintages": 211,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-06"
+   ]
+  },
+  "macro_unrate_pit": {
+   "source": "ALFRED/FRED API series_id=UNRATE (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 391,
+   "vintages": 211,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-06"
+   ]
+  },
+  "macro_cpiaucsl_pit": {
+   "source": "ALFRED/FRED API series_id=CPIAUCSL (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 1114,
+   "vintages": 223,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-10"
+   ]
+  },
+  "macro_cpiaucns_pit": {
+   "source": "ALFRED/FRED API series_id=CPIAUCNS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 217,
+   "vintages": 210,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-10"
+   ]
+  },
+  "macro_pcepi_pit": {
+   "source": "ALFRED/FRED API series_id=PCEPI (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 1943,
+   "vintages": 209,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-09-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-10-29"
+   ]
+  },
+  "macro_pcepilfe_pit": {
+   "source": "ALFRED/FRED API series_id=PCEPILFE (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 1941,
+   "vintages": 209,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-09-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-10-29"
+   ]
+  },
+  "macro_gdp_pit": {
+   "source": "ALFRED/FRED API series_id=GDP (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 611,
+   "vintages": 207,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-07-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-10-29"
+   ]
+  },
+  "macro_icsa_pit": {
+   "source": "ALFRED/FRED API series_id=ICSA (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 08:30 America/New_York converti UTC date par date (DST)",
+   "lignes": 5197,
+   "vintages": 906,
+   "plage_reference": [
+    "2009-01-03",
+    "2026-11-07"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-12"
+   ]
+  },
+  "macro_dfedtaru_pit": {
+   "source": "ALFRED DFEDTARU",
+   "statut": "ECHEC COLLECTE",
+   "motif": "FRED HTTP 400: Bad Request.  There are 3844 vintage dates in the specified real-time period: 2009-06-01 to 9999-12-31.  This exceeds the maximum number of vintage dates allowed for this file type (200"
+  },
+  "macro_dfedtarl_pit": {
+   "source": "ALFRED DFEDTARL",
+   "statut": "ECHEC COLLECTE",
+   "motif": "FRED HTTP 400: Bad Request.  There are 5059 vintage dates in the specified real-time period: 2009-06-01 to 9999-12-31.  This exceeds the maximum number of vintage dates allowed for this file type (200"
+  },
+  "macro_fedfunds_pit": {
+   "source": "ALFRED/FRED API series_id=FEDFUNDS (vintages point-in-time)",
+   "frequence": "panel de vintages",
+   "convention_available_at": "vintage_date + 14:00 America/New_York converti UTC date par date (DST)",
+   "lignes": 216,
+   "vintages": 212,
+   "plage_reference": [
+    "2009-01-01",
+    "2026-10-01"
+   ],
+   "plage_vintage": [
+    "2009-06-01",
+    "2026-11-02"
+   ]
+  },
+  "fred_dfii10_officiel": {
+   "source": "FRED API series_id=DFII10 (officiel, remplace le proxy Yahoo seq102 comme reference primaire)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "lignes": 5972,
+   "plage_reference": [
+    "2003-01-02",
+    "2026-11-16"
+   ]
+  },
+  "fred_gvz_officiel": {
+   "source": "FRED API series_id=GVZCLS (officiel, remplace le proxy Yahoo seq102 comme reference primaire)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "lignes": 4647,
+   "plage_reference": [
+    "2008-06-03",
+    "2026-11-17"
+   ]
+  },
+  "fred_dgs10_officiel": {
+   "source": "FRED API series_id=DGS10 (officiel, remplace le proxy Yahoo seq102 comme reference primaire)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "lignes": 5972,
+   "plage_reference": [
+    "2003-01-02",
+    "2026-11-16"
+   ]
+  },
+  "fred_dgs2_officiel": {
+   "source": "FRED API series_id=DGS2 (officiel, remplace le proxy Yahoo seq102 comme reference primaire)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date + 1 jour 00:00 UTC (conservateur)",
+   "lignes": 5972,
+   "plage_reference": [
+    "2003-01-02",
+    "2026-11-16"
+   ]
+  },
+  "fomc_events": {
+   "source": "federalreserve.gov (calendriers FOMC officiels)",
+   "frequence": "evenement",
+   "convention_available_at": "jour 2 de reunion, 14:00 America/New_York converti UTC date par date (DST)",
+   "lignes": 104,
+   "plage_reference": [
+    "2021-01-27 00:00:00",
+    "2028-01-26 00:00:00"
+   ]
   }
  },
  "journal_collecte": [
@@ -263,5 +458,82 @@
   "COT 2025: 102 semaines or",
   "COT 2026: 90 semaines or",
   "OK cftc_cot_gold_disagg: 880 lignes 2010-01-05 00:00:00+00:00 -> 2026-11-10 00:00:00+00:00"
- ]
+ ],
+ "completion_seq103": {
+  "genere_utc": "2026-11-18 20:27:32.968654+00:00",
+  "journal": [
+   "PAYEMS: 2093/2093 versions",
+   "OK macro_payems_pit: 2093 obs, 211 vintages",
+   "UNRATE: 392/392 versions",
+   "OK macro_unrate_pit: 391 obs, 211 vintages",
+   "CPIAUCSL: 1115/1115 versions",
+   "OK macro_cpiaucsl_pit: 1114 obs, 223 vintages",
+   "CPIAUCNS: 218/218 versions",
+   "OK macro_cpiaucns_pit: 217 obs, 210 vintages",
+   "PCEPI: 1943/1943 versions",
+   "OK macro_pcepi_pit: 1943 obs, 209 vintages",
+   "PCEPILFE: 1941/1941 versions",
+   "OK macro_pcepilfe_pit: 1941 obs, 209 vintages",
+   "GDP: 611/611 versions",
+   "OK macro_gdp_pit: 611 obs, 207 vintages",
+   "ICSA: 5199/5199 versions",
+   "OK macro_icsa_pit: 5197 obs, 906 vintages",
+   "retry 1 /series/observations: ValueError",
+   "retry 2 /series/observations: ValueError",
+   "retry 3 /series/observations: ValueError",
+   "retry 4 /series/observations: ValueError",
+   "retry 5 /series/observations: ValueError",
+   "ECHEC PIT DFEDTARU: ValueError FRED HTTP 400: Bad Request.  There are 3844 vintage dates in the specified real-time period: 2009-06",
+   "retry 1 /series/observations: ValueError",
+   "retry 2 /series/observations: ValueError",
+   "retry 3 /series/observations: ValueError",
+   "retry 4 /series/observations: ValueError",
+   "retry 5 /series/observations: ValueError",
+   "ECHEC PIT DFEDTARL: ValueError FRED HTTP 400: Bad Request.  There are 5059 vintage dates in the specified real-time period: 2009-06",
+   "FEDFUNDS: 216/216 versions",
+   "OK macro_fedfunds_pit: 216 obs, 212 vintages",
+   "OK fred_dfii10_officiel: 5972 lignes",
+   "OK fred_gvz_officiel: 4647 lignes",
+   "OK fred_dgs10_officiel: 5972 lignes",
+   "OK fred_dgs2_officiel: 5972 lignes",
+   "FOMC page annees detectees: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm (cumule 103 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "FOMC page annees detectees: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007']",
+   "FOMC source OK: https://www.federalreserve.gov/monetarypolicy/fomc_historical_year.htm (cumule 104 reunions)",
+   "OK fomc_events: 104 reunions"
+  ],
+  "note_c2": "versions FRED officielles = reference primaire; proxys Yahoo seq102 conserves et consignes"
+ }
 }
