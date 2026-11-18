@@ -1,0 +1,39 @@
+{
+ "partitions": 282,
+ "barres_60s_total": 3540993,
+ "par_ere": {
+  "2010-2012": {
+   "ss_med": 0.5059,
+   "ss_le25": 0.1934,
+   "vq_med": 0.5174,
+   "vq_gt80": 0.1848,
+   "aq_med": 0.4513,
+   "corr_vq_next": 0.2369,
+   "corr_ss_next": 0.6264,
+   "run_bar": 1.9132,
+   "jump_share": 0.0068
+  },
+  "2013-2015": {
+   "ss_med": 0.4185,
+   "ss_le25": 0.3347,
+   "vq_med": 0.4355,
+   "vq_gt80": 0.1752,
+   "aq_med": 0.4411,
+   "corr_vq_next": 0.3556,
+   "corr_ss_next": 0.7893,
+   "run_bar": 1.9521,
+   "jump_share": 0.0065
+  },
+  "2016-2020": {
+   "ss_med": 0.4036,
+   "ss_le25": 0.361,
+   "vq_med": 0.4193,
+   "vq_gt80": 0.174,
+   "aq_med": 0.4288,
+   "corr_vq_next": 0.3311,
+   "corr_ss_next": 0.7693,
+   "run_bar": 1.9538,
+   "jump_share": 0.0023
+  }
+ }
+}

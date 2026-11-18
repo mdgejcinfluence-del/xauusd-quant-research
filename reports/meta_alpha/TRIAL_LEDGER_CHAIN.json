@@ -624,6 +624,17 @@
     "config_ref": "seq55"
    },
    "entry_hash": "9c2931593dfd6e079e28dc5994e0121e4b032f53f5c8d4c7127244b8631ee53b"
+  },
+  {
+   "seq": 57,
+   "prev_hash": "9c2931593dfd6e079e28dc5994e0121e4b032f53f5c8d4c7127244b8631ee53b",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "E2_ETATS",
+    "runs": "44270682334 echec conserve (scipy), 44270996153 succes 282/282",
+    "resultat": "etats causaux barres 60s: 3540993 barres; controles uniformite et correlations next-bar par ere dans E2_SYNTHESIS.json"
+   },
+   "entry_hash": "00c604e289282e11475f51c88be2601a6307a472192f1e46449a125e36cd4cb8"
   }
  ]
 }
