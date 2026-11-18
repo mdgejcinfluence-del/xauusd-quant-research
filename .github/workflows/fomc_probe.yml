@@ -4,6 +4,7 @@ on:
     branches: ["arena/afe12737-xauusd-quant-research"]
     paths: ["import_trigger/fomc_probe.txt"]
   workflow_dispatch: {}
+permissions: { contents: write }
 jobs:
   probe:
     runs-on: ubuntu-latest
