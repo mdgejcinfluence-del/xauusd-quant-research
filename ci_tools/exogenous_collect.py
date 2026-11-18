@@ -13,8 +13,15 @@ LOG = []
 def log(m): print(m, flush=True); LOG.append(m)
 def sha(b): return hashlib.sha256(b).hexdigest()
 def get(url, timeout=60):
-    r = requests.get(url, timeout=timeout, headers={'User-Agent': 'Mozilla/5.0 (META ALPHA data engineering)'})
-    r.raise_for_status(); return r.content
+    import time
+    last=None
+    for essai in range(4):
+        try:
+            r = requests.get(url, timeout=max(timeout,120), headers={'User-Agent': 'Mozilla/5.0 (META ALPHA data engineering)'})
+            r.raise_for_status(); return r.content
+        except Exception as e:
+            last=e; print(f'reessai {essai+1} {url[:60]}: {type(e).__name__}', flush=True); time.sleep(15*(essai+1))
+    raise last
 
 frames = {}   # nom -> df[reference_date, available_at_utc, colonnes valeurs]
 meta = {}
