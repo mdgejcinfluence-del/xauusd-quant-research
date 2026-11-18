@@ -225,77 +225,77 @@
   "macro_payems_pit": {
    "source": "ALFRED PAYEMS",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PAYEMS&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PAYEMS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_unrate_pit": {
    "source": "ALFRED UNRATE",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=UNRATE&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=UNRATE&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_cpiaucsl_pit": {
    "source": "ALFRED CPIAUCSL",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCSL&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCSL&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_cpiaucns_pit": {
    "source": "ALFRED CPIAUCNS",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCNS&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=CPIAUCNS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_pcepi_pit": {
    "source": "ALFRED PCEPI",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPI&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPI&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_pcepilfe_pit": {
    "source": "ALFRED PCEPILFE",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPILFE&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=PCEPILFE&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_gdp_pit": {
    "source": "ALFRED GDP",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=GDP&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=GDP&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_icsa_pit": {
    "source": "ALFRED ICSA",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=ICSA&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=ICSA&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_dfedtaru_pit": {
    "source": "ALFRED DFEDTARU",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARU&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARU&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_dfedtarl_pit": {
    "source": "ALFRED DFEDTARL",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARL&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=DFEDTARL&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "macro_fedfunds_pit": {
    "source": "ALFRED FEDFUNDS",
    "statut": "ECHEC COLLECTE",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=FEDFUNDS&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type=json"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/vintagedates?series_id=FEDFUNDS&api_key=REDACTED_INCIDENT_CONSIGNE&file_type=json"
   },
   "fred_dfii10_officiel": {
    "source": "FRED DFII10",
    "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DFII10&observation_start=2003-01-01&limit=100000&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_typ"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DFII10&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_typ"
   },
   "fred_gvz_officiel": {
    "source": "FRED GVZCLS",
    "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=GVZCLS&observation_start=2003-01-01&limit=100000&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_typ"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=GVZCLS&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_typ"
   },
   "fred_dgs10_officiel": {
    "source": "FRED DGS10",
    "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS10&observation_start=2003-01-01&limit=100000&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type"
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS10&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_type"
   },
   "fred_dgs2_officiel": {
    "source": "FRED DGS2",
    "statut": "ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)",
-   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS2&observation_start=2003-01-01&limit=100000&api_key=+f6075a63e94150ed48b3073dceebbfa6&file_type="
+   "motif": "400 Client Error: Bad Request for url: https://api.stlouisfed.org/fred/series/observations?series_id=DGS2&observation_start=2003-01-01&limit=100000&api_key=REDACTED_INCIDENT_CONSIGNE&file_type="
   },
   "fomc_events": {
    "source": "federalreserve.gov (calendriers FOMC officiels)",

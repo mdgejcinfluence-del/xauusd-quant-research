@@ -12,7 +12,9 @@ from zoneinfo import ZoneInfo
 OUT = pathlib.Path('reports/meta_alpha/exogenous')
 IS_END = pd.Timestamp('2020-01-20 09:36:27', tz='UTC')
 OOS_END = pd.Timestamp('2023-12-31 23:59:59', tz='UTC')
-KEY = os.environ.get('FRED_API_KEY', '')
+KEY = os.environ.get('FRED_API_KEY', '').strip()
+def sanitize(x):
+    return re.sub(r'api_key=[^&\s\'\"]+', 'api_key=REDACTED', str(x))
 API = 'https://api.stlouisfed.org/fred'
 NY = ZoneInfo('America/New_York')
 LOG = []
@@ -30,7 +32,11 @@ def api_get(path, params, essais=5):
                              headers={'User-Agent': 'META ALPHA data engineering'})
             if r.status_code == 429:
                 time.sleep(20 * (i + 1)); continue
-            r.raise_for_status(); return r.json()
+            if r.status_code >= 400:
+                try: msg = r.json().get('error_message', r.text[:150])
+                except Exception: msg = r.text[:150]
+                raise ValueError(f'FRED HTTP {r.status_code}: {sanitize(msg)}')
+            return r.json()
         except Exception as e:
             last = e; log(f'retry {i+1} {path}: {type(e).__name__}'); time.sleep(10 * (2 ** i))
     raise last
@@ -81,7 +87,7 @@ if KEY:
                 meta[f'macro_{sid.lower()}_pit'] = {'source': f'ALFRED {sid}', 'statut': 'AUCUNE DONNEE RENVOYEE'}
         except Exception as e:
             log(f'ECHEC PIT {sid}: {type(e).__name__} {str(e)[:100]}')
-            meta[f'macro_{sid.lower()}_pit'] = {'source': f'ALFRED {sid}', 'statut': 'ECHEC COLLECTE', 'motif': str(e)[:200]}
+            meta[f'macro_{sid.lower()}_pit'] = {'source': f'ALFRED {sid}', 'statut': 'ECHEC COLLECTE', 'motif': sanitize(e)[:200]}
     # C2: series officielles courantes
     for sid, nom in [('DFII10', 'fred_dfii10_officiel'), ('GVZCLS', 'fred_gvz_officiel'),
                      ('DGS10', 'fred_dgs10_officiel'), ('DGS2', 'fred_dgs2_officiel')]:
@@ -97,7 +103,7 @@ if KEY:
             log(f'OK {nom}: {len(d)} lignes')
         except Exception as e:
             log(f'ECHEC C2 {sid}: {type(e).__name__} {str(e)[:100]}')
-            meta[nom] = {'source': f'FRED {sid}', 'statut': 'ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)', 'motif': str(e)[:200]}
+            meta[nom] = {'source': f'FRED {sid}', 'statut': 'ECHEC COLLECTE (manquant documente, aucun proxy reconstruit)', 'motif': sanitize(e)[:200]}
 
 # ---- FOMC: dates de reunion (source federalreserve.gov) ----
 MOIS = {m: i + 1 for i, m in enumerate(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'])}
@@ -109,6 +115,14 @@ def fomc_events():
         try:
             html = requests.get(url, timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
             txt = re.sub(r'<[^>]+>', ' ', html); txt = re.sub(r'\s+', ' ', txt)
+            for mm in re.finditer(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})[-–](\d{1,2}),?\s+(20\d\d)', txt):
+                d2 = dt.date(int(mm.group(4)), MOIS[mm.group(1).lower()], int(mm.group(3)))
+                ev[d2] = dt.date(int(mm.group(4)), MOIS[mm.group(1).lower()], int(mm.group(2)))
+            for mm in re.finditer(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(20\d\d)', txt):
+                d2 = dt.date(int(mm.group(3)), MOIS[mm.group(1).lower()], int(mm.group(2)))
+                ev.setdefault(d2, d2)
+            annees = sorted(set(re.findall(r'20\d\d', txt)))[:8]
+            log(f'FOMC page annees detectees: {annees}')
             for ym in re.finditer(r'(20\d\d) FOMC Meetings(.*?)(?=20\d\d FOMC Meetings|$)', txt):
                 an = int(ym.group(1))
                 for mm in re.finditer(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})[-–](\d{1,2})', ym.group(2)):
@@ -131,7 +145,7 @@ try:
     else:
         meta['fomc_events'] = {'source': 'federalreserve.gov', 'statut': 'NON COLLECTE: aucune date parsee (aucune fabrication)'}
 except Exception as e:
-    meta['fomc_events'] = {'source': 'federalreserve.gov', 'statut': f'ECHEC {str(e)[:150]}'}
+    meta['fomc_events'] = {'source': 'federalreserve.gov', 'statut': f'ECHEC {sanitize(e)[:150]}'}
 
 # ---- Integration aux dossiers v1 regeneres + decoupage + VERIFY integral ----
 folders = {'is': OUT / 'data_is', 'oos': pathlib.Path('/tmp/pack_oos'), 'holdout': pathlib.Path('/tmp/pack_holdout')}
@@ -146,7 +160,7 @@ for nom, df in frames.items():
 mani_path = OUT / 'MANIFEST.json'
 mani = json.loads(mani_path.read_text()) if mani_path.exists() else {}
 mani.setdefault('series', {}).update(meta)
-mani['completion_seq103'] = {'genere_utc': str(pd.Timestamp.now(tz='UTC')), 'journal': LOG,
+mani['completion_seq103'] = {'genere_utc': str(pd.Timestamp.now(tz='UTC')), 'journal': [sanitize(x) for x in LOG],
                              'note_c2': 'versions FRED officielles = reference primaire; proxys Yahoo seq102 conserves et consignes'}
 mani['series']['etf_gld_iau_shares'] = {'statut': 'CLOTURE DEFINITIVE (C3, seq104)',
     'motif': 'historique des flux (shares outstanding) non certifiable gratuitement - manquant definitif',
