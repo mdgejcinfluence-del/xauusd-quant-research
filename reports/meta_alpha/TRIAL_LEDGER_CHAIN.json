@@ -1136,6 +1136,16 @@
     "note": "C3 GLD/IAU clos definitivement: flux non certifiables gratuitement; le volume daily GLD existe mais volume != flux - interdiction absolue de substitut dans toute hypothese future; famille non re-visitable sans source nouvelle certifiable"
    },
    "entry_hash": "b35685d8999b55d734a25daca53081124dd0208b39068558f7e45854891801a9"
+  },
+  {
+   "seq": 105,
+   "prev_hash": "b35685d8999b55d734a25daca53081124dd0208b39068558f7e45854891801a9",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "EXOGENOUS_PACK_COMPLETION",
+    "resultat": "C1 livre: 11 series PIT ALFRED (PAYEMS/UNRATE/CPIAUCSL/CPIAUCNS/PCEPI/PCEPILFE/GDP/ICSA/DFEDTARL 5170 vintages/FEDFUNDS; DFEDTARU repli documente ALFRED absent) + FOMC 198 reunions 2010-2028 (81 IS); conversion DST date par date verifiee (FOMC jan 19h/juil 18h UTC, CPI fev 13h30/mar 12h30). C2: DFII10/GVZCLS/DGS10/DGS2 officiels FRED (proxys Yahoo conserves). C3 clos seq104. Datasets 28/27/27 fichiers, Kaggle all_ok=true x3, audit anti-fuite integral PASSE (max expose 2020-01-19 19:00 <= borne). Incidents consignes: fuite cle run2 purgee (revocation proprietaire requise), timeout run2, HTTP400 annee courante run4 corrige run5. 0 essai, 0 analyse. STOP."
+   },
+   "entry_hash": "f7ef3498121aca2bb23f9fc22286ad7d6b2e76b65d4a6753c001cee88b412ae2"
   }
  ]
 }
