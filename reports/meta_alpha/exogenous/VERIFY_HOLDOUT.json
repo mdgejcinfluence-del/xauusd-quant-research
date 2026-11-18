@@ -1,0 +1,18 @@
+{
+ "fichiers": {
+  "cftc_cot_gold_disagg.parquet": {
+   "sha256": "1cc755f2fe1e9b5c946e6872fad65134c34e07313e8a84faa5eb3d0e241e6789",
+   "taille": 24383
+  },
+  "comex_gc_ohlcv.parquet": {
+   "sha256": "9f068d49972fc15dbea45ad974722cc10245753b113f2544c9fe78ebc42609b5",
+   "taille": 40280
+  },
+  "comex_si_ohlcv.parquet": {
+   "sha256": "9b6deb5a3479fad5f60bb3c03bfc34ac179c004d6ac973af9c5045b3021018ab",
+   "taille": 38865
+  }
+ },
+ "audit_anti_fuite": null,
+ "statut": "SCELLE (upload seul, aucun telechargement par un moteur)"
+}

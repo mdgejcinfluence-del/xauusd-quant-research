@@ -1,0 +1,50 @@
+{
+ "is": {
+  "dataset": "shalom5123/xauusd-exogenous-pack-is",
+  "statut_upload": "cree",
+  "fichiers_locaux": {
+   "cftc_cot_gold_disagg.parquet": 53993,
+   "comex_gc_ohlcv.parquet": 209442,
+   "comex_si_ohlcv.parquet": 210521
+  },
+  "fichiers_distants": {
+   "cftc_cot_gold_disagg.parquet": 53993,
+   "comex_gc_ohlcv.parquet": 209442,
+   "comex_si_ohlcv.parquet": 210521
+  },
+  "all_ok": true,
+  "role": "EXPOSE"
+ },
+ "oos": {
+  "dataset": "shalom5123/xauusd-exogenous-pack-oos",
+  "statut_upload": "cree",
+  "fichiers_locaux": {
+   "cftc_cot_gold_disagg.parquet": 28548,
+   "comex_gc_ohlcv.parquet": 50951,
+   "comex_si_ohlcv.parquet": 48538
+  },
+  "fichiers_distants": {
+   "cftc_cot_gold_disagg.parquet": 28548,
+   "comex_gc_ohlcv.parquet": 50951,
+   "comex_si_ohlcv.parquet": 48538
+  },
+  "all_ok": true,
+  "role": "SCELLE (liste de metadonnees seulement, contenu jamais telecharge)"
+ },
+ "holdout": {
+  "dataset": "shalom5123/xauusd-exogenous-pack-holdout",
+  "statut_upload": "cree",
+  "fichiers_locaux": {
+   "cftc_cot_gold_disagg.parquet": 24383,
+   "comex_gc_ohlcv.parquet": 40280,
+   "comex_si_ohlcv.parquet": 38865
+  },
+  "fichiers_distants": {
+   "cftc_cot_gold_disagg.parquet": 24383,
+   "comex_gc_ohlcv.parquet": 40280,
+   "comex_si_ohlcv.parquet": 38865
+  },
+  "all_ok": true,
+  "role": "SCELLE (liste de metadonnees seulement, contenu jamais telecharge)"
+ }
+}

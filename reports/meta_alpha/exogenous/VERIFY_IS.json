@@ -1,0 +1,22 @@
+{
+ "fichiers": {
+  "cftc_cot_gold_disagg.parquet": {
+   "sha256": "0d53d57128a06c77d36f7a4b66513ef6c56bc4bf0d18a52d7a8ffeb9c86eeefd",
+   "taille": 53993
+  },
+  "comex_gc_ohlcv.parquet": {
+   "sha256": "910c2e828bc8f19caece17f5b8c14c5d6567c2a981cef13ace544fbf324dc489",
+   "taille": 209442
+  },
+  "comex_si_ohlcv.parquet": {
+   "sha256": "5992da28035b45c83fb991f6b9387fc22b2240ecf5f5adc7991f28ac0c367943",
+   "taille": 210521
+  }
+ },
+ "audit_anti_fuite": {
+  "max_available_at_utc_expose": "2020-01-17 22:00:00+00:00",
+  "borne": "2020-01-20 09:36:27+00:00",
+  "passe": true
+ },
+ "statut": "EXPOSE"
+}

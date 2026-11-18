@@ -1,0 +1,166 @@
+{
+ "mission": "EXOGENOUS_PACK (ingenierie seule, 0 essai)",
+ "genere_utc": "2026-11-18 11:13:18.850275+00:00",
+ "bornes": {
+  "IS_expose": "available_at_utc <= 2020-01-20 09:36:27+00:00",
+  "OOS_scelle": "(2020-01-20 09:36:27+00:00, 2023-12-31 23:59:59+00:00]",
+  "HOLDOUT_scelle": "> 2023-12-31 23:59:59+00:00",
+  "note": "decoupage OOS/HOLDOUT = choix d ingenierie consigne, aucune analyse ne l a motive"
+ },
+ "regle_jointure_future": "toute jointure avec le corpus tick utilisera available_at_utc, jamais reference_date",
+ "series": {
+  "fred_taux": {
+   "source": "FRED DGS2",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_taux_reel": {
+   "source": "FRED DFII10",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_vix": {
+   "source": "FRED VIXCLS",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_dollar_broad": {
+   "source": "FRED DTWEXBGS",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_eurusd": {
+   "source": "FRED DEXUSEU",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_usdjpy": {
+   "source": "FRED DEXJPUS",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_spx": {
+   "source": "FRED SP500",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "fred_wti": {
+   "source": "FRED DCOILWTICO",
+   "statut": "ECHEC COLLECTE",
+   "motif": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+  },
+  "comex_gc_ohlcv": {
+   "source": "Yahoo chart gc.f (fallback consigne)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date 22:00 UTC",
+   "famille": "F3_volume",
+   "plage_reference": [
+    "2000-08-30 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 6664,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "Open": 83,
+    "High": 83,
+    "Low": 83,
+    "Close": 83,
+    "Volume": 83,
+    "available_at_utc": 0
+   }
+  },
+  "comex_si_ohlcv": {
+   "source": "Yahoo chart si.f (fallback consigne)",
+   "frequence": "daily",
+   "convention_available_at": "reference_date 22:00 UTC",
+   "famille": "F3_volume",
+   "plage_reference": [
+    "2000-08-30 00:00:00+00:00",
+    "2026-11-18 00:00:00+00:00"
+   ],
+   "lignes": 6664,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "Open": 82,
+    "High": 82,
+    "Low": 82,
+    "Close": 82,
+    "Volume": 82,
+    "available_at_utc": 0
+   }
+  },
+  "cftc_cot_gold_disagg": {
+   "source": "CFTC fut_disagg_txt annuel (cftc.gov)",
+   "frequence": "weekly",
+   "convention_available_at": "positions du mardi, publiees vendredi 20:30 UTC (conservateur)",
+   "famille": "F5_positionnement",
+   "plage_reference": [
+    "2010-01-05 00:00:00+00:00",
+    "2026-11-10 00:00:00+00:00"
+   ],
+   "lignes": 880,
+   "manquants_par_colonne": {
+    "reference_date": 0,
+    "open_interest_all": 0,
+    "prod_merc_positions_long_all": 0,
+    "prod_merc_positions_short_all": 0,
+    "m_money_positions_long_all": 0,
+    "m_money_positions_short_all": 0,
+    "prod_merc_positions_long_old": 0,
+    "prod_merc_positions_short_old": 0,
+    "m_money_positions_long_old": 0,
+    "m_money_positions_short_old": 0,
+    "prod_merc_positions_long_other": 0,
+    "prod_merc_positions_short_other": 0,
+    "m_money_positions_long_other": 0,
+    "m_money_positions_short_other": 0,
+    "change_in_open_interest_all": 0,
+    "pct_of_open_interest_all": 0,
+    "available_at_utc": 0
+   }
+  },
+  "macro_calendrier_pit": {
+   "source": "ALFRED vintage (fred.stlouisfed.org)",
+   "statut": "NON COLLECTE \u2014 aucune exposition",
+   "motif": "les dates de vintage ALFRED exigent une cle API FRED (gratuite mais personnelle, absente des secrets CI); toute approximation de available_at violerait la regle anti-revision du \u00a73. Champs laisses vides, aucune imputation. A collecter des que le proprietaire fournit une cle API FRED en secret CI."
+  },
+  "etf_gld_iau_shares": {
+   "source": "Yahoo shares outstanding GLD/IAU",
+   "statut": "NON COLLECTE",
+   "motif": "historique lacunaire non certifiable gratuitement; consigne conformement a l instruction (famille 5, limite connue)."
+  }
+ },
+ "journal_collecte": [
+  "ECHEC FRED DGS10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DGS2: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DFII10: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED VIXCLS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DTWEXBGS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DEXUSEU: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DEXJPUS: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED SP500: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC FRED DCOILWTICO: ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)",
+  "ECHEC Stooq gc.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
+  "OK comex_gc_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "ECHEC Stooq si.f: reponse Stooq inexploitable \u2014 fallback Yahoo",
+  "OK comex_si_ohlcv: 6664 lignes 2000-08-30 00:00:00+00:00 -> 2026-11-18 00:00:00+00:00",
+  "COT 2010: 52 semaines or",
+  "COT 2011: 52 semaines or",
+  "COT 2012: 53 semaines or",
+  "COT 2013: 52 semaines or",
+  "COT 2014: 52 semaines or",
+  "COT 2015: 52 semaines or",
+  "COT 2016: 52 semaines or",
+  "COT 2017: 52 semaines or",
+  "COT 2018: 53 semaines or",
+  "COT 2019: 52 semaines or",
+  "COT 2020: 54 semaines or",
+  "COT 2021: 57 semaines or",
+  "COT 2022: 61 semaines or",
+  "COT 2023: 70 semaines or",
+  "COT 2024: 95 semaines or",
+  "COT 2025: 102 semaines or",
+  "COT 2026: 90 semaines or",
+  "OK cftc_cot_gold_disagg: 880 lignes 2010-01-05 00:00:00+00:00 -> 2026-11-10 00:00:00+00:00"
+ ]
+}
