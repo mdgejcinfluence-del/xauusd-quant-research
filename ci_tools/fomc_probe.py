@@ -73,8 +73,10 @@ try:
 except Exception as e: emit(f'sonde4a ECHEC {e}')
 try:
     h = requests.get('https://www.federalreserve.gov/monetarypolicy/fomcminutes20151216.htm', timeout=60, headers={'User-Agent': 'Mozilla/5.0'}).text
-    emit(f'minutes 20151216 liens fomcminutes: {sorted(set(re.findall(r"fomcminutes(20\d{6})\.htm", h)))}')
-    emit(f'minutes 20151216 liens monetary: {sorted(set(re.findall(r"monetary(20\d{6})[a-z]\.htm", h)))}')
+    lf = sorted(set(re.findall(r'fomcminutes(20[0-9]{6})[.]htm', h)))
+    lm = sorted(set(re.findall(r'monetary(20[0-9]{6})[a-z][.]htm', h)))
+    emit('minutes 20151216 liens fomcminutes: ' + str(lf))
+    emit('minutes 20151216 liens monetary: ' + str(lm))
 except Exception as e: emit(f'sonde4b ECHEC {e}')
 emit('SONDE4 TERMINEE')
 pathlib.Path('reports/meta_alpha/exogenous/FOMC_PROBE.txt').write_text('\n'.join(OUTL))
