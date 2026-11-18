@@ -1,0 +1,13 @@
+{
+ "mission": "E3_MESURES - realisation et flux sans volume (Phase 2, fondations)",
+ "perimetre": "IS 282/282 borne certifiee fail-closed; OOS/HOLDOUT interdits",
+ "definitions_gelees": {
+  "barres": "60 s (E1/E2)",
+  "RV": "somme des r_tick^2 intra-barre",
+  "BPV": "(pi/2) * somme |r_i|*|r_{i-1}| intra-barre (paire a cheval sur deux barres exclue)",
+  "saut_J": "J = max(0,(RV-BPV)/RV); part des barres J > 0.2 (seuil gele instruction Phase 2)",
+  "ORI_W": "[somme 1(dBid>0)-1(dBid<0)+1(dAsk>0)-1(dAsk<0)]/(2N) sur fenetres tick W in {10,50,200}, distribution par partition",
+  "differenciation_fractionnaire": "appliquee plus tard aux meta-modeles (F8); E3 consigne d de reference 0.30 (mesure Phase 1)"
+ },
+ "sorties_par_partition": ["nbars", "RV mediane", "J moyen", "part J>0.2", "part BPV/RV mediane", "|ORI| median et q90 (W=10/50/200)"]
+}

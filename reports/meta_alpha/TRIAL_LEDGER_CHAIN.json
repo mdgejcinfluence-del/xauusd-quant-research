@@ -635,6 +635,17 @@
     "resultat": "etats causaux barres 60s: 3540993 barres; controles uniformite et correlations next-bar par ere dans E2_SYNTHESIS.json"
    },
    "entry_hash": "00c604e289282e11475f51c88be2601a6307a472192f1e46449a125e36cd4cb8"
+  },
+  {
+   "seq": 58,
+   "prev_hash": "00c604e289282e11475f51c88be2601a6307a472192f1e46449a125e36cd4cb8",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "E3_MESURES",
+    "registry": "reports/meta_alpha/phase2/E3_PREREG.json",
+    "sha256": "a1d6adc5d30359dbc8315c436608243e819978ca9f8da488c1bd0a5422416c9c"
+   },
+   "entry_hash": "6c8d62dac897c1596d30feca4a5d19e3aba7fbeaa6d2d5dea926dbbcdf7d5e2b"
   }
  ]
 }
