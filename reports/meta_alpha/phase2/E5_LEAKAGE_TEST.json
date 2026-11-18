@@ -1,0 +1,7 @@
+{
+ "test_v1": "decalage circulaire 1 pas: ECHEC de conception (serie persistante, le decalage ne detruit pas la structure) - consigne, remplace",
+ "test_v2": "permutation par blocs de 24 h des features, seed=42",
+ "corr_alignee": 0.7038008481930677,
+ "corr_features_permutes": 0.004955324928692664,
+ "gate": "PASSE"
+}

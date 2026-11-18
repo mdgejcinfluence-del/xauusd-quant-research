@@ -668,6 +668,59 @@
     "sha256": "2de2ffd8e141e3b56652c52c1e40cdf201407b668a19100bb2ab9b1aa6a0b171"
    },
    "entry_hash": "77baa12d505e453145897e49c6367b04b0535f2f67a4bb788c7433af14e198b0"
+  },
+  {
+   "seq": 61,
+   "prev_hash": "77baa12d505e453145897e49c6367b04b0535f2f67a4bb788c7433af14e198b0",
+   "entry": {
+    "type": "PREREG_LOCK",
+    "mission": "F3_HAR",
+    "registry": "reports/meta_alpha/phase2/F3_PREREG.json",
+    "sha256": "7b124b075533058e06308db528f8b45de37da23d922b4916aa065cc8ea4be0a5",
+    "n_essais": 1
+   },
+   "entry_hash": "1026b0a593e482ac9f5131a3509fddabbfdac0a180dfc77cc3961cc7a98c0b54"
+  },
+  {
+   "seq": 62,
+   "prev_hash": "1026b0a593e482ac9f5131a3509fddabbfdac0a180dfc77cc3961cc7a98c0b54",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "E4_FORWARD",
+    "run": "44273474753 succes 282/282",
+    "resultat": "forward executables 60s H=1/5/15/60: long inconditionnel ~ -spread de cloture par ere (verite economique de reference)"
+   },
+   "entry_hash": "9caf49c76d49f641f4fcb2a03bab0dace0d10744ccd2ec73364b22416ae68af2"
+  },
+  {
+   "seq": 63,
+   "prev_hash": "9caf49c76d49f641f4fcb2a03bab0dace0d10744ccd2ec73364b22416ae68af2",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "E5_GATE_FUITE",
+    "resultat": "{\"test_v1\": \"decalage circulaire 1 pas: ECHEC de conception (serie persistante, le decalage ne detruit pas la structure) - consigne, remplace\", \"test_v2\": \"permutation par blocs de 24 h des features, seed=42\", \"corr_alignee\": 0.7038008481930677, \"corr_features_permutes\": 0.004955324928692664, \"gate\": \"PASSE\"}"
+   },
+   "entry_hash": "a9bf61b63ef99fb75d03561267ebf90074742c40580dac46433e35610f0d0c5c"
+  },
+  {
+   "seq": 64,
+   "prev_hash": "a9bf61b63ef99fb75d03561267ebf90074742c40580dac46433e35610f0d0c5c",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F3_HAR",
+    "resultat": "SUCCES GELE L1: QLIKE recent HAR 0.0191 < naif 0.0266, 5/5 blocs, R2 MZ median 0.200; composant de gestion qualifie"
+   },
+   "entry_hash": "9bd0001af0ae3b0c1553ab2d281c34c60999b0dc6c4178b077632a419bc966c2"
+  },
+  {
+   "seq": 65,
+   "prev_hash": "9bd0001af0ae3b0c1553ab2d281c34c60999b0dc6c4178b077632a419bc966c2",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F4_SPREAD",
+    "resultat": "{\"modele\": \"AR(2) log-spread horaire, entrainement roulant causal, regime recent\", \"rmse_AR2\": 0.1290901530016159, \"rmse_EWMA\": 0.13109857732047164, \"gain_pct\": 1.5319955104822758, \"succes_gele_gain_10pct\": false, \"n\": 22928}"
+   },
+   "entry_hash": "2ee02330ca0a68cf4cce49864c2b9b4b1b505fef7aff72f11162ee79e35a2b05"
   }
  ]
 }

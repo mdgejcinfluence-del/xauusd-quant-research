@@ -1,0 +1,8 @@
+{
+ "modele": "AR(2) log-spread horaire, entrainement roulant causal, regime recent",
+ "rmse_AR2": 0.1290901530016159,
+ "rmse_EWMA": 0.13109857732047164,
+ "gain_pct": 1.5319955104822758,
+ "succes_gele_gain_10pct": false,
+ "n": 22928
+}

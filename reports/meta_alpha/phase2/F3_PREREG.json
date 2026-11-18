@@ -1,0 +1,8 @@
+{
+ "mission": "F3_HAR - prevision de volatilite HAR-RV (Phase 2, famille de gestion)",
+ "perimetre": "serie horaire IS existante (60 025 h, vol_hourly); regime recent = 2016-2020; aucun acces OOS",
+ "modele_gele": "HAR: RV_h(t+24) ~ b0 + bd*moy(RV t-23..t) + bw*moy(5 jours) + bm*moy(22 jours), OLS rolling fenetre 500 jours (12 000 h), pas 24 h (origine journaliere, cible RV jour suivant)",
+ "succes_gele": "QLIKE < naif (persistance jour) ET R2 Mincer-Zarnowitz > 0.15 en blocs (5 blocs contigus) sur regime recent",
+ "essais_declares": 1,
+ "usage": "vol targeting / filtrage / controleur de risque (pas de direction, pas de matrice de couts)"
+}
