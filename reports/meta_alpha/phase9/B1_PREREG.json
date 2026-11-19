@@ -1,0 +1,16 @@
+{
+ "mission_id": "B1_PRE_ANNOUNCEMENT_DRIFT",
+ "ratifie": "B1_PREREG_BROUILLON.md ratifie par l'ordre Phase 9 (seq124), precisions de l'ordre integrees",
+ "budget": "Phase 9 N=12 global (BY(12)); B1 <= 3 essais (2 primaires + 1 confirmation NR conditionnelle)",
+ "hypothese": "derive pre-annonce: la fenetre T-240min -> T-5min avant les publications macro majeures porte une derive capturable (jamais testee; F15 etait post-annonce)",
+ "univers": "IS ancien corpus: evenements F15_EVENTS.csv (FOMC 81 + NFP 143 + CPI 151 releases; pool effectif calcule au gate); timestamps available_at_utc du pack point-in-time",
+ "variantes_declarees_ensemble": {
+  "v1": "LONG inconditionnel: achat a T-240min, vente a T-5min (derive type pre-FOMC documentee sur actions)",
+  "v2": "CONTINUATION: position = signe du mouvement mid T-24h -> T-240min, entree T-240min, sortie T-5min"
+ },
+ "execution": "entree premier tick >= T-240min (prix executable: ask si long, bid si short); sortie premier tick >= T-5min (bid si long, ask si short); jamais d'exposition a la publication; ancres C1_hist (exec reel - commission 1,0bp) et C1_BG (mid - 4,7bp); verdict sur la fenetre complete gelee",
+ "placebos": "memes fenetres decalees de -7j et +7j (semaines sans annonce): silence exige (IC contenant 0)",
+ "gate_R3": "MDE 80% de la fenetre (sigma 235min, n pool) vs effet minimal = 2xC aux deux ancres; NON TESTABLE si MDE > effet aux deux ancres -> 0 essai",
+ "succes": "BY(12) + IC95 net > 0 aux deux ancres + signe 3/3 terciles + ECR >= 2 -> declenche l'essai de confirmation NR pre-declare (IS_NR 2020-2023, memes regles, compte dans les 3)",
+ "rejet": "echec = enterrement definitif des deux variantes; aucune troisieme primaire"
+}

@@ -1326,6 +1326,36 @@
     "resultat": "0 essai, mesures descriptives: B2 prime GVZ - RV future 21j = +5,6 pts de vol en moyenne (mediane +4,8), positive 94,9% du temps, eres 2010-13 +7,1 / 2014-16 +6,0 / 2017-20 +3,1 (erosion); monetisation = options, hors infra CFD taker. B3 borne horaire: spread decile haut 4,6bp vs mouvement absolu heure suivante 8,4bp (vs 7,5 ailleurs) - adverse selection presente mais le tick seul tranche; CFD retail 100% taker. B1 PRET en brouillon non chaine (B1_PREREG_BROUILLON.md): en attente ordre explicite Phase 9 + budget neuf"
    },
    "entry_hash": "1185dd720bf49295e47da8c179821c44db22587af9720737912fa0e15a33a79e"
+  },
+  {
+   "seq": 124,
+   "prev_hash": "1185dd720bf49295e47da8c179821c44db22587af9720737912fa0e15a33a79e",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE9_DERNIERES_PORTES",
+    "resultat": "Ordre proprietaire explicite Phase 9 go 2026-11-18: budget NEUF unique N=12 (BY(12) globale); blocs B1 derive pre-annonce (<=3 essais), CARRY carte des paiements perpetuels (<=8), B2-extension descriptive 0 essai, B3 etagere; gates inchanges; ancien corpus ferme sauf B1 specifie; NR tel que specifie"
+   },
+   "entry_hash": "0de03d246efd8de0d3f7a7e9c678cd69140e4a69ad6bc868af98e955536d0735"
+  },
+  {
+   "seq": 125,
+   "prev_hash": "0de03d246efd8de0d3f7a7e9c678cd69140e4a69ad6bc868af98e955536d0735",
+   "entry": {
+    "type": "PREREG",
+    "mission": "B1_PRE_ANNOUNCEMENT_DRIFT",
+    "resultat": "B1 chaine AVANT tout calcul: fenetre T-240->T-5min, univers pool FOMC+NFP+CPI (F15_EVENTS), v1 LONG inconditionnel + v2 CONTINUATION (signe T-24h->T-240) declarees ensemble (2 essais), placebos +-7j, ancres C1_hist/C1_BG 4,7, confirmation NR conditionnelle pre-declaree (3e essai, seulement si primaire passe BY(12)); B1_PREREG.json sha256 au fichier"
+   },
+   "entry_hash": "6c1f0bae33300931eb2d492ed34a9e07cba550dc675b069924352b53e7b15d15"
+  },
+  {
+   "seq": 126,
+   "prev_hash": "6c1f0bae33300931eb2d492ed34a9e07cba550dc675b069924352b53e7b15d15",
+   "entry": {
+    "type": "GATE",
+    "mission": "B1_PRE_ANNOUNCEMENT_DRIFT",
+    "resultat": "Gate R3 B1: n pool=375, sigma fenetre 235min=38.4bp, MDE=5.55bp vs effets minimaux 6,7 (hist) / 9,4 (BG) -> TESTABLE; extraction tick autorisee"
+   },
+   "entry_hash": "8522264919a6833c2552a7451c5ef73eb8f57f3b4f3d8c83eb77e1f1b4dd135f"
   }
  ]
 }

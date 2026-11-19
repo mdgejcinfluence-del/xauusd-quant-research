@@ -1,0 +1,8 @@
+{
+ "n_evenements_pool": 375,
+ "sigma_fenetre_235min_bp": 38.379790381938484,
+ "MDE_bp": 5.549386788593363,
+ "effet_min_BG_bp": 9.4,
+ "effet_min_hist_bp": 6.7,
+ "verdict": "TESTABLE"
+}
