@@ -2,8 +2,11 @@
 Bougies 1 min BID/ASK quotidiennes (1 fichier/jour/sens), agregees en horaire UTC.
 Reprise: un mois deja present dans reports/meta_alpha/nr/s3_hourly/ est saute.
 Format bougie Dukascopy: >5i f (timestamp s, open, close, low, high x1000, volume) = 24 octets."""
-import io, json, lzma, pathlib, struct, datetime as dt
+import io, json, lzma, pathlib, struct, datetime as dt, traceback, sys
 import pandas as pd, requests
+def _hook(a, b, c):
+    pathlib.Path('reports/meta_alpha/nr/s3_hourly/ERROR.txt').write_text(''.join(traceback.format_exception(a, b, c))); raise b
+sys.excepthook = _hook
 
 OUT = pathlib.Path('reports/meta_alpha/nr/s3_hourly'); OUT.mkdir(parents=True, exist_ok=True)
 LOG = []
@@ -52,7 +55,10 @@ def main():
                 if (OUT / f's3_hourly_{mois_courant}.parquet').exists(): continue
                 # le mois suivant sera traite normalement ci-dessous
         if d.weekday() < 5:
-            g = jour(d)
+            try:
+                g = jour(d)
+            except Exception as e:
+                g = None; log(f'jour {d} ECHEC {type(e).__name__} {str(e)[:80]}')
             if g is not None and len(g): lignes.append(g); stats['jours_ok'] += 1
             else: stats['jours_vides'] += 1
         d += dt.timedelta(days=1)
