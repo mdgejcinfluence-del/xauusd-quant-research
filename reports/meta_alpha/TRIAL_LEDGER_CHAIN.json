@@ -1206,6 +1206,16 @@
     "resultat": "NON TESTABLE au gate R3 (calcule AVANT toute performance): 524 semaines COT IS, 262 paris independants (2 sem), sigma 2sem=332,9 bp, MDE 80pct=57,6 bp >> effet minimal 9,4 bp (C1_BG) et 6,7 bp (C1_hist); variantes N=2 NON executees, 0 essai consomme; F16 fermee"
    },
    "entry_hash": "d1bcc2bcd3d5d3631f14ffade9f57ec2518349b8c76133681e3245c74fde3a27"
+  },
+  {
+   "seq": 112,
+   "prev_hash": "d1bcc2bcd3d5d3631f14ffade9f57ec2518349b8c76133681e3245c74fde3a27",
+   "entry": {
+    "type": "NOTE",
+    "mission": "F15_MACRO_WINDOWS_TICK",
+    "resultat": "INCIDENT ALIGNEMENT v1 REJETE avant verdict: premier mouvement mesure T+60s->T+5min mais entree a T+60s (le signal connaissait sa fenetre de definition; type F1/F6 deja sanctionne). Resultats v1 NON consignes. Correction gelee: premier mouvement T+60s->T+5min, ENTREE premier tick >= T+5min, sorties T+H inchangees; re-extraction v2."
+   },
+   "entry_hash": "ec449140a83cbc113aa1a2c8a17096782a5e3e0f75b382b65d2266f6daf649be"
   }
  ]
 }

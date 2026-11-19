@@ -39,10 +39,11 @@ def extraire(con, fichiers, T):
         ordre = 'ASC' if sens == 'ge' else 'DESC'
         r = con.execute(f"SELECT timestamp_utc, bid, ask, mid FROM read_parquet({fl}) WHERE timestamp_utc {op} ? ORDER BY timestamp_utc {ordre}, observation_id {ordre} LIMIT 1", [ts]).fetchone()
         return r
-    e0 = tick_at(T + dt.timedelta(seconds=60))
+    ref = tick_at(T + dt.timedelta(seconds=60))
+    if ref is None: return None
+    e0 = tick_at(T + dt.timedelta(minutes=5))   # v2: entree APRES le premier mouvement (connu a T+5min)
     if e0 is None: return None
-    m5 = tick_at(T + dt.timedelta(minutes=5), 'le') or e0
-    mouv = (float(m5[3]) - float(e0[3])) / float(e0[3]) * 10000
+    mouv = (float(e0[3]) - float(ref[3])) / float(ref[3]) * 10000
     res = {'mouv_bp': mouv, 'spread_entree_bp': (float(e0[2]) - float(e0[1])) / float(e0[3]) * 10000}
     for H in [15, 60, 240]:
         x = tick_at(T + dt.timedelta(minutes=H))
