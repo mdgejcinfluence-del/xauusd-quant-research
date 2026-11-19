@@ -1436,6 +1436,26 @@
     "resultat": "Phase 10 close: la carte exacte de la valeur du savoir dans un challenge est chiffree (PHASE10_SIM_REPORT.md); aucune politique ne cree le mu manquant; decision d achat inchangee: proprietaire, apres chiffres - recommandation chiffree = ne pas engager de frais (P(echec) ~80% >> 25%); programme de recherche clos (131) inchange, simulation hors budget consommee 0 essai"
    },
    "entry_hash": "349e06bec21f7e33a6abe7325f7fa432a326b1b09bc22e10512c07290038097c"
+  },
+  {
+   "seq": 135,
+   "prev_hash": "349e06bec21f7e33a6abe7325f7fa432a326b1b09bc22e10512c07290038097c",
+   "entry": {
+    "type": "MISSION",
+    "mission": "P0_COVERAGE_MATRIX_134",
+    "resultat": "Ordre P0 proprietaire 2026-11-18 (0 FCFA, 0 essai): produire COVERAGE_MATRIX.md - croisement des 134 entrees x 8 dimensions x horizons x regimes; statuts teste/partiel/jamais/non-falsifiable avec seq, verdict, budget; annexe 7 pieces; regle de suite: seule une cellule jamais testee a mecanisme economique articule peut devenir hypothese Phase 11 (prereg + micro-budget par ordre explicite, gates inchanges); rien d autre ne rouvre quoi que ce soit"
+   },
+   "entry_hash": "54b829a7c0a23f7eaef31003bbdcba8c3628a51cb7b95e25d4d935d1936af314"
+  },
+  {
+   "seq": 136,
+   "prev_hash": "54b829a7c0a23f7eaef31003bbdcba8c3628a51cb7b95e25d4d935d1936af314",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "P0_COVERAGE_MATRIX_134",
+    "resultat": "COVERAGE_MATRIX.md livre (0 FCFA, 0 essai, hors budget): 8 dimensions x 5 horizons x 6 regimes croises avec seq1-134; D1 saturee/testee morte tous horizons-regimes, D2 F3/F7 certifies service, D3 maker NON FALSIFIABLE (venue taker), D5 pre/post-annonce testes morts, D6 gates MDE + flux ETF non falsifiable (donnees), D7 carry BTC/ETH certifies + prime de variance non falsifiable (options), D8 simulee plafonnee ~20%; annexe 7 pieces (registre seq, budgets figes, holdouts intacts, ancres cout, actifs certifies, incidents, eligibilite). Tri eligibilite Phase 11: exactement UNE cellule jamais testee a mecanisme articule + donnees en depot: C-2 dynamique du funding (timing vs portage certifie, non rouvert); C-1 mecanisme faible, C-3/C-6 donnees payantes, C-5 venue, C-4 temps seul. Rien n est preenregistre ni recommande; ouverture uniquement par ordre explicite proprietaire"
+   },
+   "entry_hash": "1b225d4dcc409c871b920c1f5631ec4e43ec3e15a958030d9fd372f7f5d91f28"
   }
  ]
 }
