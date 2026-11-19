@@ -1,1 +1,2 @@
 nr collect phase8 seq118
+run2 query2/1min7j/S3 multi-dates

@@ -16,7 +16,11 @@ def get(url, timeout=60):
     r.raise_for_status(); return r.content
 
 def yahoo(sym, rng_, inter):
-    raw = get(f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range={rng_}&interval={inter}')
+    try:
+        raw = get(f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range={rng_}&interval={inter}')
+    except Exception:
+        raw = get(f'https://query2.finance.yahoo.com/v8/finance/chart/{sym}?range={rng_}&interval={inter}')
+        log(f'bascule query2 pour {sym} (consigne)')
     j = json.loads(raw)['chart']['result'][0]; q = j['indicators']['quote'][0]
     d = pd.DataFrame({'ts': pd.to_datetime(j['timestamp'], unit='s', utc=True),
                       'open': q['open'], 'high': q['high'], 'low': q['low'], 'close': q['close'], 'volume': q.get('volume')})
@@ -39,8 +43,8 @@ for sym, nom in [('GC=F', 'yahoo_gc_hourly'), ('XAUUSD=X', 'yahoo_xauusd_hourly'
     try: man['sources'][nom] = split_save(yahoo(sym, '2y', '1h'), nom); log(f'OK {nom}')
     except Exception as e: man['sources'][nom] = {'statut': f'ECHEC {type(e).__name__} {str(e)[:100]}'}; log(f'ECHEC {nom}: {e}')
 try:
-    d = yahoo('GC=F', '30d', '1m'); d.to_parquet(LAKE / 'yahoo_gc_1min_FULL.parquet', index=False)
-    man['sources']['yahoo_gc_1min'] = {'lignes': int(len(d)), 'plage': [str(d.ts.min()), str(d.ts.max())], 'note': 'roulant 30j - lake uniquement'}
+    d = yahoo('GC=F', '7d', '1m'); d.to_parquet(LAKE / 'yahoo_gc_1min_FULL.parquet', index=False)
+    man['sources']['yahoo_gc_1min'] = {'lignes': int(len(d)), 'plage': [str(d.ts.min()), str(d.ts.max())], 'note': 'roulant 7j (30j refuse par Yahoo, consigne) - lake uniquement'}
     log('OK 1min')
 except Exception as e:
     man['sources']['yahoo_gc_1min'] = {'statut': f'ECHEC {type(e).__name__} {str(e)[:100]}'}; log(f'ECHEC 1min: {e}')
@@ -71,8 +75,11 @@ except Exception as e:
 # S3 Dukascopy qualification: hier, 12h UTC (mois 0-indexe, LZMA .bi5, tick=20 octets)
 try:
     hier = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=2)
-    url = f'https://datafeed.dukascopy.com/datafeed/XAUUSD/{hier.year}/{hier.month - 1:02d}/{hier.day:02d}/12h_ticks.bi5'
-    raw = get(url, timeout=120)
+    url = None; raw = None
+    for cand in [hier, dt.datetime(2023, 6, 15, tzinfo=dt.timezone.utc), dt.datetime(2021, 3, 10, tzinfo=dt.timezone.utc)]:
+        u = f'https://datafeed.dukascopy.com/datafeed/XAUUSD/{cand.year}/{cand.month - 1:02d}/{cand.day:02d}/12h_ticks.bi5'
+        try: raw = get(u, timeout=120); url = u; break
+        except Exception as e: log(f'S3 tentative {u}: {type(e).__name__}')
     dec = lzma.decompress(raw)
     n = len(dec) // 20
     t0, ask, bid = struct.unpack('>III', dec[:12]) if n else (0, 0, 0)
