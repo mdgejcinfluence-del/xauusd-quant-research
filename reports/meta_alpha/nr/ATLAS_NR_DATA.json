@@ -1,0 +1,114 @@
+{
+ "M1_semaine": [
+  {
+   "dow": 0,
+   "vol_med": 109.72466054791165,
+   "absret_med": 52.183619109955615,
+   "volume_med": 164259.0,
+   "n": 185
+  },
+  {
+   "dow": 1,
+   "vol_med": 107.51902627332204,
+   "absret_med": 56.46908425277708,
+   "volume_med": 180436.0,
+   "n": 207
+  },
+  {
+   "dow": 2,
+   "vol_med": 85.54211128593852,
+   "absret_med": 45.942414392317055,
+   "volume_med": 182302.0,
+   "n": 208
+  },
+  {
+   "dow": 3,
+   "vol_med": 112.32244064840482,
+   "absret_med": 56.98593534198437,
+   "volume_med": 184746.5,
+   "n": 206
+  },
+  {
+   "dow": 4,
+   "vol_med": 111.92590551340666,
+   "absret_med": 54.634584493582494,
+   "volume_med": 176904.0,
+   "n": 201
+  }
+ ],
+ "M2_fomc_amplitudes": "{False: {'absret_med_bp': 52.80529613880702, 'n': 1007}}",
+ "M6": [
+  {
+   "regime": "calme",
+   "horizon_j": 1,
+   "n": 329,
+   "rho": 0.027166432765817813,
+   "sigma_bp": 69.94613373121234,
+   "effet_bp": 1.9001869392378814,
+   "MDE_bp": 10.797514507946683,
+   "seuil_bp": 10.797514507946683,
+   "SURVIVANTE": false
+  },
+  {
+   "regime": "calme",
+   "horizon_j": 5,
+   "n": 329,
+   "rho": 0.07230130712309364,
+   "sigma_bp": 69.94613373121234,
+   "effet_bp": 5.057196896973363,
+   "MDE_bp": 24.143976427808973,
+   "seuil_bp": 24.143976427808973,
+   "SURVIVANTE": false
+  },
+  {
+   "regime": "moyen",
+   "horizon_j": 1,
+   "n": 329,
+   "rho": -0.009509366625568052,
+   "sigma_bp": 96.61596538187607,
+   "effet_bp": 0.9187566366994505,
+   "MDE_bp": 14.914509669954272,
+   "seuil_bp": 14.914509669954272,
+   "SURVIVANTE": false
+  },
+  {
+   "regime": "moyen",
+   "horizon_j": 5,
+   "n": 329,
+   "rho": 0.004139321980664072,
+   "sigma_bp": 96.61596538187607,
+   "effet_bp": 0.39992458918827867,
+   "MDE_bp": 33.3498574730957,
+   "seuil_bp": 33.3498574730957,
+   "SURVIVANTE": false
+  },
+  {
+   "regime": "nerveux",
+   "horizon_j": 1,
+   "n": 329,
+   "rho": -0.04308825430637099,
+   "sigma_bp": 140.3445391575498,
+   "effet_bp": 6.047201193730947,
+   "MDE_bp": 21.66484574384023,
+   "seuil_bp": 21.66484574384023,
+   "SURVIVANTE": false
+  },
+  {
+   "regime": "nerveux",
+   "horizon_j": 5,
+   "n": 329,
+   "rho": -0.001780896340121277,
+   "sigma_bp": 140.3445391575498,
+   "effet_bp": 0.2499390761416877,
+   "MDE_bp": 48.44406780527375,
+   "seuil_bp": 48.44406780527375,
+   "SURVIVANTE": false
+  }
+ ],
+ "C1_NR_mesure_bp": 1.35,
+ "note_S2": "snapshot unique a ce stade (50,4 cents @ 3725$); le cron 14h/22h UTC accumule la distribution - ancre provisoire",
+ "absences": [
+  "M3 macro NR: aucune source macro NR collectee (FRED sans cle) - consigne, pas fabrique",
+  "M1 intraday IS_NR: horaire Yahoo 2024+ seulement; S3 qualifie, backfill mensuel non encore execute"
+ ]
+}
