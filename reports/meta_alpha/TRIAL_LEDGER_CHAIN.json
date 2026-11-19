@@ -1276,6 +1276,16 @@
     "resultat": "Ordre proprietaire explicite 2026-11-18: NOUVELLE SOURCE (flux web publics regime 2020->aujourd hui) + preregistrations + ordre = doctrine satisfaite; corpus NR neuf, budget N=24 (seul vivant; anciens figes); IS_NR 2020-2023, VALID_NR 2024, HOLDOUT_NR 2025+ scelle; double ancre C1_NR mesure (S2/S3) + C1_BG 4,7; atlas NR M1-M6 puis candidats cellules survivantes uniquement; meta_portfolio.py ingenierie 0 essai; piste demo Blue Guardian abandonnee (ordre proprietaire); ancien corpus seq<=117 ferme a jamais"
    },
    "entry_hash": "4d65f0bed180bb5467ebcc70c3dea03bb3bd446a1a281e184869aacac3f0fb2b"
+  },
+  {
+   "seq": 119,
+   "prev_hash": "4d65f0bed180bb5467ebcc70c3dea03bb3bd446a1a281e184869aacac3f0fb2b",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE8_COLLECTE_NR",
+    "resultat": "Corpus NR v1: S1 Yahoo GC=F daily IS_NR 1007j/VALID 252j collecte, lake Kaggle shalom5123/xauusd-nr-corpus cree (HOLDOUT upload seul); XAUUSD=X 404 query1+query2 (abandonne, consigne); 1min roulant 7j actif (30j refuse); S2 Swissquote snapshot spread min 50,4 cents @3725$ (~1,35bp) + cron 14h/22h UTC en accumulation; S3 Dukascopy QUALIFIE (ticks + bougies 1min, format sonde: t=secondes depuis minuit UTC); meta_portfolio.py livre et teste sur synthetique (IR2 penalise correlation, Kelly crise, CUSUM par patte, borne basse). Backfill intraday IS_NR en cours (couverture partielle par throttling, consigne)"
+   },
+   "entry_hash": "f8e3dc23af5bfbf71a8b180fe29cd86411bca2299c8a9eeca499fa5f800ae35a"
   }
  ]
 }
