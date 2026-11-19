@@ -1,0 +1,11 @@
+{
+ "mission_id": "F16_COT_CONTINUOUS",
+ "programme": "EXOGENE (budget 60; F16 declare N=2)",
+ "ordre": "Phase 6B bloc 3, explicite proprietaire; version extremes abandonnee d'office (52 evenements < seuil R1/R3 par construction)",
+ "signal_gele": "z hebdomadaire du COT or net managed money (% open interest), disponible vendredi 20:30 UTC (available_at_utc du pack); position prise lundi 22:05 UTC (prix daily du corpus, cloture 22:00 + entree premier jour de bourse suivant); z causal 156 semaines (passe strict)",
+ "variantes_gelees_N2": {"v1": "contrarian: position proportionnelle a -z, cap +-1 (litterature COT: retournements depuis extremes speculatifs)", "v2": "momentum: position proportionnelle a +z - declare des maintenant, jamais choisi apres coup"},
+ "horizon_gele": "2 semaines; reequilibrage hebdomadaire; sizing vol-target via F3 daily (chassis, gel L2)",
+ "gate_R3_preable": "paris independants ~ semaines IS / 2; MDE 80% vs effet minimal aux deux ancres (C1_hist, C1_BG=4,7 bp); NON TESTABLE si MDE > effet aux deux ancres - aucune performance calculee",
+ "succes_gele": "BY(N=2) + IC bootstrap 95% > 0 aux deux ancres + signe 3/3 sous-periodes + ECR >= 2; L2 DSR >= 0,95 + PBO < 0,20; L3 sur ordre explicite",
+ "rejet_gele": "si F15 ET F16 tombent -> fermeture definitive du programme EXOGENE, consignee, sans re-grillage"
+}

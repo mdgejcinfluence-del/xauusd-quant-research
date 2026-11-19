@@ -1,0 +1,14 @@
+{
+ "mission_id": "F15_MACRO_WINDOWS_TICK",
+ "programme": "EXOGENE (budget 60; F15 declare N=6; total apres F15+F16: 8/60 si executes)",
+ "ordre": "Phase 6B bloc 2, explicite proprietaire",
+ "croisement": "calendrier point-in-time du pack exogene (available_at_utc, publication reelle) x corpus tick IS - premier croisement des deux corpus",
+ "evenements_geles": "FOMC (81 IS), PAYEMS/NFP (releases distinctes IS), CPIAUCSL (releases distinctes IS); timestamps = available_at_utc du pack; aucune variable surprise (consensus manquant documente, aucune imputation)",
+ "variantes_gelees_N6": {"v1": "FOMC derive (continuation premier mouvement)", "v2": "FOMC sur-reaction puis retournement", "v3": "NFP derive", "v4": "NFP retournement", "v5": "CPI derive", "v6": "CPI retournement"},
+ "execution_gelee": "entree premier tick >= T+60 s apres available_at_utc (saut de la premiere minute, mesuree pas supposee); fenetres de sortie 15/60/240 min mesurees et rapportees pour toutes; verdict sur H=60 min UNIQUEMENT (gele a priori); premier mouvement = signe du retour T->T+60s..T+5min (definition figee au moteur)",
+ "gate_R3_preable": "par cellule: n evenements, n_eff (regroupement d'ere), sigma des retours 60 min, MDE 80% vs effet minimal economique aux DEUX ancres; NON TESTABLE si MDE > effet minimal aux deux ancres - aucune performance calculee",
+ "double_ancre_couts": {"C1_hist": "spread reel du tick d'execution + commission BROKER_CONFIG V2 (0,5 bp/cote)", "C1_BG": "4,7 bp aller-retour (OWNER_CONFIG_V2, ancre moderne prudent)", "regle": "un edge ne compte que net aux DEUX ancres; survie ECR >= 2 exigee"},
+ "succes_gele": "BY(famille N=6) + IC bootstrap 95% > 0 aux deux ancres + signe stable 3/3 sous-periodes + ECR >= 2 + rapport par ere (mecanique de cotation 2012-2015)",
+ "validation": "L2: walk-forward OOF + DSR >= 0,95 (N=6) + PBO < 0,20; L3 OOS: ordre explicite proprietaire seulement; controles sec.1.5 (placebo temporel/cote/Mid) + placebo calendaire (evenements decales de +-1 mois, silence exige)",
+ "rejet_gele": "verdicts par variante consignes; aucune variante supplementaire; si F15 ET F16 tombent -> fermeture definitive du programme EXOGENE"
+}
