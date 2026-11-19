@@ -1196,6 +1196,16 @@
     "resultat": "Phase 6B bloc3: F16 preenregistree (N=2: contrarian -z / momentum +z declares; z COT hebdo dispo ven 20:30 UTC, position lundi; horizon 2 sem gele; gate R3 AVANT performance; F16_PREREG.json sha256 au fichier). Budget EXOGENE declare: 8/60 si executes"
    },
    "entry_hash": "3e947edb10342a0ceef7cc8bfd8d98cd26ea2354806f54e90f7bda11ac4b0752"
+  },
+  {
+   "seq": 111,
+   "prev_hash": "3e947edb10342a0ceef7cc8bfd8d98cd26ea2354806f54e90f7bda11ac4b0752",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F16_COT_CONTINUOUS",
+    "resultat": "NON TESTABLE au gate R3 (calcule AVANT toute performance): 524 semaines COT IS, 262 paris independants (2 sem), sigma 2sem=332,9 bp, MDE 80pct=57,6 bp >> effet minimal 9,4 bp (C1_BG) et 6,7 bp (C1_hist); variantes N=2 NON executees, 0 essai consomme; F16 fermee"
+   },
+   "entry_hash": "d1bcc2bcd3d5d3631f14ffade9f57ec2518349b8c76133681e3245c74fde3a27"
   }
  ]
 }
