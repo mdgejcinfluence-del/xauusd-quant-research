@@ -12,7 +12,7 @@ OUT = pathlib.Path('reports/meta_alpha/nr/s3_hourly'); OUT.mkdir(parents=True, e
 LOG = []
 def log(m): print(m, flush=True); LOG.append(m)
 def fetch(url):
-    r = requests.get(url, timeout=90, headers={'User-Agent': 'Mozilla/5.0'})
+    r = requests.get(url, timeout=30, headers={'User-Agent': 'Mozilla/5.0'})
     if r.status_code != 200 or len(r.content) < 100: return None
     try: return lzma.decompress(r.content)
     except Exception: return None
@@ -24,7 +24,7 @@ def bougies(dec):
         rows.append((t, o / 1000, c / 1000, lo / 1000, hi / 1000, v))
     return rows
 
-def jour(d):
+def jour(d):  # noqa: le jour d est connu par l URL; l horodatage fichier est relatif
     base = f'https://datafeed.dukascopy.com/datafeed/XAUUSD/{d.year}/{d.month - 1:02d}/{d.day:02d}'
     out = {}
     for sens in ['BID', 'ASK']:
@@ -33,7 +33,8 @@ def jour(d):
         out[sens] = bougies(dec)
     b = pd.DataFrame(out['BID'], columns=['t', 'bo', 'bc', 'bl', 'bh', 'bv'])
     a = pd.DataFrame(out['ASK'], columns=['t', 'ao', 'ac', 'al', 'ah', 'av'])
-    m = b.merge(a, on='t'); m['ts'] = pd.to_datetime(m.t, unit='s', utc=True)
+    m = b.merge(a, on='t')
+    m['ts'] = pd.Timestamp(d, tz='UTC') + pd.to_timedelta(m.t, unit='s')  # t = secondes depuis minuit UTC (sonde S3_PROBE)
     m['spread_bp'] = (m.ac - m.bc) / ((m.ac + m.bc) / 2) * 1e4
     m['heure'] = m.ts.dt.floor('h')
     g = m.groupby('heure').agg(close=('bc', 'last'), spread_med=('spread_bp', 'median'), volume=('bv', 'sum'), n=('t', 'size')).reset_index()
