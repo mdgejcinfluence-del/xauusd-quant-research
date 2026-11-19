@@ -1,16 +1,16 @@
 {
- "genere": "2026-11-19 17:14:41.821558+00:00",
+ "genere": "2026-11-19 17:25:27.793836+00:00",
  "journal": [
   "913 symboles listes",
-  "candidats: ['1000PEPEUSDT', 'ADAUSDT', 'AAVEUSDT', 'AGTUSDT', 'AINUSDT', 'AKEUSDT', 'AAPLUSDT', 'AAOIUSDT']",
-  "1000PEPEUSDT: 3826 lignes funding",
-  "ADAUSDT: 7432 lignes funding",
-  "AAVEUSDT: 6620 lignes funding",
-  "AGTUSDT: 3176 lignes funding",
-  "AINUSDT: 2870 lignes funding",
-  "AKEUSDT: 2429 lignes funding",
-  "AAPLUSDT: 662 lignes funding",
-  "AAOIUSDT: 437 lignes funding",
+  "candidats: ['BTCUSDT', 'ETHUSDT', 'SOXLUSDT', 'XAUUSDT', 'ZECUSDT', 'SOLUSDT', 'SNDKUSDT', 'SKHYNIXUSDT']",
+  "BTCUSDT: 7488 lignes funding",
+  "ETHUSDT: 7488 lignes funding",
+  "SOXLUSDT: 511 lignes funding",
+  "XAUUSDT: 1947 lignes funding",
+  "ZECUSDT: 7385 lignes funding",
+  "SOLUSDT: 6793 lignes funding",
+  "SNDKUSDT: 623 lignes funding",
+  "SKHYNIXUSDT: 788 lignes funding",
   "hyperliquid: {'statut': 200, 'reponse_debut': '[{\"coin\":\"BTC\",\"fundingRate\":\"0.0000711168\",\"premium\":\"0.0008689345\",\"time\":1700002800033},{\"coin\":\"BTC\",\"fundingRate\":\"0.0000923582\",\"premium\":\"0.0010388653\",\"time\":1700006400238},{\"coin\":\"BTC\",\"fund'}"
  ],
  "symboles_listes": 913,
@@ -210,76 +210,2904 @@
   "ALLUSDT": {
    "valeur": 34893123.5625,
    "source": "volume quote klines (proxy)"
+  },
+  "ALPINEUSDT": {
+   "valeur": 69765155.99391001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALTUSDT": {
+   "valeur": 666994880.10024,
+   "source": "volume quote klines (proxy)"
+  },
+  "AMATUSDT": {
+   "valeur": 156460913.2783,
+   "source": "volume quote klines (proxy)"
+  },
+  "AMCUSDT": {
+   "valeur": 15550799.9802,
+   "source": "volume quote klines (proxy)"
+  },
+  "AMDUSDT": {
+   "valeur": 2174486482.757,
+   "source": "volume quote klines (proxy)"
+  },
+  "AMGNUSDT": {
+   "valeur": 756489.8367999999,
+   "source": "volume quote klines (proxy)"
+  },
+  "AMZNUSDT": {
+   "valeur": 912805425.506,
+   "source": "volume quote klines (proxy)"
+  },
+  "ANETUSDT": {
+   "valeur": 8072657.0727,
+   "source": "volume quote klines (proxy)"
+  },
+  "ANIMEUSDT": {
+   "valeur": 202192156.938676,
+   "source": "volume quote klines (proxy)"
+  },
+  "ANKRUSDT": {
+   "valeur": 59759417.145226,
+   "source": "volume quote klines (proxy)"
+  },
+  "ANTHROPICUSDT": {
+   "valeur": 400228939.6274,
+   "source": "volume quote klines (proxy)"
+  },
+  "APEUSDT": {
+   "valeur": 309810561.8382,
+   "source": "volume quote klines (proxy)"
+  },
+  "API3USDT": {
+   "valeur": 309776625.7815,
+   "source": "volume quote klines (proxy)"
+  },
+  "APLDUSDT": {
+   "valeur": 21871197.0504,
+   "source": "volume quote klines (proxy)"
+  },
+  "APPUSDT": {
+   "valeur": 53874537.7979,
+   "source": "volume quote klines (proxy)"
+  },
+  "APRUSDT": {
+   "valeur": 1991899550.70961,
+   "source": "volume quote klines (proxy)"
+  },
+  "APTUSDT": {
+   "valeur": 1763393971.5581698,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARBUSDT": {
+   "valeur": 2870293457.9719,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARCUSDT": {
+   "valeur": 454022049.84182006,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARIAUSDT": {
+   "valeur": 631580045.76013,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARKMUSDT": {
+   "valeur": 125042731.62400001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARKUSDT": {
+   "valeur": 456631471.42179996,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARMUSDT": {
+   "valeur": 472880424.7757,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARPAUSDT": {
+   "valeur": 119366042.93600202,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARUSDT": {
+   "valeur": 336072322.0825,
+   "source": "volume quote klines (proxy)"
+  },
+  "ARXUSDT": {
+   "valeur": 142936507.5206,
+   "source": "volume quote klines (proxy)"
+  },
+  "ASMLUSDT": {
+   "valeur": 102188193.86840001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ASRUSDT": {
+   "valeur": 29637941.247149996,
+   "source": "volume quote klines (proxy)"
+  },
+  "ASTERUSDT": {
+   "valeur": 1436211761.3936,
+   "source": "volume quote klines (proxy)"
+  },
+  "ASTRUSDT": {
+   "valeur": 34738755.764759004,
+   "source": "volume quote klines (proxy)"
+  },
+  "ASTSUSDT": {
+   "valeur": 182075887.0015,
+   "source": "volume quote klines (proxy)"
+  },
+  "ATHUSDT": {
+   "valeur": 210258122.462066,
+   "source": "volume quote klines (proxy)"
+  },
+  "ATOMUSDT": {
+   "valeur": 891043645.91952,
+   "source": "volume quote klines (proxy)"
+  },
+  "ATUSDT": {
+   "valeur": 156700203.5682,
+   "source": "volume quote klines (proxy)"
+  },
+  "AUCTIONUSDT": {
+   "valeur": 47906177.11367001,
+   "source": "volume quote klines (proxy)"
+  },
+  "AUSDT": {
+   "valeur": 219863154.07304,
+   "source": "volume quote klines (proxy)"
+  },
+  "AVAAIUSDT": {
+   "valeur": 87842334.707849,
+   "source": "volume quote klines (proxy)"
+  },
+  "AVAUSDT": {
+   "valeur": 751917889.95162,
+   "source": "volume quote klines (proxy)"
+  },
+  "AVAXUSDT": {
+   "valeur": 4279799862.119,
+   "source": "volume quote klines (proxy)"
+  },
+  "AVGOUSDT": {
+   "valeur": 783919280.3369,
+   "source": "volume quote klines (proxy)"
+  },
+  "AVNTUSDT": {
+   "valeur": 116806393.89706999,
+   "source": "volume quote klines (proxy)"
+  },
+  "AWEUSDT": {
+   "valeur": 45186382.43844,
+   "source": "volume quote klines (proxy)"
+  },
+  "AXLUSDT": {
+   "valeur": 131758768.83341,
+   "source": "volume quote klines (proxy)"
+  },
+  "AXSUSDT": {
+   "valeur": 458258018.33519995,
+   "source": "volume quote klines (proxy)"
+  },
+  "AXTIUSDT": {
+   "valeur": 797098599.9828,
+   "source": "volume quote klines (proxy)"
+  },
+  "AZTECUSDT": {
+   "valeur": 117167326.59498,
+   "source": "volume quote klines (proxy)"
+  },
+  "B2USDT": {
+   "valeur": 35775671.4797,
+   "source": "volume quote klines (proxy)"
+  },
+  "BABAUSDT": {
+   "valeur": 360407567.5625,
+   "source": "volume quote klines (proxy)"
+  },
+  "BABYUSDT": {
+   "valeur": 154984493.49092,
+   "source": "volume quote klines (proxy)"
+  },
+  "BACUSDT": {
+   "valeur": 2919251.3468,
+   "source": "volume quote klines (proxy)"
+  },
+  "BANANAS31USDT": {
+   "valeur": 31787437.294276,
+   "source": "volume quote klines (proxy)"
+  },
+  "BANANAUSDT": {
+   "valeur": 22297037.7291,
+   "source": "volume quote klines (proxy)"
+  },
+  "BANDUSDT": {
+   "valeur": 57692127.389910005,
+   "source": "volume quote klines (proxy)"
+  },
+  "BANKUSDT": {
+   "valeur": 372521725.51357996,
+   "source": "volume quote klines (proxy)"
+  },
+  "BANUSDT": {
+   "valeur": 32696707.03322,
+   "source": "volume quote klines (proxy)"
+  },
+  "BARDUSDT": {
+   "valeur": 38057849.931099996,
+   "source": "volume quote klines (proxy)"
+  },
+  "BASEDUSDT": {
+   "valeur": 189640366.51032,
+   "source": "volume quote klines (proxy)"
+  },
+  "BASUSDT": {
+   "valeur": 30842548.626678005,
+   "source": "volume quote klines (proxy)"
+  },
+  "BATUSDT": {
+   "valeur": 1491985395.741157,
+   "source": "volume quote klines (proxy)"
+  },
+  "BBUSDT": {
+   "valeur": 106058841.743908,
+   "source": "volume quote klines (proxy)"
+  },
+  "BBXUSDT": {
+   "valeur": 65386159.149919994,
+   "source": "volume quote klines (proxy)"
+  },
+  "BCHUSDT": {
+   "valeur": 2514212906.22754,
+   "source": "volume quote klines (proxy)"
+  },
+  "BDXNUSDT": {
+   "valeur": 159689621.05778,
+   "source": "volume quote klines (proxy)"
+  },
+  "BEAMXUSDT": {
+   "valeur": 865456886.661855,
+   "source": "volume quote klines (proxy)"
+  },
+  "BEATUSDT": {
+   "valeur": 466181388.62771,
+   "source": "volume quote klines (proxy)"
+  },
+  "BELUSDT": {
+   "valeur": 46839449.25468999,
+   "source": "volume quote klines (proxy)"
+  },
+  "BERAUSDT": {
+   "valeur": 243426134.18289,
+   "source": "volume quote klines (proxy)"
+  },
+  "BEUSDT": {
+   "valeur": 994516736.8998001,
+   "source": "volume quote klines (proxy)"
+  },
+  "BICOUSDT": {
+   "valeur": 84253560.45093,
+   "source": "volume quote klines (proxy)"
+  },
+  "BIGTIMEUSDT": {
+   "valeur": 87582034.67397499,
+   "source": "volume quote klines (proxy)"
+  },
+  "BILLUSDT": {
+   "valeur": 270167047.89234304,
+   "source": "volume quote klines (proxy)"
+  },
+  "BIOUSDT": {
+   "valeur": 164787024.1447,
+   "source": "volume quote klines (proxy)"
+  },
+  "BIRBUSDT": {
+   "valeur": 1707153795.27178,
+   "source": "volume quote klines (proxy)"
+  },
+  "BITOUSDT": {
+   "valeur": 4218640.8166,
+   "source": "volume quote klines (proxy)"
+  },
+  "BLESSUSDT": {
+   "valeur": 557954816.901,
+   "source": "volume quote klines (proxy)"
+  },
+  "BLUAIUSDT": {
+   "valeur": 112328880.253686,
+   "source": "volume quote klines (proxy)"
+  },
+  "BLURUSDT": {
+   "valeur": 454243939.465517,
+   "source": "volume quote klines (proxy)"
+  },
+  "BMNRUSDT": {
+   "valeur": 628821450.7112,
+   "source": "volume quote klines (proxy)"
+  },
+  "BMTUSDT": {
+   "valeur": 844386222.30779,
+   "source": "volume quote klines (proxy)"
+  },
+  "BNBUSDT": {
+   "valeur": 10964965367.0746,
+   "source": "volume quote klines (proxy)"
+  },
+  "BNCUSDT": {
+   "valeur": 197144935.34764,
+   "source": "volume quote klines (proxy)"
+  },
+  "BNTUSDT": {
+   "valeur": 18006843.628700003,
+   "source": "volume quote klines (proxy)"
+  },
+  "BOMEUSDT": {
+   "valeur": 448376847.18838406,
+   "source": "volume quote klines (proxy)"
+  },
+  "BOTUSDT": {
+   "valeur": 56578839.29220001,
+   "source": "volume quote klines (proxy)"
+  },
+  "BRETTUSDT": {
+   "valeur": 50764451.43918601,
+   "source": "volume quote klines (proxy)"
+  },
+  "BREVUSDT": {
+   "valeur": 98210690.38196,
+   "source": "volume quote klines (proxy)"
+  },
+  "BRKBUSDT": {
+   "valeur": 19477194.997500002,
+   "source": "volume quote klines (proxy)"
+  },
+  "BROCCOLI714USDT": {
+   "valeur": 69061011.80719,
+   "source": "volume quote klines (proxy)"
+  },
+  "BROCCOLIF3BUSDT": {
+   "valeur": 23155509.996045,
+   "source": "volume quote klines (proxy)"
+  },
+  "BRUSDT": {
+   "valeur": 2725726271.86144,
+   "source": "volume quote klines (proxy)"
+  },
+  "BSBUSDT": {
+   "valeur": 82871331.18288,
+   "source": "volume quote klines (proxy)"
+  },
+  "BSPUSDT": {
+   "valeur": 199210774.94169998,
+   "source": "volume quote klines (proxy)"
+  },
+  "BSVUSDT": {
+   "valeur": 45200841.849999994,
+   "source": "volume quote klines (proxy)"
+  },
+  "BTCDOMUSDT": {
+   "valeur": 70272536.65709999,
+   "source": "volume quote klines (proxy)"
+  },
+  "BTCUSDT": {
+   "valeur": 334909016257.6659,
+   "source": "volume quote klines (proxy)"
+  },
+  "BTRUSDT": {
+   "valeur": 328588380.15876,
+   "source": "volume quote klines (proxy)"
+  },
+  "BTWUSDT": {
+   "valeur": 5613130890.69075,
+   "source": "volume quote klines (proxy)"
+  },
+  "BULLAUSDT": {
+   "valeur": 1081052204.12653,
+   "source": "volume quote klines (proxy)"
+  },
+  "BUSDT": {
+   "valeur": 55140510.423,
+   "source": "volume quote klines (proxy)"
+  },
+  "BWETUSDT": {
+   "valeur": 49744478.6267,
+   "source": "volume quote klines (proxy)"
+  },
+  "BXUSDT": {
+   "valeur": 32186302.983599998,
+   "source": "volume quote klines (proxy)"
+  },
+  "BYDUSDT": {
+   "valeur": 16175465.369399998,
+   "source": "volume quote klines (proxy)"
+  },
+  "BZUSDT": {
+   "valeur": 14058000514.311298,
+   "source": "volume quote klines (proxy)"
+  },
+  "C98USDT": {
+   "valeur": 140479060.71872002,
+   "source": "volume quote klines (proxy)"
+  },
+  "CAKEUSDT": {
+   "valeur": 309817469.0304,
+   "source": "volume quote klines (proxy)"
+  },
+  "CAPUSDT": {
+   "valeur": 1552361315.32305,
+   "source": "volume quote klines (proxy)"
+  },
+  "CARVUSDT": {
+   "valeur": 100995500.03933999,
+   "source": "volume quote klines (proxy)"
+  },
+  "CATIUSDT": {
+   "valeur": 40945171.145119995,
+   "source": "volume quote klines (proxy)"
+  },
+  "CATUSDT": {
+   "valeur": 18028323.0168,
+   "source": "volume quote klines (proxy)"
+  },
+  "CBRSUSDT": {
+   "valeur": 1522854062.2810001,
+   "source": "volume quote klines (proxy)"
+  },
+  "CCUSDT": {
+   "valeur": 257869959.94026,
+   "source": "volume quote klines (proxy)"
+  },
+  "CEGUSDT": {
+   "valeur": 2637459.612,
+   "source": "volume quote klines (proxy)"
+  },
+  "CELOUSDT": {
+   "valeur": 93832247.2036,
+   "source": "volume quote klines (proxy)"
+  },
+  "CELRUSDT": {
+   "valeur": 55620615.419644,
+   "source": "volume quote klines (proxy)"
+  },
+  "CETUSUSDT": {
+   "valeur": 35168336.12416,
+   "source": "volume quote klines (proxy)"
+  },
+  "CFGUSDT": {
+   "valeur": 133760845.52130002,
+   "source": "volume quote klines (proxy)"
+  },
+  "CFXUSDT": {
+   "valeur": 707437484.0768101,
+   "source": "volume quote klines (proxy)"
+  },
+  "CGPTUSDT": {
+   "valeur": 55303673.256129995,
+   "source": "volume quote klines (proxy)"
+  },
+  "CHILLGUYUSDT": {
+   "valeur": 43174068.779213995,
+   "source": "volume quote klines (proxy)"
+  },
+  "CHIPUSDT": {
+   "valeur": 912342925.29723,
+   "source": "volume quote klines (proxy)"
+  },
+  "CHRUSDT": {
+   "valeur": 64717073.49724,
+   "source": "volume quote klines (proxy)"
+  },
+  "CHZUSDT": {
+   "valeur": 227484120.01353002,
+   "source": "volume quote klines (proxy)"
+  },
+  "CIENUSDT": {
+   "valeur": 39165891.6504,
+   "source": "volume quote klines (proxy)"
+  },
+  "CKBUSDT": {
+   "valeur": 353202219.6230086,
+   "source": "volume quote klines (proxy)"
+  },
+  "CLANKERUSDT": {
+   "valeur": 38452577.65010001,
+   "source": "volume quote klines (proxy)"
+  },
+  "CLOUSDT": {
+   "valeur": 128117815.88083002,
+   "source": "volume quote klines (proxy)"
+  },
+  "CLUSDT": {
+   "valeur": 26218402644.5688,
+   "source": "volume quote klines (proxy)"
+  },
+  "COAIUSDT": {
+   "valeur": 63512873.6033,
+   "source": "volume quote klines (proxy)"
+  },
+  "COHRUSDT": {
+   "valeur": 454641577.23170006,
+   "source": "volume quote klines (proxy)"
+  },
+  "COINUSDT": {
+   "valeur": 1153918529.9543,
+   "source": "volume quote klines (proxy)"
+  },
+  "COLLECTUSDT": {
+   "valeur": 220126981.26101997,
+   "source": "volume quote klines (proxy)"
+  },
+  "COMPUSDT": {
+   "valeur": 314801067.64688003,
+   "source": "volume quote klines (proxy)"
+  },
+  "COOKIEUSDT": {
+   "valeur": 35955604.766353,
+   "source": "volume quote klines (proxy)"
+  },
+  "COPPERUSDT": {
+   "valeur": 386628069.5713,
+   "source": "volume quote klines (proxy)"
+  },
+  "COSTUSDT": {
+   "valeur": 21444880.0847,
+   "source": "volume quote klines (proxy)"
+  },
+  "COTIUSDT": {
+   "valeur": 277317610.389248,
+   "source": "volume quote klines (proxy)"
+  },
+  "COWUSDT": {
+   "valeur": 115312635.7805,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRCLUSDT": {
+   "valeur": 6191573477.389,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRDOUSDT": {
+   "valeur": 160166858.5839,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRMLUSDT": {
+   "valeur": 19398231.115610003,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRMUSDT": {
+   "valeur": 25187472.6905,
+   "source": "volume quote klines (proxy)"
+  },
+  "CROSSUSDT": {
+   "valeur": 48454238.617979996,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRVUSDT": {
+   "valeur": 1037646756.91122,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRWDUSDT": {
+   "valeur": 109210667.7623,
+   "source": "volume quote klines (proxy)"
+  },
+  "CRWVUSDT": {
+   "valeur": 1024172511.0833001,
+   "source": "volume quote klines (proxy)"
+  },
+  "CSCOUSDT": {
+   "valeur": 22744173.773599997,
+   "source": "volume quote klines (proxy)"
+  },
+  "CSOPSAMSUNG2LUSDT": {
+   "valeur": 71019653.60444,
+   "source": "volume quote klines (proxy)"
+  },
+  "CSOPSKHYNIX2LUSDT": {
+   "valeur": 422604176.0222399,
+   "source": "volume quote klines (proxy)"
+  },
+  "CTKUSDT": {
+   "valeur": 182323043.7904,
+   "source": "volume quote klines (proxy)"
+  },
+  "CTRUSDT": {
+   "valeur": 161501315.927333,
+   "source": "volume quote klines (proxy)"
+  },
+  "CTSIUSDT": {
+   "valeur": 235009518.2852,
+   "source": "volume quote klines (proxy)"
+  },
+  "CTUSDT": {
+   "valeur": 1337937804.96704,
+   "source": "volume quote klines (proxy)"
+  },
+  "CUSDT": {
+   "valeur": 53963802.10056,
+   "source": "volume quote klines (proxy)"
+  },
+  "CVCUSDT": {
+   "valeur": 85374464.73843,
+   "source": "volume quote klines (proxy)"
+  },
+  "CVNAUSDT": {
+   "valeur": 13759340.2419,
+   "source": "volume quote klines (proxy)"
+  },
+  "CVXUSDT": {
+   "valeur": 147117963.4706,
+   "source": "volume quote klines (proxy)"
+  },
+  "CXMTUSDT": {
+   "valeur": 403303194.85074,
+   "source": "volume quote klines (proxy)"
+  },
+  "CYBERUSDT": {
+   "valeur": 149417118.25176,
+   "source": "volume quote klines (proxy)"
+  },
+  "CYPHUSDT": {
+   "valeur": 53892276.14963,
+   "source": "volume quote klines (proxy)"
+  },
+  "CYSUSDT": {
+   "valeur": 99881736.53469999,
+   "source": "volume quote klines (proxy)"
+  },
+  "DASHUSDT": {
+   "valeur": 1069622267.23705,
+   "source": "volume quote klines (proxy)"
+  },
+  "DATAIPUSDT": {
+   "valeur": 159275068.6728,
+   "source": "volume quote klines (proxy)"
+  },
+  "DDOGUSDT": {
+   "valeur": 10345037.971099999,
+   "source": "volume quote klines (proxy)"
+  },
+  "DEEPUSDT": {
+   "valeur": 87911359.48631,
+   "source": "volume quote klines (proxy)"
+  },
+  "DELLUSDT": {
+   "valeur": 656488450.0895,
+   "source": "volume quote klines (proxy)"
+  },
+  "DEXEUSDT": {
+   "valeur": 159479301.27051002,
+   "source": "volume quote klines (proxy)"
+  },
+  "DIAUSDT": {
+   "valeur": 85038571.9493,
+   "source": "volume quote klines (proxy)"
+  },
+  "DISUSDT": {
+   "valeur": 11982577.0909,
+   "source": "volume quote klines (proxy)"
+  },
+  "DJTUSDT": {
+   "valeur": 23477700.51614,
+   "source": "volume quote klines (proxy)"
+  },
+  "DKNGUSDT": {
+   "valeur": 18683477.121,
+   "source": "volume quote klines (proxy)"
+  },
+  "DODOXUSDT": {
+   "valeur": 203437217.313616,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOGEUSDT": {
+   "valeur": 10879107468.90924,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOGSUSDT": {
+   "valeur": 40318043.066277385,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOLOUSDT": {
+   "valeur": 18189693.26069,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOODUSDT": {
+   "valeur": 2280526392.5978985,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOSUSDT": {
+   "valeur": 688883580.4449,
+   "source": "volume quote klines (proxy)"
+  },
+  "DOTUSDT": {
+   "valeur": 1971007465.28472,
+   "source": "volume quote klines (proxy)"
+  },
+  "DRAMUSDT": {
+   "valeur": 3381876214.6938004,
+   "source": "volume quote klines (proxy)"
+  },
+  "DRIFTUSDT": {
+   "valeur": 57960533.74955,
+   "source": "volume quote klines (proxy)"
+  },
+  "DUSKUSDT": {
+   "valeur": 298455835.99591005,
+   "source": "volume quote klines (proxy)"
+  },
+  "DYDXUSDT": {
+   "valeur": 155364847.29615,
+   "source": "volume quote klines (proxy)"
+  },
+  "DYMUSDT": {
+   "valeur": 92043100.3955,
+   "source": "volume quote klines (proxy)"
+  },
+  "EBAYUSDT": {
+   "valeur": 13784965.4846,
+   "source": "volume quote klines (proxy)"
+  },
+  "EDENUSDT": {
+   "valeur": 100218746.4693,
+   "source": "volume quote klines (proxy)"
+  },
+  "EDGEUSDT": {
+   "valeur": 131668368.6155,
+   "source": "volume quote klines (proxy)"
+  },
+  "EDUUSDT": {
+   "valeur": 186924543.57616,
+   "source": "volume quote klines (proxy)"
+  },
+  "EGLDUSDT": {
+   "valeur": 148001005.65609998,
+   "source": "volume quote klines (proxy)"
+  },
+  "EIDOUSDT": {
+   "valeur": 1156771.0522999999,
+   "source": "volume quote klines (proxy)"
+  },
+  "EIGENUSDT": {
+   "valeur": 539833792.18788,
+   "source": "volume quote klines (proxy)"
+  },
+  "ELSAUSDT": {
+   "valeur": 175275099.94628,
+   "source": "volume quote klines (proxy)"
+  },
+  "ENAUSDT": {
+   "valeur": 8473010604.476341,
+   "source": "volume quote klines (proxy)"
+  },
+  "ENJUSDT": {
+   "valeur": 269486178.26518,
+   "source": "volume quote klines (proxy)"
+  },
+  "ENSOUSDT": {
+   "valeur": 126630624.04157001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ENSUSDT": {
+   "valeur": 162508439.98470002,
+   "source": "volume quote klines (proxy)"
+  },
+  "EPICUSDT": {
+   "valeur": 257297091.97143,
+   "source": "volume quote klines (proxy)"
+  },
+  "EQTUSDT": {
+   "valeur": 2108063.7945999997,
+   "source": "volume quote klines (proxy)"
+  },
+  "ERAUSDT": {
+   "valeur": 1249607633.82494,
+   "source": "volume quote klines (proxy)"
+  },
+  "ESPORTSUSDT": {
+   "valeur": 194360443.969778,
+   "source": "volume quote klines (proxy)"
+  },
+  "ESPUSDT": {
+   "valeur": 140077723.45762,
+   "source": "volume quote klines (proxy)"
+  },
+  "ETCUSDT": {
+   "valeur": 728753395.84548,
+   "source": "volume quote klines (proxy)"
+  },
+  "ETHFIUSDT": {
+   "valeur": 854575258.7627101,
+   "source": "volume quote klines (proxy)"
+  },
+  "ETHUSDT": {
+   "valeur": 236189251060.26257,
+   "source": "volume quote klines (proxy)"
+  },
+  "ETHWUSDT": {
+   "valeur": 43677996.255,
+   "source": "volume quote klines (proxy)"
+  },
+  "EULUSDT": {
+   "valeur": 109448761.2538,
+   "source": "volume quote klines (proxy)"
+  },
+  "EVAAUSDT": {
+   "valeur": 1154619546.07951,
+   "source": "volume quote klines (proxy)"
+  },
+  "EWJUSDT": {
+   "valeur": 28411596.9013,
+   "source": "volume quote klines (proxy)"
+  },
+  "EWTUSDT": {
+   "valeur": 20843533.285899997,
+   "source": "volume quote klines (proxy)"
+  },
+  "EWYUSDT": {
+   "valeur": 2941650226.4535,
+   "source": "volume quote klines (proxy)"
+  },
+  "EWZSUSDT": {
+   "valeur": 447737.74110000004,
+   "source": "volume quote klines (proxy)"
+  },
+  "EWZUSDT": {
+   "valeur": 192919151.5546,
+   "source": "volume quote klines (proxy)"
+  },
+  "FARTCOINUSDT": {
+   "valeur": 763052447.70398,
+   "source": "volume quote klines (proxy)"
+  },
+  "FETUSDT": {
+   "valeur": 1921484792.3785,
+   "source": "volume quote klines (proxy)"
+  },
+  "FFUSDT": {
+   "valeur": 157389367.79119003,
+   "source": "volume quote klines (proxy)"
+  },
+  "FHEUSDT": {
+   "valeur": 35847845.61725,
+   "source": "volume quote klines (proxy)"
+  },
+  "FIDAUSDT": {
+   "valeur": 72847783.07273999,
+   "source": "volume quote klines (proxy)"
+  },
+  "FIGHTUSDT": {
+   "valeur": 67851490.448697,
+   "source": "volume quote klines (proxy)"
+  },
+  "FILUSDT": {
+   "valeur": 4185212402.87183,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLEXUSDT": {
+   "valeur": 19940545.1058,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLNCUSDT": {
+   "valeur": 95409953.34807,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLOCKUSDT": {
+   "valeur": 154185431.86137,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLOWUSDT": {
+   "valeur": 94868419.040343,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLUIDUSDT": {
+   "valeur": 199158620.0405,
+   "source": "volume quote klines (proxy)"
+  },
+  "FLUXUSDT": {
+   "valeur": 56248032.56053001,
+   "source": "volume quote klines (proxy)"
+  },
+  "FOGOUSDT": {
+   "valeur": 95254547.171308,
+   "source": "volume quote klines (proxy)"
+  },
+  "FOLKSUSDT": {
+   "valeur": 151987947.3811,
+   "source": "volume quote klines (proxy)"
+  },
+  "FORMUSDT": {
+   "valeur": 97390492.45278001,
+   "source": "volume quote klines (proxy)"
+  },
+  "FRAXUSDT": {
+   "valeur": 42823301.172299996,
+   "source": "volume quote klines (proxy)"
+  },
+  "FUSDT": {
+   "valeur": 60905557.38010301,
+   "source": "volume quote klines (proxy)"
+  },
+  "FWDIUSDT": {
+   "valeur": 26618652.316419996,
+   "source": "volume quote klines (proxy)"
+  },
+  "GALAUSDT": {
+   "valeur": 512483843.366821,
+   "source": "volume quote klines (proxy)"
+  },
+  "GASUSDT": {
+   "valeur": 44025898.1444,
+   "source": "volume quote klines (proxy)"
+  },
+  "GDXUSDT": {
+   "valeur": 8769260.6838,
+   "source": "volume quote klines (proxy)"
+  },
+  "GENIUSUSDT": {
+   "valeur": 109723652.2896,
+   "source": "volume quote klines (proxy)"
+  },
+  "GEVUSDT": {
+   "valeur": 49079290.0895,
+   "source": "volume quote klines (proxy)"
+  },
+  "GIGADEVUSDT": {
+   "valeur": 81222767.1013,
+   "source": "volume quote klines (proxy)"
+  },
+  "GIGGLEUSDT": {
+   "valeur": 181768623.0478,
+   "source": "volume quote klines (proxy)"
+  },
+  "GLMUSDT": {
+   "valeur": 32566890.1938,
+   "source": "volume quote klines (proxy)"
+  },
+  "GLWUSDT": {
+   "valeur": 389048910.80710006,
+   "source": "volume quote klines (proxy)"
+  },
+  "GMEUSDT": {
+   "valeur": 61373704.1064,
+   "source": "volume quote klines (proxy)"
+  },
+  "GMTUSDT": {
+   "valeur": 123319909.03520802,
+   "source": "volume quote klines (proxy)"
+  },
+  "GMXUSDT": {
+   "valeur": 86511631.15540999,
+   "source": "volume quote klines (proxy)"
+  },
+  "GOATUSDT": {
+   "valeur": 78218833.1552,
+   "source": "volume quote klines (proxy)"
+  },
+  "GOOGLUSDT": {
+   "valeur": 4864235255.4846,
+   "source": "volume quote klines (proxy)"
+  },
+  "GPROUSDT": {
+   "valeur": 16988148.36346,
+   "source": "volume quote klines (proxy)"
+  },
+  "GPSUSDT": {
+   "valeur": 106701470.361891,
+   "source": "volume quote klines (proxy)"
+  },
+  "GRAMUSDT": {
+   "valeur": 471673488.2048,
+   "source": "volume quote klines (proxy)"
+  },
+  "GRASSUSDT": {
+   "valeur": 826397006.3148501,
+   "source": "volume quote klines (proxy)"
+  },
+  "GRIFFAINUSDT": {
+   "valeur": 262265702.88280198,
+   "source": "volume quote klines (proxy)"
+  },
+  "GRTUSDT": {
+   "valeur": 143302812.90714002,
+   "source": "volume quote klines (proxy)"
+  },
+  "GRVTUSDT": {
+   "valeur": 215058928.05010003,
+   "source": "volume quote klines (proxy)"
+  },
+  "GSUSDT": {
+   "valeur": 13149573.8698,
+   "source": "volume quote klines (proxy)"
+  },
+  "GTCUSDT": {
+   "valeur": 3352574482.2950354,
+   "source": "volume quote klines (proxy)"
+  },
+  "GTLBUSDT": {
+   "valeur": 6460402.3935,
+   "source": "volume quote klines (proxy)"
+  },
+  "GUAUSDT": {
+   "valeur": 31902236.67845,
+   "source": "volume quote klines (proxy)"
+  },
+  "GUNUSDT": {
+   "valeur": 58931555.010683,
+   "source": "volume quote klines (proxy)"
+  },
+  "GUSDT": {
+   "valeur": 129125373.744452,
+   "source": "volume quote klines (proxy)"
+  },
+  "GWEIUSDT": {
+   "valeur": 210490575.65289,
+   "source": "volume quote klines (proxy)"
+  },
+  "HAEDALUSDT": {
+   "valeur": 249372994.09947002,
+   "source": "volume quote klines (proxy)"
+  },
+  "HANAUSDT": {
+   "valeur": 83593931.40630001,
+   "source": "volume quote klines (proxy)"
+  },
+  "HANMIUSDT": {
+   "valeur": 14520937.4109,
+   "source": "volume quote klines (proxy)"
+  },
+  "HBARUSDT": {
+   "valeur": 1445829469.59929,
+   "source": "volume quote klines (proxy)"
+  },
+  "HDUSDT": {
+   "valeur": 10589922.132,
+   "source": "volume quote klines (proxy)"
+  },
+  "HEIUSDT": {
+   "valeur": 93747418.974087,
+   "source": "volume quote klines (proxy)"
+  },
+  "HEMIUSDT": {
+   "valeur": 218113518.45057902,
+   "source": "volume quote klines (proxy)"
+  },
+  "HIMSUSDT": {
+   "valeur": 76352188.16839999,
+   "source": "volume quote klines (proxy)"
+  },
+  "HIVEUSDT": {
+   "valeur": 33552523.19614,
+   "source": "volume quote klines (proxy)"
+  },
+  "HK0625USDT": {
+   "valeur": 13190669.0692,
+   "source": "volume quote klines (proxy)"
+  },
+  "HK0700USDT": {
+   "valeur": 85016201.7349,
+   "source": "volume quote klines (proxy)"
+  },
+  "HK0992USDT": {
+   "valeur": 21093404.3232,
+   "source": "volume quote klines (proxy)"
+  },
+  "HK1810USDT": {
+   "valeur": 235558860.10370004,
+   "source": "volume quote klines (proxy)"
+  },
+  "HMSTRUSDT": {
+   "valeur": 37652347.368753895,
+   "source": "volume quote klines (proxy)"
+  },
+  "HOLOUSDT": {
+   "valeur": 38200201.80094001,
+   "source": "volume quote klines (proxy)"
+  },
+  "HOMEUSDT": {
+   "valeur": 102752074.94023901,
+   "source": "volume quote klines (proxy)"
+  },
+  "HOODUSDT": {
+   "valeur": 872123537.8477,
+   "source": "volume quote klines (proxy)"
+  },
+  "HOTUSDT": {
+   "valeur": 57919215.3843453,
+   "source": "volume quote klines (proxy)"
+  },
+  "HPEUSDT": {
+   "valeur": 49436813.247,
+   "source": "volume quote klines (proxy)"
+  },
+  "HUMAUSDT": {
+   "valeur": 489386997.003101,
+   "source": "volume quote klines (proxy)"
+  },
+  "HUSDT": {
+   "valeur": 78794645.52554,
+   "source": "volume quote klines (proxy)"
+  },
+  "HUTUSDT": {
+   "valeur": 9186245.2146,
+   "source": "volume quote klines (proxy)"
+  },
+  "HYPERUSDT": {
+   "valeur": 74365354.98215,
+   "source": "volume quote klines (proxy)"
+  },
+  "HYPEUSDT": {
+   "valeur": 19571892033.760826,
+   "source": "volume quote klines (proxy)"
+  },
+  "HYUNDAIUSDT": {
+   "valeur": 46301776.3686,
+   "source": "volume quote klines (proxy)"
+  },
+  "IBKRUSDT": {
+   "valeur": 6070629.5493,
+   "source": "volume quote klines (proxy)"
+  },
+  "IBMUSDT": {
+   "valeur": 107591035.839,
+   "source": "volume quote klines (proxy)"
+  },
+  "ICNTUSDT": {
+   "valeur": 1038323499.0239,
+   "source": "volume quote klines (proxy)"
+  },
+  "ICPUSDT": {
+   "valeur": 920507242.654,
+   "source": "volume quote klines (proxy)"
+  },
+  "IDOLUSDT": {
+   "valeur": 1188840070.787886,
+   "source": "volume quote klines (proxy)"
+  },
+  "IDUSDT": {
+   "valeur": 110194108.46902001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ILVUSDT": {
+   "valeur": 51973171.73630001,
+   "source": "volume quote klines (proxy)"
+  },
+  "IMXUSDT": {
+   "valeur": 139366683.7875,
+   "source": "volume quote klines (proxy)"
+  },
+  "INITUSDT": {
+   "valeur": 649075352.0773699,
+   "source": "volume quote klines (proxy)"
+  },
+  "INJUSDT": {
+   "valeur": 2808921838.4944,
+   "source": "volume quote klines (proxy)"
+  },
+  "INTCUSDT": {
+   "valeur": 6347941641.724899,
+   "source": "volume quote klines (proxy)"
+  },
+  "INTWUSDT": {
+   "valeur": 995835565.4781002,
+   "source": "volume quote klines (proxy)"
+  },
+  "INUSDT": {
+   "valeur": 317646714.17861,
+   "source": "volume quote klines (proxy)"
+  },
+  "INXUSDT": {
+   "valeur": 59329902.411599,
+   "source": "volume quote klines (proxy)"
+  },
+  "IONQUSDT": {
+   "valeur": 46815249.66160001,
+   "source": "volume quote klines (proxy)"
+  },
+  "IOSTUSDT": {
+   "valeur": 1674677762.1223147,
+   "source": "volume quote klines (proxy)"
+  },
+  "IOTAUSDT": {
+   "valeur": 160009736.34448698,
+   "source": "volume quote klines (proxy)"
+  },
+  "IOTXUSDT": {
+   "valeur": 116206307.255294,
+   "source": "volume quote klines (proxy)"
+  },
+  "IOUSDT": {
+   "valeur": 194998692.20578003,
+   "source": "volume quote klines (proxy)"
+  },
+  "IRENUSDT": {
+   "valeur": 448265454.7049,
+   "source": "volume quote klines (proxy)"
+  },
+  "IRYSUSDT": {
+   "valeur": 4671504119.265759,
+   "source": "volume quote klines (proxy)"
+  },
+  "IWMUSDT": {
+   "valeur": 24612043.543700002,
+   "source": "volume quote klines (proxy)"
+  },
+  "JASMYUSDT": {
+   "valeur": 237898550.48740798,
+   "source": "volume quote klines (proxy)"
+  },
+  "JCTUSDT": {
+   "valeur": 3394129772.5756884,
+   "source": "volume quote klines (proxy)"
+  },
+  "JELLYJELLYUSDT": {
+   "valeur": 34539618.542040005,
+   "source": "volume quote klines (proxy)"
+  },
+  "JOEUSDT": {
+   "valeur": 23125794.76362,
+   "source": "volume quote klines (proxy)"
+  },
+  "JPMUSDT": {
+   "valeur": 30282537.399,
+   "source": "volume quote klines (proxy)"
+  },
+  "JSTUSDT": {
+   "valeur": 151666267.17859,
+   "source": "volume quote klines (proxy)"
+  },
+  "JTOUSDT": {
+   "valeur": 544742636.9146,
+   "source": "volume quote klines (proxy)"
+  },
+  "JUPUSDT": {
+   "valeur": 716081132.0038,
+   "source": "volume quote klines (proxy)"
+  },
+  "KAIAUSDT": {
+   "valeur": 962090952.7133801,
+   "source": "volume quote klines (proxy)"
+  },
+  "KAITOUSDT": {
+   "valeur": 221706889.66753,
+   "source": "volume quote klines (proxy)"
+  },
+  "KASUSDT": {
+   "valeur": 149527747.07367,
+   "source": "volume quote klines (proxy)"
+  },
+  "KATUSDT": {
+   "valeur": 224688065.36913502,
+   "source": "volume quote klines (proxy)"
+  },
+  "KAVAUSDT": {
+   "valeur": 125792282.341746,
+   "source": "volume quote klines (proxy)"
+  },
+  "KERNELUSDT": {
+   "valeur": 78622666.81675,
+   "source": "volume quote klines (proxy)"
+  },
+  "KGENUSDT": {
+   "valeur": 98099431.32306,
+   "source": "volume quote klines (proxy)"
+  },
+  "KITEUSDT": {
+   "valeur": 157356103.97638,
+   "source": "volume quote klines (proxy)"
+  },
+  "KLACUSDT": {
+   "valeur": 48660710.9543,
+   "source": "volume quote klines (proxy)"
+  },
+  "KMNOUSDT": {
+   "valeur": 217792428.92275,
+   "source": "volume quote klines (proxy)"
+  },
+  "KNCUSDT": {
+   "valeur": 36659258.8583,
+   "source": "volume quote klines (proxy)"
+  },
+  "KODEX200USDT": {
+   "valeur": 3463491.3976,
+   "source": "volume quote klines (proxy)"
+  },
+  "KOMAUSDT": {
+   "valeur": 55063984.008561,
+   "source": "volume quote klines (proxy)"
+  },
+  "KORUUSDT": {
+   "valeur": 21461951308.305702,
+   "source": "volume quote klines (proxy)"
+  },
+  "KOUSDT": {
+   "valeur": 23002614.6562,
+   "source": "volume quote klines (proxy)"
+  },
+  "KSMUSDT": {
+   "valeur": 62152152.100600004,
+   "source": "volume quote klines (proxy)"
+  },
+  "KSTRUSDT": {
+   "valeur": 115417612.9253,
+   "source": "volume quote klines (proxy)"
+  },
+  "KUAISHOUUSDT": {
+   "valeur": 15567720.68482,
+   "source": "volume quote klines (proxy)"
+  },
+  "LABUSDT": {
+   "valeur": 346458772.71571,
+   "source": "volume quote klines (proxy)"
+  },
+  "LAUSDT": {
+   "valeur": 252684280.523798,
+   "source": "volume quote klines (proxy)"
+  },
+  "LAYERUSDT": {
+   "valeur": 44184294.07032201,
+   "source": "volume quote klines (proxy)"
+  },
+  "LDOUSDT": {
+   "valeur": 685347927.5186,
+   "source": "volume quote klines (proxy)"
+  },
+  "LGELECTRONICSUSDT": {
+   "valeur": 11885579.015099999,
+   "source": "volume quote klines (proxy)"
+  },
+  "LIGHTUSDT": {
+   "valeur": 247677882.70029998,
+   "source": "volume quote klines (proxy)"
+  },
+  "LINEAUSDT": {
+   "valeur": 82751587.352632,
+   "source": "volume quote klines (proxy)"
+  },
+  "LINKUSDT": {
+   "valeur": 3951340457.43686,
+   "source": "volume quote klines (proxy)"
+  },
+  "LISTAUSDT": {
+   "valeur": 32195982.64764,
+   "source": "volume quote klines (proxy)"
+  },
+  "LITEUSDT": {
+   "valeur": 2398574983.3573,
+   "source": "volume quote klines (proxy)"
+  },
+  "LITUSDT": {
+   "valeur": 2063897654.3607202,
+   "source": "volume quote klines (proxy)"
+  },
+  "LLYUSDT": {
+   "valeur": 103525379.9317,
+   "source": "volume quote klines (proxy)"
+  },
+  "LPTUSDT": {
+   "valeur": 183182962.5011,
+   "source": "volume quote klines (proxy)"
+  },
+  "LQTYUSDT": {
+   "valeur": 26736029.56337,
+   "source": "volume quote klines (proxy)"
+  },
+  "LRCXUSDT": {
+   "valeur": 72819455.0383,
+   "source": "volume quote klines (proxy)"
+  },
+  "LSKUSDT": {
+   "valeur": 1114800496.74227,
+   "source": "volume quote klines (proxy)"
+  },
+  "LTCUSDT": {
+   "valeur": 2457874096.26446,
+   "source": "volume quote klines (proxy)"
+  },
+  "LUMIAUSDT": {
+   "valeur": 892309873.5737569,
+   "source": "volume quote klines (proxy)"
+  },
+  "LUNA2USDT": {
+   "valeur": 72869246.5887,
+   "source": "volume quote klines (proxy)"
+  },
+  "LYNUSDT": {
+   "valeur": 460723453.14976,
+   "source": "volume quote klines (proxy)"
+  },
+  "LYTEUSDT": {
+   "valeur": 9940326.9652,
+   "source": "volume quote klines (proxy)"
+  },
+  "MAGICUSDT": {
+   "valeur": 2359812449.6152296,
+   "source": "volume quote klines (proxy)"
+  },
+  "MAGMAUSDT": {
+   "valeur": 1802858854.8024,
+   "source": "volume quote klines (proxy)"
+  },
+  "MANAUSDT": {
+   "valeur": 427982709.33081,
+   "source": "volume quote klines (proxy)"
+  },
+  "MANTAUSDT": {
+   "valeur": 151612574.315144,
+   "source": "volume quote klines (proxy)"
+  },
+  "MANTRAUSDT": {
+   "valeur": 88366148.811824,
+   "source": "volume quote klines (proxy)"
+  },
+  "MARAUSDT": {
+   "valeur": 14749398.682,
+   "source": "volume quote klines (proxy)"
+  },
+  "MARSCOINUSDT": {
+   "valeur": 742585851.64415,
+   "source": "volume quote klines (proxy)"
+  },
+  "MASKUSDT": {
+   "valeur": 118301411.7214,
+   "source": "volume quote klines (proxy)"
+  },
+  "MAVIAUSDT": {
+   "valeur": 23559364.28151,
+   "source": "volume quote klines (proxy)"
+  },
+  "MAVUSDT": {
+   "valeur": 38059192.063663,
+   "source": "volume quote klines (proxy)"
+  },
+  "MCDUSDT": {
+   "valeur": 19712257.919,
+   "source": "volume quote klines (proxy)"
+  },
+  "MDBUSDT": {
+   "valeur": 9284393.8209,
+   "source": "volume quote klines (proxy)"
+  },
+  "MDTUSDT": {
+   "valeur": 1546284.9286999998,
+   "source": "volume quote klines (proxy)"
+  },
+  "MEGAUSDT": {
+   "valeur": 332562905.77087,
+   "source": "volume quote klines (proxy)"
+  },
+  "MEITUANUSDT": {
+   "valeur": 12952334.799899999,
+   "source": "volume quote klines (proxy)"
+  },
+  "MELANIAUSDT": {
+   "valeur": 50225792.7651704,
+   "source": "volume quote klines (proxy)"
+  },
+  "MELIUSDT": {
+   "valeur": 836556.1702,
+   "source": "volume quote klines (proxy)"
+  },
+  "MEMEUSDT": {
+   "valeur": 75908123.39411719,
+   "source": "volume quote klines (proxy)"
+  },
+  "MERLUSDT": {
+   "valeur": 84381551.68404,
+   "source": "volume quote klines (proxy)"
+  },
+  "METAUSDT": {
+   "valeur": 2119678683.4847002,
+   "source": "volume quote klines (proxy)"
+  },
+  "METISUSDT": {
+   "valeur": 147738782.67655,
+   "source": "volume quote klines (proxy)"
+  },
+  "METUSDT": {
+   "valeur": 1307049997.2478,
+   "source": "volume quote klines (proxy)"
+  },
+  "MEUSDT": {
+   "valeur": 61497754.7145,
+   "source": "volume quote klines (proxy)"
+  },
+  "MEWUSDT": {
+   "valeur": 164532241.2280303,
+   "source": "volume quote klines (proxy)"
+  },
+  "MINAUSDT": {
+   "valeur": 713368079.77006,
+   "source": "volume quote klines (proxy)"
+  },
+  "MINIMAXUSDT": {
+   "valeur": 569975737.3561001,
+   "source": "volume quote klines (proxy)"
+  },
+  "MIRAUSDT": {
+   "valeur": 67455021.73296,
+   "source": "volume quote klines (proxy)"
+  },
+  "MITOUSDT": {
+   "valeur": 71088058.00078,
+   "source": "volume quote klines (proxy)"
+  },
+  "MMTUSDT": {
+   "valeur": 80894556.19839999,
+   "source": "volume quote klines (proxy)"
+  },
+  "MOCAUSDT": {
+   "valeur": 30571292.888841,
+   "source": "volume quote klines (proxy)"
+  },
+  "MONUSDT": {
+   "valeur": 676943949.2711799,
+   "source": "volume quote klines (proxy)"
+  },
+  "MOODENGUSDT": {
+   "valeur": 117065875.50041,
+   "source": "volume quote klines (proxy)"
+  },
+  "MOONSHOTUSDT": {
+   "valeur": 11977787.9567,
+   "source": "volume quote klines (proxy)"
+  },
+  "MORPHOUSDT": {
+   "valeur": 352185525.23481,
+   "source": "volume quote klines (proxy)"
+  },
+  "MOVEUSDT": {
+   "valeur": 109624428.93273601,
+   "source": "volume quote klines (proxy)"
+  },
+  "MOVRUSDT": {
+   "valeur": 2882908642.0195065,
+   "source": "volume quote klines (proxy)"
+  },
+  "MPUSDT": {
+   "valeur": 11078349.2685,
+   "source": "volume quote klines (proxy)"
+  },
+  "MRKUSDT": {
+   "valeur": 6939811.42,
+   "source": "volume quote klines (proxy)"
+  },
+  "MRNAUSDT": {
+   "valeur": 496219469.87729996,
+   "source": "volume quote klines (proxy)"
+  },
+  "MRVLUSDT": {
+   "valeur": 2340113450.3671002,
+   "source": "volume quote klines (proxy)"
+  },
+  "MSFTUSDT": {
+   "valeur": 908820445.6229999,
+   "source": "volume quote klines (proxy)"
+  },
+  "MSTRUSDT": {
+   "valeur": 6810601286.9011,
+   "source": "volume quote klines (proxy)"
+  },
+  "MSTUUSDT": {
+   "valeur": 47374614.7962,
+   "source": "volume quote klines (proxy)"
+  },
+  "MTLUSDT": {
+   "valeur": 53777762.3229,
+   "source": "volume quote klines (proxy)"
+  },
+  "MUBARAKUSDT": {
+   "valeur": 874431179.8117299,
+   "source": "volume quote klines (proxy)"
+  },
+  "MUSDT": {
+   "valeur": 121720215.99870001,
+   "source": "volume quote klines (proxy)"
+  },
+  "MUUSDT": {
+   "valeur": 14406900804.213802,
+   "source": "volume quote klines (proxy)"
+  },
+  "MUUUSDT": {
+   "valeur": 2492632050.6723003,
+   "source": "volume quote klines (proxy)"
+  },
+  "MVLLUSDT": {
+   "valeur": 1289755771.3154998,
+   "source": "volume quote klines (proxy)"
+  },
+  "MYXUSDT": {
+   "valeur": 91019506.19528,
+   "source": "volume quote klines (proxy)"
+  },
+  "NAORISUSDT": {
+   "valeur": 65143355.76513,
+   "source": "volume quote klines (proxy)"
+  },
+  "NATGASUSDT": {
+   "valeur": 1744296155.5649,
+   "source": "volume quote klines (proxy)"
+  },
+  "NAVERUSDT": {
+   "valeur": 6065001.857899999,
+   "source": "volume quote klines (proxy)"
+  },
+  "NBISUSDT": {
+   "valeur": 2215138593.4042,
+   "source": "volume quote klines (proxy)"
+  },
+  "NEARUSDT": {
+   "valeur": 22151528685.740997,
+   "source": "volume quote klines (proxy)"
+  },
+  "NEIROUSDT": {
+   "valeur": 164304734.65811658,
+   "source": "volume quote klines (proxy)"
+  },
+  "NEOUSDT": {
+   "valeur": 123925089.53672,
+   "source": "volume quote klines (proxy)"
+  },
+  "NETUSDT": {
+   "valeur": 30078685.859199997,
+   "source": "volume quote klines (proxy)"
+  },
+  "NEWTUSDT": {
+   "valeur": 40272283.75022,
+   "source": "volume quote klines (proxy)"
+  },
+  "NFLXUSDT": {
+   "valeur": 225503899.5482,
+   "source": "volume quote klines (proxy)"
+  },
+  "NIGHTUSDT": {
+   "valeur": 602947663.0041499,
+   "source": "volume quote klines (proxy)"
+  },
+  "NILUSDT": {
+   "valeur": 966128682.815276,
+   "source": "volume quote klines (proxy)"
+  },
+  "NKEUSDT": {
+   "valeur": 43057644.6849,
+   "source": "volume quote klines (proxy)"
+  },
+  "NMRUSDT": {
+   "valeur": 856073201.7862,
+   "source": "volume quote klines (proxy)"
+  },
+  "NOKUSDT": {
+   "valeur": 135886351.39560002,
+   "source": "volume quote klines (proxy)"
+  },
+  "NOMUSDT": {
+   "valeur": 250623740.55041602,
+   "source": "volume quote klines (proxy)"
+  },
+  "NOTUSDT": {
+   "valeur": 54193064.3152414,
+   "source": "volume quote klines (proxy)"
+  },
+  "NOWUSDT": {
+   "valeur": 83631738.81130001,
+   "source": "volume quote klines (proxy)"
+  },
+  "NVDAUSDT": {
+   "valeur": 5306347466.0819,
+   "source": "volume quote klines (proxy)"
+  },
+  "NVDLUSDT": {
+   "valeur": 14722715.1107,
+   "source": "volume quote klines (proxy)"
+  },
+  "NVOUSDT": {
+   "valeur": 24037613.7967,
+   "source": "volume quote klines (proxy)"
+  },
+  "NXPCUSDT": {
+   "valeur": 162007607.2436,
+   "source": "volume quote klines (proxy)"
+  },
+  "OGNUSDT": {
+   "valeur": 1860315763.7967799,
+   "source": "volume quote klines (proxy)"
+  },
+  "OGUSDT": {
+   "valeur": 26430602.1655,
+   "source": "volume quote klines (proxy)"
+  },
+  "OKLOUSDT": {
+   "valeur": 27394166.8359,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONDOUSDT": {
+   "valeur": 3162866966.65137,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONDSUSDT": {
+   "valeur": 55728170.46902999,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONEUSDT": {
+   "valeur": 511297538.62679815,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONGUSDT": {
+   "valeur": 134309191.0357,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONTUSDT": {
+   "valeur": 76716334.74764,
+   "source": "volume quote klines (proxy)"
+  },
+  "ONUSDT": {
+   "valeur": 446035043.73735,
+   "source": "volume quote klines (proxy)"
+  },
+  "OPENAIUSDT": {
+   "valeur": 259951689.98459998,
+   "source": "volume quote klines (proxy)"
+  },
+  "OPENUSDT": {
+   "valeur": 140780233.8112,
+   "source": "volume quote klines (proxy)"
+  },
+  "OPGUSDT": {
+   "valeur": 105829661.5979,
+   "source": "volume quote klines (proxy)"
+  },
+  "OPNUSDT": {
+   "valeur": 188954969.31488997,
+   "source": "volume quote klines (proxy)"
+  },
+  "OPUSDT": {
+   "valeur": 1493179000.156023,
+   "source": "volume quote klines (proxy)"
+  },
+  "ORCAUSDT": {
+   "valeur": 1140444755.3509998,
+   "source": "volume quote klines (proxy)"
+  },
+  "ORCLUSDT": {
+   "valeur": 791336845.6368,
+   "source": "volume quote klines (proxy)"
+  },
+  "ORDERUSDT": {
+   "valeur": 1166272634.04782,
+   "source": "volume quote klines (proxy)"
+  },
+  "ORDIUSDT": {
+   "valeur": 275906452.2788,
+   "source": "volume quote klines (proxy)"
+  },
+  "OURAUSDT": {
+   "valeur": 6888554.6713,
+   "source": "volume quote klines (proxy)"
+  },
+  "OUSDT": {
+   "valeur": 57574423.8709,
+   "source": "volume quote klines (proxy)"
+  },
+  "OXYUSDT": {
+   "valeur": 1048603.7927,
+   "source": "volume quote klines (proxy)"
+  },
+  "PANWUSDT": {
+   "valeur": 26485161.049,
+   "source": "volume quote klines (proxy)"
+  },
+  "PARTIUSDT": {
+   "valeur": 802445323.25401,
+   "source": "volume quote klines (proxy)"
+  },
+  "PATHUSDT": {
+   "valeur": 3795388.4276,
+   "source": "volume quote klines (proxy)"
+  },
+  "PAXGUSDT": {
+   "valeur": 2069377364.5608802,
+   "source": "volume quote klines (proxy)"
+  },
+  "PAYPUSDT": {
+   "valeur": 11325662.563500002,
+   "source": "volume quote klines (proxy)"
+  },
+  "PDDUSDT": {
+   "valeur": 20859653.4062,
+   "source": "volume quote klines (proxy)"
+  },
+  "PENDLEUSDT": {
+   "valeur": 555878013.1373999,
+   "source": "volume quote klines (proxy)"
+  },
+  "PENGUSDT": {
+   "valeur": 159631478.5639,
+   "source": "volume quote klines (proxy)"
+  },
+  "PENGUUSDT": {
+   "valeur": 1879561620.209023,
+   "source": "volume quote klines (proxy)"
+  },
+  "PEOPLEUSDT": {
+   "valeur": 167900050.160806,
+   "source": "volume quote klines (proxy)"
+  },
+  "PFEUSDT": {
+   "valeur": 692013.6802,
+   "source": "volume quote klines (proxy)"
+  },
+  "PHAROSUSDT": {
+   "valeur": 90148595.6504,
+   "source": "volume quote klines (proxy)"
+  },
+  "PHAUSDT": {
+   "valeur": 633106300.91735,
+   "source": "volume quote klines (proxy)"
+  },
+  "PIEVERSEUSDT": {
+   "valeur": 91745910.5041,
+   "source": "volume quote klines (proxy)"
+  },
+  "PIPPINUSDT": {
+   "valeur": 80429894.12161,
+   "source": "volume quote klines (proxy)"
+  },
+  "PIXELUSDT": {
+   "valeur": 211858704.52575698,
+   "source": "volume quote klines (proxy)"
+  },
+  "PLAYUSDT": {
+   "valeur": 91263303.94955,
+   "source": "volume quote klines (proxy)"
+  },
+  "PLTRUSDT": {
+   "valeur": 673705313.8148999,
+   "source": "volume quote klines (proxy)"
+  },
+  "PLUMEUSDT": {
+   "valeur": 336099405.57754,
+   "source": "volume quote klines (proxy)"
+  },
+  "PNUTUSDT": {
+   "valeur": 100428580.45897001,
+   "source": "volume quote klines (proxy)"
+  },
+  "POLUSDT": {
+   "valeur": 494905351.1309,
+   "source": "volume quote klines (proxy)"
+  },
+  "POLYXUSDT": {
+   "valeur": 69180691.36185,
+   "source": "volume quote klines (proxy)"
+  },
+  "PONSUSDT": {
+   "valeur": 1484093407.4905999,
+   "source": "volume quote klines (proxy)"
+  },
+  "POPCATUSDT": {
+   "valeur": 55296302.586349994,
+   "source": "volume quote klines (proxy)"
+  },
+  "POPMARTUSDT": {
+   "valeur": 38685200.5977,
+   "source": "volume quote klines (proxy)"
+  },
+  "PORTALUSDT": {
+   "valeur": 57256999.17301,
+   "source": "volume quote klines (proxy)"
+  },
+  "POWERUSDT": {
+   "valeur": 73358786.59096,
+   "source": "volume quote klines (proxy)"
+  },
+  "POWRUSDT": {
+   "valeur": 47973443.22732,
+   "source": "volume quote klines (proxy)"
+  },
+  "PREDICTUSDT": {
+   "valeur": 98016368.93439999,
+   "source": "volume quote klines (proxy)"
+  },
+  "PRLUSDT": {
+   "valeur": 60249154.215900004,
+   "source": "volume quote klines (proxy)"
+  },
+  "PROMPTUSDT": {
+   "valeur": 16623417.859189998,
+   "source": "volume quote klines (proxy)"
+  },
+  "PROMUSDT": {
+   "valeur": 468143109.8722,
+   "source": "volume quote klines (proxy)"
+  },
+  "PROVEUSDT": {
+   "valeur": 81517894.94246,
+   "source": "volume quote klines (proxy)"
+  },
+  "PTBUSDT": {
+   "valeur": 93375760.07358521,
+   "source": "volume quote klines (proxy)"
+  },
+  "PUMPBTCUSDT": {
+   "valeur": 180641200.6253,
+   "source": "volume quote klines (proxy)"
+  },
+  "PUMPUSDT": {
+   "valeur": 7156213013.149635,
+   "source": "volume quote klines (proxy)"
+  },
+  "PUNDIXUSDT": {
+   "valeur": 42159386.49818,
+   "source": "volume quote klines (proxy)"
+  },
+  "PYPLUSDT": {
+   "valeur": 14338535.1727,
+   "source": "volume quote klines (proxy)"
+  },
+  "PYTHUSDT": {
+   "valeur": 945468480.5297799,
+   "source": "volume quote klines (proxy)"
+  },
+  "QCOMUSDT": {
+   "valeur": 316666642.1836,
+   "source": "volume quote klines (proxy)"
+  },
+  "QNTUSDT": {
+   "valeur": 5775190013.038,
+   "source": "volume quote klines (proxy)"
+  },
+  "QNTXUSDT": {
+   "valeur": 54161283.6999,
+   "source": "volume quote klines (proxy)"
+  },
+  "QQQUSDT": {
+   "valeur": 4075718726.8438,
+   "source": "volume quote klines (proxy)"
+  },
+  "QTUMUSDT": {
+   "valeur": 50631003.3163,
+   "source": "volume quote klines (proxy)"
+  },
+  "QUSDT": {
+   "valeur": 7241118396.271407,
+   "source": "volume quote klines (proxy)"
+  },
+  "RAMUSDT": {
+   "valeur": 81310747.23380001,
+   "source": "volume quote klines (proxy)"
+  },
+  "RAREUSDT": {
+   "valeur": 81015876.80873999,
+   "source": "volume quote klines (proxy)"
+  },
+  "RAVEUSDT": {
+   "valeur": 86473273.8511,
+   "source": "volume quote klines (proxy)"
+  },
+  "RAYSOLUSDT": {
+   "valeur": 900383930.4944,
+   "source": "volume quote klines (proxy)"
+  },
+  "RDDTUSDT": {
+   "valeur": 48535476.4109,
+   "source": "volume quote klines (proxy)"
+  },
+  "RDWUSDT": {
+   "valeur": 6678803.736699999,
+   "source": "volume quote klines (proxy)"
+  },
+  "RECALLUSDT": {
+   "valeur": 52624612.4296,
+   "source": "volume quote klines (proxy)"
+  },
+  "REDUSDT": {
+   "valeur": 160171799.29659998,
+   "source": "volume quote klines (proxy)"
+  },
+  "RENDERUSDT": {
+   "valeur": 747803567.3426,
+   "source": "volume quote klines (proxy)"
+  },
+  "RESOLVUSDT": {
+   "valeur": 146334832.49017,
+   "source": "volume quote klines (proxy)"
+  },
+  "REUSDT": {
+   "valeur": 202816979.4448,
+   "source": "volume quote klines (proxy)"
+  },
+  "REZUSDT": {
+   "valeur": 257341756.61302298,
+   "source": "volume quote klines (proxy)"
+  },
+  "RIFUSDT": {
+   "valeur": 48881402.007070005,
+   "source": "volume quote klines (proxy)"
+  },
+  "RIVERUSDT": {
+   "valeur": 328501796.8691,
+   "source": "volume quote klines (proxy)"
+  },
+  "RIVNUSDT": {
+   "valeur": 21570416.5174,
+   "source": "volume quote klines (proxy)"
+  },
+  "RKLBUSDT": {
+   "valeur": 688060365.3471,
+   "source": "volume quote klines (proxy)"
+  },
+  "RLCUSDT": {
+   "valeur": 3835352477.42801,
+   "source": "volume quote klines (proxy)"
+  },
+  "ROBOUSDT": {
+   "valeur": 115196034.927618,
+   "source": "volume quote klines (proxy)"
+  },
+  "RONINUSDT": {
+   "valeur": 78268281.67717,
+   "source": "volume quote klines (proxy)"
+  },
+  "ROSEUSDT": {
+   "valeur": 94309601.086193,
+   "source": "volume quote klines (proxy)"
+  },
+  "RPLUSDT": {
+   "valeur": 23909315.3416,
+   "source": "volume quote klines (proxy)"
+  },
+  "RSRUSDT": {
+   "valeur": 1037462466.4163309,
+   "source": "volume quote klines (proxy)"
+  },
+  "RUMUSDT": {
+   "valeur": 10309639.82973,
+   "source": "volume quote klines (proxy)"
+  },
+  "RUNEUSDT": {
+   "valeur": 262482136.79320002,
+   "source": "volume quote klines (proxy)"
+  },
+  "RVNUSDT": {
+   "valeur": 236992242.32387197,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAFEUSDT": {
+   "valeur": 113356539.63279,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAGAUSDT": {
+   "valeur": 226605824.840872,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAHARAUSDT": {
+   "valeur": 103771068.019869,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAMSUNGEMUSDT": {
+   "valeur": 24170044.766,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAMSUNGUSDT": {
+   "valeur": 4263562396.8626003,
+   "source": "volume quote klines (proxy)"
+  },
+  "SANDUSDT": {
+   "valeur": 4571872473.38532,
+   "source": "volume quote klines (proxy)"
+  },
+  "SANTOSUSDT": {
+   "valeur": 26996686.86429,
+   "source": "volume quote klines (proxy)"
+  },
+  "SAPIENUSDT": {
+   "valeur": 24739140.23422,
+   "source": "volume quote klines (proxy)"
+  },
+  "SCRUSDT": {
+   "valeur": 202065280.44525,
+   "source": "volume quote klines (proxy)"
+  },
+  "SECZUSDT": {
+   "valeur": 39533027.666899994,
+   "source": "volume quote klines (proxy)"
+  },
+  "SEIUSDT": {
+   "valeur": 615540614.1377,
+   "source": "volume quote klines (proxy)"
+  },
+  "SENTUSDT": {
+   "valeur": 267874813.97765005,
+   "source": "volume quote klines (proxy)"
+  },
+  "SFPUSDT": {
+   "valeur": 30000081.033999998,
+   "source": "volume quote klines (proxy)"
+  },
+  "SHAZUSDT": {
+   "valeur": 64398786.81420001,
+   "source": "volume quote klines (proxy)"
+  },
+  "SHELLUSDT": {
+   "valeur": 58398107.66838,
+   "source": "volume quote klines (proxy)"
+  },
+  "SHOPUSDT": {
+   "valeur": 17093497.5357,
+   "source": "volume quote klines (proxy)"
+  },
+  "SIGNUSDT": {
+   "valeur": 40645048.861443,
+   "source": "volume quote klines (proxy)"
+  },
+  "SIRENUSDT": {
+   "valeur": 695870239.3982301,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKDDUSDT": {
+   "valeur": 265867902.19337,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKHYNIXUSDT": {
+   "valeur": 29434801097.1059,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKHYUSDT": {
+   "valeur": 11886868018.7579,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKLUSDT": {
+   "valeur": 272296613.61358297,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKRUSDT": {
+   "valeur": 62563876.07129499,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKUUUSDT": {
+   "valeur": 187487489.75520003,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKYAIUSDT": {
+   "valeur": 160373524.38171,
+   "source": "volume quote klines (proxy)"
+  },
+  "SKYUSDT": {
+   "valeur": 356596460.79362,
+   "source": "volume quote klines (proxy)"
+  },
+  "SLPUSDT": {
+   "valeur": 48000191.9277501,
+   "source": "volume quote klines (proxy)"
+  },
+  "SLXUSDT": {
+   "valeur": 75866479.10765,
+   "source": "volume quote klines (proxy)"
+  },
+  "SMCIUSDT": {
+   "valeur": 162294183.6434,
+   "source": "volume quote klines (proxy)"
+  },
+  "SMHUSDT": {
+   "valeur": 29334702.7213,
+   "source": "volume quote klines (proxy)"
+  },
+  "SMRUSDT": {
+   "valeur": 1275349.52637,
+   "source": "volume quote klines (proxy)"
+  },
+  "SNDKUSDT": {
+   "valeur": 45014591876.9998,
+   "source": "volume quote klines (proxy)"
+  },
+  "SNOWUSDT": {
+   "valeur": 24663704.042200003,
+   "source": "volume quote klines (proxy)"
+  },
+  "SNPSUSDT": {
+   "valeur": 4573123.4956,
+   "source": "volume quote klines (proxy)"
+  },
+  "SNXUSDT": {
+   "valeur": 88142549.31224999,
+   "source": "volume quote klines (proxy)"
+  },
+  "SNXXUSDT": {
+   "valeur": 9473268085.9864,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOFIUSDT": {
+   "valeur": 41775362.261599995,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOLUSDT": {
+   "valeur": 49415661421.37261,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOLVUSDT": {
+   "valeur": 101499509.048052,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOMIUSDT": {
+   "valeur": 56477315.5065,
+   "source": "volume quote klines (proxy)"
+  },
+  "SONICUSDT": {
+   "valeur": 26585160.461996,
+   "source": "volume quote klines (proxy)"
+  },
+  "SONYUSDT": {
+   "valeur": 10963173.3101,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOONUSDT": {
+   "valeur": 471163704.0085,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOPHUSDT": {
+   "valeur": 385849780.925914,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOXLUSDT": {
+   "valeur": 59344072385.66991,
+   "source": "volume quote klines (proxy)"
+  },
+  "SOXSUSDT": {
+   "valeur": 9607961140.9113,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPACEUSDT": {
+   "valeur": 37872657.30609,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPCXUSDT": {
+   "valeur": 29180268240.2502,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPELLUSDT": {
+   "valeur": 45380889.4172771,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPKUSDT": {
+   "valeur": 121166554.49501,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPORTFUNUSDT": {
+   "valeur": 86181290.0068,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPXUSDT": {
+   "valeur": 248140001.02359998,
+   "source": "volume quote klines (proxy)"
+  },
+  "SPYUSDT": {
+   "valeur": 2680332656.5480003,
+   "source": "volume quote klines (proxy)"
+  },
+  "SQDUSDT": {
+   "valeur": 49268986.481319994,
+   "source": "volume quote klines (proxy)"
+  },
+  "SQQQUSDT": {
+   "valeur": 580960261.8578,
+   "source": "volume quote klines (proxy)"
+  },
+  "SSVUSDT": {
+   "valeur": 41601917.29893,
+   "source": "volume quote klines (proxy)"
+  },
+  "STABLEUSDT": {
+   "valeur": 100747880.344449,
+   "source": "volume quote klines (proxy)"
+  },
+  "STARUSDT": {
+   "valeur": 94784777.3065,
+   "source": "volume quote klines (proxy)"
+  },
+  "STBLUSDT": {
+   "valeur": 221103498.86644998,
+   "source": "volume quote klines (proxy)"
+  },
+  "STEEMUSDT": {
+   "valeur": 78852431.28581999,
+   "source": "volume quote klines (proxy)"
+  },
+  "STMUSDT": {
+   "valeur": 2835659.9702,
+   "source": "volume quote klines (proxy)"
+  },
+  "STOUSDT": {
+   "valeur": 45032758.75225,
+   "source": "volume quote klines (proxy)"
+  },
+  "STRCUSDT": {
+   "valeur": 129815146.1403,
+   "source": "volume quote klines (proxy)"
+  },
+  "STRKUSDT": {
+   "valeur": 6298476810.41213,
+   "source": "volume quote klines (proxy)"
+  },
+  "STXUSDT": {
+   "valeur": 702452141.5098,
+   "source": "volume quote klines (proxy)"
+  },
+  "STXXUSDT": {
+   "valeur": 281172790.4743,
+   "source": "volume quote klines (proxy)"
+  },
+  "SUIUSDT": {
+   "valeur": 8176336309.9923,
+   "source": "volume quote klines (proxy)"
+  },
+  "SUNUSDT": {
+   "valeur": 36116302.028609,
+   "source": "volume quote klines (proxy)"
+  },
+  "SUPERUSDT": {
+   "valeur": 210314069.98275,
+   "source": "volume quote klines (proxy)"
+  },
+  "SUSDT": {
+   "valeur": 1144779291.55197,
+   "source": "volume quote klines (proxy)"
+  },
+  "SUSHIUSDT": {
+   "valeur": 100639453.38280001,
+   "source": "volume quote klines (proxy)"
+  },
+  "SWARMSUSDT": {
+   "valeur": 50116712.291141,
+   "source": "volume quote klines (proxy)"
+  },
+  "SXPUSDT": {
+   "valeur": 213064810.54227,
+   "source": "volume quote klines (proxy)"
+  },
+  "SXTUSDT": {
+   "valeur": 65418447.905940995,
+   "source": "volume quote klines (proxy)"
+  },
+  "SYNUSDT": {
+   "valeur": 292286713.29175,
+   "source": "volume quote klines (proxy)"
+  },
+  "SYRUPUSDT": {
+   "valeur": 192645971.78726998,
+   "source": "volume quote klines (proxy)"
+  },
+  "TACUSDT": {
+   "valeur": 52313018.715892,
+   "source": "volume quote klines (proxy)"
+  },
+  "TAGUSDT": {
+   "valeur": 251479013.1045637,
+   "source": "volume quote klines (proxy)"
+  },
+  "TAIKOUSDT": {
+   "valeur": 30031418.70471,
+   "source": "volume quote klines (proxy)"
+  },
+  "TAKEUSDT": {
+   "valeur": 85476510.84814,
+   "source": "volume quote klines (proxy)"
+  },
+  "TAOUSDT": {
+   "valeur": 3858576899.3719,
+   "source": "volume quote klines (proxy)"
+  },
+  "TAUSDT": {
+   "valeur": 153887004.13505998,
+   "source": "volume quote klines (proxy)"
+  },
+  "TBTUSDT": {
+   "valeur": 6932736.307099999,
+   "source": "volume quote klines (proxy)"
+  },
+  "TEAMUSDT": {
+   "valeur": 7063130.0378,
+   "source": "volume quote klines (proxy)"
+  },
+  "TEMUSDT": {
+   "valeur": 26279256.3993,
+   "source": "volume quote klines (proxy)"
+  },
+  "TENCENTUSDT": {
+   "valeur": 62670418.1108,
+   "source": "volume quote klines (proxy)"
+  },
+  "TERUSDT": {
+   "valeur": 39504058.7237,
+   "source": "volume quote klines (proxy)"
+  },
+  "THETAUSDT": {
+   "valeur": 130039434.03377,
+   "source": "volume quote klines (proxy)"
+  },
+  "THEUSDT": {
+   "valeur": 39252639.87855,
+   "source": "volume quote klines (proxy)"
+  },
+  "TIAUSDT": {
+   "valeur": 3156620834.9017,
+   "source": "volume quote klines (proxy)"
+  },
+  "TLMUSDT": {
+   "valeur": 59836320.96015699,
+   "source": "volume quote klines (proxy)"
+  },
+  "TMFUSDT": {
+   "valeur": 53256548.898,
+   "source": "volume quote klines (proxy)"
+  },
+  "TNSRUSDT": {
+   "valeur": 55765672.921323,
+   "source": "volume quote klines (proxy)"
+  },
+  "TOSHIUSDT": {
+   "valeur": 53084739.814675905,
+   "source": "volume quote klines (proxy)"
+  },
+  "TOWNSUSDT": {
+   "valeur": 68943284.096995,
+   "source": "volume quote klines (proxy)"
+  },
+  "TQQQUSDT": {
+   "valeur": 1909052571.8911002,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRADOORUSDT": {
+   "valeur": 41573391.9312,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRBUSDT": {
+   "valeur": 261120317.62510002,
+   "source": "volume quote klines (proxy)"
+  },
+  "TREEUSDT": {
+   "valeur": 200718305.52982002,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRIAUSDT": {
+   "valeur": 105552284.347155,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRUMPUSDT": {
+   "valeur": 2384163857.35605,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRUSTUSDT": {
+   "valeur": 47294722.409559995,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRUTHUSDT": {
+   "valeur": 571341182.797368,
+   "source": "volume quote klines (proxy)"
+  },
+  "TRXUSDT": {
+   "valeur": 1780275762.7013,
+   "source": "volume quote klines (proxy)"
+  },
+  "TSLAUSDT": {
+   "valeur": 4292496372.8814,
+   "source": "volume quote klines (proxy)"
+  },
+  "TSLLUSDT": {
+   "valeur": 31197240.5473,
+   "source": "volume quote klines (proxy)"
+  },
+  "TSMUSDT": {
+   "valeur": 425393331.6178,
+   "source": "volume quote klines (proxy)"
+  },
+  "TSTUSDT": {
+   "valeur": 80695489.168916,
+   "source": "volume quote klines (proxy)"
+  },
+  "TTWOUSDT": {
+   "valeur": 35797547.2966,
+   "source": "volume quote klines (proxy)"
+  },
+  "TURBOUSDT": {
+   "valeur": 69429426.1943313,
+   "source": "volume quote klines (proxy)"
+  },
+  "TURTLEUSDT": {
+   "valeur": 48186498.86092,
+   "source": "volume quote klines (proxy)"
+  },
+  "TUSDT": {
+   "valeur": 456862338.624797,
+   "source": "volume quote klines (proxy)"
+  },
+  "TUTUSDT": {
+   "valeur": 128946293.52742001,
+   "source": "volume quote klines (proxy)"
+  },
+  "TWSTUSDT": {
+   "valeur": 24322179.0825,
+   "source": "volume quote klines (proxy)"
+  },
+  "TWTUSDT": {
+   "valeur": 47366759.3543,
+   "source": "volume quote klines (proxy)"
+  },
+  "TXNUSDT": {
+   "valeur": 17291749.4914,
+   "source": "volume quote klines (proxy)"
+  },
+  "TZAUSDT": {
+   "valeur": 13641170.421300001,
+   "source": "volume quote klines (proxy)"
+  },
+  "UAIUSDT": {
+   "valeur": 285686558.0171,
+   "source": "volume quote klines (proxy)"
+  },
+  "UBERUSDT": {
+   "valeur": 22604056.4044,
+   "source": "volume quote klines (proxy)"
+  },
+  "UBUSDT": {
+   "valeur": 91488255.62897,
+   "source": "volume quote klines (proxy)"
+  },
+  "UMAUSDT": {
+   "valeur": 110306299.26959999,
+   "source": "volume quote klines (proxy)"
+  },
+  "UNHUSDT": {
+   "valeur": 8165642.788399999,
+   "source": "volume quote klines (proxy)"
+  },
+  "UNITREEUSDT": {
+   "valeur": 1251463229.7066,
+   "source": "volume quote klines (proxy)"
+  },
+  "UNIUSDT": {
+   "valeur": 7017424599.705,
+   "source": "volume quote klines (proxy)"
+  },
+  "URNMUSDT": {
+   "valeur": 23527787.029600002,
+   "source": "volume quote klines (proxy)"
+  },
+  "USARUSDT": {
+   "valeur": 111834520.655,
+   "source": "volume quote klines (proxy)"
+  },
+  "USDBRLUSDT": {
+   "valeur": 81622929.971279,
+   "source": "volume quote klines (proxy)"
+  },
+  "USDCUSDT": {
+   "valeur": 100474783.722653,
+   "source": "volume quote klines (proxy)"
+  },
+  "USDEXUSDT": {
+   "valeur": 27054549.1369,
+   "source": "volume quote klines (proxy)"
+  },
+  "USELESSUSDT": {
+   "valeur": 909827193.41645,
+   "source": "volume quote klines (proxy)"
+  },
+  "USTCUSDT": {
+   "valeur": 38996283.423079,
+   "source": "volume quote klines (proxy)"
+  },
+  "USUALUSDT": {
+   "valeur": 50513088.899746,
+   "source": "volume quote klines (proxy)"
+  },
+  "USUSDT": {
+   "valeur": 2741640285.289399,
+   "source": "volume quote klines (proxy)"
+  },
+  "UVXYUSDT": {
+   "valeur": 149169135.3939,
+   "source": "volume quote klines (proxy)"
+  },
+  "VANAUSDT": {
+   "valeur": 53433917.062437,
+   "source": "volume quote klines (proxy)"
+  },
+  "VELODROMEUSDT": {
+   "valeur": 81413520.3027,
+   "source": "volume quote klines (proxy)"
+  },
+  "VELVETUSDT": {
+   "valeur": 302726532.52118003,
+   "source": "volume quote klines (proxy)"
+  },
+  "VETUSDT": {
+   "valeur": 197194600.03441,
+   "source": "volume quote klines (proxy)"
+  },
+  "VIRTUALUSDT": {
+   "valeur": 659029504.10657,
+   "source": "volume quote klines (proxy)"
+  },
+  "VKTXUSDT": {
+   "valeur": 7678498.123400001,
+   "source": "volume quote klines (proxy)"
+  },
+  "VRTUSDT": {
+   "valeur": 40024875.5377,
+   "source": "volume quote klines (proxy)"
+  },
+  "VSTUSDT": {
+   "valeur": 39282237.0333,
+   "source": "volume quote klines (proxy)"
+  },
+  "VTHOUSDT": {
+   "valeur": 182822945.4157604,
+   "source": "volume quote klines (proxy)"
+  },
+  "VUSDT": {
+   "valeur": 19159697.3599,
+   "source": "volume quote klines (proxy)"
+  },
+  "VVVUSDT": {
+   "valeur": 1110156855.46163,
+   "source": "volume quote klines (proxy)"
+  },
+  "WALUSDT": {
+   "valeur": 1443096785.64427,
+   "source": "volume quote klines (proxy)"
+  },
+  "WAXPUSDT": {
+   "valeur": 29449709.180837,
+   "source": "volume quote klines (proxy)"
+  },
+  "WCTUSDT": {
+   "valeur": 77150794.01671,
+   "source": "volume quote klines (proxy)"
+  },
+  "WDCUSDT": {
+   "valeur": 943618635.6459999,
+   "source": "volume quote klines (proxy)"
+  },
+  "WENUSDT": {
+   "valeur": 24316091.870279998,
+   "source": "volume quote klines (proxy)"
+  },
+  "WETUSDT": {
+   "valeur": 122148244.69459,
+   "source": "volume quote klines (proxy)"
+  },
+  "WIFUSDT": {
+   "valeur": 530173793.07787997,
+   "source": "volume quote klines (proxy)"
+  },
+  "WLDUSDT": {
+   "valeur": 8597164232.6869,
+   "source": "volume quote klines (proxy)"
+  },
+  "WLFIUSDT": {
+   "valeur": 613834613.1905,
+   "source": "volume quote klines (proxy)"
+  },
+  "WMTUSDT": {
+   "valeur": 34364742.7432,
+   "source": "volume quote klines (proxy)"
+  },
+  "WOOUSDT": {
+   "valeur": 70501971.45644999,
+   "source": "volume quote klines (proxy)"
+  },
+  "WUSDT": {
+   "valeur": 1648410021.5254054,
+   "source": "volume quote klines (proxy)"
+  },
+  "XAGUSDT": {
+   "valeur": 20477317139.95968,
+   "source": "volume quote klines (proxy)"
+  },
+  "XAIUSDT": {
+   "valeur": 103233882.43542501,
+   "source": "volume quote klines (proxy)"
+  },
+  "XANUSDT": {
+   "valeur": 236317821.619325,
+   "source": "volume quote klines (proxy)"
+  },
+  "XAUTUSDT": {
+   "valeur": 1235033262.1558,
+   "source": "volume quote klines (proxy)"
+  },
+  "XAUUSDT": {
+   "valeur": 51843123004.53371,
+   "source": "volume quote klines (proxy)"
+  },
+  "XBIUSDT": {
+   "valeur": 10041441.9129,
+   "source": "volume quote klines (proxy)"
+  },
+  "XLEUSDT": {
+   "valeur": 12116784.6337,
+   "source": "volume quote klines (proxy)"
+  },
+  "XLMUSDT": {
+   "valeur": 1606576035.89816,
+   "source": "volume quote klines (proxy)"
+  },
+  "XMRUSDT": {
+   "valeur": 1946473550.1262503,
+   "source": "volume quote klines (proxy)"
+  },
+  "XNYUSDT": {
+   "valeur": 105012649.15083599,
+   "source": "volume quote klines (proxy)"
+  },
+  "XOMUSDT": {
+   "valeur": 10719476.4037,
+   "source": "volume quote klines (proxy)"
+  },
+  "XPDUSDT": {
+   "valeur": 193621428.68576,
+   "source": "volume quote klines (proxy)"
+  },
+  "XPINUSDT": {
+   "valeur": 120668721.922759,
+   "source": "volume quote klines (proxy)"
+  },
+  "XPLUSDT": {
+   "valeur": 1214716431.69843,
+   "source": "volume quote klines (proxy)"
+  },
+  "XPTUSDT": {
+   "valeur": 250091735.49649003,
+   "source": "volume quote klines (proxy)"
+  },
+  "XRPUSDT": {
+   "valeur": 21084418963.03165,
+   "source": "volume quote klines (proxy)"
+  },
+  "XTZUSDT": {
+   "valeur": 109164075.70964001,
+   "source": "volume quote klines (proxy)"
+  },
+  "XVGUSDT": {
+   "valeur": 39334119.027583,
+   "source": "volume quote klines (proxy)"
+  },
+  "XVSUSDT": {
+   "valeur": 20335792.6639,
+   "source": "volume quote klines (proxy)"
+  },
+  "YBUSDT": {
+   "valeur": 71389259.20925,
+   "source": "volume quote klines (proxy)"
+  },
+  "YFIUSDT": {
+   "valeur": 89281589.223,
+   "source": "volume quote klines (proxy)"
+  },
+  "YGGUSDT": {
+   "valeur": 86975787.0031,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZAMAUSDT": {
+   "valeur": 492372568.91543,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZBTUSDT": {
+   "valeur": 99396816.00716,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZCSHUSDT": {
+   "valeur": 13387363.6892,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZECUSDT": {
+   "valeur": 51419755929.6776,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZENUSDT": {
+   "valeur": 295312986.2181,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZEREBROUSDT": {
+   "valeur": 1029070452.562164,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZESTUSDT": {
+   "valeur": 73242193.95151,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZETAUSDT": {
+   "valeur": 68403409.95078,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZHIPUUSDT": {
+   "valeur": 900634055.8806001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZHONGJIUSDT": {
+   "valeur": 447582348.3977001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZILUSDT": {
+   "valeur": 171353032.09073097,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZKCUSDT": {
+   "valeur": 76753821.27881001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZKPUSDT": {
+   "valeur": 85948526.5924,
+   "source": "volume quote klines (proxy)"
+  },
+  "ZKUSDT": {
+   "valeur": 713054206.9732361,
+   "source": "volume quote klines (proxy)"
   }
  },
  "candidats_par_profondeur": [
-  "1000PEPEUSDT",
-  "ADAUSDT",
-  "AAVEUSDT",
-  "AGTUSDT",
-  "AINUSDT",
-  "AKEUSDT",
-  "AAPLUSDT",
-  "AAOIUSDT"
+  "BTCUSDT",
+  "ETHUSDT",
+  "SOXLUSDT",
+  "XAUUSDT",
+  "ZECUSDT",
+  "SOLUSDT",
+  "SNDKUSDT",
+  "SKHYNIXUSDT"
  ],
- "1000PEPEUSDT": {
-  "lignes": 3826,
+ "BTCUSDT": {
+  "lignes": 7488,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "ADAUSDT": {
-  "lignes": 7432,
+ "ETHUSDT": {
+  "lignes": 7488,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AAVEUSDT": {
-  "lignes": 6620,
+ "SOXLUSDT": {
+  "lignes": 511,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AGTUSDT": {
-  "lignes": 3176,
+ "XAUUSDT": {
+  "lignes": 1947,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AINUSDT": {
-  "lignes": 2870,
+ "ZECUSDT": {
+  "lignes": 7385,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AKEUSDT": {
-  "lignes": 2429,
+ "SOLUSDT": {
+  "lignes": 6793,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AAPLUSDT": {
-  "lignes": 662,
+ "SNDKUSDT": {
+  "lignes": 623,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
    "last_funding_rate"
   ]
  },
- "AAOIUSDT": {
-  "lignes": 437,
+ "SKHYNIXUSDT": {
+  "lignes": 788,
   "colonnes": [
    "calc_time",
    "funding_interval_hours",
