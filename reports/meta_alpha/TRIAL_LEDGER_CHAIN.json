@@ -1266,6 +1266,16 @@
     "resultat": "CLOTURE DEFINITIVE ET TOTALE (sec.6 ordre Phase 7): atlas sans cellule survivante; budget Phase 7 final 0/24 (jamais nes); budgets historiques figes tick 148/150, panel 28/60, exogene 6/60; resurrection uniquement par source NOUVELLE + preregistration + ordre explicite proprietaire. Actifs permanents: F3/F7 (service), chassis durci, simulateur ancre 4,7bp, packs scelles, voie B demo gratuite en attente proprietaire"
    },
    "entry_hash": "6b96a3b6b647861f4474c5aeed105e9b28ecb1252b8af6d26bd2de9d53376720"
+  },
+  {
+   "seq": 118,
+   "prev_hash": "6b96a3b6b647861f4474c5aeed105e9b28ecb1252b8af6d26bd2de9d53376720",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE8_NOUVEAU_REGIME",
+    "resultat": "Ordre proprietaire explicite 2026-11-18: NOUVELLE SOURCE (flux web publics regime 2020->aujourd hui) + preregistrations + ordre = doctrine satisfaite; corpus NR neuf, budget N=24 (seul vivant; anciens figes); IS_NR 2020-2023, VALID_NR 2024, HOLDOUT_NR 2025+ scelle; double ancre C1_NR mesure (S2/S3) + C1_BG 4,7; atlas NR M1-M6 puis candidats cellules survivantes uniquement; meta_portfolio.py ingenierie 0 essai; piste demo Blue Guardian abandonnee (ordre proprietaire); ancien corpus seq<=117 ferme a jamais"
+   },
+   "entry_hash": "4d65f0bed180bb5467ebcc70c3dea03bb3bd446a1a281e184869aacac3f0fb2b"
   }
  ]
 }
