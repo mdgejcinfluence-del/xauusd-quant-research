@@ -1286,6 +1286,26 @@
     "resultat": "Corpus NR v1: S1 Yahoo GC=F daily IS_NR 1007j/VALID 252j collecte, lake Kaggle shalom5123/xauusd-nr-corpus cree (HOLDOUT upload seul); XAUUSD=X 404 query1+query2 (abandonne, consigne); 1min roulant 7j actif (30j refuse); S2 Swissquote snapshot spread min 50,4 cents @3725$ (~1,35bp) + cron 14h/22h UTC en accumulation; S3 Dukascopy QUALIFIE (ticks + bougies 1min, format sonde: t=secondes depuis minuit UTC); meta_portfolio.py livre et teste sur synthetique (IR2 penalise correlation, Kelly crise, CUSUM par patte, borne basse). Backfill intraday IS_NR en cours (couverture partielle par throttling, consigne)"
    },
    "entry_hash": "f8e3dc23af5bfbf71a8b180fe29cd86411bca2299c8a9eeca499fa5f800ae35a"
+  },
+  {
+   "seq": 120,
+   "prev_hash": "f8e3dc23af5bfbf71a8b180fe29cd86411bca2299c8a9eeca499fa5f800ae35a",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE8_ATLAS_NR",
+    "resultat": "ATLAS_NR livre: daily complet (0/6 cellules, effets 0,3-6,1 vs seuils 10,8-48,4) + intraday S3 2020 partiel 3768h (0/30, meilleur effet 7,4bp vs seuil 22,2; plancher cout 9,4 eliminant a lui seul); C1_NR mesure ~1,35-2,5bp (regime nouveau confirme sur les couts, insuffisant sur la structure); meta_portfolio.py teste synthetique; 0/24 essais NR consommes, aucun candidat legal"
+   },
+   "entry_hash": "0ddeefe8d234bcccca7fa34d7fa239075783e7abfaa830bf5cca3c3826c9bfd1"
+  },
+  {
+   "seq": 121,
+   "prev_hash": "0ddeefe8d234bcccca7fa34d7fa239075783e7abfaa830bf5cca3c3826c9bfd1",
+   "entry": {
+    "type": "CLOTURE",
+    "mission": "PHASE8_CORPUS_NR",
+    "resultat": "CLOTURE DEFINITIVE du corpus NR (sec.6 ordre Phase 8): atlas NR sans cellule survivante; budget NR final 0/24; HOLDOUT_NR jamais ouvert; renaissance uniquement par donnee payante + ordre proprietaire (hors 0 FCFA). Programme de recherche directionnelle integralement clos (ancien corpus seq117 + NR seq121). Permanents: F3/F7 service, chassis + meta_portfolio prets, simulateur ancre, packs/lake scelles, enregistreur S2 en cron"
+   },
+   "entry_hash": "2dc5a406207c82b0ea4f721cf1b27381f46c1035b2c56580b2937ce70c193ebf"
   }
  ]
 }

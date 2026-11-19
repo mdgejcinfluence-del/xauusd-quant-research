@@ -1,0 +1,445 @@
+{
+ "source": "S3 Dukascopy bougies 1min agregees horaire, IS_NR 2020-2023",
+ "heures": 3768,
+ "plage": [
+  "2020-01-09 00:00:00+00:00",
+  "2020-12-31 23:00:00+00:00"
+ ],
+ "C_NR_spread_median_mesure_bp": 2.311258236886624,
+ "C_BG": 4.7,
+ "M1": [
+  {
+   "fenetre": "00-05",
+   "vol_med_bp": 45.28449536261321,
+   "spread_med_bp": 2.380361019335415,
+   "spread_p95_bp": 5.9278088955993145,
+   "n": 942
+  },
+  {
+   "fenetre": "06-11",
+   "vol_med_bp": 25.14657093232152,
+   "spread_med_bp": 2.2137958170990846,
+   "spread_p95_bp": 5.11933044344764,
+   "n": 942
+  },
+  {
+   "fenetre": "12-16",
+   "vol_med_bp": 32.339548562900966,
+   "spread_med_bp": 2.1823245110034604,
+   "spread_p95_bp": 5.424096830847798,
+   "n": 785
+  },
+  {
+   "fenetre": "17-21",
+   "vol_med_bp": 17.85752592594903,
+   "spread_med_bp": 2.291782968939944,
+   "spread_p95_bp": 8.327995374120112,
+   "n": 785
+  },
+  {
+   "fenetre": "22-23",
+   "vol_med_bp": 14.431593631570093,
+   "spread_med_bp": 3.8159664744224795,
+   "spread_p95_bp": 12.514422033881072,
+   "n": 314
+  }
+ ],
+ "M5": [
+  {
+   "fenetre": "00-05",
+   "regime": "calme",
+   "spread_med_bp": 2.2604801371600294,
+   "vol_med_bp": 11.89528588877334,
+   "n": 318
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "moyen",
+   "spread_med_bp": 2.3957096508478095,
+   "vol_med_bp": 14.935332704403043,
+   "n": 312
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "nerveux",
+   "spread_med_bp": 2.467938290376084,
+   "vol_med_bp": 76.32786181727919,
+   "n": 312
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "calme",
+   "spread_med_bp": 2.1787262392686717,
+   "vol_med_bp": 13.03196874466942,
+   "n": 318
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "moyen",
+   "spread_med_bp": 2.2148839655550994,
+   "vol_med_bp": 19.031824331853244,
+   "n": 312
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "nerveux",
+   "spread_med_bp": 2.2810593693841796,
+   "vol_med_bp": 37.10427140426744,
+   "n": 312
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "calme",
+   "spread_med_bp": 2.115847964651907,
+   "vol_med_bp": 17.502422505480123,
+   "n": 265
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "moyen",
+   "spread_med_bp": 2.1716990790884507,
+   "vol_med_bp": 28.983199418966436,
+   "n": 260
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "nerveux",
+   "spread_med_bp": 2.2919392182930522,
+   "vol_med_bp": 44.777687295060495,
+   "n": 260
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "calme",
+   "spread_med_bp": 2.2014403921413828,
+   "vol_med_bp": 9.230981944951795,
+   "n": 265
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "moyen",
+   "spread_med_bp": 2.246945342493243,
+   "vol_med_bp": 13.688880442872728,
+   "n": 260
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "nerveux",
+   "spread_med_bp": 2.4550290999340287,
+   "vol_med_bp": 26.281935089765607,
+   "n": 260
+  },
+  {
+   "fenetre": "22-23",
+   "regime": "calme",
+   "spread_med_bp": 3.8262128613522863,
+   "vol_med_bp": 5.905391742192252,
+   "n": 106
+  },
+  {
+   "fenetre": "22-23",
+   "regime": "moyen",
+   "spread_med_bp": 3.700096134198154,
+   "vol_med_bp": 9.217907280997338,
+   "n": 104
+  },
+  {
+   "fenetre": "22-23",
+   "regime": "nerveux",
+   "spread_med_bp": 3.953375301474375,
+   "vol_med_bp": 22.616376917149516,
+   "n": 104
+  }
+ ],
+ "M6": [
+  {
+   "fenetre": "17-21",
+   "regime": "nerveux",
+   "horizon": "4h",
+   "n": 260,
+   "rho1": -0.11561441018836367,
+   "sigma_bp": 63.773832917059806,
+   "effet_bp": 7.373174078157122,
+   "MDE_bp": 22.14847723089131,
+   "seuil_bp": 22.14847723089131,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "moyen",
+   "horizon": "4h",
+   "n": 260,
+   "rho1": 0.107260459100527,
+   "sigma_bp": 52.92732257245576,
+   "effet_bp": 5.677008918083291,
+   "MDE_bp": 18.38151394181752,
+   "seuil_bp": 18.38151394181752,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "nerveux",
+   "horizon": "1h",
+   "n": 260,
+   "rho1": 0.0855878058528555,
+   "sigma_bp": 44.777687295060495,
+   "effet_bp": 3.832424006749512,
+   "MDE_bp": 7.775583982825959,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "moyen",
+   "horizon": "4h",
+   "n": 312,
+   "rho1": 0.055692924483023765,
+   "sigma_bp": 46.46519788069501,
+   "effet_bp": 2.587782756658303,
+   "MDE_bp": 14.731213405242626,
+   "seuil_bp": 14.731213405242626,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "moyen",
+   "horizon": "4h",
+   "n": 311,
+   "rho1": -0.0831087737744112,
+   "sigma_bp": 30.32703496221509,
+   "effet_bp": 2.520442687923393,
+   "MDE_bp": 9.63025494339165,
+   "seuil_bp": 9.63025494339165,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "calme",
+   "horizon": "4h",
+   "n": 264,
+   "rho1": -0.057006693821741936,
+   "sigma_bp": 37.59175087222424,
+   "effet_bp": 2.1429814321960876,
+   "MDE_bp": 12.956229057479996,
+   "seuil_bp": 12.956229057479996,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "nerveux",
+   "horizon": "1h",
+   "n": 312,
+   "rho1": 0.0500359881393494,
+   "sigma_bp": 37.10427140426744,
+   "effet_bp": 1.8565488839031268,
+   "MDE_bp": 5.8817240131608095,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "nerveux",
+   "horizon": "1h",
+   "n": 260,
+   "rho1": -0.06812747206149736,
+   "sigma_bp": 26.281935089765607,
+   "effet_bp": 1.7905217985500934,
+   "MDE_bp": 4.563821980689835,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "nerveux",
+   "horizon": "4h",
+   "n": 312,
+   "rho1": 0.020446880856309208,
+   "sigma_bp": 86.65847695695419,
+   "effet_bp": 1.7718955535280592,
+   "MDE_bp": 27.4739929162462,
+   "seuil_bp": 27.4739929162462,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "calme",
+   "horizon": "1h",
+   "n": 265,
+   "rho1": -0.09592707854402582,
+   "sigma_bp": 17.502422505480123,
+   "effet_bp": 1.678956258393917,
+   "MDE_bp": 3.0104627498067047,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "moyen",
+   "horizon": "1h",
+   "n": 260,
+   "rho1": -0.11638222161297299,
+   "sigma_bp": 13.688880442872728,
+   "effet_bp": 1.5931423173359056,
+   "MDE_bp": 2.377055313577175,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "nerveux",
+   "horizon": "4h",
+   "n": 260,
+   "rho1": 0.01802268731904475,
+   "sigma_bp": 85.06386900647368,
+   "effet_bp": 1.533079513251857,
+   "MDE_bp": 29.542448362977645,
+   "seuil_bp": 29.542448362977645,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "moyen",
+   "horizon": "1h",
+   "n": 312,
+   "rho1": 0.06865574283189817,
+   "sigma_bp": 19.031824331853244,
+   "effet_bp": 1.3066440369495784,
+   "MDE_bp": 3.0169016652364435,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "calme",
+   "horizon": "4h",
+   "n": 318,
+   "rho1": -0.05779152487265488,
+   "sigma_bp": 22.43007290619317,
+   "effet_bp": 1.296268116253725,
+   "MDE_bp": 7.043769768026625,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "calme",
+   "horizon": "1h",
+   "n": 318,
+   "rho1": -0.09811967292084837,
+   "sigma_bp": 13.03196874466942,
+   "effet_bp": 1.2786925107416824,
+   "MDE_bp": 2.04623025180237,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "nerveux",
+   "horizon": "1h",
+   "n": 312,
+   "rho1": 0.016050997456080497,
+   "sigma_bp": 76.32786181727919,
+   "effet_bp": 1.225138315857212,
+   "MDE_bp": 12.099399900149434,
+   "seuil_bp": 12.099399900149434,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "moyen",
+   "horizon": "1h",
+   "n": 311,
+   "rho1": -0.0656442416396376,
+   "sigma_bp": 14.935332704403042,
+   "effet_bp": 0.9804185890162154,
+   "MDE_bp": 2.37133405535651,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "moyen",
+   "horizon": "1h",
+   "n": 260,
+   "rho1": 0.031420237122159175,
+   "sigma_bp": 28.983199418966436,
+   "effet_bp": 0.9106589983027514,
+   "MDE_bp": 5.032892826468644,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "nerveux",
+   "horizon": "4h",
+   "n": 312,
+   "rho1": -0.007067471224889163,
+   "sigma_bp": 89.23735701652028,
+   "effet_bp": 0.6306824528994182,
+   "MDE_bp": 28.291594782519038,
+   "seuil_bp": 28.291594782519038,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "00-05",
+   "regime": "calme",
+   "horizon": "1h",
+   "n": 318,
+   "rho1": -0.047819616023998125,
+   "sigma_bp": 11.89528588877334,
+   "effet_bp": 0.5688280036968244,
+   "MDE_bp": 1.8677526255886745,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "17-21",
+   "regime": "calme",
+   "horizon": "1h",
+   "n": 265,
+   "rho1": -0.056035918976013926,
+   "sigma_bp": 9.230981944951795,
+   "effet_bp": 0.5172665563363662,
+   "MDE_bp": 1.587753197062552,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "moyen",
+   "horizon": "4h",
+   "n": 260,
+   "rho1": -0.006561212156831216,
+   "sigma_bp": 48.85730215283723,
+   "effet_bp": 0.3205631248351716,
+   "MDE_bp": 16.968007014761397,
+   "seuil_bp": 16.968007014761397,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "06-11",
+   "regime": "calme",
+   "horizon": "4h",
+   "n": 318,
+   "rho1": 0.011849137810338233,
+   "sigma_bp": 26.889392002967494,
+   "effet_bp": 0.31861611147936864,
+   "MDE_bp": 8.444140474408503,
+   "seuil_bp": 9.4,
+   "SURVIVANTE": false
+  },
+  {
+   "fenetre": "12-16",
+   "regime": "calme",
+   "horizon": "4h",
+   "n": 265,
+   "rho1": -0.001886351663761286,
+   "sigma_bp": 29.431599902158663,
+   "effet_bp": 0.0555183474425935,
+   "MDE_bp": 10.12462533628373,
+   "seuil_bp": 10.12462533628373,
+   "SURVIVANTE": false
+  }
+ ],
+ "survivantes": []
+}
