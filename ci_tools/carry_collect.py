@@ -25,15 +25,9 @@ def telecharge(url):
     except Exception: return None
 
 def profondeur(sym):
-    """OI moyen recent via monthly metrics (dernier mois dispo), repli volume klines."""
-    for an, mo in [(2026, 10), (2026, 9), (2025, 12)]:
-        raw = telecharge(f'{BASE}/monthly/metrics/{sym}/{sym}-metrics-{an}-{mo:02d}.zip')
-        if raw:
-            try:
-                d = pd.read_csv(io.BytesIO(raw))
-                col = [c for c in d.columns if 'open_interest' in c.lower()]
-                if col: return float(d[col[0]].astype(float).mean()), 'OI metrics'
-            except Exception: pass
+    """Profondeur en USD: volume quote (USDT) des klines 1d du mois recent.
+    (Incident run1 consigne: l'OI metrics en unites de coin n'est pas comparable entre symboles -
+    selection refaite en USD avant toute mesure de funding.)"""
     for an, mo in [(2026, 10), (2025, 12)]:
         raw = telecharge(f'{BASE}/monthly/klines/{sym}/1d/{sym}-1d-{an}-{mo:02d}.zip')
         if raw:
