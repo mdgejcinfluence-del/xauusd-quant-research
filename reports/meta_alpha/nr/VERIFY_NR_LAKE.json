@@ -1,0 +1,16 @@
+{
+ "dataset": "shalom5123/xauusd-nr-corpus",
+ "statut": "cree",
+ "fichiers": {
+  "swissquote_spreads.parquet": 3611,
+  "yahoo_gc_daily_FULL.parquet": 126368,
+  "yahoo_gc_hourly_FULL.parquet": 508693
+ },
+ "distants": {
+  "swissquote_spreads.parquet": 3611,
+  "yahoo_gc_daily_FULL.parquet": 126368,
+  "yahoo_gc_hourly_FULL.parquet": 508693
+ },
+ "all_ok": true,
+ "note": "HOLDOUT_NR (2025+) present dans le lake: upload seul, jamais re-telecharge par un moteur"
+}
