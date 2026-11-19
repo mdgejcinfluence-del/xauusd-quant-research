@@ -1406,6 +1406,16 @@
     "resultat": "Phase 9 close: B1 echoue (0/2), CARRY certifie 2 pattes (BTC/ETH, flux en compression), B2-extension descriptive, B3 etagere; budget 10/12 (2 non depenses: confirmation NR non declenchee + marge); exploitation reelle = decision proprietaire SEPAREE (compte/KYC/capital hors 0 FCFA); programme directionnel or toujours clos seq117/121"
    },
    "entry_hash": "ee765d0413caa8b5d7208da2d884fec1e12a2e3ba3d430c7c524111dea202deb"
+  },
+  {
+   "seq": 132,
+   "prev_hash": "ee765d0413caa8b5d7208da2d884fec1e12a2e3ba3d430c7c524111dea202deb",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE10_SIMULATION_STRUCTURELLE",
+    "resultat": "SIMULATION - hors budget (0 essai, 0 donnee de marche testee): fouille deductive seq1-131; E1 politique optimale de passage sur challenge_sim regles 2-Step exactes (politiques x filtres M1/M5/F7), E2 panier controle a stop dur vs chassis, E3 arithmetique EV du ticket; aucune certification possible, decision d achat au proprietaire apres chiffres"
+   },
+   "entry_hash": "62c5911ea8c8690b9c4230bec8d42458eb75e25c94477a0b9ac54cc736bea6d0"
   }
  ]
 }
