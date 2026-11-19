@@ -1156,6 +1156,16 @@
     "resultat": "Phase 6 EXOGENE ouverte (ordre proprietaire explicite, condition n0 remplie: pack exogene seq105 + methode Dantokpa traduite dans l ordre); budget EXOGENE neuf 60, F14 declare N=5 (55 restants); F14_PREREG.json verrouille (sha256 au fichier); perimetre IS strict available_at<=2020-01-20T09:36:27; gate R3 + trois portes AVANT essais; couts CONDITIONNELS (BROKER_CONFIG UNKNOWN); OOS/HOLDOUT fermes"
    },
    "entry_hash": "c02c927c51f710c137a0630f8d660ccaa96dc510c7f39dd2fad8eec2c84cefdb"
+  },
+  {
+   "seq": 107,
+   "prev_hash": "c02c927c51f710c137a0630f8d660ccaa96dc510c7f39dd2fad8eec2c84cefdb",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F14_EXOG_EQUILIBRIUM_GAP",
+    "resultat": "NON TESTABLE au gate R3 (etape A hors budget): MDE 80pct = 43,2 bp > effet minimal 16,7 bp (ECR>=2 C1 declare, haircut 0,6); trois portes: 0/5 drivers retenus (DFII10 signe conforme 4/4 mais pic bus lag 0 = integre le jour meme et |t|=2,92<3; dollar/COT/GVZ/volume retires); variantes N=5 NON executees, 0 essai consomme (budget EXOGENE 0/60); deux vitesses mesurees (tau_fast 0,9-3j, tau_slow borne 30j); chassis sec.4 livre (chassis_hardening.py teste: CUSUM/mixture/borne basse/mediane credibilite); F14 fermee; F15/F16 verrouillees en attente ordre"
+   },
+   "entry_hash": "ec64e31eb1416463ab7ffa45df229215042c5d323e0877205f87fc3461d31f82"
   }
  ]
 }
