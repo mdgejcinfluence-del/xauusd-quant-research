@@ -1236,6 +1236,16 @@
     "resultat": "FERMETURE DEFINITIVE (regle sec.6 Phase 6 confirmee ordre 6B): F14 NON TESTABLE (portes 0/5, MDE 43>17), F15 ECHEC 0/6, F16 NON TESTABLE (MDE 57,6>9,4); budget EXOGENE final 6/60, solde jamais depense; aucun re-grillage; actifs permanents: F3/F7 gelees L2, chassis durci, simulateur ancre C1_BG=4,7bp, 3 packs scelles, voie B en attente proprietaire (releve demo gratuit sec.1.4 puis phase demo)"
    },
    "entry_hash": "a82903f0888ce21eb1e29e14778835447fae29849d6c7854e8ce168b3c14f3dc"
+  },
+  {
+   "seq": 115,
+   "prev_hash": "a82903f0888ce21eb1e29e14778835447fae29849d6c7854e8ce168b3c14f3dc",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE7_CARTOGRAPHIE_DERNIERE_RECHERCHE",
+    "resultat": "Ordre proprietaire explicite 2026-11-18: amendement doctrinal UNIQUE Phase 7 (recherche sur actifs certifies existants); budget NEUF unique N=24 (seul budget vivant; tick 148/150, panel 28/60, exogene 6/60 figes non rechargeables); Axe1 atlas descriptif 0 essai (aucune performance), Axe2 monetisation F3/F7 simulation pure 0 essai, Axe3 candidats uniquement issus du crible M6 (pipeline prereg seq -> gate R3 -> BY(24) -> IC95 deux ancres -> signe 3/3 -> ECR>=2); holdouts fermes; pistes fermees listees dans l ordre non rouvertes; cloture definitive si 24/24 sans certification OU atlas sans cellule survivante"
+   },
+   "entry_hash": "2aff3354c6272fc7e4bf3f0c91078ff1bd70edf6ef52b1100ac310779f64618d"
   }
  ]
 }
