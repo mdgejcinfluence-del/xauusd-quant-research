@@ -1,0 +1,38 @@
+{
+ "sigma_60min_bp": 19.392968520167884,
+ "spread_median_IS_bp": 2.330337411483055,
+ "C1_hist_RT_bp": 3.330337411483055,
+ "C1_BG_RT_bp": 4.7,
+ "F15": {
+  "FOMC": {
+   "n_evenements": 81,
+   "MDE_80pct_bp": 6.03336798405223,
+   "effet_min_BG_bp (2xC1_BG)": 9.4,
+   "effet_min_hist_bp (2xC1_hist)": 6.66067482296611,
+   "verdict": "TESTABLE"
+  },
+  "NFP": {
+   "n_evenements": 143,
+   "MDE_80pct_bp": 4.540820193086639,
+   "effet_min_BG_bp (2xC1_BG)": 9.4,
+   "effet_min_hist_bp (2xC1_hist)": 6.66067482296611,
+   "verdict": "TESTABLE"
+  },
+  "CPI": {
+   "n_evenements": 151,
+   "MDE_80pct_bp": 4.41889670964701,
+   "effet_min_BG_bp (2xC1_BG)": 9.4,
+   "effet_min_hist_bp (2xC1_hist)": 6.66067482296611,
+   "verdict": "TESTABLE"
+  }
+ },
+ "F16": {
+  "semaines_COT_IS": 524,
+  "paris_independants_2sem": 262.0,
+  "sigma_2sem_bp": 332.94523737194106,
+  "MDE_80pct_bp": 57.59439128409815,
+  "effet_min_BG_bp": 9.4,
+  "effet_min_hist_bp": 6.66067482296611,
+  "verdict": "NON TESTABLE (MDE > effet aux deux ancres)"
+ }
+}
