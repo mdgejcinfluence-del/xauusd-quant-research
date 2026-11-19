@@ -1356,6 +1356,16 @@
     "resultat": "Gate R3 B1: n pool=375, sigma fenetre 235min=38.4bp, MDE=5.55bp vs effets minimaux 6,7 (hist) / 9,4 (BG) -> TESTABLE; extraction tick autorisee"
    },
    "entry_hash": "8522264919a6833c2552a7451c5ef73eb8f57f3b4f3d8c83eb77e1f1b4dd135f"
+  },
+  {
+   "seq": 127,
+   "prev_hash": "8522264919a6833c2552a7451c5ef73eb8f57f3b4f3d8c83eb77e1f1b4dd135f",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CARRY_PERPETUAL_FUNDING_MAP",
+    "resultat": "CARRY chaine AVANT collecte des mesures: candidats par PROFONDEUR seule (OI/volume, jamais le funding), top 8 >= 30j; couts declares 40bp aller-retour complet amorti 1 an; gates: IC95 net>0, BY(12), eres >=3 stables, serie negative <=90j; CARRY_PREREG.json sha256 au fichier; B3 etagere confirme (0 essai)"
+   },
+   "entry_hash": "79ded83814362cd1b4e696ae29a0aefdda3b9d352d3f6c652ff9b63e45870d97"
   }
  ]
 }

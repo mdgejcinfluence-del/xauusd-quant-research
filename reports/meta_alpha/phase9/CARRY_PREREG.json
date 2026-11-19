@@ -1,0 +1,12 @@
+{
+ "mission_id": "CARRY_PERPETUAL_FUNDING_MAP",
+ "nature": "mesure d'un flux de paiement structurel (delta-neutre: short perpetuel + long spot/marge), pas une prediction directionnelle",
+ "budget": "Phase 9 N=12 global (BY(12)); CARRY <= 8 essais = 8 pattes candidates testees au maximum",
+ "source_primaire": "data.binance.vision (archive publique Binance USDT-M fundingRate mensuelle) - re-qualification depuis CI; repli Kaggle consigne si IP bloquee",
+ "source_secondaire": "API publique Hyperliquid (funding history, perpetuels d'actions) - qualification seulement, manques consignes",
+ "selection_candidats_gelee": "par PROFONDEUR uniquement (open interest moyen ou, a defaut, volume - jamais par le niveau de funding): les 8 symboles les plus profonds avec >= 30 jours d'historique de funding; la liste est figee dans CARRY_DATA.json avant les tests statistiques",
+ "mesures_par_actif": ["funding annualise moyen/median", "part de jours a funding positif (somme journaliere)", "plus longue serie negative (jours)", "volatilite du funding", "erosion par eres (2021-22, 2023-24, 2025-26)", "net de couts declares", "maths de liquidation (marge de survie)", "correlations entre pattes"],
+ "couts_declares_prudents": {"frais_entree_sortie_aller_retour_complet_bp": 40, "hypothese": "4 jambes taker (spot+perp, entree+sortie) a 10 bp prudents chacune, amortis sur 1 an", "net_annuel": "funding annualise moyen - 0,40% la premiere annee (borne haute declaree); roll/financement du spot hors perimetre (consigne)"},
+ "gates_certification_patte": ["IC95 bootstrap du funding annualise net > 0", "BY(12) globale sur les pattes testees", "stabilite: funding net moyen > 0 sur >= 3 eres/sous-periodes", "plus longue serie negative <= 90 jours (tolerance declaree)", "capacite: profondeur suffisante (filtre de selection)"],
+ "recherche_uniquement": "aucun compte exchange, aucun capital, aucun KYC dans cette phase"
+}
