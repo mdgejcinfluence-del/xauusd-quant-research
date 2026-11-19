@@ -61,7 +61,7 @@ except Exception as e:
     res['symboles_listes'] = f'ECHEC listing ({e}) - repli liste majeure declaree'
     log('listing echoue, repli liste majeure')
 profondeurs = {}
-for s in syms[:60]:
+for s in syms:  # run1/2: tranche alphabetique [:60] = bug consigne (BTC/ETH jamais evalues)
     p, src = profondeur(s)
     if p > 0: profondeurs[s] = {'valeur': p, 'source': src}
 res['profondeurs'] = profondeurs
