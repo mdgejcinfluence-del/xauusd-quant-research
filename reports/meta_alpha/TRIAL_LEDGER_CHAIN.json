@@ -1166,6 +1166,16 @@
     "resultat": "NON TESTABLE au gate R3 (etape A hors budget): MDE 80pct = 43,2 bp > effet minimal 16,7 bp (ECR>=2 C1 declare, haircut 0,6); trois portes: 0/5 drivers retenus (DFII10 signe conforme 4/4 mais pic bus lag 0 = integre le jour meme et |t|=2,92<3; dollar/COT/GVZ/volume retires); variantes N=5 NON executees, 0 essai consomme (budget EXOGENE 0/60); deux vitesses mesurees (tau_fast 0,9-3j, tau_slow borne 30j); chassis sec.4 livre (chassis_hardening.py teste: CUSUM/mixture/borne basse/mediane credibilite); F14 fermee; F15/F16 verrouillees en attente ordre"
    },
    "entry_hash": "ec64e31eb1416463ab7ffa45df229215042c5d323e0877205f87fc3461d31f82"
+  },
+  {
+   "seq": 108,
+   "prev_hash": "ec64e31eb1416463ab7ffa45df229215042c5d323e0877205f87fc3461d31f82",
+   "entry": {
+    "type": "NOTE",
+    "mission": "PHASE6B_BLOC1_CONFIG",
+    "resultat": "OWNER_CONFIG_V2 ancree (ordre proprietaire Phase 6B): CHALLENGE_CONFIG 2-Step Pro documentee (cibles 10/4, -4% initial, -10% trailing verrouille, 4 jours >=0,5%, reset 17:00 EST DST, levier metaux retenu 1:20, news restreint finance); BROKER_CONFIG XAUUSD prudent HAUT: contrat 100 oz, spread 1,25 bp, commission 0,5 bp/cote ($5/cote retenu), slippage 0,6 bp placeholder A MESURER; C1_BG aller-retour = 4,7 bp; swap UNKNOWN; sources tierces consignees au fichier; releve demo gratuit = action proprietaire avant tout frais; V1 intacte"
+   },
+   "entry_hash": "8557e54002e284b31d899e89c35e0b027ba34c1985324d3f4ed8f7b2d4a5126a"
   }
  ]
 }

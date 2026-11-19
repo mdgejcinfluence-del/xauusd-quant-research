@@ -1,0 +1,31 @@
+{
+ "version": "OWNER_CONFIG_V2",
+ "date": "2026-11-13",
+ "statut": "ANCRAGE DOCUMENTAIRE proprietaire (Phase 6B bloc 1) - remplace les UNKNOWN de V1 pour les couts; V1 conservee intacte",
+ "sources_documentaires": ["fxempire.com/prop-firms/blueguardian", "propfirmhero.com", "forexpropreviews.com", "myfxbook.com/prop-firms/blueguardian", "fundedfast.com", "allproptradingfirms.com (2024: commission $6 a l'epoque - preuve que les conditions evoluent)"],
+ "limite_honnete": "conditions observees par des tiers, pas le contrat du jour J: marges de prudence systematiques + verification demo gratuite (action proprietaire sec.1.4 de l'ordre) avant tout frais; config a re-verifier avant tout achat",
+ "CHALLENGE_CONFIG": {
+  "firm": "Blue Guardian", "program": "2-Step Pro (CFD, MT5)",
+  "phase1_profit_target_pct": 10, "phase2_profit_target_pct": 4,
+  "daily_loss_max_pct": 4, "daily_loss_base": "solde INITIAL",
+  "total_loss_max_pct": 10, "total_loss_type": "TRAILING depuis le plus haut; se verrouille au solde initial une fois +10% atteint (buffer payout 1%)",
+  "min_trading_days_per_phase": 4, "min_profit_per_qualifying_day_pct": 0.5,
+  "duration": "illimitee", "leverage_max": 50, "leverage_metaux_retenu": 20,
+  "news_trading": "autorise en evaluation; RESTREINT +-5 min en compte finance",
+  "weekend_holding": "autorise", "ea_allowed": true,
+  "exposure_cap": "exposition totale <= 80% de la limite de perte journaliere a tout instant",
+  "daily_reset": "17:00 EST (conversion DST date par date)",
+  "payout_cycle_days": 14, "payout_min_usd": 100,
+  "consistency": "aucune en evaluation (25% documente en finance)",
+  "challenge_fee": "a confirmer sur la page d'achat (repere documente: 2-Step Standard $5K=$32 -> $200K=$930; le Pro est dans cette fourchette) - AUCUN ACHAT avant le releve demo sec.1.4"
+ },
+ "BROKER_CONFIG": {
+  "symbol": "XAUUSD", "contract_size_oz_per_lot": 100,
+  "spread_typical_bp": 1.25, "spread_note": "PRUDENT: 15c/oz mesure fxempire (~0,75 bp a $2000) -> retenu 25c/oz; elargissements en volatilite couverts par la matrice de stress",
+  "commission_bp_per_side": 0.5, "commission_note": "PRUDENT: $5/lot commodites, ambiguite round-trip documentee -> retenu $5 PAR COTE = $10 aller-retour ($10/$200 000 notionnel a $2 000/oz)",
+  "slippage_typical_bp": 0.6, "slippage_note": "placeholder prudent = 0,5 x spread retenu; A MESURER sur demo reelle avant tout frais",
+  "swap_overnight_bp": "UNKNOWN - non publie; mesure sur demo (strategies intraday/<15j)",
+  "C1_BG_aller_retour_bp": 4.7, "C1_BG_calcul": "spread 2x1,25 + commission 2x0,5 + slippage 2x0,6 = 4,7 (l'ordre annoncait ~4,3 sans arrondi du slippage des deux cotes; valeur haute retenue)",
+  "action_proprietaire_pending": "ouvrir le compte demo gratuit Blue Guardian MT5; relever 1 semaine: spread median/p95 a 14h et 22h UTC, commission par lot aller-retour, swap d'une nuit; injecter en V3 hachee. Aucun achat de challenge avant ce releve."
+ }
+}
