@@ -1216,6 +1216,26 @@
     "resultat": "INCIDENT ALIGNEMENT v1 REJETE avant verdict: premier mouvement mesure T+60s->T+5min mais entree a T+60s (le signal connaissait sa fenetre de definition; type F1/F6 deja sanctionne). Resultats v1 NON consignes. Correction gelee: premier mouvement T+60s->T+5min, ENTREE premier tick >= T+5min, sorties T+H inchangees; re-extraction v2."
    },
    "entry_hash": "ec449140a83cbc113aa1a2c8a17096782a5e3e0f75b382b65d2266f6daf649be"
+  },
+  {
+   "seq": 113,
+   "prev_hash": "ec449140a83cbc113aa1a2c8a17096782a5e3e0f75b382b65d2266f6daf649be",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "F15_MACRO_WINDOWS_TICK",
+    "resultat": "ECHEC 0/6 (L1, H=60 gele, v2 alignement honnete seq112): FOMC derive -0,4bp / retournement -7,4; NFP derive -6,7 / retournement -0,5; CPI derive -1,3 / retournement -5,3 (nets ancre hist; ancre BG pire); tous IC95 franchissent 0 sauf CPI retournement negatif; ECR < 2 partout; placebos +-30j silencieux; L2 sans objet. N=6 consommes: budget EXOGENE 6/60"
+   },
+   "entry_hash": "8b411b506559e05a1a66247f939d61bf30850bcf20d24a013a34513d430888a6"
+  },
+  {
+   "seq": 114,
+   "prev_hash": "8b411b506559e05a1a66247f939d61bf30850bcf20d24a013a34513d430888a6",
+   "entry": {
+    "type": "CLOTURE",
+    "mission": "PROGRAMME_EXOGENE",
+    "resultat": "FERMETURE DEFINITIVE (regle sec.6 Phase 6 confirmee ordre 6B): F14 NON TESTABLE (portes 0/5, MDE 43>17), F15 ECHEC 0/6, F16 NON TESTABLE (MDE 57,6>9,4); budget EXOGENE final 6/60, solde jamais depense; aucun re-grillage; actifs permanents: F3/F7 gelees L2, chassis durci, simulateur ancre C1_BG=4,7bp, 3 packs scelles, voie B en attente proprietaire (releve demo gratuit sec.1.4 puis phase demo)"
+   },
+   "entry_hash": "a82903f0888ce21eb1e29e14778835447fae29849d6c7854e8ce168b3c14f3dc"
   }
  ]
 }
