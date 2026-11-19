@@ -1306,6 +1306,26 @@
     "resultat": "CLOTURE DEFINITIVE du corpus NR (sec.6 ordre Phase 8): atlas NR sans cellule survivante; budget NR final 0/24; HOLDOUT_NR jamais ouvert; renaissance uniquement par donnee payante + ordre proprietaire (hors 0 FCFA). Programme de recherche directionnelle integralement clos (ancien corpus seq117 + NR seq121). Permanents: F3/F7 service, chassis + meta_portfolio prets, simulateur ancre, packs/lake scelles, enregistreur S2 en cron"
    },
    "entry_hash": "2dc5a406207c82b0ea4f721cf1b27381f46c1035b2c56580b2937ce70c193ebf"
+  },
+  {
+   "seq": 122,
+   "prev_hash": "2dc5a406207c82b0ea4f721cf1b27381f46c1035b2c56580b2937ce70c193ebf",
+   "entry": {
+    "type": "NOTE",
+    "mission": "AUDIT_METHODOLOGIQUE_POST_CLOTURE",
+    "resultat": "Audit proprietaire/coach 2026-11-18 recu et consigne: angles morts B1 (derive PRE-annonce jamais testee, ~321 evenements poolables), B2 (prime de variance GVZ-RV jamais posee comme recolte), B3 (execution maker jamais modelisee; plancher de cout toujours taker), B4 (drift signe par surprise, fragile), B5 (edges lents: mur n<200 permanent), B6 (flux: payant), B7 (non-lineaire, prior basse). Verifie contre les artefacts: conforme a l historique des 121 entrees"
+   },
+   "entry_hash": "94ec914fa48deb04e79c84c0a2028138324a77a0ed5e3041d5acccf50ec9c976"
+  },
+  {
+   "seq": 123,
+   "prev_hash": "94ec914fa48deb04e79c84c0a2028138324a77a0ed5e3041d5acccf50ec9c976",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PORTES_B2_B3_DESCRIPTIF",
+    "resultat": "0 essai, mesures descriptives: B2 prime GVZ - RV future 21j = +5,6 pts de vol en moyenne (mediane +4,8), positive 94,9% du temps, eres 2010-13 +7,1 / 2014-16 +6,0 / 2017-20 +3,1 (erosion); monetisation = options, hors infra CFD taker. B3 borne horaire: spread decile haut 4,6bp vs mouvement absolu heure suivante 8,4bp (vs 7,5 ailleurs) - adverse selection presente mais le tick seul tranche; CFD retail 100% taker. B1 PRET en brouillon non chaine (B1_PREREG_BROUILLON.md): en attente ordre explicite Phase 9 + budget neuf"
+   },
+   "entry_hash": "1185dd720bf49295e47da8c179821c44db22587af9720737912fa0e15a33a79e"
   }
  ]
 }

@@ -1,0 +1,34 @@
+{
+ "B2": {
+  "definition": "prime = GVZ(t) - RV realisee annualisee moyenne des 21 jours de bourse suivants (mesure, pas une strategie)",
+  "n": 2490,
+  "prime_moyenne_pts_vol": 5.6026820226545455,
+  "prime_mediane": 4.79736691055424,
+  "part_positive": 0.948995983935743,
+  "par_era": {
+   "2010-2013": {
+    "prime_moyenne_pts": 7.095757701677418,
+    "part_positive": 0.8976143141153081,
+    "n": 1006
+   },
+   "2014-2016": {
+    "prime_moyenne_pts": 6.039721165303001,
+    "part_positive": 0.9947089947089947,
+    "n": 756
+   },
+   "2017-2020": {
+    "prime_moyenne_pts": 3.085599982902837,
+    "part_positive": 0.9725274725274725,
+    "n": 728
+   }
+  },
+  "lecture": "prime positive persistante = l'implicite paie au-dessus du realise en moyenne (structure documentee ailleurs, confirmee ici en mesure). Monetisation: vendre de la volatilite exige des options - hors infra actuelle (CFD taker). Aucun essai consomme, aucune position simulee."
+ },
+ "B3": {
+  "spread_median_global_bp": 2.330337411483055,
+  "spread_median_decile_haut_bp": 4.5719249719807955,
+  "abs_ret_heure_suivante_decile_haut_bp": 8.421625928520804,
+  "abs_ret_heure_suivante_reste_bp": 7.505220888830433,
+  "lecture": "borne horaire grossiere: dans les heures ou le spread est large (la ou un maker capterait le plus), le mouvement absolu de l'heure suivante est aussi le plus grand - l'adverse selection y est maximale. Le tick seul trancherait (file d'attente, remplissage partiel): etude CI dediee a preenregistrer si le proprietaire ouvre la Phase 9. Rappel: CFD retail = 100% taker; le maker exige futures/bourse - hors perimetre Blue Guardian."
+ }
+}
