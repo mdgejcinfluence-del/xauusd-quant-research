@@ -1416,6 +1416,26 @@
     "resultat": "SIMULATION - hors budget (0 essai, 0 donnee de marche testee): fouille deductive seq1-131; E1 politique optimale de passage sur challenge_sim regles 2-Step exactes (politiques x filtres M1/M5/F7), E2 panier controle a stop dur vs chassis, E3 arithmetique EV du ticket; aucune certification possible, decision d achat au proprietaire apres chiffres"
    },
    "entry_hash": "62c5911ea8c8690b9c4230bec8d42458eb75e25c94477a0b9ac54cc736bea6d0"
+  },
+  {
+   "seq": 133,
+   "prev_hash": "62c5911ea8c8690b9c4230bec8d42458eb75e25c94477a0b9ac54cc736bea6d0",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE10_SIMULATION_STRUCTURELLE",
+    "resultat": "SIMULATION hors budget: E1 (4000 traj/politique, regles 2-Step exactes, bruit calibre F3, mu IMPOSE): a mu=-2bp (couts seuls) meilleure politique F3 asservi P1=0,323 P2=0,609 (produit 0,197); fixe 0,185; jeu hardi borne ECRASE par les barrieres journaliere+trailing (0,023 - la theorie classique ne survit pas aux regles reelles); Kelly a mu<=0 refuse de jouer (taille 0); filtres M1/M5+F7 neutres a legerement negatifs sur P, utiles seulement sur la queue. E2 panier controle (92% +0,10%): P(passage)=0, ruine ~100% - les petits gains ne qualifient jamais (>=0,5% requis) et le jour catastrophe -4,5% viole la limite journaliere. E3: P(passage total) max ~0,20 << 0,75 (regle coherence) -> ticket non rationnel a mu<=0; EV positive seulement sous scenarios genereux de gain finance, qui supposent ce qui est a prouver"
+   },
+   "entry_hash": "a179306356c6e42e8108bc419b2e217e485ea0cddb93008ce651fce388283045"
+  },
+  {
+   "seq": 134,
+   "prev_hash": "a179306356c6e42e8108bc419b2e217e485ea0cddb93008ce651fce388283045",
+   "entry": {
+    "type": "CLOTURE",
+    "mission": "PHASE10_SIMULATION_STRUCTURELLE",
+    "resultat": "Phase 10 close: la carte exacte de la valeur du savoir dans un challenge est chiffree (PHASE10_SIM_REPORT.md); aucune politique ne cree le mu manquant; decision d achat inchangee: proprietaire, apres chiffres - recommandation chiffree = ne pas engager de frais (P(echec) ~80% >> 25%); programme de recherche clos (131) inchange, simulation hors budget consommee 0 essai"
+   },
+   "entry_hash": "349e06bec21f7e33a6abe7325f7fa432a326b1b09bc22e10512c07290038097c"
   }
  ]
 }

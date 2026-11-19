@@ -1,0 +1,411 @@
+{
+ "E1": {
+  "mu_-2bp (couts seuls)|fixe|sans filtre": {
+   "P1": {
+    "P": 0.317,
+    "P_ruine": 0.683,
+    "jours_medians": 61.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.58375,
+    "P_ruine": 0.40875,
+    "jours_medians": 24.0,
+    "P_inacheve": 0.0075
+   },
+   "P1xP2": 0.18504875
+  },
+  "mu_-2bp (couts seuls)|fixe|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.282,
+    "P_ruine": 0.718,
+    "jours_medians": 148.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.58175,
+    "P_ruine": 0.4105,
+    "jours_medians": 58.0,
+    "P_inacheve": 0.00775
+   },
+   "P1xP2": 0.1640535
+  },
+  "mu_-2bp (couts seuls)|kelly_fraction|sans filtre": {
+   "P1": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P2": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P1xP2": 0.0
+  },
+  "mu_-2bp (couts seuls)|kelly_fraction|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P2": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P1xP2": 0.0
+  },
+  "mu_-2bp (couts seuls)|f3_asservi|sans filtre": {
+   "P1": {
+    "P": 0.32275,
+    "P_ruine": 0.67725,
+    "jours_medians": 64.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.609,
+    "P_ruine": 0.387,
+    "jours_medians": 25.0,
+    "P_inacheve": 0.004
+   },
+   "P1xP2": 0.19655474999999997
+  },
+  "mu_-2bp (couts seuls)|f3_asservi|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.305,
+    "P_ruine": 0.695,
+    "jours_medians": 132.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.57475,
+    "P_ruine": 0.41525,
+    "jours_medians": 51.0,
+    "P_inacheve": 0.01
+   },
+   "P1xP2": 0.17529875
+  },
+  "mu_-2bp (couts seuls)|jeu_hardi_borne|sans filtre": {
+   "P1": {
+    "P": 0.2035,
+    "P_ruine": 0.723,
+    "jours_medians": 10.0,
+    "P_inacheve": 0.0735
+   },
+   "P2": {
+    "P": 0.115,
+    "P_ruine": 0.43375,
+    "jours_medians": 10.0,
+    "P_inacheve": 0.45125
+   },
+   "P1xP2": 0.0234025
+  },
+  "mu_-2bp (couts seuls)|jeu_hardi_borne|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.198,
+    "P_ruine": 0.721,
+    "jours_medians": 21.0,
+    "P_inacheve": 0.081
+   },
+   "P2": {
+    "P": 0.11775,
+    "P_ruine": 0.43325,
+    "jours_medians": 21.0,
+    "P_inacheve": 0.449
+   },
+   "P1xP2": 0.0233145
+  },
+  "mu_0|fixe|sans filtre": {
+   "P1": {
+    "P": 0.39775,
+    "P_ruine": 0.60225,
+    "jours_medians": 60.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.653,
+    "P_ruine": 0.33775,
+    "jours_medians": 25.0,
+    "P_inacheve": 0.00925
+   },
+   "P1xP2": 0.25973075
+  },
+  "mu_0|fixe|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.37475,
+    "P_ruine": 0.625,
+    "jours_medians": 150.0,
+    "P_inacheve": 0.00025
+   },
+   "P2": {
+    "P": 0.644,
+    "P_ruine": 0.345,
+    "jours_medians": 57.0,
+    "P_inacheve": 0.011
+   },
+   "P1xP2": 0.24133900000000003
+  },
+  "mu_0|kelly_fraction|sans filtre": {
+   "P1": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P2": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P1xP2": 0.0
+  },
+  "mu_0|kelly_fraction|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P2": {
+    "P": 0.0,
+    "P_ruine": 0.0,
+    "jours_medians": null,
+    "P_inacheve": 1.0
+   },
+   "P1xP2": 0.0
+  },
+  "mu_0|f3_asservi|sans filtre": {
+   "P1": {
+    "P": 0.3905,
+    "P_ruine": 0.6095,
+    "jours_medians": 63.5,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.65025,
+    "P_ruine": 0.338,
+    "jours_medians": 25.0,
+    "P_inacheve": 0.01175
+   },
+   "P1xP2": 0.253922625
+  },
+  "mu_0|f3_asservi|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.3875,
+    "P_ruine": 0.6125,
+    "jours_medians": 131.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.65625,
+    "P_ruine": 0.3285,
+    "jours_medians": 50.0,
+    "P_inacheve": 0.01525
+   },
+   "P1xP2": 0.25429687500000003
+  },
+  "mu_0|jeu_hardi_borne|sans filtre": {
+   "P1": {
+    "P": 0.2255,
+    "P_ruine": 0.6855,
+    "jours_medians": 9.5,
+    "P_inacheve": 0.089
+   },
+   "P2": {
+    "P": 0.11975,
+    "P_ruine": 0.41475,
+    "jours_medians": 10.0,
+    "P_inacheve": 0.4655
+   },
+   "P1xP2": 0.027003625
+  },
+  "mu_0|jeu_hardi_borne|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.221,
+    "P_ruine": 0.69725,
+    "jours_medians": 19.0,
+    "P_inacheve": 0.08175
+   },
+   "P2": {
+    "P": 0.1205,
+    "P_ruine": 0.41025,
+    "jours_medians": 22.0,
+    "P_inacheve": 0.46925
+   },
+   "P1xP2": 0.026630499999999998
+  },
+  "mu_+2bp|fixe|sans filtre": {
+   "P1": {
+    "P": 0.448,
+    "P_ruine": 0.552,
+    "jours_medians": 59.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.6855,
+    "P_ruine": 0.295,
+    "jours_medians": 24.0,
+    "P_inacheve": 0.0195
+   },
+   "P1xP2": 0.307104
+  },
+  "mu_+2bp|fixe|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.48625,
+    "P_ruine": 0.5135,
+    "jours_medians": 150.0,
+    "P_inacheve": 0.00025
+   },
+   "P2": {
+    "P": 0.7205,
+    "P_ruine": 0.262,
+    "jours_medians": 56.0,
+    "P_inacheve": 0.0175
+   },
+   "P1xP2": 0.35034312500000003
+  },
+  "mu_+2bp|kelly_fraction|sans filtre": {
+   "P1": {
+    "P": 0.44975,
+    "P_ruine": 0.55025,
+    "jours_medians": 60.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.69325,
+    "P_ruine": 0.28325,
+    "jours_medians": 23.0,
+    "P_inacheve": 0.0235
+   },
+   "P1xP2": 0.3117891875
+  },
+  "mu_+2bp|kelly_fraction|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.4765,
+    "P_ruine": 0.5235,
+    "jours_medians": 151.5,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.7185,
+    "P_ruine": 0.26425,
+    "jours_medians": 57.0,
+    "P_inacheve": 0.01725
+   },
+   "P1xP2": 0.34236525
+  },
+  "mu_+2bp|f3_asservi|sans filtre": {
+   "P1": {
+    "P": 0.457,
+    "P_ruine": 0.543,
+    "jours_medians": 66.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.70975,
+    "P_ruine": 0.273,
+    "jours_medians": 25.0,
+    "P_inacheve": 0.01725
+   },
+   "P1xP2": 0.32435575
+  },
+  "mu_+2bp|f3_asservi|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.47575,
+    "P_ruine": 0.52425,
+    "jours_medians": 132.0,
+    "P_inacheve": 0.0
+   },
+   "P2": {
+    "P": 0.69775,
+    "P_ruine": 0.28125,
+    "jours_medians": 50.0,
+    "P_inacheve": 0.021
+   },
+   "P1xP2": 0.3319545625
+  },
+  "mu_+2bp|jeu_hardi_borne|sans filtre": {
+   "P1": {
+    "P": 0.24,
+    "P_ruine": 0.66725,
+    "jours_medians": 9.0,
+    "P_inacheve": 0.09275
+   },
+   "P2": {
+    "P": 0.137,
+    "P_ruine": 0.39975,
+    "jours_medians": 10.0,
+    "P_inacheve": 0.46325
+   },
+   "P1xP2": 0.03288
+  },
+  "mu_+2bp|jeu_hardi_borne|filtres M1/M5+F7": {
+   "P1": {
+    "P": 0.238,
+    "P_ruine": 0.667,
+    "jours_medians": 20.0,
+    "P_inacheve": 0.095
+   },
+   "P2": {
+    "P": 0.141,
+    "P_ruine": 0.386,
+    "jours_medians": 22.0,
+    "P_inacheve": 0.473
+   },
+   "P1xP2": 0.033558
+  }
+ },
+ "E2": {
+  "panier_controle_declare (92% +0,10% / 7% -0,8% / 1% -4,5% stop dur)": {
+   "P_passer_P1": 0.0,
+   "P_ruine": 0.99975
+  },
+  "esperance_journaliere_panier_bp": -0.8999999999999995
+ },
+ "E3": {
+  "frais_bas_$32 (repere Standard 5K) x gain_finance_$100": {
+   "EV_a_mu_-2bp_meilleure_politique": -12.34,
+   "P1xP2": 0.1966
+  },
+  "frais_bas_$32 (repere Standard 5K) x gain_finance_$200": {
+   "EV_a_mu_-2bp_meilleure_politique": 7.31,
+   "P1xP2": 0.1966
+  },
+  "frais_bas_$32 (repere Standard 5K) x gain_finance_$400": {
+   "EV_a_mu_-2bp_meilleure_politique": 46.62,
+   "P1xP2": 0.1966
+  },
+  "frais_median_$75 x gain_finance_$100": {
+   "EV_a_mu_-2bp_meilleure_politique": -55.34,
+   "P1xP2": 0.1966
+  },
+  "frais_median_$75 x gain_finance_$200": {
+   "EV_a_mu_-2bp_meilleure_politique": -35.69,
+   "P1xP2": 0.1966
+  },
+  "frais_median_$75 x gain_finance_$400": {
+   "EV_a_mu_-2bp_meilleure_politique": 3.62,
+   "P1xP2": 0.1966
+  },
+  "frais_haut_$150 x gain_finance_$100": {
+   "EV_a_mu_-2bp_meilleure_politique": -130.34,
+   "P1xP2": 0.1966
+  },
+  "frais_haut_$150 x gain_finance_$200": {
+   "EV_a_mu_-2bp_meilleure_politique": -110.69,
+   "P1xP2": 0.1966
+  },
+  "frais_haut_$150 x gain_finance_$400": {
+   "EV_a_mu_-2bp_meilleure_politique": -71.38,
+   "P1xP2": 0.1966
+  },
+  "_meilleure_politique_mu_-2bp": "mu_-2bp (couts seuls)|f3_asservi|sans filtre",
+  "_regle_coherence": "frais engages seulement si P(echec) <= 25% (P(passage total) >= 75%) - aucune politique a mu<=0 ne l'approche"
+ }
+}
