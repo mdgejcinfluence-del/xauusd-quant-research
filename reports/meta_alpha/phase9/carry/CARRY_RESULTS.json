@@ -1,0 +1,277 @@
+{
+ "BTCUSDT": {
+  "debut": "2020-01-01 00:00:00+00:00",
+  "evenements": 7488,
+  "funding_ann_moyen_pct": 11.634782407852564,
+  "funding_ann_median_pct": 9.7657575,
+  "IC95_moyen_journalier": [
+   10.810286872746396,
+   12.452236122696315
+  ],
+  "net_apres_couts_pct": 11.234782407852563,
+  "jours_positifs_pct": 87.82051282051282,
+  "plus_longue_serie_negative_j": 11,
+  "vol_funding_ann_pct": 22.70743370775594,
+  "eres": {
+   "2021-22": 17.395503456790124,
+   "2023-24": 9.89677842309448,
+   "2025-26": 4.2158449327354255
+  },
+  "tiers_stables_positifs": 3,
+  "p": 0.0,
+  "p_BY_8": 0.0,
+  "eres_positives": 3,
+  "CERTIFIEE": true,
+  "statut": "CERTIFIEE"
+ },
+ "ETHUSDT": {
+  "debut": "2020-01-01 00:00:00+00:00",
+  "evenements": 7488,
+  "funding_ann_moyen_pct": 13.705824140625001,
+  "funding_ann_median_pct": 10.7567325,
+  "IC95_moyen_journalier": [
+   12.66720529652444,
+   14.8118103445012
+  ],
+  "net_apres_couts_pct": 13.305824140625,
+  "jours_positifs_pct": 88.02083333333334,
+  "plus_longue_serie_negative_j": 13,
+  "vol_funding_ann_pct": 29.630059162483423,
+  "eres": {
+   "2021-22": 19.17352059670782,
+   "2023-24": 10.614109374714742,
+   "2025-26": 3.630584073243647
+  },
+  "tiers_stables_positifs": 3,
+  "p": 0.0,
+  "p_BY_8": 0.0,
+  "eres_positives": 3,
+  "CERTIFIEE": true,
+  "statut": "CERTIFIEE"
+ },
+ "SOXLUSDT": {
+  "debut": "2026-05-14 16:00:00.001000+00:00",
+  "evenements": 511,
+  "funding_ann_moyen_pct": 14.730327857142855,
+  "funding_ann_median_pct": 0.0,
+  "IC95_moyen_journalier": [
+   8.445611465643275,
+   21.80156350219298
+  ],
+  "net_apres_couts_pct": 14.330327857142855,
+  "jours_positifs_pct": 61.98830409356725,
+  "plus_longue_serie_negative_j": 5,
+  "vol_funding_ann_pct": 62.00861532221202,
+  "eres": {
+   "2025-26": 14.730327857142855
+  },
+  "tiers_stables_positifs": 3,
+  "p": 1.7284975253661905e-05,
+  "p_BY_8": 7.516494953163834e-05,
+  "eres_positives": 1,
+  "CERTIFIEE": false,
+  "statut": "NON CERTIFIABLE: historique < 3 eres (en observation, pas enterre comme faux)"
+ },
+ "XAUUSDT": {
+  "debut": "2025-12-11 08:00:00.001000+00:00",
+  "evenements": 1947,
+  "funding_ann_moyen_pct": 12.6144281201849,
+  "funding_ann_median_pct": 0.0,
+  "IC95_moyen_journalier": [
+   6.781210782076922,
+   18.812866258538456
+  ],
+  "net_apres_couts_pct": 12.2144281201849,
+  "jours_positifs_pct": 60.92307692307693,
+  "plus_longue_serie_negative_j": 6,
+  "vol_funding_ann_pct": 74.88326078154111,
+  "eres": {
+   "2025-26": 12.6144281201849
+  },
+  "tiers_stables_positifs": 3,
+  "p": 3.120417546143006e-05,
+  "p_BY_8": 0.00011307798821975368,
+  "eres_positives": 1,
+  "CERTIFIEE": false,
+  "statut": "NON CERTIFIABLE: historique < 3 eres (en observation, pas enterre comme faux)"
+ },
+ "ZECUSDT": {
+  "debut": "2020-02-04 08:00:00.001000+00:00",
+  "evenements": 7385,
+  "funding_ann_moyen_pct": 11.138848578199054,
+  "funding_ann_median_pct": 10.950000000000001,
+  "IC95_moyen_journalier": [
+   9.103954088139725,
+   13.015544480808288
+  ],
+  "net_apres_couts_pct": 10.738848578199054,
+  "jours_positifs_pct": 86.55564581640942,
+  "plus_longue_serie_negative_j": 19,
+  "vol_funding_ann_pct": 57.22534482319686,
+  "eres": {
+   "2021-22": 21.174056056241422,
+   "2023-24": 12.726587772706527,
+   "2025-26": -10.522985463378177
+  },
+  "tiers_stables_positifs": 2,
+  "p": 0.0,
+  "p_BY_8": 0.0,
+  "eres_positives": 2,
+  "CERTIFIEE": false,
+  "statut": "ENTERREE (gate non passe)"
+ },
+ "SOLUSDT": {
+  "debut": "2020-09-13 16:00:00.004000+00:00",
+  "evenements": 6793,
+  "funding_ann_moyen_pct": -12.527304863830409,
+  "funding_ann_median_pct": 9.1104,
+  "IC95_moyen_journalier": [
+   -7.277535091210936,
+   5.080890966880581
+  ],
+  "net_apres_couts_pct": -12.92730486383041,
+  "jours_positifs_pct": 71.47321428571428,
+  "plus_longue_serie_negative_j": 28,
+  "vol_funding_ann_pct": 308.67477186091,
+  "eres": {
+   "2021-22": -42.70277611405835,
+   "2023-24": 7.468631166134186,
+   "2025-26": -0.07944997010463345
+  },
+  "tiers_stables_positifs": 2,
+  "p": 0.9694972653132206,
+  "p_BY_8": 1.0,
+  "eres_positives": 1,
+  "CERTIFIEE": false,
+  "statut": "ENTERREE (gate non passe)"
+ },
+ "SNDKUSDT": {
+  "debut": "2026-04-07 08:00:00.002000+00:00",
+  "evenements": 623,
+  "funding_ann_moyen_pct": 10.277645393258425,
+  "funding_ann_median_pct": 0.0,
+  "IC95_moyen_journalier": [
+   3.9338644921875003,
+   16.332728921274036
+  ],
+  "net_apres_couts_pct": 9.877645393258424,
+  "jours_positifs_pct": 58.17307692307693,
+  "plus_longue_serie_negative_j": 2,
+  "vol_funding_ann_pct": 65.14571106515832,
+  "eres": {
+   "2025-26": 10.277645393258425
+  },
+  "tiers_stables_positifs": 3,
+  "p": 0.000996394961157332,
+  "p_BY_8": 0.0030949247569009367,
+  "eres_positives": 1,
+  "CERTIFIEE": false,
+  "statut": "NON CERTIFIABLE: historique < 3 eres (en observation, pas enterre comme faux)"
+ },
+ "SKHYNIXUSDT": {
+  "debut": "2026-06-02 08:00:00.001000+00:00",
+  "evenements": 788,
+  "funding_ann_moyen_pct": 26.8191429822335,
+  "funding_ann_median_pct": 0.0,
+  "IC95_moyen_journalier": [
+   22.457673894736846,
+   43.97598679111842
+  ],
+  "net_apres_couts_pct": 26.419142982233502,
+  "jours_positifs_pct": 62.5,
+  "plus_longue_serie_negative_j": 4,
+  "vol_funding_ann_pct": 140.91800672297336,
+  "eres": {
+   "2025-26": 26.8191429822335
+  },
+  "tiers_stables_positifs": 3,
+  "p": 2.723739012111537e-09,
+  "p_BY_8": 1.4805467058691994e-08,
+  "eres_positives": 1,
+  "CERTIFIEE": false,
+  "statut": "NON CERTIFIABLE: historique < 3 eres (en observation, pas enterre comme faux)"
+ },
+ "_corr_journaliere": {
+  "BTCUSDT": {
+   "BTCUSDT": 1.0,
+   "ETHUSDT": 0.8710119272318798,
+   "SOXLUSDT": 0.035719725380042006,
+   "XAUUSDT": 0.08781048300873914,
+   "ZECUSDT": 0.4961920816706469,
+   "SOLUSDT": 0.19562753720268147,
+   "SNDKUSDT": 0.02363516828407616,
+   "SKHYNIXUSDT": -0.03181395388730111
+  },
+  "ETHUSDT": {
+   "BTCUSDT": 0.8710119272318798,
+   "ETHUSDT": 1.0,
+   "SOXLUSDT": 0.08290208319079789,
+   "XAUUSDT": 0.06819708889803557,
+   "ZECUSDT": 0.5134172200873429,
+   "SOLUSDT": 0.14171571483423706,
+   "SNDKUSDT": 0.01250317567631284,
+   "SKHYNIXUSDT": -0.058088900000805584
+  },
+  "SOXLUSDT": {
+   "BTCUSDT": 0.035719725380042006,
+   "ETHUSDT": 0.08290208319079789,
+   "SOXLUSDT": 1.0,
+   "XAUUSDT": -0.058480043533058475,
+   "ZECUSDT": -0.04608395450930126,
+   "SOLUSDT": -0.0720879852631253,
+   "SNDKUSDT": 0.40045867580452393,
+   "SKHYNIXUSDT": 0.2077114492462126
+  },
+  "XAUUSDT": {
+   "BTCUSDT": 0.08781048300873914,
+   "ETHUSDT": 0.06819708889803557,
+   "SOXLUSDT": -0.058480043533058475,
+   "XAUUSDT": 1.0,
+   "ZECUSDT": -0.1296452368162643,
+   "SOLUSDT": 0.025171074353874844,
+   "SNDKUSDT": 0.39198817015081755,
+   "SKHYNIXUSDT": 0.07252378047628892
+  },
+  "ZECUSDT": {
+   "BTCUSDT": 0.4961920816706469,
+   "ETHUSDT": 0.5134172200873429,
+   "SOXLUSDT": -0.04608395450930126,
+   "XAUUSDT": -0.1296452368162643,
+   "ZECUSDT": 1.0,
+   "SOLUSDT": 0.08602984531278092,
+   "SNDKUSDT": -0.07030098925785137,
+   "SKHYNIXUSDT": -0.11008275032780543
+  },
+  "SOLUSDT": {
+   "BTCUSDT": 0.19562753720268147,
+   "ETHUSDT": 0.14171571483423706,
+   "SOXLUSDT": -0.0720879852631253,
+   "XAUUSDT": 0.025171074353874844,
+   "ZECUSDT": 0.08602984531278092,
+   "SOLUSDT": 1.0,
+   "SNDKUSDT": -0.0726756094620377,
+   "SKHYNIXUSDT": -0.09504436091856722
+  },
+  "SNDKUSDT": {
+   "BTCUSDT": 0.02363516828407616,
+   "ETHUSDT": 0.01250317567631284,
+   "SOXLUSDT": 0.40045867580452393,
+   "XAUUSDT": 0.39198817015081755,
+   "ZECUSDT": -0.07030098925785137,
+   "SOLUSDT": -0.0726756094620377,
+   "SNDKUSDT": 1.0,
+   "SKHYNIXUSDT": 0.3392513908696053
+  },
+  "SKHYNIXUSDT": {
+   "BTCUSDT": -0.03181395388730111,
+   "ETHUSDT": -0.058088900000805584,
+   "SOXLUSDT": 0.2077114492462126,
+   "XAUUSDT": 0.07252378047628892,
+   "ZECUSDT": -0.11008275032780543,
+   "SOLUSDT": -0.09504436091856722,
+   "SNDKUSDT": 0.3392513908696053,
+   "SKHYNIXUSDT": 1.0
+  }
+ },
+ "_couts_declares_pct_an": 0.4
+}

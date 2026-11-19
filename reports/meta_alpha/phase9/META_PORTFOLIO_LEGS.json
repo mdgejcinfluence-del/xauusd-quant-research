@@ -1,0 +1,26 @@
+{
+ "pattes": [
+  {
+   "patte": "BTCUSDT",
+   "actif": "carry funding perpetuel (short perp + long spot, delta-neutre)",
+   "funding_net_pct_an": 11.234782407852563,
+   "IR_approx": 0.495,
+   "statut": "CERTIFIEE seq129",
+   "capacite": "top profondeur Binance (selection seq127)"
+  },
+  {
+   "patte": "ETHUSDT",
+   "actif": "carry funding perpetuel (short perp + long spot, delta-neutre)",
+   "funding_net_pct_an": 13.305824140625,
+   "IR_approx": 0.449,
+   "statut": "CERTIFIEE seq129",
+   "capacite": "top profondeur Binance (selection seq127)"
+  }
+ ],
+ "corr_btc_eth": 0.8710119272318798,
+ "poids_indicatifs": [
+  0.5657346034822366,
+  0.43426539651776347
+ ],
+ "note": "enregistrees dans meta_portfolio (moteur sec.5 Phase 8); aucune exploitation sans ordre proprietaire separe"
+}
