@@ -1146,6 +1146,16 @@
     "resultat": "C1 livre: 11 series PIT ALFRED (PAYEMS/UNRATE/CPIAUCSL/CPIAUCNS/PCEPI/PCEPILFE/GDP/ICSA/DFEDTARL 5170 vintages/FEDFUNDS; DFEDTARU repli documente ALFRED absent) + FOMC 198 reunions 2010-2028 (81 IS); conversion DST date par date verifiee (FOMC jan 19h/juil 18h UTC, CPI fev 13h30/mar 12h30). C2: DFII10/GVZCLS/DGS10/DGS2 officiels FRED (proxys Yahoo conserves). C3 clos seq104. Datasets 28/27/27 fichiers, Kaggle all_ok=true x3, audit anti-fuite integral PASSE (max expose 2020-01-19 19:00 <= borne). Incidents consignes: fuite cle run2 purgee (revocation proprietaire requise), timeout run2, HTTP400 annee courante run4 corrige run5. 0 essai, 0 analyse. STOP."
    },
    "entry_hash": "f7ef3498121aca2bb23f9fc22286ad7d6b2e76b65d4a6753c001cee88b412ae2"
+  },
+  {
+   "seq": 106,
+   "prev_hash": "f7ef3498121aca2bb23f9fc22286ad7d6b2e76b65d4a6753c001cee88b412ae2",
+   "entry": {
+    "type": "MISSION",
+    "mission": "F14_EXOG_EQUILIBRIUM_GAP",
+    "resultat": "Phase 6 EXOGENE ouverte (ordre proprietaire explicite, condition n0 remplie: pack exogene seq105 + methode Dantokpa traduite dans l ordre); budget EXOGENE neuf 60, F14 declare N=5 (55 restants); F14_PREREG.json verrouille (sha256 au fichier); perimetre IS strict available_at<=2020-01-20T09:36:27; gate R3 + trois portes AVANT essais; couts CONDITIONNELS (BROKER_CONFIG UNKNOWN); OOS/HOLDOUT fermes"
+   },
+   "entry_hash": "c02c927c51f710c137a0630f8d660ccaa96dc510c7f39dd2fad8eec2c84cefdb"
   }
  ]
 }
