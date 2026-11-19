@@ -1366,6 +1366,16 @@
     "resultat": "CARRY chaine AVANT collecte des mesures: candidats par PROFONDEUR seule (OI/volume, jamais le funding), top 8 >= 30j; couts declares 40bp aller-retour complet amorti 1 an; gates: IC95 net>0, BY(12), eres >=3 stables, serie negative <=90j; CARRY_PREREG.json sha256 au fichier; B3 etagere confirme (0 essai)"
    },
    "entry_hash": "79ded83814362cd1b4e696ae29a0aefdda3b9d352d3f6c652ff9b63e45870d97"
+  },
+  {
+   "seq": 128,
+   "prev_hash": "79ded83814362cd1b4e696ae29a0aefdda3b9d352d3f6c652ff9b63e45870d97",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "B1_PRE_ANNOUNCEMENT_DRIFT",
+    "resultat": "ECHEC 0/2 (n=326 evenements pool, fenetre T-240->T-5): v1 long inconditionnel -1,2bp net hist IC95 [-5,9;+3,5]; v2 continuation -3,0bp IC [-7,6;+1,6]; ECR <<2; placebos +-7j du meme ordre (+2,5/-0,5) = aucun signal; confirmation NR conditionnelle NON declenchee (pre-declaree); 2 essais consommes (Phase 9: 2/12); B1 enterre definitivement"
+   },
+   "entry_hash": "73b241820631cc5b8b13fb3baf6356d2f63e14ed5f9ced6850f70fcf07401048"
   }
  ]
 }
