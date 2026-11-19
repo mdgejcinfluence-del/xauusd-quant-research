@@ -1,0 +1,293 @@
+{
+ "genere": "2026-11-19 17:08:49.170502+00:00",
+ "journal": [
+  "913 symboles listes",
+  "candidats: ['1000PEPEUSDT', 'ADAUSDT', 'AAVEUSDT', 'AGTUSDT', 'AINUSDT', 'AKEUSDT', 'AAPLUSDT', 'AAOIUSDT']",
+  "1000PEPEUSDT: 3826 lignes funding",
+  "ADAUSDT: 7432 lignes funding",
+  "AAVEUSDT: 6620 lignes funding",
+  "AGTUSDT: 3176 lignes funding",
+  "AINUSDT: 2870 lignes funding",
+  "AKEUSDT: 2429 lignes funding",
+  "AAPLUSDT: 662 lignes funding",
+  "AAOIUSDT: 437 lignes funding",
+  "hyperliquid: {'statut': 200, 'reponse_debut': '[{\"coin\":\"BTC\",\"fundingRate\":\"0.0000711168\",\"premium\":\"0.0008689345\",\"time\":1700002800033},{\"coin\":\"BTC\",\"fundingRate\":\"0.0000923582\",\"premium\":\"0.0010388653\",\"time\":1700006400238},{\"coin\":\"BTC\",\"fund'}"
+ ],
+ "symboles_listes": 913,
+ "profondeurs": {
+  "0GUSDT": {
+   "valeur": 209952278.6907,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000000BOBUSDT": {
+   "valeur": 130445326.74491,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000000MOGUSDT": {
+   "valeur": 22779298.866010003,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000BONKUSDT": {
+   "valeur": 615530444.512146,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000CATUSDT": {
+   "valeur": 17612224.757182002,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000CHEEMSUSDT": {
+   "valeur": 21734521.5067584,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000FLOKIUSDT": {
+   "valeur": 223325509.61668,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000LUNCUSDT": {
+   "valeur": 124522675.10600999,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000PEPEUSDT": {
+   "valeur": 9559000750.42387,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000RATSUSDT": {
+   "valeur": 172400740.11724,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000SATSUSDT": {
+   "valeur": 44294511.20586952,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000SHIBUSDT": {
+   "valeur": 1025732030.812005,
+   "source": "volume quote klines (proxy)"
+  },
+  "1000XECUSDT": {
+   "valeur": 83586687.428135,
+   "source": "volume quote klines (proxy)"
+  },
+  "1INCHUSDT": {
+   "valeur": 82191009.63364,
+   "source": "volume quote klines (proxy)"
+  },
+  "1MBABYDOGEUSDT": {
+   "valeur": 32375864.6563937,
+   "source": "volume quote klines (proxy)"
+  },
+  "2ZUSDT": {
+   "valeur": 212351832.99383998,
+   "source": "volume quote klines (proxy)"
+  },
+  "4USDT": {
+   "valeur": 149713633.01059502,
+   "source": "volume quote klines (proxy)"
+  },
+  "AAOIUSDT": {
+   "valeur": 1554756304.7031999,
+   "source": "volume quote klines (proxy)"
+  },
+  "AAPLUSDT": {
+   "valeur": 1623340250.6320999,
+   "source": "volume quote klines (proxy)"
+  },
+  "AAVEUSDT": {
+   "valeur": 3648160827.949,
+   "source": "volume quote klines (proxy)"
+  },
+  "ABBVUSDT": {
+   "valeur": 1621881.4825999998,
+   "source": "volume quote klines (proxy)"
+  },
+  "ACEUSDT": {
+   "valeur": 326906154.77517426,
+   "source": "volume quote klines (proxy)"
+  },
+  "ACHUSDT": {
+   "valeur": 63117199.75226,
+   "source": "volume quote klines (proxy)"
+  },
+  "ACNUSDT": {
+   "valeur": 31158219.6318,
+   "source": "volume quote klines (proxy)"
+  },
+  "ACTUSDT": {
+   "valeur": 73876088.898716,
+   "source": "volume quote klines (proxy)"
+  },
+  "ACUUSDT": {
+   "valeur": 85316204.32339,
+   "source": "volume quote klines (proxy)"
+  },
+  "ADAUSDT": {
+   "valeur": 5570117427.0611,
+   "source": "volume quote klines (proxy)"
+  },
+  "ADBEUSDT": {
+   "valeur": 43019750.117,
+   "source": "volume quote klines (proxy)"
+  },
+  "AERGOUSDT": {
+   "valeur": 246762680.15548998,
+   "source": "volume quote klines (proxy)"
+  },
+  "AEROUSDT": {
+   "valeur": 952991629.46963,
+   "source": "volume quote klines (proxy)"
+  },
+  "AEVOUSDT": {
+   "valeur": 64985409.593081,
+   "source": "volume quote klines (proxy)"
+  },
+  "AGLDUSDT": {
+   "valeur": 39425272.5239,
+   "source": "volume quote klines (proxy)"
+  },
+  "AGPUUSDT": {
+   "valeur": 18538128.6065,
+   "source": "volume quote klines (proxy)"
+  },
+  "AGTUSDT": {
+   "valeur": 3294456943.4077773,
+   "source": "volume quote klines (proxy)"
+  },
+  "AIAUSDT": {
+   "valeur": 160437232.55183,
+   "source": "volume quote klines (proxy)"
+  },
+  "AIGENSYNUSDT": {
+   "valeur": 103029580.22325,
+   "source": "volume quote klines (proxy)"
+  },
+  "AINUSDT": {
+   "valeur": 3156328508.88769,
+   "source": "volume quote klines (proxy)"
+  },
+  "AIOTUSDT": {
+   "valeur": 183721041.21208,
+   "source": "volume quote klines (proxy)"
+  },
+  "AIOUSDT": {
+   "valeur": 124505966.17822,
+   "source": "volume quote klines (proxy)"
+  },
+  "AIXBTUSDT": {
+   "valeur": 53336503.94555999,
+   "source": "volume quote klines (proxy)"
+  },
+  "AKAMUSDT": {
+   "valeur": 6021987.8169,
+   "source": "volume quote klines (proxy)"
+  },
+  "AKEUSDT": {
+   "valeur": 1970509571.8941028,
+   "source": "volume quote klines (proxy)"
+  },
+  "AKTUSDT": {
+   "valeur": 181909601.41923,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALABUSDT": {
+   "valeur": 101824117.86930001,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALCHUSDT": {
+   "valeur": 27206934.61244,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALGOUSDT": {
+   "valeur": 574566651.247369,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALICEUSDT": {
+   "valeur": 273372277.25639,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALLOUSDT": {
+   "valeur": 125437568.26345,
+   "source": "volume quote klines (proxy)"
+  },
+  "ALLUSDT": {
+   "valeur": 34893123.5625,
+   "source": "volume quote klines (proxy)"
+  }
+ },
+ "candidats_par_profondeur": [
+  "1000PEPEUSDT",
+  "ADAUSDT",
+  "AAVEUSDT",
+  "AGTUSDT",
+  "AINUSDT",
+  "AKEUSDT",
+  "AAPLUSDT",
+  "AAOIUSDT"
+ ],
+ "1000PEPEUSDT": {
+  "lignes": 3826,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "ADAUSDT": {
+  "lignes": 7432,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AAVEUSDT": {
+  "lignes": 6620,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AGTUSDT": {
+  "lignes": 3176,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AINUSDT": {
+  "lignes": 2870,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AKEUSDT": {
+  "lignes": 2429,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AAPLUSDT": {
+  "lignes": 662,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "AAOIUSDT": {
+  "lignes": 437,
+  "colonnes": [
+   "calc_time",
+   "funding_interval_hours",
+   "last_funding_rate"
+  ]
+ },
+ "hyperliquid": {
+  "statut": 200,
+  "reponse_debut": "[{\"coin\":\"BTC\",\"fundingRate\":\"0.0000711168\",\"premium\":\"0.0008689345\",\"time\":1700002800033},{\"coin\":\"BTC\",\"fundingRate\":\"0.0000923582\",\"premium\":\"0.0010388653\",\"time\":1700006400238},{\"coin\":\"BTC\",\"fund"
+ }
+}

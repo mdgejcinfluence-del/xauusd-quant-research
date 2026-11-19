@@ -1,0 +1,24 @@
+{
+ "source": "Yahoo ^GVZ + GC=F (CI)",
+ "n": 2433,
+ "prime_globale": 1.512010451174414,
+ "eres": {
+  "2020-22": {
+   "prime_moyenne": 2.179413163137979,
+   "part_positive": 0.7671957671957672,
+   "n": 756
+  },
+  "2023-24": {
+   "prime_moyenne": 1.491019284213077,
+   "part_positive": 0.7131474103585658,
+   "n": 502
+  },
+  "2025-26": {
+   "prime_moyenne": 0.3774017765125118,
+   "part_positive": 0.6903669724770642,
+   "n": 436
+  }
+ },
+ "rappel_IS_ancien": "2010-13 +7,1 / 2014-16 +6,0 / 2017-20 +3,1 pts (seq123)",
+ "verdict_erosion": "a lire dans les eres ci-dessus; descriptif pur, actif dormant sans infrastructure options"
+}
