@@ -1,5 +1,5 @@
 {
- "genere_utc": "2026-11-19 11:45:06.948651+00:00",
+ "genere_utc": "2026-11-19 11:47:22.668990+00:00",
  "sources": {
   "yahoo_gc_daily": {
    "fichier": "yahoo_gc_daily",
@@ -13,43 +13,56 @@
    "holdout_nr_scele": 475
   },
   "yahoo_xauusd_daily": {
-   "statut": "ECHEC HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/v8/finance/chart/XAUUSD=X?rang"
+   "statut": "ECHEC HTTPError 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v8/finance/chart/XAUUSD=X?rang"
   },
   "yahoo_gc_hourly": {
    "fichier": "yahoo_gc_hourly",
    "lignes": 11464,
    "plage": [
     "2024-11-19 11:00:00+00:00",
-    "2026-11-19 11:35:03+00:00"
+    "2026-11-19 11:37:19+00:00"
    ],
    "is_nr": 0,
    "valid_nr": 625,
    "holdout_nr_scele": 10839
   },
   "yahoo_xauusd_hourly": {
-   "statut": "ECHEC HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/v8/finance/chart/XAUUSD=X?rang"
+   "statut": "ECHEC HTTPError 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v8/finance/chart/XAUUSD=X?rang"
   },
   "yahoo_gc_1min": {
-   "statut": "ECHEC HTTPError 422 Client Error: Unprocessable Entity for url: https://query1.finance.yahoo.com/v8/finance/chart/GC"
+   "lignes": 7260,
+   "plage": [
+    "2026-11-12 05:00:00+00:00",
+    "2026-11-19 11:37:19+00:00"
+   ],
+   "note": "roulant 7j (30j refuse par Yahoo, consigne) - lake uniquement"
   },
   "swissquote_s2": {
-   "ts_utc": "2026-11-19 11:45:07.746274+00:00",
+   "ts_utc": "2026-11-19 11:47:23.757577+00:00",
    "n_profils": 9,
-   "bid_min": 3725.16,
-   "ask_max": 3725.85,
+   "bid_min": 3724.765,
+   "ask_max": 3725.455,
    "spread_min_cents": 50.39999999999054
   },
   "dukascopy_s3": {
-   "statut": "NON QUALIFIE depuis CI: HTTPError 503 Server Error: Service Unavailable for url: https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/17/12h_ticks.bi5"
+   "url_test": "https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/17/12h_ticks.bi5",
+   "octets_compresses": 75304,
+   "ticks_decompresses": 18478,
+   "premier_tick": {
+    "ms_depuis_minuit": 125,
+    "ask_x1000": 3868484,
+    "bid_x1000": 3867900
+   },
+   "statut": "QUALIFIE"
   }
  },
  "journal": [
   "OK yahoo_gc_daily",
-  "ECHEC yahoo_xauusd_daily: 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/v8/finance/chart/XAUUSD=X?range=10y&interval=1d",
+  "ECHEC yahoo_xauusd_daily: 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v8/finance/chart/XAUUSD=X?range=10y&interval=1d",
   "OK yahoo_gc_hourly",
-  "ECHEC yahoo_xauusd_hourly: 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/v8/finance/chart/XAUUSD=X?range=2y&interval=1h",
-  "ECHEC 1min: 422 Client Error: Unprocessable Entity for url: https://query1.finance.yahoo.com/v8/finance/chart/GC=F?range=30d&interval=1m",
+  "ECHEC yahoo_xauusd_hourly: 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v8/finance/chart/XAUUSD=X?range=2y&interval=1h",
+  "OK 1min",
   "OK S2 spread min 50 cents",
-  "S3 echec: 503 Server Error: Service Unavailable for url: https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/17/12h_ticks.bi5"
+  "S3: 18478 ticks decompresses"
  ]
 }
