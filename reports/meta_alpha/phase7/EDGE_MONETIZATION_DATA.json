@@ -1,0 +1,44 @@
+{
+ "F3_challenge": {
+  "_note_simulateur": "challenge_sim.simuler() (gele) declare echec au premier DD -10% sur 5x252 j meme apres passage: P=0 mecanique sur flux continus - consigne, non utilise pour la comparaison. Simulateur de trajectoire declare ci-dessus (arret au passage/echec, regles V2 phases 1).",
+  "mu_0bp": {
+   "sans_F3": {
+    "P_passer_phase1": 0.4175,
+    "jours_medians_si_passage": 181.0
+   },
+   "avec_F3_volcible": {
+    "P_passer_phase1": 0.4165,
+    "jours_medians_si_passage": 184.0
+   }
+  },
+  "mu_2bp": {
+   "sans_F3": {
+    "P_passer_phase1": 0.696,
+    "jours_medians_si_passage": 151.0
+   },
+   "avec_F3_volcible": {
+    "P_passer_phase1": 0.7115,
+    "jours_medians_si_passage": 160.0
+   }
+  },
+  "mu_5bp": {
+   "sans_F3": {
+    "P_passer_phase1": 0.78,
+    "jours_medians_si_passage": 146.0
+   },
+   "avec_F3_volcible": {
+    "P_passer_phase1": 0.794,
+    "jours_medians_si_passage": 147.5
+   }
+  }
+ },
+ "F7_filtre": {
+  "part_heures_saut": 0.018192419825072886,
+  "spread_median_saut_bp": 2.65418351618605,
+  "spread_median_calme_bp": 2.324825104742105,
+  "spread_p95_saut_bp": 4.668346162197464,
+  "F7_gele": "AUC OOF 0,684; lift 2,85x @ top 5% (F7_RESULTS.json, modele gele - aucun score recalcule ici)",
+  "exces_spread_par_execution_evites_bp": 0.3293584114439452,
+  "lecture": "en n'executant pas dans les fenetres flaggees (top 5% du score F7, qui concentrent 2,85x le taux de sauts), on evite en mediane l'exces de spread ci-dessus par execution reportee; c'est un cout evite, pas un gain: cela suppose un report d'execution acceptable pour la strategie servie."
+ }
+}

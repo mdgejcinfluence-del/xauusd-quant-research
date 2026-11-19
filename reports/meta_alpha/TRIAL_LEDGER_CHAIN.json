@@ -1246,6 +1246,26 @@
     "resultat": "Ordre proprietaire explicite 2026-11-18: amendement doctrinal UNIQUE Phase 7 (recherche sur actifs certifies existants); budget NEUF unique N=24 (seul budget vivant; tick 148/150, panel 28/60, exogene 6/60 figes non rechargeables); Axe1 atlas descriptif 0 essai (aucune performance), Axe2 monetisation F3/F7 simulation pure 0 essai, Axe3 candidats uniquement issus du crible M6 (pipeline prereg seq -> gate R3 -> BY(24) -> IC95 deux ancres -> signe 3/3 -> ECR>=2); holdouts fermes; pistes fermees listees dans l ordre non rouvertes; cloture definitive si 24/24 sans certification OU atlas sans cellule survivante"
    },
    "entry_hash": "2aff3354c6272fc7e4bf3f0c91078ff1bd70edf6ef52b1100ac310779f64618d"
+  },
+  {
+   "seq": 116,
+   "prev_hash": "2aff3354c6272fc7e4bf3f0c91078ff1bd70edf6ef52b1100ac310779f64618d",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE7_AXES_1_2_M6",
+    "resultat": "Axe1 atlas livre (M1-M5 descriptifs, ATLAS_XAUUSD.md+DATA); M6 crible: 0/30 cellules survivantes (meilleur effet descriptif 2,8 bp vs seuil 9,4 bp plancher ECR>=2; MDE 0,7-5,8) -> Axe3: aucun candidat legal, 0/24 essais consommes. Axe2: F3 vol-cible deplace P(passage P1) de -0,1/+1,5/+1,4 pt a mu=0/2/5 bp/j (regularisation, pas esperance); F7 = cout evite par execution reportee; verdict: actifs de service, jamais monetisables seuls. Incident consigne: simuler() gele P=0 mecanique (DD sur 5 ans apres passage), simulateur de trajectoire declare utilise, code gele intact"
+   },
+   "entry_hash": "304d0cd832e9739453704e89e842f670f35abfe34253b8b797709812ff4813e9"
+  },
+  {
+   "seq": 117,
+   "prev_hash": "304d0cd832e9739453704e89e842f670f35abfe34253b8b797709812ff4813e9",
+   "entry": {
+    "type": "CLOTURE",
+    "mission": "PHASE7_ET_PROGRAMME_RECHERCHE",
+    "resultat": "CLOTURE DEFINITIVE ET TOTALE (sec.6 ordre Phase 7): atlas sans cellule survivante; budget Phase 7 final 0/24 (jamais nes); budgets historiques figes tick 148/150, panel 28/60, exogene 6/60; resurrection uniquement par source NOUVELLE + preregistration + ordre explicite proprietaire. Actifs permanents: F3/F7 (service), chassis durci, simulateur ancre 4,7bp, packs scelles, voie B demo gratuite en attente proprietaire"
+   },
+   "entry_hash": "6b96a3b6b647861f4474c5aeed105e9b28ecb1252b8af6d26bd2de9d53376720"
   }
  ]
 }
