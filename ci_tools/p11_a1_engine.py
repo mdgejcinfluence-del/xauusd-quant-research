@@ -37,7 +37,7 @@ def extraire(con, fichiers, T):
     out = []
     arr = {}
     for ts, b, a, m in rows:
-        minute = int((ts - T).total_seconds() // 60)
+        minute = int((ts.replace(tzinfo=None) - T).total_seconds() // 60)
         if -5 <= minute <= 30: arr.setdefault(minute, []).append((ts, float(b), float(a), float(m)))
     for minute in range(-5, 31):
         v = arr.get(minute, [])
