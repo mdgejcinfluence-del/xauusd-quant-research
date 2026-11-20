@@ -132,6 +132,35 @@ def main():
         uq, inv_idx = np.unique(day, return_inverse=True)
         rv = np.sqrt(np.bincount(inv_idx, weights=r ** 2))
         stats_row('V5_VOL_REALISEE_JOUR_BP', hname, 'GLOBAL', rv, len(uq))
+    # V6/V7/V8/V9/V10 depuis les sequences stockees (par jour, jamais inter-jours)
+    for hname, A in ACC.items():
+        if not A['r']: continue
+        r = np.concatenate(A['r']); amp = np.concatenate(A['amp']); day = np.concatenate(A['day'])
+        p90 = np.quantile(np.abs(r), 0.9); med_amp = np.median(amp)
+        pair_prod, pair_r2, pair_n, sign_changes, sign_pairs = 0.0, 0.0, 0, 0, 0
+        retra, cons_durees, ratios_jour = [], [], []
+        for d in np.unique(day):
+            m = day == d; rr = r[m]; aa = amp[m]
+            if len(rr) > 1:
+                pair_prod += float(np.sum(rr[1:] * rr[:-1])); pair_r2 += float(np.sum(rr[:-1] ** 2)); pair_n += len(rr) - 1
+                sc = rr[1:] * rr[:-1] < 0; sign_changes += int(sc.sum()); sign_pairs += len(sc)
+                run = 0
+                for a in aa:
+                    if a < med_amp: run += 1
+                    elif run: cons_durees.append(run); run = 0
+                if run: cons_durees.append(run)
+                for i in np.where(np.abs(rr) >= p90)[0]:
+                    seg = rr[i + 1:i + 13]
+                    if len(seg):
+                        adv = -np.sign(rr[i]) * np.cumsum(seg)
+                        retra.append(float(np.max(np.maximum(adv, 0)) / abs(rr[i]) * 100))
+            ratios_jour.append(float(np.median(aa) / med_amp) if len(aa) else np.nan)
+        nd = len(np.unique(day))
+        stats_row('V6_PERSISTANCE_CORR_LAG1', hname, 'GLOBAL', np.array([pair_prod / pair_r2 if pair_r2 else np.nan]), nd)
+        stats_row('V7_RETOURNEMENTS_PCT', hname, 'GLOBAL', np.array([sign_changes / sign_pairs * 100 if sign_pairs else np.nan]), nd)
+        stats_row('V8_RETRACEMENT_PCT_IMPULSION', hname, 'GLOBAL', np.array(retra), nd)
+        stats_row('V9_CONSOLIDATION_DUREE_BARRES', hname, 'GLOBAL', np.array(cons_durees, dtype=float), nd)
+        stats_row('V10_RATIO_AMPLITUDE_JOUR', hname, 'GLOBAL', np.array(ratios_jour), nd)
     out = pd.DataFrame(rows); out.to_csv(ROOT / 'CAMPAIGN_00_BASELINE_METRICS.csv', index=False)
     (ROOT / 'C0_COVERAGE.json').write_text(json.dumps({'partitions_traitees': len(state['done']), 'partitions_sautees': len(state.get('skipped', [])), 'journees_distinctes': len(DAYS_SEEN)}))
     STATE_P.write_text(json.dumps(state)); print('CAMPAGNE 0 CALCUL TERMINE', len(out))
