@@ -1,1 +1,50 @@
-CAMPAGNE 0 CALCUL TERMINE 0
+C0 part: part_000269.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000270.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000271.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000273.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000274.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000275.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000276.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000277.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000278.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000279.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000280.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000281.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign00_engine.py:99: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b1 = con.execute(q).df(); b1['ts'] = pd.to_datetime(b1.ts).dt.tz_localize(None)
+C0 part: part_000282.parquet
+CAMPAGNE 0 CALCUL TERMINE 288
