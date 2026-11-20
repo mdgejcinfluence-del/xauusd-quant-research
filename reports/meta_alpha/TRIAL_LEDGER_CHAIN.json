@@ -1696,6 +1696,26 @@
     "resultat": "CAMPAGNE 1.1 livree (descriptif IS, 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, ANO-C1 inchangees): EV4 selon dictionnaire gele: 14782 compressions, duree mediane 21min, expansion suivante mediane 15,75bp, >=1,5x dans 44,3% seulement, en baisse d ere; EV7: 129 journees extremes concentrees 96/27/6 par ere -> lecon: seuils d extreme a dater/causaux, jamais poolés sur 10 ans; ouvertures Londres 08h/New York 13h UTC (2571/2570): spread inchange a l ouverture (2,26->2,25bp), amplitude premiere heure NY ~2x Londres (37,3 vs 20,8bp), extremes 5min 12,6% vs 3,4%, vitesse 50% du range 11/16min; ouverture Asie NON MESUREE (borne de journee) ecrite. VERIFICATION C1 depuis le brut: 85% = 30590/36011 debuts (86,5% en grappes 4373/5057); censure 5421 (15,1%) avec biais de profondeur (censures ~25,6 vs reintegres ~9,7bp); delai median 3min sur les seuls reintegres (Q1/Q3/P90 1/8/22); 55% = parmi les retests seuls (43% des cassures); retracement 90,5% et range 14,3bp redefinis algorithmiquement; CORRECTION C1: extremes journaliers formes en mediane a 12h UTC (pas 11h, melange de contextes), distribution bimodale publiee. F7: aucune mesure par evenement produite (serie non versionnee), aucun substitut, etapes requises listees sans reentrainement. Methodologie de detection conditionnelle proposee NON executee (references par contexte, bootstrap par grappes, BY de detection, decouverte/confirmation disjointes). Incident pas CI en echec apres ecriture complete des sorties, validees par comptage. STATUT: Campagne 1.1 livree, validation proprietaire en attente; detection generale non autorisee"
    },
    "entry_hash": "39415dff9ba350b95b415c39a215c6e613207b26dabc4b898902cc958696bc84"
+  },
+  {
+   "seq": 161,
+   "prev_hash": "39415dff9ba350b95b415c39a215c6e613207b26dabc4b898902cc958696bc84",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_CONDITIONAL_DETECTION",
+    "resultat": "Decision proprietaire Campagne 2 (C1.1 seq160 acceptee, ANO-C1-001..005 restent J1 candidates non promues): detection conditionnelle EXCLUSIVEMENT descriptive sur familles couvertes seq155/157/160 (dep/reintegration, cassures/retests, compressions/expansions, impulsions/retracements, consolidations, extremes, ouvertures Londres/New York, transitions); ouvertures Asie NON MESUREES, F7 hors perimetre (serie reelle absente); references temoins comparables par contexte (ere x session x regime F3 x horizon x profondeur x structure x cout S2 pertinent), seuils causaux uniquement, aucune classification retroactive sur reference future; pour chaque comparaison: variable, reference, n, journees, grappes, ecart, intervalle par bootstrap par grappes, multiplicite BY, sensibilite d epoque; censures documentees non traitees comme manquantes au hasard; J1 seule autorisee, J2/J3 interdites, aucune promotion automatique; fiches ANO avec limites, registre complet incl. negatifs, ANO-C1 sans modification retroactive; livrables DETECTION/REGISTER/CONDITIONAL_BASELINES/STATISTICAL_AUDIT/NEGATIVE_RESULTS/DATA_LIMITATIONS; 0 backtest/challenge_sim/optimisation/directionnel confirmatoire/holdout, XAU/USD seul, 36 cellules gelees, FRED suspendue, aucun budget experimental de trading consomme"
+   },
+   "entry_hash": "691e0d4919d5028e9142336b0e6283ce2267073eaf6e8ff1f0218476cd2bd221"
+  },
+  {
+   "seq": 162,
+   "prev_hash": "691e0d4919d5028e9142336b0e6283ce2267073eaf6e8ff1f0218476cd2bd221",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_02_DETECTION_PLAN_GELE",
+    "resultat": "PLAN DE DETECTION GELE AVANT CALCUL: famille de comparaisons fermee = 24 tests enumeres dans CAMPAIGN_02_DETECTION_PLAN.md (hash chaine seq163 apres verification fichier); unite independance = grappe jour x niveau (a defaut date); bootstrap par grappes 2000 repetitions, graine 20261113; ecarts: differences de proportions (pp) et ratios de medianes; IC95 percentile bootstrap; p bootstrap bilatéral; correction BY (Benjamini-Yekutieli, dependance arbitraire) sur les 24; regle J1 candidate NOUVELLE: p_BY<0,05 ET |ecart| >= seuil materiel predefini par test (5pp proportions, 15% ratio medianes) ET n>=200 evenements ET >=100 grappes dans chaque bras ET signe coherent dans au moins 2 des 3 eres quand la dimension n est pas l ere elle-meme; tout le reste = queue de distribution ou non concluant, conserve au registre des negatifs; seuils/profondeurs en terciles causaux par ere (jamais quantiles poolés futurs pour classifier); ANO-C1-001..005 reproduites a l identique, jamais retestees comme hypotheses neuves"
+   },
+   "entry_hash": "226a760815ebfa8babe243aa1e56c3cdaca90f41d614e403495b39bf8786b624"
   }
  ]
 }
