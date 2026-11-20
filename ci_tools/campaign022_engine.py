@@ -31,7 +31,7 @@ def charger():
     parts = [p for p in inv if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z', '+00:00')).replace(tzinfo=None) <= IS_END]
     kstate = json.loads(pathlib.Path('reports/meta_alpha/kaggle_migration/STATE.json').read_text())
     batchof = {name: info['batch'] for name, info in kstate['uploaded'].items()}
-    parts = [p for p in parts if batchof.get(p['name'], 'DRIVE') == BATCH]
+    if BATCH != 'ALL': parts = [p for p in parts if batchof.get(p['name'], 'DRIVE') == BATCH]
     CHARGER_STATS['attendues'] = len(parts)
     print('LOT', BATCH, len(parts), 'partitions', flush=True)
     con = duckdb.connect(); con.execute("SET memory_limit='5GB'"); con.execute("SET threads=2")
