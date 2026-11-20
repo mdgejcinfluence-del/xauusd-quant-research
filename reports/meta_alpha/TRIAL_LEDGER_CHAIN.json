@@ -1846,6 +1846,16 @@
     "resultat": "CAMPAGNE 2.3 livree (descriptif, 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, FRED suspendue distincte): SONDE GELEE seq174 EXECUTEE UNE FOIS: Kaggle 403 (librairie + HTTPS Bearer + basic, slug shalom5123 correct), Drive 1 fichier echec rc=1 - acces toujours bloque, aucune extraction relancee, aucun telechargement supplementaire (regle de sonde respectee). Matrice de couverture livree: 2010-2014 reproduite (11513 episodes T0 ere1), 2014-2017 fragmentaire (631 episodes, janv-mars 2014, 48 journees), 2017-2020 lacune non resolue (56 partitions IS non extraites, non accessibles), 2020-2026 HORS PERIMETRE IS AUTORISE (clos 2020-01-20, perimetres scelles non sollicites). Inventaire 348 partitions (282 IS verifiees a la migration, 66 hors IS metadonnees seules jamais touchees). Replication methode gelee sur perimetre disponible: ere1 contraste T0 +13,6 pts [11,9;15,3], fragment 2014 +13,7 [5,8;21,5] coherent non probant seul, ere3 ligne NON MESUREE conservee. Seuils de terciles audites au bp (prof atteinte T0: 1,4853/3,4476 bp; initiale: 0,8007/2,3646), globaux au perimetre et retrospectifs, exigence de seuils causaux anterieurs ecrite pour tout usage futur. Restauration: regeneration de cle Kaggle par le proprietaire + secrets CI uniquement (procedure documentee, valeurs jamais affichees), verification par sonde avant extraction, Drive en un seul passage apres repos du quota. STATUT: couverture historique etendue sur le perimetre accessible, extension decennale en attente d acces (action proprietaire), validation en attente"
    },
    "entry_hash": "3745cb424bee1e24ab5136d789212353a596df287771e99d1cff4983d38f18b0"
+  },
+  {
+   "seq": 176,
+   "prev_hash": "3745cb424bee1e24ab5136d789212353a596df287771e99d1cff4983d38f18b0",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_3_REPRISE",
+    "resultat": "Decision proprietaire reprise Campagne 2.3 (seq175 acceptee comme etat documentaire, resultats T0 associations conditionnelles descriptives, aucune promotion J2): (1) corriger la matrice historique avec dates exactes des 631 episodes 2014, ne pas qualifier 2014-2017 de partiellement couverte si seules janv-mars 2014 sont disponibles; (2) NOTE PROPRIETAIRE: jeton Kaggle regenere, secrets CI KAGGLE_USERNAME (marioadh) et KAGGLE_KEY mis a jour par le proprietaire; proprietaire reel des datasets = marioadh (pas shalom5123): adapter le slug avant sonde; lancer UNE sonde minimale verifiant separement authentification du compte proprietaire, acces au dataset, autorisation de lecture, acces aux fichiers; en cas de nouveau 403, diagnostic HTTP detaille apres suppression de toute information sensible, ne pas multiplier tentatives ni rotations sans diagnostic; valeurs jamais affichees/journalisees; (3) apres sonde positive, reprendre exactement la procedure gelee 2.2 (aucune modification de parametres/seuils/definitions), priorite periodes manquantes IS notamment 2017-2020, jamais hors IS ni holdout; (4) controle final: matrice corrigee, statistiques par epoque, effectifs/grappes, IC, journal de qualite, confirmation de reproductibilite; aucune strategie/backtest/promotion J2/challenge_sim/nouvel actif/budget experimental; FRED suspendue"
+   },
+   "entry_hash": "88857a977cee35200209642b6af1703fafc2b28e8a2fa04bc367498d4dc7afed"
   }
  ]
 }
