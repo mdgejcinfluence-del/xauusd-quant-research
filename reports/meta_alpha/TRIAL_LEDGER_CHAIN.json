@@ -1496,6 +1496,16 @@
     "resultat": "P11-A0 audit descriptif termine (autorisation seq139; 0 budget, 0 telechargement, F15 non rouvert, v1 non utilisee, holdouts intacts): perimetre reel = artefacts du depot Git seul, le tick brut etant au lac Kaggle hors depot -> fenetre T-5..T+30 mesurable en un seul point. MESURE REELLE: spread cote au tick d entree >=T+5min mediane FOMC 2,64 / NFP 2,51 / CPI 2,28 bp (proche du median IS 2,33), P99 5,9-12,6, max 24,7 (n=346 evenements). NON MESURABLE AVEC LES DONNEES DISPONIBLES (ecrit, jamais impute): spread T-5 et T+1..T+4, duree d episode, delai de retour, cotations manquantes/perimees, slippage reel (aucune donnee d execution), latence/remplissage; slippage simule non produit faute de calibration mesuree. Clarification matrice: 6 familles J recensees, fenetre news = 1 famille J parmi 6, J != eligible; C-2 reste seule eligible aux 2 criteres, P11-A0 n est pas une experience. VERDICT: CAS B - impossible a etablir (A exigerait les mesures absentes, C exigerait execution+couts prouves; limitation = insuffisance d artefacts au perimetre autorise, piste restant J). Securite FRED (separee): HEAD propre (0 valeur litterale, secret GH Actions par reference, code assaini), exposition historique confirmee commits cfd3df5/833f13b/b144080 purgee a HEAD par 7c0ebec mais presente dans l historique -> rotation toujours pendante cote proprietaire; logs Actions et liste des secrets non verifiables depuis le sandbox (403); aucune valeur affichee ni demandee. Statut final autorise: audit termine, decision strategique en attente du proprietaire"
    },
    "entry_hash": "f85402b95286cd0d45b3928c54cb316321d29fc90562f49455edd1b93aabe4fd"
+  },
+  {
+   "seq": 141,
+   "prev_hash": "f85402b95286cd0d45b3928c54cb316321d29fc90562f49455edd1b93aabe4fd",
+   "entry": {
+    "type": "MISSION",
+    "mission": "P11_A1_NEWS_TICK_RECONSTRUCTION",
+    "resultat": "Autorisation proprietaire 2026-11-18 P11-A1 (descriptif strict, suite CAS B seq140): reconstitution trajectoires de cotation FOMC/NFP/CPI T-5..T+30 (minutes T+1..T+5 individuelles) sur corpus tick DEJA au lac Kaggle du programme, traite en CI, corpus brut jamais dans Git; aucun achat/nouvelle donnee/holdout/essai/F15 non rouvert; mesures spread (med/P90/P95/P99/max, n cotations, duree elevee, retour habituel), qualite (bid/ask, mid, inter-ticks, trous, couverture des 346 evenements), execution (mesurable vs slippage NON invente); comparaisons avant/pendant/apres/habituel par famille + evenement par evenement; verdict A/B/C obligatoire (C != edge); Phase 11 strategique toujours verrouillee; cle FRED jamais reutilisee/affichee, rotation proprietaire avant tout usage FRED"
+   },
+   "entry_hash": "c4a81b0f42db5aa720aec897ee7cc3a70052d479658a7d82bdbfd952368d5437"
   }
  ]
 }
