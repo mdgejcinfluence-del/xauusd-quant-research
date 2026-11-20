@@ -1856,6 +1856,16 @@
     "resultat": "Decision proprietaire reprise Campagne 2.3 (seq175 acceptee comme etat documentaire, resultats T0 associations conditionnelles descriptives, aucune promotion J2): (1) corriger la matrice historique avec dates exactes des 631 episodes 2014, ne pas qualifier 2014-2017 de partiellement couverte si seules janv-mars 2014 sont disponibles; (2) NOTE PROPRIETAIRE: jeton Kaggle regenere, secrets CI KAGGLE_USERNAME (marioadh) et KAGGLE_KEY mis a jour par le proprietaire; proprietaire reel des datasets = marioadh (pas shalom5123): adapter le slug avant sonde; lancer UNE sonde minimale verifiant separement authentification du compte proprietaire, acces au dataset, autorisation de lecture, acces aux fichiers; en cas de nouveau 403, diagnostic HTTP detaille apres suppression de toute information sensible, ne pas multiplier tentatives ni rotations sans diagnostic; valeurs jamais affichees/journalisees; (3) apres sonde positive, reprendre exactement la procedure gelee 2.2 (aucune modification de parametres/seuils/definitions), priorite periodes manquantes IS notamment 2017-2020, jamais hors IS ni holdout; (4) controle final: matrice corrigee, statistiques par epoque, effectifs/grappes, IC, journal de qualite, confirmation de reproductibilite; aucune strategie/backtest/promotion J2/challenge_sim/nouvel actif/budget experimental; FRED suspendue"
    },
    "entry_hash": "88857a977cee35200209642b6af1703fafc2b28e8a2fa04bc367498d4dc7afed"
+  },
+  {
+   "seq": 177,
+   "prev_hash": "88857a977cee35200209642b6af1703fafc2b28e8a2fa04bc367498d4dc7afed",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_3_REPRISE",
+    "resultat": "Reprise Campagne 2.3 executee selon decision proprietaire: MATRICE CORRIGEE (dates exactes) - reconstruction = fragments 2010 a mars 2014, PAS 2010-2014 continu: 2010 4075 ep/254j, 2011 4004/256j, 2012 2831/174j (SEP-NOV ABSENTS), 2013 603/45j (janv, nov, dec seuls), 2014 631/48j du 2014-01-02 au 2014-03-11; 2014-2017 ne doit plus etre qualifiee de partiellement couverte. SONDE UNIQUE avec identifiants regenerees (slug corrige marioadh): Kaggle 403 persiste - diagnostic HTTP detaille expurge: Permission datasets.get was denied (librairie + HTTPS Bearer + basic); authentification sans erreur, rejet en AUTORISATION; cause la plus vraisemblable: datasets prives crees/verifies sous shalom5123 (VERIFY.json de la migration), jeton marioadh sans acces; Drive repli toujours en echec (1 controle). Aucune tentative supplementaire, aucune rotation repetee, aucune extraction lancee. Action proprietaire unique recommandee: jeton sur le compte proprietaire des datasets ou partage explicite des 8 datasets avec marioadh, puis confirmation pour sonde unique nouvelle. Statistiques par epoque/effectifs/IC inchanges (TEMPORAL_REPLICATION), journal de qualite et reproductibilite confirmes, procedure gelee intacte prete a relancer. STATUT: BLOCAGE D ACCES DOCUMENTE - reprise historique en attente (validation proprietaire)"
+   },
+   "entry_hash": "07a4d21738fe9747aa1c6d4399f46aa0b9d52c171c7df3e9a4720e7976cd5fea"
   }
  ]
 }
