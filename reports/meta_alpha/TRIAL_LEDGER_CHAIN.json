@@ -1816,6 +1816,26 @@
     "resultat": "Decision proprietaire Campagne 2.2 appliquee: livraison seq171 acceptee comme reconstruction partielle (90,6 vs 77,0 a T0; 12144 episodes; 2010-2014-03), aucune promotion J2. (1) Qualification: formulation faisant foi = Association conditionnelle fondee sur des variables disponibles a T0, sans anticipation temporelle - aucune causalite ni avantage predictif confirme; effectifs/IC publies (CAMPAIGN_02_2_T0_STATS.csv, bootstrap grappes 2000): terciles profondeur atteinte T0 n=4048 chacun, 676-755 journees, 1104-1454 grappes, contraste BAS-HAUT +13,6 pts [12,0;15,2] contre +32,4 retrospectif; profondeur initiale de cloture concordante (91,5 vs 76,4). (2) Couverture insuffisante pour generaliser (0 episode ere 2017-20 reconstruit) - matrice ere x famille publiee. (3) Integrite: definitions/instants/classements/fenetres/methodes/censures inchanges; reprise a procedure identique sans modification de parametres apres resultats. (4) Reprise: diagnostic separe - Kaggle 403 (librairie 1.6.17, slug corrige, repli HTTPS direct 403 aussi; regeneration de cle cote proprietaire requise, hors sandbox), Drive refus temporaire de quota aggrave par les tentatives (regle: ne pas multiplier les telechargements); plan de reprise par lots avec controles de recoupement, reprise depuis l existant des mars 2014. (5) GitHub RECONCILIE: checkpoint 18e6553852c38a2941c03fc507e4e236f42e4a7a pousse en fast-forward sur arena/afe12737-xauusd-quant-research, parent 84f19a1dd1376f6b8ec97b0433c1479efed32347, ls-remote verifie identique, inventaire 2 fichiers, arbre propre, scan secrets negatif, aucun force push ni reecriture. STATUT: couverture partielle documentee, checkpoint distant reconcilie, reprise historique en attente (acces donnees)"
    },
    "entry_hash": "149bdbf6e1d96f918e51d6b9e0bfd4b7bb5f957dfe6e1aa33c5bc6bf1c808943"
+  },
+  {
+   "seq": 173,
+   "prev_hash": "149bdbf6e1d96f918e51d6b9e0bfd4b7bb5f957dfe6e1aa33c5bc6bf1c808943",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_3_HISTORICAL_COVERAGE_REPLICATION",
+    "resultat": "Decision proprietaire Campagne 2.3 (seq172 acceptee, association T0 conservee comme association conditionnelle descriptive a T0, aucune promotion J2): restaurer la couverture historique pour reproduire la Campagne 2.2 sur tout le corpus IS autorise (2010-2014 reproduction de reference, 2014-2017 a verifier, 2017-2020 lacune a resoudre, 2020-2026 couverture a verifier dans le respect des perimetres scelles); matrice precise des partitions presentes/absentes/corrompues/non accessibles; diagnostic separe Kaggle (procedure de regeneration par le proprietaire, injection en secrets CI uniquement, valeurs jamais affichees/journalisees, requete minimale avant extraction) et Drive (quota, pas de multiplication des telechargements, artefacts existants, reprise par lots avec controle d integrite); ne jamais confondre identifiants Kaggle et cle FRED (suspendue); reproduction exacte de la methode gelee seq170 sans modification de parametres apres consultation des nouvelles periodes; resultats partiels historiques conserves separement des resultats etendus; audit des terciles (valeurs exactes, methode, population de reference, global vs chronologique; seuils operationnels futurs uniquement sur donnees anterieures); par ere et contexte: effectifs, journees, grappes, taux, IC, contraste, distributions de profondeurs initiales, manquants, coherence temporelle; aucun signal/strategie/backtest/challenge_sim/promotion J2/holdout/budget experimental/modification des anciennes fiches/autre actif; 36 cellules gelees; fin de mission: matrice etablie + methode reproduite sur toutes les donnees IS disponibles, limitations conservees si periodes inaccessibles"
+   },
+   "entry_hash": "ab826f7d76f0c72eb91c9cd5ca686e47c60a8eee3ca3656f22ba521234b290bc"
+  },
+  {
+   "seq": 174,
+   "prev_hash": "ab826f7d76f0c72eb91c9cd5ca686e47c60a8eee3ca3656f22ba521234b290bc",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_02_3_SONDE_ACCES",
+    "resultat": "SONDE MINIMALE GELEE AVANT EXECUTION: (1) Kaggle: listage de fichiers d un seul dataset (xauusd-is-b01) sans telechargement, via KaggleApi puis repli HTTPS direct sur l endpoint de listage; (2) Drive: telechargement d une seule partition (la premiere du lot b01) avec verification de taille exacte contre l inventaire; (3) aucun autre telechargement pendant la sonde; resultats journalises et commites; si et seulement si une voie repond, extraction par lots existante (campaign022, garde 200 journees/lot) lancee en un seul passage; sinon, arret et rapport de blocage sans nouvelle sollicitation"
+   },
+   "entry_hash": "5e79af9a1b59a99fc4dd62c9b9b7939505700b2f7998d4859e51b6c013fd9cb6"
   }
  ]
 }
