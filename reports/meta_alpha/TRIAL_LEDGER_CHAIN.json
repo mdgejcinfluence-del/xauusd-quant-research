@@ -1566,6 +1566,16 @@
     "resultat": "Decision proprietaire Phase 12.2 (12.1 seq146 acceptee comme documentaire; AUCUNE autorisation backtest/BY(36)): audit final cible - Qmin algebrique (definition C sans double comptage Bid/Ask, universalite vs geometrie, S12-01/S12-02 separes), conversion F3 variance->mouvement (echelle vs E|delta| vs quantile, aucune probabilite d atteinte TP si non calibrable), filtre F7 (deciles, stabilite, alerte de classement vs probabilite calibree, reduction 50% non validee), independance/puissance 36 cellules (n brut/distinct/jours/n_eff, dependances, N>=200 par cellule ou famille tranche), BY(36) FDR/FWER/confirmation hors holdout scelle, sizing abstrait sans spec MT5, limites 3%/7% = parametres proposes non garanties; FRED suspendu maintenu + conditions de reactivation et plan de purge historique avec mapping SHA; documentaire strict, 0 essai"
    },
    "entry_hash": "5a2038234328493701c1fb4378328bc96c72a389a13d1d364a2ab650e4e7d212"
+  },
+  {
+   "seq": 148,
+   "prev_hash": "5a2038234328493701c1fb4378328bc96c72a389a13d1d364a2ab650e4e7d212",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE12_2_FINAL_MATHEMATICAL_AUDIT",
+    "resultat": "PHASE12_FINAL_MATHEMATICAL_AUDIT.md livre (documentaire strict, 0 essai, budgets inchanges verifies): Qmin audite - C REDEFINI sans spread (distances sur prix executables Bid/Ask, le spread y est deja; C=commissions+slippage+autres frais, swap UNKNOWN), relation TP>=2SL+3C corrigee du double comptage de seq146; Q_required(t)=2SL(t)/C(t)+3 est une identite geometrique NON universelle: le seuil universel 11 est RETIRE, demonstrations separees S12-01 (SL ref 25bp non mesure: Qreq 25,7 central/15,5 defavorable) et S12-02 (20bp: 21,2/13,0), regle par decision au scenario central + reverification defavorable; F3: chaine variance integree saisonniere -> sigma (echelle) -> E|delta|=0,798 sigma vs quantiles distingues, probabilite d atteinte du TP NON CALIBRABLE reconnue; F7: decile 10 = alerte de classement (AUC 0,684, pas une probabilite calibree), stabilite des seuils jamais mesuree, reduction 50% parametre propose non calibre; puissance: observation= grappe jour x niveau, jamais les variantes d un meme evenement, N>=200 tranche PAR CELLULE en unites independantes, comptes bruts/n_eff NON PRODUITS (extraction au prereg, pas de valeurs fabriquees), MDE formulee au sigma inconnu; BY(36)=FDR sous dependance (H36=4,25) vs FWER non controle ecrit, regles anti-selection, confirmation par walk-forward IS + reserve temporelle interne SANS ouvrir le holdout scelle (limite ecrite); sizing abstrait symbolique (aucun lot exact sans spec MT5), limites 3%/7% parametres proposes non garantis; FRED suspendu maintenu, 4 conditions de reactivation + plan de purge historique avec mapping SHA a documenter. STATUT: audit termine, autorisation proprietaire en attente"
+   },
+   "entry_hash": "bcc9eada7d3ce44ab6b318ee5c1e245177706a48b3a93171a7d1a3f28245e7a9"
   }
  ]
 }
