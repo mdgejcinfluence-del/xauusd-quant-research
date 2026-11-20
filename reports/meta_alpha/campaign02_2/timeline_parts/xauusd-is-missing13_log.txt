@@ -1,6 +1,6 @@
 LOT xauusd-is-missing13 13 partitions
-Dataset URL: https://www.kaggle.com/datasets/shalom/xauusd-is-missing13
-Dataset URL: https://www.kaggle.com/datasets/shalom/xauusd-is-missing13
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13
 Kaggle KO repli Drive (403)
 Reason: Forbidden
 HTTP response headers: HTTPHeaderDict({'Content-Type': '
