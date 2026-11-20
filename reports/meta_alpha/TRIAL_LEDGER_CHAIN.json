@@ -1746,6 +1746,26 @@
     "resultat": "CAMPAGNE 2 livree (detection descriptive, plan gele 24 tests seq162-164, bootstrap par grappes 2000, BY, regle J1 materielle): 14 ecarts franchissent la regle -> fiches J1 candidates nouvelles ANO-C2-001..014; plus forts: issue de retest par profondeur de cassure (26,9% vs 80,7% encore au-dela, T10), reintegration par profondeur (98,2% vs 65,8%, T01/T03); impulsions par ere/regime/session (T11/T12/T13); regime et ere ordonnent consolidations, compressions, ouvertures (T14/T17/T19/T20/T21); extremes de session (T22). 8 non-concluants/queues conserves (dont T05 et T15 significatifs mais sous seuil materiel), T06 complement mecanique, T24 contexte biaise jamais anomalie. Bug de p-valeur bootstrap detecte et corrige avant livraison (consigne dans l audit); coherence d ere verifiee pour toutes les candidates. ANO-C1-001..005 reproduites sans modification; aucune promotion J2/J3; 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, FRED suspendue. STATUT: Campagne 2 livree, validation proprietaire en attente; promotion J2 = decision separee"
    },
    "entry_hash": "0997a1c108fbd5837c3761c0e81187c8d20236b5433849ecf53337453f83cd39"
+  },
+  {
+   "seq": 166,
+   "prev_hash": "0997a1c108fbd5837c3761c0e81187c8d20236b5433849ecf53337453f83cd39",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_1_ROBUSTNESS_AUDIT",
+    "resultat": "Decision proprietaire Campagne 2.1 (C2 seq165 acceptee, ANO-C1 inchangees, 14 fiches + 8 non-conclusions conservees, aucune promotion J2): audit de robustesse des deux anomalies majeures A (profondeur depassements/reintegration 98,2 vs 65,8) et B (amplitude cassures/apres-retest 26,9 vs 80,7); definitions exactes, instant d observabilite, profondeur initiale vs maximale vs avant reintegration, distributions session/ere/F3, duree au-dela, type de niveau; censures traitees comme censurees; B: amplitude, qualification du retest, delai cassure-retest, cassures sans retest, ensemble vs sous-echantillon reteste jamais confondus; maintien au-dela = descriptif, jamais rendement; robustesse: effectifs bruts/journees/grappes/N effectif, IC, bootstrap par grappes, biais de selection, sensibilite aux bornes des terciles, coherence 3 eres; les 24 comparaisons C2 ne sont PAS modifiees retroactivement; toute nouvelle comparaison specifiee avant calcul dans une famille distincte corrigee separement; audit complet du bug de p-valeur (cause, code, 24 affectees, recalcul integral, protocole seq164 maintenu, BY reverifiee, avant/apres publie, aucune selection sur significativite); mecanismes classes observe/plausible/inconnu uniquement si les donnees le justifient; aucune direction, aucun point d entree, aucun PnL, aucune strategie; 0 budget experimental, holdout intact, Phase 12 gelee, FRED suspendue"
+   },
+   "entry_hash": "7201c0e886062c21428ee9a5235693c4184133181edc8b2c1ad442e7d2331abb"
+  },
+  {
+   "seq": 167,
+   "prev_hash": "7201c0e886062c21428ee9a5235693c4184133181edc8b2c1ad442e7d2331abb",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_02_1_FAMILLE_R",
+    "resultat": "FAMILLE DISTINCTE R01-R12 GELÉE AVANT CALCUL (correction BY interne a la famille R, independante des 24 tests C2 inchanges): R01 reintegration cassure initiale observable (+5bp a la cloture de declenchement) vs depassement simple; R02 sensibilite quartiles profondeur Q1 vs Q4 (reintegration); R03 sensibilite mediane profondeur; R04 effet profondeur dans session Londres seule; R05 meme a New York; R06 effet profondeur en regime F3 BAS seul; R07 meme en HAUT; R08 profondeur mediane censures vs reintegrations <=3min; R09 encore-au-dela par delai de retest tercile bas vs haut; R10 cassures toutes: reintegration sous 60min retestees vs non retestees; R11 encore-au-dela Londres vs New York (retests); R12 sensibilite quartiles profondeur pour encore-au-dela; bootstrap par grappes 2000 graine 20261113; definitions profondeur/amplitude et observabilite auditees depuis le code moteur committe"
+   },
+   "entry_hash": "0eff655fd8cc2a19b47616cbcf99ef4f8acf7fd41c1c243c527f74e3e87b7596"
   }
  ]
 }
