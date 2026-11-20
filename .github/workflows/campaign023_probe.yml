@@ -1,0 +1,31 @@
+name: Campaign 2.3 Access Probe (seq174)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/campaign023_probe.txt"]
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q "kaggle==1.6.17" six gdown requests
+      - name: Sonde minimale (aucun secret affiche)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+        run: python3 -u ci_tools/campaign023_probe.py
+      - name: Commit sonde
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/campaign02_3 || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Campaign 2.3: sonde d'acces (seq174)"
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
