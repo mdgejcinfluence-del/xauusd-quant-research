@@ -35,6 +35,7 @@ jobs:
         if: always()
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          { echo "STATUS $(date -u +%FT%TZ) batch=${{ matrix.batch }}"; git status --porcelain | head -20; ls reports/meta_alpha/campaign02_2/timeline_parts/; } > reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_status.txt
           git add reports/meta_alpha/campaign02_2/timeline_parts || true
           git diff --cached --quiet && exit 0
           git commit -m "Campaign 2.2 lot ${{ matrix.batch }} (descriptif brut)"
