@@ -22,7 +22,9 @@ jobs:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
-        run: python3 ci_tools/campaign00_engine.py
+        run: |
+          set -o pipefail
+          python3 ci_tools/campaign00_engine.py 2>&1 | tail -50 | tee reports/meta_alpha/campaign00/CI_LOG.txt
       - name: Commit resultats (toujours)
         if: always()
         run: |
