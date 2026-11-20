@@ -1,0 +1,7 @@
+KAGGLE_API_LIST: ECHEC ApiException (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json', 'Date': 'Fri, 20 Nov 
+KAGGLE_HTTPS_LIST (bearer): HTTP 403
+KAGGLE_HTTPS_LIST (basic): HTTP 403
+KAGGLE_HTTPS_LIST: ECHEC
+DRIVE_1_FICHIER: rc=1 fichier absent ECHEC
