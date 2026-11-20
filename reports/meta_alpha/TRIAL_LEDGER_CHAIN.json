@@ -1616,6 +1616,16 @@
     "resultat": "Decision proprietaire Campagne 0 (blueprint atlas seq151 accepte comme doctrine): (1) Phase 12.3: 36 cellules conservees gelees non prioritaires, inventaire CI SUSPENDU proprement sur ordre (gh run cancel 44702531257, demande soumise), artefacts existants conserves, aucun resultat non autorise consulte, aucun test S12 autorise; (2) CAMPAGNE 0 autorisee: baselines descriptives XAUUSD horizons M1/M5/M15/H1, familles A-K (rendements, amplitudes/excursions, vol realisee, persistance, retournements, retracements, consolidations, compression/expansion, extremes, bid/ask-spread, sessions Asie/Londres/New York), references globales puis decompositions session x regime si effectifs, cellules pauvres = non concluantes; contexte causal uniquement (aucune info future), IS seul, holdout scelle inaccessible; anomalies NON selectionnees pour rentabilite a ce stade (observations candidates J1 au registre, toutes conservees meme si >10 - la limite de 10 ne borne que le developpement detaille); dictionnaire/methodes/decoupages figes AVANT calcul et chaines; journal positif/negatif/non concluant; livrables CAMPAIGN_00_*; 0 essai, 0 backtest, FRED suspendue"
    },
    "entry_hash": "e8d2678b1dd6735faa78077708942d57ae4215546fe2b97c30aa052e87c5b9a1"
+  },
+  {
+   "seq": 153,
+   "prev_hash": "e8d2678b1dd6735faa78077708942d57ae4215546fe2b97c30aa052e87c5b9a1",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_00_DICTIONARY_FREEZE",
+    "resultat": "Dictionnaire Campagne 0 GELE avant calcul: CAMPAIGN_00_VARIABLE_DICTIONARY.md sha256= (barres Mid declarees M1/M5/M15/H1, variables V1-V12 definitions exactes, contexte causal session/regime F3 tercile du jour/annonce/eres 2010-13/2014-16/2017-20, regle de suffisance n>=1000 barres et >=100 journees sinon NON CONCLUANTE, aucune combinaison non listee produite, 0 essai)"
+   },
+   "entry_hash": "5bf202d0b00a21dfbe60ea5a363544500db201ddea5b91961d8871504f5cf4a0"
   }
  ]
 }
