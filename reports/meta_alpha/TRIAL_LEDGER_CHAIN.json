@@ -1646,6 +1646,16 @@
     "resultat": "CAMPAGNE 0 livree (descriptif IS, 0 essai, budgets inchanges, holdout intact): 282/282 partitions, 3097 journees, 3 537 724 barres M1, 288 cellules V1-V12 x M1/M5/M15/H1 x global/session/regime F3 causal/ere. Comportement normal chiffre: sigma rendement M1 2,57bp (M5 5,70, M15 9,78, H1 18,1), RV jour mediane ~72-75bp (P99 210-238), amplitude mediane M1 2,0bp, excursions quasi symetriques, PERSISTANCE lag-1 -0,012..+0,009 (nulle), retournements 49,9-52,5%, retracement median post-impulsion 94% M1 -> 54% H1 sous 12 barres, consolidations mediane 2 barres, spread median 2,32bp stable. Decompositions: NY session la plus ample (sigma M1 3,09 vs Asie 2,02), regime F3 ordonne l echelle x1,6 sans direction, ERES: sigma M1 3,00 -> 2,54 -> 1,85bp (calme seculaire -60%, baselines a dater imperativement). Registre: 6 observations candidates consignees sans mecanisme ni rentabilite (dont baseline negative persistance); familles d episodes (niveaux/cassures/opens) non couvertes = Campagne 1 proposee; limites ecrites (V6/V7 scalaires n=1 etiquetes mecaniquement, V8 non borne, barres Mid). Reponse au proprietaire: OUI borne - distributions normales connues et datees aux horizons M1-H1, anomalies structurelles pas encore cherchables methodiquement. Incidents consignes (STATE ecrase puis garde-fou, run 12.3 cancele ayant pousse ses comptages non consultes). FRED suspendue, rotation pendante"
    },
    "entry_hash": "0caea6dd640bd610712adcd5588a1daff7352e356637428cb187fdec1c100b8d"
+  },
+  {
+   "seq": 156,
+   "prev_hash": "0caea6dd640bd610712adcd5588a1daff7352e356637428cb187fdec1c100b8d",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_01_STRUCTURAL_EVENTS",
+    "resultat": "Decision proprietaire Campagne 1 (C0 seq155 acceptee): cartographie descriptive des evenements structurels XAUUSD, 7 familles (extremes de sessions/transitions, depassements-balayages-reintegrations, cassures-retests, compressions-expansions, impulsions-retracements, consolidations, extremes journaliers/hebdomadaires); dictionnaire d evenements gele AVANT calcul (ID, niveau, declencheur causal, timestamp, contexte disponible a l instant, invalidation, horizon d observation, metriques, regroupement); mesures pendant vs apres distinguees (frequence, profondeur, delai de reintegration, continuation/retournement descriptifs, amplitudes futures 1/5/15/30/60, cout S2 a l evenement); comparaisons conditionnelles predefinies seulement (session, regime F3, F7 si mesurable, ere, amplitude initiale, spread) avec effectifs; references adaptees au contexte + temoins documentes, biais de selection ecrits; qualite: evenements detectes/distincts/journees/contextes, chevauchements non independants; registre J1 sans direction ni rentabilite ni strategie, promotion J2 sous autorisation distincte; corrections C0 a clarifier (0,75% quotidien, variance vs ecart-type, portee du lag-1, definition algorithmique des 94%, consolidation 2 barres, spread 2,32 par session/regime; neutralite directionnelle != preuve d aleatoire); 0 essai, 0 backtest, holdout intact, 36 cellules gelees, FRED suspendue"
+   },
+   "entry_hash": "890c66a6a249d2691200322f1c2487cc54a4f8ae99719c72a645f4f4f72a74a3"
   }
  ]
 }
