@@ -1,0 +1,159 @@
+{
+ "CPI": {
+  "n_evenements_extraites": 127,
+  "spread_pre_bp": {
+   "mediane": 2.28,
+   "p95": 3.86
+  },
+  "spread_T1_bp": {
+   "mediane": 2.37,
+   "p90": 3.23,
+   "p95": 3.86,
+   "p99": 4.82
+  },
+  "spread_T2_bp": {
+   "mediane": 2.33,
+   "p90": 3.32,
+   "p95": 3.86,
+   "p99": 4.62
+  },
+  "spread_T3_bp": {
+   "mediane": 2.3,
+   "p90": 3.31,
+   "p95": 3.86,
+   "p99": 4.82
+  },
+  "spread_T4_bp": {
+   "mediane": 2.31,
+   "p90": 3.24,
+   "p95": 3.86,
+   "p99": 4.82
+  },
+  "spread_T5_bp": {
+   "mediane": 2.3,
+   "p90": 3.2,
+   "p95": 3.86,
+   "p99": 4.82
+  },
+  "minutes_spread_eleve_T0_T30": {
+   "mediane": 0.0,
+   "p90": 0.0
+  },
+  "retour_sous_1.5x_pre_min": {
+   "mediane": 0.0,
+   "p90": 0.0,
+   "jamais_sur_30min_pct": 0.0
+  },
+  "trou_max_T0_T5_s": {
+   "mediane": 3.627,
+   "p95": 11.296099999999994
+  },
+  "couverture_minutes_mediane_sur_36": 36.0
+ },
+ "FOMC": {
+  "n_evenements_extraites": 81,
+  "spread_pre_bp": {
+   "mediane": 2.68,
+   "p95": 4.31
+  },
+  "spread_T1_bp": {
+   "mediane": 2.91,
+   "p90": 4.9,
+   "p95": 5.58,
+   "p99": 11.49
+  },
+  "spread_T2_bp": {
+   "mediane": 2.82,
+   "p90": 4.76,
+   "p95": 5.22,
+   "p99": 6.04
+  },
+  "spread_T3_bp": {
+   "mediane": 2.68,
+   "p90": 4.75,
+   "p95": 5.12,
+   "p99": 5.62
+  },
+  "spread_T4_bp": {
+   "mediane": 2.64,
+   "p90": 4.57,
+   "p95": 4.9,
+   "p99": 5.85
+  },
+  "spread_T5_bp": {
+   "mediane": 2.75,
+   "p90": 4.31,
+   "p95": 4.75,
+   "p99": 5.43
+  },
+  "minutes_spread_eleve_T0_T30": {
+   "mediane": 0.0,
+   "p90": 1.0
+  },
+  "retour_sous_1.5x_pre_min": {
+   "mediane": 0.0,
+   "p90": 1.0,
+   "jamais_sur_30min_pct": 1.2
+  },
+  "trou_max_T0_T5_s": {
+   "mediane": 3.0,
+   "p95": 20.531
+  },
+  "couverture_minutes_mediane_sur_36": 36.0
+ },
+ "NFP": {
+  "n_evenements_extraites": 118,
+  "spread_pre_bp": {
+   "mediane": 2.5,
+   "p95": 4.61
+  },
+  "spread_T1_bp": {
+   "mediane": 2.86,
+   "p90": 4.6,
+   "p95": 5.43,
+   "p99": 7.93
+  },
+  "spread_T2_bp": {
+   "mediane": 2.72,
+   "p90": 4.49,
+   "p95": 4.91,
+   "p99": 7.42
+  },
+  "spread_T3_bp": {
+   "mediane": 2.61,
+   "p90": 4.47,
+   "p95": 4.65,
+   "p99": 6.62
+  },
+  "spread_T4_bp": {
+   "mediane": 2.54,
+   "p90": 4.26,
+   "p95": 4.61,
+   "p99": 6.58
+  },
+  "spread_T5_bp": {
+   "mediane": 2.47,
+   "p90": 4.26,
+   "p95": 4.6,
+   "p99": 6.91
+  },
+  "minutes_spread_eleve_T0_T30": {
+   "mediane": 0.0,
+   "p90": 1.0
+  },
+  "retour_sous_1.5x_pre_min": {
+   "mediane": 0.0,
+   "p90": 2.0,
+   "jamais_sur_30min_pct": 0.0
+  },
+  "trou_max_T0_T5_s": {
+   "mediane": 2.0285,
+   "p95": 10.355399999999985
+  },
+  "couverture_minutes_mediane_sur_36": 36.0
+ },
+ "_couverture_globale": {
+  "evenements_F15_reels_attendus": 346,
+  "evenements_extraites": 326
+ }
+}

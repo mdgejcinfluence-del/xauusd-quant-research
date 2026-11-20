@@ -1506,6 +1506,16 @@
     "resultat": "Autorisation proprietaire 2026-11-18 P11-A1 (descriptif strict, suite CAS B seq140): reconstitution trajectoires de cotation FOMC/NFP/CPI T-5..T+30 (minutes T+1..T+5 individuelles) sur corpus tick DEJA au lac Kaggle du programme, traite en CI, corpus brut jamais dans Git; aucun achat/nouvelle donnee/holdout/essai/F15 non rouvert; mesures spread (med/P90/P95/P99/max, n cotations, duree elevee, retour habituel), qualite (bid/ask, mid, inter-ticks, trous, couverture des 346 evenements), execution (mesurable vs slippage NON invente); comparaisons avant/pendant/apres/habituel par famille + evenement par evenement; verdict A/B/C obligatoire (C != edge); Phase 11 strategique toujours verrouillee; cle FRED jamais reutilisee/affichee, rotation proprietaire avant tout usage FRED"
    },
    "entry_hash": "c4a81b0f42db5aa720aec897ee7cc3a70052d479658a7d82bdbfd952368d5437"
+  },
+  {
+   "seq": 142,
+   "prev_hash": "c4a81b0f42db5aa720aec897ee7cc3a70052d479658a7d82bdbfd952368d5437",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "P11_A1_NEWS_TICK_RECONSTRUCTION",
+    "resultat": "P11-A1 descriptif termine (seq141; 0 essai, budgets inchanges, F15 non rouvert, holdouts intacts, corpus brut jamais dans Git; extraction CI run 44691627613 apres incidents consignes: kaggle 403 -> repli miroir Drive meme corpus, pytz, tz): couverture 326/346 evenements (94,2%; FOMC 81/81, NFP 118/129, CPI 127/136), 11736 lignes minute T-5..T+30. A SPREAD MESURE: mediane de minute pre 2,28-2,68bp, minute0 2,62-3,82, des T+1 retour a l habituel (2,37-2,91) stable T+5; P99 minute T+1 4,8-11,5bp; pointes tick minute0 (P99 4,6-9,2, max>20bp au P90 FOMC/NFP) breves; minutes a spread>2x pre: mediane 0 sur T0-T30. B COTATIONS: dense (258-329 ticks/min a T0, intertick 0,10-0,14s, trou max median 2-3,6s, couverture 36/36). C COUTS: seuls spread+ancres connus; slippage reel/latence/remplissage NON MESURABLES (aucun fill dans le programme), aucune estimation fabriquee. D LIMITES: flux du corpus != compte retail; cotation ne prouve pas execution; deplacement concentre minute0. VERDICT C borne: conditions de COTATION justifient la proposition d un futur protocole preenregistre (a soumettre, rien demarre); C != edge, ne certifie rien. Cle FRED non utilisee; rotation proprietaire toujours requise avant tout usage FRED. Decision finale: proprietaire apres lecture"
+   },
+   "entry_hash": "687dd1808ed7a81eeeaf60d11128012bbdfd4481c9e605dc53265313858b85e7"
   }
  ]
 }
