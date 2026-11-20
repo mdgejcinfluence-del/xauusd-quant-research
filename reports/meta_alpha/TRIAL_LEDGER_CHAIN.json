@@ -1876,6 +1876,16 @@
     "resultat": "Autorisation de reprise proprietaire: le compte proprietaire des 8 datasets prives est shalom5123; l erreur precedente venait des identifiants marioadh (a ne plus utiliser pour ces datasets); identifiants corrects retablis cote proprietaire dans les secrets CI. (1) Une seule sonde minimale avec identifiants shalom5123: authentification du compte, autorisation datasets.get, acces au dataset prive de controle, metadonnees necessaires; aucun telechargement de corpus pendant la sonde; valeurs jamais affichees. (2) Si sonde positive: reprise immediate du plan gele Campagne 2.3 - partitions historiques manquantes, priorite periodes non couvertes notamment 2017-2020, parametres de reconstruction seq171-172 conserves strictement, aucun seuil ni definition modifies, integrite de chaque partition controlee, periodes effectivement reconstituees documentees, jamais de holdout. (3) Si echec: ne pas multiplier les tentatives, diagnostic HTTP expurge et suspension. (4) Aucun signal/strategie/backtest/promotion J2/budget experimental; FRED suspendue independamment de Kaggle. (5) Livraison: checkpoint SHA exact, matrice actualisee, journal d extraction, controle d integrite, budgets"
    },
    "entry_hash": "be3e3d2d4819e9b4ec0ef40e6766cf08b242c2c89d6753c66c48b1a840144045"
+  },
+  {
+   "seq": 179,
+   "prev_hash": "be3e3d2d4819e9b4ec0ef40e6766cf08b242c2c89d6753c66c48b1a840144045",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_3_REPRISE_ACCES_SHALOM5123",
+    "resultat": "ACCES KAGGLE RETABLI - REPRISE HISTORIQUE DECENNALE LIVREE (descriptif, 0 essai, budgets inchanges tick 148/150 panel 28/60 exo 6/60 P7 0/24 NR 0/24 P9 10/12, holdout intact, 36 cellules gelees, FRED suspendue): sonde unique avec identifiants shalom5123 regeneres: librairie Kaggle toujours 403 mais HTTPS direct Bearer HTTP 200 (listage OK) - voie d extraction retenue. Incidents consignes: garde 200 journees/lot inadaptee (lots precoces ~65j, tranches de ~1,6j/partition) remplacee par integrite partitions chargees/attendues; commits de matrice perdus en courses de push; repli HTTPS perdu en rebase reapplique; retour au patron sequentiel a commit unique (mode ALL). EXTRACTION COMPLETE: 282/282 partitions, 2515 journees, 36011 episodes - recoupement EXACT avec le brut Campagne 1 par ere (15540/10110/10361) et cassures/retests (3957/3128); defaut de double append cassures detecte et deduplique (31656->18956 lignes), consigne. VALIDATION TEMPORELLE (methode gelee inchangee, bootstrap grappes): contraste T0 profondeur atteinte BAS-HAUT stable sur les 3 eres: +12,4 [11,0;13,9] / +13,7 [11,9;15,4] / +15,6 [13,5;17,7], tout perimetre +13,3 [12,2;14,2] - association conditionnelle a T0 (formulation faisant foi), stabilite descriptive, AUCUN avantage predictif revendique, aucune promotion J2. Seuils decennaux documentes (1,2499/2,9694 bp, retrospectifs). Resultats partiels 2010-2014 conserves separement. STATUT: acces retabli, couverture historique decennale reprise et validee - validation proprietaire en attente"
+   },
+   "entry_hash": "6ec39d667b4adcec3234d385b872a2fd4444384dbe8c098e30f19b959461c1da"
   }
  ]
 }

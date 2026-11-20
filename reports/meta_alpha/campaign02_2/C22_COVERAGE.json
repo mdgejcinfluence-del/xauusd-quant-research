@@ -1,1 +1,10 @@
-{"overshoot_rows": 144044, "episodes": 36011, "breakout_rows": 31656}
+{
+ "mode": "ALL sequentiel (reprise seq178)",
+ "partitions_chargees": "282/282 (journal CI: 8 telechargements directs Kaggle HTTP 200, 282 partitions traitees)",
+ "jours": 2515,
+ "episodes_depassement": 36011,
+ "lignes_overshoot": 144044,
+ "cassures": 3957,
+ "retests": 3128,
+ "lignes_breakout_dedoublonnees": 18956
+}

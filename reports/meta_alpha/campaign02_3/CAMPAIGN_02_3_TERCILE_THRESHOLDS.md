@@ -40,3 +40,15 @@ quantiles roulants sur une fenêtre close avant l'événement, figés à l'avanc
 avec la fenêtre, la règle de mise à jour et le traitement des ex æquo spécifiés
 avant calcul. Les terciles du présent audit ne satisfont pas cette exigence et ne
 doivent pas être présentés comme des seuils opérationnels.
+
+## Addendum seq 178 — seuils sur le périmètre décennal complet
+
+| Variable (à T0) | Borne BAS/MOYEN | Borne MOYEN/HAUT | Population |
+|---|---|---|---|
+| Profondeur atteinte (barre T0) | **1,2499 bp** | **2,9694 bp** | 36 005 épisodes T0 avec issue mesurable (2010–2019) |
+| Profondeur initiale de clôture | **0,6748 bp** | **1,9879 bp** | Même population |
+
+Même méthode (quantiles poolés du périmètre, rétrospectifs) et même exigence pour
+tout usage futur : seuils calculés uniquement sur des données antérieures à
+l'événement. Les seuils du fragment 2010–2014 (1,4853/3,4476 bp) restent conservés
+ci-dessus comme valeurs historiques du périmètre restreint.

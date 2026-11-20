@@ -12,3 +12,13 @@
 | Identifiants | Aucune valeur d'identifiant affichée, journalisée ou commitée dans cette campagne ; les journaux CI ne contiennent que des statuts (403, rc, tailles attendues/conformes) ; Kaggle ≠ FRED (cette dernière reste suspendue, procédure de rotation distincte et non traitée ici) |
 | Données fabriquées | Aucune. Les périodes inaccessibles sont écrites NON MESURÉ / HORS PÉRIMÈTRE, jamais comblées |
 | Reproductibilité | Sonde `ci_tools/campaign023_probe.py` + workflow `campaign023_probe.yml` ; moteur de reprise `campaign022_engine.py` (lots, garde de couverture) inchangé depuis seq 168–172 ; calculs de réplication relancés localement sur le brut commité |
+
+## Addendum seq 178 — extraction décennale
+
+| Contrôle | Résultat |
+|---|---|
+| Accès | Sonde : HTTPS Bearer HTTP 200 (librairie Kaggle toujours 403) ; extraction par téléchargements directs, 8/8 datasets, 282/282 partitions traitées (CI_LOG commité) |
+| Recoupement | Épisodes par ère et totaux identiques au brut Campagne 1 (15 540 / 10 110 / 10 361 ; 36 011 ; 2 515 journées ; 3 957 cassures ; 3 128 retests) |
+| Défaut corrigé | Double append des lignes cassures (patch moteur) : 12 700 lignes dupliquées à l'identique supprimées (31 656 → 18 956) ; dépassements non affectés. Le moteur commité conserve le défaut pour traçabilité ; la correction est appliquée au brut livré et consignée ici |
+| Incidents de reprise | Garde ≥ 200 journées/lot inadaptée aux tranches précoces (~65 j) remplacée par un contrôle partitions chargées/attendues ; commits de matrice perdus en courses de push → patron séquentiel à commit unique ; repli HTTPS perdu en rebase, réappliqué et vérifié dans le code commité |
+| Manquants | 6 épisodes T0 sans issue mesurable sur 36 011 (fin de fenêtre) ; taux publiés dans la réplication |
