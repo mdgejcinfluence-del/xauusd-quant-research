@@ -1656,6 +1656,16 @@
     "resultat": "Decision proprietaire Campagne 1 (C0 seq155 acceptee): cartographie descriptive des evenements structurels XAUUSD, 7 familles (extremes de sessions/transitions, depassements-balayages-reintegrations, cassures-retests, compressions-expansions, impulsions-retracements, consolidations, extremes journaliers/hebdomadaires); dictionnaire d evenements gele AVANT calcul (ID, niveau, declencheur causal, timestamp, contexte disponible a l instant, invalidation, horizon d observation, metriques, regroupement); mesures pendant vs apres distinguees (frequence, profondeur, delai de reintegration, continuation/retournement descriptifs, amplitudes futures 1/5/15/30/60, cout S2 a l evenement); comparaisons conditionnelles predefinies seulement (session, regime F3, F7 si mesurable, ere, amplitude initiale, spread) avec effectifs; references adaptees au contexte + temoins documentes, biais de selection ecrits; qualite: evenements detectes/distincts/journees/contextes, chevauchements non independants; registre J1 sans direction ni rentabilite ni strategie, promotion J2 sous autorisation distincte; corrections C0 a clarifier (0,75% quotidien, variance vs ecart-type, portee du lag-1, definition algorithmique des 94%, consolidation 2 barres, spread 2,32 par session/regime; neutralite directionnelle != preuve d aleatoire); 0 essai, 0 backtest, holdout intact, 36 cellules gelees, FRED suspendue"
    },
    "entry_hash": "890c66a6a249d2691200322f1c2487cc54a4f8ae99719c72a645f4f4f72a74a3"
+  },
+  {
+   "seq": 157,
+   "prev_hash": "890c66a6a249d2691200322f1c2487cc54a4f8ae99719c72a645f4f4f72a74a3",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_01_EVENT_DICTIONARY",
+    "resultat": "Dictionnaire evenements Campagne 1 GELE avant calcul: CAMPAIGN_01_EVENT_DICTIONARY.md sha256=e7da58c77f397e16e884f7e81a5f21dca5c193e7bd486ceea22ca6c9b792ee94 (7 familles EV1-EV7 definitions causales, niveaux Asie/veille, regroupement grappes jour x niveau, comparaisons predefinies session/regime F3/ere/amplitude/spread, F7 ecrit NON MESURE faute de serie versionnee, suffisance >=200 evenements et >=100 grappes sinon NON CONCLUANTE, mesures pendant vs apres distinguees, aucun PnL)"
+   },
+   "entry_hash": "2ca17941811945ca3a3c36068015c81209b4560a3c88fcc3a7394937f97a9ad1"
   }
  ]
 }
