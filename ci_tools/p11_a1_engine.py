@@ -80,15 +80,12 @@ def main():
         localdir = None
         if batch != 'DRIVE' and (os.environ.get('KAGGLE_API_TOKEN') or os.environ.get('KAGGLE_KEY')):
             try:
-                import requests, zipfile, io
-                tok = os.environ.get('KAGGLE_API_TOKEN') or os.environ.get('KAGGLE_KEY')
-                user = os.environ.get('KAGGLE_USERNAME', '')
-                r = requests.get(f'https://www.kaggle.com/api/v1/datasets/download/{user}/{batch}',
-                                 headers={'Authorization': f'Bearer {tok}'}, timeout=600)
-                r.raise_for_status()
-                localdir = '/tmp/kbatch'; shutil.rmtree(localdir, ignore_errors=True); pathlib.Path(localdir).mkdir(parents=True, exist_ok=True)
-                zipfile.ZipFile(io.BytesIO(r.content)).extractall(localdir)
-                print('lot Kaggle pret (REST):', batch, flush=True)
+                if api is None:
+                    from kaggle.api.kaggle_api_extended import KaggleApi
+                    api = KaggleApi(); api.authenticate(); username = api.config_values.get('username')
+                localdir = '/tmp/kbatch'; shutil.rmtree(localdir, ignore_errors=True)
+                api.dataset_download_files(f'{username}/{batch}', path=localdir, unzip=True, quiet=True)
+                print('lot Kaggle pret:', batch, flush=True)
             except Exception as e:
                 print('lot Kaggle indisponible:', batch, str(e)[:120], flush=True); localdir = None
                 (ROOT/'DEBUG.txt').write_text(f'batch={batch} erreur={type(e).__name__}: {e}\nbatches={list(groups)[:5]} token_present={bool(os.environ.get("KAGGLE_API_TOKEN"))}')

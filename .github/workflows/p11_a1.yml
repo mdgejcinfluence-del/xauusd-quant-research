@@ -14,7 +14,7 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q duckdb requests pandas numpy
+      - run: pip install -q duckdb "kaggle==1.6.17" six requests pandas numpy
       - name: Verifier la chaine avant calcul
         run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
       - name: P11-A1 extraction descriptive (Kaggle du programme uniquement)
