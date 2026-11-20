@@ -1776,6 +1776,26 @@
     "resultat": "CAMPAGNE 2.1 livree (descriptif, 0 essai, budgets inchanges, holdout intact, registre historique non ecrase, aucune promotion J2): DEFINITION auditee depuis le code: profondeur_bp = excursion maximale sur les 61 barres SUIVANT le debut (incl apres reintegration) - non observable au declenchement. A: association profondeur max/issue massive et stable (terciles 98,2 vs 65,8; quartiles +37,2pp R02; mediane +23,8 R03; presente a Londres/New York/regimes separes R04-R07; censures 30,8bp vs 8,8 reintegrations rapides R08) MAIS test causal R01 (cassure initiale +5bp observable vs depassement simple): ecart -0,8pp NS - a information de declenchement, l effet disparait: requalification ANO-C2-001/002 en anatomie de chemin post-hoc, mecanisme observe quasi-tautologique, mecanisme deux populations plausible NON demontre. B: amplitude = meme profondeur chevauchant la fenetre d issue; ecart robuste aux bornes (quartiles 24,1 vs 85,2 R12), ni delai de retest (R09 NS) ni session (R11 NS); ensemble vs sous-echantillon chiffres: non retestees prof mediane 50,7bp, reintegration 8,4% seulement (R10) - le 55% ne vaut que pour les retestees. ANO-C2-004 requalifiee de meme, mecanisme inconnu, amplitude causale a l instant du retest non stockee (re-extraction requise, non executee). Audit p-valeur: cause exacte (replicats centres sur observe, p~0,5 mecanique), 24/24 affectees, recalcul integral meme graine, IC/effectifs identiques, BY reverifiee, avant/apres publie, aucune selection. STATUT: Campagne 2.1 livree, validation proprietaire en attente"
    },
    "entry_hash": "4d81bc85dee541b48b800a6d1ad984ae03802efc4054bba1f186ba70bdc4bf17"
+  },
+  {
+   "seq": 169,
+   "prev_hash": "4d81bc85dee541b48b800a6d1ad984ae03802efc4054bba1f186ba70bdc4bf17",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_2_EVENT_TIME_RECONSTRUCTION",
+    "resultat": "Decision proprietaire Campagne 2.2 (C2.1 seq168 acceptee, associations requalifiees retrospectives, aucune promotion J2): reconstruction temporelle stricte des depassements et cassures - T0 premier franchissement (dictionnaire gele), instantanes T0/T+1/T+3/T+5 avec variables connues jusqu a l instant seul (profondeur initiale, profondeur max atteinte, position vs niveau, duree au-dela, volatilite realisee, spread, session/regime, amplitude parcourue); consequences strictement apres chaque instantane (reintegration ulterieure, temps restant, extension supplementaire, excursions adverse/favorable, position a +15/+30/+60); jamais une variable T+5 presentee comme disponible a T0; cassures: declenchement, amplitude par instantane, premier retest exact, confirmation mecanique, caracteristiques a la confirmation, consequences apres retest seul, separation retestees/sans retest/invalidees/censurees; jamais le maximum futur comme caracteristique; anciennes associations 98,2/65,8 et 26,9/80,7 conservees comme retrospectives conditionnees par variables futures, non supprimees, non reutilisables comme signaux; reconciliation complete des 24 p-valeurs (ancienne, nouvelle, BY, IC, conclusions avant/apres, fiches ANO concernees); grappes jour x niveau, chevauchements, censure 60min, eres, IC, resultats negatifs; aucune selection de parametres sur performance future; descriptif seul, 0 backtest/directionnel/promotion J2/holdout/budget experimental, 36 cellules gelees, FRED suspendue"
+   },
+   "entry_hash": "ee248df779f3e0c63858faa9cb38b836200e084c606c14654dbec36c2a535f41"
+  },
+  {
+   "seq": 170,
+   "prev_hash": "ee248df779f3e0c63858faa9cb38b836200e084c606c14654dbec36c2a535f41",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_02_2_METHOD_GELEE",
+    "resultat": "METHODE GELEE AVANT EXTRACTION: extraction CI depuis le corpus tick IS (meme chargement que campagnes 1/1.1, bornes identiques); niveaux et declenchements repris a l identique du moteur campagne 1 (debuts de depassement >=08:00 UTC, premiere cloture au-dela; cassure = cloture initiale >5bp); instantanes 0/1/3/5 min; horizon d issue borne a T0+60min; excursions apres instantane mesurees depuis le cours de l instantane, favourable = sens du franchissement; position a +h = cloture a T_snapshot+h rapportee au niveau en bp signee dans le sens du franchissement (negative = reintegre); retest = definition mecanique campagne 1 (touche a 0,5bp en restant du cote casse, sous 60min); invalidee = cloture revenue du bon cote apres retest sous 60min; censuree = fenetre tronquee par fin de journee ou horizon; AUCUN test formel nouveau: statistiques descriptives par instantane et par tercile de profondeur atteinte jusqu a l instantane (bornes par ere, retrospectives, consignees), intervalles descriptifs par grappes si publies; livrables RECONSTRUCTION/OVERSHOOT_TIMELINE/BREAKOUT_TIMELINE/PVALUE_RECONCILIATION/LOOKAHEAD_AUDIT/DATA_QUALITY"
+   },
+   "entry_hash": "eb040a58df3d40d88f30c0a3b80f0a56d2826163bcc6630a7636e8d2a64da7a7"
   }
  ]
 }
