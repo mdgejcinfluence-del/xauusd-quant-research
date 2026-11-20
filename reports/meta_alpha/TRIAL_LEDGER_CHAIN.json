@@ -1766,6 +1766,16 @@
     "resultat": "FAMILLE DISTINCTE R01-R12 GELÉE AVANT CALCUL (correction BY interne a la famille R, independante des 24 tests C2 inchanges): R01 reintegration cassure initiale observable (+5bp a la cloture de declenchement) vs depassement simple; R02 sensibilite quartiles profondeur Q1 vs Q4 (reintegration); R03 sensibilite mediane profondeur; R04 effet profondeur dans session Londres seule; R05 meme a New York; R06 effet profondeur en regime F3 BAS seul; R07 meme en HAUT; R08 profondeur mediane censures vs reintegrations <=3min; R09 encore-au-dela par delai de retest tercile bas vs haut; R10 cassures toutes: reintegration sous 60min retestees vs non retestees; R11 encore-au-dela Londres vs New York (retests); R12 sensibilite quartiles profondeur pour encore-au-dela; bootstrap par grappes 2000 graine 20261113; definitions profondeur/amplitude et observabilite auditees depuis le code moteur committe"
    },
    "entry_hash": "0eff655fd8cc2a19b47616cbcf99ef4f8acf7fd41c1c243c527f74e3e87b7596"
+  },
+  {
+   "seq": 168,
+   "prev_hash": "0eff655fd8cc2a19b47616cbcf99ef4f8acf7fd41c1c243c527f74e3e87b7596",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_1_ROBUSTNESS_AUDIT",
+    "resultat": "CAMPAGNE 2.1 livree (descriptif, 0 essai, budgets inchanges, holdout intact, registre historique non ecrase, aucune promotion J2): DEFINITION auditee depuis le code: profondeur_bp = excursion maximale sur les 61 barres SUIVANT le debut (incl apres reintegration) - non observable au declenchement. A: association profondeur max/issue massive et stable (terciles 98,2 vs 65,8; quartiles +37,2pp R02; mediane +23,8 R03; presente a Londres/New York/regimes separes R04-R07; censures 30,8bp vs 8,8 reintegrations rapides R08) MAIS test causal R01 (cassure initiale +5bp observable vs depassement simple): ecart -0,8pp NS - a information de declenchement, l effet disparait: requalification ANO-C2-001/002 en anatomie de chemin post-hoc, mecanisme observe quasi-tautologique, mecanisme deux populations plausible NON demontre. B: amplitude = meme profondeur chevauchant la fenetre d issue; ecart robuste aux bornes (quartiles 24,1 vs 85,2 R12), ni delai de retest (R09 NS) ni session (R11 NS); ensemble vs sous-echantillon chiffres: non retestees prof mediane 50,7bp, reintegration 8,4% seulement (R10) - le 55% ne vaut que pour les retestees. ANO-C2-004 requalifiee de meme, mecanisme inconnu, amplitude causale a l instant du retest non stockee (re-extraction requise, non executee). Audit p-valeur: cause exacte (replicats centres sur observe, p~0,5 mecanique), 24/24 affectees, recalcul integral meme graine, IC/effectifs identiques, BY reverifiee, avant/apres publie, aucune selection. STATUT: Campagne 2.1 livree, validation proprietaire en attente"
+   },
+   "entry_hash": "4d81bc85dee541b48b800a6d1ad984ae03802efc4054bba1f186ba70bdc4bf17"
   }
  ]
 }

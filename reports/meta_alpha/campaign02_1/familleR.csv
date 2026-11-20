@@ -1,0 +1,13 @@
+test,famille,comparaison,variable,n_A,n_B,grappes_A,grappes_B,jours_A,jours_B,stat_A,stat_B,ecart,ic95_bas,ic95_haut,p_brut,p_BY_familleR
+R01,A,cassure initiale observable (+5bp) vs depassement simple,reintegre,21227,14784,2763,2294,1812,1658,0.846,0.8544,-0.0083,-0.0168,-0.0006,0.034,0.12661
+R02,A,profondeur Q1 vs Q4 (sensibilite quartiles),reintegre,9002,9004,2546,3310,1768,2017,0.9843,0.6124,0.3719,0.3617,0.3825,0.0,0.0
+R03,A,profondeur sous vs au-dessus mediane d ere,reintegre,18010,18001,3379,4384,2103,2404,0.9682,0.7306,0.2376,0.2306,0.2447,0.0,0.0
+R04,A,"profondeur BAS vs HAUT, session Londres seule",reintegre,4738,5101,1563,2248,1296,1587,0.997,0.622,0.375,0.3605,0.3895,0.0,0.0
+R05,A,"profondeur BAS vs HAUT, session New York seule",reintegre,6035,6756,1782,2358,1308,1620,0.9901,0.6868,0.3033,0.2916,0.3139,0.0,0.0
+R06,A,"profondeur BAS vs HAUT, regime BAS seul",reintegre,3497,2718,806,980,534,575,0.9788,0.6229,0.356,0.3362,0.3757,0.0,0.0
+R07,A,"profondeur BAS vs HAUT, regime HAUT seul",reintegre,2843,3427,727,1012,486,596,0.9824,0.6779,0.3046,0.2875,0.3221,0.0,0.0
+R08,A,profondeur mediane: censures vs reintegrations <=3 min,profondeur_bp,5421,17343,3728,3954,2273,2309,30.7924,8.8037,3.4977,3.3245,3.6382,0.0,0.0
+R09,B,encore au-dela par delai retest BAS vs HAUT,encore_au_dela_60,1643,966,1333,850,1085,709,0.5533,0.5621,-0.0089,-0.0502,0.0334,0.655,1.0
+R10,B,"toutes cassures: reintegration, retestees vs non retestees",reintegre,3350,607,2170,593,1543,524,0.7278,0.084,0.6437,0.6174,0.6698,0.0,0.0
+R11,B,"encore au-dela, Londres vs New York (retests)",encore_au_dela_60,1239,1821,1046,1338,882,1021,0.5593,0.5393,0.0201,-0.0205,0.0584,0.322,1.0
+R12,B,"encore au-dela, profondeur Q1 vs Q4 (sensibilite)",encore_au_dela_60,781,782,674,630,606,518,0.2407,0.8517,-0.6109,-0.6507,-0.5678,0.0,0.0
