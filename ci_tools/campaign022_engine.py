@@ -43,7 +43,7 @@ def charger():
             try:
                 if api is None:
                     from kaggle.api.kaggle_api_extended import KaggleApi
-                    api = KaggleApi(); api.authenticate(); username = api.config_values.get('username')
+                    api = KaggleApi(); api.authenticate(); username = 'shalom5123'  # proprietaire reel des datasets (VERIFY.json), config_values renvoyait un nom court -> 403
                 localdir = '/tmp/kbatch'; shutil.rmtree(localdir, ignore_errors=True)
                 for _try in range(2):
                     try:
