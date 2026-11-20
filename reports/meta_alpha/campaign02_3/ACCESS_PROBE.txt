@@ -1,7 +1,7 @@
 KAGGLE_API_LIST: ECHEC ApiException (403)
 Reason: Forbidden
 HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json', 'Date': 'Fri, 20 Nov 
-KAGGLE_HTTPS_LIST (bearer): HTTP 403
-KAGGLE_HTTPS_LIST (basic): HTTP 403
+KAGGLE_HTTPS_LIST (bearer): HTTP 403 corps={"code":403,"message":"Permission \u0027datasets.get\u0027 was denied"}
+KAGGLE_HTTPS_LIST (basic): HTTP 403 corps={"code":403,"message":"Permission \u0027datasets.get\u0027 was denied"}
 KAGGLE_HTTPS_LIST: ECHEC
 DRIVE_1_FICHIER: rc=1 fichier absent ECHEC
