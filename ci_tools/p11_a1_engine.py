@@ -8,6 +8,12 @@ import json, pathlib, subprocess, os, time, datetime as dt, traceback, sys, shut
 import duckdb
 import numpy as np
 
+def dl_drive(fid, local, exp_size):
+    for _t in range(2):
+        if subprocess.run(['gdown', '-q', '--output', local, fid]).returncode == 0 and pathlib.Path(local).exists() and pathlib.Path(local).stat().st_size == exp_size: return True
+        time.sleep(20 * (_t + 1))
+    return False
+
 ROOT = pathlib.Path('reports/meta_alpha/p11_a1'); ROOT.mkdir(parents=True, exist_ok=True)
 STATE_P = ROOT / 'STATE.json'; OUT = ROOT / 'P11_A1_EVENT_MINUTES.csv'
 def _hook(a, b, c):
@@ -93,7 +99,8 @@ def main():
             cand = f"{localdir}/{p['name']}" if localdir else None
             local = cand if (cand and pathlib.Path(cand).exists()) else f"/tmp/{p['name']}"
             if not pathlib.Path(local).exists():
-                state.setdefault('skipped', []).append(p['name']); continue
+                if not dl_drive(p.get('drive_id', ''), local, p.get('file_bytes', -1)):
+                    state.setdefault('skipped', []).append(p['name']); continue
             idx = [i for i, (lo, hi, pp) in enumerate(spans) if pp['name'] == p['name']][0]
             fichiers = [local]
             if idx + 1 < len(spans):
