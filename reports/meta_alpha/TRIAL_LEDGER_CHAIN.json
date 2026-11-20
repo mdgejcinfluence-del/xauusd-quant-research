@@ -1796,6 +1796,16 @@
     "resultat": "METHODE GELEE AVANT EXTRACTION: extraction CI depuis le corpus tick IS (meme chargement que campagnes 1/1.1, bornes identiques); niveaux et declenchements repris a l identique du moteur campagne 1 (debuts de depassement >=08:00 UTC, premiere cloture au-dela; cassure = cloture initiale >5bp); instantanes 0/1/3/5 min; horizon d issue borne a T0+60min; excursions apres instantane mesurees depuis le cours de l instantane, favourable = sens du franchissement; position a +h = cloture a T_snapshot+h rapportee au niveau en bp signee dans le sens du franchissement (negative = reintegre); retest = definition mecanique campagne 1 (touche a 0,5bp en restant du cote casse, sous 60min); invalidee = cloture revenue du bon cote apres retest sous 60min; censuree = fenetre tronquee par fin de journee ou horizon; AUCUN test formel nouveau: statistiques descriptives par instantane et par tercile de profondeur atteinte jusqu a l instantane (bornes par ere, retrospectives, consignees), intervalles descriptifs par grappes si publies; livrables RECONSTRUCTION/OVERSHOOT_TIMELINE/BREAKOUT_TIMELINE/PVALUE_RECONCILIATION/LOOKAHEAD_AUDIT/DATA_QUALITY"
    },
    "entry_hash": "eb040a58df3d40d88f30c0a3b80f0a56d2826163bcc6630a7636e8d2a64da7a7"
+  },
+  {
+   "seq": 171,
+   "prev_hash": "eb040a58df3d40d88f30c0a3b80f0a56d2826163bcc6630a7636e8d2a64da7a7",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_2_EVENT_TIME_RECONSTRUCTION",
+    "resultat": "CAMPAGNE 2.2 livree (descriptif, 0 essai, budgets inchanges, holdout intact, anciennes fiches immuables, aucune promotion J2): audit lookahead complet des variables historiques (profondeur_bp et retracement = classeurs contamines par le futur; cassure +5bp et spread = causaux a T0; seuils EV7 non causaux); reconstruction en lignes du temps T0/T+1/T+3/T+5 construite et gardee (variables closes a l instantane, issues strictement apres, borne T0+60); BLOCAGE D ACCES DOCUMENTE: extraction decennale tentee 3 fois (run partiel 777 journees rejete par controle de couverture, run timeout 350min, matrice 8 lots) - Kaggle API 403 malgre slug shalom5123 corrige et repli HTTPS direct, Drive en refus temporaire de quota apres telechargements repetes; journaux commites, aucune donnee fabriquee; statistiques d instantanes livrees sur perimetre restreint valide (12144 episodes, 2010-01-04 a 2014-03-11): a T0 le tri causal par profondeur atteinte vaut 90,6 vs 77,0% (contre 98,2/65,8 retrospectif), durci a T+5 (94,2 vs 63,9) - part reelle modeste des T0, reste = chemin; au retest, profondeur causale mediane 11,9bp, delai median 1min, 53,8% encore au-dela a retest+60; reconciliation des 24 p-valeurs publiee (avant: tous non concluants par artefact; apres: 14 fiches ANO-C2), protocole seq164 inchange; moteur par lots et garde de couverture commites, achevement decennal en attente du retablissement Kaggle/Drive. STATUT: Campagne 2.2 livree avec reserve de couverture ecrite, validation proprietaire en attente"
+   },
+   "entry_hash": "69b790f536ab6e59160c0b11ca4c77a1cf495fd42ac07806b5b060c220af775c"
   }
  ]
 }
