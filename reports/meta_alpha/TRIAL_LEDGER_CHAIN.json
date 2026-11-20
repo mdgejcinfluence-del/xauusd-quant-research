@@ -1736,6 +1736,16 @@
     "resultat": "sha256(CAMPAIGN_02_DETECTION_PLAN.md)=c1274a7b1ac1e18b71e721f98c15ffeb57359f677a571fc1d8476ff8494ae6cc (calcule par appel separe apres ecriture, patron seq154/157)"
    },
    "entry_hash": "f9e262e2f535f48d677ee41772ec3cbb455c503bca792ba54bd5276aeaba5f4b"
+  },
+  {
+   "seq": 165,
+   "prev_hash": "f9e262e2f535f48d677ee41772ec3cbb455c503bca792ba54bd5276aeaba5f4b",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_CONDITIONAL_DETECTION",
+    "resultat": "CAMPAGNE 2 livree (detection descriptive, plan gele 24 tests seq162-164, bootstrap par grappes 2000, BY, regle J1 materielle): 14 ecarts franchissent la regle -> fiches J1 candidates nouvelles ANO-C2-001..014; plus forts: issue de retest par profondeur de cassure (26,9% vs 80,7% encore au-dela, T10), reintegration par profondeur (98,2% vs 65,8%, T01/T03); impulsions par ere/regime/session (T11/T12/T13); regime et ere ordonnent consolidations, compressions, ouvertures (T14/T17/T19/T20/T21); extremes de session (T22). 8 non-concluants/queues conserves (dont T05 et T15 significatifs mais sous seuil materiel), T06 complement mecanique, T24 contexte biaise jamais anomalie. Bug de p-valeur bootstrap detecte et corrige avant livraison (consigne dans l audit); coherence d ere verifiee pour toutes les candidates. ANO-C1-001..005 reproduites sans modification; aucune promotion J2/J3; 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, FRED suspendue. STATUT: Campagne 2 livree, validation proprietaire en attente; promotion J2 = decision separee"
+   },
+   "entry_hash": "0997a1c108fbd5837c3761c0e81187c8d20236b5433849ecf53337453f83cd39"
   }
  ]
 }
