@@ -24,11 +24,14 @@ REG = {r.date: ('BAS' if r.pred_har <= q1 else ('HAUT' if r.pred_har > q2 else '
 def era(d): return '2010_2013' if d.year <= 2013 else ('2014_2016' if d.year <= 2016 else '2017_2020')
 def sess(h): return 'ASIE' if h < 8 else ('LONDRES' if h < 13 else ('NEWYORK' if h < 21 else 'NUIT'))
 
+BATCH = os.environ.get('C22_BATCH', 'xauusd-is-b01')
 def charger():
     inv = json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']
     parts = [p for p in inv if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z', '+00:00')).replace(tzinfo=None) <= IS_END]
     kstate = json.loads(pathlib.Path('reports/meta_alpha/kaggle_migration/STATE.json').read_text())
     batchof = {name: info['batch'] for name, info in kstate['uploaded'].items()}
+    parts = [p for p in parts if batchof.get(p['name'], 'DRIVE') == BATCH]
+    print('LOT', BATCH, len(parts), 'partitions', flush=True)
     con = duckdb.connect(); con.execute("SET memory_limit='5GB'"); con.execute("SET threads=2")
     from collections import OrderedDict
     groups = OrderedDict()
@@ -70,9 +73,9 @@ SNAPS = [0, 1, 3, 5]
 def main():
     bars = charger(); bars['date'] = bars.ts.dt.date; bars['heure'] = bars.ts.dt.hour
     jours = {d: g.reset_index(drop=True) for d, g in bars.groupby('date')}; dates = sorted(jours)
-    if len(dates) < 2400:
-        (ROOT / 'ERROR.txt').write_text(f'COUVERTURE INSUFFISANTE: {len(dates)} journees chargees (<2400) - extraction partielle refusee')
-        raise RuntimeError(f'couverture insuffisante: {len(dates)} journees')
+    if len(dates) < 200:
+        (ROOT / f'ERROR_{BATCH}.txt').write_text(f'COUVERTURE INSUFFISANTE LOT {BATCH}: {len(dates)} journees (<200)')
+        raise RuntimeError(f'couverture insuffisante lot {BATCH}: {len(dates)} journees')
     over, brk = [], []
     for di, d in enumerate(dates):
         g = jours[d]

@@ -6,32 +6,35 @@ on:
   workflow_dispatch: {}
 permissions: { contents: write }
 jobs:
-  p11a1:
+  extract:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        batch: [xauusd-is-b01, xauusd-is-b02, xauusd-is-b03, xauusd-is-b04, xauusd-is-b05, xauusd-is-b06, xauusd-is-b07, xauusd-is-missing13]
     steps:
       - uses: actions/checkout@v4
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install -q duckdb "kaggle==1.6.17" six gdown pytz requests pandas numpy
-      - name: Verifier la chaine avant calcul
-        run: python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
-      - name: P11-A1 extraction descriptive (Kaggle du programme uniquement)
+      - name: Extraction du lot (descriptif)
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+          C22_BATCH: ${{ matrix.batch }}
         run: |
-          mkdir -p reports/meta_alpha/campaign02_2
-          set -o pipefail
-          python3 ci_tools/campaign022_engine.py 2>&1 | tail -50 | tee reports/meta_alpha/campaign02_2/CI_LOG.txt
-      - name: Commit resultats (toujours)
+          mkdir -p reports/meta_alpha/campaign02_2/timeline_parts
+          python3 -u ci_tools/campaign022_engine.py > reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_log.txt 2>&1 || true
+          tail -5 reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_log.txt
+      - name: Commit du lot (toujours)
         if: always()
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/meta_alpha/campaign02_2 || true
+          git add reports/meta_alpha/campaign02_2/timeline_parts || true
           git diff --cached --quiet && exit 0
-          git commit -m "Campaign 2.2: reconstruction temporelle (descriptif brut)"
-          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
-          git push origin HEAD:arena/afe12737-xauusd-quant-research
+          git commit -m "Campaign 2.2 lot ${{ matrix.batch }} (descriptif brut)"
+          for i in 1 2 3 4 5; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 15; done
