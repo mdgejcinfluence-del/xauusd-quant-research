@@ -60,6 +60,7 @@ def main():
         hi = dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z', '+00:00')).replace(tzinfo=None)
         spans.append((lo, hi, p))
     state = json.loads(STATE_P.read_text()) if STATE_P.exists() else {'done': []}
+    state['skipped'] = []
     con = duckdb.connect(); con.execute("SET memory_limit='4GB'"); con.execute("SET threads=2")
     hdr = "type,t_avail,minute,n_ticks,couverture,spread_med_bp,spread_p90_bp,spread_p95_bp,spread_p99_bp,spread_max_bp,bid_premier,ask_premier,mid_debut,mid_fin,intertick_med_s,intertick_max_s,trou_max_s"
     if not OUT.exists(): OUT.write_text(hdr + "\n")
@@ -87,6 +88,7 @@ def main():
                 print('lot Kaggle pret:', batch, flush=True)
             except Exception as e:
                 print('lot Kaggle indisponible:', batch, str(e)[:120], flush=True); localdir = None
+                (ROOT/'DEBUG.txt').write_text(f'batch={batch} erreur={type(e).__name__}: {e}\nbatches={list(groups)[:5]} token_present={bool(os.environ.get("KAGGLE_API_TOKEN"))}')
         for p in ps:
             cand = f"{localdir}/{p['name']}" if localdir else None
             local = cand if (cand and pathlib.Path(cand).exists()) else f"/tmp/{p['name']}"
