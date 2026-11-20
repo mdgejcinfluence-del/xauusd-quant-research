@@ -1,0 +1,8 @@
+groupe,n_episodes,journees,grappes,prof_atteinte_med_bp,taux_reintegration_ulterior,ic95_bas,ic95_haut
+T0 profondeur atteinte tercile BAS,4048,676,1104,0.78,0.9061,0.897,0.9157
+T0 profondeur atteinte tercile MOYEN,4048,714,1220,2.28,0.8818,0.8718,0.8917
+T0 profondeur atteinte tercile HAUT,4048,751,1450,5.65,0.7704,0.7565,0.7831
+CONTRASTE BAS - HAUT,8096,777,2554,,0.1357,0.1197,0.1521
+T0 profondeur INITIALE (cloture) tercile BAS,4048,689,1144,0.36,0.9145,0.9057,0.9231
+T0 profondeur INITIALE (cloture) tercile MOYEN,4048,712,1230,1.43,0.8801,0.8699,0.89
+T0 profondeur INITIALE (cloture) tercile HAUT,4048,755,1454,4.27,0.7638,0.7491,0.7771

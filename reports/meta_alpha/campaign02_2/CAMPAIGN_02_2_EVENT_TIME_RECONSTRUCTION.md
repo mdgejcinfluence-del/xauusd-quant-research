@@ -72,7 +72,7 @@ ultérieurs sont des bornes de construction, pas des manquants.
 
 Côté cassures (extraction partielle : 1 328 retests confirmés) : la profondeur
 atteinte **au moment du retest** vaut en médiane 11,9 bp — c'est la variable
-causale qui remplace, pour toute suite éventuelle, le maximum sur 60 minutes ;
+fondée sur des variables disponibles à l'instant du retest, qui remplace, pour toute suite éventuelle, le maximum sur 60 minutes ;
 le délai de retest médian est de 1 minute ; 53,8 % des retestées sont encore
 au-delà du niveau 60 minutes après le retest, tandis que 77,6 % connaissent au
 moins une clôture de retour du bon côté avant T0+60 (invalidation temporaire ou
