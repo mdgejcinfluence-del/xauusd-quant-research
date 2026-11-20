@@ -1716,6 +1716,26 @@
     "resultat": "PLAN DE DETECTION GELE AVANT CALCUL: famille de comparaisons fermee = 24 tests enumeres dans CAMPAIGN_02_DETECTION_PLAN.md (hash chaine seq163 apres verification fichier); unite independance = grappe jour x niveau (a defaut date); bootstrap par grappes 2000 repetitions, graine 20261113; ecarts: differences de proportions (pp) et ratios de medianes; IC95 percentile bootstrap; p bootstrap bilatéral; correction BY (Benjamini-Yekutieli, dependance arbitraire) sur les 24; regle J1 candidate NOUVELLE: p_BY<0,05 ET |ecart| >= seuil materiel predefini par test (5pp proportions, 15% ratio medianes) ET n>=200 evenements ET >=100 grappes dans chaque bras ET signe coherent dans au moins 2 des 3 eres quand la dimension n est pas l ere elle-meme; tout le reste = queue de distribution ou non concluant, conserve au registre des negatifs; seuils/profondeurs en terciles causaux par ere (jamais quantiles poolés futurs pour classifier); ANO-C1-001..005 reproduites a l identique, jamais retestees comme hypotheses neuves"
    },
    "entry_hash": "226a760815ebfa8babe243aa1e56c3cdaca90f41d614e403495b39bf8786b624"
+  },
+  {
+   "seq": 163,
+   "prev_hash": "226a760815ebfa8babe243aa1e56c3cdaca90f41d614e403495b39bf8786b624",
+   "entry": {
+    "type": "PREREG_HASH",
+    "mission": "CAMPAIGN_02_DETECTION_PLAN_GELE",
+    "resultat": "Hash du plan de detection gele (24 tests, regle J1, BY, bootstrap par grappes): voir valeur sha256 chainee dans l entree suivante calculee sur fichier ecrit"
+   },
+   "entry_hash": "0a47974c9b50e3715ce880bc15e06c952f79575bd432b152ad048dec24847a14"
+  },
+  {
+   "seq": 164,
+   "prev_hash": "0a47974c9b50e3715ce880bc15e06c952f79575bd432b152ad048dec24847a14",
+   "entry": {
+    "type": "PREREG_HASH_VALEUR",
+    "mission": "CAMPAIGN_02_DETECTION_PLAN_GELE",
+    "resultat": "sha256(CAMPAIGN_02_DETECTION_PLAN.md)=c1274a7b1ac1e18b71e721f98c15ffeb57359f677a571fc1d8476ff8494ae6cc (calcule par appel separe apres ecriture, patron seq154/157)"
+   },
+   "entry_hash": "f9e262e2f535f48d677ee41772ec3cbb455c503bca792ba54bd5276aeaba5f4b"
   }
  ]
 }
