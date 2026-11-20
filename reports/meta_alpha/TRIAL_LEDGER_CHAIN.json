@@ -1866,6 +1866,16 @@
     "resultat": "Reprise Campagne 2.3 executee selon decision proprietaire: MATRICE CORRIGEE (dates exactes) - reconstruction = fragments 2010 a mars 2014, PAS 2010-2014 continu: 2010 4075 ep/254j, 2011 4004/256j, 2012 2831/174j (SEP-NOV ABSENTS), 2013 603/45j (janv, nov, dec seuls), 2014 631/48j du 2014-01-02 au 2014-03-11; 2014-2017 ne doit plus etre qualifiee de partiellement couverte. SONDE UNIQUE avec identifiants regenerees (slug corrige marioadh): Kaggle 403 persiste - diagnostic HTTP detaille expurge: Permission datasets.get was denied (librairie + HTTPS Bearer + basic); authentification sans erreur, rejet en AUTORISATION; cause la plus vraisemblable: datasets prives crees/verifies sous shalom5123 (VERIFY.json de la migration), jeton marioadh sans acces; Drive repli toujours en echec (1 controle). Aucune tentative supplementaire, aucune rotation repetee, aucune extraction lancee. Action proprietaire unique recommandee: jeton sur le compte proprietaire des datasets ou partage explicite des 8 datasets avec marioadh, puis confirmation pour sonde unique nouvelle. Statistiques par epoque/effectifs/IC inchanges (TEMPORAL_REPLICATION), journal de qualite et reproductibilite confirmes, procedure gelee intacte prete a relancer. STATUT: BLOCAGE D ACCES DOCUMENTE - reprise historique en attente (validation proprietaire)"
    },
    "entry_hash": "07a4d21738fe9747aa1c6d4399f46aa0b9d52c171c7df3e9a4720e7976cd5fea"
+  },
+  {
+   "seq": 178,
+   "prev_hash": "07a4d21738fe9747aa1c6d4399f46aa0b9d52c171c7df3e9a4720e7976cd5fea",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_02_3_REPRISE_ACCES_SHALOM5123",
+    "resultat": "Autorisation de reprise proprietaire: le compte proprietaire des 8 datasets prives est shalom5123; l erreur precedente venait des identifiants marioadh (a ne plus utiliser pour ces datasets); identifiants corrects retablis cote proprietaire dans les secrets CI. (1) Une seule sonde minimale avec identifiants shalom5123: authentification du compte, autorisation datasets.get, acces au dataset prive de controle, metadonnees necessaires; aucun telechargement de corpus pendant la sonde; valeurs jamais affichees. (2) Si sonde positive: reprise immediate du plan gele Campagne 2.3 - partitions historiques manquantes, priorite periodes non couvertes notamment 2017-2020, parametres de reconstruction seq171-172 conserves strictement, aucun seuil ni definition modifies, integrite de chaque partition controlee, periodes effectivement reconstituees documentees, jamais de holdout. (3) Si echec: ne pas multiplier les tentatives, diagnostic HTTP expurge et suspension. (4) Aucun signal/strategie/backtest/promotion J2/budget experimental; FRED suspendue independamment de Kaggle. (5) Livraison: checkpoint SHA exact, matrice actualisee, journal d extraction, controle d integrite, budgets"
+   },
+   "entry_hash": "be3e3d2d4819e9b4ec0ef40e6766cf08b242c2c89d6753c66c48b1a840144045"
   }
  ]
 }

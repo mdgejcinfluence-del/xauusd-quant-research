@@ -8,13 +8,13 @@ user = os.environ.get('KAGGLE_USERNAME', '')
 try:
     from kaggle.api.kaggle_api_extended import KaggleApi
     api = KaggleApi(); api.authenticate()
-    files = api.dataset_list_files('marioadh/xauusd-is-b01').files
+    files = api.dataset_list_files('shalom5123/xauusd-is-b01').files
     log.append(f'KAGGLE_API_LIST (auth compte + acces dataset + lecture fichiers): OK {len(files)} fichiers; premier={files[0].name if files else None}')
 except Exception as e:
     log.append(f'KAGGLE_API_LIST: ECHEC {type(e).__name__} {str(e)[:120]}')
 try:
     import requests
-    url = 'https://www.kaggle.com/api/v1/datasets/list/marioadh/xauusd-is-b01'
+    url = 'https://www.kaggle.com/api/v1/datasets/list/shalom5123/xauusd-is-b01'
     ok = False
     for hdrs, auth in [({'Authorization': f'Bearer {tok}'}, None), ({}, (user, tok))]:
         r = requests.get(url, headers=hdrs, auth=auth, timeout=60)
