@@ -38,4 +38,4 @@ jobs:
           git add reports/meta_alpha/campaign02_2/timeline_parts || true
           git diff --cached --quiet && exit 0
           git commit -m "Campaign 2.2 lot ${{ matrix.batch }} (descriptif brut)"
-          for i in 1 2 3 4 5; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 15; done
+          for i in 1 2 3 4 5 6 7 8 9 10; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep $((RANDOM % 20 + 10)); done

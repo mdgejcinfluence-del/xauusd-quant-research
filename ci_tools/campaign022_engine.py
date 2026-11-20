@@ -25,12 +25,14 @@ def era(d): return '2010_2013' if d.year <= 2013 else ('2014_2016' if d.year <= 
 def sess(h): return 'ASIE' if h < 8 else ('LONDRES' if h < 13 else ('NEWYORK' if h < 21 else 'NUIT'))
 
 BATCH = os.environ.get('C22_BATCH', 'xauusd-is-b01')
+CHARGER_STATS = {'chargees': 0, 'attendues': 0}
 def charger():
     inv = json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']
     parts = [p for p in inv if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z', '+00:00')).replace(tzinfo=None) <= IS_END]
     kstate = json.loads(pathlib.Path('reports/meta_alpha/kaggle_migration/STATE.json').read_text())
     batchof = {name: info['batch'] for name, info in kstate['uploaded'].items()}
     parts = [p for p in parts if batchof.get(p['name'], 'DRIVE') == BATCH]
+    CHARGER_STATS['attendues'] = len(parts)
     print('LOT', BATCH, len(parts), 'partitions', flush=True)
     con = duckdb.connect(); con.execute("SET memory_limit='5GB'"); con.execute("SET threads=2")
     from collections import OrderedDict
@@ -78,7 +80,7 @@ def charger():
                 q = f"""SELECT time_bucket(INTERVAL 1 MINUTE, timestamp_utc) AS ts, arg_min(mid, timestamp_utc) AS o,
                         max(mid) AS h, min(mid) AS l, arg_max(mid, timestamp_utc) AS c, median((ask-bid)/mid*10000) AS sp
                         FROM read_parquet('{local}') GROUP BY 1 ORDER BY 1"""
-                b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+                b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b); CHARGER_STATS['chargees'] += 1
             except Exception as e:
                 (ROOT / 'ERROR.txt').write_text(f"{p['name']}: {e}")
             print('C2.2 part', p['name'], flush=True)
@@ -89,9 +91,9 @@ SNAPS = [0, 1, 3, 5]
 def main():
     bars = charger(); bars['date'] = bars.ts.dt.date; bars['heure'] = bars.ts.dt.hour
     jours = {d: g.reset_index(drop=True) for d, g in bars.groupby('date')}; dates = sorted(jours)
-    if len(dates) < 200:
-        (ROOT / f'ERROR_{BATCH}.txt').write_text(f'COUVERTURE INSUFFISANTE LOT {BATCH}: {len(dates)} journees (<200)')
-        raise RuntimeError(f'couverture insuffisante lot {BATCH}: {len(dates)} journees')
+    if CHARGER_STATS['chargees'] < CHARGER_STATS['attendues'] or len(dates) < 20:
+        (ROOT / f'ERROR_{BATCH}.txt').write_text(f"INTEGRITE LOT {BATCH}: partitions chargees {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']}, journees {len(dates)}")
+        raise RuntimeError(f"integrite lot {BATCH}: {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']} partitions, {len(dates)} journees")
     over, brk = [], []
     for di, d in enumerate(dates):
         g = jours[d]
