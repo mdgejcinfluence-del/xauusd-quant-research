@@ -1456,6 +1456,26 @@
     "resultat": "COVERAGE_MATRIX.md livre (0 FCFA, 0 essai, hors budget): 8 dimensions x 5 horizons x 6 regimes croises avec seq1-134; D1 saturee/testee morte tous horizons-regimes, D2 F3/F7 certifies service, D3 maker NON FALSIFIABLE (venue taker), D5 pre/post-annonce testes morts, D6 gates MDE + flux ETF non falsifiable (donnees), D7 carry BTC/ETH certifies + prime de variance non falsifiable (options), D8 simulee plafonnee ~20%; annexe 7 pieces (registre seq, budgets figes, holdouts intacts, ancres cout, actifs certifies, incidents, eligibilite). Tri eligibilite Phase 11: exactement UNE cellule jamais testee a mecanisme articule + donnees en depot: C-2 dynamique du funding (timing vs portage certifie, non rouvert); C-1 mecanisme faible, C-3/C-6 donnees payantes, C-5 venue, C-4 temps seul. Rien n est preenregistre ni recommande; ouverture uniquement par ordre explicite proprietaire"
    },
    "entry_hash": "1b225d4dcc409c871b920c1f5631ec4e43ec3e15a958030d9fd372f7f5d91f28"
+  },
+  {
+   "seq": 137,
+   "prev_hash": "1b225d4dcc409c871b920c1f5631ec4e43ec3e15a958030d9fd372f7f5d91f28",
+   "entry": {
+    "type": "MISSION",
+    "mission": "P0_V2_COVERAGE_MATRIX",
+    "resultat": "Ordre P0-V2 proprietaire/coach 2026-11-18 (documentaire strict: 0 essai, 0 budget, 0 reouverture, Phase 11 non demarree): COVERAGE_MATRIX.md v2 - niveau de preuve par cellule (seq, hypothese litterale, resolution donnees, resultat chiffre, budget), taxonomie R/P/I/J remplacant non-falsifiable, annexe F15 replay documentaire (fenetres testees, exclusion T+1->T+5 sur mesures existantes ou non mesure, distinction F14/F15), inter-marches par resolution (seconde/minute/heure/jour, 1 jambe vs 2), audit B7 combinatoire F3xF7xmomentumxregimexcout sans aucun calcul nouveau, budgets figes en tete, section finale exacte ANGLES MORTS RESIDUELS ET HYPOTHESES ELIGIBLES A UNE FUTURE PHASE 11 sans plaidoyer"
+   },
+   "entry_hash": "63067d607084900e6e79aac7ecf3d089610814b5a51baedea531d9284165c010"
+  },
+  {
+   "seq": 138,
+   "prev_hash": "63067d607084900e6e79aac7ecf3d089610814b5a51baedea531d9284165c010",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "P0_V2_COVERAGE_MATRIX",
+    "resultat": "COVERAGE_MATRIX.md v2 livree (documentaire strict, 0 essai, 0 budget, Phase 11 non demarree): chaque cellule couverte porte seq+hypothese litterale+resolution+resultat chiffre+budget; taxonomie R/P/I/J substituee partout a non-falsifiable (murs arithmetiques = P structurel); annexe F15 replay: 6/6 variantes refutees (entree >=T+5min v2 seq112-113, verdict H=60 gele), exclusion T+1->T+5 justifiee par M2/E4/prerequis available_at, profil de spread T-5->T+30 et capturabilite intra-fenetre ecrits NON MESURES, cellule classee J-interdite (pas R); distinction F14 niveaux/jour (P) vs F15 evenement/minute (R) noire sur blanc; inter-marches 4 resolutions (seconde I, minute J-bornee->P, heure J par defaut de recouvrement GC=F 2024+ vs S3 2020, jour R par crible) avec jambes 1 vs 2 explicites; audit B7: 12 combinaisons F3xF7xmomentumxregimexcout citees seq par seq, produit complet absent (F8 sans objet seq78) classe J non eligible; section finale exacte ANGLES MORTS RESIDUELS ET HYPOTHESES ELIGIBLES A UNE FUTURE PHASE 11: J=6 familles dont C-2 seule eligible, I avec prix d acces (non chiffres au depot dits tels), P avec N requis (F13 200, F9 ~35 ans, F14 ~6,7x, F16 ~19000 sem structurel, perps recents 4-5 ans de temps seul); aucun plaidoyer, exhaustivite reservee au proprietaire"
+   },
+   "entry_hash": "793ce75c16f85a92dd1535693dc7ce70f68ddfb2570bc2b7b5540875548a5954"
   }
  ]
 }
