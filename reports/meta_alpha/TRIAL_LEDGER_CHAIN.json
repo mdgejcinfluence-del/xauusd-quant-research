@@ -1686,6 +1686,16 @@
     "resultat": "Decision proprietaire Campagne 1.1 (C1 seq158 acceptee, ANO-C1-001..005 restent J1 candidates non promues): campagne descriptive complementaire - EV4 et EV7 selon definitions LITTERALES du dictionnaire gele seq157 (ne pas inventer), ouvertures Asie/Londres/New York (baseline dediee: spread avant/apres, vol, amplitude premieres minutes, extremes, vitesse de formation, variabilite entre journees, eres; heures UTC et changements saisonniers precises), comportement F7 sur evenements SANS reentrainer le modele et sans substitut presente comme equivalent, controles qualite des mesures C1 (denominateurs 36011/5057, censure, delai median, 55%, retracement 90,5%, range 14,3bp, distribution des heures d extremes); preparation SANS execution d une methodologie de detection conditionnelle (references adaptees evenement x session x regime x epoque, tailles d echantillon, intervalles, dependances, multiplicite); ANO-C1 conservees sans modification retroactive; 0 essai/backtest/holdout, 36 cellules gelees, FRED suspendue"
    },
    "entry_hash": "3334207eb71c62c8dee42593dd001a410c755ed68293afb6ccbad51cf6286103"
+  },
+  {
+   "seq": 160,
+   "prev_hash": "3334207eb71c62c8dee42593dd001a410c755ed68293afb6ccbad51cf6286103",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_01_1_COMPLETION",
+    "resultat": "CAMPAGNE 1.1 livree (descriptif IS, 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, ANO-C1 inchangees): EV4 selon dictionnaire gele: 14782 compressions, duree mediane 21min, expansion suivante mediane 15,75bp, >=1,5x dans 44,3% seulement, en baisse d ere; EV7: 129 journees extremes concentrees 96/27/6 par ere -> lecon: seuils d extreme a dater/causaux, jamais poolés sur 10 ans; ouvertures Londres 08h/New York 13h UTC (2571/2570): spread inchange a l ouverture (2,26->2,25bp), amplitude premiere heure NY ~2x Londres (37,3 vs 20,8bp), extremes 5min 12,6% vs 3,4%, vitesse 50% du range 11/16min; ouverture Asie NON MESUREE (borne de journee) ecrite. VERIFICATION C1 depuis le brut: 85% = 30590/36011 debuts (86,5% en grappes 4373/5057); censure 5421 (15,1%) avec biais de profondeur (censures ~25,6 vs reintegres ~9,7bp); delai median 3min sur les seuls reintegres (Q1/Q3/P90 1/8/22); 55% = parmi les retests seuls (43% des cassures); retracement 90,5% et range 14,3bp redefinis algorithmiquement; CORRECTION C1: extremes journaliers formes en mediane a 12h UTC (pas 11h, melange de contextes), distribution bimodale publiee. F7: aucune mesure par evenement produite (serie non versionnee), aucun substitut, etapes requises listees sans reentrainement. Methodologie de detection conditionnelle proposee NON executee (references par contexte, bootstrap par grappes, BY de detection, decouverte/confirmation disjointes). Incident pas CI en echec apres ecriture complete des sorties, validees par comptage. STATUT: Campagne 1.1 livree, validation proprietaire en attente; detection generale non autorisee"
+   },
+   "entry_hash": "39415dff9ba350b95b415c39a215c6e613207b26dabc4b898902cc958696bc84"
   }
  ]
 }
