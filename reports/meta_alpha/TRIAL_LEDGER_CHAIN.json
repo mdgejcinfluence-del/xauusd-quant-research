@@ -1636,6 +1636,16 @@
     "resultat": "Correction seq153: le sha256 du dictionnaire gele est 974881a7b3d9827c76ef21cb9136f0e2b001eda2b6f48ac262758a28622c4156 (la valeur etait vide dans seq153 par course d ecriture du fichier, consignee ici avant tout calcul du moteur). Note suspension 12.3: le run cancele 44702531257 a pousse son commit final (19a3e90, P12_3_CONFIGURATIONS.csv) avant l effet de l annulation; artefact conserve tel quel sur ordre, NON consulte et non analyse."
    },
    "entry_hash": "dcaa7eeb9fd062f3c4fe1a5304111ba2a568a570f8e2308349451ea4876783a5"
+  },
+  {
+   "seq": 155,
+   "prev_hash": "dcaa7eeb9fd062f3c4fe1a5304111ba2a568a570f8e2308349451ea4876783a5",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_00_BASELINES",
+    "resultat": "CAMPAGNE 0 livree (descriptif IS, 0 essai, budgets inchanges, holdout intact): 282/282 partitions, 3097 journees, 3 537 724 barres M1, 288 cellules V1-V12 x M1/M5/M15/H1 x global/session/regime F3 causal/ere. Comportement normal chiffre: sigma rendement M1 2,57bp (M5 5,70, M15 9,78, H1 18,1), RV jour mediane ~72-75bp (P99 210-238), amplitude mediane M1 2,0bp, excursions quasi symetriques, PERSISTANCE lag-1 -0,012..+0,009 (nulle), retournements 49,9-52,5%, retracement median post-impulsion 94% M1 -> 54% H1 sous 12 barres, consolidations mediane 2 barres, spread median 2,32bp stable. Decompositions: NY session la plus ample (sigma M1 3,09 vs Asie 2,02), regime F3 ordonne l echelle x1,6 sans direction, ERES: sigma M1 3,00 -> 2,54 -> 1,85bp (calme seculaire -60%, baselines a dater imperativement). Registre: 6 observations candidates consignees sans mecanisme ni rentabilite (dont baseline negative persistance); familles d episodes (niveaux/cassures/opens) non couvertes = Campagne 1 proposee; limites ecrites (V6/V7 scalaires n=1 etiquetes mecaniquement, V8 non borne, barres Mid). Reponse au proprietaire: OUI borne - distributions normales connues et datees aux horizons M1-H1, anomalies structurelles pas encore cherchables methodiquement. Incidents consignes (STATE ecrase puis garde-fou, run 12.3 cancele ayant pousse ses comptages non consultes). FRED suspendue, rotation pendante"
+   },
+   "entry_hash": "0caea6dd640bd610712adcd5588a1daff7352e356637428cb187fdec1c100b8d"
   }
  ]
 }
