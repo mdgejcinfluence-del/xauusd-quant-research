@@ -1676,6 +1676,16 @@
     "resultat": "CAMPAGNE 1 livree (descriptif IS, 0 essai, budgets inchanges, holdout intact, 36 cellules gelees): dictionnaire gele seq157; 224748 evenements bruts, familles EV1/EV2/EV3/EV5/EV6 renseignees (EV4/EV7 NON PRODUITES ecrites, F7 NON MESURE ecrit). Baselines structurelles: depassements de niveaux Asie/veille reintegres a ~85% sous 60min, delai median 3min (stable 3 eres), profondeur mediane 10,5bp en baisse d ere (12,5->8,2); cassures +5bp retestees a 79%, encore au-dela a +60min dans 55% des retests (frequence descriptive conditionnee, pas une probabilite exploitable); impulsions M5: retour contraire median 90,5%, >=100% dans 46,6% (49,3% ere1 -> 40,2% ere3); consolidations mediane 9 barres, range suivant 14,3bp < inconditionnel; extremes journaliers formes en mediane a 11h UTC avant le pic d activite. Registre ANO-C1-001..005 en J1 candidates, aucun mecanisme invente, aucune direction/rentabilite/strategie. Corrections C0 clarifiees (RV journee = chemin pas variation nette; -38% ecart-type vs -62% variance; portee limitee du lag-1, neutralite != aleatoire; definition algorithmique des 94%; consolidation C0 2 barres vs EV6 9 barres; spread 2,32 stable par session/regime). Incident synthese CI consigne (brut reutilise localement, definitions intactes). STATUT: Campagne 1 livree, validation proprietaire en attente; FRED suspendue"
    },
    "entry_hash": "07ecddbb4d92252cfc12df1d680e448ce77d638e8d0d4221f09e1642f42feeb9"
+  },
+  {
+   "seq": 159,
+   "prev_hash": "07ecddbb4d92252cfc12df1d680e448ce77d638e8d0d4221f09e1642f42feeb9",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_01_1_COMPLETION",
+    "resultat": "Decision proprietaire Campagne 1.1 (C1 seq158 acceptee, ANO-C1-001..005 restent J1 candidates non promues): campagne descriptive complementaire - EV4 et EV7 selon definitions LITTERALES du dictionnaire gele seq157 (ne pas inventer), ouvertures Asie/Londres/New York (baseline dediee: spread avant/apres, vol, amplitude premieres minutes, extremes, vitesse de formation, variabilite entre journees, eres; heures UTC et changements saisonniers precises), comportement F7 sur evenements SANS reentrainer le modele et sans substitut presente comme equivalent, controles qualite des mesures C1 (denominateurs 36011/5057, censure, delai median, 55%, retracement 90,5%, range 14,3bp, distribution des heures d extremes); preparation SANS execution d une methodologie de detection conditionnelle (references adaptees evenement x session x regime x epoque, tailles d echantillon, intervalles, dependances, multiplicite); ANO-C1 conservees sans modification retroactive; 0 essai/backtest/holdout, 36 cellules gelees, FRED suspendue"
+   },
+   "entry_hash": "3334207eb71c62c8dee42593dd001a410c755ed68293afb6ccbad51cf6286103"
   }
  ]
 }
