@@ -1,412 +1,61 @@
 LOT xauusd-is-b02 40 partitions
-Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b02
-Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b02
-Kaggle KO repli Drive (403)
-Reason: Forbidden
-HTTP response headers: HTTPHeaderDict({'Content-Type': '
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1B_DxVLaPPO39IiveUzS_PqqcZD7p_pKx
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1B_DxVLaPPO39IiveUzS_PqqcZD7p_pKx
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1XOt2PI2H14_LrO2-dRRDIoAw0VDkmjIU
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1XOt2PI2H14_LrO2-dRRDIoAw0VDkmjIU
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1hKpPTJQmdSGj_YRuBFL6srNHoBPetwOY
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1hKpPTJQmdSGj_YRuBFL6srNHoBPetwOY
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Gqjmldvh8z2iujBDaIfjK5ys9kPc9Klf
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Gqjmldvh8z2iujBDaIfjK5ys9kPc9Klf
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_Mdnx0BuvNIRap9SJ1oprUEpouML0HS1
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_Mdnx0BuvNIRap9SJ1oprUEpouML0HS1
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_TgYsK2RKrrt3WZ4CF40tR1Oxc8uUZ5d
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_TgYsK2RKrrt3WZ4CF40tR1Oxc8uUZ5d
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Y4Pdim3hls6q5AWwMAobaarlYHie8gtG
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Y4Pdim3hls6q5AWwMAobaarlYHie8gtG
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Gj77hmzelx06nZLtgLt9lqinNK2X3B_c
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Gj77hmzelx06nZLtgLt9lqinNK2X3B_c
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Br_gSrQ-Ebg3Xgiugdy5szrq4YASup4B
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Br_gSrQ-Ebg3Xgiugdy5szrq4YASup4B
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Ot4wgC1ms2oXw1cYTPLeP3frDuCcvDzy
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Ot4wgC1ms2oXw1cYTPLeP3frDuCcvDzy
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1l-hvwcpAnc25BA7g8T9KqQFwdmR62RGb
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1l-hvwcpAnc25BA7g8T9KqQFwdmR62RGb
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1EcEVNzHRTi63Md20EUmcV6-AVxZMwuhG
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1EcEVNzHRTi63Md20EUmcV6-AVxZMwuhG
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CAHJ1ZXIFJ4CrlFyzqYppybapfXOJ0mo
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CAHJ1ZXIFJ4CrlFyzqYppybapfXOJ0mo
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1wfGh0098-OdjZrCY9ykawJaV307e6GM7
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1wfGh0098-OdjZrCY9ykawJaV307e6GM7
-
-but Gdown can't. Please check connections and permissions.
-Failed to retrieve file url:
-
-	Too many users have viewed or downloaded this file recently. Please
-	try accessing the file again later. If the file you are trying to
-	access is particularly large or is shared with many people, it may
-	take up to 24 hours to be able to view or download the file. If you
-	still can't access a file after 24 hours, contact your domain
-	administrator.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1r2UvWEZlFWX28-VHX5ktQSBeZqGtQOPv
-
-but Gdown can't. Please check connections and permissions.
+direct Kaggle xauusd-is-b02 200
+direct Kaggle OK xauusd-is-b02 40
+C2.2 part part_000041.parquet
+C2.2 part part_000042.parquet
+C2.2 part part_000043.parquet
+C2.2 part part_000044.parquet
+C2.2 part part_000045.parquet
+C2.2 part part_000046.parquet
+C2.2 part part_000047.parquet
+C2.2 part part_000048.parquet
+C2.2 part part_000049.parquet
+C2.2 part part_000050.parquet
+C2.2 part part_000051.parquet
+C2.2 part part_000052.parquet
+C2.2 part part_000053.parquet
+C2.2 part part_000054.parquet
+C2.2 part part_000055.parquet
+C2.2 part part_000056.parquet
+C2.2 part part_000057.parquet
+C2.2 part part_000058.parquet
+C2.2 part part_000059.parquet
+C2.2 part part_000060.parquet
+C2.2 part part_000061.parquet
+C2.2 part part_000062.parquet
+C2.2 part part_000063.parquet
+C2.2 part part_000064.parquet
+C2.2 part part_000065.parquet
+C2.2 part part_000066.parquet
+C2.2 part part_000067.parquet
+C2.2 part part_000068.parquet
+C2.2 part part_000069.parquet
+C2.2 part part_000070.parquet
+C2.2 part part_000071.parquet
+C2.2 part part_000072.parquet
+C2.2 part part_000073.parquet
+C2.2 part part_000074.parquet
+C2.2 part part_000075.parquet
+C2.2 part part_000076.parquet
+C2.2 part part_000077.parquet
+C2.2 part part_000078.parquet
+C2.2 part part_000079.parquet
+C2.2 part part_000080.parquet
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign022_engine.py", line 176, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign022_engine.py", line 94, in main
+    raise RuntimeError(f'couverture insuffisante lot {BATCH}: {len(dates)} journees')
+RuntimeError: couverture insuffisante lot xauusd-is-b02: 65 journees
+
+Original exception was:
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign022_engine.py", line 176, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign022_engine.py", line 94, in main
+    raise RuntimeError(f'couverture insuffisante lot {BATCH}: {len(dates)} journees')
+RuntimeError: couverture insuffisante lot xauusd-is-b02: 65 journees
+RUN_STAMP 2026-11-20T22:48:19Z batch=xauusd-is-b02
