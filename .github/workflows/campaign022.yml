@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir -p reports/meta_alpha/campaign02_2/timeline_parts
           python3 -u ci_tools/campaign022_engine.py > reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_log.txt 2>&1 || true
+          echo "RUN_STAMP $(date -u +%FT%TZ) batch=${{ matrix.batch }}" >> reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_log.txt
           tail -5 reports/meta_alpha/campaign02_2/timeline_parts/${{ matrix.batch }}_log.txt
       - name: Commit du lot (toujours)
         if: always()
