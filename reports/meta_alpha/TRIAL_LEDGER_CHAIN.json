@@ -1576,6 +1576,16 @@
     "resultat": "PHASE12_FINAL_MATHEMATICAL_AUDIT.md livre (documentaire strict, 0 essai, budgets inchanges verifies): Qmin audite - C REDEFINI sans spread (distances sur prix executables Bid/Ask, le spread y est deja; C=commissions+slippage+autres frais, swap UNKNOWN), relation TP>=2SL+3C corrigee du double comptage de seq146; Q_required(t)=2SL(t)/C(t)+3 est une identite geometrique NON universelle: le seuil universel 11 est RETIRE, demonstrations separees S12-01 (SL ref 25bp non mesure: Qreq 25,7 central/15,5 defavorable) et S12-02 (20bp: 21,2/13,0), regle par decision au scenario central + reverification defavorable; F3: chaine variance integree saisonniere -> sigma (echelle) -> E|delta|=0,798 sigma vs quantiles distingues, probabilite d atteinte du TP NON CALIBRABLE reconnue; F7: decile 10 = alerte de classement (AUC 0,684, pas une probabilite calibree), stabilite des seuils jamais mesuree, reduction 50% parametre propose non calibre; puissance: observation= grappe jour x niveau, jamais les variantes d un meme evenement, N>=200 tranche PAR CELLULE en unites independantes, comptes bruts/n_eff NON PRODUITS (extraction au prereg, pas de valeurs fabriquees), MDE formulee au sigma inconnu; BY(36)=FDR sous dependance (H36=4,25) vs FWER non controle ecrit, regles anti-selection, confirmation par walk-forward IS + reserve temporelle interne SANS ouvrir le holdout scelle (limite ecrite); sizing abstrait symbolique (aucun lot exact sans spec MT5), limites 3%/7% parametres proposes non garantis; FRED suspendu maintenu, 4 conditions de reactivation + plan de purge historique avec mapping SHA a documenter. STATUT: audit termine, autorisation proprietaire en attente"
    },
    "entry_hash": "bcc9eada7d3ce44ab6b318ee5c1e245177706a48b3a93171a7d1a3f28245e7a9"
+  },
+  {
+   "seq": 149,
+   "prev_hash": "bcc9eada7d3ce44ab6b318ee5c1e245177706a48b3a93171a7d1a3f28245e7a9",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE12_3_FREEZE_FEASIBILITY",
+    "resultat": "Decision proprietaire Phase 12.3 (12.2 seq148 acceptee; budget 36 cellules TOUJOURS non autorise): gel exhaustif des 36 cellules S12-01/S12-02 (ID, conditions, parametres figes, SL/cible proposes, regles F3/F7/S2, sorties, hypothese, metrique primaire, critere de rejet; immuables apres resultats); formule couts generale D_TP >= 2 D_SL + C_gain + 2 C_perte (3C seulement si egalite justifiee); audit de faisabilite SANS performance sur IS (configurations brutes, jours distincts, grappes jour x niveau, n_eff, couverture, MDE, puissance, n>=200 par cellule) - aucun rendement/PnL/taux consulte; BY(36) famille figee, metriques primaires/secondaires predeclarees; couts 3 scenarios (mesure vs slippage hypothetique); recommandation de reduction possible sans modification retroactive; FRED suspendu maintenu; 0 backtest/essai/challenge_sim/holdout"
+   },
+   "entry_hash": "71e07bf33135abbc5cf49a1037cdd5665b8ee43ac652dbb93f09fc3df59885f7"
   }
  ]
 }
