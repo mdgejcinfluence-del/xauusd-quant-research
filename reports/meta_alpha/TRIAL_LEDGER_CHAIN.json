@@ -1476,6 +1476,26 @@
     "resultat": "COVERAGE_MATRIX.md v2 livree (documentaire strict, 0 essai, 0 budget, Phase 11 non demarree): chaque cellule couverte porte seq+hypothese litterale+resolution+resultat chiffre+budget; taxonomie R/P/I/J substituee partout a non-falsifiable (murs arithmetiques = P structurel); annexe F15 replay: 6/6 variantes refutees (entree >=T+5min v2 seq112-113, verdict H=60 gele), exclusion T+1->T+5 justifiee par M2/E4/prerequis available_at, profil de spread T-5->T+30 et capturabilite intra-fenetre ecrits NON MESURES, cellule classee J-interdite (pas R); distinction F14 niveaux/jour (P) vs F15 evenement/minute (R) noire sur blanc; inter-marches 4 resolutions (seconde I, minute J-bornee->P, heure J par defaut de recouvrement GC=F 2024+ vs S3 2020, jour R par crible) avec jambes 1 vs 2 explicites; audit B7: 12 combinaisons F3xF7xmomentumxregimexcout citees seq par seq, produit complet absent (F8 sans objet seq78) classe J non eligible; section finale exacte ANGLES MORTS RESIDUELS ET HYPOTHESES ELIGIBLES A UNE FUTURE PHASE 11: J=6 familles dont C-2 seule eligible, I avec prix d acces (non chiffres au depot dits tels), P avec N requis (F13 200, F9 ~35 ans, F14 ~6,7x, F16 ~19000 sem structurel, perps recents 4-5 ans de temps seul); aucun plaidoyer, exhaustivite reservee au proprietaire"
    },
    "entry_hash": "793ce75c16f85a92dd1535693dc7ce70f68ddfb2570bc2b7b5540875548a5954"
+  },
+  {
+   "seq": 139,
+   "prev_hash": "793ce75c16f85a92dd1535693dc7ce70f68ddfb2570bc2b7b5540875548a5954",
+   "entry": {
+    "type": "MISSION",
+    "mission": "P11_A0_NEWS_EXECUTION_AUDIT",
+    "resultat": "Decision proprietaire 2026-11-18: P11-A0 audit DESCRIPTIF seul autorise (pas Phase 11, pas de signal, pas de budget): capturabilite post-annonce T-5..T+30 (focus T+1..T+5) sur donnees DEJA dans le depot git uniquement, aucun telechargement, F15 non rouvert, v1 purgee interdite, holdouts intacts; mesures spread/cotations/cout (reel vs simule vs NON MESURABLE), verdict CAS A/B/C a motiver; clarification matrice J vs eligibilite; audit securite FRED separe sans jamais afficher la cle"
+   },
+   "entry_hash": "1bef929a9a4a0472e0e0b2a1a6297c8d792f1272880afb7d3f4fb7b0a8f99652"
+  },
+  {
+   "seq": 140,
+   "prev_hash": "1bef929a9a4a0472e0e0b2a1a6297c8d792f1272880afb7d3f4fb7b0a8f99652",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "P11_A0_NEWS_EXECUTION_AUDIT",
+    "resultat": "P11-A0 audit descriptif termine (autorisation seq139; 0 budget, 0 telechargement, F15 non rouvert, v1 non utilisee, holdouts intacts): perimetre reel = artefacts du depot Git seul, le tick brut etant au lac Kaggle hors depot -> fenetre T-5..T+30 mesurable en un seul point. MESURE REELLE: spread cote au tick d entree >=T+5min mediane FOMC 2,64 / NFP 2,51 / CPI 2,28 bp (proche du median IS 2,33), P99 5,9-12,6, max 24,7 (n=346 evenements). NON MESURABLE AVEC LES DONNEES DISPONIBLES (ecrit, jamais impute): spread T-5 et T+1..T+4, duree d episode, delai de retour, cotations manquantes/perimees, slippage reel (aucune donnee d execution), latence/remplissage; slippage simule non produit faute de calibration mesuree. Clarification matrice: 6 familles J recensees, fenetre news = 1 famille J parmi 6, J != eligible; C-2 reste seule eligible aux 2 criteres, P11-A0 n est pas une experience. VERDICT: CAS B - impossible a etablir (A exigerait les mesures absentes, C exigerait execution+couts prouves; limitation = insuffisance d artefacts au perimetre autorise, piste restant J). Securite FRED (separee): HEAD propre (0 valeur litterale, secret GH Actions par reference, code assaini), exposition historique confirmee commits cfd3df5/833f13b/b144080 purgee a HEAD par 7c0ebec mais presente dans l historique -> rotation toujours pendante cote proprietaire; logs Actions et liste des secrets non verifiables depuis le sandbox (403); aucune valeur affichee ni demandee. Statut final autorise: audit termine, decision strategique en attente du proprietaire"
+   },
+   "entry_hash": "f85402b95286cd0d45b3928c54cb316321d29fc90562f49455edd1b93aabe4fd"
   }
  ]
 }
