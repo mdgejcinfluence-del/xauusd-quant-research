@@ -23,6 +23,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
         run: |
+          mkdir -p reports/meta_alpha/campaign02_2
           set -o pipefail
           python3 ci_tools/campaign022_engine.py 2>&1 | tail -50 | tee reports/meta_alpha/campaign02_2/CI_LOG.txt
       - name: Commit resultats (toujours)

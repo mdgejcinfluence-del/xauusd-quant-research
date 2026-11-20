@@ -1,0 +1,25 @@
+test,comparaison,p_ancienne_bug,p_nouvelle,p_BY_nouvelle,ic95,conclusion_avant_correction,conclusion_apres_correction,fiche_ANO_concernee
+T01,profondeur BAS vs HAUT,0.47926,0.0,0.0,[0.3156 ; 0.3333],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-001
+T02,ere 2010_2013 vs 2017_2020,0.49675,0.212,0.91486,[-0.0038 ; 0.0157],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T03,"delai, profondeur BAS vs HAUT",1.0,0.0,0.0,[0.6667 ; 0.6667],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-002
+T04,regime BAS vs HAUT,0.54473,0.421,1.0,[-0.0158 ; 0.0066],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T05,session Londres vs New York,0.50325,0.0,0.0,[-0.0299 ; -0.0136],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T06,"censure, profondeur BAS vs HAUT",0.47626,0.0,0.0,[-0.3333 ; -0.3151],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",LIEN A T01 (complement mecanique),aucune (negatif conserve)
+T07,"retest, regime BAS vs HAUT",0.50175,0.0,0.0,[-0.1682 ; -0.0856],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-003
+T08,"encore au-dela, regime BAS vs HAUT",0.48776,0.077,0.36726,[-0.0076 ; 0.1141],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T09,"encore au-dela, ere 2010_2013 vs 2017_2020",0.61019,0.557,1.0,[-0.0661 ; 0.0359],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T10,"encore au-dela, profondeur BAS vs HAUT",0.50975,0.0,0.0,[-0.5755 ; -0.4984],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-004
+T11,"retour100, ere 2010_2013 vs 2017_2020",0.50475,0.0,0.0,[0.0798 ; 0.1029],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-005
+T12,"retracement median, regime BAS vs HAUT",0.53373,0.0,0.0,[0.7744 ; 0.8425],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-006
+T13,"retour100, session ASIE vs NEWYORK",0.52574,0.0,0.0,[-0.0744 ; -0.0522],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-007
+T14,"range suivant, regime BAS vs HAUT",0.52774,0.0,0.0,[0.8381 ; 0.8848],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-008
+T15,"range suivant, ere 2010_2013 vs 2017_2020",0.48626,0.0,0.0,[1.0923 ; 1.1428],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T16,"expansion1.5x, regime BAS vs HAUT",0.51174,0.207,0.91486,[-0.0075 ; 0.039],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T17,"range expansion, ere 2010_2013 vs 2017_2020",0.48576,0.0,0.0,[1.3688 ; 1.4703],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-009
+T18,"expansion1.5x, duree courte vs longue",0.50325,0.0,0.0,[0.0364 ; 0.0706],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-010
+T19,"New York range60, ere 2010_2013 vs 2017_2020",0.51574,0.0,0.0,[1.423 ; 1.6155],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-011
+T20,"New York extremes 5min, regime BAS vs HAUT",0.51774,0.0,0.0,[-0.1653 ; -0.0986],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-012
+T21,"Londres spread apres, ere 2010_2013 vs 2017_2020",0.51724,0.0,0.0,[1.252 ; 1.3321],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",J1_CANDIDATE_NOUVELLE,ANO-C2-013
+T22,"extreme haut dernier tiers, ASIE vs NEWYORK",0.50475,0.0,0.0,[0.2469 ; 0.2947],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,ANO-C2-014
+T23,"spread evenement, reintegres vs censures",0.55122,0.329,1.0,[0.982 ; 1.006],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)",NON_CONCLUANT_OU_QUEUE,aucune (negatif conserve)
+T24,"amp futur 60, apres retest vs apres reintegration",0.52374,0.0,0.0,[1.5399 ; 1.6762],"NON_CONCLUANT (p_BY=1,00 pour les 24, artefact du bug)","CONTEXTE (biais de selection, jamais anomalie)",aucune (negatif conserve)

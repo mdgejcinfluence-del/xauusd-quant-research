@@ -42,7 +42,12 @@ def charger():
                     from kaggle.api.kaggle_api_extended import KaggleApi
                     api = KaggleApi(); api.authenticate(); username = api.config_values.get('username')
                 localdir = '/tmp/kbatch'; shutil.rmtree(localdir, ignore_errors=True)
-                api.dataset_download_files(f'{username}/{batch}', path=localdir, unzip=True, quiet=True)
+                for _try in range(2):
+                    try:
+                        api.dataset_download_files(f'{username}/{batch}', path=localdir, unzip=True, quiet=True); break
+                    except Exception:
+                        if _try == 1: raise
+                        time.sleep(30)
             except Exception as e:
                 print('Kaggle KO repli Drive', str(e)[:80], flush=True); localdir = None
         for p in ps:
@@ -65,6 +70,9 @@ SNAPS = [0, 1, 3, 5]
 def main():
     bars = charger(); bars['date'] = bars.ts.dt.date; bars['heure'] = bars.ts.dt.hour
     jours = {d: g.reset_index(drop=True) for d, g in bars.groupby('date')}; dates = sorted(jours)
+    if len(dates) < 2400:
+        (ROOT / 'ERROR.txt').write_text(f'COUVERTURE INSUFFISANTE: {len(dates)} journees chargees (<2400) - extraction partielle refusee')
+        raise RuntimeError(f'couverture insuffisante: {len(dates)} journees')
     over, brk = [], []
     for di, d in enumerate(dates):
         g = jours[d]
@@ -129,8 +137,9 @@ def main():
                         if cassure:
                             b = dict(base); b['delai_retest_min'] = (j_ret - i) if j_ret is not None else np.nan
                             b['retest_confirme'] = float(j_ret is not None)
+                            brk.append(b)
                             if j_ret is not None and s == 0:
-                                b['snapshot_min'] = 'RETEST'
+                                b = dict(b); b['snapshot_min'] = 'RETEST'
                                 rk = j_ret
                                 b['prof_max_jusqua_bp'] = float(((H[i:rk + 1].max() - L) if sens == 1 else (L - Lc[i:rk + 1].min())) / L * 10000)
                                 b['position_bp'] = float((C[rk] - L) * sens / L * 10000)
