@@ -39,7 +39,23 @@ def charger():
     frames, api, username = [], None, None
     for batch, ps in groups.items():
         localdir = None
-        if batch != 'DRIVE' and os.environ.get('KAGGLE_API_TOKEN'):
+        tok = os.environ.get('KAGGLE_API_TOKEN', '')
+        if tok:
+            try:
+                import requests, zipfile, io
+                url = f'https://www.kaggle.com/api/v1/datasets/download/shalom5123/{batch}'
+                r = None
+                for hdrs, auth in [({'Authorization': f'Bearer {tok}'}, None), ({}, (os.environ.get('KAGGLE_USERNAME', ''), tok))]:
+                    r = requests.get(url, headers=hdrs, auth=auth, timeout=600)
+                    print('direct Kaggle', batch, r.status_code, flush=True)
+                    if r.status_code == 200: break
+                if r is not None and r.status_code == 200:
+                    localdir = '/tmp/kbatch'; shutil.rmtree(localdir, ignore_errors=True); pathlib.Path(localdir).mkdir(parents=True)
+                    zipfile.ZipFile(io.BytesIO(r.content)).extractall(localdir)
+                    print('direct Kaggle OK', batch, len(list(pathlib.Path(localdir).glob('*'))), flush=True)
+            except Exception as e:
+                print('direct Kaggle KO', str(e)[:100], flush=True); localdir = None
+        if localdir is None and batch != 'DRIVE' and os.environ.get('KAGGLE_API_TOKEN'):
             try:
                 if api is None:
                     from kaggle.api.kaggle_api_extended import KaggleApi
