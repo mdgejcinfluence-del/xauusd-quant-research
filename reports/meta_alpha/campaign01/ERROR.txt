@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 168, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 150, in main
+    for (fam, dim, val), x in [(k1, 'GLOBAL', 'TOUT') for k1 in E.famille.unique()] + \
+        ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)

@@ -1,0 +1,50 @@
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000275.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000276.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000277.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000278.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000279.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000280.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000281.parquet
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py:57: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None); frames.append(b)
+C1 part part_000282.parquet
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 168, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 150, in main
+    for (fam, dim, val), x in [(k1, 'GLOBAL', 'TOUT') for k1 in E.famille.unique()] + \
+        ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+
+Original exception was:
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 168, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign01_engine.py", line 150, in main
+    for (fam, dim, val), x in [(k1, 'GLOBAL', 'TOUT') for k1 in E.famille.unique()] + \
+        ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
