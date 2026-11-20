@@ -1526,6 +1526,16 @@
     "resultat": "Ordre PHASE 12 V3 proprietaire 2026-11-18 (fusion coach x expert, V3 fait foi): formalisation DOCUMENTAIRE uniquement, 0 essai, aucun backtest/optimisation/challenge_sim execute; blueprint systeme multi-condition XAUUSD 4 couches (niveaux S3, filtres F3/F7/S2 avec Q_t, execution Bid/Ask stop dur, survie prop firm + CUSUM), scenarios S12-01 sweep et S12-02 breakout-retest obligatoires, S12-03 post-news conditionnel (double admission: mecanisme seq1-136 + non-collision F15 cellule par cellule, sinon ecarte avec justification ecrite), exclusion news stricte [-5,+5] avec liquidation T-5, contrat mathematique challenge (P1 +8/+10 separes, P2 +5, DD ref 8% sensibilite 10%, RR net >=2), protocole statistique futur propose seulement (budget non consomme, holdout usage unique sous autorisation distincte); preambule d honnetete verbatim en tete; COVERAGE_MATRIX 1 ligne (news T+1..T+5 reclassee J hors perimetre par design Phase 12); budgets figes; FRED non touchee, C-2 dormant"
    },
    "entry_hash": "bc4c3c36c116d1000aefe77de23eff8dd7d6607df4fbccaef7258c9fe9ec09d1"
+  },
+  {
+   "seq": 144,
+   "prev_hash": "bc4c3c36c116d1000aefe77de23eff8dd7d6607df4fbccaef7258c9fe9ec09d1",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "PHASE12_V3_BLUEPRINT_MULTI_CONDITION",
+    "resultat": "PHASE12_MULTI_CONDITION_BLUEPRINT.md livre (documentaire, 0 essai, challenge_sim NON execute, budgets figes): preambule honnetete verbatim; 5 lecons P11-A1 chiffrees (opens session NON MESURES + regle 15min proposee); matrice tracabilite seq/statuts; conventions gelees (journee UTC, sessions proposees non calibrees, exclusion news [-5,+5] liquidation T-5); 4 couches avec Q_t=F3/cout, seuil Q_min=4 propose, F7 decile, spread_max 4,0bp, formules Bid/Ask, CUSUM specifie; S12-01 sweep 12 cellules et S12-02 breakout-retest 24 cellules avec tables de non-collision (F6/F13/F15, F15/B1/F10/F11/F9/M6); S12-03 ECARTE: mecanisme directionnel post-news indocumente seq1-136 + collision F15 non resoluble; contrat challenge generique (P1 +8/+10 separes, P2 +5, DD 8/10, RR net>=2, P sequentielle jamais produit); protocole futur propose 36 cellules BY(36), plafond 36 essais NON consomme, holdout usage unique sous ordre distinct; inconnues declarees (spec MT5, slippage, sessions); COVERAGE_MATRIX 1 ligne (news T+1..T+5 = J hors perimetre par design Phase 12 seq143); FRED non touchee, rotation pendante rappelee (purge historique reecrira les SHA, mapping requis); STATUT: blueprint livre, validation proprietaire en attente"
+   },
+   "entry_hash": "57ae416cd6d9fd7bed98166fe7c218c5d7efbbfd38f59960a3b4b0aed892fcb4"
   }
  ]
 }
