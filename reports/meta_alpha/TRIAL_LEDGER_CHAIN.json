@@ -1556,6 +1556,16 @@
     "resultat": "PHASE12_BLUEPRINT_VALIDATION.md livre (documentaire + descriptif IS cadre, 0 essai, budgets inchanges): conformite V3 exigence par exigence (aucun MANQUANT); F3: conversion sqrt(h/24) RETIREE, remplacee par distribution de la variance F3 selon le profil saisonnier horaire mesure IS (parts 1,0-10,2%/h, serie 60025h), unites bp E|delta|=0,798 sigma declarees; Q_min DERIVE: condition 2R net exacte TP>=2SL+3C, Q_min=11 fige (le 4 de seq144 retire); F7: table exacte NON PRODUISIBLE depuis artefacts versionnes (ecrit), co-occurrence proxy F3 x vol horaire produite (47311h), filtre tranche CONDITIONNEL (blocage seulement si decile10 ET Q insuffisant, sinon risque/2) car blocage dur tuerait les expansions S12-02; sessions: table locale/UTC/DST exacte, blocs UTC recommandes, descriptif spread par session (med 2,20-2,34bp), spread des 15 premieres minutes NON MESURE a resolution horaire (regle conservee); couts 3 scenarios alignes V3 (3,8/4,8/8,7bp slippage etiquete hypothese), slippage max algebrique s_max=(TP-2SL-3(spread+comm))/6; challenge: perte flottante comptee, stop interne 3%/mur 4%, DD 7/8/10, transition P1->P2 (r inchange, compteurs reset), contrat generique 100oz etiquete; 36 cellules documentees (n>=200, MDE R3 par cellule, 1 essai plafond non consomme), BY=FDR sous dependance (pas FWER) articule aux gates conjonctifs; FRED: workflow exogenous_pack_v2 SUSPENDU seq145 (declencheur retire, job if:false, seul workflow FRED du depot), rotation bloquante toujours pendante. STATUT: 12.1 terminee, validation proprietaire en attente"
    },
    "entry_hash": "f897a09e9088dd39ed94dd9eeef23bd80a77a7e442bc1290a334a38d6a1dafd4"
+  },
+  {
+   "seq": 147,
+   "prev_hash": "f897a09e9088dd39ed94dd9eeef23bd80a77a7e442bc1290a334a38d6a1dafd4",
+   "entry": {
+    "type": "MISSION",
+    "mission": "PHASE12_2_FINAL_MATHEMATICAL_AUDIT",
+    "resultat": "Decision proprietaire Phase 12.2 (12.1 seq146 acceptee comme documentaire; AUCUNE autorisation backtest/BY(36)): audit final cible - Qmin algebrique (definition C sans double comptage Bid/Ask, universalite vs geometrie, S12-01/S12-02 separes), conversion F3 variance->mouvement (echelle vs E|delta| vs quantile, aucune probabilite d atteinte TP si non calibrable), filtre F7 (deciles, stabilite, alerte de classement vs probabilite calibree, reduction 50% non validee), independance/puissance 36 cellules (n brut/distinct/jours/n_eff, dependances, N>=200 par cellule ou famille tranche), BY(36) FDR/FWER/confirmation hors holdout scelle, sizing abstrait sans spec MT5, limites 3%/7% = parametres proposes non garanties; FRED suspendu maintenu + conditions de reactivation et plan de purge historique avec mapping SHA; documentaire strict, 0 essai"
+   },
+   "entry_hash": "5a2038234328493701c1fb4378328bc96c72a389a13d1d364a2ab650e4e7d212"
   }
  ]
 }
