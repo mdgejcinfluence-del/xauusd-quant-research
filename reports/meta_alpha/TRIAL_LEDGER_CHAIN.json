@@ -1836,6 +1836,16 @@
     "resultat": "SONDE MINIMALE GELEE AVANT EXECUTION: (1) Kaggle: listage de fichiers d un seul dataset (xauusd-is-b01) sans telechargement, via KaggleApi puis repli HTTPS direct sur l endpoint de listage; (2) Drive: telechargement d une seule partition (la premiere du lot b01) avec verification de taille exacte contre l inventaire; (3) aucun autre telechargement pendant la sonde; resultats journalises et commites; si et seulement si une voie repond, extraction par lots existante (campaign022, garde 200 journees/lot) lancee en un seul passage; sinon, arret et rapport de blocage sans nouvelle sollicitation"
    },
    "entry_hash": "5e79af9a1b59a99fc4dd62c9b9b7939505700b2f7998d4859e51b6c013fd9cb6"
+  },
+  {
+   "seq": 175,
+   "prev_hash": "5e79af9a1b59a99fc4dd62c9b9b7939505700b2f7998d4859e51b6c013fd9cb6",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_3_HISTORICAL_COVERAGE_REPLICATION",
+    "resultat": "CAMPAGNE 2.3 livree (descriptif, 0 essai, budgets inchanges, holdout intact, 36 cellules gelees, FRED suspendue distincte): SONDE GELEE seq174 EXECUTEE UNE FOIS: Kaggle 403 (librairie + HTTPS Bearer + basic, slug shalom5123 correct), Drive 1 fichier echec rc=1 - acces toujours bloque, aucune extraction relancee, aucun telechargement supplementaire (regle de sonde respectee). Matrice de couverture livree: 2010-2014 reproduite (11513 episodes T0 ere1), 2014-2017 fragmentaire (631 episodes, janv-mars 2014, 48 journees), 2017-2020 lacune non resolue (56 partitions IS non extraites, non accessibles), 2020-2026 HORS PERIMETRE IS AUTORISE (clos 2020-01-20, perimetres scelles non sollicites). Inventaire 348 partitions (282 IS verifiees a la migration, 66 hors IS metadonnees seules jamais touchees). Replication methode gelee sur perimetre disponible: ere1 contraste T0 +13,6 pts [11,9;15,3], fragment 2014 +13,7 [5,8;21,5] coherent non probant seul, ere3 ligne NON MESUREE conservee. Seuils de terciles audites au bp (prof atteinte T0: 1,4853/3,4476 bp; initiale: 0,8007/2,3646), globaux au perimetre et retrospectifs, exigence de seuils causaux anterieurs ecrite pour tout usage futur. Restauration: regeneration de cle Kaggle par le proprietaire + secrets CI uniquement (procedure documentee, valeurs jamais affichees), verification par sonde avant extraction, Drive en un seul passage apres repos du quota. STATUT: couverture historique etendue sur le perimetre accessible, extension decennale en attente d acces (action proprietaire), validation en attente"
+   },
+   "entry_hash": "3745cb424bee1e24ab5136d789212353a596df287771e99d1cff4983d38f18b0"
   }
  ]
 }
