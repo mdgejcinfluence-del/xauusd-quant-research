@@ -1626,6 +1626,16 @@
     "resultat": "Dictionnaire Campagne 0 GELE avant calcul: CAMPAIGN_00_VARIABLE_DICTIONARY.md sha256= (barres Mid declarees M1/M5/M15/H1, variables V1-V12 definitions exactes, contexte causal session/regime F3 tercile du jour/annonce/eres 2010-13/2014-16/2017-20, regle de suffisance n>=1000 barres et >=100 journees sinon NON CONCLUANTE, aucune combinaison non listee produite, 0 essai)"
    },
    "entry_hash": "5bf202d0b00a21dfbe60ea5a363544500db201ddea5b91961d8871504f5cf4a0"
+  },
+  {
+   "seq": 154,
+   "prev_hash": "5bf202d0b00a21dfbe60ea5a363544500db201ddea5b91961d8871504f5cf4a0",
+   "entry": {
+    "type": "NOTE",
+    "mission": "CAMPAIGN_00_DICTIONARY_FREEZE",
+    "resultat": "Correction seq153: le sha256 du dictionnaire gele est 974881a7b3d9827c76ef21cb9136f0e2b001eda2b6f48ac262758a28622c4156 (la valeur etait vide dans seq153 par course d ecriture du fichier, consignee ici avant tout calcul du moteur). Note suspension 12.3: le run cancele 44702531257 a pousse son commit final (19a3e90, P12_3_CONFIGURATIONS.csv) avant l effet de l annulation; artefact conserve tel quel sur ordre, NON consulte et non analyse."
+   },
+   "entry_hash": "dcaa7eeb9fd062f3c4fe1a5304111ba2a568a570f8e2308349451ea4876783a5"
   }
  ]
 }
