@@ -1,12 +1,11 @@
+# SUSPENDU seq145 (Phase 12.1 sec.9): appelle FRED (cle historiquement exposee seq105/140). Desactive jusqu a confirmation de rotation par le proprietaire. Aucun job ne doit tourner.
 name: Exogenous Pack Completion (seq 103, ingenierie seule)
 on:
-  push:
-    branches: ["arena/afe12737-xauusd-quant-research"]
-    paths: ["import_trigger/exogenous_pack_v2.txt"]
-  workflow_dispatch: {}
+  workflow_dispatch: {}   # declencheur push retire (suspension seq145); reactivation uniquement apres rotation FRED confirmee par le proprietaire
 permissions: { contents: write }
 jobs:
   pack:
+    if: ${{ false }}  # SUSPENDU seq145 - ne peut pas tourner, meme en dispatch manuel
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
