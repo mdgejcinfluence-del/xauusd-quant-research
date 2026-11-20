@@ -161,7 +161,9 @@ def main():
         stats_row('V8_RETRACEMENT_PCT_IMPULSION', hname, 'GLOBAL', np.array(retra), nd)
         stats_row('V9_CONSOLIDATION_DUREE_BARRES', hname, 'GLOBAL', np.array(cons_durees, dtype=float), nd)
         stats_row('V10_RATIO_AMPLITUDE_JOUR', hname, 'GLOBAL', np.array(ratios_jour), nd)
-    out = pd.DataFrame(rows); out.to_csv(ROOT / 'CAMPAIGN_00_BASELINE_METRICS.csv', index=False)
+    out = pd.DataFrame(rows)
+    if len(out): out.to_csv(ROOT / 'CAMPAIGN_00_BASELINE_METRICS.csv', index=False)
+    else: print('AUCUNE DONNEE ACCUMULEE - CSV existant preserve')
     (ROOT / 'C0_COVERAGE.json').write_text(json.dumps({'partitions_traitees': len(state['done']), 'partitions_sautees': len(state.get('skipped', [])), 'journees_distinctes': len(DAYS_SEEN)}))
     STATE_P.write_text(json.dumps(state)); print('CAMPAGNE 0 CALCUL TERMINE', len(out))
 
