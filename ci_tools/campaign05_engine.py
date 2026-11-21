@@ -264,7 +264,8 @@ def main():
         st_j = DAY.loc[str(d), 'statut_journee']
         rec = {'date': str(d), 'ere': era(d), 'statut_journee': st_j, 'ff_usage': 'OK', 'jour_semaine': int(pd.Timestamp(d).dayofweek)}
         if Hprev is None:
-            rec['ff_usage'] = 'SANS_REFERENCE'; dayff_rows.append(rec); lastu = (float(H.max()), float(L.min())); continue
+            rec['ff_usage'] = 'SANS_REFERENCE'; dayff_rows.append(rec)
+            Hprev, Lprev = float(H.max()), float(L.min()); lastu = (Hprev, Lprev); continue
         # minutes manquantes avant chaque barre (depuis 00:00)
         pos = np.arange(len(mins))
         manq_avant = mins - pos  # minutes d'horloge avant la fin de la barre i moins barres presentes jusqu'a i
