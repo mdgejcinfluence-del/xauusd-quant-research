@@ -2400,6 +2400,52 @@
     "restrictions": "aucun J2/J3, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, aucun recalcul C3/C4, aucune optimisation depuis candidates C5"
    },
    "entry_hash": "8faf7436c16ffffe8a20c8eb714e49ee3fb0e9fbc9e47fdc5c89bd3a4e665a12"
+  },
+  {
+   "seq": 224,
+   "prev_hash": "8faf7436c16ffffe8a20c8eb714e49ee3fb0e9fbc9e47fdc5c89bd3a4e665a12",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "05",
+    "objet": "Cloture definitive de la Campagne 5 validee apres verifications seq223",
+    "catalogue_final": {
+     "candidates_J1": [
+      "ANO-C5-001 amplitude Londres/Asie",
+      "ANO-C5-002 premieres atteintes HAUT/BAS avant 08:00 UTC",
+      "ANO-C5-003 retracement selon heure atteinte (avertissement composition)"
+     ],
+     "negatifs": [
+      "C5-02",
+      "C5-04",
+      "C5-05",
+      "C5-07"
+     ],
+     "non_eligibles": [
+      "C5-03",
+      "C5-09"
+     ],
+     "structurellement_non_evaluable": [
+      "C5-10"
+     ]
+    },
+    "restrictions": "aucun J2/J3 automatique, aucun recalcul des donnees sources C5, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, fiches historiques inchangees; confirmation des candidates C5 uniquement sur ordre distinct avec mecanisme et protocole independant"
+   },
+   "entry_hash": "5b4b9a4e6c55f7b41c037af832ace0f2163c19c7953f7fc27ff86c8e7ad10593"
+  },
+  {
+   "seq": 225,
+   "prev_hash": "5b4b9a4e6c55f7b41c037af832ace0f2163c19c7953f7fc27ff86c8e7ad10593",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Proposition de famille exploration F-G Forme des trajectoires journalieres (efficience, sinuosite, part directionnelle, point median de parcours, asymetrie de forme); alternatives en reserve F-H localisation des extremes du jour, F-I nombres ronds",
+    "statut": "PROPOSITION SANS CALCUL - aucun gel, aucune extraction; ne privilegie aucune candidate C5",
+    "sha256": {
+     "CAMPAIGN_06_PROPOSAL.md": "d7e3088c3b5f856f29aaef7a45787dae167f3045a51f7f20a31db5d99dbea34e"
+    },
+    "decision_demandee": "approbation du principe F-G ou choix F-H/F-I, puis autorisation de rediger dictionnaire + protocole (preparation seule)"
+   },
+   "entry_hash": "d413a401514b301e12e861433e379987bf0a816cb2d219d7c3668ce64cad4b74"
   }
  ]
 }
