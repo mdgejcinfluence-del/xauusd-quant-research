@@ -2166,6 +2166,36 @@
     "resultat": "sha256(CAMPAIGN_04_CLOSING_NOTE_CENSORSHIP.md)=692e67cf5661d6a603746b0545983817920da1d4d1f29ca432c37e3edfd105f9 (calcule par appel separe apres ecriture, patron etabli); sha256(CAMPAIGN_05_PROPOSAL.md)=adca8c5f4a344b9efb50b5dbcd98426d08d4726869a7c7c46a84ee5947385f64"
    },
    "entry_hash": "c918fe480707f343a3f152a9d5c693bbb2c261ea17fdfa1888d02909a5708bbc"
+  },
+  {
+   "seq": 208,
+   "prev_hash": "c918fe480707f343a3f152a9d5c693bbb2c261ea17fdfa1888d02909a5708bbc",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_05_PREPARATION_SESSIONS_EXTREMES",
+    "resultat": "Decision fondateur: principe Campagne 5 approuve, preparation complete autorisee, AUCUN CALCUL: familles F-E temporalite fine des sessions (ouvertures, transitions, ouverture d Asie a ancrage inter-jours reel sans reconstruction artificielle depuis les frontieres de partitions, continuite inter-jours, mouvements commences avant une ouverture et poursuivis apres, comportements par periode; separation des effets de session et de frontiere journaliere) et F-F extremes journaliers et hebdomadaires dates (extreme courant observable, premiere atteinte, mises a jour, extremes finaux de cloture jamais classeurs), etudiees separement sans fusion d effectifs; livrables obligatoires: blueprint scientifique, dictionnaire mathematique, regles de causalite et de disponibilite par variable, liste fermee de comparaisons, methode statistique (regroupement, bootstrap, multiplicite, materialite), matrice de couverture et periodes incompletes, analyse des dependances intra-journee/semaine, couts de calcul et regles de suspension, registre des biais/limites/ineligibilite, differences avec les travaux anterieurs; aucune hypothese privilegiee pour sa rentabilite, aucune confirmation des candidates C3/C4 visee, negatifs documentes; restrictions inchangees, execution interdite avant validation du protocole"
+   },
+   "entry_hash": "0ac0667c70e1fd49cb65ca31af7e42334c7f10f1a5f821fa1991f0281ad5d15b"
+  },
+  {
+   "seq": 209,
+   "prev_hash": "0ac0667c70e1fd49cb65ca31af7e42334c7f10f1a5f821fa1991f0281ad5d15b",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_05_PREPARATION_SESSIONS_EXTREMES",
+    "resultat": "Preparation complete Campagne 5 livree sans aucun calcul, dictionnaire presente a validation (hashes sha256 calcules par appel separe apres ecriture): BLUEPRINT e753f00e1cb0babe530311d5bf559f79d6a708ed7ad6509a8788b84c23918c9d; EVENT_DICTIONARY 450d610b4210a45cba43b7a42d69d2f73d1e9095d2a4edff949ce401d5d50b08; COMPARISONS_FREEZE 102ee01d768ddaa427a12f25b19bad5f8d09619064117ebfb56854e04b2a34fc; METHOD_AND_MULTIPLICITY 37f06eacb294f8d21bd98b2fa471b484adf4c59456ea6d8228a0e3096beb397a; DATA_COVERAGE 2d1e4f7343f1afd2880b75f21da4635ac31c84da86cd00622aaff910114feac3. Contenu: F-E (ouvertures datees a la premiere barre presente, fenetres +5/+15/+30/+60, references causales 60 journees precedentes meme session, mouvements pre-ouverture connus a l ouverture et issues mesurees apres, ouverture d Asie a ancrage inter-jours reel en 3 classes exclusives CONTINUITE/TROU_INTRA_SEMAINE/REOUVERTURE_SEMAINE avec trou et ecart mesures et aucune barre reconstruite, confusion Asie/frontiere journaliere publiee comme telle et contrastes internes sans frontiere) et F-F (premiere atteinte stricte des niveaux de la veille/semaine precedente connus a l avance, touches separees, atteintes simultanees jamais departagees, mises a jour par pas de 5bp, extreme courant seul autorise en instantane, extremes finaux relegues aux clotures, semaines incompletes censurees); familles separees sans fusion, 10 comparaisons fermees (5+5, BY par famille), unites journee/semaine, materialite 5 points/ratio 1,15, eligibilite publiee; dependances intra-journee analysees, couts estimes sur les campagnes 3-4, regles de suspension sans degradation methodologique, registre des biais et ineligibilites, differences avec les campagnes 1 a 4 explicitees"
+   },
+   "entry_hash": "c1391076230e1add8b23081a7254731efc9c17e20dc6a99e465f9200c938ad29"
+  },
+  {
+   "seq": 210,
+   "prev_hash": "c1391076230e1add8b23081a7254731efc9c17e20dc6a99e465f9200c938ad29",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_05_PREPARATION_SESSIONS_EXTREMES",
+    "resultat": "Livraison de preparation seq208 terminee: les dix livrables obligatoires couverts par les cinq documents chaines seq209 (blueprint scientifique des deux familles, dictionnaire mathematique, disponibilite temporelle par variable, liste fermee des dix comparaisons, methode/regroupement/bootstrap-par-famille/materialite, matrice de couverture et periodes incompletes, dependances intra-journee/semaine, couts et suspension, biais/limites/ineligibilite, differences avec l anterieur). Aucun calcul Campagne 5 lance, execution interdite avant validation du protocole; campagne 4 definitivement close (note de censure seq205-207); candidates C3/C4 non visees, aucune fiche historique modifiee, 0 budget, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, XAU/USD seul. STATUT: CAMPAGNE 5 EN PREPARATION - VALIDATION DU PROPRIETAIRE REQUISE"
+   },
+   "entry_hash": "814f5f7755361d3c974704e8b5953ca53b7c060b730a9b8a2a07a7b06826d792"
   }
  ]
 }
