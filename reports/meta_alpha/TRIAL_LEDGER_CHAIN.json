@@ -3313,6 +3313,55 @@
     "statut": "PROTOCOLE V2 CONSOLIDE FINAL SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
    },
    "entry_hash": "03547d516403c48054c417a9978c42a1afe3427f0c0f6a682f2e7251471169f2"
+  },
+  {
+   "seq": 265,
+   "prev_hash": "03547d516403c48054c417a9978c42a1afe3427f0c0f6a682f2e7251471169f2",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Autorisation fondateur: protocole F-J V2 valide (SHA-256 8e847950...795e communique et confirme), gel definitif autorise. V1 et V1.1 conserves sans modification; V2 document de reference unique pour l execution",
+    "verifications_avant_chainage": "confirmer que V2 conserve constantes et formules validees, FJ-01..FJ-05, censure des clotures indeterminees, appariement temporel des pseudo-evenements, graphe complet de dependance, regle GRAPPE_DOMINANTE 5% aux trois niveaux (descriptif, inference, candidature); continuite des regles approuvees, aucune modification methodologique autorisee",
+    "operations_autorisees": [
+     "chainer le gel definitif V2",
+     "verifier le SHA-256 complet",
+     "verifier l integrite des documents compagnons",
+     "confirmer l ordre de prevalence documentaire",
+     "publier checkpoint GitHub et tete distante",
+     "produire le proces-verbal final de gel"
+    ],
+    "interdictions": [
+     "aucun calcul F-J",
+     "aucune extraction exploratoire",
+     "aucune consultation des resultats",
+     "aucun bootstrap",
+     "aucune optimisation methodologique"
+    ],
+    "execution": "le gel ne vaut pas autorisation d execution; ordre distinct du proprietaire requis",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-G et F-I definitivement cloturees"
+   },
+   "entry_hash": "b9d26df0c6a8a5d6df16096533c6b2d4000d4bee7d6e6f93783fbe07cf98ad41"
+  },
+  {
+   "seq": 266,
+   "prev_hash": "b9d26df0c6a8a5d6df16096533c6b2d4000d4bee7d6e6f93783fbe07cf98ad41",
+   "entry": {
+    "type": "GEL",
+    "campagne": "08",
+    "objet": "GEL DEFINITIF du protocole F-J V2 (CAMPAIGN_08_PROTOCOL_V2.md), document de reference unique pour l execution. Verification pre-gel a l octet pres: V2 conserve les constantes et formules validees (fenetre causale 20 journees, T_D=max(10 bp, Q99.5 lineaire), predicat strict, amorcage 10 journees/10 000 variations, I_ep=max |r_t|/T_D(t) classes a 2, regroupement <=15 min, horizons +15/+30/+60, R_60 signee ancree a c(t_der), materialite 10 bp, eligibilite >=200 episodes et >=100 grappes par bras), les cinq comparaisons FJ-01..FJ-05 (BY m=5 fixe, bootstrap grappes-composantes connexes 2000 replicats), la censure des clotures indeterminees (silence de 15 min integralement observe ou CLOTURE_INDETERMINEE sans disponibilite attribuee, exclusion des comparaisons), l appariement temporel des pseudo-evenements (bassin par blocs de 60 min depuis le debut de session, distance de position <=60 min, sans remplacement, aucune exclusion pour choc futur), le graphe complet de dependance incluant les pseudo-evenements FJ-05 et les traversees de frontieres journalieres, et la regle GRAPPE_DOMINANTE a 5% (descriptif maintenu, inference INFÉRENCE_FRAGILE, CANDIDATE_J1 interdite; COMPOSITION_SENSIBLE idem; aucune p-value supplementaire). Ordre de prevalence: V2 gele > V1 et V1.1 conserves pour tracabilite > documents preparatoires (J-01..J-05 et bassin par journee x session supersedees). Execution NON autorisee par le present gel; ordre distinct requis.",
+    "sha256": {
+     "CAMPAIGN_08_PROTOCOL_V2.md": "8e8479505efa03c0387171152ff01aeff368c77cc70929c35b2dcf9a4d5e795e",
+     "CAMPAIGN_08_FREEZE_RECORD.md": "f4949515c437796e28c173c010e26d4c01755c5e7387b8a448a7d74ad4e30fc7",
+     "CAMPAIGN_08_PROTOCOL_V1.md": "022ca0dc12a767349164be673959a21f18b3e294202bf5d88b39615ffd3e39af",
+     "CAMPAIGN_08_PROTOCOL_V1_1_ADDENDUM.md": "b51dbdf30d78b38c576e6c8965c65f8bf50d973c3911550635d5c55c6665d279",
+     "CAMPAIGN_08_FJ_BLUEPRINT.md": "06a49727e7d7310a2291a3d0369297fbf8e057655507b0fa5e0cd382e24e3254",
+     "CAMPAIGN_08_FJ_DICTIONARY.md": "ade2310ed2f286b232a424f6d779c10357784ad7c95dba34a8d805abd30b7bea",
+     "CAMPAIGN_08_FJ_COMPARISONS.md": "1fb49e3e45b7c7b44f4486f602280b0c3ec3c6eb4fbac5aa97903f533371110d",
+     "CAMPAIGN_08_FJ_COVERAGE_BIASES.md": "0d205accbf86d2c9ed794fa27711d6758ad2063a2275110cab010c51ff9e72a0"
+    },
+    "statut": "GELE DEFINITIVEMENT - EXECUTION INTERDITE sans ordre distinct du proprietaire; aucun calcul effectue"
+   },
+   "entry_hash": "3acbc2a65f56a582f4b90cc5dcb8302345023b12c5517540b91557d27e010615"
   }
  ]
 }
