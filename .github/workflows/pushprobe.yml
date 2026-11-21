@@ -1,0 +1,20 @@
+name: Push Probe (diagnostic)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/pushprobe.txt"]
+permissions: { contents: write }
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - name: Petit commit pousse depuis le runner
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          date -u +%FT%TZ > reports/meta_alpha/campaign03/PUSH_PROBE.txt
+          git add reports/meta_alpha/campaign03/PUSH_PROBE.txt
+          git commit -m "push probe (diagnostic)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research
