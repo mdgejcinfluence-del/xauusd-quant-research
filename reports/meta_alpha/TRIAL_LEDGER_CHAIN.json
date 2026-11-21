@@ -3362,6 +3362,44 @@
     "statut": "GELE DEFINITIVEMENT - EXECUTION INTERDITE sans ordre distinct du proprietaire; aucun calcul effectue"
    },
    "entry_hash": "3acbc2a65f56a582f4b90cc5dcb8302345023b12c5517540b91557d27e010615"
+  },
+  {
+   "seq": 267,
+   "prev_hash": "3acbc2a65f56a582f4b90cc5dcb8302345023b12c5517540b91557d27e010615",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Ordre du proprietaire: execution descriptive F-J V2 expressement autorisee sur le corpus IS XAU/USD. Reference unique: protocole V2 gele seq266 (8e847950...795e); V1/V1.1 et preparatoires conserves pour tracabilite sans pouvoir remplacer V2; aucune modification de formules, constantes, populations, comparaisons, exclusions ou methodes",
+    "perimetre": "FJ-01 signe, FJ-02 isoles vs regroupes, FJ-03 intensite, FJ-04 eres, FJ-05 chocs reels vs pseudo-evenements; seuil causal Q99.5 sur 20 journees precedentes, plancher 10 bp, regroupement 15 min, cloture verifiee apres 15 min continues sans choc, intensite normalisee par le seuil propre a chaque journee, sillage 60 min apres le dernier choc, pseudo-evenements apparies sans remplacement, graphe de dependance en composantes connexes, bootstrap et BY m=5 fixe, GRAPPE_DOMINANTE 5% aux trois niveaux",
+    "controles": "aucun choc detecte a partir d un saut non observe; clotures indeterminees censurees; mixtes publies separes et exclus des primaires; pseudo-evenements jamais exclus pour choc dans le sillage futur; composantes dominantes: descriptif maintenu, inference fragile, candidature interdite; aucune fenetre de sillage incomplete presentee comme complete",
+    "publication": "par comparaison: effectifs initiaux et eligibles, chocs et episodes, repartition positifs/negatifs/mixtes, episodes censures et clotures indeterminees, effets et IC, p et q BY, seuils de materialite, diagnostics des composantes connexes, negatifs et non evaluables, limites de couverture et incidents; ventilations par session descriptives sans tests; candidates ANO au maximum J1 descriptives, aucune promotion automatique",
+    "livrables_cloture": [
+     "rapport scientifique complet F-J",
+     "resultats detailles FJ-01..FJ-05",
+     "catalogue des episodes et fiches ANO eventuelles",
+     "rapport specifique pseudo-evenements",
+     "diagnostics de couverture et de dependance",
+     "registre des censures, limites et incidents",
+     "controle de multiplicite BY",
+     "SHA-256 des livrables",
+     "checkpoint GitHub, tete distante, integrite de la chaine"
+    ],
+    "suspension": "en cas de depassement des ressources gratuites, suspendre le calcul concerne et documenter; aucune simplification methodologique non autorisee",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; aucune relance F-G ou F-I; pas une autorisation de strategie"
+   },
+   "entry_hash": "fc01fdc9c40df16c8b8c5e38ba631977bd3a1d4eca619204d95bc1d0bee3caa7"
+  },
+  {
+   "seq": 268,
+   "prev_hash": "fc01fdc9c40df16c8b8c5e38ba631977bd3a1d4eca619204d95bc1d0bee3caa7",
+   "entry": {
+    "type": "CONFIRMATION_GEL",
+    "campagne": "08",
+    "objet": "Avant execution: protocole V2 et documents compagnons reverifies sha256 identiques au gel seq266; moteur campaign08_engine.py et tests synthetiques campaign08_temporal_tests.py (14/14 verts en local), synthese campaign08_synthesize.py prete (grappes composantes connexes, bootstrap 2000 graine 20261113, BY m=5 fixe, appariement FJ-05, controles composition/grappe dominante sans p ajoutee)",
+    "sha256_V2": "8e8479505efa03c0387171152ff01aeff368c77cc70929c35b2dcf9a4d5e795e",
+    "statut": "EXECUTION AUTORISEE EN COURS DE LANCEMENT - aucun resultat F-J consulte a ce stade"
+   },
+   "entry_hash": "ee45c96312fa0409136ce58df17d370f5f1ccae0d957daf82988fe7855b86e96"
   }
  ]
 }
