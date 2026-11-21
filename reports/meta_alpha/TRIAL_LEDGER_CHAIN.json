@@ -2066,6 +2066,36 @@
     "resultat": "Livraison de revision seq195: dictionnaire v2 + liste exacte des dix comparaisons + resume des changements (section 9 du dictionnaire) + clarification T0 des 4200; architecture validee dans son principe conservee (etat-passe / etat courant / confirmation / consequences); statut: CAMPAGNE 4 PREPAREE REVISEE - VALIDATION DEFINITIVE DU PROPRIETAIRE REQUISE AVANT TOUT CALCUL; exploration generale multi-familles maintenue, campagne 4 non exclusive; 0 budget consomme, holdout scelle, FRED suspendue, 36 cellules S12 gelees, XAU/USD seul"
    },
    "entry_hash": "ab0c5ad2a4a2a304848f81093c2464947d669c60e040e79d318e1f4be1698bc2"
+  },
+  {
+   "seq": 198,
+   "prev_hash": "ab0c5ad2a4a2a304848f81093c2464947d669c60e040e79d318e1f4be1698bc2",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_04_AUDIT_IMPACT_F3_ET_CONTROLE_FINAL",
+    "resultat": "Decision fondateur: dictionnaire Campagne 4 v2 valide dans son principe; avant toute execution produire (1) audit d impact campagnes 1 a 3 des anciennes etiquettes poolees F3 (analyses concernees, conclusions restant descriptives retrospectives valides, conclusions non interpretables comme temps reel, recalculs causaux eventuellement requis) sans modifier aucune fiche historique, document correctif independant chaine; (2) controle final du dictionnaire v2: distinction prevision F3 connue a l ouverture vs RV connue a la cloture, seuils appliques a la bonne variable et au passe seul, formules exactes, horodatage des transitions et consequences, population/fenetre/unite/materialite des dix, blocs et fenetres tronquees et non-confirmees, regles de publication si effectifs insuffisants; puis proces-verbal de conformite et hashes complets. Aucune execution avant validation finale; restrictions inchangees; exploration multi-familles parallele maintenue"
+   },
+   "entry_hash": "f488ae0b9412a3795fc9b75d492a5264c5c11778410860928afc8be06c5047ef"
+  },
+  {
+   "seq": 199,
+   "prev_hash": "f488ae0b9412a3795fc9b75d492a5264c5c11778410860928afc8be06c5047ef",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_AUDIT_IMPACT_F3_ET_CONTROLE_FINAL",
+    "resultat": "LIVRABLE 1 - audit d impact F3 livre (F3_POOLED_LABELS_IMPACT_AUDIT.md sha256=3878e49b8bb7d0ef6df3e1edb27dd52455f6138391a7f57065402eede00b7e60; registre F3_POOLED_LABELS_IMPACT_REGISTER.csv sha256=d18d777e229c3b5da8c07f57e9dae8d8d72fb5d51e6f05f9aeb9c45657362f46): preuve technique du motif poole uniforme dans les moteurs des campagnes 0,1,1.1,2.2,3 (campagnes 2 et 2.1 par consommation des bruts); toutes les colonnes regime des campagnes 0 a 3 sont des etiquettes poolees retrospectives appliquees a des predictions causales; consequences: resultats par regime conserves comme descriptions retrospectives exactes, toute interpretation en information connue a l ouverture ou a l instant de l evenement retiree, 4 fiches ANO-C2-003/006/008/012 annotees J1 descriptives retrospectives (fiches originales non modifiees), R06/R07 requalifies controles retrospectifs, conclusion principale T0 des campagnes 2.2/2.3 declaree non concernee (aucun usage du regime), C3-04 negatif inchange, candidates C3 non fondees sur le regime; instabilite numerique des etiquettes explicitement non quantifiee; recalcul causal requis avant tout usage futur a T0, sensibilite des 4 fiches conditionnelle a autorisation distincte"
+   },
+   "entry_hash": "56399ec170083fc708dc9d0f09d2dd45eb9d74b9faa8a20361135c351fdc75ea"
+  },
+  {
+   "seq": 200,
+   "prev_hash": "56399ec170083fc708dc9d0f09d2dd45eb9d74b9faa8a20361135c351fdc75ea",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_AUDIT_IMPACT_F3_ET_CONTROLE_FINAL",
+    "resultat": "LIVRABLE 2 - proces-verbal de controle final livre (CAMPAIGN_04_FINAL_CONFORMITY_REVIEW.md sha256=eea6f1848313b06ae0695c84d43f583382c1d73e815c03b40ad5971e4cb07411): conformite point par point du dictionnaire v2 (sha256 inchange 0a615c54fa4b7b2c2980428c486571f76f1b29abc6ec892538940ed0e0f12824) et des dix comparaisons (sha256 inchange 4024eaaefc16031d813fe73a2effab2d648e60d6172c0359954fc8deb7d8ff5a) aux exigences fondateur: prevision F3 connue a l ouverture vs RV connue a la cloture, seuils sur la bonne variable au passe seul, formules exactes reprises, horodatages C/D/traversee/retour/fenetres, population-fenetre-unite-materialite des dix, blocs mobiles de 20 journees avec recalcul par replicat et fenetres tronquees, non-confirmees conservees, regles de publication si effectifs insuffisants (eligibilite descriptive, jamais tue); deux points de vigilance publies (double forme des etiquettes F3, cout du bootstrap a recalcul avec regle de suspension plutot que degradation). AUCUNE EXECUTION CAMPAGNE 4; validation finale proprietaire en attente; 0 budget, holdout scelle, FRED suspendue, S12 gelees, XAU/USD seul, exploration multi-familles maintenue"
+   },
+   "entry_hash": "1f718d1dc0411c5a0e0e3841078810747ec75197d89ad4b16cc0548bfab9f965"
   }
  ]
 }
