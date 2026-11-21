@@ -2306,6 +2306,53 @@
     "resultat": "Gel scientifique final confirme avant extraction (hashes sha256 reverifies par appel separe): CAMPAIGN_05_PROTOCOL_V2.md=818837fd5fb500b2906685367ea72acc18c2b5ddfce64de3bdfe5c8239818331; CAMPAIGN_05_PROTOCOL_V2_1_ADDENDUM.md=509a2863ca633a6f6ad985fe55223b97a1bb743e1011e2cb6a966d59ad67bd45; CAMPAIGN_05_PROTOCOL_V2_2_ADDENDUM.md=4ce1ee9b3bcd270e08503c41ce2c69359cbb2ab4d373598ae6f28d1745761b0e; documents de preparation seq209 (blueprint e753f00e..., dictionnaire 450d610b..., comparaisons 102ee01d..., methode 37f06eac..., couverture 2d1e4f73...) conserves comme trace; aucune definition, fenetre, population, seuil, materialite ou methode ne peut changer apres le debut de l execution"
    },
    "entry_hash": "119b394f7f3414c0fdb0650d9997dfc467f78d551947db0df0c2acd9a98b1b18"
+  },
+  {
+   "seq": 222,
+   "prev_hash": "119b394f7f3414c0fdb0650d9997dfc467f78d551947db0df0c2acd9a98b1b18",
+   "entry": {
+    "type": "RESULTAT",
+    "campagne": "05",
+    "ordre": "Execution descriptive des dix comparaisons gelees V2+V2.1+V2.2 terminee",
+    "runs_ci": [
+     "44892050419 (bug initialisation niveaux, atteintes jour a zero, sorties FF jour non utilisees)",
+     "44892455679 (corrige, complet)"
+    ],
+    "couverture": {
+     "partitions": "282/282",
+     "barres_m1": 3540993,
+     "journees_utilisables": 2572,
+     "ouvertures": 10288,
+     "atteintes_jour": 2375,
+     "atteintes_reelles": 2004,
+     "atteintes_observees": 371,
+     "touches": 7,
+     "ordre_indetermine": 0,
+     "semaines": 520,
+     "atteintes_semaine_reelles": 187
+    },
+    "resultats": {
+     "C5-01": "CANDIDATE_J1 ratio 1.189 [1.148;1.236] qBY 0.0042 ANO-C5-001",
+     "C5-02": "NEGATIF +2.24pts [-0.45;+4.89] q 0.281",
+     "C5-03": "NON_ELIGIBLE bras TROU 2 initiaux 0 eligible",
+     "C5-04": "NEGATIF ratio 0.912 [0.857;1.000] q 0.217",
+     "C5-05": "NEGATIF ratio 1.002 q 1.0",
+     "C5-06": "CANDIDATE_J1 +8.08pts [+3.80;+12.59] qBY 0.0029 ANO-C5-002",
+     "C5-07": "NEGATIF ratio 0.916 q 0.891",
+     "C5-08": "CANDIDATE_J1 ratio 0.615 [0.538;0.732] qBY 0.0029 ANO-C5-003 avertissement composition",
+     "C5-09": "NON_ELIGIBLE 106/81 reelles",
+     "C5-10": "NEGATIF degenere 0 journee contenue etablie 1440/1440"
+    },
+    "sha256": {
+     "comparaisons": "0db427a9f4421826a4335456ab4499e81d9dc8c446698aceb311396fec4bfd3f",
+     "couverture": "54a365e0ce6b9e126c0ea3adf80b41b63cd509d64cea48045f716db6af48579d",
+     "rapport_FE": "d1e486315d229966fbd6b7742c583fdda8767dca9b79533d89132aed04da481f",
+     "rapport_FF": "af42fd8d8951757fb8ba88001254ef5bb9556c92d0772477a6b4e0a2d8f7f85e",
+     "catalogue_ANO": "e4b45596ae7b0787261947fd8db40c2ba5a128742e943ae83bf595a14442db22"
+    },
+    "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3 automatique"
+   },
+   "entry_hash": "4a48812c86e8cd84341bcbb65307be667a9f3f13ad04eb4b196fb0d98b9cde57"
   }
  ]
 }

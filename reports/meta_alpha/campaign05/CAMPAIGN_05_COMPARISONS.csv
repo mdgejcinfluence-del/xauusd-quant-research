@@ -1,0 +1,11 @@
+id,famille,comparaison,type,statistique,ic95_bas,ic95_haut,p_brute,n_a,n_b,grappes_a,grappes_b,seuil_materiel,materiel,q_BY_famille,lecture
+C5-01,F-E,"Amplitude ouverture 30 min (bp), LONDRES vs ASIE",med,1.1886,1.14838,1.23575,0.0005,2570,2566,2570,2566,ratio 1.15 symetrique,True,0.00417,CANDIDATE_J1
+C5-02,F-E,"P(poursuite +30 min), transition NEWYORK vs LONDRES",prop,0.02237,-0.0045,0.04889,0.101,2565,2569,2565,2569,5 points,False,0.28056,NEGATIF
+C5-03,F-E,"Amplitude premiere heure Asie (bp), CONTINUITE vs TROU_INTRA_SEMAINE",med,,,,,2565,0,2565,0,ratio 1.15 symetrique,False,,NON_ELIGIBLE (effectifs publies)
+C5-04,F-E,"Amplitude ouverture Londres 30 min (bp), lundi vs vendredi",med,0.91155,0.85729,1.00037,0.052,513,508,513,508,ratio 1.15 symetrique,False,0.21667,NEGATIF
+C5-05,F-E,"Spread median 15 premieres minutes (bp), NEWYORK vs LONDRES",med,1.00165,0.99031,1.01412,0.726,2566,2569,2566,2569,ratio 1.15 symetrique,False,1.0,NEGATIF
+C5-06,F-F,"P(premiere atteinte reelle identifiable disponible avant 08:00), HAUT vs BAS",prop,0.08081,0.03797,0.12591,0.0005,1022,982,1022,982,5 points,True,0.00285,CANDIDATE_J1
+C5-07,F-F,"Extension +60 min apres premiere atteinte reelle (bp), HAUT vs BAS",med,0.91604,0.80749,1.05009,0.234,1020,975,1020,975,ratio 1.15 symetrique,False,0.8905,NEGATIF
+C5-08,F-F,"Retracement +60 min (bp), atteintes disponibles avant 13:00 vs des 13:00",med,0.61534,0.53846,0.73187,0.0005,1550,454,1495,441,ratio 1.15 symetrique,True,0.00285,CANDIDATE_J1
+C5-09,F-F,"P(premiere atteinte hebdomadaire reelle disponible avant mercredi 00:00), HAUT vs BAS",prop,0.0,0.0,0.0,1.0,106,81,106,81,5 points,False,1.0,NON_ELIGIBLE (effectifs publies)
+C5-10,F-F,"P(journee CONTENUE ETABLIE), ere 2010-13 vs 2017-20",prop,0.0,0.0,0.0,1.0,863,632,863,632,5 points,False,1.0,NEGATIF

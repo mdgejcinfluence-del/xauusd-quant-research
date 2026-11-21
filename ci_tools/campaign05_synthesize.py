@@ -14,7 +14,8 @@ def boot_cluster(dfA, dfB, col, kind, cluster='date'):
         return [g[col].dropna().values for _, g in df.groupby(cluster)]
     da, db = by(dfA), by(dfB)
     da = [x for x in da if len(x)]; db = [x for x in db if len(x)]
-    if not da or not db: return (np.nan,) * 5 + (0, 0, 0, 0)
+    na = int(sum(len(x) for x in da)); nb = int(sum(len(x) for x in db))
+    if not da or not db: return (np.nan,) * 4 + (na, nb, len(da), len(db))
     va, vb = np.concatenate(da), np.concatenate(db)
     ea = np.mean(va) if kind == 'prop' else np.median(va)
     eb = np.mean(vb) if kind == 'prop' else np.median(vb)
@@ -109,7 +110,9 @@ def main():
     comp = pd.DataFrame(rows)
     comp['q_BY_famille'] = np.nan
     for fam, g in comp.groupby('famille'):
-        comp.loc[g.index, 'q_BY_famille'] = BY(g.p_brute.values)
+        testables = g[g.p_brute.notna()]  # BY sur p calculables; non testable = q NaN publie
+        if len(testables):
+            comp.loc[testables.index, 'q_BY_famille'] = BY(testables.p_brute.values)
     def lecture(r):
         if not (r.n_a >= 200 and r.n_b >= 200 and r.grappes_a >= 100 and r.grappes_b >= 100): return 'NON_ELIGIBLE (effectifs publies)'
         if r.q_BY_famille < 0.05 and r.materiel: return 'CANDIDATE_J1'
