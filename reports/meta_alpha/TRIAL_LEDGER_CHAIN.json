@@ -2353,6 +2353,53 @@
     "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3 automatique"
    },
    "entry_hash": "4a48812c86e8cd84341bcbb65307be667a9f3f13ad04eb4b196fb0d98b9cde57"
+  },
+  {
+   "seq": 223,
+   "prev_hash": "4a48812c86e8cd84341bcbb65307be667a9f3f13ad04eb4b196fb0d98b9cde57",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "05",
+    "objet": "Retour fondateur sur seq222: resultats descriptifs acceptes, cloture definitive apres deux verifications documentaires",
+    "acceptation": {
+     "ANO-C5-001": "J1 descriptive acceptee, nuance borne basse IC95 1.148 sous seuil materiel 1.15",
+     "ANO-C5-002": "J1 descriptive acceptee, nuance borne basse IC95 +3.80pts sous seuil 5pts",
+     "ANO-C5-003": "J1 descriptive acceptee, avertissement composition session/regime maintenu",
+     "priorite": "aucune, aucune promotion automatique"
+    },
+    "negatifs_conserves": [
+     "C5-02",
+     "C5-04",
+     "C5-05",
+     "C5-07"
+    ],
+    "non_eligibles_conserves": [
+     "C5-03",
+     "C5-09"
+    ],
+    "requalification": {
+     "C5-10": "STRUCTURELLEMENT NON EVALUABLE - aucune journee a 1440/1440 minutes observees; ne pas presenter comme preuve d absence de journees contenues"
+    },
+    "verification_provenance": {
+     "synthese": "executee apres commit abbc2bc (run corrige 44892455679)",
+     "FE": "C5-01..05 sur OPENINGS version abbc2bc; contenu decompresse bit-identique entre runs (sha256 4d00aaf1b348...), bug hors chemin ouvertures",
+     "FF": "sorties run initial exclues (ATTEINTES_JOUR vide 58 octets, drapeaux DAY_FF structurellement fausse); C5-06/07/08/10 sur fichiers regeneres; fichiers semaine/couverture blobs identiques entre commits 60a6fef et abbc2bc",
+     "nouvelle_extraction": "aucune"
+    },
+    "verification_BY": {
+     "formule": "BY q=min_{j>=k}(m*H_m*p_(j)/j) plafonne 1, familles separees",
+     "F-E": "5 prevues, 4 testables, publie m=4 H=2.083333, C5-03 q NaN sans imputation; sensibilite m=5 H=2.283333 recalculee sur p publiees: C5-01 q=0.00571, aucune lecture ne change",
+     "F-F": "5 prevues, 5 calculables, m=5 H=2.283333 conforme des l origine",
+     "recalcul": "independant sur p publiees, ecarts nuls"
+    },
+    "sha256": {
+     "note_finale": "5d5c2bf95dd1ead68599fb9a963a108f1e075bf11e51e96deddecce2cc4e5a4f",
+     "dossier_cloture": "309a8c86bb807499717b2c4d4209a7fc9da772cab940f1fd38cb125705ec1144",
+     "comparaisons": "0db427a9f4421826a4335456ab4499e81d9dc8c446698aceb311396fec4bfd3f"
+    },
+    "restrictions": "aucun J2/J3, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, aucun recalcul C3/C4, aucune optimisation depuis candidates C5"
+   },
+   "entry_hash": "8faf7436c16ffffe8a20c8eb714e49ee3fb0e9fbc9e47fdc5c89bd3a4e665a12"
   }
  ]
 }
