@@ -1,0 +1,6 @@
+id,comparaison,variable,statistique,ic95_bas,ic95_haut,p_brute,n_a,n_b,grappes_a,grappes_b,seuil_materiel_bp,materiel,grappe_dominante,composition_sensible,q_BY_m5,lecture
+FJ-01,R_60 isoles POSITIFS vs NEGATIFS,"R_60 (bp, diff. de medianes)",0.169,-0.805123,1.608684,0.641,2736,2596,1517,1499,10.0,False,False,False,1.0,NEGATIF
+FJ-02,R_60 regroupes vs isoles,"R_60 (bp, diff. de medianes)",-3.743,-5.376854,-1.77933,0.0005,1156,5332,852,2075,10.0,False,False,False,0.005708,SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL
+FJ-03,R_60 isoles MAJEURS (I_ep>=2) vs MODERES (1<I_ep<2),"R_60 (bp, diff. de medianes)",-2.51505,-4.227408,0.157994,0.082,304,5028,277,2030,10.0,False,False,False,0.312056,NEGATIF
+FJ-04,R_60 isoles 2010-2013 vs 2017-2020,"R_60 (bp, diff. de medianes)",-1.4655,-3.235209,-0.167446,0.029,2525,1061,876,528,10.0,False,False,False,0.165542,NEGATIF
+FJ-05,R_60 isoles apparies vs pseudo-evenements,"R_60 (bp, diff. de medianes)",-4.28455,-11.10385,13.9508,0.259,5126,5126,12,12,10.0,False,True,True,0.739229,NON_EVALUABLE (comparabilite insuffisante)

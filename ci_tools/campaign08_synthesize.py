@@ -108,7 +108,7 @@ def BY_m5(pvals):
 
 def unites_episodes(df):
     return [{'jour': r.date, 'ancrage': int(r.t_dernier), 'chocs': [int(x) for x in str(r.chocs_t).split(';')],
-             'bras': int(r._bras), 'valeur': float(r.R60)} for r in df.itertuples()]
+             'bras': int(r.bras_tmp), 'valeur': float(r.R60)} for r in df.itertuples()]
 
 def tercile_assign(pool):
     q1, q2 = np.quantile(pool, [1 / 3, 2 / 3], method='linear')
@@ -132,7 +132,7 @@ def main():
 
     comparaisons = {}
     def prep(df_a, df_b):
-        a = df_a.copy(); b = df_b.copy(); a['_bras'] = 0; b['_bras'] = 1
+        a = df_a.copy(); b = df_b.copy(); a['bras_tmp'] = 0; b['bras_tmp'] = 1
         units = unites_episodes(pd.concat([a, b]))
         racines, diag = construire_grappes(units)
         return units, racines, diag
@@ -180,19 +180,20 @@ def main():
     ep_ids = [p['episode_id'] for p in paires]; ps_ids = [p['pseudo_id'] for p in paires]
     ep_p = EP[EP.episode_id.isin(ep_ids)].copy(); ps_p = PS[PS.pseudo_id.isin(ps_ids)].copy()
     ep_p = ep_p[np.isfinite(ep_p.R60)]; ps_p = ps_p[np.isfinite(ps_p.R60)]
-    paires_valides = [(e, p) for e, p in paires if e in set(ep_p.episode_id) and p in set(ps_p.pseudo_id)]
+    paires_valides = [(p['episode_id'], p['pseudo_id']) for p in paires if p['episode_id'] in set(ep_p.episode_id) and p['pseudo_id'] in set(ps_p.pseudo_id)]
     details['FJ-05_appariement']['paires_deux_R60'] = int(len(paires_valides))
     # composition ere x session (bras apparies utilises)
     def parts_ere(df):
         v = df.ere.value_counts(normalize=True)
         return {e: float(v.get(e, 0.0)) for e in ['2010_2013', '2014_2016', '2017_2020']}
-    pe, pp = parts_ere(ep_p), parts_ere(ps_p)
+    ep_paires = EP[EP.episode_id.isin([e for e, _ in paires_valides])]
+    ps_paires = PS[PS.pseudo_id.isin([p for _, p in paires_valides])]
+    pe, pp = parts_ere(ep_paires), parts_ere(ps_paires)
     compo_sensible = any(min(pe[e], pp[e]) < 0.10 for e in pe) or any(abs(pe[e] - pp[e]) > 0.10 for e in pe)
     details['FJ-05_composition'] = {'parts_ere_episodes': pe, 'parts_ere_pseudos': pp,
                                     'COMPOSITION_SENSIBLE': bool(compo_sensible),
-                                    'effectifs_ere_x_session_episodes': ep_p.groupby(['ere', 'session']).size().astype(int).to_dict() if len(ep_p) else {},
-                                    'effectifs_ere_x_session_pseudos': ps_p.groupby(['ere', 'session']).size().astype(int).to_dict() if len(ps_p) else {}}
-    details['FJ-05_composition'] = json.loads(json.dumps(details['FJ-05_composition'], default=str))
+                                    'effectifs_ere_x_session_episodes': {f'{k[0]}|{k[1]}': int(v) for k, v in ep_paires.groupby(['ere', 'session']).size().items()} if len(ep_paires) else {},
+                                    'effectifs_ere_x_session_pseudos': {f'{k[0]}|{k[1]}': int(v) for k, v in ps_paires.groupby(['ere', 'session']).size().items()} if len(ps_paires) else {}}
 
     res = {}; diags = {}; flags = {}
     for cid, (a, b, _) in comparaisons.items():
