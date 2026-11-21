@@ -169,14 +169,14 @@ jobs:
 
         git config user.name ''github-actions''
 
-        git add reports/meta_alpha/phase10/PHASE10_RESULTS.json reports/meta_alpha/phase10/PHASE10_EVENTS.csv.gz
-        reports/meta_alpha/phase10/P10_COVERAGE.json reports/meta_alpha/phase10/SYNTH_LOG.txt
-        2>/dev/null || true
+        git add -A reports/meta_alpha/phase10/
+
+        git status --porcelain
 
         git diff --cached --quiet || git commit -m ''Phase 10: resultats synthese
         (run synthese seule)''
 
-        git push origin HEAD:arena/afe12737-xauusd-quant-research || true'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
     - name: Publier les resultats Phase 10
       uses: actions/upload-artifact@v4
       with:
