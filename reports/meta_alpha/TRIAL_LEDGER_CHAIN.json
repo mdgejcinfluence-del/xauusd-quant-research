@@ -3517,6 +3517,48 @@
     "statut": "ETAPE B LIVREE - aucun survivant economique parmi les cinq; en attente de decision du proprietaire (relance exploratoire ou chantier different, sur ordre distinct)"
    },
    "entry_hash": "ee79630e07dc3ea8c7055951497cd7027b802023b43488b016fc97b0689e823c"
+  },
+  {
+   "seq": 275,
+   "prev_hash": "ee79630e07dc3ea8c7055951497cd7027b802023b43488b016fc97b0689e823c",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "phase": "9",
+    "objet": "Phase 9 close par decision du proprietaire: les cinq candidates P9-A a P9-E ont ete evaluees economiquement (etape B seq274), aucune ne couvre ses couts dans les conditions etudiees; constat principal: plusieurs regularites descriptives sur horizons courts presentent des amplitudes trop faibles face au spread observe. Aucune candidate n est sauvee ni reoptimisee."
+   },
+   "entry_hash": "50f0f953c2e0f4eec39de8fa7204af9132335f97c7b4203ade9ee6b8b2f3fb70"
+  },
+  {
+   "seq": 276,
+   "prev_hash": "50f0f953c2e0f4eec39de8fa7204af9132335f97c7b4203ade9ee6b8b2f3fb70",
+   "entry": {
+    "type": "MISSION",
+    "phase": "10-A",
+    "objet": "Mission proprietaire Phase 10-A: concevoir un protocole de recherche limite aux mouvements de plus grande amplitude sur XAU/USD aux horizons H1, H4, D1. Question centrale: existe-t-il des comportements historiquement observables, disponibles au moment de la decision, dont les mouvements potentiels sont suffisamment importants pour absorber les couts d entree et de sortie? Mission exclusivement de conception documentaire: ne pas executer la campagne, ne pas consulter le holdout, ne pas lancer de recherche exploratoire, ne pas creer de strategie, ne pas declarer la Phase 10 ouverte a l execution",
+    "principes": "ne reprendre aucune candidate P9-A..P9-E comme active; ne pas optimiser les anciennes regles; distinguer amplitude observee, previsibilite et rentabilite; informations disponibles au moment de la decision uniquement; mouvements mesures a partir de prix executables Bid/Ask lorsque possible; jamais de double soustraction du spread; couts observes distingues des hypothetiques; correction des tests multiples et gestion des observations dependantes prevues; negatifs et non evaluables conserves; jamais de regularite descriptive presentee comme strategie rentable",
+    "travail_demande": "A definition precise des evenements/comportements H1/H4/D1; B variables observables et disponibilite temporelle exacte; C regles de mesure des amplitudes favorables et defavorables sans fuite future dans les explicatives; D modele de couts complet (spread observe, commissions, slippage, autres); E criteres economiques eliminatoires definis avant toute campagne; F methode de validation temporelle, controle des dependances, correction des tests multiples; G limites (corpus IS deja largement explore, pas une preuve independante); H plan de campagne limite avec hypotheses explicites, tests predefinis et conditions d arret",
+    "livrable": "dossier PHASE_10_A: protocole scientifique, dictionnaire des variables, modele de couts, criteres d eligibilite et d arret, plan de validation, registre des risques methodologiques, liste des autorisations necessaires avant execution; chaque choix justifie; toute donnee indisponible declaree",
+    "restrictions": "XAU/USD corpus IS uniquement; holdout 2020-2026 scelle; pas de FRED; aucun backtest strategique ni challenge_sim; aucune promotion automatique J2/J3; aucun budget consomme; 36 cellules S12 inchangees; T0 non active; resultats IS qualifies d historiquement evalues, non de confirmations independantes"
+   },
+   "entry_hash": "abf48f3b26996c92c4d32cde783fb44c5c88cd13b76218260f9aade051c2fc52"
+  },
+  {
+   "seq": 277,
+   "prev_hash": "abf48f3b26996c92c4d32cde783fb44c5c88cd13b76218260f9aade051c2fc52",
+   "entry": {
+    "type": "PREREG",
+    "phase": "10-A",
+    "objet": "Dossier Phase 10-A livre (conception uniquement, aucun calcul, aucune donnee consultee au-dela de la documentation du programme). Protocole: cadre de mesure commun aux decisions en clotures H1/H4/D1, prix executables Bid/Ask d abord (spread dans les prix, jamais soustrait deux fois; repli Mid etiquete non executable et porte plus stricte), mesures post-decision descriptives (MFE/MAE, rendement signe a fenetre fixe, temps d excursion, censures publiees). Famille fermee de six tests a seuils causaux roulants (250 barres closes, amorcage ineligible publie, aucun quantile poole): F10-01 barre H1 extreme Q95 -> rendement signe H1 suivante; F10-02 franchissement H1 des extremes de 20 barres -> signe sur 4h; F10-03 barre H4 extreme Q95 -> H4 suivante; F10-04 franchissement H4 des extremes de 30 barres -> signe sur 24h; F10-05 jour extreme Q90 -> jour suivant; F10-06 jour etroit Q25 -> amplitude du jour suivant (magnitude seule, aucun sens). Dictionnaire des variables avec disponibilite exacte; donnees indisponibles declarees (carnet, remplissages, latence, commissions/swaps reels). Portes economiques eliminatoires avant inference: magnitude mediane >= 3x cout total central; esperance brute > cout central; MAE median <= 3x esperance nette centrale; >=200 evenements et >=100 grappes par bras; famille arretee a la premiere porte echouee, campagne arretee si aucune famille ne franchit les portes, sans elargissement. Validation: etiquette historiquement evalue, stabilite par ere descriptive (arret si changement de signe), aucune optimisation chronologique, confirmation uniquement par protocole separe (prospectif ou holdout sur autorisation distincte). Dependances: bootstrap par grappes-composantes connexes, grappe dominante 5%; multiplicite: BY m=6 fixe, facteur conserve pour les familles arretees aux portes. Risques R1-R11 et cinq autorisations requises avant execution (validation des constantes, gel chaine, ordre d execution distinct, decisions separees strategie/holdout/prospectif/prop firm, interdictions maintenues).",
+    "sha256": {
+     "PHASE10A_PROTOCOL.md": "11174d76bb2e73ff1c34e3911e87fd17bef00114826339c26533fbf4694d5a53",
+     "PHASE10A_DICTIONARY.md": "33a5174a8f4285c225520918c45995674f600a868b82b771bb02050002bf85b0",
+     "PHASE10A_COST_MODEL.md": "164ee4e7590ecbdf4514fdb7b03078c83714acaff75d6addd876475f8f5cdf2e",
+     "PHASE10A_VALIDATION_PLAN.md": "db879b89e0557d22e938213c183bc0c92ba76bdff3004e9303e1d0c2ee22bc2a",
+     "PHASE10A_RISKS_AUTHORIZATIONS.md": "35615e110a0f00c5b890c0f1722327108c15fcbe946bba2354d3f31570a1fc0c"
+    },
+    "statut": "CONCEPTION SOUMISE - aucun calcul; validation, gel et ordre d execution requis avant toute analyse"
+   },
+   "entry_hash": "5d3635c1681aca834b220c10fc8f30a986d65d8238c7c6c524d7008fd84aabd5"
   }
  ]
 }
