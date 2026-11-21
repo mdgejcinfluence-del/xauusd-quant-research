@@ -3559,6 +3559,42 @@
     "statut": "CONCEPTION SOUMISE - aucun calcul; validation, gel et ordre d execution requis avant toute analyse"
    },
    "entry_hash": "5d3635c1681aca834b220c10fc8f30a986d65d8238c7c6c524d7008fd84aabd5"
+  },
+  {
+   "seq": 278,
+   "prev_hash": "5d3635c1681aca834b220c10fc8f30a986d65d8238c7c6c524d7008fd84aabd5",
+   "entry": {
+    "type": "MISSION",
+    "phase": "10-A",
+    "objet": "Addendum de validation des constantes Phase 10-A: conception generale acceptee sous reserve de precisions techniques; cette decision ne vaut ni gel definitif ni autorisation d execution. Statut obligatoire: conception en cours de validation, gel chaine non autorise, execution non autorisee, aucune operation sur les donnees",
+    "precisions_obligatoires": [
+     "quantiles et fenetre de 250 barres: variables concernees, niveaux exacts, calcul separe par timeframe, 250 barres entierement cloturees precedant la barre evaluee, exclusion stricte de la barre courante de son propre seuil, conditions d amorcage et nombre de cas ineligibles, duree calendaire approximative de 250 barres pour H1/H4/D1; aucun quantile poole entre timeframes",
+     "table F10-01..F10-06: timeframe, declencheur, variable principale, seuil causal, horizon d evaluation, unite statistique, hypothese nulle et alternative, metrique primaire unique, regle de donnees manquantes; confirmer que m=6 egale exactement les six hypotheses primaires reellement testees; toute repetition sur timeframes/horizons/sens/variantes comptabilisee sauf diagnostic non confirmatoire explicitement declare",
+     "portes economiques en valeurs exactes: magnitude mediane >=3x cout central, esperance brute minimale, esperance nette minimale, definition et seuil de la queue adverse, effectif minimal par test, effectif minimal par ere, regles d arret en cas d echec; calcul du cout central et scenarios de sensibilite; couts Bid/Ask jamais comptes deux fois",
+     "chronologie par test: signal confirme a la cloture -> premiere cotation executable disponible -> mesure posterieure; interdiction d utiliser retrospectivement le dernier prix de la barre du signal comme prix d entree s il n etait pas disponible a la confirmation; excursions favorables/defavorables distinctes des rendements realisables"
+    ],
+    "livrable": "addendum unique reconciliant les constantes avec les cinq documents compagnons, definitions approuvees conservees, modifications eventuelles enumerees, SHA-256 complets de tous les documents finaux, confirmation d absence de calcul/extraction/consultation de nouvelles donnees; dossier corrige soumis pour decision distincte"
+   },
+   "entry_hash": "7207cd87cf325e74ca55d7cfdd8d9520332667ce241d89bece6d70474e0774b3"
+  },
+  {
+   "seq": 279,
+   "prev_hash": "7207cd87cf325e74ca55d7cfdd8d9520332667ce241d89bece6d70474e0774b3",
+   "entry": {
+    "type": "PREREG",
+    "phase": "10-A",
+    "objet": "Addendum de validation livre (PHASE10A_ADDENDUM_VALIDATION.md): quantiles precises par timeframe et variable (|r| H1 Q95, |r| H4 Q95, |r| D1 Q90, range D1 Q25, interpolation lineaire, fenetre des 250 barres entierement cloturees precedentes, barre courante strictement exclue, aucun pool entre timeframes; durees approximatives: H1 ~11 journees, H4 ~42 journees, D1 ~1 an; amorcage ineligible publie en effectifs); table fermee F10-01..F10-06 (declencheur, variable primaire unique, horizon, unite evenement, H0/H1 bilaterale, regle de censure publiee) et m=6 confirme comme exactement les six hypotheses primaires, ventilations ere/session/signe et MFE/MAE declarees diagnostics non confirmatoires sans p-value; portes economiques exactes: C_ref = spread median de la famille + 1,7 bp central (commission hypothetique 0,7 + slippage 1,0; scenarios favorable +0,5, defavorable spread x1,5 + 4,4), porte 1 magnitude mediane >=3x C_ref, porte 2 esperance nette centrale >0 (Bid/Ask: esperance executable >1,7 bp, le spread etant dans les prix et jamais soustrait deux fois; Mid: > spread+1,7), porte 3 MAE median <=3x esperance nette centrale, porte 4 >=200 evenements et >=100 grappes par bras, >=50 evenements par ere et par bras pour conclure les ventilations d ere; arret a la premiere porte echouee, facteur BY conserve, aucun contournement par sous-groupe; chronologie par test: signal a la cloture puis entree a la premiere cotation de la barre suivante (Ask/Bid selon le sens), dernier prix de la barre du signal interdit comme entree, MFE/MAE extrema de trajectoire jamais presentes comme rendements realisables. Quatre modifications enumerees par rapport au dossier initial: F10-06 dote d une metrique primaire testable (ratio de range, H0=1) rendant m=6 exact; comptabilite des portes precisee par mode de prix; entree explicitement deplacee a la barre suivante pour les six tests; effectif minimal par ere ajoute sans arret global. Aucun calcul, aucune extraction, aucune consultation de nouvelles donnees; gel et execution non autorises.",
+    "sha256": {
+     "PHASE10A_PROTOCOL.md": "11174d76bb2e73ff1c34e3911e87fd17bef00114826339c26533fbf4694d5a53",
+     "PHASE10A_DICTIONARY.md": "33a5174a8f4285c225520918c45995674f600a868b82b771bb02050002bf85b0",
+     "PHASE10A_COST_MODEL.md": "164ee4e7590ecbdf4514fdb7b03078c83714acaff75d6addd876475f8f5cdf2e",
+     "PHASE10A_VALIDATION_PLAN.md": "db879b89e0557d22e938213c183bc0c92ba76bdff3004e9303e1d0c2ee22bc2a",
+     "PHASE10A_RISKS_AUTHORIZATIONS.md": "35615e110a0f00c5b890c0f1722327108c15fcbe946bba2354d3f31570a1fc0c",
+     "PHASE10A_ADDENDUM_VALIDATION.md": "fff4c5212ff324c14a0042230a3173050121ac006cda861616999be91102a843"
+    },
+    "statut": "CONCEPTION EN COURS DE VALIDATION - gel chaine NON autorise, execution NON autorisee; en attente de decision distincte"
+   },
+   "entry_hash": "34744e7919553f204e31f4017901c2d8946048df81059f924a5f80297515acb9"
   }
  ]
 }
