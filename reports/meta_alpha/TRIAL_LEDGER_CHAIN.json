@@ -2446,6 +2446,58 @@
     "decision_demandee": "approbation du principe F-G ou choix F-H/F-I, puis autorisation de rediger dictionnaire + protocole (preparation seule)"
    },
    "entry_hash": "d413a401514b301e12e861433e379987bf0a816cb2d219d7c3668ce64cad4b74"
+  },
+  {
+   "seq": 226,
+   "prev_hash": "d413a401514b301e12e861433e379987bf0a816cb2d219d7c3668ce64cad4b74",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Decision fondateur: approbation du principe F-G Forme des trajectoires journalieres; preparation documentaire et methodologique uniquement; AUCUN calcul, aucune extraction exploratoire, aucune consultation de resultats",
+    "dimensions_a_formaliser": [
+     "efficience",
+     "sinuosite",
+     "part directionnelle",
+     "point median de parcours",
+     "asymetrie moities de journee"
+    ],
+    "exigences": [
+     "redondances mathematiques explicites",
+     "deplacements nets nuls/faibles traites",
+     "grandeurs journee complete etiquetees retrospectives disponibles a la cloture",
+     "cinq comparaisons provisoires avec audit specifique amplitude",
+     "12 livrables de preparation",
+     "hashes SHA-256 avant toute execution"
+    ],
+    "restrictions": "calculs interdits avant validation definitive du protocole; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-H/F-I en reserve"
+   },
+   "entry_hash": "fa3c9f3e2ca155f772125754e91d19f305cab93d39b9cf1ba6f3cab974bb93c3"
+  },
+  {
+   "seq": 227,
+   "prev_hash": "fa3c9f3e2ca155f772125754e91d19f305cab93d39b9cf1ba6f3cab974bb93c3",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Preparation F-G livree (12 livrables): blueprint, dictionnaire mathematique, conventions UTC/couverture/disponibilite, liste fermee provisoire C6-01..05, methode bootstrap grappes + BY famille de cinq, materialites justifiees, matrice de couverture, registre de biais B1-B11, couts/suspension, nouveaute vs campagnes 0-5. Aucun calcul effectue.",
+    "sha256": {
+     "CAMPAIGN_06_PROPOSAL.md": "d7e3088c3b5f856f29aaef7a45787dae167f3045a51f7f20a31db5d99dbea34e",
+     "CAMPAIGN_06_FG_BLUEPRINT.md": "67da7bc390d4dc81a3a26e78b6a66e47a164f79f549ea9f0e3647f50fe15fb20",
+     "CAMPAIGN_06_FG_DICTIONARY.md": "156cf85ae4e63baa767c62acb1d8d2e3d30293a5550b2c45737ea77382a19aef",
+     "CAMPAIGN_06_FG_COMPARISONS.md": "8744a1f28aae1a2ad86cc2b17781e54e0a9feb687a553654fa5ceb3e06a3f9ce",
+     "CAMPAIGN_06_FG_METHOD.md": "72a373aa46584a10d33221e4e147865ea687e3783929ac34b04f3d3d55ad601e"
+    },
+    "points_a_trancher_au_gel": [
+     "constantes classes ER 0.30/0.10 (C6-01)",
+     "seuil deplacement faible propose 5 bp",
+     "seuil trou maximal propose 15 min et taux 90 pct pour eligibilite forme",
+     "grappe semaine civile pour C6-01",
+     "sort de S en secondaire de C6-02 (audit mecanique)",
+     "seuil 30 min pour point median"
+    ],
+    "statut": "PREPARATION SOUMISE - en attente validation fondateur du protocole consolide; calculs toujours interdits"
+   },
+   "entry_hash": "0d7cecda18e48c4254c1db820d3e43e4c09e1f7cd9ad452b6fbe4efe11cdbd40"
   }
  ]
 }
