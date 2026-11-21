@@ -1,0 +1,26 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "journees_presentes": 3097,
+ "statuts_forme": {
+  "ELIGIBLE": 2772,
+  "CENSUREE_FORME": 325
+ },
+ "classes_halte": {
+  "FRONTIERE_PROGRAMMEE": 1561,
+  "HALTE_INDETERMINEE": 850,
+  "AUCUN_TROU": 686
+ },
+ "statuts_generaux": {
+  "PARTIELLE": 2177,
+  "EXCLUE": 525,
+  "COMPLETE": 395
+ },
+ "classes_forme_eligibles": {
+  "OSCILLANTE": 2292,
+  "DEPLACEMENT_FAIBLE": 254,
+  "MIXTE": 212,
+  "DIRECTIONNELLE": 14
+ }
+}
