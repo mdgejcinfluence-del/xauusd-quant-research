@@ -3692,6 +3692,18 @@
     "statut": "PREFLIGHT CONFORME - execution autorisee a demarrer"
    },
    "entry_hash": "b5e843c5e0df0fe86f15188b730dcd203ade61254f7864e4ee945ad0f7ad7670"
+  },
+  {
+   "seq": 286,
+   "prev_hash": "b5e843c5e0df0fe86f15188b730dcd203ade61254f7864e4ee945ad0f7ad7670",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "Run moteur 44919631588: trois jobs moteur verts (282 partitions IS), job de synthese en echec en 26 s. Cause identifiee par reproduction locale sur donnees fictives: TypeError boot_cluster() argument unilat_superieur inattendu (remplacement de la fonction perdu lors d editions paralleles du fichier phase10_synthesize.py). Correction appliquee et testee localement sur fichier fictif (aucune donnee reelle lue par le test local; artefacts fictifs supprimes, non commites). Aucune definition gelee modifiee. Relance complete du workflow (moteurs + synthese corrigee).",
+    "run_invalide": "44919631588 (synthese seulement; evenements moteurs non recuperables depuis le bac a sable, artefacts conserves 90 jours cote GitHub)",
+    "statut": "CORRIGE ET RELANCE"
+   },
+   "entry_hash": "d11f2870a9dbcf7decddce5c2e2c94656de26ff0d10a370061e45d4709605213"
   }
  ]
 }

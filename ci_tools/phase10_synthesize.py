@@ -28,23 +28,22 @@ def composantes(idx_time, fenetre_fin):
         ident[k] = g
     return ident
 
-def boot_cluster(x, grappe, stat_fn, nb=10000, seed=20261113, union=None):
+def boot_cluster(x, grappe, stat_fn, nb=10000, seed=20261113, unilat_superieur=False):
+    """Bootstrap par grappes (re-echantillonnage des grappes avec remise).
+    p bilateral par defaut; unilat_superieur=True -> H1: statistique > 0."""
     rng = np.random.default_rng(seed); x = np.asarray(x, float); grappe = np.asarray(grappe)
-    uc = union if union is not None else np.unique(grappe)
-    par = {c: x[grappe == c] for c in uc}
-    obs = stat_fn(x)
-    remap = {c: i for i, c in enumerate(uc)}
-    gi = np.array([remap[c] for c in grappe])
-    counts = np.bincount(gi, minlength=len(uc)).astype(float)
-    vals = [stat_fn(par[c]) if len(par[c]) else np.nan for c in uc] if stat_fn is not np.mean else None
-    if stat_fn is np.mean:
-        sc = np.array([par[c].sum() for c in uc])
-        dist = (rng.multinomial(int(counts.sum()), counts / counts.sum(), size=nb) * (sc / counts)).sum(axis=1) / (rng.multinomial(int(counts.sum()), counts / counts.sum(), size=1) * 0 + counts.sum()) if False else (rng.multinomial(int(counts.sum()), counts / counts.sum(), size=nb) * (sc / counts)).sum(axis=1) / counts.sum()
+    uc = np.unique(grappe)
+    par = [x[grappe == c] for c in uc]
+    obs = float(stat_fn(x))
+    idx = rng.integers(0, len(uc), size=(nb, len(uc)))
+    dist = np.empty(nb)
+    for b in range(nb):
+        dist[b] = stat_fn(np.concatenate([par[k] for k in idx[b]]))
+    if unilat_superieur:
+        p = (np.sum(dist <= 0) + 1) / (nb + 1)
     else:
-        idx = rng.integers(0, len(uc), size=(nb, len(uc)))
-        dist = np.array([stat_fn(np.concatenate([par[uc[k]] for k in row])) if len(row) else np.nan for row in idx])
-    p = (np.sum(np.abs(dist - np.mean(dist)) >= abs(obs - np.mean(dist))) + 1) / (nb + 1) if stat_fn is not np.mean else (np.sum(dist <= 0) + 1) / (nb + 1)
-    return obs, float(p)
+        p = 2 * min((np.sum(dist <= 0) + 1) / (nb + 1), (np.sum(dist >= 0) + 1) / (nb + 1))
+    return obs, float(min(p, 1.0))
 
 def tail(x, crefs):
     x = np.asarray(x, float)
