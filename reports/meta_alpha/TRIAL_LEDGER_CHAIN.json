@@ -3282,6 +3282,37 @@
     "statut": "ADDENDUM SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
    },
    "entry_hash": "d6efc3b48ea99e8b722ef120f18b45e21c2005581880874710b28f9d8e8e2e98"
+  },
+  {
+   "seq": 263,
+   "prev_hash": "d6efc3b48ea99e8b722ef120f18b45e21c2005581880874710b28f9d8e8e2e98",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Retour fondateur F-J V1+V1.1: quatre formalisations acceptees; consolidation finale autorisee sous trois verrouillages; parametres valides non rouverts; gel et execution interdits; aucun calcul/extraction/consultation",
+    "verrouillage1_cloture": "cloture a t_der+16 seulement si les 15 minutes de silence sont integralement observees en M1 sans minute manquante; sinon cloture indeterminee, episode censure publie, aucune heure de disponibilite artificielle, exclusion des comparaisons requerant un episode complet; aucun choc masque par un trou assimile a une absence",
+    "verrouillage2_pseudo": "comparabilite temporelle controlee: temps ecoule depuis l ouverture de session precise, signe defini par la variation M1 du pseudo-evenement, appariement temporel et sans remplacement regles, absences de controle comparable traitees; jamais le sillage futur pour selectionner ou exclure",
+    "verrouillage3_graphe": "pseudo-evenements et leurs sillages inclus dans le graphe de dependance FJ-05 (journees communes, sillages chevauchants, chocs ulterieurs dans les sillages, traversees de frontieres journalieres); consequences de GRAPPE_DOMINANTE (>5% d un bras) fixees a l avance en distinguant publication descriptive, validite de l inference et autorisation de candidature; aucune p-value supplementaire creee par ces controles",
+    "livrable": "protocole consolide V2 et dictionnaire (trois corrections, cinq comparaisons definitives, dix constantes, methode complete, censures et ineligibilites, SHA-256, checkpoint et chaine de preuves)",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun calcul avant validation definitive et gel; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-G et F-I definitivement cloturees"
+   },
+   "entry_hash": "a4a8e6dbf78fffa0be02ca8cb9c7e701c20371943037f690b6302a9a44192803"
+  },
+  {
+   "seq": 264,
+   "prev_hash": "a4a8e6dbf78fffa0be02ca8cb9c7e701c20371943037f690b6302a9a44192803",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "08",
+    "objet": "Protocole consolide F-J V2 (CAMPAIGN_08_PROTOCOL_V2.md) texte unique soumis au gel, remplacant V1+V1.1: V1 (022ca0dc) et V1.1 (b51dbdf3) inchanges et conserves. Trois verrouillages integres: (1) cloture confirmee seulement si les barres t_der+1..t_der+15 existent toutes consecutivement sans choc, disponibilite t_der+16 publiee; sinon CLOTURE_INDETERMINEE, episode censure, aucune disponibilite attribuee, exclusion de FJ-01..FJ-05 et de tout sillage, descripteurs observes etiquetes incomplets; (2) pseudo-evenements: bassin premiere minute eligible par (journee x session x bloc de 60 min depuis le debut de session) pour supprimer le biais de position, position pos(x) publiee, signe = signe de r_m, aucune propriete du sillage futur dans la selection/exclusion; appariement sans remplacement par ordre chronologique sur session x signe x tercile A_avant minimisant |ecart de position| (departage plus petit horodatage), distance >60 min ou strate vide = non apparie publie, NON_EVALUABLE si eligibilite non atteinte; A_avant = somme des |r| des 60 minutes precedentes segment-completes; composition ere x session avec drapeau COMPOSITION_SENSIBLE; (3) graphe de dependance etendu aux pseudo-evenements FJ-05 (noeuds + arete d appariement), aretes jour commun / sillages chevauchants / sillage contenant choc ou ancrage / traversees de frontiere, grappes = composantes connexes unites de bootstrap pour les cinq comparaisons, diagnostics publies; GRAPPE_DOMINANTE >5% d un bras: publication descriptive maintenue, inference etiquetee INFERENCE_FRAGILE (p/q/IC indicatifs), aucune CANDIDATE_J1 (plafond SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL); aucune p-value supplementaire creee par ces controles. Cinq comparaisons FJ-01..FJ-05 fermees (R_60, materialite 10 bp, bootstrap grappes 2000, BY m=5 fixe, eligibilite >=200 episodes et >=100 grappes par bras, populations episodes clos non MIXTES). Dix constantes explicites; biais D1-D15; cout un run CI; suspension sans degradation.",
+    "sha256": {
+     "CAMPAIGN_08_PROTOCOL_V2.md": "8e8479505efa03c0387171152ff01aeff368c77cc70929c35b2dcf9a4d5e795e",
+     "CAMPAIGN_08_PROTOCOL_V1.md": "022ca0dc12a767349164be673959a21f18b3e294202bf5d88b39615ffd3e39af",
+     "CAMPAIGN_08_PROTOCOL_V1_1_ADDENDUM.md": "b51dbdf30d78b38c576e6c8965c65f8bf50d973c3911550635d5c55c6665d279"
+    },
+    "statut": "PROTOCOLE V2 CONSOLIDE FINAL SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
+   },
+   "entry_hash": "03547d516403c48054c417a9978c42a1afe3427f0c0f6a682f2e7251471169f2"
   }
  ]
 }
