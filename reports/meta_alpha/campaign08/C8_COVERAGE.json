@@ -1,0 +1,27 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "journees_presentes": 3097,
+ "journees_eligibles": 3087,
+ "journees_ineligibles": 10,
+ "chocs_total": 14735,
+ "chocs_positifs": 7337,
+ "chocs_negatifs": 7398,
+ "episodes_total": 7905,
+ "episodes_par_classe": {
+  "POSITIF": 3344,
+  "NEGATIF": 3239,
+  "MIXTE": 1322
+ },
+ "episodes_par_statut": {
+  "CLOS": 7833,
+  "CLOTURE_INDETERMINEE": 72
+ },
+ "pseudo_bassin": 53920,
+ "seuils_journees_eligibles": {
+  "min": 10.0,
+  "mediane": 10.038781540924491,
+  "max": 27.6841253052881
+ }
+}
