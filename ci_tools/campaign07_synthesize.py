@@ -13,19 +13,19 @@ def clus(df, col):
     return [g[col].dropna().values.astype(float) for _, g in df.groupby('date')]
 
 def boot_prop(a, b, col):
-    ca, cb = clus(a, col), clus(b, col)
-    ca = [x for x in ca if len(x)]; cb = [x for x in cb if len(x)]
-    na, nb = int(sum(map(len, ca))), int(sum(map(len, cb)))
-    if not ca or not cb: return (np.nan,) * 4 + (na, nb, len(ca), len(cb))
-    stat = float(np.mean(np.concatenate(ca)) - np.mean(np.concatenate(cb)))
-    diffs = []
-    for _ in range(B):
-        sa = np.concatenate([ca[i] for i in RNG.integers(0, len(ca), len(ca))])
-        sb = np.concatenate([cb[i] for i in RNG.integers(0, len(cb), len(cb))])
-        diffs.append(np.mean(sa) - np.mean(sb))
-    diffs = np.array(diffs); lo, hi = np.percentile(diffs, [2.5, 97.5])
+    def sommes(df):
+        g = df.groupby('date')[col].agg(['sum', 'count'])
+        return g['sum'].values.astype(float), g['count'].values.astype(float)
+    sa, na_ = sommes(a); sb, nb_ = sommes(b)
+    na, nb = int(na_.sum()), int(nb_.sum())
+    if len(sa) == 0 or len(sb) == 0: return (np.nan,) * 4 + (na, nb, len(sa), len(sb))
+    stat = float(sa.sum() / na_.sum() - sb.sum() / nb_.sum())
+    ia = RNG.integers(0, len(sa), (B, len(sa))); ib = RNG.integers(0, len(sb), (B, len(sb)))
+    ma = sa[ia].sum(axis=1) / na_[ia].sum(axis=1); mb = sb[ib].sum(axis=1) / nb_[ib].sum(axis=1)
+    diffs = ma - mb
+    lo, hi = np.percentile(diffs, [2.5, 97.5])
     p = 2 * min((diffs <= 0).mean(), (diffs >= 0).mean())
-    return stat, float(lo), float(hi), float(min(max(p, 1 / B), 1.0)), na, nb, len(ca), len(cb)
+    return stat, float(lo), float(hi), float(min(max(p, 1 / B), 1.0)), na, nb, len(sa), len(sb)
 
 def boot_ratio(a, b, col):
     ca, cb = clus(a, col), clus(b, col)
@@ -137,7 +137,7 @@ def main():
         lo, hi = np.nanpercentile(diffs, [2.5, 97.5])
         p = 2 * min(np.nanmean(diffs <= 0), np.nanmean(diffs >= 0))
         na = int(len(cells[('2010_2013', 'G50')]) + len(cells[('2010_2013', 'P50')]))
-        nb = int(len(cells[('2017_2020', 'G50')] + len(cells[('2017_2020', 'P50')][0]) if False else len(cells[('2017_2020', 'G50')]) + len(cells[('2017_2020', 'P50')]))
+        nb = int(len(cells[('2017_2020', 'G50')]) + len(cells[('2017_2020', 'P50')]))
         ga = int(A[A.ere == '2010_2013'].date.nunique()); gb = int(A[A.ere == '2017_2020'].date.nunique())
         return float(stat), float(lo), float(hi), float(min(max(p, 1 / B), 1.0)), na, nb, ga, gb
     res['I-05'] = boot_i05()

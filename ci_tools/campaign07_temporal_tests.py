@@ -37,6 +37,11 @@ closes = [99.90] * 10 + [99.99] + [99.90] * 30 + [99.99] + [99.90] * 100
 ts, day, o, h, l, c = mk(closes)
 eps = episodes_niveau(ts, day, o, h, l, c, 100.0, 'G50')
 chk('washout 60 min un episode', len(eps) == 1)
+# barre de contact contenant UN seul niveau: pas simultane
+closes = [99.90] * 70 + [100.05] + [100.10] * 70
+ts, day, o, h, l, c = mk(closes)
+eps = episodes_niveau(ts, day, o, h, l, c, 100.0, 'G50')
+chk('contact un niveau non simultane', eps[0]['simultane'] == 0)
 # retour apres franchissement
 closes = [99.90] * 70 + [100.05] + [100.10] * 10 + [99.95] + [99.90] * 70
 ts, day, o, h, l, c = mk(closes)

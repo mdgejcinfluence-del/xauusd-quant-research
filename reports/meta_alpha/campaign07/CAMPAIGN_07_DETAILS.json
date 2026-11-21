@@ -1,0 +1,181 @@
+{
+ "populations": {
+  "episodes_bruts_par_grille": {
+   "P10": 11841,
+   "R10": 9958,
+   "P50": 2420,
+   "G50": 2359,
+   "P100": 1325,
+   "R100": 1290
+  },
+  "saut": 306,
+  "simultanes": 2037,
+  "censures_jour": 12657,
+  "approches_resolues_par_grille": {
+   "P10": 6672,
+   "R10": 5482,
+   "P50": 1340,
+   "P100": 704
+  }
+ },
+ "I-05_cellules": {
+  "2010_2013_G50": {
+   "n": 0,
+   "p_franchissement": NaN
+  },
+  "2010_2013_P50": {
+   "n": 749,
+   "p_franchissement": 0.8918558077436582
+  },
+  "2014_2016_G50": {
+   "n": 0,
+   "p_franchissement": NaN
+  },
+  "2014_2016_P50": {
+   "n": 338,
+   "p_franchissement": 0.8431952662721893
+  },
+  "2017_2020_G50": {
+   "n": 0,
+   "p_franchissement": NaN
+  },
+  "2017_2020_P50": {
+   "n": 253,
+   "p_franchissement": 0.924901185770751
+  }
+ },
+ "composition_I-01": {
+  "ecarts_pts_ere": {
+   "2014_2016": 25.223880597014926,
+   "2017_2020": 18.880597014925375,
+   "2010_2013": 55.8955223880597
+  },
+  "ecarts_pts_session": {
+   "NEWYORK": 33.35820895522388,
+   "LONDRES": 27.164179104477608,
+   "NUIT": 8.059701492537313,
+   "ASIE": 31.417910447761194
+  },
+  "ecarts_pts_cote": {
+   "DESSUS": 50.67164179104478,
+   "DESSOUS": 49.32835820895522
+  },
+  "ecart_distance_initiale_mediane_bp": NaN,
+  "ratio_exposition_episodes": 0.0,
+  "part_sans_strate_comparable": [
+   0.0,
+   1.0
+  ],
+  "statut": "NON_EVALUABLE_COMPOSITION"
+ },
+ "composition_I-02": {
+  "ecarts_pts_ere": {
+   "2014_2016": 28.751974723538705,
+   "2017_2020": 20.379146919431278,
+   "2010_2013": 50.86887835703001
+  },
+  "ecarts_pts_session": {
+   "NEWYORK": 34.12322274881517,
+   "LONDRES": 27.64612954186414,
+   "NUIT": 7.740916271721959,
+   "ASIE": 30.48973143759874
+  },
+  "ecarts_pts_cote": {
+   "DESSUS": 46.91943127962085,
+   "DESSOUS": 53.08056872037915
+  },
+  "ecart_distance_initiale_mediane_bp": NaN,
+  "ratio_exposition_episodes": 0.0,
+  "part_sans_strate_comparable": [
+   0.0,
+   1.0
+  ],
+  "statut": "NON_EVALUABLE_COMPOSITION"
+ },
+ "composition_I-03": {
+  "ecarts_pts_ere": {
+   "2014_2016": 23.67941712204007,
+   "2017_2020": 19.034608378870672,
+   "2010_2013": 57.28597449908926
+  },
+  "ecarts_pts_session": {
+   "NEWYORK": 32.60473588342441,
+   "LONDRES": 28.96174863387978,
+   "NUIT": 4.189435336976321,
+   "ASIE": 34.244080145719494
+  },
+  "ecarts_pts_cote": {
+   "DESSUS": 51.09289617486339,
+   "DESSOUS": 48.90710382513661
+  },
+  "ecart_distance_initiale_mediane_bp": NaN,
+  "ratio_exposition_episodes": 0.0,
+  "part_sans_strate_comparable": [
+   0.0,
+   1.0
+  ],
+  "statut": "NON_EVALUABLE_COMPOSITION"
+ },
+ "composition_I-05_2010_2013": {
+  "ecarts_pts_ere": {
+   "2010_2013": 100.0
+  },
+  "ecarts_pts_session": {
+   "NEWYORK": 35.51401869158878,
+   "LONDRES": 29.23898531375167,
+   "NUIT": 5.07343124165554,
+   "ASIE": 30.173564753004005
+  },
+  "ecarts_pts_cote": {
+   "DESSUS": 51.93591455273698,
+   "DESSOUS": 48.06408544726302
+  },
+  "ecart_distance_initiale_mediane_bp": NaN,
+  "ratio_exposition_episodes": 0.0,
+  "part_sans_strate_comparable": [
+   0.0,
+   1.0
+  ],
+  "statut": "NON_EVALUABLE_COMPOSITION"
+ },
+ "composition_I-05_2017_2020": {
+  "ecarts_pts_ere": {
+   "2017_2020": 100.0
+  },
+  "ecarts_pts_session": {
+   "NEWYORK": 31.225296442687743,
+   "LONDRES": 21.34387351778656,
+   "NUIT": 16.600790513833992,
+   "ASIE": 30.8300395256917
+  },
+  "ecarts_pts_cote": {
+   "DESSUS": 47.82608695652174,
+   "DESSOUS": 52.17391304347826
+  },
+  "ecart_distance_initiale_mediane_bp": NaN,
+  "ratio_exposition_episodes": 0.0,
+  "part_sans_strate_comparable": [
+   0.0,
+   1.0
+  ],
+  "statut": "NON_EVALUABLE_COMPOSITION"
+ },
+ "taux_bruts": {
+  "I-01": {
+   "G50": NaN,
+   "P50": 0.8858208955223881
+  },
+  "I-02": {
+   "G50": NaN,
+   "P50": 0.22274881516587677
+  },
+  "I-03_medianes_bp": {
+   "G50": NaN,
+   "P50": 18.64495
+  },
+  "I-04": {
+   "R100": NaN,
+   "R10": 0.8973002553812477
+  }
+ }
+}

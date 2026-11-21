@@ -166,11 +166,14 @@ def episodes_niveau(ts, day, o, h, l, c, niveau, grille):
         contact = t_touch if t_touch is not None else t_cross
         simultane = False
         if contact is not None:
-            off = GRILLES[grille][1]
-            simultane = (int(np.floor((h[contact] - off) / pas)) - int(np.floor((l[contact] - off) / pas))) >= 1 and grille in ('G50', 'R10', 'R100')
-            if grille == 'R10':  # niveaux reels R10 seulement (hors multiples de 50)
+            # SIMULTANE exige >=2 niveaux reels distincts de la grille dans la barre
+            if grille == 'R10':
                 lv_in = [x for x in np.arange(np.ceil(l[contact] / 10) * 10, h[contact] + 1e-9, 10) if x % 50 != 0]
                 simultane = len(lv_in) >= 2
+            elif grille in ('G50', 'R100', 'P50', 'P100', 'P10'):
+                off = GRILLES[grille][1]
+                k_min = int(np.ceil((l[contact] - off) / pas - 1e-9)); k_max = int(np.floor((h[contact] - off) / pas + 1e-9))
+                simultane = (k_max - k_min + 1) >= 2
         d0 = dt.datetime.utcfromtimestamp(0)  # placeholder
         episodes.append({'grille': grille, 'niveau': float(niveau), 'idx_approche': int(s),
                          'minute_jour': int(ts[s] % 1440), 'cote': 'DESSOUS' if dessous else 'DESSUS',
