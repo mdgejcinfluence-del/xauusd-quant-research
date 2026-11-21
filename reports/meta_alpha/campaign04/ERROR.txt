@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 260, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 193, in main
+    Ju['etat_asymetrie'], _, _ = tercile_causal(Ju.skew.values, 60, 40)
+                                                ^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'values'
