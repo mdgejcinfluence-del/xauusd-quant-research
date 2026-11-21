@@ -1,0 +1,220 @@
+{
+ "F10-01": {
+  "famille": "F10-01",
+  "type": "directionnel",
+  "detectes": 0,
+  "eligibles": 0,
+  "ineligibles": 0,
+  "exclusions": 0,
+  "portes": {},
+  "arretee_a": "effectif nul",
+  "verdict": "NON EVALUABLE"
+ },
+ "F10-02": {
+  "famille": "F10-02",
+  "type": "directionnel",
+  "detectes": 5652,
+  "eligibles": 5477,
+  "ineligibles": 175,
+  "exclusions": 164,
+  "grappes": 2972,
+  "part_grappe_dominante": 0.002008398758444404,
+  "alerte_grappe_dominante_5pct": false,
+  "spread_median_bp": 2.308,
+  "C_ref_bp": 4.008,
+  "brut_moyen_bp": -2.810093171444221,
+  "brut_median_bp": -4.9228,
+  "net_moyen_bp": -4.510093171444223,
+  "net_median_bp": -6.6228,
+  "couverture_MAE_mediane": 23.8312,
+  "couverture_MFE_mediane": 18.0783,
+  "par_ere": {
+   "2010_2013": {
+    "n": 2297,
+    "net_moyen": -5.550890988245538
+   },
+   "2014_2016": {
+    "n": 1483,
+    "net_moyen": -3.6995451112609583
+   },
+   "2017_2020": {
+    "n": 1697,
+    "net_moyen": -3.809639540365351
+   }
+  },
+  "queue_evenement": {
+   "mediane_MAE": 23.8312,
+   "P90_MAE": 70.62722000000011,
+   "ES90_MAE": 107.26935437956205,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "queue_grappe": {
+   "mediane_MAE": 35.261250000000004,
+   "P90_MAE": 83.56688000000003,
+   "ES90_MAE": 125.81817852348992,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "portes": {
+   "P1_magnitude": true,
+   "P2_esperance": false,
+   "P3_colonne": false,
+   "P3_queue_evenement": false,
+   "P3_queue_grappe": false,
+   "P4_effectifs": true
+  },
+  "arretee_a": "PORTE 2 esperance nette centrale <= 0",
+  "verdict": "NEGATIF ECONOMIQUE"
+ },
+ "F10-03": {
+  "famille": "F10-03",
+  "type": "directionnel",
+  "detectes": 0,
+  "eligibles": 0,
+  "ineligibles": 0,
+  "exclusions": 0,
+  "portes": {},
+  "arretee_a": "effectif nul",
+  "verdict": "NON EVALUABLE"
+ },
+ "F10-04": {
+  "famille": "F10-04",
+  "type": "directionnel",
+  "detectes": 1257,
+  "eligibles": 1003,
+  "ineligibles": 254,
+  "exclusions": 251,
+  "grappes": 508,
+  "part_grappe_dominante": 0.009970089730807577,
+  "alerte_grappe_dominante_5pct": false,
+  "spread_median_bp": 2.2972,
+  "C_ref_bp": 3.9972000000000003,
+  "brut_moyen_bp": 0.06547966101694906,
+  "brut_median_bp": -1.2206,
+  "net_moyen_bp": -1.6345203389830507,
+  "net_median_bp": -2.9206,
+  "couverture_MAE_mediane": 49.769,
+  "couverture_MFE_mediane": 49.9797,
+  "par_ere": {
+   "2010_2013": {
+    "n": 405,
+    "net_moyen": 2.4397237037037023
+   },
+   "2014_2016": {
+    "n": 280,
+    "net_moyen": -4.218603214285713
+   },
+   "2017_2020": {
+    "n": 318,
+    "net_moyen": -4.548122955974844
+   }
+  },
+  "queue_evenement": {
+   "mediane_MAE": 49.769,
+   "P90_MAE": 139.06206000000003,
+   "ES90_MAE": 222.96472178217815,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "queue_grappe": {
+   "mediane_MAE": 74.7721,
+   "P90_MAE": 164.14295,
+   "ES90_MAE": 262.9256941176471,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "portes": {
+   "P1_magnitude": true,
+   "P2_esperance": false,
+   "P3_colonne": false,
+   "P3_queue_evenement": false,
+   "P3_queue_grappe": false,
+   "P4_effectifs": true
+  },
+  "arretee_a": "PORTE 2 esperance nette centrale <= 0",
+  "verdict": "NEGATIF ECONOMIQUE"
+ },
+ "F10-05": {
+  "famille": "F10-05",
+  "type": "directionnel",
+  "detectes": 246,
+  "eligibles": 184,
+  "ineligibles": 62,
+  "exclusions": 62,
+  "grappes": 162,
+  "part_grappe_dominante": 0.016304347826086956,
+  "alerte_grappe_dominante_5pct": false,
+  "spread_median_bp": 2.35815,
+  "C_ref_bp": 4.05815,
+  "brut_moyen_bp": -14.49238641304348,
+  "brut_median_bp": -11.872599999999998,
+  "net_moyen_bp": -16.192386413043476,
+  "net_median_bp": -13.572599999999998,
+  "couverture_MAE_mediane": 67.1589,
+  "couverture_MFE_mediane": 52.49765,
+  "par_ere": {
+   "2010_2013": {
+    "n": 69,
+    "net_moyen": -8.090869565217387
+   },
+   "2014_2016": {
+    "n": 57,
+    "net_moyen": -23.27224561403509
+   },
+   "2017_2020": {
+    "n": 58,
+    "net_moyen": -18.872605172413795
+   }
+  },
+  "queue_evenement": {
+   "mediane_MAE": 67.1589,
+   "P90_MAE": 192.50039000000007,
+   "ES90_MAE": 323.4833947368421,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "queue_grappe": {
+   "mediane_MAE": 65.73134999999999,
+   "P90_MAE": 193.29773000000003,
+   "ES90_MAE": 333.3529352941177,
+   "porte_P90": false,
+   "porte_ES90": false
+  },
+  "portes": {
+   "P1_magnitude": true,
+   "P2_esperance": false,
+   "P3_colonne": false,
+   "P3_queue_evenement": false,
+   "P3_queue_grappe": false,
+   "P4_effectifs": false
+  },
+  "arretee_a": "PORTE 2 esperance nette centrale <= 0",
+  "verdict": "NEGATIF ECONOMIQUE"
+ },
+ "F10-06": {
+  "famille": "F10-06",
+  "type": "amplitude",
+  "detectes": 657,
+  "eligibles": 657,
+  "ineligibles": 0,
+  "exclusions": 0,
+  "grappes": 430,
+  "part_grappe_dominante": 0.0121765601217656,
+  "alerte_grappe_dominante_5pct": false,
+  "ratio_median": 0.8983,
+  "ratio_moyen": 0.9851449010654489,
+  "queue_evenement": {},
+  "queue_grappe": {},
+  "portes": {
+   "P1_magnitude_na": "amplitude non directionnelle: porte 1 par ratio median > 1 et test unilat.",
+   "P4_effectifs": true
+  },
+  "arretee_a": null,
+  "stat_mediane_ratio_moins_1": -0.10170000000000001,
+  "p_boot_grappes_median": 1.0,
+  "verdict_apres_portes": "INFERENCE EXECUTEE",
+  "p_BY_m6": 1.0,
+  "verdict": "NEGATIF ECONOMIQUE"
+ }
+}
