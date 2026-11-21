@@ -1,0 +1,16 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "barres_m5": 702397,
+ "barres_m15": 231875,
+ "journees": 3097,
+ "episodes_imp_m5": 70493,
+ "episodes_imp_m15": 23075,
+ "episodes_cons": 15973,
+ "amorcage_imp_m5_barres_sans_historique": 2000,
+ "amorcage_imp_m15_barres_sans_historique": 2000,
+ "cons_journees_sans_seuil": 1,
+ "chevauchements_imp_m5": 57401,
+ "chevauchements_imp_m15": 12724
+}
