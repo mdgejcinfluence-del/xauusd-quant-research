@@ -2915,6 +2915,40 @@
     "statut": "PREPARATION SOUMISE - en attente validation de l orientation puis protocole consolide; calculs interdits"
    },
    "entry_hash": "4f955288c684fe00a660edbecd4cc4bf9a2ff1cc695b1f511318d0423c42fdcd"
+  },
+  {
+   "seq": 247,
+   "prev_hash": "4f955288c684fe00a660edbecd4cc4bf9a2ff1cc695b1f511318d0423c42fdcd",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "07",
+    "objet": "Decision fondateur: principe F-I approuve, consolidation autorisee sous conditions; gel et execution interdits",
+    "correction_placebo": "+25 USD comme demi-pas universel rejete; constructions separees par anneau (grille, espacement, decalage, distance relative, non-chevauchement, comparabilite des occasions de contact); +25 conserve comme reference pour R50; R100/R10 constructions specifiques ou translation non equivalente qualifiee; jamais presentes comme experience parfaitement appariee; distributions exposition/distance/epoque/session examinees",
+    "constantes_validees": {
+     "bande_approche": "25 bp",
+     "washout": "60 min",
+     "seuil_rejet": "25 bp",
+     "suivi": "60 min"
+    },
+    "declassement_composition": "regle deterministe sur contexte connu a l evenement (eres, sessions UTC, sens d approche, distance initiale, exposition); issues: conservee / sensible a la composition / non evaluable faute de donnees comparables; aucune p ajoutee; aucune etiquette F3 poolee",
+    "comparaisons": "I-01..I-05 architecture conservee, chacune documentee (hypothese, anneau, grilles, unite, population, materialite, regroupement, exclusions, dependances); BY m=5 fixe; negatifs et non evaluables publies",
+    "restrictions": "XAU/USD; holdout scelle; aucun calcul ni extraction F-I; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; candidates C5 sans priorite; F-H en reserve"
+   },
+   "entry_hash": "224983b1cb7dd0ebc73692028679102b9548a61d193c31a385dd945f4b67ee5c"
+  },
+  {
+   "seq": 248,
+   "prev_hash": "224983b1cb7dd0ebc73692028679102b9548a61d193c31a385dd945f4b67ee5c",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "07",
+    "objet": "Protocole consolide F-I V1 livre: placebo par anneau formalise (G50/P50 demi-pas exact primaire; R100 +25 quart de pas qualifie translation non equivalente, demi-pas +50 interdit car chevauche R50 reel; R10/P10 demi-pas exact; placebos jamais presentes comme meme experience appariee; controle d exposition publie), constantes gelees en attente (25 bp, 60 min, 25 bp, 60 min) avec formules/ancrages/disponibilite, declassement de composition deterministe sans p ajoutee (seuils 5 pts/2 bp/exposition, strates >=30, non-evaluable >25 pct ou distances disjointes >10 bp), cinq comparaisons documentees, BY m=5 fixe, matrice de couverture, biais C1-C11, audit de nouveaute 0-6. Aucun calcul effectue.",
+    "sha256": {
+     "CAMPAIGN_07_PROTOCOL_V1.md": "250909314f7df58eba43c0a848a49bfa09387f70c8f025249cc8c527e110f382"
+    },
+    "statut": "PROTOCOLE CONSOLIDE SOUMIS AU PROPRIETAIRE AVANT GEL - execution toujours interdite"
+   },
+   "entry_hash": "89357834572c9e5da0b83e33305b7b2ca96a6d199dee46d7bb539c83d30e1c3e"
   }
  ]
 }
