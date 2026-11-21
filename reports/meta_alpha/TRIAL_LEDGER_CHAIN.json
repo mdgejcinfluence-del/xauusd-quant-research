@@ -1966,6 +1966,36 @@
     "resultat": "Livraison de preparation seq184 executee (aucun calcul de cartographie, 0 budget, holdout scelle, FRED suspendue): CHANTIER A - justification du dimensionnement T0 completee sur amorcage: tailles de grappes medie 5/moy 7,12/P90 16/P99 27/max 40, CV 0,86 (taille ajustee m*=12,4), ICC ANOVA estime rho=0,121 -> DE central 2,38 (sensibilite tabulee DE 1,57 a 6,70 pour rho 0,05-0,50), effectifs au scenario central ~3350 episodes/groupe extreme et ~10000-14000 totaux; planchers justifies: 500 grappes/groupe (stabilite du bootstrap, blocs semestriels, protection contre les echantillons riches en episodes mais pauvres en journees) et 1500 totales (~700 journees); separation amorcage/confirmatoire explicitee (l amorcage ne compte jamais dans l effectif; collecte prospective non bloquante pour l historique). CHANTIER B - CAMPAGNE 3 PREPAREE: blueprint (reconstruction causale impulsions/consolidations par instantanes, presupposes de continuation/expansion interdits), dictionnaire gele seq185-186 (IMP-M5/M15 a seuil causal roulant 60j, CONS M1 formation 6 barres calmes sous seuil causal 5j, sorties distinguees sans presuppose), methode (12 comparaisons fermees, BY, bootstrap journees, regle J1 campagne 2), couverture (IS consulte seul, flux prospectif T0 interdit, holdout scelle). STATUT: preparation livree - execution de la cartographie descriptive Campagne 3 en attente de validation du dictionnaire par le proprietaire"
    },
    "entry_hash": "00120879ac0b416c85dddbef7d84b7ae4d17b4d65f390818b8a04c0b661047b5"
+  },
+  {
+   "seq": 188,
+   "prev_hash": "00120879ac0b416c85dddbef7d84b7ae4d17b4d65f390818b8a04c0b661047b5",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_03_EXECUTION_DESCRIPTIVE",
+    "resultat": "Autorisation proprietaire: execution descriptive Campagne 3 sur dictionnaire gele seq185-186 (sha256 76490c40...); familles IMP-M5, IMP-M15, CONS et issues; 12 comparaisons preenregistrees sans ajout ulterieur; validation temporelle avant calcul (seuils 60j excluant la barre courante, seuils CONS 5j passe seul, unites de jours explicites, variables d instantane closes, consequences strictement apres instantane, instantanes en nombre de barres M5/M15 distingues); bootstrap journees, BY sur les 12, effectifs bruts/independants, IC, chevauchements, journal des negatifs, fiches J1 sans promotion; chantier T0 separe: completer uniquement la justification du MDE 5 points (probabilites exactes sous H1, formule de puissance, justification 1500 grappes, separation amorcage/confirmation), aucun resultat prospectif consulte; restrictions: 0 backtest/challenge_sim/optimisation/promotion J2-J3/holdout/budget trading, FRED suspendue, 36 cellules S12 gelees"
+   },
+   "entry_hash": "2cbf57d5de379d5683cfc07543b101a7cd77ed41e89ef0967a0b3827e83d21ed"
+  },
+  {
+   "seq": 189,
+   "prev_hash": "2cbf57d5de379d5683cfc07543b101a7cd77ed41e89ef0967a0b3827e83d21ed",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_03_EXECUTION_DESCRIPTIVE",
+    "resultat": "Gel avant calcul: CAMPAIGN_03_COMPARISONS_FREEZE.md sha256=ac151cb8007df82cd239b14e58676fc10d9789a98be50f5840363b91e24541c8 (calcule par appel separe apres ecriture); dictionnaire re-verifie inchange sha256=76490c40e4c6aca1cad56a98f30d4711d6723ac56e39cf08f978a0349d354a92; 12 comparaisons fermees C3-01..C3-12 enumerees (IMP-M5 x5, IMP-M15 x3, CONS x4), bootstrap journees 2000 graine 20261113, BY sur les 12, seuils materiels 5pts/ratio 1,15, suffisance 200 episodes et 100 journees par bras; clarifications temporelles prealables: seuil IMP quantile90 sur [T0-60 jours calendaires, T0) barre courante exclue min 2000 barres, seuil CONS mediane poolee des ranges M1 des 5 journees de cotation precedentes jour courant exclu min 1000 barres, instantanes en nombre de barres (IMP-M5 +12 barres=+60min, IMP-M15 +12 barres=+180min, jamais melanges), variables closes a l instantane, consequences strictement apres; classes de trajectoires exclusives definies (continuation/extension tardive/retracement partiel/complet/retournement/stagnation/censuree) comme issues mesurees, jamais classeurs du declenchement; sorties CONS distinguees sans presuppose d expansion; chevauchements comptes jamais supprimes, aucune sensibilite par exclusion preenregistree"
+   },
+   "entry_hash": "03af23a94a2ad315e05476136dadd624e61136f237998999a6cfb1c00c718eeb"
+  },
+  {
+   "seq": 190,
+   "prev_hash": "03af23a94a2ad315e05476136dadd624e61136f237998999a6cfb1c00c718eeb",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_03_EXECUTION_DESCRIPTIVE",
+    "resultat": "Moteur campagne 3 et validation temporelle prets avant extraction: tests synthetiques verts (seuil causal 60j barre courante exclue, fenetre [t-60j,t), minimum 2000 barres, mediane passee causale, trajectoires mesurees); chantier T0 separe complete par CAMPAIGN_2_4_MDE_JUSTIFICATION.md (H1 exacte p=0,90 vs 0,85, formule de puissance des deux proportions, n=917/groupe au scenario de reference, 1595 au scenario conservateur 0,77/0,72, base 1400 maintenue comme prudence intermediaire puissance 0,980/0,864, inflation DE 2,4-3,3, justification structurelle des 1500 grappes dont 500/groupe, separation amorcage/confirmatoire exacte, aucun resultat prospectif consulte, aucune activation); extraction CI sequentielle a commit unique sur corpus IS consulte seul"
+   },
+   "entry_hash": "dc19d67853b982d44656edcc4680d9754ffab180d6d7580a6989c85a474afd4c"
   }
  ]
 }

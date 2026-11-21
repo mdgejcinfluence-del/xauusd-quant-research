@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/user/xauusd-quant-research/ci_tools/campaign03_temporal_tests.py", line 44, in <module>
+    assert cls3 == 'STAGNATION', cls3
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: RETRACEMENT_PARTIEL
