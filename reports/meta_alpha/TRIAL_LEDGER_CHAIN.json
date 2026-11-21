@@ -3148,6 +3148,51 @@
     "statut": "AUDIT SOUMIS - en attente du choix de famille par le fondateur; calculs interdits"
    },
    "entry_hash": "e394c55d664c074b6f3395cbb2aaa69d8f0f7bc207f017fe5d2dd1a07d79e21e"
+  },
+  {
+   "seq": 257,
+   "prev_hash": "e394c55d664c074b6f3395cbb2aaa69d8f0f7bc207f017fe5d2dd1a07d79e21e",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Decision fondateur: F-J Chocs minute extremes et leur sillage approuvee; preparation blueprint + dictionnaire autorisee, aucun calcul/extraction/consultation de resultats",
+    "detection_priorite": "seuils causaux uniquement (informations avant t); aucun quantile poole 2010-2020 comme seuil causal; seuils causaux vs references retrospectives distingues; fenetres, minimum d observations anterieures, demarrage/inegibilite, disponibilite a definir",
+    "regroupement": "isole / rapproches / episode formalises; delai de regroupement et departage; episodes chevauchants jamais independants; unites de regroupement justifiees",
+    "sillage": "continuation, retour partiel, retournement, stabilisation, nouveau choc, intensite ulterieure; heure de survenue vs disponibilite distinguees; mesures apres disponibilite seulement; horizons sans chevauchement artificiel; censures et ordre indetermine documentes",
+    "comparaisons": "famille fermee a preparer (signe, isole vs regroupe, intensite, sessions, eres, periodes non extremes comparables), chacune documentee; aucune gel avant validation",
+    "frontiere": "differences avec F3/F7, campagnes 1, 3, 4, 5, F-G, F-I documentees; ni regime de volatilite deguise ni repetition d impulsions; aucune fiche C3/C4/C5 modifiee ou confirmee automatiquement",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun calcul F-J; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-L et F-H en reserve"
+   },
+   "entry_hash": "7509a1f679e6deca441c13c8c3c7d1462bc3b7057255d54aa7b777034c9940b9"
+  },
+  {
+   "seq": 258,
+   "prev_hash": "7509a1f679e6deca441c13c8c3c7d1462bc3b7057255d54aa7b777034c9940b9",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "08",
+    "objet": "Preparation F-J livree (12 livrables): blueprint, dictionnaire mathematique (r_t log bp intra-segment uniquement), detection causale (seuil journalier = quantile 99.5% des |r| des 20 journees precedentes, plancher 10 bp, fixe le jour J; amorcage >=10 journees et >=10 000 variations; reference poolee interdite en detection), regroupement (episode = chocs a ecarts <=15 min; unite primaire episode date a son premier choc; MIXTE par premier choc), sillage (depart a la disponibilite, apres dernier choc pour les regroupes; R_h signe, retour partiel/retournement, excursions, stabilisation post/pre, nouveau choc; censures et ordre indetermine), cinq comparaisons J-01..J-05 proposees (session en ventilation fermee), methode grappes-journees + BY m=5 fixe, materialite proposee 10 bp, matrice de couverture, biais D1-D11, audit de nouveaute (F3/F7, C1, C3, C4, C5, F-G, F-I). Aucun calcul effectue.",
+    "sha256": {
+     "CAMPAIGN_08_FJ_BLUEPRINT.md": "06a49727e7d7310a2291a3d0369297fbf8e057655507b0fa5e0cd382e24e3254",
+     "CAMPAIGN_08_FJ_DICTIONARY.md": "ade2310ed2f286b232a424f6d779c10357784ad7c95dba34a8d805abd30b7bea",
+     "CAMPAIGN_08_FJ_COMPARISONS.md": "1fb49e3e45b7c7b44f4486f602280b0c3ec3c6eb4fbac5aa97903f533371110d",
+     "CAMPAIGN_08_FJ_COVERAGE_BIASES.md": "0d205accbf86d2c9ed794fa27711d6758ad2063a2275110cab010c51ff9e72a0"
+    },
+    "constantes_a_geler_au_consolide": [
+     "fenetre causale 20 journees",
+     "quantile 99.5%",
+     "plancher 10 bp",
+     "amorcage 10 journees / 10 000 variations",
+     "classes intensite rho<2 / >=2",
+     "regroupement 15 min",
+     "horizons +15/+30/+60",
+     "materialite R_60 10 bp",
+     "construction exacte des pseudo-evenements J-05",
+     "sort des episodes MIXTE dans les populations"
+    ],
+    "statut": "PREPARATION SOUMISE - en attente validation avant consolidation et gel; calculs interdits"
+   },
+   "entry_hash": "e731615df05a2c1dd02e1fb7c8477bb6ea0e779ce15f4e9fef6c506926d11dab"
   }
  ]
 }
