@@ -2607,6 +2607,38 @@
     "statut": "DOSSIER FINAL SOUMIS AU PROPRIETAIRE - gel et execution toujours interdits"
    },
    "entry_hash": "2a66a6a1cc459b1d97f9e0c87acb80d5440dde05c5e078f9939b95f8a652204f"
+  },
+  {
+   "seq": 234,
+   "prev_hash": "2a66a6a1cc459b1d97f9e0c87acb80d5440dde05c5e078f9939b95f8a652204f",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Retour fondateur sur addendum V1.2 (seq233): acceptation scientifique conditionnelle, gel en attente de trois precisions",
+    "precisions_exigees": [
+     "B15 fuseau: equivalence 21:00-22:00 UTC = 17:00-18:00 NY ete comme hiver rejetee; choisir OPTION A (fenetre UTC fixe conventionnelle) ou OPTION B (locale NY convertie EDT/EST date par date)",
+     "rho cas limite: D somme des valeurs absolues confirmee; L+D=0 => rho indefinie, PLATE OBSERVEE, aucune valeur artificielle; seuil 0.5 conserve",
+     "C6-01: ordre de priorite fige CONTROLE_INDETERMINE > FRAGILE_SIGNE > FRAGILE_MATERIALITE > ROBUSTE, chevauchements documentes, aucune p supplementaire"
+    ],
+    "restrictions": "aucune extraction, calcul ou consultation de resultats F-G; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees"
+   },
+   "entry_hash": "c626627c31fc7147676876646803fed404c25dd69d2529e12193b3fff01e076d"
+  },
+  {
+   "seq": 235,
+   "prev_hash": "c626627c31fc7147676876646803fed404c25dd69d2529e12193b3fff01e076d",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Erratum V1.2.1 livre: (1) B15 OPTION A figee - fenetre UTC fixe 21:00-22:00 toute l annee, frontiere conventionnelle de segmentation UTC, equivalence New York retiree comme fausse, option B non retenue (dependance calendrier externe); autres conditions B15 inchangees. (2) D = somme des valeurs absolues des sauts observes confirmee; L+D=0 => rho indefinie NaN publie, PLATE OBSERVEE conservee, aucune valeur artificielle; seuil rho>0.5 inchange. (3) C6-01 ordre de priorite strict CONTROLE_INDETERMINE puis FRAGILE_SIGNE puis FRAGILE_MATERIALITE (seulement si lecture CANDIDATE) puis ROBUSTE; un seul statut, chevauchements tranches a l avance, aucune p supplementaire.",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1_2_1_ERRATUM.md": "78ef301f6defba193cb121dfaa76382a3eff19af9e255b5ace43919ded11cc1c",
+     "CAMPAIGN_06_PROTOCOL_V1_2_ADDENDUM.md": "046df8d949203a5c7d890f736e5781441750225959eb309373ea829bba731217",
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76"
+    },
+    "statut": "DOSSIER FINAL (V1.1 + V1.2 + V1.2.1) SOUMIS POUR VALIDATION DU GEL - execution toujours interdite"
+   },
+   "entry_hash": "d2053649c44f1ec8a7fce276ae61df5f202dc6a0b625fde63699af50d54993e0"
   }
  ]
 }
