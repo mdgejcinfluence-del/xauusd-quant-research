@@ -1,0 +1,11 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "journees_presentes": 3097,
+ "journees_utilisables": 2572,
+ "journees_non_utilisables": 525,
+ "etat_courant_classes": 2532,
+ "f3_causal_classes": 2011,
+ "sessions_lignes": 10288
+}

@@ -297,22 +297,4 @@ C4 part part_000279.parquet
 C4 part part_000280.parquet
 C4 part part_000281.parquet
 C4 part part_000282.parquet
-Error in sys.excepthook:
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 260, in <module>
-    if __name__ == '__main__': main()
-                               ^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 193, in main
-    Ju['etat_asymetrie'], _, _ = tercile_causal(Ju.skew.values, 60, 40)
-                                                ^^^^^^^^^^^^^^
-AttributeError: 'function' object has no attribute 'values'
-
-Original exception was:
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 260, in <module>
-    if __name__ == '__main__': main()
-                               ^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign04_engine.py", line 193, in main
-    Ju['etat_asymetrie'], _, _ = tercile_causal(Ju.skew.values, 60, 40)
-                                                ^^^^^^^^^^^^^^
-AttributeError: 'function' object has no attribute 'values'
+C4 TERMINE {'partitions_chargees': 282, 'partitions_attendues': 282, 'barres_m1': 3540993, 'journees_presentes': 3097, 'journees_utilisables': 2572, 'journees_non_utilisables': 525, 'etat_courant_classes': 2532, 'f3_causal_classes': 2011, 'sessions_lignes': 10288}
