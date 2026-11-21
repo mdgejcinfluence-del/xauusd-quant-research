@@ -3627,6 +3627,40 @@
     "statut": "VALIDATION FINALE EN COURS - constantes principales acceptees; limites de queue (10x/15x C_ref) et Delta max d entree (120 s) PROPOSES, en attente de la decision de gel; gel chaine et execution NON autorises"
    },
    "entry_hash": "2381bd1100d39ffc1ce5e04fe35fc97f70968efcb13d63b24d05a8f149a61fd7"
+  },
+  {
+   "seq": 282,
+   "prev_hash": "2381bd1100d39ffc1ce5e04fe35fc97f70968efcb13d63b24d05a8f149a61fd7",
+   "entry": {
+    "type": "MISSION",
+    "phase": "10-A",
+    "objet": "Ordre final du responsable de recherche: gel definitif du protocole PHASE 10-A autorise. Les deux dernieres constantes sont acceptees: P90 MAE <= 10 x C_ref; ES90 MAE <= 15 x C_ref; delai maximal d entree 120 secondes",
+    "instructions": "integrer ces decisions dans la version finale des documents concernes; reconcilier les sept documents et leurs references croisees; verifier que les seuils P90 et ES90 s appliquent separement aux distributions par evenement et par grappe; verifier que tout echec d une porte economique entraine l arret prevu sans substitution par un sous-groupe; verifier que le delai de 120 secondes et les regles de fermeture et d interruption sont identiques dans le protocole et le dictionnaire; calculer les SHA-256 definitifs des sept documents; chainer le gel definitif et produire le rapport de verification documentaire; verifier l integrite de la chaine, le commit distant et la proprete de l arbre. Aucune definition ne peut etre modifiee apres le gel sans nouvelle decision formelle et nouvelle entree dans la chaine",
+    "interdictions": "aucun calcul de recherche; aucune extraction de donnees; aucune consultation du corpus IS pour la Phase 10; aucun acces au holdout 2020-2026; aucun backtest strategique; aucun challenge_sim; aucune construction de strategie; aucune promotion automatique J2/J3; aucune consommation de budget",
+    "statut": "PHASE 10-A gel definitif autorise; protocole documentaire a geler; execution NON autorisee; la prochaine decision du responsable sera distincte et portera uniquement sur l eventuelle autorisation d executer la campagne"
+   },
+   "entry_hash": "b5b08fa6c723f62eba4accd20354d0b9748e6e6a694dc77ee12055b96267c633"
+  },
+  {
+   "seq": 283,
+   "prev_hash": "b5b08fa6c723f62eba4accd20354d0b9748e6e6a694dc77ee12055b96267c633",
+   "entry": {
+    "type": "GEL",
+    "phase": "10-A",
+    "objet": "GEL DEFINITIF du protocole PHASE 10-A (sept documents, hashes ci-dessous verifies a l octet pres apres integration). Decisions integrees: limites de queue P90(MAE) <= 10 x C_ref et ES90(MAE) <= 15 x C_ref appliquees separement aux distributions par evenement et par grappe (MAE_g = max de la grappe), porte 3 elargie; delai maximal d entree de 120 secondes (premier tick de la premiere barre suivant le signal, horloge a la reouverture apres fermeture reguliere/week-end, trou intra-session > 120 s ineligible, statut INELIGIBLE_ENTREE_TARDIVE comptabilise en couverture) identique dans le protocole, le dictionnaire, le modele de couts et l addendum final. Rapport de verification documentaire (PHASE10A_FREEZE_RECORD.md): ordre de prevalence addendum final > addendum de validation > documents de conception; aucun ecart corrige silencieusement; tout echec d une porte entraine l arret sans substitution par un sous-groupe (verifie plan de validation et modele de couts); famille fermee F10-01..F10-06, BY m=6, fenetre causale 250 barres, Q95/Q95/Q90/Q25, portes 1-4 et effectifs inchanges; F10-06 unilaterale non directionnelle. Execution NON autorisee par le present gel.",
+    "sha256": {
+     "PHASE10A_PROTOCOL.md": "ba64f4eede8c58f21ed4cd04448ef30a7a8ed46e6ca6c9b5da0926bdeb9d056c",
+     "PHASE10A_DICTIONARY.md": "9dff87bcb81df14e996b2019dc8bd03f00a11a92f212732542dfba19a87cf3d6",
+     "PHASE10A_COST_MODEL.md": "18a599cd188b3ffef1116ec63b171e6913bd6e81b371149373e9679e59cd1c6c",
+     "PHASE10A_VALIDATION_PLAN.md": "ed55b7d819c2f21fb6cd78ced5dd929619bfd603e8f10533323f489a231c0e4d",
+     "PHASE10A_RISKS_AUTHORIZATIONS.md": "3f06b743429666e3b8ae563a3fe9002ec003fca84b0dde01652c190c00b6bcc1",
+     "PHASE10A_ADDENDUM_VALIDATION.md": "fff4c5212ff324c14a0042230a3173050121ac006cda861616999be91102a843",
+     "PHASE10A_ADDENDUM_FINAL.md": "10dadebffd76d1700e9657140a3a335b58aa9d283517d54c53098b1a467b1501",
+     "PHASE10A_FREEZE_RECORD.md": "14ed57bca7d2044484f5739fa67aaba0e114418b62e85979c02377d88768169f"
+    },
+    "statut": "PROTOCOLE PHASE 10-A GELE DEFINITIVEMENT - EXECUTION NON AUTORISEE, en attente d une decision distincte du responsable"
+   },
+   "entry_hash": "8b0248529ad32f4089df28d0181f40c477bf9dd5ef4d36fb6b43e816681d53b9"
   }
  ]
 }

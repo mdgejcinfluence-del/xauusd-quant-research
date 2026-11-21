@@ -42,7 +42,15 @@ Appliquées dans l'ordre, **avant** toute lecture inférentielle :
 3. **Porte de queue** : le MAE médian ne doit pas excéder **3× la
    valeur absolue de l'espérance nette centrale** ; une espérance
    positive portée par une queue adverse disproportionnée est classée
-   fragile et arrêtée à ce stade.
+   fragile et arrêtée à ce stade. **Porte de queue élargie (gel)** :
+   **P90(MAE) ≤ 10 × C_ref** et **ES90(MAE) ≤ 15 × C_ref**, appliquées
+   **séparément** à la distribution par événement et à la distribution
+   par grappe (définitions exactes : addendum final §1) ; le
+   dépassement sur l'une des deux distributions arrête la famille.
+   S'y ajoute l'éligibilité d'entrée : première cotation au plus
+   **120 secondes** après l'ouverture attendue de la barre suivant le
+   signal, sinon l'événement est INÉLIGIBLE_ENTRÉE_TARDIVE (addendum
+   final §2, règle identique au dictionnaire des variables).
 4. **Porte d'effectif** : au moins 200 événements et 100 grappes
    temporelles par bras ; sinon famille déclarée non évaluable.
 

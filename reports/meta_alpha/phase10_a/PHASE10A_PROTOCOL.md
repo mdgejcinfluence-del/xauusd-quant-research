@@ -1,11 +1,16 @@
 # PHASE 10-A — PROTOCOLE DE RECHERCHE DE MOUVEMENTS ÉCONOMIQUEMENT CAPTURABLES
 
-**Statut : CONCEPTION DOCUMENTAIRE — AUCUNE EXÉCUTION, AUCUN CALCUL,
-AUCUNE CONSULTATION DU HOLDOUT.** La Phase 9 est close : aucune des
-cinq candidates P9-A…P9-E ne couvre ses coûts ; elles ne sont **pas**
-reprises comme candidates actives et leurs règles ne seront pas
-optimisées. Le présent protocole ne déclare pas la Phase 10 ouverte à
-l'exécution : il est soumis à validation et gel avant toute analyse.
+**Statut : GELÉ DÉFINITIVEMENT (décision du responsable de recherche ;
+procès-verbal `PHASE10A_FREEZE_RECORD.md`) — EXÉCUTION NON
+AUTORISÉE, AUCUN CALCUL, AUCUNE CONSULTATION DU HOLDOUT.** La Phase 9
+est close : aucune des cinq candidates P9-A…P9-E ne couvre ses coûts ;
+elles ne sont **pas** reprises comme candidates actives et leurs
+règles ne seront pas optimisées. Le gel ne déclare pas la Phase 10
+ouverte à l'exécution : celle-ci exigera une décision distincte.
+L'entrée se fait à la première cotation de la barre suivant le signal,
+au plus 120 secondes après son ouverture attendue (dictionnaire,
+modèle de coûts, addendum final §2 — règle unique) ; les portes de
+queue élargies P90/ES90 du MAE y sont définies (addendum final §1).
 
 ## 1. Question centrale
 

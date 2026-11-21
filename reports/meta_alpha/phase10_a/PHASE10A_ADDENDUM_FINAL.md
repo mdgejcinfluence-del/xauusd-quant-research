@@ -1,13 +1,13 @@
 # PHASE 10-A — ADDENDUM FINAL AVANT GEL
 
-**Statut : VALIDATION FINALE EN COURS — GEL CHAÎNÉ NON AUTORISÉ,
-EXÉCUTION NON AUTORISÉE.** Répond aux trois derniers points du
+**Statut : GELÉ DÉFINITIVEMENT (décision du responsable de recherche)
+— EXÉCUTION NON AUTORISÉE.** Répond aux trois derniers points du
 responsable de recherche. Constantes principales déjà acceptées
 (fenêtre 250, Q95/Q95/Q90/Q25, porte 3 × C_ref, BY m = 6, effectifs)
 conservées. **Aucune donnée consultée, aucun calcul lancé.** Les deux
-constantes nouvelles proposées au §1 (limites de queue) et au §2
-(délai maximal d'entrée) sont marquées **À VALIDER** : elles ne seront
-acquises que par la décision de gel.
+constantes nouvelles du §1 (limites de queue) et du §2 (délai maximal
+d'entrée) ont été **acceptées par la décision de gel** et font partie
+du protocole gelé.
 
 ## 1. Contrôle de la queue adverse — métriques exactes
 
@@ -33,8 +33,11 @@ grappe) ; P90 et ES90 sont aussi publiés sur la distribution des
 MAE_g comme diagnostic de dépendance. Le critère gelé antérieur est
 conservé : **MAE médian ≤ 3 × espérance nette centrale** (porte 3).
 
-**Limites numériques proposées (À VALIDER au gel)** :
-**P90(MAE) ≤ 10 × C_ref** et **ES90(MAE) ≤ 15 × C_ref**.
+**Limites numériques acceptées par la décision de gel** :
+**P90(MAE) ≤ 10 × C_ref** et **ES90(MAE) ≤ 15 × C_ref**, appliquées
+**séparément** à la distribution par événement et à la distribution
+par grappe (MAE_g) : le dépassement de l'une des deux distributions
+suffit à arrêter la famille à la porte 3 élargie.
 Justification : avec un C_ref typique de l'ordre de 4 bp (spread
 ~2,3 bp + 1,7 bp), ces bornes plafonnent l'excursion adverse des
 pires déciles à ≈ 40 bp et leur moyenne à ≈ 60 bp — l'échelle d'une
@@ -55,7 +58,7 @@ t_sig elle-même en cotation continue ; en cas de fermeture régulière
 première barre suivant la fermeture, telle qu'observée dans les
 données.
 
-**Règle (constante À VALIDER : Δmax = 120 secondes)** : l'événement
+**Règle (constante acceptée par la décision de gel : Δmax = 120 secondes)** : l'événement
 n'est éligible à la mesure de rentabilité exécutable que si la
 cotation d'entrée appartient à la première barre suivant le signal
 **et** si **t_exec − t_ouv ≤ 120 s**. Au-delà :
@@ -127,11 +130,12 @@ pourrait alimenter aucune règle de sens.
 ## 5. Décisions et modifications réconciliées
 
 Par rapport au dossier et à l'addendum de validation (seq279) :
-(a) porte 3 complétée par P90 et ES90 du MAE, avec limites
-**10 × C_ref / 15 × C_ref proposées et non encore acceptées** ;
-(b) règle d'inéligibilité d'entrée tardive avec **Δmax = 120 s
-proposé et non encore accepté**, interruptions et week-ends traités
-par horloge à la réouverture ; (c) alternative de F10-06 précisée
+(a) porte 3 complétée par P90 et ES90 du MAE, limites
+**10 × C_ref / 15 × C_ref acceptées par la décision de gel** et
+appliquées séparément aux distributions par événement et par
+grappe ; (b) règle d'inéligibilité d'entrée tardive avec
+**Δmax = 120 s accepté**, interruptions et week-ends traités par
+horloge à la réouverture ; (c) alternative de F10-06 précisée
 **unilatérale** (H1 : ratio > 1), conformément à la présente
 décision — les autres tests restent bilatéraux ; (d) confirmations
 de non-double-comptage du §4, sans changement de valeur. Tout le
@@ -139,10 +143,9 @@ reste est inchangé.
 
 ## 6. Intégrité
 
-SHA-256 complets (chaînés en seq281) : protocole `11174d76…`,
-dictionnaire `33a5174a…`, modèle de coûts `164ee4e7…`, plan de
-validation `db879b89…`, risques/autorisations `35615e11…`, addendum
-de validation `fff4c521…`, présent addendum (hash chaîné). Confirmé :
-aucune donnée consultée, aucun calcul lancé ; gel et exécution non
-autorisés. La prochaine décision est exclusivement celle du gel
-définitif du protocole.
+Les SHA-256 définitifs des sept documents gelés figurent au
+procès-verbal de gel `PHASE10A_FREEZE_RECORD.md`, qui fait foi.
+Confirmé : aucune donnée consultée, aucun calcul lancé ; le gel ne
+vaut pas autorisation d'exécution. Aucune définition ne peut être
+modifiée après le gel sans nouvelle décision formelle et nouvelle
+entrée dans la chaîne.

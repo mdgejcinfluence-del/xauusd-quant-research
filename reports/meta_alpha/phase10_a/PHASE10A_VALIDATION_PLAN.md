@@ -44,7 +44,13 @@ publiés au même titre que les positifs.
 ## 4. Conditions d'arrêt (H, plan de campagne limité)
 
 1. Chaque famille s'arrête dès qu'une porte du modèle de coûts
-   échoue ; l'arrêt est publié avec les grandeurs mesurées.
+   échoue ; l'arrêt est publié avec les grandeurs mesurées. **Aucune
+   substitution par un sous-groupe** (ère, session, signe ou autre
+   découpage) ne peut relancer une famille arrêtée : les découpages
+   sont des diagnostics non confirmatoires. Les limites de queue
+   P90 ≤ 10 × C_ref et ES90 ≤ 15 × C_ref s'appliquent **séparément**
+   aux distributions par événement et par grappe ; un dépassement
+   sur l'une des deux arrête la famille au même titre.
 2. La campagne s'arrête si **aucune** famille ne franchit les portes :
    conclusion « pas de mouvement capturable aux horizons H1/H4/D1
    dans les conditions mesurées », sans élargissement de la famille,

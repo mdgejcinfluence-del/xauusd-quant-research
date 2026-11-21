@@ -20,6 +20,10 @@ décision ; tout ce qui suit est une mesure, jamais un prédicteur.
 | Temps d'excursion | minutes/barres jusqu'au MFE et au MAE | rétrospectif |
 | Chevauchement | deux fenêtres de mesure se recouvrant dans le temps | calculé a posteriori pour les grappes |
 | Censure | fenêtre suivante incomplète (trou, fin de corpus) : statut publié, jamais complétée | à la mesure |
+| Délai d'entrée | t_exec − t_ouv, où t_exec = premier tick suivant la clôture du signal et t_ouv = ouverture attendue de la barre suivante (clôture du signal en cotation continue ; heure de réouverture réelle après fermeture régulière ou week-end, l'horloge ne courant qu'à la reprise) ; éligible si ≤ **120 secondes** et cotation dans la première barre suivante, sinon **INÉLIGIBLE_ENTRÉE_TARDIVE** (exclu de la rentabilité exécutable, comptabilisé en couverture) ; trou intra-session > 120 s ⇒ inéligible ; approximation par présence de barre étiquetée si ticks absents (règle identique au modèle de coûts et à l'addendum final §2) | à l'entrée |
+| P90 du MAE | quantile 90 % (interpolation linéaire) des MAE_i du bras ; limite gelée ≤ 10 × C_ref, appliquée séparément par événement et par grappe | rétrospectif — porte 3 élargie |
+| ES90 du MAE | moyenne des MAE_i ≥ P90 du bras ; limite gelée ≤ 15 × C_ref, appliquée séparément par événement et par grappe | rétrospectif — porte 3 élargie |
+| MAE de grappe | MAE_g = max des MAE_i des événements de la grappe temporelle | rétrospectif — diagnostic et porte |
 
 Données déclarées **indisponibles** : carnet d'ordres et profondeurs,
 remplissages réels, latence mesurée, commissions et swaps d'un

@@ -16,14 +16,17 @@
 | R10 | Prix Bid/Ask d'agrégats pris pour des remplissages | étiquette « capturable en principe » ; aucune preuve d'exécution |
 | R11 | Dérive des conditions de marché post-2020 non observable (holdout scellé) | assumée et déclarée ; aucune extrapolation au présent |
 
-## 2. Autorisations nécessaires avant exécution (aucune n'est accordée par ce dossier)
+## 2. Autorisations avant exécution — état au gel
 
-1. **Validation du présent protocole** par le propriétaire, y compris
-   les constantes : horizons H1/H4/D1, fenêtres causales de 250
-   barres, quantiles Q95/Q90/Q25, portes économiques (3×, espérance >
-   coût central, MAE ≤ 3×, 200 événements / 100 grappes), famille
-   fermée F10-01…F10-06, BY m = 6.
+1. **Validation du présent protocole** par le responsable de recherche,
+   y compris les constantes : horizons H1/H4/D1, fenêtres causales de
+   250 barres, quantiles Q95/Q90/Q25, portes économiques (3×, espérance
+   > coût central, MAE ≤ 3×, 200 événements / 100 grappes), famille
+   fermée F10-01…F10-06, BY m = 6, limites de queue P90 ≤ 10 × C_ref et
+   ES90 ≤ 15 × C_ref, délai maximal d'entrée de 120 secondes.
+   **Obtenue par la décision de gel.**
 2. **Gel chaîné** du protocole validé (SHA-256 en chaîne de preuves).
+   **Effectué (voir `PHASE10A_FREEZE_RECORD.md`).**
 3. **Ordre d'exécution distinct**, précisant le périmètre de calcul et
    le budget de ressources gratuites, avec suspension documentée en
    cas de dépassement.
