@@ -3704,6 +3704,29 @@
     "statut": "CORRIGE ET RELANCE"
    },
    "entry_hash": "d11f2870a9dbcf7decddce5c2e2c94656de26ff0d10a370061e45d4709605213"
+  },
+  {
+   "seq": 287,
+   "prev_hash": "d11f2870a9dbcf7decddce5c2e2c94656de26ff0d10a370061e45d4709605213",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "F10-01 et F10-03 NON EVALUABLES: zero evenement detecte. Cause: quantiles roulants Q95 calcules sur fenetres de 250 rendements contenant des NaN (rendement indefini apres barre manquante, reprise hebdomadaire); quantile causal NaN, detection impossible. Definitions gelees non en cause; implementation du seuil a exclure les rendements indefinis de la fenetre causale. Arret conforme a l ordre: aucune correction ni relance sans nouvelle decision formelle chainee.",
+    "statut": "ARRET SUR INCIDENT - en attente de decision du responsable"
+   },
+   "entry_hash": "68aaa2b1f54c261b1f2e6887c82e378b6c3eac7219cced7a3d0252d066affce8"
+  },
+  {
+   "seq": 288,
+   "prev_hash": "68aaa2b1f54c261b1f2e6887c82e378b6c3eac7219cced7a3d0252d066affce8",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "10",
+    "objet": "Campagne Phase 10 executee sur corpus IS (holdout jamais ouvert), protocole gele seq283, preflight seq285. Provenance: run moteur 44919631588 vert (282 partitions); synthese corrigee (incident seq286) executee en mode synth_only sur ses artefacts, runs 44947740855/44948062005/44948472815 verts, resultats committes par le workflow 9abf9c3. Verdicts: F10-01 NON EVALUABLE (incident seuils NaN seq287); F10-02 NEGATIF ECONOMIQUE porte 2 (5652 detectes, 5477 eligibles, 2972 grappes, brut -2,81 bp, net central -4,51 bp, spread median 2,31, C_ref 4,01); F10-03 NON EVALUABLE (incident seq287); F10-04 NEGATIF ECONOMIQUE porte 2 (1257/1003, 508 grappes, brut +0,07, net -1,63); F10-05 NEGATIF ECONOMIQUE porte 2 (246/184, 162 grappes, brut -14,49, net -16,19); F10-06 NEGATIF ECONOMIQUE (657 eligibles, 430 grappes, ratio median 0,898 < 1, p bootstrap grappes 1,0, BY m=6 1,0). Aucune famille POSITIVE ECONOMIQUE; aucune p-value directionnelle produite (arret aux portes avant inference); ere F10-04 2010-2013 positive isolee = diagnostic non confirmatoire, aucune substitution par sous-groupe. Resultats historiquement evalues, jamais confirmations; aucune promotion, strategie, challenge_sim ni depense.",
+    "livrables": "reports/meta_alpha/phase10/PHASE10_GLOBAL_REPORT.md + RESULT_F10-01..06.md + PHASE10_RESULTS.json + PHASE10_EVENTS.csv.gz",
+    "statut": "PHASE 10 EXECUTEE - en attente de validation du responsable; F10-01/F10-03 en attente de decision sur l incident"
+   },
+   "entry_hash": "7f0d24fa0b3eb1f876349fdde6799469bf7bfc841cdabdd0b303825d5fef228c"
   }
  ]
 }
