@@ -305,6 +305,6 @@ C5 part part_000282.parquet
   if pd.Timestamp(pd_).dayofweek == 4: classe = 'REOUVERTURE_SEMAINE'
 /home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign05_engine.py:265: Pandas4Warning: Timestamp.dayofweek is deprecated and will be removed in a future version. Use Timestamp.day_of_week instead.
   rec = {'date': str(d), 'ere': era(d), 'statut_journee': st_j, 'ff_usage': 'OK', 'jour_semaine': int(pd.Timestamp(d).dayofweek)}
-/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign05_engine.py:326: Pandas4Warning: Timestamp.dayofweek is deprecated and will be removed in a future version. Use Timestamp.day_of_week instead.
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/campaign05_engine.py:327: Pandas4Warning: Timestamp.dayofweek is deprecated and will be removed in a future version. Use Timestamp.day_of_week instead.
   lundi = d - dt.timedelta(days=pd.Timestamp(d).dayofweek)
-C5 TERMINE {'partitions_chargees': 282, 'partitions_attendues': 282, 'barres_m1': 3540993, 'journees_presentes': 3097, 'journees_utilisables': 2572, 'ouvertures_lignes': 10288, 'atteintes_jour': 0, 'touches': 0, 'ordre_indetermine': 0, 'semaines': 520, 'atteintes_semaine': 504}
+C5 TERMINE {'partitions_chargees': 282, 'partitions_attendues': 282, 'barres_m1': 3540993, 'journees_presentes': 3097, 'journees_utilisables': 2572, 'ouvertures_lignes': 10288, 'atteintes_jour': 2375, 'touches': 7, 'ordre_indetermine': 0, 'semaines': 520, 'atteintes_semaine': 504}
