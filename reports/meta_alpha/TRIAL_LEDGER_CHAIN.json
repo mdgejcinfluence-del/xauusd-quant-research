@@ -2721,6 +2721,27 @@
     "statut": "PROTOCOLE F-G DEFINITIF GELE - execution interdite sans ordre distinct du proprietaire"
    },
    "entry_hash": "678f47d41310fe9ec24fab1416e5250da8552c16453383bbdac1fa749b927053"
+  },
+  {
+   "seq": 240,
+   "prev_hash": "678f47d41310fe9ec24fab1416e5250da8552c16453383bbdac1fa749b927053",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "06",
+    "objet": "Confirmation du gel definitif F-G: le proces-verbal seq239 devient la reference officielle de cloture de la preparation methodologique",
+    "documents_conserves": {
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76",
+     "CAMPAIGN_06_PROTOCOL_V1_2_ADDENDUM.md": "046df8d949203a5c7d890f736e5781441750225959eb309373ea829bba731217",
+     "CAMPAIGN_06_PROTOCOL_V1_2_1_ERRATUM.md": "78ef301f6defba193cb121dfaa76382a3eff19af9e255b5ace43919ded11cc1c",
+     "CAMPAIGN_06_PROTOCOL_V1_2_2_ERRATUM.md": "b8e853db2e2170d5e13a95914c1d42447e54c6a7c5ac345bdc6781f474d8b3b1"
+    },
+    "prevalence": "V1.2.2 > V1.2.1 > V1.2 > V1.1",
+    "statut_FG": "PROTOCOL_FROZEN / EXECUTION_NOT_AUTHORIZED",
+    "attention": "cette validation ne constitue PAS une autorisation d execution; aucune extraction, calcul, bootstrap ou analyse exploratoire F-G sans nouvel ordre explicite du proprietaire",
+    "restrictions": "inchangees: XAU/USD, holdout scelle, T0 separe inactif, FRED suspendue, 36 cellules S12 gelees, aucun backtest ni challenge_sim, aucun budget experimental consomme",
+    "phase": "preparation F-G definitivement terminee; attente d une autorisation d execution distincte"
+   },
+   "entry_hash": "2829b39b142e012d03421230a282a87232ef0c91eaad84c9411d7dc8a54a0811"
   }
  ]
 }
