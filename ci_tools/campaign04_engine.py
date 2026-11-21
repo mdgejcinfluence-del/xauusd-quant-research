@@ -190,7 +190,7 @@ def main():
     Ju['etat_courant'], Ju['q1_rv'], Ju['q2_rv'] = tercile_causal(Ju.rv_bp.values, 60, 40)
     Ju['mediane_rv_60'] = pd.Series(Ju.rv_bp.values).shift(1).rolling(60, min_periods=40).median().values
     Ju['log_ratio_rv_mediane'] = np.log(Ju.rv_bp / Ju.mediane_rv_60)
-    Ju['etat_asymetrie'], _, _ = tercile_causal(Ju.skew.values, 60, 40)
+    Ju['etat_asymetrie'], _, _ = tercile_causal(Ju['skew'].values, 60, 40)
     Ju['etat_queue'], _, _ = tercile_causal(Ju.freq_extremes.values, 60, 40)
     lv = np.log(Ju.rv_bp.values)
     vov = pd.Series(lv).rolling(20).std().values
