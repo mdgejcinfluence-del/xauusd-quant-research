@@ -3239,6 +3239,49 @@
     "statut": "PROTOCOLE CONSOLIDE SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
    },
    "entry_hash": "7378e70a82707c7584444eeb86711f2c9995eb53f8e9916999fca1ceba2aa0c3"
+  },
+  {
+   "seq": 261,
+   "prev_hash": "7378e70a82707c7584444eeb86711f2c9995eb53f8e9916999fca1ceba2aa0c3",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Decision fondateur F-J: preparation approuvee, consolidation autorisee; principes acceptes, cinq comparaisons FJ-01..FJ-05 et dix constantes seq258 conservees; gel et execution interdits",
+    "definitions_preservees": [
+     "detection causale Q99.5 sur 20 journees precedentes, plancher 10 bp, predicat strict",
+     "amorcage 10 journees et 10 000 variations valides",
+     "regroupement <=15 min",
+     "cloture 15 min sans choc avec heure exacte de disponibilite publiee",
+     "mixtes publies separement, exclus des primaires",
+     "sillage 60 min apres le dernier choc, explicitement retrospectif",
+     "materialite 10 bp",
+     "BY m=5 fixe"
+    ],
+    "quatre_points_a_formaliser": [
+     "continuation signee: formule unique +60 orientee par le signe, ancrage cloture derniere barre de choc, horodatages/bornes/disponibilite du prix final",
+     "intensite: mesure primaire unique pour FJ-03 (recommandation: max des |r_t|/T_D(t) dans l episode), autres descriptives",
+     "pseudo-evenements: activite anterieure exacte, selection des minutes non extremes, appariement sans remplacement, departage deterministe, controle de composition ere x session; jamais d exclusion pour choc dans le sillage futur",
+     "dependance: sillages chevauchants y compris entre journees successives, unite de bootstrap justifiee, diagnostics de validite publies"
+    ],
+    "livrable": "protocole unique + dictionnaire + dix constantes + cinq comparaisons fermees + algorithme pseudo-evenements + methode/BY + couverture + biais + couts/suspension + SHA-256 + checkpoint; aucun calcul preparatoire",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun calcul avant validation et gel; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-G et F-I cloturees; F-H et F-L en reserve"
+   },
+   "entry_hash": "466e24f0ee26a0723924675571eb3963e322063ba8fb08e45ea7243730a38844"
+  },
+  {
+   "seq": 262,
+   "prev_hash": "466e24f0ee26a0723924675571eb3963e322063ba8fb08e45ea7243730a38844",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "08",
+    "objet": "Addendum V1.1 au protocole F-J (V1 seq260 inchange): (1) Continuation signee formule unique R_60 = s * ln(c(t_der+60)/c(t_der)) * 1e4 bp, ancrage cloture de la derniere barre de choc disponible a t_der+1, prix final disponible a t_der+61, censure si barre absente ou trou >15 min sur (t_der, t_der+60], disponibilite definitive de l episode a t_der+16 publiee par episode; (2) Intensite primaire unique I_ep = max_t |r_t|/T_D(t) (seuil du jour propre a chaque choc), classes MODERE/MAJEUR pour FJ-03, toutes autres mesures descriptives; (3) Pseudo-evenements: A_avant = somme des |r| des 60 minutes precedentes (minute exclue, segment complet exige), premiere minute eligible par (journee x session S1-S4) sans choc dans les 60 min precedentes, terciles d activite par session, appariement chronologique sans remplacement avec departage par plus petit horodatage, aucune exclusion pour choc ulterieur (drapeau NOUVEAU_CHOC), controle de composition ere x session publie (drapeau COMPOSITION_SENSIBLE: ere <10% des paires ou ecart de part >10 pts, aucune CANDIDATE_J1), NON_EVALUABLE si eligibilite non atteinte; (4) Dependance: grappes = composantes connexes du graphe (sillages chevauchants, sillage contenant un choc ulterieur, meme jour d attribution), fusion automatique des journees successives, bootstrap par ces grappes (episodes FJ-05 apparies voyageant avec la grappe de l episode), diagnostics de validite publies (nombre/taille des grappes, chevauchements, traversées minuit, fusions inter-journalieres), drapeau GRAPPE_DOMINANTE si plus grande grappe >5% des episodes d un bras (lecture plafonnee). Ensemble V1+V1.1 = protocole unique soumis a validation definitive et gel.",
+    "sha256": {
+     "CAMPAIGN_08_PROTOCOL_V1_1_ADDENDUM.md": "b51dbdf30d78b38c576e6c8965c65f8bf50d973c3911550635d5c55c6665d279",
+     "CAMPAIGN_08_PROTOCOL_V1.md": "022ca0dc12a767349164be673959a21f18b3e294202bf5d88b39615ffd3e39af"
+    },
+    "statut": "ADDENDUM SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
+   },
+   "entry_hash": "d6efc3b48ea99e8b722ef120f18b45e21c2005581880874710b28f9d8e8e2e98"
   }
  ]
 }
