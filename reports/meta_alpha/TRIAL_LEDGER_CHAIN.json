@@ -3473,6 +3473,50 @@
     "statut": "ETAPE A LIVREE - aucune promotion, aucun backtest; etapes B-G en attente d ordre"
    },
    "entry_hash": "7313a2df59ae7f5c04bea2d8bdc970bbdbc4fc442ec69e6c2707fc0fa774c857"
+  },
+  {
+   "seq": 273,
+   "prev_hash": "7313a2df59ae7f5c04bea2d8bdc970bbdbc4fc442ec69e6c2707fc0fa774c857",
+   "entry": {
+    "type": "MISSION",
+    "phase": "9",
+    "objet": "Ordre du proprietaire Phase 9 etape B (etape A acceptee): audit economique chiffre des cinq candidates P9-A a P9-E. Aucune nouvelle campagne exploratoire",
+    "par_candidate": "P9-A amplitude disponible, delai de retour, spread Bid/Ask a l evenement, couts entree/sortie, marge restante, seuil de rentabilite examine avec attention (ne pas abandonner avant quantification complete, ne pas sauver artificiellement); P9-B magnitudes manquantes selon definitions historiques validees (amplitude avant retest, distance apres retest, temps, excursions defavorables, couts Bid/Ask, marge theorique; ne pas supposer tous les retests exploitables); P9-C mouvement initial, excursion inverse, delai de retournement, amplitude apres signal, couts complets selon le sens (ne pas confondre frequence de retracement et esperance positive); P9-D valeur comme filtre de volatilite seulement (amplitude supplementaire, temps, frequence de depassement des seuils, couts relatifs; aucune regle directionnelle inventee); P9-E avertissement de composition conserve integralement (distributions sessions/eres/contextes, mouvements disponibles et couts, aucune association presentee comme avantage independant; aucune candidature si l effet depend d une composition non comparable)",
+    "modele_obligatoire": "par candidate: esperance brute, spread observe, commission estimee ou documentee, slippage trois scenarios, latence et sensibilite a l execution, swap si pertinent, cout total, esperance nette, cout maximal supportable, marge de securite apres couts, frequence des opportunites, sensibilite par ere et session; scenarios favorable/central/defavorable; couts observes visuellement distingues des hypothetiques; aucune estimation Mid presentee comme preuve de remplissage reel",
+    "livrables": "rapports economiques P9-A a P9-E, tableau comparatif des cinq, modele commun de couts, classement selon la viabilite economique, registre des donnees manquantes et hypotheses, verdict individuel (poursuivre/suspendre/abandonner), SHA-256 et checkpoint",
+    "limites": "extractions historiques et calculs economiques descriptifs seulement; pas de construction definitive de strategies, pas d optimisation, pas de backtests strategiques, pas de challenge_sim, pas d acces holdout, aucune promotion automatique J2/J3/E1/E2; corpus IS uniquement; aucun budget experimental; suspension en cas de depassement des ressources gratuites; fiches ANO intactes"
+   },
+   "entry_hash": "bb72c4905a660fd9dc4bf573c22cf6f93d6964ebc885e3f1063d4bf3027d9ded"
+  },
+  {
+   "seq": 274,
+   "prev_hash": "bb72c4905a660fd9dc4bf573c22cf6f93d6964ebc885e3f1063d4bf3027d9ded",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "9",
+    "objet": "Phase 9 etape B terminee (calculs descriptifs sur fichiers d evenements valides campagnes 1-5; aucun backtest, aucune optimisation, aucun acces holdout). Modele commun: spread OBSERVE a l evenement (aller-retour = un spread complet, jamais double), commissions/slippage HYPOTHETIQUES en trois scenarios geles (favorable/central/defavorable), swap 0 (positions <=60 min intraday). Resultats: P9-A brut Mid moyen -1,32 bp (mediane +0,27; reintegration 91,3%, delai median 2 min, profondeur mediane 0,30 bp, spread observe 2,25) nette centrale -5,27, cout maximal supportable negatif -> ABANDONNER; P9-B brut momentum apres retest -1,09 bp (mediane -2,71; encore au-dela 54,4% mais magnitudes defavorables; spread 2,44) nette centrale -5,23 -> ABANDONNER; P9-C fade impulsions M5 Londres brut +0,79 bp (mediane +1,53; Asie -0,17; par ere +0,98/+0,73/+0,60; spread 2,27) nette centrale -3,17, cout maximal supportable 0,79 inferieur au seul spread -> ABANDONNER la conversion directe; P9-D range post-sortie 11,03 bp (formation basse) vs 12,59 (haute): l effet est un ratio a denominateur petit, aucune direction -> SUSPENDRE comme filtre; P9-E bras de sessions disjointes par construction (avant 13h: S1/S2; des 13h: S3 99,6%), retracement/extension/position croissent ensemble apres 13h (echelle de session) -> ABANDONNER comme candidate strategique. Aucune candidate ne couvre ses frais; aucune promotion. Registre des manques: excursions adverses apres retest non stockees (P9-B), spread des consolidations C3 (P9-D) et des atteintes C5 (P9-E, proxy etiquete 2,28 bp), couts reels de courtier absents (scenarios).",
+    "sha256": {
+     "STEP_B_P9A.md": "a3b1523383123569b1a5035bfbabb94dd9a92b4dfb70c3c22a44fc205f61b880",
+     "STEP_B_P9B.md": "c78454963939099b9a5a31f2155f9d13762f1e2d0c502a4cd25eeb411a0af7be",
+     "STEP_B_P9C.md": "e3f78eb462c6e69431104b1fb395679647353d2f8d0c23093a4d365ee0051a37",
+     "STEP_B_P9D.md": "d194d40faea30bf025860f3991d75df58df740fe01ccbfd2f449d7df5d88054d",
+     "STEP_B_P9E.md": "5fa3600cda161917600eb3ea40e2bf280c7bae8989cac183cb5ea7a3c4dd0d0d",
+     "STEP_B_COMPARATIVE.md": "b51bf0f5c941b398730a0cc66be0227dac707dee4bb8fc1b55170c0eb7b83c99",
+     "STEP_B_COST_MODEL.md": "5cf7630e9fd7481f681469b3374d93f3068f547e67a17d698466f73f88472b0c",
+     "STEP_B_MISSING_DATA.md": "9d95defef62627b0b3c9c71c36af5d1e52cb5b6b0ee5e0dee748716e815b85d6",
+     "STEP_B_ECONOMICS.json": "40720dffaa588345bdc74e2f9af5da4a4742a7aecb714989cd65bc0a42d2c5af",
+     "phase9_stepB_economics.py": "b51c4d12606150a879178b62c47b663e0d8fe49fa3dd0a8949d8be79e57282cf"
+    },
+    "verdicts": {
+     "P9-A": "ABANDONNER",
+     "P9-B": "ABANDONNER",
+     "P9-C": "ABANDONNER (conversion directe)",
+     "P9-D": "SUSPENDRE (filtre de volatilite)",
+     "P9-E": "ABANDONNER"
+    },
+    "statut": "ETAPE B LIVREE - aucun survivant economique parmi les cinq; en attente de decision du proprietaire (relance exploratoire ou chantier different, sur ordre distinct)"
+   },
+   "entry_hash": "ee79630e07dc3ea8c7055951497cd7027b802023b43488b016fc97b0689e823c"
   }
  ]
 }

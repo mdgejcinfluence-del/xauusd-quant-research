@@ -1,0 +1,274 @@
+{
+ "modele_couts": {
+  "favorable": {
+   "spread_mult": 1.0,
+   "commission_bp": 0.0,
+   "slippage_bp_AR": 0.5
+  },
+  "central": {
+   "spread_mult": 1.0,
+   "commission_bp": 0.7,
+   "slippage_bp_AR": 1.0
+  },
+  "defavorable": {
+   "spread_mult": 1.5,
+   "commission_bp": 1.4,
+   "slippage_bp_AR": 3.0
+  }
+ },
+ "P9-A": {
+  "n": 12004,
+  "journees": 2181,
+  "frequence_par_an": 1386.9821182943604,
+  "esperance_brute_mid_bp": -1.3233313245508098,
+  "spread_observe_bp": 2.2478339010542596,
+  "cout_total_bp": {
+   "favorable": 2.7478339010542596,
+   "central": 3.94783390105426,
+   "defavorable": 7.771750851581389
+  },
+  "esperance_nette_bp": {
+   "favorable": -4.071165225605069,
+   "central": -5.27116522560507,
+   "defavorable": -9.095082176132198
+  },
+  "cout_max_supportable_bp": -1.3233313245508098,
+  "seuil_tercile_bas_bp": 0.6747188802971852,
+  "profondeur_mediane_bp": 0.304122734132799,
+  "taux_reintegration": 0.9132899783224946,
+  "delai_reintegration_median_min": 2.0,
+  "gain_median_bp": 0.2736691507214467,
+  "par_ere": {
+   "2010_2013": {
+    "n": 4561,
+    "brut_bp": -1.6691241393990992,
+    "spread_bp": 2.554572376579284
+   },
+   "2014_2016": {
+    "n": 3318,
+    "brut_bp": -1.1231096565553265,
+    "spread_bp": 2.4380949432828762
+   },
+   "2017_2020": {
+    "n": 4125,
+    "brut_bp": -1.1022021834817255,
+    "spread_bp": 1.9395398608879322
+   }
+  },
+  "par_session": {
+   "LONDRES": {
+    "n": 5045,
+    "brut_bp": -1.4282205030132131,
+    "spread_bp": 2.199039294708681
+   },
+   "NEWYORK": {
+    "n": 6027,
+    "brut_bp": -1.421093042259456,
+    "spread_bp": 2.2369570154024316
+   },
+   "NUIT": {
+    "n": 932,
+    "brut_bp": 0.010738050663144398,
+    "spread_bp": 2.888555333716096
+   }
+  }
+ },
+ "P9-B": {
+  "n": 3128,
+  "journees": 1543,
+  "frequence_par_an": 510.8593648736228,
+  "esperance_brute_mid_bp": -1.0928397093174753,
+  "spread_observe_bp": 2.440105503204782,
+  "cout_total_bp": {
+   "favorable": 2.940105503204782,
+   "central": 4.140105503204782,
+   "defavorable": 8.060158254807172
+  },
+  "esperance_nette_bp": {
+   "favorable": -4.032945212522257,
+   "central": -5.2329452125222575,
+   "defavorable": -9.152997964124648
+  },
+  "cout_max_supportable_bp": -1.0928397093174753,
+  "delai_retest_median_min": 1.0,
+  "encore_au_dela_60": 0.5441176470588235,
+  "gain_median_bp": -2.7082638345101606,
+  "position_plus15_med": 3.9303785705040455,
+  "position_plus30_med": 3.763045501693951,
+  "excursion_adverse_apres_retest": "NON DISPONIBLE dans les fichiers valides (positions +15/+30/+60 seulement)",
+  "par_ere": {
+   "2010_2013": {
+    "n": 1709,
+    "brut_bp": -1.1035866126778766,
+    "spread_bp": 2.6759193072396865
+   },
+   "2014_2016": {
+    "n": 886,
+    "brut_bp": -0.35676857327000105,
+    "spread_bp": 2.534298998129338
+   },
+   "2017_2020": {
+    "n": 533,
+    "brut_bp": -2.2845123253333384,
+    "spread_bp": 1.9643887655337648
+   }
+  },
+  "par_session": {
+   "LONDRES": {
+    "n": 1239,
+    "brut_bp": -1.1253736895042075,
+    "spread_bp": 2.349593944805176
+   },
+   "NEWYORK": {
+    "n": 1821,
+    "brut_bp": -1.066312848409749,
+    "spread_bp": 2.4802707296397095
+   },
+   "NUIT": {
+    "n": 68,
+    "brut_bp": -1.2655083732259889,
+    "spread_bp": 4.093449744424003
+   }
+  }
+ },
+ "P9-C": {
+  "Londres": {
+   "n": 16169,
+   "journees": 2463,
+   "frequence_par_an": 1654.3191230207065,
+   "esperance_brute_mid_bp": 0.7923804787530153,
+   "spread_observe_bp": 2.265,
+   "cout_total_bp": {
+    "favorable": 2.765,
+    "central": 3.965,
+    "defavorable": 7.797499999999999
+   },
+   "esperance_nette_bp": {
+    "favorable": -1.9726195212469848,
+    "central": -3.1726195212469843,
+    "defavorable": -7.005119521246984
+   },
+   "cout_max_supportable_bp": 0.7923804787530153,
+   "amplitude_initiale_med_bp": 10.343,
+   "excursion_opposee_med_bp": 2.302,
+   "gain_median_bp": 1.5281000000000002,
+   "par_ere": {
+    "2010_2013": {
+     "n": 6550,
+     "brut_bp": 0.9784595448992057,
+     "spread_bp": 2.51775
+    },
+    "2014_2016": {
+     "n": 5084,
+     "brut_bp": 0.7280699842643589,
+     "spread_bp": 2.4583
+    },
+    "2017_2020": {
+     "n": 4535,
+     "brut_bp": 0.5958002866593165,
+     "spread_bp": 1.8797
+    }
+   }
+  },
+  "ASIE": {
+   "n": 14018,
+   "journees": 2350,
+   "frequence_par_an": 1503.2068085106382,
+   "esperance_brute_mid_bp": -0.17217162933371377,
+   "spread_observe_bp": 2.38645,
+   "cout_total_bp": {
+    "favorable": 2.88645,
+    "central": 4.08645,
+    "defavorable": 7.979675
+   },
+   "esperance_nette_bp": {
+    "favorable": -3.0586216293337136,
+    "central": -4.258621629333714,
+    "defavorable": -8.151846629333715
+   },
+   "cout_max_supportable_bp": -0.17217162933371377,
+   "amplitude_initiale_med_bp": 9.8465,
+   "excursion_opposee_med_bp": 0.13395,
+   "gain_median_bp": 0.87005,
+   "par_ere": {
+    "2010_2013": {
+     "n": 4878,
+     "brut_bp": -0.15602365723657224,
+     "spread_bp": 2.84885
+    },
+    "2014_2016": {
+     "n": 4770,
+     "brut_bp": -0.16544729559748422,
+     "spread_bp": 2.6467
+    },
+    "2017_2020": {
+     "n": 4370,
+     "brut_bp": -0.19753659038901603,
+     "spread_bp": 1.96395
+    }
+   }
+  },
+  "chevauchement_episodes_M5_pct": 81.42794320003405
+ },
+ "P9-D": {
+  "BAS": {
+   "n": 8250,
+   "range_formation_med_bp": 1.0578,
+   "range_post_60_med_bp": 11.0273,
+   "freq_sortie_2x": 0.9844848484848485,
+   "duree_consolidation_med_min": 8.0
+  },
+  "HAUT": {
+   "n": 7603,
+   "range_formation_med_bp": 1.969,
+   "range_post_60_med_bp": 12.59245,
+   "freq_sortie_2x": 0.9605418913586742,
+   "duree_consolidation_med_min": 8.0
+  },
+  "NON_CLASSE": {
+   "n": 30,
+   "range_formation_med_bp": 2.61475,
+   "range_post_60_med_bp": 20.215400000000002,
+   "freq_sortie_2x": 1.0,
+   "duree_consolidation_med_min": 8.0
+  },
+  "note": "Pas d'esperance directionnelle: valeur de filtre seulement. Spread a l'evenement non stocke pour CONS (voir registre des manques)."
+ },
+ "P9-E": {
+  "avant_13h": {
+   "n": 1550,
+   "retracement_60_med_bp": 7.922499999999999,
+   "extension_60_med_bp": 14.467500000000001,
+   "position_fin_60_med_bp": 1.8780000000000001,
+   "sessions": {
+    "S1": 0.635,
+    "S2": 0.365,
+    "S3": 0.0,
+    "S4": 0.0
+   },
+   "eres": {
+    "2010_2013": 0.348,
+    "2014_2016": 0.329,
+    "2017_2020": 0.323
+   }
+  },
+  "des_13h": {
+   "n": 445,
+   "retracement_60_med_bp": 13.066,
+   "extension_60_med_bp": 23.963,
+   "position_fin_60_med_bp": 3.37,
+   "sessions": {
+    "S3": 0.996,
+    "S2": 0.004,
+    "S1": 0.0,
+    "S4": 0.0
+   },
+   "eres": {
+    "2010_2013": 0.366,
+    "2014_2016": 0.335,
+    "2017_2020": 0.299
+   }
+  },
+  "spread_proxy": "Spread a l'atteinte non stocke en campagne 5; proxy observe campagne 1 (EV2, mediane globale publiee dans CAMPAIGN_01_EVENT_METRICS.csv)."
+ }
+}
