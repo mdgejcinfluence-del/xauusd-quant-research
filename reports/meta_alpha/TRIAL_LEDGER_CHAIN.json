@@ -2096,6 +2096,16 @@
     "resultat": "LIVRABLE 2 - proces-verbal de controle final livre (CAMPAIGN_04_FINAL_CONFORMITY_REVIEW.md sha256=eea6f1848313b06ae0695c84d43f583382c1d73e815c03b40ad5971e4cb07411): conformite point par point du dictionnaire v2 (sha256 inchange 0a615c54fa4b7b2c2980428c486571f76f1b29abc6ec892538940ed0e0f12824) et des dix comparaisons (sha256 inchange 4024eaaefc16031d813fe73a2effab2d648e60d6172c0359954fc8deb7d8ff5a) aux exigences fondateur: prevision F3 connue a l ouverture vs RV connue a la cloture, seuils sur la bonne variable au passe seul, formules exactes reprises, horodatages C/D/traversee/retour/fenetres, population-fenetre-unite-materialite des dix, blocs mobiles de 20 journees avec recalcul par replicat et fenetres tronquees, non-confirmees conservees, regles de publication si effectifs insuffisants (eligibilite descriptive, jamais tue); deux points de vigilance publies (double forme des etiquettes F3, cout du bootstrap a recalcul avec regle de suspension plutot que degradation). AUCUNE EXECUTION CAMPAGNE 4; validation finale proprietaire en attente; 0 budget, holdout scelle, FRED suspendue, S12 gelees, XAU/USD seul, exploration multi-familles maintenue"
    },
    "entry_hash": "1f718d1dc0411c5a0e0e3841078810747ec75197d89ad4b16cc0548bfab9f965"
+  },
+  {
+   "seq": 201,
+   "prev_hash": "1f718d1dc0411c5a0e0e3841078810747ec75197d89ad4b16cc0548bfab9f965",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_04_EXECUTION_DESCRIPTIVE",
+    "resultat": "Autorisation fondateur: execution des calculs descriptifs Campagne 4 strictement selon dictionnaire v2 (sha256 0a615c54...) et les dix comparaisons preenregistrees (sha256 4024eaae...), aucun ajout d hypothese; separation temporelle prediction F3 connue a l ouverture / RV connue a la cloture / transition confirmee / consequences posterieures; publication des confirmees et non-confirmees, effectifs, intervalles, negatifs; aucune lecture predictive ou exploitable; en cas de depassement du budget CI suspension documentee du calcul concerne sans remplacement methodologique; fiches historiques campagnes 0 a 3 non modifiees; sensibilite ANO-C2-003/006/008/012 NON recalculee (autorisation distincte requise); restrictions maintenues: XAU/USD seul, holdout scelle, 0 backtest/challenge_sim/J2-J3/budget, FRED suspendue, 36 cellules S12 gelees, chantier T0 separe inactif"
+   },
+   "entry_hash": "797a9d86a6be08ee382668c693fef6ccc4fe42c0bee6696a927c9d84a7a8e6a7"
   }
  ]
 }

@@ -1,0 +1,46 @@
+name: Campaign 4 Full Extraction ALL (descriptif seq201)
+on:
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/campaign04_all.txt"]
+permissions: { contents: write }
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q duckdb "kaggle==1.6.17" six gdown pytz requests pandas numpy
+      - name: Verifier la chaine et la validation temporelle avant calcul
+        run: |
+          python3 ci_tools/ledger_chain.py verify | grep -q "chaine valide" || { echo "CHAINE INVALIDE"; exit 1; }
+          python3 ci_tools/campaign04_temporal_tests.py || { echo "VALIDATION TEMPORELLE KO"; exit 1; }
+      - name: Extraction complete (descriptif)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          mkdir -p reports/meta_alpha/campaign04
+          python3 -u ci_tools/campaign04_engine.py > reports/meta_alpha/campaign04/CI_LOG.txt 2>&1 || true
+          tail -5 reports/meta_alpha/campaign04/CI_LOG.txt
+      - name: Publier les resultats en artefact (toujours)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: campaign04-resultats
+          path: reports/meta_alpha/campaign04
+          retention-days: 7
+      - name: Commit resultats (toujours, non bloquant)
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/meta_alpha/campaign04 || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Campaign 4: extraction complete ALL (descriptif brut)" || true
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+          git push origin HEAD:arena/afe12737-xauusd-quant-research || true
