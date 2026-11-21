@@ -27,20 +27,20 @@ jobs:
           mkdir -p reports/meta_alpha/campaign03
           python3 -u ci_tools/campaign03_engine.py > reports/meta_alpha/campaign03/CI_LOG.txt 2>&1 || true
           tail -5 reports/meta_alpha/campaign03/CI_LOG.txt
-      - name: Commit resultats (toujours)
+      - name: Publier les resultats en artefact (toujours)
         if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: campaign03-resultats
+          path: reports/meta_alpha/campaign03
+          retention-days: 7
+      - name: Commit resultats (toujours, non bloquant)
+        if: always()
+        continue-on-error: true
         run: |
-          set -x
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          ls -la reports/meta_alpha/campaign03 || true
           git add reports/meta_alpha/campaign03 || true
-          git diff --cached --stat || true
-          if git diff --cached --quiet; then echo "RIEN A COMMITER"; exit 0; fi
-          git commit -m "Campaign 3: extraction complete ALL (descriptif brut)"
-          for i in 1 2 3 4 5; do
-            git fetch origin arena/afe12737-xauusd-quant-research || true
-            git rebase origin/arena/afe12737-xauusd-quant-research || git rebase --abort || true
-            if git push origin HEAD:arena/afe12737-xauusd-quant-research; then echo "PUSH OK"; exit 0; fi
-            sleep 20
-          done
-          echo "PUSH KO APRES 5 ESSAIS"; exit 1
+          git diff --cached --quiet && exit 0
+          git commit -m "Campaign 3: extraction complete ALL (descriptif brut)" || true
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+          git push origin HEAD:arena/afe12737-xauusd-quant-research || true
