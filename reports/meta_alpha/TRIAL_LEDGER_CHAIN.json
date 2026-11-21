@@ -2006,6 +2006,36 @@
     "resultat": "CAMPAGNE 3 EXECUTEE sur dictionnaire gele (sha256 dictionnaire re-verifie 76490c40..., gel 12 comparaisons ac151cb8...): extraction CI sequentielle 282/282 partitions, 3540993 barres M1, 702397 M5, 231875 M15, 3097 dates UTC; episodes IMP-M5 70493, IMP-M15 23075, CONS 15973; chevauchements comptes jamais supprimes (M5 81%, M15 55%); validation temporelle verte avant calcul (seuils [T0-60j,T0) barre courante exclue, CONS 5 journees passees, instantanes en barres M5/M15 distingues). Trajectoires M5 (60min): continuation 37,5%, retournement 31,5%, retracement complet 13,3%, partiel 8,5%, extension tardive 5,9%, stagnation 2,7%, censuree 0,7%; CONS: sortie cloture hors range 87,1%, barre range 12,3%, censuree 0,6%, duree mediane 8 min, aucune expansion post-sortie etablie au seuil materiel (C3-10 ratio 0,91). Sur les 12 gelees (bootstrap journees 2000, BY): 3 candidates J1 descriptives ANO-C3-001 (retracement complet M5 Londres vs Asie +7,2pts [6,0;8,3], signe coherent 3 eres), ANO-C3-002 (retracement ulterieur post+12 plus faible si amplitude causale basse, ratio 0,81, 3 eres), ANO-C3-003 (sorties CONS par barre range si petit range de formation +13,3pts, AVEC avertissement de mecanique de construction); 3 significatives sous seuil materiel et 6 negatives conservees au registre (dont C3-05 reclasse contraste de contexte d ere). Chantier T0 separe: justification MDE livree (CAMPAIGN_2_4_MDE_JUSTIFICATION.md), aucun resultat prospectif consulte, aucune activation. Incidents CI documentes (3 commits runner perdus, sonde push OK, correctif gzip, run 44881797073 vert commit 94dddc3). 0 backtest/challenge_sim/optimisation/promotion, holdout scelle, budgets inchanges (tick 148/150, panel 28/60, exo 6/60, P7 0/24, NR 0/24, P9 10/12), FRED suspendue, 36 cellules S12 intactes. STATUT: CAMPAGNE 3 EXECUTEE - VALIDATION PROPRIETAIRE EN ATTENTE"
    },
    "entry_hash": "4d3ef89f720e736b6e636706f1a96800456c1ad101f651501bd67ae88534164a"
+  },
+  {
+   "seq": 192,
+   "prev_hash": "4d3ef89f720e736b6e636706f1a96800456c1ad101f651501bd67ae88534164a",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_04_REGIMES_VOLATILITE_PREPARATION",
+    "resultat": "Decision proprietaire: livraison Campagne 3 seq191 acceptee au niveau descriptif; ANO-C3-001/002/003 restent candidates J1 au catalogue commun, aucune promotion J2/J3, aucune optimisation ni strategie issue des candidates, fiches historiques inchangees, negatifs et sous-seuil conserves. Autorisation de PREPARER uniquement la Campagne 4 REGIMES ET VOLATILITE (priorite du plan de reprise): formation des regimes, changements de volatilite rapides/progressifs, durees, alternance, retours a l habituel, ruptures de distribution, asymetries, evenements extremes, stabilite historique, interactions sessions/evenements structurels; F3 reference existante sans presomption d exhaustivite; distinction stricte regime passe seul / instant courant / transition confirmee apres observation / consequence posterieure; aucun seuil poole retrospectif presente comme detection temps reel; definitions gelees avant calcul, comparaisons limitees, negatifs conserves, aucun signal directionnel. Livrables prealables: BLUEPRINT, EVENT_DICTIONARY, METHOD_AND_MULTIPLICITY, DATA_COVERAGE; dictionnaire presente au proprietaire avant toute execution. Chantier T0 separe: completer la reconciliation episodes bruts / grappes jour x niveau / effectif independant equivalent / planchers 500 et 1500 grappes / 1400 independants par groupe, sans consulter le flux prospectif. Restrictions: 0 backtest/challenge_sim/optimisation/promotion/holdout/budget, 36 cellules S12 gelees, FRED suspendue, XAU/USD seul"
+   },
+   "entry_hash": "e43edf20c480c35b2a965b0c54b47f67eb7fadd0f0e68f01f2c692a3cdb4ce51"
+  },
+  {
+   "seq": 193,
+   "prev_hash": "e43edf20c480c35b2a965b0c54b47f67eb7fadd0f0e68f01f2c692a3cdb4ce51",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_04_REGIMES_VOLATILITE_PREPARATION",
+    "resultat": "Dictionnaire Campagne 4 propose et presente au proprietaire avant execution (sha256 CAMPAIGN_04_EVENT_DICTIONARY.md=475ec99248bf003f70e568fa2975d0c1827761e30ca340f5c157a658924cc4f1, calcule par appel separe apres ecriture): REG-J journalier principal (RV quotidienne, seuils terciles causaux q1/3-q2/3 sur 60 journees precedentes min 40, etat-passe F3 gele inchange, etat courant a seuils passes, discordances F3 publiees, transition candidate puis confirmee apres 3 journees consecutives jamais antidatee, non-confirmees conservees, vitesse rapide <=2j / progressive >=5j, durees et retours a l habituel sous mediane causale censures publies); REG-S sessions a seuils causaux propres et dephasages intrajournaliers; dimensions non-F3 DIM (asymetrie, queues a quantile 99 causal, volatilite de la volatilite, dispersion intrajournaliere) sans vocabulaire de regime impose; consequences strictement apres confirmation (+1-5j, +6-20j) et apres candidate pour les non-confirmees, separement; aucun seuil poole retrospectif presente comme temps reel, aucun signal directionnel"
+   },
+   "entry_hash": "81188396a86b32d9545c52ddaba35312e6cdd5e24c4cd8b5128597939162a64b"
+  },
+  {
+   "seq": 194,
+   "prev_hash": "81188396a86b32d9545c52ddaba35312e6cdd5e24c4cd8b5128597939162a64b",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_PREPARATION_ET_T0_RECONCILIATION",
+    "resultat": "Livraison de preparation seq192 (aucun calcul Campagne 4, 0 budget, holdout scelle, flux prospectif T0 inexistant et non consulte, FRED suspendue): blueprint (question centrale progressif/brusque/alternance/conditionnel, regle d or en 4 objets distincts passe seul / courant / confirmation posterieure / consequence), dictionnaire seq193 presente a validation, methode (proposition fermee de 10 comparaisons C4-01..C4-10 a arreter au gel definitif, bootstrap par blocs de 20 journees pour les consequences, BY, seuils materiels 5pts/ratio 1,15, suffisance 200 journees et 30 transitions par bras, negatifs conserves), couverture (IS seul, F3 gele non modifie, bruts campagnes 1-3, perimetres interdits explicites). CHANTIER T0 SEPARE: reconciliation des effectifs livree (CAMPAIGN_2_4_EFFECTIVE_N_RECONCILIATION.md): par groupe extreme 1400 independants requis x DE central 2,38 = ~3330 episodes bruts; plancher 500 grappes x 7,12 episodes/grappe ~ 3560 episodes = ~1496 independants equivalents (les deux criteres coincident au scenario central et divergent utilement hors central, tableau de sensibilite rho 0,05-0,30); total 1500 grappes ~ 10680 episodes ~ 4487 independants >= 4200 requis, ~746 journees minimales au rythme d amorcage 2,01 grappes/journee; amorcage (35988 episodes, 5057 grappes, ~15100 independants equivalents) rappele comme jamais comptabilisable car consulte. Candidats C3 conservees J1 sans optimisation ni strategie. STATUT: CAMPAGNE 4 PREPAREE - VALIDATION DU DICTIONNAIRE PAR LE PROPRIETAIRE AVANT EXECUTION"
+   },
+   "entry_hash": "e4b668e1816c90dc83b649417515ec0fff787d5aa341a041e62bdb266dc6b16a"
   }
  ]
 }
