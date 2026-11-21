@@ -1996,6 +1996,16 @@
     "resultat": "Moteur campagne 3 et validation temporelle prets avant extraction: tests synthetiques verts (seuil causal 60j barre courante exclue, fenetre [t-60j,t), minimum 2000 barres, mediane passee causale, trajectoires mesurees); chantier T0 separe complete par CAMPAIGN_2_4_MDE_JUSTIFICATION.md (H1 exacte p=0,90 vs 0,85, formule de puissance des deux proportions, n=917/groupe au scenario de reference, 1595 au scenario conservateur 0,77/0,72, base 1400 maintenue comme prudence intermediaire puissance 0,980/0,864, inflation DE 2,4-3,3, justification structurelle des 1500 grappes dont 500/groupe, separation amorcage/confirmatoire exacte, aucun resultat prospectif consulte, aucune activation); extraction CI sequentielle a commit unique sur corpus IS consulte seul"
    },
    "entry_hash": "dc19d67853b982d44656edcc4680d9754ffab180d6d7580a6989c85a474afd4c"
+  },
+  {
+   "seq": 191,
+   "prev_hash": "dc19d67853b982d44656edcc4680d9754ffab180d6d7580a6989c85a474afd4c",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_03_EXECUTION_DESCRIPTIVE",
+    "resultat": "CAMPAGNE 3 EXECUTEE sur dictionnaire gele (sha256 dictionnaire re-verifie 76490c40..., gel 12 comparaisons ac151cb8...): extraction CI sequentielle 282/282 partitions, 3540993 barres M1, 702397 M5, 231875 M15, 3097 dates UTC; episodes IMP-M5 70493, IMP-M15 23075, CONS 15973; chevauchements comptes jamais supprimes (M5 81%, M15 55%); validation temporelle verte avant calcul (seuils [T0-60j,T0) barre courante exclue, CONS 5 journees passees, instantanes en barres M5/M15 distingues). Trajectoires M5 (60min): continuation 37,5%, retournement 31,5%, retracement complet 13,3%, partiel 8,5%, extension tardive 5,9%, stagnation 2,7%, censuree 0,7%; CONS: sortie cloture hors range 87,1%, barre range 12,3%, censuree 0,6%, duree mediane 8 min, aucune expansion post-sortie etablie au seuil materiel (C3-10 ratio 0,91). Sur les 12 gelees (bootstrap journees 2000, BY): 3 candidates J1 descriptives ANO-C3-001 (retracement complet M5 Londres vs Asie +7,2pts [6,0;8,3], signe coherent 3 eres), ANO-C3-002 (retracement ulterieur post+12 plus faible si amplitude causale basse, ratio 0,81, 3 eres), ANO-C3-003 (sorties CONS par barre range si petit range de formation +13,3pts, AVEC avertissement de mecanique de construction); 3 significatives sous seuil materiel et 6 negatives conservees au registre (dont C3-05 reclasse contraste de contexte d ere). Chantier T0 separe: justification MDE livree (CAMPAIGN_2_4_MDE_JUSTIFICATION.md), aucun resultat prospectif consulte, aucune activation. Incidents CI documentes (3 commits runner perdus, sonde push OK, correctif gzip, run 44881797073 vert commit 94dddc3). 0 backtest/challenge_sim/optimisation/promotion, holdout scelle, budgets inchanges (tick 148/150, panel 28/60, exo 6/60, P7 0/24, NR 0/24, P9 10/12), FRED suspendue, 36 cellules S12 intactes. STATUT: CAMPAGNE 3 EXECUTEE - VALIDATION PROPRIETAIRE EN ATTENTE"
+   },
+   "entry_hash": "4d3ef89f720e736b6e636706f1a96800456c1ad101f651501bd67ae88534164a"
   }
  ]
 }
