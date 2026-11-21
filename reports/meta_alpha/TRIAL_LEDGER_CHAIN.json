@@ -2196,6 +2196,36 @@
     "resultat": "Livraison de preparation seq208 terminee: les dix livrables obligatoires couverts par les cinq documents chaines seq209 (blueprint scientifique des deux familles, dictionnaire mathematique, disponibilite temporelle par variable, liste fermee des dix comparaisons, methode/regroupement/bootstrap-par-famille/materialite, matrice de couverture et periodes incompletes, dependances intra-journee/semaine, couts et suspension, biais/limites/ineligibilite, differences avec l anterieur). Aucun calcul Campagne 5 lance, execution interdite avant validation du protocole; campagne 4 definitivement close (note de censure seq205-207); candidates C3/C4 non visees, aucune fiche historique modifiee, 0 budget, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, XAU/USD seul. STATUT: CAMPAGNE 5 EN PREPARATION - VALIDATION DU PROPRIETAIRE REQUISE"
    },
    "entry_hash": "814f5f7755361d3c974704e8b5953ca53b7c060b730a9b8a2a07a7b06826d792"
+  },
+  {
+   "seq": 211,
+   "prev_hash": "814f5f7755361d3c974704e8b5953ca53b7c060b730a9b8a2a07a7b06826d792",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_05_PROTOCOLE_CONSOLIDE_V2",
+    "resultat": "Retour fondateur: architecture Campagne 5 approuvee conditionnellement, validation finale en attente des precisions: F-E (heure theorique vs premiere barre presente separees, retard publie sans decalage automatique des fenetres; horaires historiques definis sans melanger conventions locale/UTC; limite d identification a 00:00 UTC maintenue, aucun effet presente comme asiatique isole; classes de continuite/rupture exhaustives incl fériés, fermetures exceptionnelles et reouvertures hebdomadaires; ineligibilite et retards importants explicites); F-F (disponibilite d un extreme courant horodatee sans antidater l intrabar M1; pas de 5bp formalise integralement: definition du bp, ancrage, arrondi, franchissements multiples et simultanes; frontieres journalieres/hebdomadaires UTC et incompletes figees; separation premiere atteinte/touch/franchissement/extreme final retrospectif; evenements d ordre indetermine publies separement); statistiques (materialite 5 points ou ratio 1,15 associee explicitement a chacune des dix, unites et regroupements confirmes, deux familles d inference distinctes avec BY separee et aucune conclusion globale sur les dix, negatives/insuffisantes/ineligibles conservees); livrable final consolide avec conventions horaires, disponibilite, definitions mathematiques, unites/materialite, exclusions, bootstrap et BY, hashes complets et resume des corrections. Aucun calcul avant validation definitive; restrictions inchangees"
+   },
+   "entry_hash": "e625c6a3c36aa127f5c33780d467b3cb4be45662fc8f6336d9adc6ca58cf1279"
+  },
+  {
+   "seq": 212,
+   "prev_hash": "e625c6a3c36aa127f5c33780d467b3cb4be45662fc8f6336d9adc6ca58cf1279",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_05_PROTOCOLE_CONSOLIDE_V2",
+    "resultat": "Protocole consolide Campagne 5 v2 presente a validation definitive (sha256 CAMPAIGN_05_PROTOCOL_V2.md calcule par appel separe apres ecriture, a l entree suivante apres verification separee): corrections fondateur integrees - heure theorique et premiere barre presente distinguees, retard publie en classes sans decalage automatique des fenetres, ineligibilite explicite au-dela de 30 min; conventions tranchees en fenetres UTC fixes publiees face aux heures locales saisonnieres; limite d identification a 00:00 UTC durcie (aucun effet nomme asiatique isole); classes d ancrage Asie exhaustives avec priorites (REOUVERTURE_SEMAINE, FERMETURE_EXCEPTIONNELLE >12h regroupant feries et fermetures indistinguables dans les donnees, TROU_INTRA_SEMAINE, CONTINUITE); disponibilite des extremes a la cloture de la barre M1 sans antidater l intrabarre; pas de 5bp formalise (bp relatif, ancrage au niveau franchi, seuils sans arrondi, franchissements multiples d ordre indetermine); frontieres UTC et incompletes figees en distinguant censure de l extreme final et validite de la reference; separation atteinte/touch/franchissement/final renforcee; sortie dediee aux evenements a ordre indetermine; materialite 5 points ou ratio 1,15 explicite pour chacune des dix, unites et grappes confirmees, deux familles d inference distinctes BY separee sans conclusion globale sur les dix, negatives et ineligibles conservees"
+   },
+   "entry_hash": "89a03d87d9b77e7f359595c87be94d2bad74d21609de30133ae113249182c7da"
+  },
+  {
+   "seq": 213,
+   "prev_hash": "89a03d87d9b77e7f359595c87be94d2bad74d21609de30133ae113249182c7da",
+   "entry": {
+    "type": "PREREG_HASH_VALEUR",
+    "mission": "CAMPAIGN_05_PROTOCOLE_CONSOLIDE_V2",
+    "resultat": "sha256(CAMPAIGN_05_PROTOCOL_V2.md)=818837fd5fb500b2906685367ea72acc18c2b5ddfce64de3bdfe5c8239818331 (calcule par appel separe apres ecriture); le protocole consolide v2 fait foi pour l execution si validation definitive, les documents seq209 restant la trace de preparation; statut: CAMPAGNE 5 PROTOCOLE V2 EN ATTENTE DE VALIDATION DEFINITIVE, aucun calcul, execution interdite, T0 inactif, restrictions inchangees"
+   },
+   "entry_hash": "1c7d057ec7dc71cc0ad9681e66fe309e1b7468038318bdacc3f6a8385f7872f0"
   }
  ]
 }
