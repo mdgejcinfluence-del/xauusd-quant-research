@@ -1,0 +1,37 @@
+dimension,modalite,journees,part_pct,rv_mediane_bp
+etat_courant,BAS,983,38.22,65.54
+etat_courant,HAUT,797,30.99,104.73
+etat_courant,MOYEN,752,29.24,83.71
+etat_courant,NON_CLASSE,40,1.56,114.53
+f3_tercile_causal,BAS,894,34.76,63.83
+f3_tercile_causal,HAUT,574,22.32,95.7
+f3_tercile_causal,MOYEN,543,21.11,77.32
+f3_tercile_causal,NON_CLASSE,561,21.81,96.16
+etat_asymetrie,BAS,860,33.44,85.66
+etat_asymetrie,HAUT,850,33.05,79.69
+etat_asymetrie,MOYEN,822,31.96,76.14
+etat_asymetrie,NON_CLASSE,40,1.56,114.53
+etat_queue,BAS,874,33.98,67.06
+etat_queue,HAUT,863,33.55,96.8
+etat_queue,MOYEN,780,30.33,78.98
+etat_queue,NON_CLASSE,55,2.14,106.26
+etat_vov,BAS,936,36.39,79.31
+etat_vov,HAUT,825,32.08,85.38
+etat_vov,MOYEN,752,29.24,76.75
+etat_vov,NON_CLASSE,59,2.29,104.31
+etat_dispersion,BAS,854,33.2,77.23
+etat_dispersion,HAUT,900,34.99,85.29
+etat_dispersion,MOYEN,778,30.25,78.79
+etat_dispersion,NON_CLASSE,40,1.56,114.53
+transition_episode,BAS->HAUT confirmee=False,126,,
+transition_episode,BAS->HAUT confirmee=True,27,,
+transition_episode,BAS->MOYEN confirmee=False,240,,
+transition_episode,BAS->MOYEN confirmee=True,34,,
+transition_episode,HAUT->BAS confirmee=False,100,,
+transition_episode,HAUT->BAS confirmee=True,41,,
+transition_episode,HAUT->MOYEN confirmee=False,188,,
+transition_episode,HAUT->MOYEN confirmee=True,31,,
+transition_episode,MOYEN->BAS confirmee=False,190,,
+transition_episode,MOYEN->BAS confirmee=True,96,,
+transition_episode,MOYEN->HAUT confirmee=False,150,,
+transition_episode,MOYEN->HAUT confirmee=True,57,,

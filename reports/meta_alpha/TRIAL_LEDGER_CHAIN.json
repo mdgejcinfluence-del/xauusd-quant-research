@@ -2106,6 +2106,16 @@
     "resultat": "Autorisation fondateur: execution des calculs descriptifs Campagne 4 strictement selon dictionnaire v2 (sha256 0a615c54...) et les dix comparaisons preenregistrees (sha256 4024eaae...), aucun ajout d hypothese; separation temporelle prediction F3 connue a l ouverture / RV connue a la cloture / transition confirmee / consequences posterieures; publication des confirmees et non-confirmees, effectifs, intervalles, negatifs; aucune lecture predictive ou exploitable; en cas de depassement du budget CI suspension documentee du calcul concerne sans remplacement methodologique; fiches historiques campagnes 0 a 3 non modifiees; sensibilite ANO-C2-003/006/008/012 NON recalculee (autorisation distincte requise); restrictions maintenues: XAU/USD seul, holdout scelle, 0 backtest/challenge_sim/J2-J3/budget, FRED suspendue, 36 cellules S12 gelees, chantier T0 separe inactif"
    },
    "entry_hash": "797a9d86a6be08ee382668c693fef6ccc4fe42c0bee6696a927c9d84a7a8e6a7"
+  },
+  {
+   "seq": 202,
+   "prev_hash": "797a9d86a6be08ee382668c693fef6ccc4fe42c0bee6696a927c9d84a7a8e6a7",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_EXECUTION_DESCRIPTIVE",
+    "resultat": "CAMPAGNE 4 EXECUTEE conformement au dictionnaire v2 et aux dix comparaisons gelees (hashes reverifies: dictionnaire 0a615c54..., comparaisons 4024eaae...): extraction CI 282/282 partitions, 3540993 barres M1, 2572 journees utilisables (>=300 barres, 525 exclues comptees), 2532 journees en etat courant, 2011 en tercile causal F3; validation temporelle verte avant calcul; bootstrap par blocs mobiles de 20 journees, 2000 replicats valides pour les dix comparaisons, 0 exclu, recalcul des etats/episodes/fenetres par replicat. FAITS DESCRIPTIFS: alternance rapide des etats relatifs (1281 episodes, durees medianes 1-2 jours, 286 transitions confirmees contre 994 non confirmees toutes cataloguees; traversees rapides 33,6% / intermediaires 23,1% / progressives 43,4%; retours a l habituel medians 1 jour, censure 1,1%); discordance etat courant vs tercile causal F3 de 60,2% des journees, stable entre eres. DIX COMPARAISONS: 2 candidates J1 descriptives ANO-C4-001 (impulsions IMP-M5 par journee x2,68 en etat HAUT vs BAS, contemporaine sans anteriorite, coherente 3 eres) et ANO-C4-002 (dephasage sessions/journalier -76,5 points, fichee avec AVERTISSEMENT MECANIQUE MAJEUR); 1 significative sous seuil materiel (C4-10 queues); 2 non eligibles publiees (C4-01 et C4-06: 9 et 5 fenetres non tronquees, aucune fenetre elargie apres coup); 5 negatives conservees. Correction d unite documentee sur le seuil materiel de C4-02/C4-10 (5 points sur statistique x100; statistiques inchangees). Incident moteur skew corrige avant tout resultat (run CI propre 44884486846, commit d8d42c8). Aucune fiche historique modifiee, sensibilite ANO-C2 de regime non recalculee, 0 backtest/challenge_sim/J2-J3/budget, holdout scelle, FRED suspendue, S12 intactes, chantier T0 inactif. STATUT: CAMPAGNE 4 EXECUTEE - VALIDATION DU PROPRIETAIRE EN ATTENTE"
+   },
+   "entry_hash": "70111249932ed795cadafebb2a04df9b6387585559c2e9f0fcefe6d68498fc69"
   }
  ]
 }

@@ -1,0 +1,11 @@
+id,comparaison,type,statistique,ic95_bas,ic95_haut,p_brute,n_a,n_b,replicats_valides,replicats_exclus,materiel,q_BY,lecture
+C4-01,RV mediane +1-5j apres transition confirmee ->HAUT vs ->BAS,med,1.37699,1.61839,2.45139,0.0005,9,5,2000,0,True,0.00366,NON_ELIGIBLE (effectifs publies)
+C4-02,"Frequence d'extremes +1-5j, transitions confirmees vs non confirmees (sens apparie)",prop,0.17785,-0.03909,0.20751,0.224,286,993,2000,0,False,1.0,NEGATIF
+C4-03,Duree mediane des episodes HAUT vs BAS,med,0.5,0.5,2.0,0.957,360,427,2000,0,True,1.0,NEGATIF
+C4-04,"Temps de retour a l'habituel apres HAUT, ere 2010-13 vs 2017-20",med,1.0,1.0,2.0,0.479,131,115,2000,0,False,1.0,NEGATIF
+C4-05,Part des traversees rapides parmi les confirmees ->HAUT vs ->BAS,prop,0.09359,-0.12577,0.15797,0.828,84,137,2000,0,True,1.0,NEGATIF
+C4-06,Asymetrie mediane +1-5j apres transition confirmee ->HAUT vs ->BAS,med,-0.04471,-0.51099,0.55926,0.811,9,5,2000,0,False,1.0,NON_ELIGIBLE (effectifs publies)
+C4-07,"Part des journees en discordance F3 causal, ere 2010-13 vs 2017-20",prop,-0.01063,-0.03297,0.21145,0.14,474,763,2000,0,False,0.82011,NEGATIF
+C4-08,"Impulsions IMP-M5 par journee, etat courant HAUT vs BAS",med,2.6772,1.6579,2.05103,0.0005,797,983,2000,0,True,0.00366,CANDIDATE_J1
+C4-09,"Part des journees a dephasage session/journalier, etat HAUT vs BAS",prop,-0.76501,-0.73775,-0.60855,0.0005,797,983,2000,0,True,0.00366,CANDIDATE_J1
+C4-10,Frequence d'extremes du jour selon l'etat de queue de la veille HAUT vs BAS,prop,0.75259,0.51656,0.98697,0.0005,863,873,2000,0,False,0.00366,SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL
