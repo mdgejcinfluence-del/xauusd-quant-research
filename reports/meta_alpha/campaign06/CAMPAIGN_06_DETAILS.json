@@ -1,0 +1,56 @@
+{
+ "C6-01": {
+  "paires_total": 2147,
+  "ven_lun": 7,
+  "semaines": 499,
+  "n_blocs_2sem": 498,
+  "replicats_invalides": 0,
+  "taux_invalides_pct": 0.0,
+  "ic_blocs": [
+   -0.0227337625,
+   0.024673149999999984
+  ],
+  "statut_controle": "FRAGILE_SIGNE",
+  "inversion_controle": false,
+  "lecture_avant_controle": "NON_ELIGIBLE (effectifs publies)"
+ },
+ "C6-02": {
+  "haut": {
+   "n": 924,
+   "ER_med": 0.044436500000000004,
+   "S_med": 12.702715000000001,
+   "abs_delta_sur_A_med": 0.5809865000000001,
+   "L_bp_med": 2421.4670805,
+   "A_bp_med": 179.33325250000001
+  },
+  "bas": {
+   "n": 924,
+   "ER_med": 0.0236065,
+   "S_med": 17.5976815,
+   "abs_delta_sur_A_med": 0.334279,
+   "L_bp_med": 1152.5521840000001,
+   "A_bp_med": 55.3660925
+  },
+  "terciles_seuils_bp": [
+   83.44817166666667,
+   134.478279
+  ],
+  "ln_ratio_abs_delta_sur_A": 0.5527515471569792,
+  "ln_ratio_S": -0.32595141026749513,
+  "mediane_a": 0.044436500000000004,
+  "mediane_b": 0.0236065,
+  "declassement": false
+ },
+ "C6-03": {
+  "mediane_a": 0.024947499999999997,
+  "mediane_b": 0.026748
+ },
+ "C6-04": {
+  "mediane_a": 771.0,
+  "mediane_b": 775.0
+ },
+ "C6-05": {
+  "mediane_a": 0.028745,
+  "mediane_b": 0.031455
+ }
+}

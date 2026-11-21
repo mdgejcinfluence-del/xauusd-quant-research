@@ -1,0 +1,6 @@
+id,comparaison,type,statistique_diff_medianes,ic95_bas,ic95_haut,p_brute,n_a,n_b,grappes_a,grappes_b,seuil_materiel,materiel,q_BY_m5,lecture
+C6-01,Persistance: ER_j selon classe de j-1 (DIRECTIONNELLE vs OSCILLANTE),ER,-0.000749,-0.021987,0.021463,0.884,10,2137,10,498,0.05 ER,False,1.0,NON_ELIGIBLE (effectifs publies)
+C6-02,"ER selon amplitude (tercile haut vs bas de A_bp, retrospectif)",ER,0.02083,0.016907,0.024125,0.0005,924,924,924,924,0.05 ER,False,0.005708,SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL
+C6-03,ER lundi vs vendredi,ER,-0.001801,-0.006181,0.002808,0.426,434,499,434,499,0.05 ER,False,1.0,NEGATIF
+C6-04,Point median tau (min) selon signe de Delta_seg (+ vs -),tau,-4.0,-10.0,3.0,0.309,1279,1239,1279,1239,30 min,False,1.0,NEGATIF
+C6-05,ER ere 2010-2013 vs 2017-2020,ER,-0.00271,-0.006173,0.000656,0.103,990,898,990,898,0.05 ER,False,0.587958,NEGATIF

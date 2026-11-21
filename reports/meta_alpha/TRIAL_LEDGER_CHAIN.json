@@ -2795,6 +2795,44 @@
     "statut": "EXECUTION DESCRIPTIVE AUTORISEE EN COURS"
    },
    "entry_hash": "991717f69ccca51adff9614a93f0f05b928467c5e795c35592d1656734ce83c3"
+  },
+  {
+   "seq": 243,
+   "prev_hash": "991717f69ccca51adff9614a93f0f05b928467c5e795c35592d1656734ce83c3",
+   "entry": {
+    "type": "RESULTAT",
+    "campagne": "06",
+    "objet": "Execution descriptive F-G terminee selon protocole gele V1.1+V1.2+V1.2.1+V1.2.2 (gel seq239, autorisation seq241, confirmation seq242)",
+    "extraction": {
+     "run_ci": "unique, complet premier coup",
+     "partitions": "282/282",
+     "barres_m1": 3540993,
+     "journees_presentes": 3097,
+     "eligibles_forme": 2772,
+     "censurees_forme": 325,
+     "plates": 0,
+     "indeterminees_discontinuites": 0,
+     "dominees_discontinuites_observees": 0,
+     "validation_temporelle": "15/15 verte avant calcul"
+    },
+    "fait_central": "a granularite minute, journees massivement oscillantes au sens du protocole: ER mediane 0.0297, sinuosite mediane ~15.3, classe DIRECTIONNELLE 14 journees seulement sur 2772",
+    "resultats": {
+     "C6-01": "NON_ELIGIBLE bras j-1 directionnel 10 paires vs 2137; controle blocs FRAGILE_SIGNE sans effet; 7 paires VEN_LUN",
+     "C6-02": "SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL +0.0208 [0.0169;0.0241] q 0.0057; declassement non declenche",
+     "C6-03": "NEGATIF -0.0018 q 1.0",
+     "C6-04": "NEGATIF tau -4 min [ -10;+3] q 1.0 (medianes 771 vs 775)",
+     "C6-05": "NEGATIF -0.0027 q 0.588"
+    },
+    "candidates": "aucune candidate J1 issue de la campagne 6; catalogue ANO vide publie; aucune promotion automatique",
+    "sha256": {
+     "comparaisons": "bff3b79e37ca741655b0e498ef6fab5b2cc1c4f41c85f8b2ea1a73ce536bd7fa",
+     "days": "4877bad9a89e64e5a3e4b9426f93b78b354d432d2ac691dd15dc56a3708fe32f",
+     "rapport": "152c31d1b324da63fa26963a2b344cb4f79b100e57c53900ed406aca6c208207",
+     "couverture": "53367f620598ce099c2a347b7f91cc7c66782723a6aff0b29506b967d5b47647"
+    },
+    "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3; aucun backtest/challenge_sim"
+   },
+   "entry_hash": "ce91a14a23e8d7ece42469f6eea309a7f07a06205cc237866da1ce06a2a09aa1"
   }
  ]
 }
