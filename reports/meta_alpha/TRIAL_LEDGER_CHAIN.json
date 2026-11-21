@@ -2571,6 +2571,42 @@
     "statut": "VERSION FINALE SOUMISE AU PROPRIETAIRE - gel et execution toujours interdits"
    },
    "entry_hash": "ffa5ebab7a51c1d4cf83e4be3d68624ef65190f371581ce6a7f54ba18643b6a8"
+  },
+  {
+   "seq": 232,
+   "prev_hash": "ffa5ebab7a51c1d4cf83e4be3d68624ef65190f371581ce6a7f54ba18643b6a8",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Retour fondateur sur V1.1 (seq231): validation scientifique conditionnelle, gel en attente de trois precisions",
+    "acceptes": [
+     "correction Delta_seg/L et garantie ER<=1 par inegalite triangulaire",
+     "statuts PLATE OBSERVEE et INDETERMINEE-DISCONTINUITES",
+     "seuils de couverture, methode C6-01, exclusion de S en C6-02, BY m=5 (principe)"
+    ],
+    "precisions_exigees": [
+     "rho: part relative des discontinuites observees dans le parcours mesure, jamais proportion reelle du non-observe; seuil 0.5 conserve sous interpretation corrigee",
+     "B15: regle publiee integralement, horaires UTC attendus, detection, cas multiples/absents, halte vs panne, jamais identification par la seule duree, doute = indetermine sans continuite reconstruite",
+     "C6-01: criteres ROBUSTE/FRAGILE figes (inversion de signe, IC contenant zero, perte de materialite, declassement NEGATIF, indetermination), aucune p supplementaire"
+    ],
+    "restrictions": "aucun calcul, extraction ou consultation de resultats; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees"
+   },
+   "entry_hash": "446b9eee7b59c81d3709ee8432f1b3bf887fc4b1f15d93d0de13623deb9a167d"
+  },
+  {
+   "seq": 233,
+   "prev_hash": "446b9eee7b59c81d3709ee8432f1b3bf887fc4b1f15d93d0de13623deb9a167d",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Addendum V1.2 livre (trois precisions seulement): (1) rho reinterpretee part des discontinuites observees dans le parcours mesure, statut renomme DOMINEE PAR LES DISCONTINUITES OBSERVEE, seuil 0.5 inchange; (2) B15 integrale: halte attendue 17:00-18:00 New York = debut 21:00-22:00 UTC +/-5 min, duree 45-75, unicite, sinon HALTE_INDETERMINEE sans exemption ni continuite reconstruite, aucune panne classee; (3) C6-01 criteres ROBUSTE/FRAGILE_SIGNE/FRAGILE_MATERIALITE/CONTROLE_INDETERMINE figes avec regle de declassement deterministe, aucune p additionnelle. Aucune formule, constante ou seuil modifie par ailleurs.",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1_2_ADDENDUM.md": "046df8d949203a5c7d890f736e5781441750225959eb309373ea829bba731217",
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76"
+    },
+    "statut": "DOSSIER FINAL SOUMIS AU PROPRIETAIRE - gel et execution toujours interdits"
+   },
+   "entry_hash": "2a66a6a1cc459b1d97f9e0c87acb80d5440dde05c5e078f9939b95f8a652204f"
   }
  ]
 }
