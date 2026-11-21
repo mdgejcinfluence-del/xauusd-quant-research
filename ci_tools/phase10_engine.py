@@ -95,6 +95,25 @@ def seuil_roulant(valeurs_precedentes, q):
     if len(v) < 250: return np.nan
     return float(np.quantile(v, q, method='linear'))
 
+def seuil_causal_fenetre_fixe(fenetre_precedentes, q, min_valides=200):
+    """AMENDEMENT seq289 (F10-01/F10-03 uniquement): fenetre causale fixe des
+    250 barres precedentes (courante exclue, pas d'extension vers le passe),
+    rendements NaN/non finis exclus sans imputation; < min_valides valeurs
+    valides -> NaN (INELIGIBLE_CAUSAL_WINDOW). Quantile interpolation
+    lineaire (type 7) sur les seules valeurs valides."""
+    v = np.asarray(fenetre_precedentes, float)[-250:]
+    valides = v[np.isfinite(v)]
+    if len(valides) < min_valides: return np.nan
+    return float(np.quantile(valides, q, method='linear'))
+
+def diagnostic_fenetre(fenetre_precedentes, min_valides=200):
+    """Comptages de fenetre causale (amendement seq289), sans calcul de seuil."""
+    v = np.asarray(fenetre_precedentes, float)[-250:]
+    nb_valides = int(np.isfinite(v).sum())
+    return {'taille_fenetre': int(len(v)), 'rendements_valides': nb_valides,
+            'rendements_non_finis': int(len(v) - nb_valides),
+            'eligible_causal': bool(nb_valides >= min_valides)}
+
 def retour_log(c_prev, c):
     return float(np.log(c / c_prev) * 10000) if c_prev > 0 and c > 0 else np.nan
 
@@ -122,8 +141,10 @@ def construire_barres(bars_m1, minutes, min_frac=0.5):
     out['range_bp'] = (out.mh - out.ml) / out.mc * 10000
     return out
 
-def evenements_tf(tf, nom_tf, minutes):
-    """Detecte les evenements d'un timeframe et mesure les sillages executables."""
+def evenements_tf(tf, nom_tf, minutes, cible=False):
+    """Detecte les evenements d'un timeframe et mesure les sillages executables.
+    cible=True (relance seq289): seules les familles extremes F10-01/F10-03,
+    seuil par fenetre causale fixe amendee; retourne (evenements, diagnostics)."""
     n = len(tf)
     debut = tf.debut.values; fin = tf.fin.values
     mc = tf.mc.values.astype(float)
@@ -167,13 +188,25 @@ def evenements_tf(tf, nom_tf, minutes):
         rec['rendement_signe_bp'] = float(np.log(s_ / e) * 10000) if sens > 0 else float(-np.log(s_ / e) * 10000)
         return rec
     seuils = {}
+    diag = {'barres_examinees': 0, 'fenetres_examinees': 0, 'rendements_valides_total': 0,
+            'rendements_non_finis_total': 0, 'fenetres_ineligibles_causal_window': 0,
+            'valides_min': None, 'valides_mediane': None}
+    valides_par_fenetre = []
     if nom_tf in ('H1', 'H4'):
         fam_ext, fam_brk, fen_brk, nb_ext = (('F10-01', 'F10-02', 4 * 60, 20) if nom_tf == 'H1' else ('F10-03', 'F10-04', 24 * 60, 30))
         for i in range(n):
-            th = seuil_roulant(absr[:i], 0.95)
+            fenetre = absr[max(0, i - 250):i]  # 250 barres precedentes, courante exclue, jamais etendue
+            dg = diagnostic_fenetre(fenetre)
+            diag['barres_examinees'] += 1; diag['fenetres_examinees'] += 1
+            diag['rendements_valides_total'] += dg['rendements_valides']
+            diag['rendements_non_finis_total'] += dg['rendements_non_finis']
+            valides_par_fenetre.append(dg['rendements_valides'])
+            if not dg['eligible_causal']: diag['fenetres_ineligibles_causal_window'] += 1
+            th = seuil_causal_fenetre_fixe(fenetre, 0.95)
             if np.isfinite(r[i]) and np.isfinite(th) and abs(r[i]) > th:
                 rec = mesure(i, int(np.sign(r[i])), minutes, fam_ext)
                 if rec: rec['seuil_bp'] = float(th); ev.append(rec)
+            if cible: continue
             if i >= nb_ext:
                 hi = tf.mh.values[i - nb_ext:i].max(); lo = tf.ml.values[i - nb_ext:i].min()
                 if mc[i] > hi:
@@ -199,9 +232,40 @@ def evenements_tf(tf, nom_tf, minutes):
                                'ratio_range': float(rng[i + 1] / med_prec), 'range_lendemain_bp': float(rng[i + 1]),
                                'mae_bp': np.nan, 'mfe_bp': np.nan, 'rendement_signe_bp': np.nan,
                                'range_fenetre_bp': float(rng[i + 1])})
+    if cible:
+        if valides_par_fenetre:
+            diag['valides_min'] = int(np.min(valides_par_fenetre))
+            diag['valides_mediane'] = float(np.median(valides_par_fenetre))
+        diag['proportion_non_finis'] = (diag['rendements_non_finis_total'] / max(1, diag['rendements_valides_total'] + diag['rendements_non_finis_total']))
+        return ev, diag
     return ev
 
+def main_cible():
+    """Relance ciblee seq289: F10-01/F10-03 uniquement, seuils amendes.
+    Meme chargeur IS (holdout jamais accede), aucun autre test calcule."""
+    bars = charger()
+    if CHARGER_STATS['chargees'] < CHARGER_STATS['attendues']:
+        (ROOT / 'ERROR_INTEGRITE.txt').write_text(f"partitions {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']}")
+        raise RuntimeError(f"integrite: {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']} partitions")
+    all_ev, resume = [], {'mode': 'CIBLE_F10-01_F10-03', 'amendement': 'seq289',
+                          'partitions_chargees': CHARGER_STATS['chargees'], 'partitions_attendues': CHARGER_STATS['attendues'],
+                          'barres_m1': int(len(bars)), 'diagnostics': {}}
+    for nom_tf, minutes in [('H1', 60), ('H4', 240)]:
+        tf = construire_barres(bars, minutes)
+        ev, dg = evenements_tf(tf, nom_tf, minutes, cible=True)
+        fam = 'F10-01' if nom_tf == 'H1' else 'F10-03'
+        resume['diagnostics'][fam] = dg
+        all_ev += ev
+        print('P10 CIBLE', nom_tf, 'barres', len(tf), 'evenements', len(ev), flush=True)
+    EV = pd.DataFrame(all_ev)
+    EV.round(4).to_csv(ROOT / 'PHASE10_EVENTS_CIBLE.csv.gz', index=False, compression='gzip')
+    if len(EV): resume['evenements_par_famille'] = {k: int(v) for k, v in EV.famille.value_counts().items()}
+    (ROOT / 'P10_CIBLE_COVERAGE.json').write_text(json.dumps(resume, indent=1))
+    print(json.dumps(resume), flush=True)
+
 def main():
+    if os.environ.get('P10_CIBLE') == '1':
+        main_cible(); return
     bars = charger()
     if CHARGER_STATS['chargees'] < CHARGER_STATS['attendues']:
         (ROOT / 'ERROR_INTEGRITE.txt').write_text(f"partitions {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']}")

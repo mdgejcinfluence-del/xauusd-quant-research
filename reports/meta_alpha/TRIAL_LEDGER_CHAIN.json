@@ -3727,6 +3727,18 @@
     "statut": "PHASE 10 EXECUTEE - en attente de validation du responsable; F10-01/F10-03 en attente de decision sur l incident"
    },
    "entry_hash": "7f0d24fa0b3eb1f876349fdde6799469bf7bfc841cdabdd0b303825d5fef228c"
+  },
+  {
+   "seq": 289,
+   "prev_hash": "7f0d24fa0b3eb1f876349fdde6799469bf7bfc841cdabdd0b303825d5fef228c",
+   "entry": {
+    "type": "AMENDEMENT",
+    "phase": "10",
+    "objet": "Addendum correctif cible F10-01/F10-03 autorise par decision formelle du responsable (ordre correctif Phase 10), avant toute modification de code et toute consultation supplementaire des artefacts IS. Regle amendee (implementation des seuils Q95 F10-01/F10-03 uniquement): fenetre causale fixe de 250 barres precedentes, barre courante strictement exclue; rendements NaN et non finis exclus, aucune imputation/interpolation/remplacement par zero; minimum 200 rendements valides, en dessous INELIGIBLE_CAUSAL_WINDOW; aucune extension de la fenetre vers le passe; quantile Q95 par interpolation lineaire type 7 sur les seules valeurs valides; toutes autres definitions gelees maintenues, BY m=6 fixe jamais reduit a 2. Les sept documents geles PHASE 10-A (seq283) ne sont ni modifies ni remplaces, hashes du proces-verbal de gel inchanges; le present addendum est reference comme amendement cible. Correction precedee de tests synthetiques (fenetre NaN, 200 valides, 199 valides, fuite barre courante, quantile sur valides, absence d extension). Relance ciblee F10-01/F10-03 uniquement apres verification des artefacts du run moteur 44919631588 (integrite, provenance, couverture 282 partitions IS); verdicts F10-02/F10-04/F10-05/F10-06 conserves; Phase 10 non cloturee jusqu au rapport final des deux tests.",
+    "document": "reports/meta_alpha/phase10/PHASE10_CORRECTIVE_ADDENDUM.md",
+    "statut": "AMENDEMENT CHAINE - correction autorisee, relance en attente"
+   },
+   "entry_hash": "92d5ca92db473e41fe094876a908597b38f7a6376010dfef4e51ab72e7604a8f"
   }
  ]
 }
