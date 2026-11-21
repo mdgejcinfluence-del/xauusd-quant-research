@@ -2286,6 +2286,26 @@
     "resultat": "Livraison seq217 terminee: addendum V2.2 + revisions induites du tableau des dix + resume des changements + hashes complets chaines seq218; documents V2 et V2.1 inchanges; statut CAMPAGNE 5 PROTOCOLE EN ATTENTE DE VALIDATION DEFINITIVE - EXECUTION INTERDITE; 0 budget, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, fiches historiques intactes; exploration multi-familles maintenue"
    },
    "entry_hash": "73a85c70a4377fc36e6c1b27be73ba69173af110a6cda4d54e8dcd1694877c23"
+  },
+  {
+   "seq": 220,
+   "prev_hash": "73a85c70a4377fc36e6c1b27be73ba69173af110a6cda4d54e8dcd1694877c23",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_05_EXECUTION_DESCRIPTIVE",
+    "resultat": "Autorisation fondateur: VALIDATION DEFINITIVE du protocole Campagne 5 V2 + addenda V2.1 et V2.2, feu vert pour l execution descriptive des familles F-E (sessions) et F-F (extremes dates), dix comparaisons gelees C5-01 a C5-10 en deux familles d inference separees avec BY respective; protections obligatoires rappelees: barre M1 disponible a sa cloture, avant B = disponibilite strictement inferieure a B, toute minute manquante avant une atteinte la classe ATTEINTE OBSERVEE separee et jamais presentee comme reelle identifiable, CONTENUE ETABLIE = 1440/1440 minutes, le seuil 95% n est pas une preuve d absence, controles de couverture par fenetre F-E, aucune barre/prix/minute reconstruite, aucun assouplissement pour les effectifs; publication systematique des effectifs initiaux/eligibles, censures, ineligibilites, couvertures, effets, IC, p brutes et q BY, materialites, positifs/negatifs/non concluants; livrables de cloture: rapports F-E et F-F, tableau consolide des dix, catalogue ANO sans promotion, registre des censures et donnees manquantes, diagnostics qualite/couverture, incidents/limites/couts, hashes et chaine; restrictions inchangees (XAU/USD seul, holdout scelle, 0 backtest/challenge_sim/J2-J3/budget, FRED suspendue, S12 gelees, T0 inactif, fiches historiques intactes)"
+   },
+   "entry_hash": "df2c323f355aec78ce41585a0cb6391fdac4c0a8bb14f4596235140407bf429a"
+  },
+  {
+   "seq": 221,
+   "prev_hash": "df2c323f355aec78ce41585a0cb6391fdac4c0a8bb14f4596235140407bf429a",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_05_EXECUTION_DESCRIPTIVE",
+    "resultat": "Gel scientifique final confirme avant extraction (hashes sha256 reverifies par appel separe): CAMPAIGN_05_PROTOCOL_V2.md=818837fd5fb500b2906685367ea72acc18c2b5ddfce64de3bdfe5c8239818331; CAMPAIGN_05_PROTOCOL_V2_1_ADDENDUM.md=509a2863ca633a6f6ad985fe55223b97a1bb743e1011e2cb6a966d59ad67bd45; CAMPAIGN_05_PROTOCOL_V2_2_ADDENDUM.md=4ce1ee9b3bcd270e08503c41ce2c69359cbb2ab4d373598ae6f28d1745761b0e; documents de preparation seq209 (blueprint e753f00e..., dictionnaire 450d610b..., comparaisons 102ee01d..., methode 37f06eac..., couverture 2d1e4f73...) conserves comme trace; aucune definition, fenetre, population, seuil, materialite ou methode ne peut changer apres le debut de l execution"
+   },
+   "entry_hash": "119b394f7f3414c0fdb0650d9997dfc467f78d551947db0df0c2acd9a98b1b18"
   }
  ]
 }
