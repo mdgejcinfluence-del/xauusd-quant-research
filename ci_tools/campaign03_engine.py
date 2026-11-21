@@ -333,11 +333,11 @@ def main():
         med, nn = causal_past_median(pd.to_datetime(ec.ts_t0).values.astype('datetime64[ns]').astype(np.int64), ec.range_formation_bp.values, 60 * 24 * 3600 * 10**9, 30)
         ec['groupe_range_formation'] = ['NON_CLASSE' if (n < 30 or np.isnan(m)) else ('BAS' if v < m else 'HAUT') for v, m, n in zip(ec.range_formation_bp.values, med, nn)]
         if len(sc): sc = sc.merge(ec[['ts_t0', 'groupe_range_formation']], on='ts_t0', how='left', suffixes=('', '_y'))
-    for df_, nom in [(e5, 'CAMPAIGN_03_EPISODES_IMP_M5.csv'), (e15, 'CAMPAIGN_03_EPISODES_IMP_M15.csv'), (ec, 'CAMPAIGN_03_EPISODES_CONS.csv')]:
-        df_.round(4).to_csv(ROOT / nom, index=False)
-    pd.concat([s5.assign(unite='barres_M5'), s15.assign(unite='barres_M15')], ignore_index=True).round(4).to_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_IMP.csv', index=False)
-    sc.round(4).to_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_CONS.csv', index=False)
-    tailles = {str(p): p.stat().st_size for p in sorted(ROOT.glob('CAMPAIGN_03_*.csv'))}
+    for df_, nom in [(e5, 'CAMPAIGN_03_EPISODES_IMP_M5.csv.gz'), (e15, 'CAMPAIGN_03_EPISODES_IMP_M15.csv.gz'), (ec, 'CAMPAIGN_03_EPISODES_CONS.csv.gz')]:
+        df_.round(4).to_csv(ROOT / nom, index=False, compression='gzip')
+    pd.concat([s5.assign(unite='barres_M5'), s15.assign(unite='barres_M15')], ignore_index=True).round(4).to_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_IMP.csv.gz', index=False, compression='gzip')
+    sc.round(4).to_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_CONS.csv.gz', index=False, compression='gzip')
+    tailles = {str(p): p.stat().st_size for p in sorted(ROOT.glob('CAMPAIGN_03_*.csv.gz'))}
     print('C3 tailles fichiers', tailles, flush=True)
     cov = {'partitions_chargees': CHARGER_STATS['chargees'], 'partitions_attendues': CHARGER_STATS['attendues'],
            'barres_m1': int(len(bars)), 'barres_m5': int(len(m5)), 'barres_m15': int(len(m15)), 'journees': journees,

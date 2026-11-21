@@ -62,10 +62,10 @@ def compare(cid, fam, label, df, col, kind, bras_a, bras_b, mat_kind):
             'ic95_bas': lo, 'ic95_haut': hi, 'ratio_medianes': ratio, 'p_brute': p, 'suffisance': bool(suf)}
 
 def main():
-    e5 = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_IMP_M5.csv')
-    e15 = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_IMP_M15.csv')
-    ec = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_CONS.csv')
-    s5 = pd.read_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_IMP.csv'); simp = s5.copy()
+    e5 = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_IMP_M5.csv.gz')
+    e15 = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_IMP_M15.csv.gz')
+    ec = pd.read_csv(ROOT / 'CAMPAIGN_03_EPISODES_CONS.csv.gz')
+    s5 = pd.read_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_IMP.csv.gz'); simp = s5.copy()
     for e in (e5, e15): e['retr_complet'] = e.t100_barres.notna().astype(float)
     e5['stagnation'] = (e5.trajectoire_60min == 'STAGNATION').astype(float)
     e15['continuation'] = (e15.trajectoire_60min == 'CONTINUATION').astype(float)
@@ -121,7 +121,7 @@ def main():
     rows_s += agg(s_m5, 'IMP-M5', 'snapshot_barres', ['snapshot_barres', 'ere'], cols_imp)
     rows_s += agg(s_m5, 'IMP-M5', 'snapshot_barres', ['snapshot_barres', 'regime'], cols_imp)
     rows_s += agg(s_m15, 'IMP-M15', 'snapshot_barres', ['snapshot_barres', 'session'], cols_imp)
-    sc = pd.read_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_CONS.csv')
+    sc = pd.read_csv(ROOT / 'CAMPAIGN_03_SNAPSHOTS_CONS.csv.gz')
     rows_s += agg(sc, 'CONS', 'snapshot_min', ['snapshot_min'], ['range_cumule_bp', 'position_dans_range', 'ratio_compression', 'vol_realisee_bp'])
     rows_s += agg(sc, 'CONS', 'snapshot_min', ['snapshot_min', 'session'], ['range_cumule_bp', 'ratio_compression'])
     pd.DataFrame(rows_s).to_csv(ROOT / 'CAMPAIGN_03_SNAPSHOT_STATS.csv', index=False)
