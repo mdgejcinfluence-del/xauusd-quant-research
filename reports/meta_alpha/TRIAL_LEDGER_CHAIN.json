@@ -2742,6 +2742,59 @@
     "phase": "preparation F-G definitivement terminee; attente d une autorisation d execution distincte"
    },
    "entry_hash": "2829b39b142e012d03421230a282a87232ef0c91eaad84c9411d7dc8a54a0811"
+  },
+  {
+   "seq": 241,
+   "prev_hash": "2829b39b142e012d03421230a282a87232ef0c91eaad84c9411d7dc8a54a0811",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "ORDRE DU PROPRIETAIRE: feu vert execution des calculs descriptifs F-G, cinq comparaisons preenregistrees C6-01..C6-05 uniquement",
+    "perimetre": "protocole gele V1.1+V1.2+V1.2.1+V1.2.2 (prevalence V1.2.2>V1.2.1>V1.2>V1.1), corpus IS XAU/USD uniquement; aucune modification de formule/seuil/population/comparaison/methode",
+    "publication_exigee": [
+     "effectifs bruts/eligibles, statuts de journee, censures/inegibles, couverture par ere",
+     "effets, IC, p et q BY (m=5 fixe), materialite, negatifs et non concluants",
+     "diagnostics bootstrap/BY, limites et incidents"
+    ],
+    "livrables": [
+     "rapport scientifique F-G",
+     "resultats detailles C6-01..05",
+     "catalogue ANO eventuel",
+     "negatifs et non evaluables",
+     "diagnostics couverture/qualite",
+     "controles bootstrap et BY",
+     "incidents et limitations",
+     "SHA-256, checkpoint, tete distante, integrite chaine"
+    ],
+    "budget_securite": "0 FCFA, aucun acces holdout/hors IS, suspension documentee si depassement budget gratuit, aucune degradation methodologique, aucun secret expose",
+    "restrictions": "aucun backtest ni challenge_sim, aucun J2/J3 automatique, FRED suspendue, S12 gelees, T0 inactif, fiches historiques inchangees, aucune strategie; autorisation descriptive seule, ni optimisation ni confirmation predictive"
+   },
+   "entry_hash": "4a4b57c52c08aaac0ab3c74a47ac55ea2c55ad86dfb2d136827aa7da90bdbedb"
+  },
+  {
+   "seq": 242,
+   "prev_hash": "4a4b57c52c08aaac0ab3c74a47ac55ea2c55ad86dfb2d136827aa7da90bdbedb",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Gel confirme avant extraction (reverification des quatre documents definitifs, hashes identiques au gel seq239)",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76",
+     "CAMPAIGN_06_PROTOCOL_V1_2_ADDENDUM.md": "046df8d949203a5c7d890f736e5781441750225959eb309373ea829bba731217",
+     "CAMPAIGN_06_PROTOCOL_V1_2_1_ERRATUM.md": "78ef301f6defba193cb121dfaa76382a3eff19af9e255b5ace43919ded11cc1c",
+     "CAMPAIGN_06_PROTOCOL_V1_2_2_ERRATUM.md": "b8e853db2e2170d5e13a95914c1d42447e54c6a7c5ac345bdc6781f474d8b3b1"
+    },
+    "comparaisons": [
+     "C6-01 persistance forme (ER_j, paires jours successifs, grappe semaine civile de j, controle blocs mobiles 2 semaines regle prudente figee)",
+     "C6-02 forme selon amplitude (ER seul test, terciles contemporains retrospectifs, S sans p ni q, declassement log-borne ln(1.15))",
+     "C6-03 forme lundi vs vendredi",
+     "C6-04 point median tau selon signe Delta_seg (materialite 30 min)",
+     "C6-05 forme entre eres 2010-13 vs 2017-20"
+    ],
+    "regles": "segments continus; L intra-segment; Delta_seg meme population que L; Delta_jour jamais en ratio avec L; priorite statuts V1.2.2; B15 option A fenetre UTC fixe 21:00-22:00; couverture cumulee (trou session <=15, cumul <=30, taux >=95pct); BY m=5 fixe; bootstrap 2000 replicats",
+    "statut": "EXECUTION DESCRIPTIVE AUTORISEE EN COURS"
+   },
+   "entry_hash": "991717f69ccca51adff9614a93f0f05b928467c5e795c35592d1656734ce83c3"
   }
  ]
 }
