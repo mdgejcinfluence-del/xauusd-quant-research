@@ -2539,6 +2539,38 @@
     "statut": "SOUMIS A VALIDATION DEFINITIVE AVANT GEL - execution toujours interdite"
    },
    "entry_hash": "394d0dd4c2dc033d1cac6fdb60a697fe67bf997b492201561af6028544db342d"
+  },
+  {
+   "seq": 230,
+   "prev_hash": "394d0dd4c2dc033d1cac6fdb60a697fe67bf997b492201561af6028544db342d",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Retour fondateur sur protocole consolide V1: architecture approuvee, gel en attente d une derniere clarification mathematique et de couverture",
+    "clarifications_exigees": [
+     "coherence L/Delta/A en segments multiples, conditions ER<=1, statut PLATE revu (L=0 avec sauts = indeterminee, jamais ER=0)",
+     "couverture cumulee publiee par journee + critere justifie sans calcul F-G",
+     "regle prudente C6-01 figee (desaccords effet/IC/materialite, sans p additionnelle)",
+     "C6-02 borne exacte 1/1.15=0.8695652174 ou formulation log"
+    ],
+    "restrictions": "gel et execution interdits; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees"
+   },
+   "entry_hash": "ddd1c84a405ac87a167478ddbf50a85e843639da7375822179f2b5bbc3abb08b"
+  },
+  {
+   "seq": 231,
+   "prev_hash": "ddd1c84a405ac87a167478ddbf50a85e843639da7375822179f2b5bbc3abb08b",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Protocole consolide F-G V1.1 (remplace V1): definitions segmentaires fermees - L intra-segment seul, Delta_seg somme des deplacements nets de segments (meme population que L, ER<=1 demontre par inegalite triangulaire par segment), Delta_jour publie jamais en ratio avec L, D et rho publies; statuts PLATE OBSERVEE / INDETERMINEE-DISCONTINUITES (jamais ER=0) / DOMINEE PAR DISCONTINUITES rho>0.5 exclue du primaire; couverture cumulee (nb trous, duree cumulee, attendues/observees hors frontiere programmee, taux) et eligibilite triple (trou session <=15, cumule <=30, taux >=95pct) justifiee par diagnostics C4/C5 sans calcul F-G; regle prudente C6-01 deterministe (ROBUSTE/FRAGILE, declassement sans p additionnelle); C6-02 borne log exacte ln(1.15); BY m=5 fixe",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76",
+     "CAMPAIGN_06_PROTOCOL_V1.md (remplace)": "241620ea0cee8480c13a06b4a4a46e4d41ae988402f3876a671ce95a3171191c"
+    },
+    "statut": "VERSION FINALE SOUMISE AU PROPRIETAIRE - gel et execution toujours interdits"
+   },
+   "entry_hash": "ffa5ebab7a51c1d4cf83e4be3d68624ef65190f371581ce6a7f54ba18643b6a8"
   }
  ]
 }
