@@ -1,0 +1,37 @@
+name: phase10_synth
+on:
+  workflow_dispatch: {}
+jobs:
+  synthese:
+    name: P10 synthese seule (artefacts run moteur)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      actions: read
+      contents: read
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy scipy
+    - name: Recuperer les lots du run moteur 44919631588
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p10-events-*
+        path: artifacts
+        merge-multiple: true
+        run-id: 44919631588
+        github-token: ${{ github.token }}
+    - name: Fusionner les lots
+      run: "python - <<'PYEOF'\nimport glob, pathlib, pandas as pd\nfs=sorted(glob.glob('artifacts/**/PHASE10_EVENTS.csv.gz', recursive=True))\nprint('lots', fs)\ndfs=[pd.read_csv(f) for f in fs]\nev=pd.concat(dfs).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal') if dfs else pd.DataFrame()\npathlib.Path('reports/meta_alpha/phase10').mkdir(parents=True, exist_ok=True)\nev.round(4).to_csv('reports/meta_alpha/phase10/PHASE10_EVENTS.csv.gz', index=False, compression='gzip')\nprint('evenements fusionnes', len(ev))\nPYEOF"
+    - name: Portes avant inference, BY m=6
+      run: "python ci_tools/phase10_synthesize.py 2>&1 | tee reports/meta_alpha/phase10/SYNTH_LOG.txt; test ${PIPESTATUS[0]} -eq 0"
+    - name: Publier les resultats Phase 10
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p10-synth
+        path: reports/meta_alpha/phase10
+        retention-days: 90
+        if-no-files-found: warn
