@@ -3093,6 +3093,61 @@
     "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3; aucun backtest/challenge_sim; coquille du protocole gele laissee intacte"
    },
    "entry_hash": "2e875cc58665b7ae81b2afcb9167d1242d8d3c977674cfef9aae790fec5717b8"
+  },
+  {
+   "seq": 254,
+   "prev_hash": "2e875cc58665b7ae81b2afcb9167d1242d8d3c977674cfef9aae790fec5717b8",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "07",
+    "objet": "Cloture descriptive F-I definitivement acceptee",
+    "conserves": [
+     "cinq comparaisons I-01 a I-05",
+     "resultats negatifs",
+     "resultats non evaluables",
+     "association sensible a la composition (I-03)",
+     "trois incidents techniques documentes",
+     "catalogue ANO-C7 vide"
+    ],
+    "aucune_candidate": "aucune J1/J2/J3 attribuee",
+    "dossier": "provenance du run corrige 44906521704 et preuve que les sorties abandonnees du run 44903810557 n ont pas contamine la synthese (regeneration integrale, dossier seq253)",
+    "restrictions": "ne pas relancer les calculs, ne pas modifier les resultats, ne pas revenir sur le protocole gele"
+   },
+   "entry_hash": "014e59bfef2178a76962efc54afde3e0bfdd1a358ef59dc3e912784cb7c61623"
+  },
+  {
+   "seq": 255,
+   "prev_hash": "014e59bfef2178a76962efc54afde3e0bfdd1a358ef59dc3e912784cb7c61623",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Decision fondateur: F-H non activee; audit documentaire des lacunes de la cartographie autorise avant le choix de la prochaine campagne",
+    "examen": [
+     "familles couvertes campagnes 0 a 7",
+     "questions traitees partiellement",
+     "analyses descriptives jamais realisees causalement",
+     "familles a veritable difference scientifique",
+     "exploitation du corpus IS sans holdout"
+    ],
+    "livrable": "trois nouvelles familles candidates classees (nouveaute, independance, faisabilite, risques de biais/fuite, cout, valeur pour la comprehension du XAU/USD); F-H peut figurer avec chevauchement explicitement evalue; recommandation argumentee",
+    "interdit": "travail exclusivement documentaire: aucune extraction, calcul exploratoire, optimisation, test statistique, consultation du holdout",
+    "restrictions": "XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; aucune confirmation automatique des candidates C3/C4/C5"
+   },
+   "entry_hash": "47859ae5c44fbcf15d138e4cbe152b7fa789ed72420bc85cbaeb170eb734b852"
+  },
+  {
+   "seq": 256,
+   "prev_hash": "47859ae5c44fbcf15d138e4cbe152b7fa789ed72420bc85cbaeb170eb734b852",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "08",
+    "objet": "Audit des lacunes livre: inventaire campagnes 0-7, questions partielles (C6-01 granularite, I-03/I-02/I-05, C5-03/09/10, conditionnements causaux F3 en chantier methodologique), trois candidates classees sur six criteres - F-J chocs minute extremes et leur sillage (27), F-L memoire intraday (26, frontiere F3/HAR a borner), F-H localisation des extremes du jour (22, chevauchement C5/F-G explicitement evalue) - recommandation F-J. Aucun calcul effectue.",
+    "sha256": {
+     "CARTOGRAPHY_GAP_AUDIT.md": "4ac88f3c716ad5980de630f24b079839c466c7f438280bcc4793d888bd894378"
+    },
+    "statut": "AUDIT SOUMIS - en attente du choix de famille par le fondateur; calculs interdits"
+   },
+   "entry_hash": "e394c55d664c074b6f3395cbb2aaa69d8f0f7bc207f017fe5d2dd1a07d79e21e"
   }
  ]
 }
