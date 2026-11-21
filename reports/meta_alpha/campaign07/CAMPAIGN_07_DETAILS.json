@@ -9,35 +9,37 @@
    "R100": 1290
   },
   "saut": 306,
-  "simultanes": 2037,
+  "simultanes": 95,
   "censures_jour": 12657,
   "approches_resolues_par_grille": {
-   "P10": 6672,
+   "P10": 6618,
    "R10": 5482,
-   "P50": 1340,
-   "P100": 704
+   "P50": 1338,
+   "G50": 1302,
+   "P100": 704,
+   "R100": 691
   }
  },
  "I-05_cellules": {
   "2010_2013_G50": {
-   "n": 0,
-   "p_franchissement": NaN
+   "n": 663,
+   "p_franchissement": 0.8944193061840121
   },
   "2010_2013_P50": {
    "n": 749,
    "p_franchissement": 0.8918558077436582
   },
   "2014_2016_G50": {
-   "n": 0,
-   "p_franchissement": NaN
+   "n": 352,
+   "p_franchissement": 0.8977272727272727
   },
   "2014_2016_P50": {
-   "n": 338,
-   "p_franchissement": 0.8431952662721893
+   "n": 336,
+   "p_franchissement": 0.8452380952380952
   },
   "2017_2020_G50": {
-   "n": 0,
-   "p_franchissement": NaN
+   "n": 287,
+   "p_franchissement": 0.9372822299651568
   },
   "2017_2020_P50": {
    "n": 253,
@@ -46,135 +48,135 @@
  },
  "composition_I-01": {
   "ecarts_pts_ere": {
-   "2014_2016": 25.223880597014926,
-   "2017_2020": 18.880597014925375,
-   "2010_2013": 55.8955223880597
+   "2017_2020": 3.1341916196537922,
+   "2014_2016": 1.9232226378183281,
+   "2010_2013": 5.057414257472126
   },
   "ecarts_pts_session": {
-   "NEWYORK": 33.35820895522388,
-   "LONDRES": 27.164179104477608,
-   "NUIT": 8.059701492537313,
-   "ASIE": 31.417910447761194
+   "ASIE": 0.09781433186611954,
+   "NEWYORK": 1.0732023172353,
+   "LONDRES": 2.5955239610671423,
+   "NUIT": 1.6201359756979603
   },
   "ecarts_pts_cote": {
-   "DESSUS": 50.67164179104478,
-   "DESSOUS": 49.32835820895522
+   "DESSUS": 0.7845811548979564,
+   "DESSOUS": 0.7845811548979509
   },
-  "ecart_distance_initiale_mediane_bp": NaN,
-  "ratio_exposition_episodes": 0.0,
+  "ecart_distance_initiale_mediane_bp": 0.23850000000000193,
+  "ratio_exposition_episodes": 0.9730941704035875,
   "part_sans_strate_comparable": [
-   0.0,
-   1.0
+   0.10291858678955453,
+   0.08071748878923767
   ],
-  "statut": "NON_EVALUABLE_COMPOSITION"
+  "statut": "SENSIBLE_A_LA_COMPOSITION"
  },
  "composition_I-02": {
   "ecarts_pts_ere": {
-   "2014_2016": 28.751974723538705,
-   "2017_2020": 20.379146919431278,
-   "2010_2013": 50.86887835703001
+   "2017_2020": 5.453817066703556,
+   "2014_2016": 1.4989854972216499,
+   "2010_2013": 3.9548315694819145
   },
   "ecarts_pts_session": {
-   "NEWYORK": 34.12322274881517,
-   "LONDRES": 27.64612954186414,
-   "NUIT": 7.740916271721959,
-   "ASIE": 30.48973143759874
+   "ASIE": 0.40349542320905485,
+   "NEWYORK": 4.122570381130247,
+   "LONDRES": 4.368414378271196,
+   "NUIT": 0.6493394203500036
   },
   "ecarts_pts_cote": {
-   "DESSUS": 46.91943127962085,
-   "DESSOUS": 53.08056872037915
+   "DESSUS": 3.619930368218399,
+   "DESSOUS": 3.6199303682183883
   },
-  "ecart_distance_initiale_mediane_bp": NaN,
-  "ratio_exposition_episodes": 0.0,
+  "ecart_distance_initiale_mediane_bp": 0.3088500000000032,
+  "ratio_exposition_episodes": 0.8686708860759493,
   "part_sans_strate_comparable": [
-   0.0,
-   1.0
+   0.47176684881602915,
+   0.5110759493670886
   ],
   "statut": "NON_EVALUABLE_COMPOSITION"
  },
  "composition_I-03": {
   "ecarts_pts_ere": {
-   "2014_2016": 23.67941712204007,
-   "2017_2020": 19.034608378870672,
-   "2010_2013": 57.28597449908926
+   "2017_2020": 3.3896918149547735,
+   "2014_2016": 3.589436835240223,
+   "2010_2013": 6.979128650194999
   },
   "ecarts_pts_session": {
-   "NEWYORK": 32.60473588342441,
-   "LONDRES": 28.96174863387978,
-   "NUIT": 4.189435336976321,
-   "ASIE": 34.244080145719494
+   "ASIE": 0.3421277877154738,
+   "NEWYORK": 1.216145223876447,
+   "LONDRES": 2.1608630686923203,
+   "NUIT": 0.6025900571003995
   },
   "ecarts_pts_cote": {
-   "DESSUS": 51.09289617486339,
-   "DESSOUS": 48.90710382513661
+   "DESSUS": 0.5674853403029978,
+   "DESSOUS": 0.5674853403029978
   },
-  "ecart_distance_initiale_mediane_bp": NaN,
-  "ratio_exposition_episodes": 0.0,
+  "ecart_distance_initiale_mediane_bp": 0.11870000000000047,
+  "ratio_exposition_episodes": 1.015496809480401,
   "part_sans_strate_comparable": [
-   0.0,
-   1.0
+   0.11131059245960502,
+   0.041932543299908843
   ],
-  "statut": "NON_EVALUABLE_COMPOSITION"
+  "statut": "SENSIBLE_A_LA_COMPOSITION"
  },
  "composition_I-05_2010_2013": {
   "ecarts_pts_ere": {
-   "2010_2013": 100.0
+   "2010_2013": 0.0
   },
   "ecarts_pts_session": {
-   "NEWYORK": 35.51401869158878,
-   "LONDRES": 29.23898531375167,
-   "NUIT": 5.07343124165554,
-   "ASIE": 30.173564753004005
+   "ASIE": 1.5006433917923723,
+   "NEWYORK": 0.8232192949070349,
+   "LONDRES": 0.12887973305785172,
+   "NUIT": 0.5485443638274863
   },
   "ecarts_pts_cote": {
-   "DESSUS": 51.93591455273698,
-   "DESSOUS": 48.06408544726302
+   "DESSUS": 0.955522395874242,
+   "DESSOUS": 0.9555223958742365
   },
-  "ecart_distance_initiale_mediane_bp": NaN,
-  "ratio_exposition_episodes": 0.0,
+  "ecart_distance_initiale_mediane_bp": 0.2350999999999992,
+  "ratio_exposition_episodes": 0.8851802403204272,
   "part_sans_strate_comparable": [
-   0.0,
-   1.0
+   0.04524886877828054,
+   0.050734312416555405
   ],
-  "statut": "NON_EVALUABLE_COMPOSITION"
+  "statut": "CONSERVEE"
  },
  "composition_I-05_2017_2020": {
   "ecarts_pts_ere": {
-   "2017_2020": 100.0
+   "2017_2020": 0.0
   },
   "ecarts_pts_session": {
-   "NEWYORK": 31.225296442687743,
-   "LONDRES": 21.34387351778656,
-   "NUIT": 16.600790513833992,
-   "ASIE": 30.8300395256917
+   "ASIE": 0.1804134359807752,
+   "NEWYORK": 5.441324317252205,
+   "LONDRES": 10.363443555384173,
+   "NUIT": 5.102532674112739
   },
   "ecarts_pts_cote": {
-   "DESSUS": 47.82608695652174,
-   "DESSOUS": 52.17391304347826
+   "DESSUS": 1.6512649598545648,
+   "DESSOUS": 1.6512649598545703
   },
-  "ecart_distance_initiale_mediane_bp": NaN,
-  "ratio_exposition_episodes": 0.0,
+  "ecart_distance_initiale_mediane_bp": 0.20030000000000214,
+  "ratio_exposition_episodes": 1.134387351778656,
   "part_sans_strate_comparable": [
-   0.0,
-   1.0
+   0.289198606271777,
+   0.16600790513833993
   ],
   "statut": "NON_EVALUABLE_COMPOSITION"
  },
  "taux_bruts": {
   "I-01": {
-   "G50": NaN,
-   "P50": 0.8858208955223881
+   "G50": 0.9047619047619048,
+   "P50": 0.8863976083707026
   },
   "I-02": {
-   "G50": NaN,
-   "P50": 0.22274881516587677
+   "G50": 0.2185792349726776,
+   "P50": 0.22151898734177214
   },
   "I-03_medianes_bp": {
-   "G50": NaN,
-   "P50": 18.64495
+   "G50": 26.962699999999998,
+   "P50": 18.6031
   },
   "I-04": {
-   "R100": NaN,
+   "R100": 0.9160636758321273,
    "R10": 0.8973002553812477
   }
  }

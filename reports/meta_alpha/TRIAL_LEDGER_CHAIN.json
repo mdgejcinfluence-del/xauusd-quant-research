@@ -3046,6 +3046,53 @@
     "statut": "EXECUTION DESCRIPTIVE AUTORISEE EN COURS"
    },
    "entry_hash": "1df78c69e83adbfdb54884f5eb4f618ef398c65826417320cbf99c00d2185bed"
+  },
+  {
+   "seq": 253,
+   "prev_hash": "1df78c69e83adbfdb54884f5eb4f618ef398c65826417320cbf99c00d2185bed",
+   "entry": {
+    "type": "RESULTAT",
+    "campagne": "07",
+    "objet": "Execution descriptive F-I terminee selon protocole gele V1 (seq250, autorisation seq251, confirmation seq252)",
+    "extraction": {
+     "runs_ci": [
+      "44903810557 (marquage SIMULTANE errone, episodes G50/R100 exclus a tort, aucune sortie utilisee)",
+      "44906521704 (corrige, complet)"
+     ],
+     "partitions": "282/282",
+     "barres_m1": 3540993,
+     "journees_presentes": 3097,
+     "validation_temporelle": "13/13 verte avant calcul (run corrige)",
+     "episodes_bruts": {
+      "G50": 2359,
+      "P50": 2420,
+      "R100": 1290,
+      "P100": 1325,
+      "R10": 9958,
+      "P10": 11841
+     },
+     "simultanes_apres_correctif": 95,
+     "censures_jour": 12657,
+     "sauts": 306
+    },
+    "resultats": {
+     "I-01": "NEGATIF +1.84pt [-1.23;+4.93] q 0.883 composition sensible",
+     "I-02": "NON_EVALUABLE_COMPOSITION (47-51% sans strate comparable), effet -0.29pt",
+     "I-03": "ASSOCIATION SENSIBLE A LA COMPOSITION (declassee, pas de candidate): ratio 1.449 [1.247;1.695] q 0.0057, ecart de composition par ere 7.0 pts",
+     "I-04": "NEGATIF +1.88pt q 0.883",
+     "I-05": "NON_EVALUABLE_COMPOSITION (2017-20: 28.9% sans strate), effet -0.98pt"
+    },
+    "conclusion": "les nombres ronds ne forment pas une famille distincte demontree sous les definitions gelees; aucune candidate J1; aucune preuve de mecanisme psychologique ni de capturabilite",
+    "incidents_syntheses": "statut de composition confondu avec ses details en premiere passe (declasse I-03 non applique), detecte a la relecture, corrige et relance; bootstrap I-05 optimise a calcul identique",
+    "sha256": {
+     "comparaisons": "7ee21cf63838f5297577b8ea14376526ed1c7613730c77a108ea0228dc7c440f",
+     "episodes": "9c352f2f32288e79da0ccb05b83e82ba4b9762a4994b7286b89b611c6788a18e",
+     "rapport": "f308a733544c863ad331f8ef31c6f6243f028ba4f843bf0f1e9cdeba8de4336e",
+     "couverture": "ac458c174266850660912c208c90296d3d3d96ab6eab4ee370477d408efc0c51"
+    },
+    "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3; aucun backtest/challenge_sim; coquille du protocole gele laissee intacte"
+   },
+   "entry_hash": "2e875cc58665b7ae81b2afcb9167d1242d8d3c977674cfef9aae790fec5717b8"
   }
  ]
 }

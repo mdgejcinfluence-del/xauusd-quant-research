@@ -122,16 +122,22 @@ def main():
             return (ps[('2010_2013', 'G50')] - ps[('2010_2013', 'P50')]) - (ps[('2017_2020', 'G50')] - ps[('2017_2020', 'P50')])
         dates = {ere: sorted(A[A.ere == ere].date.unique()) for ere in ['2010_2013', '2017_2020']}
         stat = effet(dates)
+        # sommes par date et par cellule (bootstrap rapide, memes grappes-journees)
+        cell_arr = {}
+        for (ere, g), df in cells.items():
+            gg = df.groupby('date').issue.agg(['sum', 'count'])
+            pos = {d: i for i, d in enumerate(dates[ere])}
+            s = np.zeros(len(dates[ere])); n_ = np.zeros(len(dates[ere]))
+            for d, row in gg.iterrows(): s[pos[d]] = row['sum']; n_[pos[d]] = row['count']
+            cell_arr[(ere, g)] = (s, n_)
         diffs = []
         for _ in range(B):
-            sd = {ere: RNG.choice(dates[ere], size=len(dates[ere]), replace=True) for ere in dates}
-            # reconstruire avec multiplicites: dupliquer les episodes par tirage
             ps = {}
-            for (ere, g), df in cells.items():
-                cnt = pd.Series(sd[ere]).value_counts()
-                vals = np.concatenate([np.repeat(df[df.date == d].issue.values, 1) for d in []]) if False else None
-                sub = df.set_index('date').loc[[d for d in sd[ere] if d in set(df.date)]]
-                ps[(ere, g)] = sub.issue.mean() if len(sub) else np.nan
+            for ere in ['2010_2013', '2017_2020']:
+                idx = RNG.integers(0, len(dates[ere]), len(dates[ere]))
+                for g in ['G50', 'P50']:
+                    s, n_ = cell_arr[(ere, g)]
+                    ps[(ere, g)] = s[idx].sum() / n_[idx].sum() if n_[idx].sum() else np.nan
             diffs.append((ps[('2010_2013', 'G50')] - ps[('2010_2013', 'P50')]) - (ps[('2017_2020', 'G50')] - ps[('2017_2020', 'P50')]))
         diffs = np.array(diffs, float)
         lo, hi = np.nanpercentile(diffs, [2.5, 97.5])
@@ -149,7 +155,7 @@ def main():
               'I-02': (T[T.grille == 'G50'], T[T.grille == 'P50']),
               'I-03': (F[F.grille == 'G50'], F[F.grille == 'P50'])}
     for cid, (a, b) in paires.items():
-        st, det = composition(a, b); compo[cid] = det; details[f'composition_{cid}'] = det
+        st, det = composition(a, b); compo[cid] = st; details[f'composition_{cid}'] = det
     # I-05: composition par ere, statut le plus severe
     sts = []
     for ere in ['2010_2013', '2017_2020']:
