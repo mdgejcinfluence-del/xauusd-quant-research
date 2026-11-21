@@ -3595,6 +3595,38 @@
     "statut": "CONCEPTION EN COURS DE VALIDATION - gel chaine NON autorise, execution NON autorisee; en attente de decision distincte"
    },
    "entry_hash": "34744e7919553f204e31f4017901c2d8946048df81059f924a5f80297515acb9"
+  },
+  {
+   "seq": 280,
+   "prev_hash": "34744e7919553f204e31f4017901c2d8946048df81059f924a5f80297515acb9",
+   "entry": {
+    "type": "MISSION",
+    "phase": "10-A",
+    "objet": "Dernieres precisions avant gel Phase 10-A: addendum seq279 accepte sur le fond; constantes principales retenues (fenetre causale 250 barres; H1 et H4 Q95 de |r|; D1 Q90 de |r|; D1 Q25 du range; porte de magnitude 3x C_ref; BY m=6; effectifs minimaux definis). Gel definitif suspendu a trois points; aucune donnee consultee, aucun calcul lance. Statut: validation finale en cours, constantes principales acceptees, gel chaine non autorise, execution non autorisee; la prochaine decision sera exclusivement celle du gel definitif",
+    "points": "1) Controle de la queue adverse: conserver MAE median <= 3x esperance nette centrale; ajouter obligatoirement P90 du MAE et Expected Shortfall a 90% du MAE avec definitions mathematiques exactes et regle de calcul par evenement et par grappe; proposer une limite numerique de risque avant execution, justifiee, soumise au responsable pour validation; ne pas calculer ces metriques maintenant. 2) Delai maximal d entree: regle entre cloture effective du signal et premiere cotation executable de la barre suivante; tout depassement declare ineligible a la mesure de rentabilite executable mais comptabilise dans les donnees de couverture; traitement des interruptions de cotation, week-ends et gaps precise. 3) Definition complete de F10-06: formule du ratio de range (numerateur, denominateur, reference causale, horizon), H0 ratio=1, H1 ratio>1; strictement non directionnel. 4) Comptabilite des couts confirmee: C_ref reference de la porte economique; rendements Ask a l entree / Bid a la sortie integrant deja le spread; spread jamais soustrait une seconde fois; 1,7 bp = couts complementaires centraux du modele, non ajoutes une seconde fois ailleurs; scenarios hypothetiques identifies comme tels",
+    "livrable": "addendum final court reconcilié avec le dossier et ses compagnons, formules exactes, decisions prises, SHA-256 complets des documents finaux"
+   },
+   "entry_hash": "d85cd8bcd026b3b5f427a043252fa238cecd9ab29520c06636ca68ee008a7714"
+  },
+  {
+   "seq": 281,
+   "prev_hash": "d85cd8bcd026b3b5f427a043252fa238cecd9ab29520c06636ca68ee008a7714",
+   "entry": {
+    "type": "PREREG",
+    "phase": "10-A",
+    "objet": "Addendum final avant gel livre (PHASE10A_ADDENDUM_FINAL.md), aucun calcul, aucune donnee consultee: (1) Queue adverse: MAE_i = max de l excursion adverse signee (bp, prix executable de sortie) sur la fenetre; P90 = quantile 90% lineaire des MAE_i par famille/bras; ES90 = moyenne des MAE_i >= P90; calcul par evenement et par grappe (MAE_g = max des MAE de la grappe, P90/ES90 sur les MAE_g en diagnostic); critere conserve MAE median <= 3x esperance nette centrale; LIMITES PROPOSEES NON ENCORE ACCEPTEES: P90(MAE) <= 10x C_ref et ES90(MAE) <= 15x C_ref (justification: a C_ref ~4 bp, plafonds ~40/~60 bp, de l ordre d une a deux heures de mouvement ordinaire et 10-15x le cout aller-retour). (2) Delai maximal d entree: entree = premier tick suivant la cloture du signal, devant appartenir a la premiere barre suivante avec t_exec - t_ouv <= 120 secondes (constante PROPOSEE non encore acceptee; t_ouv = cloture du signal en cotation continue ou heure de reouverture reelle apres fermeture reguliere/week-end, l horloge ne courant qu a la reprise); au-dela: INELIGIBLE_ENTREE_TARDIVE, exclu de la rentabilite executable mais comptabilise et publie en couverture; trou intra-session > 120 s ineligible; approximation par presence de barre etiquetee si ticks absents. (3) F10-06 complet: Ratio = Range_{D+1} (Mid, bp) / mediane causale des ranges des 250 journees cloturees precedent D; horizon journee suivante complete (censure publiee sinon); H0 mediane du ratio = 1, H1 mediane > 1 (alternative unilaterale, p unilaterale dans la famille BY m=6); strictement non directionnel. (4) Comptabilite confirmee: C_ref = echelle des portes 1 et 3 elargie seulement; rendements Ask/Bid integrant le spread sans seconde soustraction; 1,7 bp (commission hypothetique 0,7 + slippage hypothetique 1,0) deduits une seule fois dans l esperance nette centrale; scenarios toujours etiquetes hypothetiques. Modifications reconciliées: porte 3 elargie (limites a valider), regle d entree tardive (Delta max a valider), alternative unilaterale F10-06; le reste est inchange.",
+    "sha256": {
+     "PHASE10A_PROTOCOL.md": "11174d76bb2e73ff1c34e3911e87fd17bef00114826339c26533fbf4694d5a53",
+     "PHASE10A_DICTIONARY.md": "33a5174a8f4285c225520918c45995674f600a868b82b771bb02050002bf85b0",
+     "PHASE10A_COST_MODEL.md": "164ee4e7590ecbdf4514fdb7b03078c83714acaff75d6addd876475f8f5cdf2e",
+     "PHASE10A_VALIDATION_PLAN.md": "db879b89e0557d22e938213c183bc0c92ba76bdff3004e9303e1d0c2ee22bc2a",
+     "PHASE10A_RISKS_AUTHORIZATIONS.md": "35615e110a0f00c5b890c0f1722327108c15fcbe946bba2354d3f31570a1fc0c",
+     "PHASE10A_ADDENDUM_VALIDATION.md": "fff4c5212ff324c14a0042230a3173050121ac006cda861616999be91102a843",
+     "PHASE10A_ADDENDUM_FINAL.md": "f2a2fa4d82e64cb55c48e535352710861e4649fed8c738b60ba06995d395b357"
+    },
+    "statut": "VALIDATION FINALE EN COURS - constantes principales acceptees; limites de queue (10x/15x C_ref) et Delta max d entree (120 s) PROPOSES, en attente de la decision de gel; gel chaine et execution NON autorises"
+   },
+   "entry_hash": "2381bd1100d39ffc1ce5e04fe35fc97f70968efcb13d63b24d05a8f149a61fd7"
   }
  ]
 }
