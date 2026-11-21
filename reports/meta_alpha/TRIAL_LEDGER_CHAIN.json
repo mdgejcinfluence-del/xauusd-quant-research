@@ -3193,6 +3193,52 @@
     "statut": "PREPARATION SOUMISE - en attente validation avant consolidation et gel; calculs interdits"
    },
    "entry_hash": "e731615df05a2c1dd02e1fb7c8477bb6ea0e779ce15f4e9fef6c506926d11dab"
+  },
+  {
+   "seq": 259,
+   "prev_hash": "e731615df05a2c1dd02e1fb7c8477bb6ea0e779ce15f4e9fef6c506926d11dab",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "08",
+    "objet": "Decision fondateur F-J: consolidation documentaire du blueprint et du dictionnaire en protocole unique autorisee; gel et execution interdits; aucun calcul/extraction/consultation de resultats",
+    "parametres_acceptes": [
+     "fenetre causale 20 journees precedentes",
+     "quantile 99.5% des |r| M1",
+     "plancher 10 bp",
+     "regroupement 15 minutes",
+     "materialite du sillage 10 bp",
+     "horizon principal +60 min apres le dernier choc",
+     "unite primaire: episode de chocs"
+    ],
+    "formule_seuil": "T_d = max(10 bp, Q99.5 des |r| sur les 20 journees precedentes), fixe pendant la journee; reference eligible si >=10 journees anterieures valides et >=10 000 variations valides; methode de quantile et predicat strict a figer; aucun seuil poole retrospectif pour identifier les chocs",
+    "episodes": "regroupement ecart <=15 min formalise (horodatages, bornes inclusives, frontieres journalieres, donnees manquantes, traversee UTC, cloture); positifs/negatifs/mixtes distingues; mixtes publies separement et exclus des comparaisons directionnelles primaires",
+    "sillage": "deux horodatages conserves (premier choc, cloture du dernier); sillage de 60 min apres le dernier choc; episode identifiable definitivement apres 15 min sans choc; aucune disponibilite temps reel revendiquee; continuation signee +60 (ancrage, donnees manquantes) definie; sillages chevauchants et dependance documentes",
+    "pseudo_evenements": "algorithme deterministe fige, variables anterieures uniquement, aucun appariement sur le futur; un choc dans les 60 min suivantes n exclut pas le pseudo-evenement (comportement observe, regle preenregistree); non-evaluable publie si comparabilite insuffisante",
+    "comparaisons": "FJ-01..FJ-05 conservees, chacune figee (hypothese, variable, population, unites, materialite, exclusions, censure, bootstrap, BY m=5); ventilation session descriptive sans sixieme test",
+    "livrables": "protocole consolide unique (12 livrables) + les dix constantes explicites (valeurs, formules, justifications), SHA-256 et checkpoint GitHub",
+    "restrictions": "XAU/USD corpus IS; holdout scelle; aucun calcul F-J; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-L et F-H en reserve"
+   },
+   "entry_hash": "b1f89aa8c45ea091398a48b9463db6dbd3daeb9807b55d791c127f09e34cda70"
+  },
+  {
+   "seq": 260,
+   "prev_hash": "b1f89aa8c45ea091398a48b9463db6dbd3daeb9807b55d791c127f09e34cda70",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "08",
+    "objet": "Protocole consolide F-J V1 propose (document unique CAMPAIGN_08_PROTOCOL_V1.md): formule T_D=max(10 bp, Q99.5% interpolation lineaire des |r| des 20 journees precedentes), seuil fixe le jour J, predicat strict |r_t|>T_D, reference eligible >=10 journees et >=10 000 variations sinon INELIGIBLE_DETECTION publiee; r_t log bp intra-segment uniquement. Episodes: ecart <=15 min inclusif, traversee UTC attribuee au jour du premier choc, cloture apres 15 min sans choc (identification retrospective, aucune disponibilite temps reel), POSITIF/NEGATIF/MIXTE avec mixtes publies separes et exclus des primaires; unite primaire episode. Sillage: deux horodatages, ancrage cloture de la barre du dernier choc, R_h signee (+15/+30 descriptifs, +60 principal), retour partiel max(0,-R60)/A, retournement R60<-A, excursions, stabilisation post/pre, nouveau choc, CENSURE_FENETRE par horizon, chevauchements de fenetres documentes et grappes-journees. Pseudo-evenements FJ-05: premiere minute eligible par (journee x session S1-S4), aucun choc dans les 60 min precedentes, appariement chronologique sans reutilisation sur session x signe x tercile d activite causale, aucune exclusion pour choc ulterieur (drapeau NOUVEAU_CHOC), NON_EVALUABLE si comparabilite insuffisante. FJ-01..FJ-05 figees (variable R_60, materialite 10 bp, bootstrap grappes-journees 2000, BY m=5 fixe, eligibilite >=200 episodes et >=100 grappes par bras), ventilation session sans sixieme test. Matrice de couverture par ere, biais D1-D12, cout (un run CI) et suspension, audit de nouveaute campagnes 0-7, dix constantes explicites avec valeurs/formules/justifications.",
+    "sha256": {
+     "CAMPAIGN_08_PROTOCOL_V1.md": "022ca0dc12a767349164be673959a21f18b3e294202bf5d88b39615ffd3e39af"
+    },
+    "documents_preparatoires": {
+     "CAMPAIGN_08_FJ_BLUEPRINT.md": "06a49727e7d7310a2291a3d0369297fbf8e057655507b0fa5e0cd382e24e3254",
+     "CAMPAIGN_08_FJ_DICTIONARY.md": "ade2310ed2f286b232a424f6d779c10357784ad7c95dba34a8d805abd30b7bea",
+     "CAMPAIGN_08_FJ_COMPARISONS.md": "1fb49e3e45b7c7b44f4486f602280b0c3ec3c6eb4fbac5aa97903f533371110d",
+     "CAMPAIGN_08_FJ_COVERAGE_BIASES.md": "0d205accbf86d2c9ed794fa27711d6758ad2063a2275110cab010c51ff9e72a0"
+    },
+    "statut": "PROTOCOLE CONSOLIDE SOUMIS - NON GELE; gel et execution interdits; aucun calcul effectue"
+   },
+   "entry_hash": "7378e70a82707c7584444eeb86711f2c9995eb53f8e9916999fca1ceba2aa0c3"
   }
  ]
 }
