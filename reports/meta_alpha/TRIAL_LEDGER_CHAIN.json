@@ -2498,6 +2498,47 @@
     "statut": "PREPARATION SOUMISE - en attente validation fondateur du protocole consolide; calculs toujours interdits"
    },
    "entry_hash": "0d7cecda18e48c4254c1db820d3e43e4c09e1f7cd9ad452b6fbe4efe11cdbd40"
+  },
+  {
+   "seq": 228,
+   "prev_hash": "0d7cecda18e48c4254c1db820d3e43e4c09e1f7cd9ad452b6fbe4efe11cdbd40",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Decision fondateur: consolidation F-G autorisee, gel definitif et calculs toujours interdits",
+    "constantes_validees": {
+     "classes_ER": "<=0.10 oscillante; 0.10-0.30 mixte; >=0.30 directionnelle",
+     "deplacement_faible": "|Delta|<5bp strict, prioritaire sur classes ER, aucun signe impose",
+     "C6-01": "grappe semaine civile; paires chevauchantes et vendredi-lundi a formaliser",
+     "C6-02": "ER primaire; S=L/A exclue des tests inferentiels, decomposition descriptive seulement"
+    },
+    "a_justifier": [
+     "seuil de trou maximal depuis calendrier des minutes actives et diagnostics publies, sans calcul F-G",
+     "fonction et cas limites du seuil 30 minutes du point median"
+    ],
+    "precisions": [
+     "mesures sur clotures M1 seulement",
+     "L=0 et A=0 definis, jamais transformes en zero",
+     "composantes conservees, dependances publiees",
+     "BY famille de cinq conservee meme si hypothese structurellement impossible (p NaN, m=5)"
+    ],
+    "restrictions": "execution interdite; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; F-H/F-I en reserve"
+   },
+   "entry_hash": "74c1ca90dbf0163ccb8ee5f3eca008e138d0bc6f8c083ebaf3b0dcf576f50fe3"
+  },
+  {
+   "seq": 229,
+   "prev_hash": "74c1ca90dbf0163ccb8ee5f3eca008e138d0bc6f8c083ebaf3b0dcf576f50fe3",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Protocole consolide F-G V1 livre: dictionnaire complet (segments continus, saut inter-trou jamais dans L), seuil de trou 15 min justifie (coherence C5/V2.2 fenetre 60 min, parcours inobserve, halte quotidienne), seuil 30 min = materialite seule de C6-04 (aucune categorie), paires C6-01 formalisees (pas de chainage a travers censure, grappe semaine de j, controle blocs mobiles 2 semaines lecture prudente), declassement C6-02 ferme (S sans p ni q), BY m=5 fixe H5=2.283333 meme si p NaN, matrice de couverture, biais B1-B13",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1.md": "241620ea0cee8480c13a06b4a4a46e4d41ae988402f3876a671ce95a3171191c"
+    },
+    "statut": "SOUMIS A VALIDATION DEFINITIVE AVANT GEL - execution toujours interdite"
+   },
+   "entry_hash": "394d0dd4c2dc033d1cac6fdb60a697fe67bf997b492201561af6028544db342d"
   }
  ]
 }
