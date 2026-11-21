@@ -2036,6 +2036,36 @@
     "resultat": "Livraison de preparation seq192 (aucun calcul Campagne 4, 0 budget, holdout scelle, flux prospectif T0 inexistant et non consulte, FRED suspendue): blueprint (question centrale progressif/brusque/alternance/conditionnel, regle d or en 4 objets distincts passe seul / courant / confirmation posterieure / consequence), dictionnaire seq193 presente a validation, methode (proposition fermee de 10 comparaisons C4-01..C4-10 a arreter au gel definitif, bootstrap par blocs de 20 journees pour les consequences, BY, seuils materiels 5pts/ratio 1,15, suffisance 200 journees et 30 transitions par bras, negatifs conserves), couverture (IS seul, F3 gele non modifie, bruts campagnes 1-3, perimetres interdits explicites). CHANTIER T0 SEPARE: reconciliation des effectifs livree (CAMPAIGN_2_4_EFFECTIVE_N_RECONCILIATION.md): par groupe extreme 1400 independants requis x DE central 2,38 = ~3330 episodes bruts; plancher 500 grappes x 7,12 episodes/grappe ~ 3560 episodes = ~1496 independants equivalents (les deux criteres coincident au scenario central et divergent utilement hors central, tableau de sensibilite rho 0,05-0,30); total 1500 grappes ~ 10680 episodes ~ 4487 independants >= 4200 requis, ~746 journees minimales au rythme d amorcage 2,01 grappes/journee; amorcage (35988 episodes, 5057 grappes, ~15100 independants equivalents) rappele comme jamais comptabilisable car consulte. Candidats C3 conservees J1 sans optimisation ni strategie. STATUT: CAMPAGNE 4 PREPAREE - VALIDATION DU DICTIONNAIRE PAR LE PROPRIETAIRE AVANT EXECUTION"
    },
    "entry_hash": "e4b668e1816c90dc83b649417515ec0fff787d5aa341a041e62bdb266dc6b16a"
+  },
+  {
+   "seq": 195,
+   "prev_hash": "e4b668e1816c90dc83b649417515ec0fff787d5aa341a041e62bdb266dc6b16a",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_04_DICTIONNAIRE_REVISION",
+    "resultat": "Retour fondateur: validation CONDITIONNELLE de l architecture Campagne 4, aucune execution autorisee; corrections exigees avant gel definitif: (1) causalite historique F3 documentee (entrainement, horizon, horodatage, seuils) ou qualification retrospective / reconstruction walk-forward; (2) RV quotidienne figee (formule, frequence, delimitation, qualite, fenetre exacte des 60 seances) et jamais presentee comme connue a l ouverture, consequences apres la journee de mesure; (3) transitions: vitesse, premier franchissement, confirmation, durees de 3-4 jours, non-confirmees conservees; (4) seuils glissants vs changements absolus, reference du retour a l habituel figee au debut de chaque episode; (5) dix comparaisons exactes publiees (variables, populations, fenetres, unites, materialite), bootstrap par blocs de 20 journees fige y compris fenetres chevauchantes, 30 transitions = eligibilite descriptive et non garantie de puissance; (6) formules exactes des dimensions non-F3 et horaires de sessions / changements d heure; (7) T0: clarifier 4200 independants totaux vs hypothese sur terciles extremes, chantier separe inactif. Produire dictionnaire revise hashe + liste explicite des dix + resume des changements. Restrictions inchangees"
+   },
+   "entry_hash": "b828e2b9fc95945bf99cce5c7398b7e53962836c3ebf9ebc4b152d361a6a8929"
+  },
+  {
+   "seq": 196,
+   "prev_hash": "b828e2b9fc95945bf99cce5c7398b7e53962836c3ebf9ebc4b152d361a6a8929",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_04_DICTIONNAIRE_REVISION",
+    "resultat": "Dictionnaire Campagne 4 REVISE v2 presente a validation definitive (sha256 CAMPAIGN_04_EVENT_DICTIONARY_V2.md=0a615c54fa4b7b2c2980428c486571f76f1b29abc6ec892538940ed0e0f12824; liste des dix CAMPAIGN_04_COMPARISONS_FREEZE.md sha256=4024eaaefc16031d813fe73a2effab2d648e60d6172c0359954fc8deb7d8ff5a; hashes calcules par appel separe apres ecriture; v1 seq193 conservee inchangee): corrections fondateur appliquees - F3 audite (HAR walk-forward roulant 500j, horizon 1 jour, prediction connaissable a la cloture de la veille) mais terciles poolees historiques declares NON causaux, double publication tercile causal roulant 250j (seul connu a l ouverture) vs reference retrospective; RV figee (rendements log M1 intra-journee seuls, date UTC, >=300 barres, seuils sur exactement 60 journees precedentes min 40, consequences au plus tot le lendemain), relatif vs absolu publies separement; transitions: premier franchissement, traversee rapide 1-2j / intermediaire 3-4j / progressive >=5j, confirmation D=C+2 jamais antidatee, catalogue obligatoire des non-confirmees avec motifs; retour a l habituel a reference figee au debut de l episode HAUT (seuil glissant abandonne); dix comparaisons exactes (variables, populations, fenetres, unites, materialite dont seuil specifique C4-06), bootstrap par blocs mobiles de 20 journees avec recalcul complet dans chaque replicat et fenetres tronquees a la prochaine candidate, 30 transitions requalifiees eligibilite descriptive sans garantie de puissance; dimensions DIM formulees exactement (g1 moments non corriges, q99 causal poole min 20000 barres, vol-de-vol 20j, dispersion >=3 sessions) et sessions UTC fixes sans changement d heure dans les donnees, convention publiee; T0 separe: clarification 4200 = total de collecte 3x1400 dont le tercile median non decisionnel inevitable par classification expanding-window, puissance uniquement sur les extremes 2x1400, regle de cloture tranchee par avance. AUCUN CALCUL CAMPAGNE 4, aucune execution autorisee"
+   },
+   "entry_hash": "b73c94e4e59434642beda2be8839d5312167065ff456d4897551cbe8a5a6cd4f"
+  },
+  {
+   "seq": 197,
+   "prev_hash": "b73c94e4e59434642beda2be8839d5312167065ff456d4897551cbe8a5a6cd4f",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_DICTIONNAIRE_REVISION",
+    "resultat": "Livraison de revision seq195: dictionnaire v2 + liste exacte des dix comparaisons + resume des changements (section 9 du dictionnaire) + clarification T0 des 4200; architecture validee dans son principe conservee (etat-passe / etat courant / confirmation / consequences); statut: CAMPAGNE 4 PREPAREE REVISEE - VALIDATION DEFINITIVE DU PROPRIETAIRE REQUISE AVANT TOUT CALCUL; exploration generale multi-familles maintenue, campagne 4 non exclusive; 0 budget consomme, holdout scelle, FRED suspendue, 36 cellules S12 gelees, XAU/USD seul"
+   },
+   "entry_hash": "ab0c5ad2a4a2a304848f81093c2464947d669c60e040e79d318e1f4be1698bc2"
   }
  ]
 }

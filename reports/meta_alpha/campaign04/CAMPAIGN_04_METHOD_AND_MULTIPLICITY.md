@@ -4,6 +4,16 @@
 avec le dictionnaire validé avant extraction ; aucun paramètre modifié
 après consultation des résultats.
 
+**Note de révision (seq 195)** : la liste exacte et définitive des dix
+comparaisons, leurs variables, populations, fenêtres, unités et critères
+de matérialité figure désormais dans le document compagnon
+`CAMPAIGN_04_COMPARISONS_FREEZE.md`, qui fait foi sur la présente esquisse
+(notamment : seuil matériel spécifique de C4-06 en différence de médianes
+de g1, éligibilité de 30 transitions qualifiée de descriptive, et non de
+garantie de puissance — le §3 ci-dessous est à lire sous cette correction).
+Le dictionnaire de référence est la version 2
+(`CAMPAIGN_04_EVENT_DICTIONARY_V2.md`).
+
 ## 1. Statistiques descriptives (le cœur de la campagne)
 
 Pour chaque famille (REG-J, REG-S, DIM publiée dimension par dimension) :
