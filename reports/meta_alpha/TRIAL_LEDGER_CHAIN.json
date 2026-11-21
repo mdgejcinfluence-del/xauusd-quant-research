@@ -2639,6 +2639,40 @@
     "statut": "DOSSIER FINAL (V1.1 + V1.2 + V1.2.1) SOUMIS POUR VALIDATION DU GEL - execution toujours interdite"
    },
    "entry_hash": "d2053649c44f1ec8a7fce276ae61df5f202dc6a0b625fde63699af50d54993e0"
+  },
+  {
+   "seq": 236,
+   "prev_hash": "d2053649c44f1ec8a7fce276ae61df5f202dc6a0b625fde63699af50d54993e0",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "06",
+    "objet": "Derniere precision fondateur sur V1.2.1 (seq235): V1.2.1 valide sur le fond, gel en attente d une derniere regle de priorite",
+    "regle_exigee": [
+     "1. L=0,D=0: PLATE OBSERVEE, ER et rho indefinies si denominateurs nuls",
+     "2. L=0,D>0: INDETERMINEE-DISCONTINUITES exclue du primaire; rho=1 publiable en descriptif sans modifier le statut",
+     "3. L>0,rho>0.5: DOMINEE PAR LES DISCONTINUITES OBSERVEEESS exclue du primaire",
+     "4. autres cas: eligibilite et classifications deja gelees"
+    ],
+    "restrictions": "ne modifier aucune autre definition ni seuil; aucun calcul/extraction/consultation F-G; restrictions inchangees (XAU/USD, holdout scelle, pas de backtest/challenge_sim, pas de J2/J3, budgets inchanges, FRED suspendue, S12 gelees, T0 inactif)"
+   },
+   "entry_hash": "2d4775f9ad6d3474644147cdb902fcdc0e4d49fb382d0866acb76773721bf322"
+  },
+  {
+   "seq": 237,
+   "prev_hash": "2d4775f9ad6d3474644147cdb902fcdc0e4d49fb382d0866acb76773721bf322",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "06",
+    "objet": "Erratum V1.2.2 livre: regle de priorite des statuts de journee (PLATE OBSERVEE > INDETERMINEE-DISCONTINUITES > DOMINEE PAR LES DISCONTINUITES OBSERVEEES > eligibilite/classes gelees); cas L=0,D>0: rho=1 publiable en descriptif sans reclassement. Aucune autre definition ni seuil modifie.",
+    "sha256": {
+     "CAMPAIGN_06_PROTOCOL_V1_2_2_ERRATUM.md": "b8e853db2e2170d5e13a95914c1d42447e54c6a7c5ac345bdc6781f474d8b3b1",
+     "CAMPAIGN_06_PROTOCOL_V1_2_1_ERRATUM.md": "78ef301f6defba193cb121dfaa76382a3eff19af9e255b5ace43919ded11cc1c",
+     "CAMPAIGN_06_PROTOCOL_V1_2_ADDENDUM.md": "046df8d949203a5c7d890f736e5781441750225959eb309373ea829bba731217",
+     "CAMPAIGN_06_PROTOCOL_V1_1.md": "0fdb39204c25d38c4d4628113d5572cd7962ae6209d6e26b95133419efee4c76"
+    },
+    "statut": "DOSSIER FINAL (V1.1 + V1.2 + V1.2.1 + V1.2.2) SOUMIS POUR VALIDATION DU GEL DEFINITIF - execution toujours interdite"
+   },
+   "entry_hash": "dae0119796cec2118b6163828123f25f61c499dc1c5c2c52472859c18547ffb8"
   }
  ]
 }
