@@ -3429,6 +3429,50 @@
     "statut": "RESULTATS PUBLIES - en attente de validation de cloture du proprietaire; aucune candidate; aucune promotion automatique"
    },
    "entry_hash": "0341a19bd09ebe3215dad3eb16f804b19993cb855a7e952f772ea2d7954a221b"
+  },
+  {
+   "seq": 270,
+   "prev_hash": "0341a19bd09ebe3215dad3eb16f804b19993cb855a7e952f772ea2d7954a221b",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "08",
+    "objet": "Cloture F-I acceptee definitivement (rappel) et campagne 8 F-J acceptee et cloturee au niveau descriptif, sans candidate ANO-C8 (FJ-01/03/04 negatives, FJ-02 significative sous le seuil materiel, FJ-05 non evaluable). Resultats C8 seq269 conserves sans modification; aucune relance F-G, F-I ou F-J."
+   },
+   "entry_hash": "b69d853a5341954cbec40b1f723eddc2e8b8fbde6e2839bb322c392c28bb2265"
+  },
+  {
+   "seq": 271,
+   "prev_hash": "b69d853a5341954cbec40b1f723eddc2e8b8fbde6e2839bb322c392c28bb2265",
+   "entry": {
+    "type": "MISSION",
+    "phase": "9",
+    "objet": "Ordre du fondateur: arret des nouvelles campagnes exploratoires et ouverture de la PHASE 9 - validation economique et conversion du portefeuille META ALPHA. Priorite aux decouvertes existantes du catalogue ANO campagnes 0-8; aucune campagne de decouverte supplementaire sauf nouvel ordre",
+    "etapes": "A inventaire complet; B audit economique et disponibilite des donnees de couts; C etude des mecanismes; D formulation des regles de strategie candidates; E estimation economique nette et stress des frais; F preparation de la confirmation independante; G apres confirmation seulement: strategies et contraintes prop firm",
+    "inventaire": "registre central: identifiant, campagne, definition, effet, IC, p/q, materialite, statut J1/J2/J3, dependances mecaniques, limites de couverture, informations temporelles reellement disponibles, avertissements; negatifs et non evaluables conserves sans etre traites comme candidates; aucune fiche historique modifiee",
+    "selection": "candidates J1 a evenement causalement identifiable, mecanisme comprehensible, materialite credible, avertissements examinables, regle operationnelle formulable; la significativite n est pas une preuve de rentabilite; pas de privilege a la recence",
+    "couts": "spread Bid/Ask, commissions, slippage, latence, swaps/financement, execution des stops, remplissages partiels; couts observes distingues des couts supposes; scenarios favorable/central/defavorable quand les couts reels manquent; esperance brute, cout total, esperance nette, cout maximal supportable, marge apres frais, sensibilite; jamais de double comptage du spread deja dans les prix Bid/Ask; les estimations sur Mid/M1 ne sont pas des preuves d execution reelle",
+    "regles": "fiche operationnelle par candidate interessante (entree, disponibilite exacte, instrument/sens, prix d entree, stop, take-profit/sortie, duree max, risque, invalidation, couts, frequence); aucune optimisation massive; pas de regle causale reproductible = pas de strategie",
+    "validation": "IS 2010-2020 deja explore: toute analyse y est historique de faisabilite/robustesse, pas confirmation independante; holdout 2020-2026 scelle sans autorisation distincte; protocole de confirmation independant/prospectif par candidate (hypothese, metrique primaire, couts, criteres de rejet predefinis); aucun resultat non confirme promu en J2",
+    "registre_progression": "statuts distincts J1, M1, J2, E1, E2, S1, S2, P1; aucune promotion automatique; statut actuel, preuve necessaire et prochain blocage affiches par decouverte",
+    "restrictions": "XAU/USD exclusivement; holdout scelle; 36 cellules S12 gelees; T0 separe et inactif sans autorisation distincte; FRED suspendue; aucun acces 2020-2026 non autorise; aucun backtest challenge prop firm a ce stade; aucun J2/J3 automatique; aucun cout suppose presente comme reel; aucun budget experimental consomme sans autorisation; F-G, F-I, F-J cloturees et non relancees; F-H et F-L en reserve"
+   },
+   "entry_hash": "656864e005de832fa9d23e2c0ea3cf5a602adfcb48ba5d1db16f2bf801ae6dbc"
+  },
+  {
+   "seq": 272,
+   "prev_hash": "656864e005de832fa9d23e2c0ea3cf5a602adfcb48ba5d1db16f2bf801ae6dbc",
+   "entry": {
+    "type": "PREREG",
+    "phase": "9",
+    "objet": "Phase 9 etape A livree et selection preliminaire (etapes B-C cadrees, aucun backtest, aucun calcul de strategie): inventaire integral du portefeuille (PORTFOLIO_INVENTORY.md): 2 observations legacy tick (ANOM-001 mecanisme refute/non executable, ANOM-002 contexte), fiches ANO-C1 001-005, ANO-C2 001-014 (dont 001/002/004 requalifiees retrospectives seq168 et 003/006/008/012 sur etiquettes F3 poolees non causales), REL-T0 (replication decennale descriptive, profondeur T0, tercile bas 90.6% de reintegration, profondeur mediane 0.78 bp), ANO-C3 001-003, ANO-C4 001-002 (002 mecanique), ANO-C5 001-003; negatifs/sous-seuils/non-evaluables de toutes campagnes conserves (C2, NEG-C3, C4, C5, C6-02 sous seuil, I-03 declassee composition, FJ-02 sous seuil, FJ-05 non evaluable); registre machine PORTFOLIO_REGISTER.csv (statut actuel J1 au maximum pour toutes, preuve necessaire, prochain blocage); selection economique SELECTION_CANDIDATES.md: P9-A REL-T0/C1-001 (prioritaire a evaluer, blocage couts attendu chiffre a mesurer), P9-B ANO-C1-002 (magnitudes manquantes), P9-C ANO-C3-001 + base C1-003 (fade impulsions Londres), P9-D ANO-C3-003 (mecanisme volatilite sans direction, pas de fiche strategie), P9-E ANO-C5-003 secondaire sous reserve de composition; exclusions motivees publiees. Cadrage couts: spreads tick Bid/Ask observes dans le corpus IS (ANO-C2-013: 2.40->1.87 bp Londres), prix M1 en mid a re-frapper en bid/ask sans double comptage, commissions/slippage/latence/swaps non observes a scenariser (favorable/central/defavorable). Suite par etapes B a G sur ordre; echec documente puis candidate suivante.",
+    "sha256": {
+     "PORTFOLIO_INVENTORY.md": "ac0a7050a7dd17cf0cc9999bb6871614424ee117be7cb5cc2ca7ae64d0a9c3f8",
+     "PORTFOLIO_REGISTER.csv": "5864972b1c1d8c9986437dca83f281891c51887bb81c736eb55fbc5c467747f4",
+     "SELECTION_CANDIDATES.md": "3ed3c96da8358e63e1a7943622a83192f396a9ceb9e1a548bbd7e9e3b519f6c4"
+    },
+    "statut": "ETAPE A LIVREE - aucune promotion, aucun backtest; etapes B-G en attente d ordre"
+   },
+   "entry_hash": "7313a2df59ae7f5c04bea2d8bdc970bbdbc4fc442ec69e6c2707fc0fa774c857"
   }
  ]
 }

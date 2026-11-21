@@ -1,0 +1,42 @@
+id,origine,statut_phase9,selection_economique,preuve_necessaire,prochain_blocage
+ANOM-001,phases tick,J1 (descriptive),NON - prix mid non executables,mecanisme direct deja refute,clos comme observation
+ANOM-002,phases tick,J1 (descriptive),NON - contexte volatilite,aucune (contexte F3),pas une regle
+ANO-C1-001,C1,J1,OUI via REL-T0 (version causale),regle T0 + esperance nette apres couts,profondeur finale non causale dans la fiche d origine
+ANO-C1-002,C1,J1,OUI (P9-B),magnitude directionnelle apres retest a mesurer,frequences sans magnitudes publiees
+ANO-C1-003,C1,J1,OUI via ANO-C3-001,taux de base du fade d impulsion,voir P9-C
+ANO-C1-004,C1,J1,NON - timing retrospectif,heure connue en fin de journee seulement,pas de regle d entree
+ANO-C1-005,C1,J1,NON - volatilite sans direction,direction de sortie non etablie,pas de sens tradable
+ANO-C2-001,C2,J1 (requalifiee retrospective),NON en l etat (voir REL-T0),version T0 uniquement,profondeur finale = futur
+ANO-C2-002,C2,J1 (requalifiee retrospective),NON,mesure conditionnelle a la reintegration,retrospectif
+ANO-C2-003,C2,J1 (etiquette F3 poolee),NON,etiquettes de regime causales a reconstruire (chantier non ouvert),non causal
+ANO-C2-004,C2,J1 (requalifiee retrospective),NON en l etat,version profondeur T0 a construire,profondeur finale = futur
+ANO-C2-005,C2,J1,NON,derive d ere historique,pas de regle
+ANO-C2-006,C2,J1 (etiquette F3 poolee),NON,etiquettes causales,non causal
+ANO-C2-007,C2,J1,NON (supplantee par ANO-C3-001),voir P9-C,forme anterieure moins nette
+ANO-C2-008,C2,J1 (etiquette F3 poolee),NON,etiquettes causales + direction,non causal et sans direction
+ANO-C2-009,C2,J1,NON,derive d echelle d ere,pas de regle
+ANO-C2-010,C2,J1,NON,direction d expansion non etablie,sans direction
+ANO-C2-011,C2,J1,NON - contexte,contexte d execution,pas un signal
+ANO-C2-012,C2,J1 (etiquette F3 poolee),NON,etiquettes causales,non causal
+ANO-C2-013,C2,J1 (cout observe),DONNEE DE COUT - pas une strategie,alimenter l audit des couts,spread tick IS seulement
+ANO-C2-014,C2,J1,NON - timing retrospectif,connu en fin de session,pas de regle
+REL-T0,C2.2-2.3,J1 (replication decennale descriptive),OUI (P9-A prioritaire a evaluer),esperance nette apres couts observes+scenarios puis protocole de confirmation,amplitudes ~1 bp devant des couts de plusieurs bp attendus
+ANO-C3-001,C3,J1,OUI (P9-C),regle de fade d impulsion Londres + esperance nette,chevauchements d episodes; magnitude du retracement a convertir en PnL
+ANO-C3-002,C3,J1,NON (effet 2.4 bp non normalise),normalisation et regle a definir,sous les seuils en bp
+ANO-C3-003,C3,J1,OUI (P9-D - mecanisme volatilite),direction de la sortie a etablir ou produit volatilite,aucune direction publiee
+ANO-C4-001,C4,J1,NON,etat connu a la cloture du jour meme,inutilisable en intraday
+ANO-C4-002,C4,J1 (mecanique),NON,mecanisme mecanique documente (disqualifiant),ne pas trader une tautologie
+ANO-C5-001,C5,J1,NON - session/volatilite,pas de direction,contexte de timing seulement
+ANO-C5-002,C5,J1,NON,asymetrie horaire sans regle de sens claire,composition des journees non controlee
+ANO-C5-003,C5,J1,OUI (P9-E secondaire),examen de la composition (session/activite) puis esperance nette,avertissement de composition fort
+C4-10 (sous seuil),C4,SOUS LE SEUIL MATERIEL,NON,pas de fiche creee,sous le seuil gele
+C6-02 (sous seuil),C6,SOUS LE SEUIL MATERIEL,NON,pas de fiche creee,effet 0.0208 < 0.05 d ER
+I-03 (declassee),C7,SENSIBLE A LA COMPOSITION,NON,pas de candidate (controle gele),composition par ere 7.0 pts > seuil 5
+FJ-02 (sous seuil),C8,SOUS LE SEUIL MATERIEL,NON,pas de fiche creee,effet -3.74 bp < seuil 10 bp
+NEG-C3-001..009,C3,NEGATIFS / SOUS SEUIL,NON,conserves comme bornes negatives,-
+C4-01/C4-06,C4,NON ELIGIBLES,NON,effectifs publies (9 et 5 fenetres),-
+C5-03/C5-09,C5,NON ELIGIBLES,NON,effectifs publies,-
+C5-10,C5,STRUCTURELLEMENT NON EVALUABLE,NON,aucune journee 1440/1440,ne sera jamais une preuve d absence
+I-02/I-05,C7,NON EVALUABLES (composition),NON,controles de composition geles,-
+FJ-05,C8,NON EVALUABLE (grappes/composition),NON,graphe gele: 12 grappes; composition sensible,-
+FJ-01/FJ-03/FJ-04 et autres negatifs,C1-C8,NEGATIFS,NON,publies dans les rapports de campagne,-
