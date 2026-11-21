@@ -1,6 +1,11 @@
 name: phase10_all
-on:
-  workflow_dispatch: {}
+'on':
+  workflow_dispatch:
+    inputs:
+      synth_only:
+        description: Synthese seule depuis les artefacts du run moteur 44919631588
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -34,6 +39,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
+    if: ${{ !inputs.synth_only }}
   run1:
     name: P10 moteur 2016 (repris C8)
     runs-on: ubuntu-latest
@@ -66,6 +72,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
+    if: ${{ !inputs.synth_only }}
   run2:
     name: P10 moteur 2020 (repris C8)
     runs-on: ubuntu-latest
@@ -98,6 +105,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
+    if: ${{ !inputs.synth_only }}
   synthese:
     name: P10 synthese portes+BY
     runs-on: ubuntu-latest
@@ -114,21 +122,47 @@ jobs:
       with:
         python-version: '3.11'
     - run: pip install -q pandas numpy scipy
-    - name: Recuperer les lots
+    - name: Recuperer les lots (run courant)
+      if: ${{ !inputs.synth_only }}
       uses: actions/download-artifact@v4
       with:
         pattern: p10-events-*
         path: artifacts
         merge-multiple: true
+    - name: Recuperer les lots (run moteur 44919631588)
+      if: ${{ inputs.synth_only }}
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p10-events-*
+        path: artifacts
+        merge-multiple: true
+        run-id: 44919631588
+        github-token: ${{ github.token }}
     - name: Fusionner les lots
-      run: "python - <<'PYEOF'\nimport glob, pathlib, pandas as pd\nfs=sorted(glob.glob('artifacts/PHASE10_EVENTS.csv.gz'))\n\
-        print('lots', fs)\nif fs:\n    ev=pd.concat([pd.read_csv(f) for f in fs]).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal')\n\
-        \    pathlib.Path('reports/meta_alpha/phase10').mkdir(parents=True, exist_ok=True)\n\
-        \    ev.round(4).to_csv('reports/meta_alpha/phase10/PHASE10_EVENTS.csv.gz',\
-        \ index=False, compression='gzip')\n    print('evenements fusionnes', len(ev))\n\
-        PYEOF"
+      run: 'python - <<''PYEOF''
+
+        import glob, pathlib, pandas as pd
+
+        fs=sorted(glob.glob(''artifacts/**/PHASE10_EVENTS.csv.gz'', recursive=True))
+
+        print(''lots'', fs)
+
+        dfs=[pd.read_csv(f) for f in fs]
+
+        ev=pd.concat(dfs).drop_duplicates(subset=[''famille'',''t_signal'',''t_entree'']).sort_values(''t_signal'')
+        if dfs else pd.DataFrame()
+
+        pathlib.Path(''reports/meta_alpha/phase10'').mkdir(parents=True, exist_ok=True)
+
+        ev.round(4).to_csv(''reports/meta_alpha/phase10/PHASE10_EVENTS.csv.gz'', index=False,
+        compression=''gzip'')
+
+        print(''evenements fusionnes'', len(ev))
+
+        PYEOF'
     - name: Portes avant inference, BY m=6
-      run: python ci_tools/phase10_synthesize.py
+      run: python ci_tools/phase10_synthesize.py 2>&1 | tee reports/meta_alpha/phase10/SYNTH_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
     - name: Publier les resultats Phase 10
       uses: actions/upload-artifact@v4
       with:
@@ -136,3 +170,6 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
+      if: always()
+    if: ${{ always() && (inputs.synth_only || (needs.run0.result == 'success' && needs.run1.result
+      == 'success' && needs.run2.result == 'success')) }}
