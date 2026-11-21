@@ -2994,6 +2994,58 @@
     "statut": "F-I V1 PROTOCOLE DEFINITIF GELE - execution interdite sans ordre distinct du proprietaire"
    },
    "entry_hash": "9d20a55314e13228e623eeae562a6fe57d557b3467842844ffdf94dcc47d73ce"
+  },
+  {
+   "seq": 251,
+   "prev_hash": "9d20a55314e13228e623eeae562a6fe57d557b3467842844ffdf94dcc47d73ce",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "07",
+    "objet": "ORDRE DU PROPRIETAIRE: feu vert execution des calculs descriptifs F-I (protocole gele seq250, checkpoint distant 556c2090)",
+    "incident_accepte": "fichier du protocole restaure a l octet pres dans son etat valide; coquille cosmetique non corrigee pendant la campagne",
+    "perimetre": "I-01 a I-05 uniquement; G50/P50 demi-pas exact primaire; R100+25 descriptive uniquement; R10+5 demi-pas exact selon protocole; constantes et evenements du protocole gele",
+    "composition": "regles preenregistrees eres/sessions/sens/distance initiale/exposition; aucune information future ni etiquette F3 poolee; aucune p issue du controle",
+    "methode": "bootstrap grappes-journees; BY m=5 fixe; toutes p et q calculables publiees; aucune imputation; negatifs/censures/non eligibles/structurellement non evaluables publies",
+    "livrables": [
+     "rapport scientifique F-I",
+     "resultats detailles des cinq",
+     "comparaisons rond/placebo par anneau",
+     "distributions exposition et comparabilite",
+     "diagnostics couverture et censures",
+     "negatifs et non evaluables",
+     "controles BY",
+     "incidents et limites",
+     "catalogue ANO sans promotion",
+     "SHA-256, checkpoint, verification chaine"
+    ],
+    "restrictions": "descriptif seul, ni optimisation ni capturabilite; XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; candidates C5 sans confirmation automatique; F-H en reserve; suspension documentee si depassement budget gratuit, aucune degradation methodologique"
+   },
+   "entry_hash": "a6c59713c39d3aa037f5fc00a91fd2dee6ebc9d6b65fa2fb6dc7cc9cdbd49606"
+  },
+  {
+   "seq": 252,
+   "prev_hash": "a6c59713c39d3aa037f5fc00a91fd2dee6ebc9d6b65fa2fb6dc7cc9cdbd49606",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "07",
+    "objet": "Gel confirme avant extraction (quatre documents compagnons + protocole V1, hashes identiques au gel seq250)",
+    "sha256": {
+     "CAMPAIGN_07_PROTOCOL_V1.md": "250909314f7df58eba43c0a848a49bfa09387f70c8f025249cc8c527e110f382",
+     "CAMPAIGN_07_FI_BLUEPRINT.md": "749d345648e62a2a53b753473d0c5e63a7a84b7da85cd4ee331ca8060a578158",
+     "CAMPAIGN_07_FI_DICTIONARY.md": "334c893982ef3caafceb381e11a40394613e9b043f98791dcd6a58d8b710d2d2",
+     "CAMPAIGN_07_FI_COMPARISONS.md": "a89e5a2a9df85f7d295734408b9ff93df06a807f9c26a6445cca2b543d2ec69b",
+     "CAMPAIGN_07_FI_COVERAGE_BIASES.md": "d8c06fef39825bd9876a1cfaf0c77696383fcc39b0d9e049982d01b79d07d815"
+    },
+    "comparaisons": [
+     "I-01 P(franchissement strict|approche) G50 vs P50",
+     "I-02 P(rejet|touche) G50 vs P50",
+     "I-03 distance post-franchissement G50 vs P50 (ratio 1.15)",
+     "I-04 P(franchissement|approche) R100 vs R10 anneaux disjoints",
+     "I-05 difference des ecarts (G50-P50) entre eres 2010-13 et 2017-20"
+    ],
+    "statut": "EXECUTION DESCRIPTIVE AUTORISEE EN COURS"
+   },
+   "entry_hash": "1df78c69e83adbfdb54884f5eb4f618ef398c65826417320cbf99c00d2185bed"
   }
  ]
 }
