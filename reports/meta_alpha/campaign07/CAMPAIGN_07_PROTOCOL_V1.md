@@ -4,7 +4,7 @@
 AVANT TOUT GEL. AUCUN CALCUL F-I, AUCUNE EXTRACTION, AUCUNE
 CONSULTATION DE RÉSULTATS.** Ce document unique consolide le blueprint
 (`749d3456…`), le dictionnaire (`334c8939…`), les comparaisons
-(`a89e5a2a…`) et la couverture/biais (`d8c06fef…`) de la préparation
+(`a89e5a2a…`) et la couverture/biais (`d8c06fe f…`) de la préparation
 seq246, intègre la correction placebo par anneau et les constantes
 validées par le fondateur. En cas de tension, le présent protocole
 prévaut sur les documents de préparation.

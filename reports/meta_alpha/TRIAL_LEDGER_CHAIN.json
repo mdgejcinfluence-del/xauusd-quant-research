@@ -2949,6 +2949,51 @@
     "statut": "PROTOCOLE CONSOLIDE SOUMIS AU PROPRIETAIRE AVANT GEL - execution toujours interdite"
    },
    "entry_hash": "89357834572c9e5da0b83e33305b7b2ca96a6d199dee46d7bb539c83d30e1c3e"
+  },
+  {
+   "seq": 249,
+   "prev_hash": "89357834572c9e5da0b83e33305b7b2ca96a6d199dee46d7bb539c83d30e1c3e",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "07",
+    "objet": "Autorisation fondateur: protocole consolide F-I V1 valide, gel definitif autorise (gel documentaire uniquement)",
+    "sha256_valide": "250909314f7df58eba43c0a848a49bfa09387f70c8f025249cc8c527e110f382",
+    "placebo_accepte": {
+     "G50+25": "demi-pas exact, reference primaire",
+     "R100+25": "translation non equivalente, descriptive uniquement",
+     "R10+5": "demi-pas exact, perimetre du protocole"
+    },
+    "gele": "cinq comparaisons I-01..I-05, constantes, controle de composition, BY m=5",
+    "operations": [
+     "chainer le gel",
+     "verifier SHA-256",
+     "confirmer integrite des documents compagnons",
+     "publier checkpoint et tete de chaine",
+     "produire le proces-verbal de gel"
+    ],
+    "interdit": "aucun calcul, extraction ou consultation de resultats F-I a ce stade; aucune modification methodologique apres gel sauf addendum distinct chaine avant execution",
+    "restrictions": "XAU/USD; holdout scelle; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; candidates C5 sans priorite"
+   },
+   "entry_hash": "d1650381c5e16314ee2eece193a9c8160c7aed75d31304f26e5d1b2d16d820d7"
+  },
+  {
+   "seq": 250,
+   "prev_hash": "d1650381c5e16314ee2eece193a9c8160c7aed75d31304f26e5d1b2d16d820d7",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "07",
+    "objet": "GEL DEFINITIF du protocole F-I V1. Hash reverifie avant chainage; documents compagnons inchanges (hashes seq246 reverifies).",
+    "sha256": {
+     "CAMPAIGN_07_PROTOCOL_V1.md": "250909314f7df58eba43c0a848a49bfa09387f70c8f025249cc8c527e110f382",
+     "CAMPAIGN_07_FI_BLUEPRINT.md": "749d345648e62a2a53b753473d0c5e63a7a84b7da85cd4ee331ca8060a578158",
+     "CAMPAIGN_07_FI_DICTIONARY.md": "334c893982ef3caafceb381e11a40394613e9b043f98791dcd6a58d8b710d2d2",
+     "CAMPAIGN_07_FI_COMPARISONS.md": "a89e5a2a9df85f7d295734408b9ff93df06a807f9c26a6445cca2b543d2ec69b",
+     "CAMPAIGN_07_FI_COVERAGE_BIASES.md": "d8c06fef39825bd9876a1cfaf0c77696383fcc39b0d9e049982d01b79d07d815"
+    },
+    "incident_documentaire": "a la verification pre-gel, le fichier portait le hash 0291a70d... au lieu du valide 25090931...: une correction cosmetique d un caractere (espace dans une reference de hash tronquee, ligne 7) avait ete appliquee apres emission du hash soumis. Fichier restaure a l octet pres a l etat valide (reverifie 250909314f...82) et gele dans cet etat; coquille sans portee, hash complet du compagnon au proces-verbal; diff Git: une ligne, un caractere.",
+    "statut": "F-I V1 PROTOCOLE DEFINITIF GELE - execution interdite sans ordre distinct du proprietaire"
+   },
+   "entry_hash": "9d20a55314e13228e623eeae562a6fe57d557b3467842844ffdf94dcc47d73ce"
   }
  ]
 }
