@@ -2136,6 +2136,36 @@
     "resultat": "Dossier final de cloture Campagne 4 livre sans aucun nouveau calcul sur les donnees sources (tabulations des seules sorties produites seq202): RECONCILIATION - 1281 episodes, 1280 transitions entre episodes consecutifs (286 confirmees + 994 non confirmees = categories de transitions, jamais d episodes); dernier episode identifie dans CAMPAIGN_04_EPISODES.csv: BAS d une journee le 2019-12-16, censure_bord=True, duree tronquee exclue des medianes, cible de la 1280e transition HAUT->BAS classee non confirmee PAR CENSURE DE BORD (persistance observable 1 jour, corpus termine), aucune transition sortante; premier episode sans transition entrante; aucun chiffre modifie. INTERPRETATION F3 CORRIGEE: discordance 60,2% conservee comme descriptif mais retiree comme preuve d incapacite de F3 - les classements melangent objets (prevision continue vs RV realisee) et fenetres (terciles causaux 250j vs 60j); formulation faisant foi substituee; matrice de confusion complete et marginales publiees depuis les sorties (accord 39,8%, n=2011 journees classees des deux cotes); aucun diagnostic nouveau calcule. CANDIDATES QUALIFIEES: ANO-C4-001 conservee J1 descriptive contemporaine avec risque de dependance mecanique volatilite/detection IMP-M5 explicitement documente (seuil causal lent vs RV du meme materiau), ANO-C4-002 conservee avec avertissement mecanique majeur et sans statut d anomalie independante etablie; aucun J2/J3. DOSSIER: tableau complet des dix comparaisons (statistiques, IC95, p brutes, q BY, effectifs, materialite, lectures: 2 candidates, 1 significative sous seuil C4-10, 5 negatives, 2 non eligibles C4-01/C4-06 a 9 et 5 fenetres), traces des corrections skew et unite x100 avec effets bornes, registre consolide des limites. HASHES SHA256 COMPLETS: dictionnaire v2 0a615c54fa4b7b2c2980428c486571f76f1b29abc6ec892538940ed0e0f12824; dix comparaisons 4024eaaefc16031d813fe73a2effab2d648e60d6172c0359954fc8deb7d8ff5a; dossier de cloture 65f736c0df1fe247ed40c64a03ce2a4e7b69ac5a7e604dcd8e01c3ae122a8a68; cartographie 84de5711efce973e5d22a67024e94d2e1c53cdb4a6bc1038fc89507573e9fbcd; tableau des comparaisons 520632c36c669bf6b043d682dd658980bbd3e2a827ef0be3a01de87be22cbfe9; registre 41f744e02130e87f9106a868ff21d652d64ed37f77d9bdc214a20d9147e528bf; qualite 688fba7fd402bc8ca62939a969953035f4a24dceafa71970afc9e64266f48c50. Aucun recalcul ANO-C2, 0 backtest/challenge_sim/holdout/budget, T0 inactif, FRED suspendue, S12 gelees. STATUT: CAMPAGNE 4 CLOTUREE SOUS RESERVE LEVEE PAR LE PRESENT COMPLEMENT - VALIDATION FINALE DU PROPRIETAIRE EN ATTENTE"
    },
    "entry_hash": "62fc0051976c7ff955fbbf993ee276721b4e52ea5e0131d706f1fa627b42d344"
+  },
+  {
+   "seq": 205,
+   "prev_hash": "62fc0051976c7ff955fbbf993ee276721b4e52ea5e0131d706f1fa627b42d344",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_04_CLOTURE_DEFINITIVE",
+    "resultat": "Campagne 4 VALIDEE ET CLOTUREE au niveau descriptif par le fondateur: ANO-C4-001 reste J1 descriptive, ANO-C4-002 observation avec avertissement mecanique majeur sans anomalie independante etablie, C4-10 significative sous seuil, C4-01/C4-06 non eligibles, cinq negatives conservees. Precision documentaire consignee sans aucun calcul ni modification de donnee source ni des rapports seq202/seq204: CAMPAIGN_04_CLOSING_NOTE_CENSORSHIP.md (sha256 calcule a l entree suivante) etablit que le total de 994 non confirmees inclut l unique transition censuree a droite du 2019-12-16 - detail faisant foi desormais: 286 confirmees, 993 reellement non confirmees, 1 censuree a droite, total 1280 transitions entre 1281 episodes; le catalogue CSV n est pas modifie, la note attache le motif a la ligne identifiable (candidate du dernier jour du corpus, persistance 1)"
+   },
+   "entry_hash": "91d964006c5599ab8a42ecbbdb2d937f8d3ddbb36d4aaabbdc15759edff4764b"
+  },
+  {
+   "seq": 206,
+   "prev_hash": "91d964006c5599ab8a42ecbbdb2d937f8d3ddbb36d4aaabbdc15759edff4764b",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_05_PROPOSITION",
+    "resultat": "Proposition Campagne 5 presentee sans aucun calcul (CAMPAIGN_05_PROPOSAL.md): familles F-E temporalite fine des sessions (ouverture d Asie jamais mesuree, traitement inter-jours dedie; transitions de sessions; jours de semaine sans seuil importe) et F-F extremes journaliers et hebdomadaires dates (extreme courant daté a seuils causaux vs extreme final de cloture jamais predicteur; trajectoires apres instantane selon l heure de formation), conformement a l ordre du plan de reprise seq183; regles causales proposees, comparaisons fermees <=10 en familles separees, bootstrap journees, negatifs conserves, J1 sans promotion; corpus IS consulte seul, holdout scelle, T0 inactif, FRED suspendue, S12 gelees; preparation complete (blueprint, dictionnaire a valider, methode, couverture) uniquement si le principe est valide. Exploration multi-familles maintenue, aucune anomalie C4 au centre du programme"
+   },
+   "entry_hash": "35f4f2374a1c84020c8980184d7db39b1823c03655769d4ace4a2e92b4a83dc0"
+  },
+  {
+   "seq": 207,
+   "prev_hash": "35f4f2374a1c84020c8980184d7db39b1823c03655769d4ace4a2e92b4a83dc0",
+   "entry": {
+    "type": "PREREG_HASH_VALEUR",
+    "mission": "CAMPAIGN_04_CLOTURE_DEFINITIVE",
+    "resultat": "sha256(CAMPAIGN_04_CLOSING_NOTE_CENSORSHIP.md)=692e67cf5661d6a603746b0545983817920da1d4d1f29ca432c37e3edfd105f9 (calcule par appel separe apres ecriture, patron etabli); sha256(CAMPAIGN_05_PROPOSAL.md)=adca8c5f4a344b9efb50b5dbcd98426d08d4726869a7c7c46a84ee5947385f64"
+   },
+   "entry_hash": "c918fe480707f343a3f152a9d5c693bbb2c261ea17fdfa1888d02909a5708bbc"
   }
  ]
 }
