@@ -1936,6 +1936,36 @@
     "resultat": "Decision proprietaire validation seq183 et reprise de l exploration: deux chantiers independants maintenus. A) Confirmation prospective T0: protocole accepte dans son principe (hypothese unique, MDE 5 pts, puissance 90%, alpha bilateral 5%, seuils expanding-window, grappes jour x niveau, aucune consultation intermediaire); completer la justification du dimensionnement (distribution des tailles de grappes, correlation intragrappe, sensibilite du design effect, justification des 500 grappes/groupe et 1500 totales, separation amorcage/confirmatoire); la collecte prospective n empeche pas les recherches historiques. B) CAMPAGNE 3 autorisee EN PREPARATION: Impulsions et Consolidations - cartographie causale (reconstruire les impulsions depuis les informations disponibles a leur formation, phases de developpement, retracements sans classifier le declenchement par la profondeur future, formation/duree/sortie des consolidations, comparaisons sessions/epoques/regimes, differences comportementales sans recherche de strategie, candidates J1 et negatifs conserves); ne presupposer ni continuation d impulsion ni expansion apres consolidation; definitions gelees avant calculs; livrables de preparation BLUEPRINT/EVENT_DICTIONARY/METHOD_AND_MULTIPLICITY/DATA_COVERAGE, execution de la cartographie descriptive apres validation du dictionnaire. C) Doctrine: confirmation et decouverte = missions paralleles, aucune n etouffe l autre; decouverte non conditionnee a la ressemblance avec ANO-C1/C2; catalogue commun avec niveaux de preuve. D) Separation des donnees: flux prospectif T0 jamais utilise en exploration; descriptif historique sur IS consulte seul; holdout scelle. E) Aucun backtest/challenge_sim/optimisation/promotion automatique J2/J3, strategies S12 gelees intactes, aucun budget experimental de trading, FRED suspendue"
    },
    "entry_hash": "0efd7d01cb2d200eb3425000dfe35b91ef82f97868db28887306b520de82c441"
+  },
+  {
+   "seq": 185,
+   "prev_hash": "0efd7d01cb2d200eb3425000dfe35b91ef82f97868db28887306b520de82c441",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_03_EVENT_DICTIONARY_GELE",
+    "resultat": "Dictionnaire des evenements Campagne 3 gele avant calcul (hash chaine a l entree suivante apres verification separee): IMP-M5 principale et IMP-M15 secondaire (declenchement |r| >= quantile 90 roulant 60 jours causal, instantanes T0/+1/+3/+6/+12 barres, variables closes a l instantane, issues strictement apres bornees +60min, grappe journee, chevauchements comptes); CONS M1 (barre calme = range <= 0,5 x mediane causale 5 jours, formation a la 6e barre calme consecutive, sortie = premiere barre range > 2x range de formation ou cloture hors range, sinon censuree +120min, aucun presuppose d expansion); classification par le futur interdite; methode: 12 comparaisons fermees max, bootstrap par journees, BY interne, seuils materiels et suffisance repris de la campagne 2; execution de la cartographie descriptive uniquement apres validation proprietaire du dictionnaire"
+   },
+   "entry_hash": "586f70e947229a2a5fdbf3504cdbde71f18e1e050b5403c053ec605b51f1570a"
+  },
+  {
+   "seq": 186,
+   "prev_hash": "586f70e947229a2a5fdbf3504cdbde71f18e1e050b5403c053ec605b51f1570a",
+   "entry": {
+    "type": "PREREG_HASH_VALEUR",
+    "mission": "CAMPAIGN_03_EVENT_DICTIONARY_GELE",
+    "resultat": "sha256(CAMPAIGN_03_EVENT_DICTIONARY.md)=76490c40e4c6aca1cad56a98f30d4711d6723ac56e39cf08f978a0349d354a92 (calcule par appel separe apres ecriture, patron seq154/157/164)"
+   },
+   "entry_hash": "f343db99835c71cbc6a963e45a5a8aeba8654f471dca86b70b25fb565c6d9dac"
+  },
+  {
+   "seq": 187,
+   "prev_hash": "f343db99835c71cbc6a963e45a5a8aeba8654f471dca86b70b25fb565c6d9dac",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_02_4_JUSTIFICATION_ET_CAMPAIGN_03_PREPARATION",
+    "resultat": "Livraison de preparation seq184 executee (aucun calcul de cartographie, 0 budget, holdout scelle, FRED suspendue): CHANTIER A - justification du dimensionnement T0 completee sur amorcage: tailles de grappes medie 5/moy 7,12/P90 16/P99 27/max 40, CV 0,86 (taille ajustee m*=12,4), ICC ANOVA estime rho=0,121 -> DE central 2,38 (sensibilite tabulee DE 1,57 a 6,70 pour rho 0,05-0,50), effectifs au scenario central ~3350 episodes/groupe extreme et ~10000-14000 totaux; planchers justifies: 500 grappes/groupe (stabilite du bootstrap, blocs semestriels, protection contre les echantillons riches en episodes mais pauvres en journees) et 1500 totales (~700 journees); separation amorcage/confirmatoire explicitee (l amorcage ne compte jamais dans l effectif; collecte prospective non bloquante pour l historique). CHANTIER B - CAMPAGNE 3 PREPAREE: blueprint (reconstruction causale impulsions/consolidations par instantanes, presupposes de continuation/expansion interdits), dictionnaire gele seq185-186 (IMP-M5/M15 a seuil causal roulant 60j, CONS M1 formation 6 barres calmes sous seuil causal 5j, sorties distinguees sans presuppose), methode (12 comparaisons fermees, BY, bootstrap journees, regle J1 campagne 2), couverture (IS consulte seul, flux prospectif T0 interdit, holdout scelle). STATUT: preparation livree - execution de la cartographie descriptive Campagne 3 en attente de validation du dictionnaire par le proprietaire"
+   },
+   "entry_hash": "00120879ac0b416c85dddbef7d84b7ae4d17b4d65f390818b8a04c0b661047b5"
   }
  ]
 }
