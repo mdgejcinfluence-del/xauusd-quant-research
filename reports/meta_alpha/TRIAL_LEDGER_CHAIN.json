@@ -2226,6 +2226,36 @@
     "resultat": "sha256(CAMPAIGN_05_PROTOCOL_V2.md)=818837fd5fb500b2906685367ea72acc18c2b5ddfce64de3bdfe5c8239818331 (calcule par appel separe apres ecriture); le protocole consolide v2 fait foi pour l execution si validation definitive, les documents seq209 restant la trace de preparation; statut: CAMPAGNE 5 PROTOCOLE V2 EN ATTENTE DE VALIDATION DEFINITIVE, aucun calcul, execution interdite, T0 inactif, restrictions inchangees"
    },
    "entry_hash": "1c7d057ec7dc71cc0ad9681e66fe309e1b7468038318bdacc3f6a8385f7872f0"
+  },
+  {
+   "seq": 214,
+   "prev_hash": "1c7d057ec7dc71cc0ad9681e66fe309e1b7468038318bdacc3f6a8385f7872f0",
+   "entry": {
+    "type": "MISSION",
+    "mission": "CAMPAIGN_05_ADDENDUM_V21",
+    "resultat": "Retour fondateur: architecture Campagne 5 validee, gel et execution en attente de six precisions a figer avant toute consultation: (1) couverture et donnees manquantes critiques - qualite M1 complete pour F-E/F-F, taux de couverture attendus par journee/session/fenetre/semaine, trous et periodes absentes, censure des premieres atteintes si des donnees manquent avant l evenement, ineligibilite des journees declarees contenues sans observation suffisante, jamais d assimilation absence observee = absence reelle; (2) heure de disponibilite pour les seuils 08:00/13:00/mercredi 00:00 de C5-06/08/09, bornes inclusives/exclusives; (3) populations exactes des premieres atteintes C5-06 a C5-09 (touch vs franchissement strict, denominateurs, un seul cote, aucun cote, deux atteintes successives, exclusion des ordres indetermines); (4) mouvement pre-ouverture C5-02 (mouvement nul jamais poursuite, quatre categories exclusives poursuite seule/retournement seul/les deux/aucun, seuils de 50%, denominateur exact); (5) formule complete et provenance du spread C5-05; (6) materialite precisee (5 points = points de pourcentage, ratio 1,15 symetrique, formules des contrastes). Livrable: addendum formel V2.1 relie au V2, definitions finales, tableau des dix actualise, resume des modifications, hashes complets, checkpoint et chaine. Aucun calcul, restrictions inchangees"
+   },
+   "entry_hash": "97837484dd4083c48ba11796fec5a356d104914ce820085b5d39b7d6677ab330"
+  },
+  {
+   "seq": 215,
+   "prev_hash": "97837484dd4083c48ba11796fec5a356d104914ce820085b5d39b7d6677ab330",
+   "entry": {
+    "type": "PREREG",
+    "mission": "CAMPAIGN_05_ADDENDUM_V21",
+    "resultat": "Addendum formel V2.1 au protocole Campagne 5 presente a validation definitive (sha256 CAMPAIGN_05_PROTOCOL_V2_1_ADDENDUM.md=509a2863ca633a6f6ad985fe55223b97a1bb743e1011e2cb6a966d59ad67bd45, protocole V2 re-verifie inchange 818837fd5fb500b2906685367ea72acc18c2b5ddfce64de3bdfe5c8239818331; hashes calcules par appel separe apres ecriture): six corrections figees avant toute consultation - (1) couverture: statuts de journee COMPLETE (>=95% des minutes, bornes 00:10/23:50, aucun trou >30 min) / PARTIELLE / EXCLUE, censure d anteriorite des atteintes precedees d un trou >15 min le meme jour, classe CONTENUE_NON_ETABLIE (jamais d assimilation absence observee = absence reelle), couverture >=90% et trou <=15 min pour les fenetres, session <50% ineligible, regle recursive hebdomadaire; (2) seuils horaires de C5-06/08/09 en heure de disponibilite (cloture de barre) avec bornes inclusives/exclusives et equivalents en debut de barre; (3) populations exactes C5-06 a C5-09: franchissements stricts seuls, touch hors comparaisons, denominateurs par cote, cote unique atteint sans zero impose, atteintes successives opposees retenues et marquees, simultanees meme barre exclues et publiees; (4) C5-02: mouvement pre-ouverture nul classe MOUVEMENT_NUL exclu du denominateur jamais poursuite, quatre categories exclusives POURSUITE_SEULE/RETOURNEMENT_SEUL/LES_DEUX/AUCUN (+censure), seuils de 50% en prix relatifs, P(poursuite)=(seule+les deux)/denominateur parts publiees; (5) spread C5-05 formule complete mediane tick (ask-bid)/mid x10^4 par barre M1 puis mediane sur 15 barres, provenance colonnes ask/bid/mid des partitions tick (variable historique campagnes 2.2-4), eligibilite >=12/15 barres; (6) materialite: 5 points = 5 points de pourcentage (0,05), ratio 1,15 symetrique (>=1,15 ou <=0,8696), formules de contraste par comparaison; tableau des dix actualise faisant foi avec le V2, resume des modifications inclus; aucun calcul, aucune donnee source modifiee"
+   },
+   "entry_hash": "46559b673ad77988dbdb89a0ef1b66e15dd6a11c6dbd8bd291ef33083f5d072e"
+  },
+  {
+   "seq": 216,
+   "prev_hash": "46559b673ad77988dbdb89a0ef1b66e15dd6a11c6dbd8bd291ef33083f5d072e",
+   "entry": {
+    "type": "RESULTAT",
+    "mission": "CAMPAIGN_05_ADDENDUM_V21",
+    "resultat": "Livraison seq214 terminee: addendum V2.1 + tableau des dix actualise + resume des modifications + hashes complets chaines seq215; protocole V2 inchange; statut CAMPAGNE 5 EN ATTENTE DE VALIDATION DEFINITIVE - EXECUTION INTERDITE; aucun calcul lance, 0 budget, holdout scelle, T0 inactif, FRED suspendue, S12 gelees, fiches historiques intactes, exploration multi-familles maintenue comme doctrine"
+   },
+   "entry_hash": "015260f90ff1ca69c66c5ae7fa148a492406c57c6d754b4242088633eed4c642"
   }
  ]
 }
