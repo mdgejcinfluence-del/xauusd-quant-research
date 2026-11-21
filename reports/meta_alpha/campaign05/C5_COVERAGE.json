@@ -1,0 +1,13 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "journees_presentes": 3097,
+ "journees_utilisables": 2572,
+ "ouvertures_lignes": 10288,
+ "atteintes_jour": 0,
+ "touches": 0,
+ "ordre_indetermine": 0,
+ "semaines": 520,
+ "atteintes_semaine": 504
+}
