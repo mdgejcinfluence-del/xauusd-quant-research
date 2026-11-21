@@ -3661,6 +3661,37 @@
     "statut": "PROTOCOLE PHASE 10-A GELE DEFINITIVEMENT - EXECUTION NON AUTORISEE, en attente d une decision distincte du responsable"
    },
    "entry_hash": "8b0248529ad32f4089df28d0181f40c477bf9dd5ef4d36fb6b43e816681d53b9"
+  },
+  {
+   "seq": 284,
+   "prev_hash": "8b0248529ad32f4089df28d0181f40c477bf9dd5ef4d36fb6b43e816681d53b9",
+   "entry": {
+    "type": "MISSION",
+    "phase": "10",
+    "objet": "Ordre d execution du responsable: campagne Phase 10 autorisee sous preflight conforme. Protocole PHASE 10-A gele definitivement seq283. Executer exclusivement F10-01 a F10-06 dans l ordre et selon les definitions gelees (quantiles roulants causaux, fenetres et horizons preenregistres, disponibilite reelle, entree a la premiere cotation executable de la barre suivante, delai maximal 120 secondes, comptabilite Bid/Ask sans double soustraction, plafonds MAE/P90/ES90 evenement et grappe, effectifs minimaux, portes economiques avant inference, BY preenregistre; aucune selection de sous-groupe ne peut sauver un test elimine). Livrables par test: evenements detectes/eligibles/ineligibles, couverture et exclusions, resultats bruts et nets, C_ref et decomposition des couts, mediane MAE, P90 et ES90, effectifs par grappe et par ere, decision de chaque porte, statistique/p-value/BY lorsque l inference est autorisee, verdict POSITIF ECONOMIQUE / NEGATIF ECONOMIQUE / NON ELIGIBLE / NON EVALUABLE; plus rapport global comparatif et limitations. Interdictions absolues: ne pas ouvrir le holdout, pas de septieme test, pas d optimisation des seuils, pas de strategie, protocoles geles non modifies, S12 non modifie, pas de challenge_sim, aucune promotion automatique, aucune depense. Toute anomalie methodologique documentee entraine un arret plutot qu une correction silencieuse",
+    "preflight_obligatoire": [
+     "verifier les sept hashes du protocole gele",
+     "verifier le chainage documentaire et l identite du commit de reference",
+     "confirmer l acces limite aux partitions du corpus IS autorise",
+     "confirmer que le holdout 2020-2026 n est ni monte ni accessible au processus",
+     "controler la separation entre portes economiques et inference",
+     "verifier le traitement BY m=6 lorsque des hypotheses echouent aux portes avant inference"
+    ],
+    "arret": "si une verification echoue ou reste ambigue: STOP, aucun calcul, rapport du blocage"
+   },
+   "entry_hash": "a1afbc6bbe3483017462490f9e75ce815023ac002b43543a6f0701f4adefcec6"
+  },
+  {
+   "seq": 285,
+   "prev_hash": "a1afbc6bbe3483017462490f9e75ce815023ac002b43543a6f0701f4adefcec6",
+   "entry": {
+    "type": "PREFLIGHT",
+    "phase": "10",
+    "objet": "Preflight Phase 10 CONFORME sur les six points: (1) sept hashes revérifies a l octet pres identiques au gel seq283 (protocole ba64f4ee, dictionnaire 9dff87bc, couts 18a599cd, validation ed55b7d8, risques 3f06b743, addendum validation fff4c521, addendum final 10dadebf; proces-verbal 14ed57bc); (2) chaine valide 283 entrees, commit de reference du gel a2c85344 = HEAD et ancetre; (3) acces limite aux 282 partitions IS (borne IS_END 2020-01-20 09:36:27 UTC) de l inventaire autorise; (4) holdout ni liste, ni monte, ni lu par le processus, aucun chemin 2020-2026 dans le code; (5) synthese: portes 1-4 appliquees avant toute p-value, famille arretee sans p-value; (6) BY m=6 fixe avec facteur 6 conserve meme sans p-value pour les familles arretees aux portes. Operationnalisations declarees sans modification des definitions gelees: signaux sur clotures Mid, rentabilite sur Bid/Ask, entree approchee par l ouverture Bid/Ask de la barre suivante avec delai de 120 s controle par la presence au creneau attendu ou a la premiere barre apres fermeture reguliere (etiquete), barre de timeframe valide a >=50% de ses minutes attendues, sortie a l ouverture executable de la premiere barre debutant a ou apres la fin de fenetre.",
+    "sha256_preflight": "voir PHASE10_PREFLIGHT.md chaine avec le present enregistrement",
+    "statut": "PREFLIGHT CONFORME - execution autorisee a demarrer"
+   },
+   "entry_hash": "b5e843c5e0df0fe86f15188b730dcd203ade61254f7864e4ee945ad0f7ad7670"
   }
  ]
 }
