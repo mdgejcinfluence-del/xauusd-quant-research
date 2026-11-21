@@ -2833,6 +2833,88 @@
     "budgets": "aucun budget experimental consomme; holdout scelle; aucun J2/J3; aucun backtest/challenge_sim"
    },
    "entry_hash": "ce91a14a23e8d7ece42469f6eea309a7f07a06205cc237866da1ce06a2a09aa1"
+  },
+  {
+   "seq": 244,
+   "prev_hash": "ce91a14a23e8d7ece42469f6eea309a7f07a06205cc237866da1ce06a2a09aa1",
+   "entry": {
+    "type": "VALIDATION_FONDATEUR",
+    "campagne": "06",
+    "objet": "Cloture descriptive de la Campagne 6 definitivement acceptee",
+    "statuts_conserves": {
+     "C6-01": "NON_ELIGIBLE",
+     "C6-02": "SIGNIFICATIVE_SOUS_LE_SEUIL_MATERIEL",
+     "C6-03": "NEGATIF",
+     "C6-04": "NEGATIF",
+     "C6-05": "NEGATIF"
+    },
+    "catalogue": "ANO-C6 vide conserve, aucune nouvelle candidate J1",
+    "limites_maintenues": [
+     "distinction classes oscillantes/mixtes/deplacements faibles",
+     "designation exacte S = L/A",
+     "interpretation C6-05 limitee aux journees eligibles (censures concentrees 2010-2013)"
+    ],
+    "restrictions": "aucun nouveau calcul F-G, aucun retour sur les donnees sources; campagne 6 close au descriptif"
+   },
+   "entry_hash": "13011af535581cb4461b3fb0236b55e193022d9a8bb47c589568d83898ef993d"
+  },
+  {
+   "seq": 245,
+   "prev_hash": "13011af535581cb4461b3fb0236b55e193022d9a8bb47c589568d83898ef993d",
+   "entry": {
+    "type": "MISSION",
+    "campagne": "07",
+    "objet": "Decision fondateur: principe F-I Nombres ronds du XAU/USD approuve; preparation blueprint + dictionnaire autorisee, sans aucun calcul",
+    "question": "les niveaux de prix psychologiquement ronds presentent-ils des comportements particuliers (approche, premiere touche, franchissement strict, rejet, retour, maintien, distance post-franchissement, effet d echelle)?",
+    "garde_fous": [
+     "grilles definies avant toute consultation des resultats, echelles justifiees sans maximiser les effets",
+     "distances absolues USD vs relatives bp distinguees; evolution historique du prix entre eres",
+     "touche vs franchissement strict distingues; evenements simultanes et ordre indetermine definis",
+     "pas de confusion avec volatilite/session/amplitude; references conditionnelles appropriees",
+     "famille fermee preenregistree; unites, bootstrap, BY, materialites definies",
+     "negatifs, censures et non eligibles publies",
+     "audit de nouveaute vs campagnes 0 a 6 obligatoire"
+    ],
+    "livrables_attendus": [
+     "blueprint",
+     "dictionnaire evenements/variables",
+     "grilles de prix",
+     "causalite et disponibilite",
+     "comparaisons preenregistrees",
+     "methode et multiplicite",
+     "matrice de couverture",
+     "biais et limites",
+     "couts et suspension",
+     "comparaison campagnes precedentes",
+     "hashes et checkpoint"
+    ],
+    "restrictions": "XAU/USD; holdout scelle; aucun calcul ni extraction F-I; aucun backtest/challenge_sim; aucun J2/J3; budgets inchanges; FRED suspendue; S12 gelees; T0 inactif; fiches historiques inchangees; candidates C5 sans priorite; F-H en reserve"
+   },
+   "entry_hash": "27eac539922cea596a593a1066339e3c5d442a6c2545ceb42fe441b0d79629be"
+  },
+  {
+   "seq": 246,
+   "prev_hash": "27eac539922cea596a593a1066339e3c5d442a6c2545ceb42fe441b0d79629be",
+   "entry": {
+    "type": "PREREG",
+    "campagne": "07",
+    "objet": "Preparation F-I livree: blueprint (placebo decale comme dispositif central), dictionnaire (grilles G50 et anneaux disjoints R100/R50/R10, placebo G50+25 et G10+5, evenements approche/touche/franchissement strict/saut/rejet/retour/maintien/distance, simultanes et censures), cinq comparaisons I-01..I-05 (rond vs placebo, echelle, interaction d ere), methode bootstrap grappes-journees + BY m=5 fixe, matrice de couverture par ere, biais C1-C10, audit de nouveaute 0-6. Aucun calcul effectue.",
+    "sha256": {
+     "CAMPAIGN_07_FI_BLUEPRINT.md": "749d345648e62a2a53b753473d0c5e63a7a84b7da85cd4ee331ca8060a578158",
+     "CAMPAIGN_07_FI_DICTIONARY.md": "334c893982ef3caafceb381e11a40394613e9b043f98791dcd6a58d8b710d2d2",
+     "CAMPAIGN_07_FI_COMPARISONS.md": "a89e5a2a9df85f7d295734408b9ff93df06a807f9c26a6445cca2b543d2ec69b",
+     "CAMPAIGN_07_FI_COVERAGE_BIASES.md": "d8c06fef39825bd9876a1cfaf0c77696383fcc39b0d9e049982d01b79d07d815"
+    },
+    "constantes_a_geler_au_consolide": [
+     "bande approche 25 bp",
+     "washout 60 min",
+     "seuil rejet 25 bp",
+     "suivi 60 min",
+     "regle de declassement de composition (session/amplitude)"
+    ],
+    "statut": "PREPARATION SOUMISE - en attente validation de l orientation puis protocole consolide; calculs interdits"
+   },
+   "entry_hash": "4f955288c684fe00a660edbecd4cc4bf9a2ff1cc695b1f511318d0423c42fdcd"
   }
  ]
 }
