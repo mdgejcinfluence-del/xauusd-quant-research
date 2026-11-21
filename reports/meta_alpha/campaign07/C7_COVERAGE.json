@@ -1,0 +1,21 @@
+{
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_m1": 3540993,
+ "journees_presentes": 3097,
+ "episodes_par_grille": {
+  "P10": 11841,
+  "R10": 9958,
+  "P50": 2420,
+  "G50": 2359,
+  "P100": 1325,
+  "R100": 1290
+ },
+ "terminaux": {
+  "FRANCHISSEMENT": 14520,
+  "CENSURE_JOUR": 12657,
+  "REJET": 1611,
+  "SAUT": 306,
+  "SANS_EFFET": 99
+ }
+}
