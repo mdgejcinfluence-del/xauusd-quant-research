@@ -4237,6 +4237,18 @@
     "statut": "PHASE 13-B EN COURS"
    },
    "entry_hash": "bc2f1745a74608cc9cb1e7cbe08a60dc0dde1b5042472a2835ce816383ec477c"
+  },
+  {
+   "seq": 332,
+   "prev_hash": "bc2f1745a74608cc9cb1e7cbe08a60dc0dde1b5042472a2835ce816383ec477c",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "13-B",
+    "objet": "Evaluation economique exploratoire IS 2010-2020 (NIVEAU 2 uniquement) executee selon le contrat gele 13-A.1, run CI 45049575517 entierement vert (exit 0), apres deux incidents moteur consignes et corriges minimalement (fichier ticks vide; fuseau des barres) sans toucher aux contrats ni aux donnees. Population preenregistree F10-01 H1 EVALUATION 12-B: 543 candidats etiquetes 2018-2020 hors entrainement; controle de reproduction predictive exact (Brier 0,16538954947396367, log-loss 0,5468387473824291). Exposition p_M1 > M0 gele: 443 exposes, 100 sans exposition; entree premier tick reel dans (t_decision, +60s): 443 executes, 0 NON_EXECUTION (0/443 < 10 %); sortie cloture fenetre 8 bougies H1 Bid/Ask: 421 clotures conformes, 22 trajectoires incompletes (minute de sortie absente, exclues avec motif); spreads non finis 0/842 (< 5 %). Resultats bp log NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE - par evenement (n=421): S0 moyenne +0,11, mediane -0,89, 49,4 % positifs, perte max -203,5; S1 moyenne -0,89, mediane -1,89; S2 moyenne -1,89, mediane -2,89. Par grappe (390): moyennes +0,77 / -0,23 / -1,23, medianes toutes negatives. MFE mediane 25,3 bp, MAE mediane 20,9 bp (max 349,0): excursion defavorable du meme ordre que favorable; queue gauche lourde (p1 ~ -119 bp). Selon la grille fixee en seq331 avant resultats: ni POSITIVE (mediane S0 negative, S1/S2 negatifs) ni NEGATIVE integral (S0 moyen positif) et conditions d arret respectees. La previsibilite confirmee (niveau 1) ne se convertit pas en avantage economique etabli sur IS sous ce contrat; resultat fragile aux couts supplementaires, commissions toujours exclues. Niveau 3 non autorise; holdout definitivement exclu; aucune strategie ni etape suivante autorisee.",
+    "verdict": "ECONOMICALLY_INCONCLUSIVE_EXPLORATORY_IS",
+    "statut": "PHASE 13-B TERMINEE - aucune etape suivante autorisee automatiquement"
+   },
+   "entry_hash": "24a614ac554cdd25ef804253b85ce6e2583e76d0ade5f51d0d5ff114bc22c203"
   }
  ]
 }
