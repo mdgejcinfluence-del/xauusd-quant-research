@@ -3783,6 +3783,18 @@
     "statut": "EN ATTENTE DE VERIFICATION DU SECRET PAR LE PROPRIETAIRE"
    },
    "entry_hash": "1cb68d34697732c471de2a5543efe1539bd348725e180636eb486068dfb0a02f"
+  },
+  {
+   "seq": 294,
+   "prev_hash": "1cb68d34697732c471de2a5543efe1539bd348725e180636eb486068dfb0a02f",
+   "entry": {
+    "type": "RESULTAT_CORRECTIF",
+    "phase": "10",
+    "objet": "Relance ciblee F10-01/F10-03 executee selon l amendement seq289 (tests synthetiques 14/14 avant acces production). Verification des artefacts du run moteur 44919631588: comptages concordants seq288, couverture 282/282 partitions IS; artefacts sans series de barres, recomputation ciblee sur le meme corpus IS (8 lots Kaggle, 3 540 993 barres M1, agregation H1/H4, run 45011013927 entierement vert). Diagnostics fenetres: H1 59 184 fenetres, 3,78 % de rendements non finis cumules, 202 fenetres INELIGIBLE_CAUSAL_WINDOW; H4 15 195 fenetres, 3,81 %, 208 ineligibles. F10-01: 3 134 detectes, 3 107 eligibles, 2 617 grappes, seuil Q95 median 32,27 bp, spread median 2,30, C_ref 4,00, brut -1,73 bp, net central -3,43 bp, MAE evenement mediane/P90/ES90 17,19/45,11/70,60 (grappe 18,58/47,07/72,51), porte 1 franchie, arret porte 2, NEGATIF ECONOMIQUE, aucune p-value. F10-03: 762 detectes, 660 eligibles, 597 grappes, seuil Q95 median 69,57 bp, C_ref 4,01, brut -1,34, net central -3,04, MAE 24,17/73,74/126,09 (grappe 24,56/73,45/125,83), porte 1 franchie, arret porte 2, NEGATIF ECONOMIQUE, aucune p-value. BY conserve a m=6 fixe (jamais reduit a 2). Comparaison avant/apres: les anciens zeros etaient des resultats invalides d implementation (quantile empoisonne par les NaN), non des preuves d absence d evenements. Verdicts F10-02/F10-04/F10-05/F10-06 conserves (seq288). Aucune famille POSITIVE ECONOMIQUE sur IS; resultats historiquement evalues, jamais confirmations; aucune promotion ni strategie.",
+    "livrables": "reports/meta_alpha/phase10/PHASE10_CORRECTION_REPORT.md + RESULT_F10-01_CORRECTION.md + RESULT_F10-03_CORRECTION.md + PHASE10_CORRECTION_RESULTS.json + PHASE10_EVENTS_CIBLE.csv.gz + CORRECTION_ARTIFACT_VERIFICATION.json",
+    "statut": "PHASE 10: RAPPORT FINAL DES DEUX TESTS LIVRE - cloture soumise a validation du responsable"
+   },
+   "entry_hash": "30bf70c93804ce0b62a643613e7d0aafe628389a0888e260a551905883f0a363"
   }
  ]
 }
