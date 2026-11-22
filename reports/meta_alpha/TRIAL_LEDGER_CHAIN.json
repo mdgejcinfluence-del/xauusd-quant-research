@@ -3896,6 +3896,18 @@
     "statut": "EXECUTION APPROUVEE - reconstruction en cours"
    },
    "entry_hash": "5258b57999bec4d316997e11297c37ab048d34a0817ca05cf028de0c1880534f"
+  },
+  {
+   "seq": 304,
+   "prev_hash": "5258b57999bec4d316997e11297c37ab048d34a0817ca05cf028de0c1880534f",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "11-B.1",
+    "objet": "Reconstruction deterministe executee sous conditions strictes (protocole gele inchange, manifeste source jamais modifie: sha256 57b7b8af identique avant/apres). Algorithme historique retrouve et verifie avant reconstruction: fonction composantes de ci_tools/phase10_synthesize.py (commit d origine 84a3c5a, texte identique a HEAD, importee par la synthese corrective du run 45011013927/commit 817b974); composantes connexes de recouvrement [t_signal, t_sortie], nouvelle composante ssi t_signal strictement superieur au max des t_sortie vus, aucun parametre libre; perimetre d origine: admissibles uniquement (entree_eligible=1 et fenetre_complete=1), par famille separee, exclus hors clustering. Materialisation: event_id = SHA-256 de la serialisation canonique famille|timeframe|t_signal|sens (+1/-1) prefixe EV- (3896 uniques, 0 collision); grappe_id = GR-famille-rang chronologique. Les identifiants d origine n ont jamais existe: nouvelles etiquettes deterministes des composantes historiques reproduites. Controles: comptes exacts F10-01 3134/3107/27 et F10-03 762/660/102; grappes reproduites 2617 et 597; aucun melange H1/H4; tailles max 7/4; double execution identique a l octet pres (carte sha256 3281f594). Anomalies: ANO-11B-02 resolue pour l identification; ANO-11B-03 (P0 lisible sur M1 IS selon la definition gelee) et ANO-11B-04 (registre fenetres en agregat) ouvertes mais explicitement non bloquantes au regard du protocole gele. VERDICT: RECONSTRUCTION CONFORME; reprise des controles finaux 11-B: ADMISSIBLE POUR PHASE 11-C. Livrables: PHASE11B_EVENT_CLUSTER_MAP.csv, PHASE11B_11A_CLUSTER_RECONSTRUCTION.md, PHASE11B_1_RESULT.json. Phase 11-C non autorisee par cette mission.",
+    "verdict": "RECONSTRUCTION CONFORME - ADMISSIBLE POUR PHASE 11-C (non autorisee)",
+    "statut": "PHASE 11-B.1 TERMINEE; PHASE 11-C suspendue a decision distincte"
+   },
+   "entry_hash": "2a8698dd21ed53501c1f9dcc4e0b552777ca27a159e177c7bbd15d2fb006eacf"
   }
  ]
 }

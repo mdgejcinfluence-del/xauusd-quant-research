@@ -1,0 +1,21 @@
+{
+  "phase": "11-B.1",
+  "statut_global": "RECONSTRUCTION CONFORME",
+  "statut_F10_01": "CONFORME (3134 detectes, 3107 admissibles, 27 non admissibles, 2617 grappes reproduites)",
+  "statut_F10_03": "CONFORME (762 detectes, 660 admissibles, 102 non admissibles, 597 grappes reproduites)",
+  "provenance": "Manifeste source definitif reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz sha256 57b7b8af0a6e6c7ecaaa97d38231b0b0ce1242e2bc08487eadaf6637c3f474eb (run correctif 45011013927, commit 817b974); empreinte identique avant et apres l operation; manifeste initial defectueux 44919631588 non utilise comme source",
+  "code_historique_verifie": "ci_tools/phase10_synthesize.py, fonction composantes (lignes 20-29), introduite par le commit 84a3c5a (2026-11-21), texte de la fonction identique a l octet pres entre le commit d origine et HEAD; fichier HEAD sha256 479f407c3f8e48c8823a2846a79563126582062ec96e93bc2599083b7a842ffa; importee telle quelle par ci_tools/phase10_synthesize_correction.py (campagne corrective)",
+  "parametres_historiques_verifies": "Composantes connexes de recouvrement [t_signal, t_sortie]: tri par t_signal, nouvelle composante si et seulement si t_signal > maximum des t_sortie deja vus (egalite conservee dans la composante), extension du maximum sinon. Perimetre: evenements admissibles uniquement (entree_eligible==1 et fenetre_complete==1), par famille separee (jamais de connexion H1-H4), exclus hors clustering conservant leur statut. Aucun parametre libre, aucune fenetre ni distance choisie.",
+  "unicite_event_id": "VERIFIEE (3896 lignes, 3896 event_id uniques, 0 collision; SHA-256 de la serialisation canonique famille|timeframe|t_signal|sens au format +1/-1, prefixe EV-)",
+  "fidelite_clustering": "VERIFIEE (comptes reproduits exactement 2617 et 597 selon le perimetre historique; tailles verifiables dans la carte: max 7 evenements H1, 4 H4; 2202 et 542 singletons; aucune grappe ne melange les familles)",
+  "nombres_evenements": {"F10-01": 3134, "F10-03": 762, "total_carte": 3896},
+  "nombres_grappes": {"F10-01": 2617, "F10-03": 597},
+  "reproductibilite": "VERIFIEE (deux executions independantes produisent une carte identique a l octet pres, sha256 3281f594c94869641a05e8034d5d22f0f310f871e9134b0290c304f2951adc49)",
+  "nature_des_identifiants": "Les identifiants d origine n ont jamais existe: event_id et grappe_id sont de nouvelles etiquettes deterministes attribuees aux evenements et aux composantes historiques reproduites, non la recuperation d identifiants originaux.",
+  "anomalies_encore_ouvertes": [
+    {"id": "ANO-11B-02", "statut": "RESOLUE pour l identification (cle composite materialisee en event_id, unicite verifiee); ne bloque pas la Phase 11-C"},
+    {"id": "ANO-11B-03", "statut": "OUVERTE - NON BLOQUANTE (P0 non stocke; le protocole gele definit P0 comme le Mid de cloture de la bougie declencheuse, identifiable par t_signal+timeframe et lisible sur les barres M1 IS documentees: 282 partitions, 3540993 barres M1; a lire en Phase 11-C sans modifier le manifeste)"},
+    {"id": "ANO-11B-04", "statut": "OUVERTE - NON BLOQUANTE (registre des fenetres causales en agregat seulement 202/208; le protocole gele 11-A ne requiert aucun registre par fenetre, les populations 11-C etant les evenements; limite conservee)"}
+  ],
+  "admissibilite_reprise_audit_11B": "ADMISSIBLE POUR PHASE 11-C (verdict complet de reprise: toutes les verifications critiques de la Phase 11-B sont satisfaites pour les deux populations; la Phase 11-C reste suspendue a une autorisation distincte)"
+}
