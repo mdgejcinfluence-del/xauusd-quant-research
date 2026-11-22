@@ -1,21 +1,129 @@
-Error in sys.excepthook:
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 242, in <module>
-    else: mode_analyse()
-          ^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 126, in mode_analyse
-    from phase10_synthesize import composantes
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase10_synthesize.py", line 6, in <module>
-    from scipy import stats
-ModuleNotFoundError: No module named 'scipy'
-
-Original exception was:
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 242, in <module>
-    else: mode_analyse()
-          ^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 126, in mode_analyse
-    from phase10_synthesize import composantes
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase10_synthesize.py", line 6, in <module>
-    from scipy import stats
-ModuleNotFoundError: No module named 'scipy'
+{
+ "phase": "12-C.2",
+ "qualification": "CONFIRMATION HISTORIQUE HORS IS - NON VALIDATION PROSPECTIVE",
+ "detectes_holdout_bruts": 2140,
+ "detectes_contexte_avant_frontiere": 29,
+ "admissibles_holdout": 2126,
+ "exclusions": {
+  "CONTEXTE_AVANT_FRONTIERE": 29,
+  "NON_ADMISSIBLE": 14,
+  "GRAPPE_MIXTE_IS_HOLDOUT": 0,
+  "NON_REINTEGRE": 281,
+  "CENSORED": 2,
+  "AMBIGUOUS": 0
+ },
+ "reintegres_etiquetes": 1843,
+ "classe1": 1410,
+ "classe0": 433,
+ "criteres_evaluabilite": {
+  "n_min": 100,
+  "minorite_min": 50,
+  "satisfaits": true
+ },
+ "diagnostic_detecteur": {
+  "barres_examinees": 40705,
+  "fenetres_examinees": 40705,
+  "rendements_valides_total": 9700849,
+  "rendements_non_finis_total": 444026,
+  "fenetres_ineligibles_causal_window": 210,
+  "valides_min": 0,
+  "valides_mediane": 239.0,
+  "proportion_non_finis": 0.0437685038011804
+ },
+ "lots_barres": 7,
+ "couverture_barres_m1": {
+  "debut": "2019-11-10 23:00:00",
+  "fin": "2026-09-30 23:59:00",
+  "barres": 2441904
+ },
+ "M0": {
+  "brier": 0.17977973697767294,
+  "log_loss": 0.5452764927392939,
+  "auc": 0.5,
+  "precision_seuil_0_5": 0.7650569723277265,
+  "rappel_seuil_0_5": 1.0
+ },
+ "M1": {
+  "brier": 0.14819201612660826,
+  "log_loss": 0.48498553801055866,
+  "auc": 0.7424139681915712,
+  "precision_seuil_0_5": 0.8052941176470588,
+  "rappel_seuil_0_5": 0.9709219858156029
+ },
+ "delta_brier_M1_moins_M0": -0.03158772085106468,
+ "delta_log_loss_M1_moins_M0": -0.060290954728735247,
+ "calibration_M1": {
+  "intercept": 0.15203056680300644,
+  "pente": 0.9415484329257265,
+  "deciles": [
+   {
+    "decile": 0,
+    "n": 185,
+    "predit_moyen": 0.3209274914547738,
+    "observe": 0.3027027027027027
+   },
+   {
+    "decile": 1,
+    "n": 184,
+    "predit_moyen": 0.6556778990028239,
+    "observe": 0.5760869565217391
+   },
+   {
+    "decile": 2,
+    "n": 184,
+    "predit_moyen": 0.7362374941756894,
+    "observe": 0.8043478260869565
+   },
+   {
+    "decile": 3,
+    "n": 184,
+    "predit_moyen": 0.7664874447132412,
+    "observe": 0.7717391304347826
+   },
+   {
+    "decile": 4,
+    "n": 185,
+    "predit_moyen": 0.7866306644975154,
+    "observe": 0.8054054054054054
+   },
+   {
+    "decile": 5,
+    "n": 184,
+    "predit_moyen": 0.802799587178123,
+    "observe": 0.8369565217391305
+   },
+   {
+    "decile": 6,
+    "n": 184,
+    "predit_moyen": 0.8208226917044937,
+    "observe": 0.8532608695652174
+   },
+   {
+    "decile": 7,
+    "n": 184,
+    "predit_moyen": 0.8412986730747222,
+    "observe": 0.8913043478260869
+   },
+   {
+    "decile": 8,
+    "n": 184,
+    "predit_moyen": 0.8669286751441629,
+    "observe": 0.8804347826086957
+   },
+   {
+    "decile": 9,
+    "n": 185,
+    "predit_moyen": 0.9177177739081995,
+    "observe": 0.9297297297297298
+   }
+  ]
+ },
+ "distribution_probabilites_M1": {
+  "min": 1.3232657455903871e-13,
+  "p25": 0.7379451504902705,
+  "mediane": 0.794591170306097,
+  "p75": 0.8407199039442805,
+  "max": 0.9999914760630471
+ },
+ "verdict": "CONFIRMED_HISTORICAL_HOLDOUT"
+}

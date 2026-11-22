@@ -1,0 +1,39 @@
+{
+ "variables": {
+  "RATIO_REPLI_EXTENSION_A_TREINT": {
+   "borne_temporelle_verifiee": "minutes <= minute de reintegration incluse (features_bornees gele, tronquee a i_reint)",
+   "statut_anti_fuite": "BORNE_VERIFIEE",
+   "taux_valeurs_manquantes_parmi_reintegres": 0.132173095014111
+  },
+  "DUREE_EXTREME_VERS_TREINT_MIN": {
+   "borne_temporelle_verifiee": "minutes <= minute de reintegration incluse (features_bornees gele, tronquee a i_reint)",
+   "statut_anti_fuite": "BORNE_VERIFIEE",
+   "taux_valeurs_manquantes_parmi_reintegres": 0.132173095014111
+  },
+  "MFE_A_TREINT_BP": {
+   "borne_temporelle_verifiee": "minutes <= minute de reintegration incluse (features_bornees gele, tronquee a i_reint)",
+   "statut_anti_fuite": "BORNE_VERIFIEE",
+   "taux_valeurs_manquantes_parmi_reintegres": 0.132173095014111
+  },
+  "NB_TOUCHES_P0_AVANT_TREINT": {
+   "borne_temporelle_verifiee": "minutes <= minute de reintegration incluse (features_bornees gele, tronquee a i_reint)",
+   "statut_anti_fuite": "BORNE_VERIFIEE",
+   "taux_valeurs_manquantes_parmi_reintegres": 0.132173095014111
+  },
+  "SESSION_REINTEGRATION": {
+   "borne_temporelle_verifiee": "minutes <= minute de reintegration incluse (features_bornees gele, tronquee a i_reint)",
+   "statut_anti_fuite": "BORNE_VERIFIEE",
+   "taux_valeurs_manquantes_parmi_reintegres": 0.132173095014111
+  }
+ },
+ "controles": {
+  "modele_gele_charge_depuis": "PHASE12C1_MODEL_PARAMETERS.json sha256 verifie par assertion",
+  "reentrainement": "AUCUN",
+  "M0": 0.7591463414634146,
+  "M0_recalcule_sur_holdout": "JAMAIS",
+  "colonnes_fenetre_complete_dans_predicteurs": "AUCUNE",
+  "grappes_mixtes_exclues": 0,
+  "evaluation_unique_terminale": true
+ },
+ "anomalies": []
+}
