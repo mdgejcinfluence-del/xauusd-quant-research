@@ -1,0 +1,26 @@
+{
+ "reconciliations": {
+  "E0_X0_S0": {
+   "moyenne": 0.11130282596408449,
+   "mediane": -0.8917991641155775,
+   "attendu_13B": {
+    "moyenne": 0.11130282596408449,
+    "mediane": -0.8917991641155775
+   },
+   "conforme": true
+  },
+  "E0_X1_S0": {
+   "moyenne": 1.6110129974118665,
+   "attendu_phase14": 1.6110129974118665,
+   "conforme": true
+  },
+  "E0_X2_S0": {
+   "moyenne": 1.9407198587729937,
+   "attendu_phase14": 1.9407198587729937,
+   "conforme": true
+  }
+ },
+ "verdict_anatomie": "ENTRY_STRUCTURE_IDENTIFIED",
+ "verdict_economie": "EXPLORATORY_ENTRY_ADVANTAGE_NOT_FOUND"
+}
+P15 analyse terminee

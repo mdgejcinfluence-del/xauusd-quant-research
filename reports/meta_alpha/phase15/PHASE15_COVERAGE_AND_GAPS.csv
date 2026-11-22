@@ -1,0 +1,5 @@
+politique,opportunites,declenches,NO_ENTRY_TRIGGER,NON_EXECUTION,EXECUTE,delai_median_min,prix_economise_median_bp,note
+E0,443,443.0,0.0,0.0,443.0,0.0023333333333333335,0.0,
+E1,443,408.0,35.0,0.0,408.0,3.05015,-2.6044798999553804,
+E2,443,443.0,0.0,0.0,443.0,5.002566666666667,-0.9509486468688811,
+TOUTES,443,,,,,,,22 trajectoires incompletes 13-B conservees dans les denominateurs; barrieres classees seulement avant premiere interruption (convention Phase 14/14.1); trous documentes dans PHASE14_COVERAGE et P14_PATH; ordre intra-gap jamais suppose
