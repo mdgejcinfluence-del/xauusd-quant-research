@@ -99,3 +99,35 @@ sonde ; transfert propriétaire ; restauration du secret
 `GDRIVE_SA_JSON` par le propriétaire). Point technique annexe : le
 CLI Kaggle du runner exige le paquet `six` (absent lors de la
 sonde) — à inclure dans l'installation avant toute reprise.
+
+---
+
+## Addendum R3 (seq324) — transfert propriétaire et vérification 66/66
+
+Chaîne de provenance effectivement réalisée : **Google Drive
+authentifié par le propriétaire → Google Colab (calcul des SHA-256
+source sur les fichiers originaux) → six datasets Kaggle privés
+`shalom5123/xauusd-ho-b01..b06` → runner CI de vérification**.
+Le fichier `SOURCE_SHA256_66_PARTITIONS.json` (reçu comme artefact
+de mission, consigné au dépôt, SHA-256
+`5191e301070fb8f10c5ce7c0b1d407b900246947cd5bbd06cf6a45e5d9b1265d`)
+contient les 66 empreintes source du propriétaire ; leur format,
+l'unicité des noms et la conformité totale (noms, tailles,
+datasets) au manifeste gelé `b112b7ab…` ont été vérifiés avant
+tout contrôle. Vérification CI (runs `45039898675` et
+`45044400978`, lecture seule Kaggle, aucun accès Drive) :
+**66/66 fichiers présents, tailles conformes, signatures PAR1
+début/fin, SHA-256 Kaggle identiques aux SHA-256 source Colab,
+inventaires des six datasets conformes (11 fichiers chacun,
+version 1, `isPrivate: true` pour les six)** — détail ligne par
+ligne dans `PHASE12C2_SHA256_VERIFICATION.csv`, inventaire dans
+`PHASE12C2_KAGGLE_INVENTORY.json`, verdict
+`HOLDOUT_MIGRATION_VERIFIED` dans
+`PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json`. La provenance documentaire
+est conservée telle quelle : les empreintes de référence sont
+celles calculées par le propriétaire sur les originaux dans Colab ;
+la CI n'a pas relu Drive et ne le prétend pas. Les barres M1
+d'analyse ont été reconstruites depuis ces copies Kaggle vérifiées
+(lots `hb01..hb06`) plus la partition de contexte IS
+`part_000282` depuis `xauusd-is-missing13` (lot `ctx`, contexte du
+détecteur causal uniquement, aucun événement IS dans la population).

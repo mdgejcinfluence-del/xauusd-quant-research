@@ -4154,6 +4154,30 @@
     "statut": "PHASE 12-C.2-R3 AUTORISEE - verification en cours"
    },
    "entry_hash": "90e576b675faaff31a2bd75d4ddf68a5407964d048e01c017580b5fc4aa91572"
+  },
+  {
+   "seq": 325,
+   "prev_hash": "90e576b675faaff31a2bd75d4ddf68a5407964d048e01c017580b5fc4aa91572",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.2-R3",
+    "objet": "MIGRATION VERIFIEE 66/66. Fichier source proprietaire SOURCE_SHA256_66_PARTITIONS.json (5191e301070fb8f10c5ce7c0b1d407b900246947cd5bbd06cf6a45e5d9b1265d) valide avant controle (66 entrees uniques, noms/tailles/datasets conformes au manifeste gele b112b7ab0aecc94699334f0a36b4b0b3c40648f9cbb83d5a4fb7598d1a2c397f inchange). Verification CI en lecture seule Kaggle, aucun acces Drive: 66/66 fichiers presents, tailles conformes, PAR1 debut/fin, SHA-256 des copies identiques aux SHA-256 source Colab du proprietaire (provenance documentaire conservee: empreintes calculees par le proprietaire sur les originaux dans Colab authentifie, jamais reconstruites depuis la destination); six datasets prives (isPrivate true), version 1, 11 fichiers chacun conformes. Livrables: PHASE12C2_KAGGLE_INVENTORY.json 7a7663dcc34d67e295dbc0dc6bb53a3f85ea5f692aad41e65b9a131cdabdabe4, PHASE12C2_SHA256_VERIFICATION.csv 9922dba55097e8b752217181c7af1a7bbb8174486bd7fae8eac7d11cdedc4cd2, PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json f93c8448a76beffbc53312ede4019888278cf6b668c863a079a4c9999767711a.",
+    "verdict": "HOLDOUT_MIGRATION_VERIFIED",
+    "statut": "66/66 verifiees - reprise de la confirmation autorisee"
+   },
+   "entry_hash": "f7f3f74f27f243fc32ca7c66da354beda6167b64e613fb529695b05665629d32"
+  },
+  {
+   "seq": 326,
+   "prev_hash": "f7f3f74f27f243fc32ca7c66da354beda6167b64e613fb529695b05665629d32",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.2",
+    "objet": "CONFIRMATION INDEPENDANTE H1 TERMINEE - CONFIRMED_HISTORICAL_HOLDOUT. Run terminal CI 45044400978 entierement vert (verification 66/66 rejouee, 7/7 lots Kaggle dont contexte part_000282 depuis xauusd-is-missing13, job d analyse vert); incidents prealables documentes sans aucune metrique consultee (runs 45039898675/45042946592: push rejete puis scipy absent, cause racine par journal committe, parametres du test inchanges). Population: 2140 detectes holdout, 29 contexte avant frontiere exclus, 2126 admissibles, 0 grappe mixte, 281 non reintegres, 2 censures, 0 ambigu; etiquetes 1843 (1410 reprises / 433 absences), criteres 100/50 satisfaits. Modele gele 12-C.1 charge du JSON (1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e), M0 gele 0,7591463414634146 jamais recalcule, cinq variables bornees a t_reintegration, memes observations pour M0/M1. Resultats holdout 2020-2026: Brier M0 0,17977973697767294 -> M1 0,14819201612660826 (delta -0,03158772085106468, +17,6 %); log-loss M0 0,5452764927392939 -> M1 0,48498553801055866 (delta -0,060290954728735247, +11,1 %); AUC 0,7424139681915712; calibration pente 0,9415484329257265, ordonnee 0,15203056680300644, deciles publies. Qualification: CONFIRMATION HISTORIQUE HORS IS - NON VALIDATION PROSPECTIVE; aucune conclusion de rentabilite; holdout desormais consomme pour ce modele. Livrables: FEATURES 2efd06d055947eb00a2b1faf929194e892ce90ec6ae3836956534e5943dd4800, PREDICTIONS 13b2327948f1e04287e3944657f66aee7e4bb2a7f26578b8df1e96a93b92943d, FEATURE_AUDIT a0b7e3a20ec6e7eab394ecf9b5023850f3c24448493a010834bc0ca694f16df7, EVALUATION 86e8234f4007b7aa7560a641111ff68fb197cc717b95f8b3194e516b199656be, FINAL_REPORT 542ed51434302bbd11b9681af5eeae518b338f8fbc36a7497f1cf10ae6d50735, PROVENANCE d6844c951bc9b17c562e43bdc46bc55478cd4fd8034cfa3e002fb9d3efe1827c. H4 inchange NON_EVALUABLE_IN_PHASE12B. Aucune etape ulterieure automatique.",
+    "verdict": "CONFIRMED_HISTORICAL_HOLDOUT",
+    "statut": "PHASE 12-C.2 TERMINEE - holdout consomme pour ce modele, aucune etape ulterieure autorisee"
+   },
+   "entry_hash": "537016202401e104f6ba2202b7c54b41d515b554cea47cbfaa55159a9d20a37e"
   }
  ]
 }

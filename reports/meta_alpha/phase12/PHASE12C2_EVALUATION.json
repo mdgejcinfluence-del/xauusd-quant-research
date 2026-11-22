@@ -125,5 +125,12 @@
   "p75": 0.8407199039442805,
   "max": 0.9999914760630471
  },
- "verdict": "CONFIRMED_HISTORICAL_HOLDOUT"
+ "verdict": "CONFIRMED_HISTORICAL_HOLDOUT",
+ "migration": {
+  "verdict": "HOLDOUT_MIGRATION_VERIFIED",
+  "controle": "66/66 SHA-256 Kaggle identiques aux SHA-256 source Colab du proprietaire, tailles conformes, PAR1 debut/fin, datasets prives version 1",
+  "audit": "PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json"
+ },
+ "run_terminal": "45044400978",
+ "incidents_avant_metriques": "runs 45039898675 et 45042946592: echec du job d analyse avant tout calcul (push rejete puis dependance scipy absente, cause etablie par journal committe); aucun parametre du test modifie; aucune metrique consultee avant le run terminal"
 }

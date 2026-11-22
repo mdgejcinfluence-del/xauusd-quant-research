@@ -1,116 +1,141 @@
-# PHASE 12-C.2 — RAPPORT D'INCIDENT ET VERDICT `BLOCKED`
+# PHASE 12-C.2 — CONFIRMATION INDÉPENDANTE H1 SUR LE HOLDOUT 2020–2026
 
-**Aucune métrique de confirmation n'a été produite ni consultée.
-Le modèle gelé n'a pas été modifié. Verdict : `BLOCKED`
-(provenance/accès aux sources holdout non garantis), conformément
-à la règle d'arrêt de la mission et au préenregistrement 12-C.**
+**RAPPORT SCIENTIFIQUE FINAL (mission 12-C.2-R3)**
+**Verdict migration : `HOLDOUT_MIGRATION_VERIFIED` (66/66).**
+**Verdict évaluation : `CONFIRMED_HISTORICAL_HOLDOUT`.**
+**Qualification obligatoire : CONFIRMATION HISTORIQUE HORS IS —
+NON VALIDATION PROSPECTIVE. Aucune conclusion de rentabilité :
+une confirmation prédictive hors IS ne prouve ni la résistance aux
+spreads, commissions et slippage, ni une exploitabilité économique.**
 
-## 1. Préflight (conforme, avant tout accès)
+## 1. Provenance et intégrité des sources
 
-Chaîne valide à seq317 ; commit distant `f1ba282` ; protocole 12-A
-gelé `580c39b1…f94` ; protocole 12-C `bf3b9adf…` ;
-`PHASE12C1_MODEL_PARAMETERS.json` `1bcb3b70…` et manifeste
-`be2d0b23…` intègres ; code gelé `a1c9f52d…` ; données
-d'apprentissage `6f684ee8…` ; coefficients chargés depuis le JSON
-(jamais recopiés) ; M0 gelé 0,7591463414634146. Autorisation
-chaînée seq318.
+Chaîne réalisée : Drive authentifié par le propriétaire → Colab
+(SHA-256 source sur les originaux) → six datasets Kaggle privés →
+runner CI. Le manifeste source du propriétaire
+(`SOURCE_SHA256_66_PARTITIONS.json`, SHA-256 du fichier
+`5191e301070fb8f10c5ce7c0b1d407b900246947cd5bbd06cf6a45e5d9b1265d`)
+a été validé avant tout contrôle (66 entrées uniques, noms,
+tailles et datasets 100 % conformes au manifeste gelé
+`b112b7ab…`). Vérification CI en lecture seule (aucun accès
+Drive) : les 66 fichiers Kaggle ont été récupérés un dataset à la
+fois ; pour chacun, nom exact, taille conforme (source Colab =
+manifeste = copie), signatures PAR1 en début et fin, et
+**SHA-256 de la copie identique au SHA-256 source Colab — 66/66,
+zéro manquant, zéro supplémentaire, zéro doublon, zéro
+divergence**. Les six datasets sont privés (`isPrivate: true`),
+en version 1, avec exactement leurs 11 partitions attribuées
+(détail : `PHASE12C2_SHA256_VERIFICATION.csv`,
+`PHASE12C2_KAGGLE_INVENTORY.json`,
+`PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json`). Les empreintes de
+référence restent celles du propriétaire (Colab authentifié) ;
+la CI ne prétend pas avoir relu Drive. Historique d'accès
+conservé : blocages Drive seq319–323 (quota Google, secret SA
+absent, dossier partagé sur les mêmes objets Drive) résolus par
+le transfert propriétaire, sans qu'aucune métrique n'ait jamais
+été produite pendant ces incidents — l'évaluation n'a été
+consommée qu'au run terminal ci-dessous.
 
-## 2. Sources holdout identifiées et tentative d'accès
+## 2. Population de confirmation
 
-Sources identifiées uniquement depuis l'inventaire déjà commité
-(`INVENTORY_348_EXHAUSTIVE.json`, aucune exploration nouvelle du
-holdout) : partitions `part_000282` à `part_000348` (les partitions
-282–283, nov. 2019–janv. 2020, en contexte du détecteur causal
-seul ; aucun événement IS importé dans la population). Ces
-partitions n'existent que sur Google Drive (`drive_id` de
-l'inventaire) ; elles n'ont jamais été migrées vers Kaggle, à la
-différence des 282 partitions IS.
+Barres M1 reconstruites depuis les copies Kaggle vérifiées
+(2 441 904 barres, 2019-11-10 → 2026-09-30 ; la période antérieure
+à 2020 ne sert que de contexte au détecteur causal). Détecteur
+F10-01 historique gelé (amendement causal seq289, Q95 gelés,
+fenêtre fixe de 250 barres) appliqué tel quel ; clustering par la
+méthode historique des composantes, combiné IS+holdout uniquement
+pour détecter les grappes mixtes.
 
-Trois runs CI identiques quant au test (aucun paramètre du test
-modifié, aucune métrique produite) :
+- Détectés holdout (déclenchement ≥ 2020-01-01) : 2 140 ;
+  contexte avant frontière : 29 (exclus) ;
+- Admissibles : 2 126 (14 non admissibles) ;
+- Grappes mixtes IS/holdout : **0** ; non réintégrés : 281 (hors
+  population conditionnelle) ; censurés : 2 ; ambigus : 0 ;
+- **Étiquetés pour l'évaluation : 1 843 — 1 410 reprises /
+  433 absences.** Critères préenregistrés satisfaits
+  (≥ 100 étiquetés, minorité 433 ≥ 50) : famille **ÉVALUABLE**.
 
-- run `45030043384` : 8/8 lots en échec au téléchargement Drive
-  (gdown) ;
-- run `45030489413` : idem (journaux de lots committés, cause
-  établie) ;
-- run `45031240112` : idem après ajout du repli historique direct
-  `drive.usercontent.google.com` (celui de
-  `ci_tools/kaggle_migrate.py:dl`).
+## 3. Méthode (strictement le préenregistrement)
 
-Message d'erreur conservé dans les journaux de lots committés
-(`PHASE12C2_LOTLOG_h01..h08.txt`) : *« Too many users have viewed
-or downloaded this file recently… it may take up to 24 hours… »*
-— blocage de quota/partage Google Drive, identique au blocage
-historique qui avait imposé la migration Kaggle pour l'IS. Les
-deux voies d'accès connues (gdown et URL directe) sont bloquées.
+Modèle gelé de la Phase 12-C.1 chargé depuis
+`PHASE12C1_MODEL_PARAMETERS.json` (`1bcb3b70…`, coefficients
+jamais recopiés ni réestimés) ; cinq variables extraites de façon
+strictement bornée à `t_reintegration` par le code gelé
+(preuves : `PHASE12C2_FEATURE_AUDIT.json`) ; cible gelée
+(fenêtre de 8 bougies, censurés/ambigus exclus des classes) ;
+M0 **gelé à 0,7591463414634146**, jamais recalculé sur le holdout ;
+M0 et M1 appliqués sur exactement les mêmes 1 843 observations ;
+prédictions individuelles conservées
+(`PHASE12C2_HOLDOUT_PREDICTIONS.csv`, `event_id` uniques).
 
-## 3. Conséquences et conformité
+## 4. Résultats (évaluation unique terminale, run 45044400978)
 
-- Aucune partition holdout n'a été lue ; aucune barre, aucun
-  événement, aucune variable, aucune prédiction, aucune métrique
-  de confirmation n'existe. Les livrables
-  `PHASE12C2_HOLDOUT_FEATURES.csv`,
-  `PHASE12C2_HOLDOUT_PREDICTIONS.csv` et
-  `PHASE12C2_FEATURE_AUDIT.json` n'ont donc pas été produits (les
-  fabriquer serait une falsification) ; `PHASE12C2_EVALUATION.json`
-  consigne le verdict BLOCKED et les effectifs à zéro.
-- L'évaluation préenregistrée n'a **pas** été consommée : aucun
-  résultat du holdout n'ayant été observé, une reprise reste
-  possible sans biais dès que l'accès aux sources sera rétabli,
-  sous une nouvelle autorisation ou la confirmation que la
-  présente autorisation couvre la reprise technique (la mission
-  autorise une reprise identique si aucune métrique n'a été
-  consultée — c'est le cas — mais les trois tentatives montrent un
-  blocage d'infrastructure persistant, non un incident ponctuel).
-- Aucun paramètre du test n'a été modifié entre les tentatives :
-  seuls l'instrumentation des journaux et le repli historique de
-  téléchargement ont été ajoutés.
+| Métrique (holdout, n = 1 843) | M0 | M1 | Delta M1 − M0 | Amélioration relative |
+|---|---|---|---|---|
+| **Brier score** | 0,1798 | **0,1482** | **−0,0316** | **+17,6 %** |
+| **Log-loss** | 0,5453 | **0,4850** | **−0,0603** | **+11,1 %** |
 
-## 4. Voies de déblocage (décision du responsable requise)
+Diagnostics : AUC M1 = 0,742 (M0 = 0,5) ; précision au seuil 0,5
+= 0,805, rappel = 0,971 ; calibration publiée (n ≥ 200) :
+ordonnée 0,152, **pente 0,942** — déciles prédits (0,321 → 0,918)
+proches des fréquences observées (0,303 → 0,930), nettement mieux
+calibrés que sur l'évaluation IS (pente 0,750). Les deux
+métriques principales s'améliorent contre M0, sans anomalie de
+fuite : la règle de décision préenregistrée donne
+**`CONFIRMED_HISTORICAL_HOLDOUT`**.
 
-1. **Migration Kaggle des partitions holdout** (voie historique
-   éprouvée pour l'IS) : mais elle suppose elle-même un accès
-   Drive fonctionnel depuis la CI, actuellement bloqué — à
-   réessayer après expiration du quota Google (24 h annoncées,
-   blocage historiquement persistant), ou migration effectuée par
-   le propriétaire depuis son propre accès Drive.
-2. **Rétablissement de l'accès Drive** par le propriétaire
-   (partage/quota des fichiers sources).
-3. Toute autre source de données exigerait une vérification de
-   provenance et un amendement chaîné avant usage ; aucune source
-   de substitution n'a été utilisée.
+## 5. Incidents techniques (tous avant métriques, tous documentés)
 
-## 5. Verdict
+Tentatives Drive bloquées par quota (seq319–323) ; runs
+`45039898675` et `45042946592` : échec du job d'analyse avant tout
+calcul — d'abord un rejet de push du commit des livrables (corrigé
+par un commit robuste), puis la cause racine établie par le
+journal committé : dépendance `scipy` absente du job d'analyse
+(crash à l'import, aucune sortie) ; correction minimale de la
+liste de dépendances, puis run terminal `45044400978` entièrement
+vert. Aucun paramètre du test n'a été modifié lors de ces
+reprises ; aucune métrique n'a été consultée avant le run
+terminal. Les journaux antérieurs (seq319, seq321, seq323 et
+`PHASE12C2R3_VERIFY_LOG.txt`, `PHASE12C2_LOG.txt`) sont conservés.
 
-**`BLOCKED`** — accès aux sources holdout impossible par les voies
-autorisées connues ; intégrité du test préservée (aucune métrique
-consultée, modèle et critères intacts). La Phase 12-C reste
-suspendue jusqu'à décision du responsable sur la voie de
-déblocage. Qualification inchangée des résultats 12-B :
-`HISTORIQUEMENT ÉVALUÉE — NON INDÉPENDAMMENT CONFIRMÉE`.
-Aucune autorisation ultérieure ne découle du présent rapport.
+## 6. Limites
 
----
+1. Confirmation **historique hors IS**, pas une validation
+   prospective en temps réel : le holdout est une période passée,
+   désormais consommée pour ce modèle — toute réutilisation
+   future de ces données pour sélectionner ou ajuster quoi que ce
+   soit détruirait leur valeur de confirmation.
+2. Les empreintes source proviennent du calcul du propriétaire
+   dans Colab authentifié (provenance documentaire consignée,
+   non une relecture Drive par la CI).
+3. Le ratio de repli reste ≥ 1 quasi par construction de la
+   réintégration ; le signal confirmé porte sur l'ensemble des
+   cinq variables du modèle gelé, sans attribution causale.
+4. Aucune portée économique : spreads, commissions, slippage,
+   exécution et capacité sont hors périmètre ; rien ici ne fonde
+   une stratégie.
 
-## Addendum Phase 12-C.2-R (migration contrôlée, seq320)
+## 7. Conclusion
 
-La migration autorisée par la mission 12-C.2-R a été instruite :
-manifeste exact des 66 partitions (`part_000283`–`part_000348`,
-13,66 Go ; ambiguïté 66/67 résolue au §1 de
-`PHASE12C2_HOLDOUT_PROVENANCE.md`), puis sonde d'accès authentifié
-en CI (run `45032424958`, métadonnées seules, aucun secret exposé,
-preuve `PHASE12C2_PROBE.json`). Résultat : l'accès Kaggle est
-authentifié, mais le secret de compte de service Drive
-(`GDRIVE_SA_JSON`) est **absent du dépôt** — la modalité B
-(transfert authentifié direct) n'existe donc pas, et la modalité
-Drive anonyme reste bloquée par quota (trois runs documentés).
-**Verdict de migration : `HOLDOUT_MIGRATION_BLOCKED`** (audit
-`PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json` : 0/66 vérifiées, aucune
-comparaison présentée comme réussie, l'inventaire historique ne
-contenant aucun SHA-256 source). Les instructions exactes de
-transfert par le propriétaire (six datasets Kaggle privés
-`xauusd-ho-b01..b06`, fichiers originaux inchangés) figurent dans
-`PHASE12C2_HOLDOUT_PROVENANCE.md`. L'évaluation de confirmation
-reste **non consommée** ; le verdict d'évaluation demeure
-`BLOCKED` jusqu'à transfert vérifié (66/66 correspondances
-cryptographiques) suivi d'une reprise unique validée.
+- Migration : **`HOLDOUT_MIGRATION_VERIFIED`** (66/66).
+- Évaluation H1 : **`CONFIRMED_HISTORICAL_HOLDOUT`** — le modèle
+  H1 gelé, avec ses coefficients de la Phase 12-C.1 et M0 gelé,
+  conserve et amplifie son amélioration prédictive (Brier
+  +17,6 %, log-loss +11,1 % contre M0) sur la période indépendante
+  2020–2026, avec une calibration quasi correcte (pente 0,942).
+- H4 : inchangé, `NON_EVALUABLE_IN_PHASE12B`, hors périmètre.
+
+Cette confirmation termine l'évaluation préenregistrée. Aucune
+étape ultérieure — stratégie, exploitation économique, nouveau
+test sur ce holdout — n'est autorisée automatiquement ; chacune
+exigerait une décision distincte du responsable.
+
+## 8. Traçabilité
+
+Préflight et autorisations chaînées seq318–324 ; vérification et
+évaluation : run terminal `45044400978` (vérification 66/66,
+7/7 lots, analyse — tous verts), livrables committés par la CI ;
+empreintes des livrables au checkpoint terminal chaîné après
+seq324. Sources gelées intactes : protocole 12-A `580c39b1…`,
+paramètres du modèle `1bcb3b70…`, manifeste de transfert
+`b112b7ab…` inchangé.
