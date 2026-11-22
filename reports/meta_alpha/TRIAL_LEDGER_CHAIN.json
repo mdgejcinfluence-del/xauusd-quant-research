@@ -3761,6 +3761,17 @@
     "statut": "RESTRUCTURATION LOGISTIQUE - relance en preparation"
    },
    "entry_hash": "7fbc923e2f07f462798a5694ff6063abb26bdc619dc95311ebc03411aa797df2"
+  },
+  {
+   "seq": 292,
+   "prev_hash": "7fbc923e2f07f462798a5694ff6063abb26bdc619dc95311ebc03411aa797df2",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "Diagnostic acces sources (run 45007898250, journal DIAG_ACCESS_LOG.txt committe a5f6b6e): secret KAGGLE_API_TOKEN vide dans les runs actuels (telechargements Kaggle anonymes rejetes 403, jeux prives); voie Drive egalement bloquee par quota Google temporaire (\"too many users have viewed or downloaded this file recently\", jusqu a 24 h). Ceci explique les echecs moteurs 44957524560, 44982176571 et 45004232516 (repli Drive integral puis defaut d integrite). Aucune donnee exploitee, aucune definition modifiee. Reprise conditionnee a: restauration du secret Kaggle par le proprietaire dans les reglages du depot, OU levee du quota Drive (~24 h) avec relance par lots. Phase 10 toujours non cloturee; F10-01/F10-03 NON EVALUABLES en attente.",
+    "statut": "BLOCAGE EXTERNE DOCUMENTE - en attente secret Kaggle ou quota Drive"
+   },
+   "entry_hash": "7bee680cc106b20dd239a59572690c2be7a0aab99ce6e7c0468e164c74cc85c0"
   }
  ]
 }
