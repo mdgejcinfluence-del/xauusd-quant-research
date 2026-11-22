@@ -1,0 +1,69 @@
+{
+ "phase": "17-D",
+ "statut": "PREENREGISTREMENT - CONCEPTION SEULE, AUCUN ENTRAINEMENT EFFECTUE NI AUTORISE PAR CETTE PHASE",
+ "modele_M1": "gele definitivement; filtre p_M1 > 0.7591463414634146; p_M1 exclu des variables",
+ "cible": "R_REALIZED_S2 = PNL_S2_bp / (k x ATR14_H1 / prix_entree x 10000); k: B08=1.0, B09=1.5; voir PHASE17D_TARGET_DEFINITION.json",
+ "modeles": {
+  "M2R_B08": "regression lineaire OLS E[R|X], apprentissage B08 seul",
+  "M2R_B09": "regression lineaire OLS E[R|X], apprentissage B09 seul",
+  "pooling": "interdit",
+  "modeles_concurrents": "aucun"
+ },
+ "reference": "M0_R = moyenne de R sur le seul apprentissage, par contrat",
+ "variables": [
+  "RATIO_REPLI_EXTENSION_A_TREINT",
+  "DUREE_EXTREME_VERS_TREINT_MIN",
+  "MFE_A_TREINT_BP",
+  "NB_TOUCHES_P0_AVANT_TREINT",
+  "SESSION_REINTEGRATION (one-hot modalites 17-B)",
+  "ATR14_H1",
+  "SPREAD_DECISION_BP"
+ ],
+ "encodage_et_mise_a_echelle": "a figer dans le code d execution 17-E avant tout acces aux resultats: variables numeriques brutes + intercept (convention 17-B), aucune selection de variables",
+ "segments": {
+  "APPRENTISSAGE": "2010-2015 estimation",
+  "CALIBRATION": "2016-2017 validation/diagnostic uniquement, aucun ajustement",
+  "EVALUATION": "2018-2020 historique exploratoire, population deja etudiee"
+ },
+ "regle_decision": "PREDICTED_EXPECTED_R > 0, jamais optimisee",
+ "metriques_primaires": [
+  "MAE vs M0_R (primaire)",
+  "RMSE vs M0_R"
+ ],
+ "metriques_secondaires": [
+  "erreur moyenne (biais)",
+  "calibration de la valeur predite (pente/intercept valeur realisee ~ valeur predite)",
+  "esperance realisee par opportunite retenue",
+  "mediane de R",
+  "proportion de R positifs",
+  "P1/P5/P25/P75/P95/P99 de R",
+  "perte extreme",
+  "couverture",
+  "distribution par grappe (poids egal evenement et grappe)"
+ ],
+ "criteres_verdict_17E": {
+  "M2R_SIGNAL_SUPPORTED_HISTORICALLY": "MAE et RMSE d evaluation strictement inferieurs a M0_R ET biais moyen rapporte; toute esperance retenue positive reste descriptive sans confirmation independante",
+  "M2R_NO_IMPROVEMENT": "sinon",
+  "NON_EVALUABLE": "segment < 100 etiquetes par contrat"
+ },
+ "interdits": [
+  "holdout 2020-2026",
+  "recalcul PL depuis ticks",
+  "winsorisation/clipping",
+  "nouveau seuil",
+  "selection de variables ou de sous-groupes",
+  "reentrainement M1/M2 binaire",
+  "pooling B08/B09 ou H1/H4"
+ ],
+ "verdict_17D": "PHASE17D_READY_FOR_CONTINUOUS_PAYOFF_MODEL",
+ "frontiere": "execution (17-E) uniquement sur decision distincte ulterieure",
+ "sha256_livrables_17D": {
+  "PHASE17D_CONTINUOUS_PAYOFF_PROTOCOL.md": "55392c1e46e7b4375dd9b1cc7ec7a55ebced61ad45b3d8edb7dc6ac0c85866b5",
+  "PHASE17D_TARGET_DEFINITION.json": "c90e5f970b73cdb4b68d2b37917a9c28f20a736e03d1ea10faba2118b133158e",
+  "PHASE17D_FEATURE_CONTRACT.csv": "4d778d9ce799986f1283efc95971b5192e6ca0987b527826d472bc207cabdfd4",
+  "PHASE17D_PAYOFF_DISTRIBUTION_AUDIT.csv": "a67492edc3fb47904ae6ecf0db7081cd702d15d81cc5232976f4acdbafca4929",
+  "PHASE17D_REGIME_STABILITY_REPORT.md": "451d642387e3d52cf758da713a015b057500bd1ec93c7cddc3b827bb26aae2a6",
+  "PHASE17D_SPLIT_AND_PURGE_AUDIT.csv": "ffe38d9161a95ab31dbf7629cb808aaa6857ba0877a33e53f9ee463f41b2abed",
+  "PHASE17D_FEASIBILITY_REPORT.md": "361236a6972ef4e23304d0b2447b845e0c76fe9b4fd7398a13505063714a19d2"
+ }
+}

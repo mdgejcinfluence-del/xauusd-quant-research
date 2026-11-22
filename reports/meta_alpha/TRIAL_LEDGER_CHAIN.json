@@ -4472,6 +4472,39 @@
     "base_seq": 348
    },
    "entry_hash": "18720a208cb2abdfebaa1112b09c57ac52ddd9b4e0693f19ba0d38533de8882d"
+  },
+  {
+   "seq": 350,
+   "prev_hash": "18720a208cb2abdfebaa1112b09c57ac52ddd9b4e0693f19ba0d38533de8882d",
+   "entry": {
+    "type": "PHASE17D_AUTHORIZATION",
+    "phase": "17-D",
+    "decision": "AUTORISATION CONCEPTION ET PREENREGISTREMENT MODELE DE PAYOFF CONTINU NORMALISE PAR LE RISQUE (M2R_B08/M2R_B09 SEPARES)",
+    "interdits": [
+     "holdout",
+     "entrainement",
+     "nouveau label",
+     "recalcul PL depuis ticks",
+     "modification variables/contrats/seuil M1",
+     "optimisation",
+     "sous-groupes"
+    ],
+    "base_seq": 349
+   },
+   "entry_hash": "3dffb9d0546120b8dec50b5df89a98226511368b0a06cb2163812b3643a07c0b"
+  },
+  {
+   "seq": 351,
+   "prev_hash": "3dffb9d0546120b8dec50b5df89a98226511368b0a06cb2163812b3643a07c0b",
+   "entry": {
+    "type": "PHASE17D_VERDICT",
+    "phase": "17-D",
+    "verdict": "PHASE17D_READY_FOR_CONTINUOUS_PAYOFF_MODEL",
+    "cible": "R_REALIZED_S2",
+    "modeles": "M2R_B08/M2R_B09 separes, regression lineaire simple, aucun entrainement effectue",
+    "base_seq": 350
+   },
+   "entry_hash": "e101af6f44355ae9eb86221a74df67e1c03e8be815aeff63a24d16c830ebea91"
   }
  ]
 }

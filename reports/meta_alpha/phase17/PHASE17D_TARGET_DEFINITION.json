@@ -1,0 +1,17 @@
+{
+ "cible": "R_REALIZED_S2",
+ "definition": "R_REALIZED_S2 = PNL_S2_bp / INITIAL_RISK_BP, avec INITIAL_RISK_BP = k x ATR14_H1 / prix_entree x 10000 (ATR et prix d'entree connus a t_decision; PNL_S2 en bp de prix d'entree, meme unite)",
+ "k_par_contrat": {"B08": 1.0, "B09": 1.5},
+ "contrats": {"B08": "TP 1,5 ATR / SL 1,0 ATR / echeance 8 bougies H1", "B09": "TP 1,5 ATR / SL 1,5 ATR / echeance 8 bougies H1"},
+ "payoff_source": "prix executables Bid/Ask des labels 17-B geles; aucun +1R/-1R automatique: le payoff realise (franchissements, gaps, sorties verticales) fait foi",
+ "etiquette_cout": "NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION",
+ "inclus": ["TP_FIRST", "SL_FIRST", "VERTICAL_FIRST"],
+ "exclus": ["CENSORED", "GAP_CROSSING_UNRESOLVED", "ORDER_UNRESOLVED", "NON_EXECUTION"],
+ "conservation": "P&L brut bp, P&L S0/S1/S2 bp et mecanisme conserves; la normalisation R ne remplace jamais les resultats en bp; reconversion par evenement via INITIAL_RISK_BP",
+ "transformations_interdites": ["winsorization", "clipping", "plafonnement", "nouveau seuil", "recalcul depuis ticks bruts"],
+ "modeles_futurs": {"M2R_B08": "regression lineaire simple E[R|X] sur apprentissage B08 uniquement", "M2R_B09": "regression lineaire simple E[R|X] sur apprentissage B09 uniquement", "pooling": "interdit"},
+ "reference": "M0_R = moyenne de R_REALIZED_S2 sur le seul apprentissage, par contrat",
+ "regle_decision_gelee": "PREDICTED_EXPECTED_R > 0 (esperance predite strictement positive; regle mathematique, jamais optimisee ni ajustee sur calibration/evaluation)",
+ "roles_segments": {"APPRENTISSAGE_2010_2015": "estimation M2R et M0_R", "CALIBRATION_2016_2017": "validation chronologique et diagnostic uniquement - aucun ajustement, aucun choix", "EVALUATION_2018_2020": "evaluation historique exploratoire, population deja etudiee, jamais confirmation independante"},
+ "statut": "CONCEPTION GELEE EN 17-D - AUCUN ENTRAINEMENT EFFECTUE"
+}
