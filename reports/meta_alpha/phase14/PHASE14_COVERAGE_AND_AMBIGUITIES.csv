@@ -1,0 +1,10 @@
+element,effectif,detail
+exposes_13B,443,cohorte figee
+ordres_determines,443,"{'MFE_BEFORE_MAE': 220, 'MAE_BEFORE_MFE': 223}"
+MFE_MAE_SAME_TIMESTAMP,0,"meme horodatage tick, indepartageable"
+CENSORED_ordre,0,incompletes sans extremes certains avant interruption
+trous_cotation_>5min,209,tous evenements confondus
+franchissements_apres_trou,84,prix du premier tick suivant le trou utilise
+ATR_UNAVAILABLE,0,branche B uniquement
+incompletes_13B,22,presentees separement; barrieres classees seulement avant premiere interruption
+controle_entree_tick_13B,443,divergents: 0
