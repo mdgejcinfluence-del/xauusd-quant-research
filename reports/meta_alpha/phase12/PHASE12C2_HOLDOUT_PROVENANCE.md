@@ -80,3 +80,22 @@ barres antérieures à la frontière) ; H1 seule famille ; aucune
 sélection d'événements selon une performance ; aucun seuil
 recalculé ; holdout inutilisable pour toute autre recherche ;
 aucune partition dans Git ni dans un artefact public.
+
+---
+
+## Addendum R2 (seq322) — dossier partagé : même blocage de quota
+
+La sonde du dossier partagé (run `45034907980`,
+`PHASE12C2R2_PROBE.json`) établit : dossier lisible, 348 partitions
+énumérables, **66/66 noms et `drive_id` conformes au manifeste** —
+mais ce sont les mêmes objets Drive que ceux déjà bloqués, et le
+test de téléchargement réel (plus petit fichier du périmètre) a
+reproduit le message de quota Google. Le partage en lecture seule
+n'a pas créé de copies ni levé le quota par fichier. Aucun
+contournement n'a été tenté (ordre exprès). Les trois voies de
+déblocage restantes sont consignées dans
+`PHASE12C2_TRANSFER_EXECUTION.json` (attente du quota puis nouvelle
+sonde ; transfert propriétaire ; restauration du secret
+`GDRIVE_SA_JSON` par le propriétaire). Point technique annexe : le
+CLI Kaggle du runner exige le paquet `six` (absent lors de la
+sonde) — à inclure dans l'installation avant toute reprise.

@@ -1,0 +1,24 @@
+{
+  "phase": "12-C.2-R2",
+  "verdict_migration": "HOLDOUT_MIGRATION_BLOCKED",
+  "etape_atteinte": "sonde d acces au dossier partage (run CI 45034907980, PHASE12C2R2_PROBE.json)",
+  "controles_dossier": {
+    "dossier_accessible_en_lecture": true,
+    "fichiers_enumeres": 348,
+    "perimetre_manifeste_present": "66/66 noms presents (aucun manquant parmi part_000283-part_000348)",
+    "identifiants_drive_correspondent_au_manifeste": true,
+    "remarque_perimetre": "le dossier contient les 348 partitions completes; seuls les 66 fichiers du manifeste auraient ete transferes",
+    "test_contenu_reel": {"fichier": "part_000319.parquet (plus petit du perimetre)", "resultat": "ECHEC", "cause": "Too many users have viewed or downloaded this file recently (quota Google, message conserve dans PHASE12C2R2_PROBE_LOG.txt)"}
+  },
+  "cause_racine": "Les fichiers du dossier partage sont les memes objets Drive que ceux du manifeste (drive_id identiques): le partage en lecture seule n a pas cree de copies et le blocage de quota par fichier, deja constate sur trois runs, persiste. Aucun contournement tente, conformement a l ordre.",
+  "destinations_kaggle": "non verifiees integralement: le CLI Kaggle du runner a echoue sur une dependance manquante (ModuleNotFoundError: six) pendant la sonde; point technique mineur et sans objet tant que la source est bloquee, a corriger (pip install six) avant toute reprise",
+  "fichiers_transferes": 0,
+  "fichiers_verifies": 0,
+  "evaluation": "NON CONSOMMEE (aucune donnee holdout lue, aucune metrique)",
+  "voies_restantes": [
+    "attendre l expiration effective du quota Google (24 h annoncees, historiquement persistant sur ces fichiers) puis relancer la sonde de contenu; si elle passe, migration sequentielle telle que preenregistree",
+    "ou transfert par le proprietaire (instructions PHASE12C2_HOLDOUT_PROVENANCE.md, inchangees)",
+    "ou restauration du secret GDRIVE_SA_JSON par le proprietaire dans les secrets du depot (acces authentifie, modalite B d origine)"
+  ],
+  "journaux_conserves": ["PHASE12C2_LOTLOG_h01..h08.txt", "PHASE12C2_PROBE_LOG.txt", "PHASE12C2R2_PROBE_LOG.txt"]
+}

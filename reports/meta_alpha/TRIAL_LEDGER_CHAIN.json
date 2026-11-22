@@ -4131,6 +4131,18 @@
     "statut": "PHASE 12-C.2-R2 AUTORISEE - execution en cours"
    },
    "entry_hash": "25166ead438f4563bb250813873b36991789bb341ec71cc9ec917c6267019892"
+  },
+  {
+   "seq": 323,
+   "prev_hash": "25166ead438f4563bb250813873b36991789bb341ec71cc9ec917c6267019892",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.2-R2",
+    "objet": "PHASE 12-C.2-R2: HOLDOUT_MIGRATION_BLOCKED (quota persistant, arret conforme a l ordre, aucun contournement). Sonde CI run 45034907980 (PHASE12C2R2_PROBE.json fc232e86a5534de63de19f03f3e314392c0eb3cc999e5252f7d906f564789b79): dossier Drive partage accessible en lecture, 348 fichiers enumeres, 66/66 noms presents et drive_id identiques au manifeste gele (b112b7ab0aecc94699334f0a36b4b0b3c40648f9cbb83d5a4fb7598d1a2c397f) - mais memes objets Drive que les tentatives precedentes: le test de contenu reel (part_000319, plus petit fichier du perimetre) reproduit le message Too many users have viewed or downloaded this file recently. Le partage n a cree aucune copie ni leve le quota par fichier. Destinations Kaggle non integralement verifiees (CLI du runner en echec sur dependance six manquante: point mineur a corriger avant reprise, sans objet tant que la source est bloquee). 0 fichier transfere, 0 verifie; conditions 66/66 non reunies; aucun PASS partiel. Livrables: PHASE12C2_TRANSFER_EXECUTION.json 79f388ccabc0d7d156e9a302b499e65dfbf59a7a387d9fb3c0ee7b87f804918d, audit mis a jour fd69d9b8887923869f52995388d6c68ddd09a6ecdee120740ba8e3fa5a79e450, provenance completee 366c00c9d80635249e9e8dd2b90ca53b2dc19fec9e49b3181a25f85b099b0ebb (manifeste inchange). Evaluation toujours NON CONSOMMEE. Voies restantes soumises au responsable: expiration du quota puis nouvelle sonde; transfert proprietaire (instructions inchangees); restauration du secret GDRIVE_SA_JSON par le proprietaire.",
+    "verdict": "HOLDOUT_MIGRATION_BLOCKED",
+    "statut": "EN ATTENTE D UNE VOIE D ACCES EFFECTIVE - evaluation non consommee"
+   },
+   "entry_hash": "add90dc53ff4c72ad915a7e13d4a5545451ca0ca4718c780555da6a18cbcf307"
   }
  ]
 }
