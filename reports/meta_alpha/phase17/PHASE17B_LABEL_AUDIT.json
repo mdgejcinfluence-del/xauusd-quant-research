@@ -1,0 +1,37 @@
+{
+ "reconciliation_evaluation_phase14": {
+  "B08": {
+   "communs": 440,
+   "ecart_max_bp": 7.105427357601002e-15,
+   "conforme": true
+  },
+  "B09": {
+   "communs": 435,
+   "ecart_max_bp": 1.4210854715202004e-14,
+   "conforme": true
+  }
+ },
+ "regles": "censures/NON_EXECUTION/UNAVAILABLE jamais etiquetes; mecanismes conserves; scenario primaire S2",
+ "effectifs_par_contrat": {
+  "B08": {
+   "APPRENTISSAGE|CENSORED": 5,
+   "APPRENTISSAGE|ETIQUETE": 1137,
+   "APPRENTISSAGE|NON_EXECUTION": 1,
+   "CALIBRATION|CENSORED": 2,
+   "CALIBRATION|ETIQUETE": 357,
+   "CALIBRATION|NON_EXECUTION": 1,
+   "EVALUATION|CENSORED": 3,
+   "EVALUATION|ETIQUETE": 440
+  },
+  "B09": {
+   "APPRENTISSAGE|CENSORED": 9,
+   "APPRENTISSAGE|ETIQUETE": 1133,
+   "APPRENTISSAGE|NON_EXECUTION": 1,
+   "CALIBRATION|CENSORED": 3,
+   "CALIBRATION|ETIQUETE": 356,
+   "CALIBRATION|NON_EXECUTION": 1,
+   "EVALUATION|CENSORED": 8,
+   "EVALUATION|ETIQUETE": 435
+  }
+ }
+}

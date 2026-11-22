@@ -1,22 +1,19 @@
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase17b_engine.py", line 302, in <module>
-    else: mode_analyse()
-          ^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase17b_engine.py", line 295, in mode_analyse
-    (R17 / 'PHASE17B_LABEL_AUDIT.json').write_text(json.dumps(audit_l, indent=1, ensure_ascii=False, default=str))
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/__init__.py", line 238, in dumps
-    **kw).encode(obj)
-          ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/encoder.py", line 202, in encode
-    chunks = list(chunks)
-             ^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/encoder.py", line 432, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/json/encoder.py", line 377, in _iterencode_dict
-    raise TypeError(f'keys must be str, int, float, bool or None, '
-TypeError: keys must be str, int, float, bool or None, not tuple
+{
+ "recon": {
+  "B08": {
+   "communs": 440,
+   "ecart_max_bp": 7.105427357601002e-15,
+   "conforme": true
+  },
+  "B09": {
+   "communs": 435,
+   "ecart_max_bp": 1.4210854715202004e-14,
+   "conforme": true
+  }
+ },
+ "verdicts": {
+  "B08": "M2_PREDICTIVE_ECONOMIC_SIGNAL_SUPPORTED_HISTORICALLY",
+  "B09": "M2_NO_ECONOMIC_PREDICTIVE_IMPROVEMENT"
+ }
+}
+P17 analyse terminee

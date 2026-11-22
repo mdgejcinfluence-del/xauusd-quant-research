@@ -1,0 +1,420 @@
+{
+ "phase": "17-B",
+ "qualification": "HISTORIQUE EXPLORATOIRE - POPULATION DEJA ETUDIEE",
+ "reconciliation_evaluation_phase14": {
+  "B08": {
+   "communs": 440,
+   "ecart_max_bp": 7.105427357601002e-15,
+   "conforme": true
+  },
+  "B09": {
+   "communs": 435,
+   "ecart_max_bp": 1.4210854715202004e-14,
+   "conforme": true
+  }
+ },
+ "contrats": {
+  "B08": {
+   "contrat": "B08",
+   "effectifs": {
+    "APPRENTISSAGE": {
+     "n_etiquetes": 1137,
+     "positifs": 402,
+     "minorite": 402
+    },
+    "CALIBRATION": {
+     "n_etiquetes": 357,
+     "positifs": 156,
+     "minorite": 156
+    },
+    "EVALUATION": {
+     "n_etiquetes": 440,
+     "positifs": 203,
+     "minorite": 203
+    }
+   },
+   "M0_ECON": 0.35356200527704484,
+   "G_bp": 41.16722991893461,
+   "L_bp": 32.00475476482179,
+   "P_BE": 0.437390825233781,
+   "evaluations": {
+    "CALIBRATION": {
+     "M0_ECON": {
+      "brier": 0.25298551553508253,
+      "log_loss": 0.6999566277383582,
+      "auc": 0.5,
+      "precision_seuil_0_5": null,
+      "rappel_seuil_0_5": 0.0
+     },
+     "M2": {
+      "brier": 0.2549044737909089,
+      "log_loss": 0.7043027535496923,
+      "auc": 0.44176553131777013,
+      "precision_seuil_0_5": 1.0,
+      "rappel_seuil_0_5": 0.01282051282051282
+     },
+     "calibration_M2": {
+      "intercept": -0.6947526719129624,
+      "pente": -0.7667176510236092,
+      "deciles": [
+       {
+        "decile": 0,
+        "n": 36,
+        "predit_moyen": 0.32120385368120347,
+        "observe": 0.5
+       },
+       {
+        "decile": 1,
+        "n": 36,
+        "predit_moyen": 0.3328495492143548,
+        "observe": 0.5277777777777778
+       },
+       {
+        "decile": 2,
+        "n": 35,
+        "predit_moyen": 0.33923515951208844,
+        "observe": 0.5142857142857142
+       },
+       {
+        "decile": 3,
+        "n": 36,
+        "predit_moyen": 0.3447270258358499,
+        "observe": 0.3333333333333333
+       },
+       {
+        "decile": 4,
+        "n": 36,
+        "predit_moyen": 0.35013747193613737,
+        "observe": 0.4166666666666667
+       },
+       {
+        "decile": 5,
+        "n": 35,
+        "predit_moyen": 0.35659572208800216,
+        "observe": 0.5714285714285714
+       },
+       {
+        "decile": 6,
+        "n": 36,
+        "predit_moyen": 0.364017492781026,
+        "observe": 0.4166666666666667
+       },
+       {
+        "decile": 7,
+        "n": 35,
+        "predit_moyen": 0.37307602394074707,
+        "observe": 0.4
+       },
+       {
+        "decile": 8,
+        "n": 36,
+        "predit_moyen": 0.3882730097018809,
+        "observe": 0.3055555555555556
+       },
+       {
+        "decile": 9,
+        "n": 36,
+        "predit_moyen": 0.4379658648018601,
+        "observe": 0.3888888888888889
+       }
+      ]
+     },
+     "couverture_decisions": 0.028011204481792718,
+     "proportion_rejetees": 0.9719887955182073,
+     "esperance_realisee_retenues_bp": -7.927884599479033,
+     "precision_decisions": 0.3,
+     "frequence_labels_positifs": 0.4369747899159664
+    },
+    "EVALUATION": {
+     "M0_ECON": {
+      "brier": 0.2601284230698882,
+      "log_loss": 0.7146733066980279,
+      "auc": 0.5,
+      "precision_seuil_0_5": null,
+      "rappel_seuil_0_5": 0.0
+     },
+     "M2": {
+      "brier": 0.2595512153262611,
+      "log_loss": 0.7137519347209633,
+      "auc": 0.49046995489596973,
+      "precision_seuil_0_5": 1.0,
+      "rappel_seuil_0_5": 0.009852216748768473
+     },
+     "calibration_M2": {
+      "intercept": -0.06939528993590628,
+      "pente": 0.14831952960304923,
+      "deciles": [
+       {
+        "decile": 0,
+        "n": 44,
+        "predit_moyen": 0.3188409316269442,
+        "observe": 0.5454545454545454
+       },
+       {
+        "decile": 1,
+        "n": 44,
+        "predit_moyen": 0.3298841641641348,
+        "observe": 0.36363636363636365
+       },
+       {
+        "decile": 2,
+        "n": 44,
+        "predit_moyen": 0.33779040065696236,
+        "observe": 0.4318181818181818
+       },
+       {
+        "decile": 3,
+        "n": 44,
+        "predit_moyen": 0.34442739499257474,
+        "observe": 0.5
+       },
+       {
+        "decile": 4,
+        "n": 44,
+        "predit_moyen": 0.3491205942394641,
+        "observe": 0.5909090909090909
+       },
+       {
+        "decile": 5,
+        "n": 44,
+        "predit_moyen": 0.3550862919190521,
+        "observe": 0.3409090909090909
+       },
+       {
+        "decile": 6,
+        "n": 44,
+        "predit_moyen": 0.3620453546576408,
+        "observe": 0.4772727272727273
+       },
+       {
+        "decile": 7,
+        "n": 44,
+        "predit_moyen": 0.37234473210630736,
+        "observe": 0.5
+       },
+       {
+        "decile": 8,
+        "n": 44,
+        "predit_moyen": 0.38979825215957936,
+        "observe": 0.3409090909090909
+       },
+       {
+        "decile": 9,
+        "n": 44,
+        "predit_moyen": 0.44493751972177614,
+        "observe": 0.5227272727272727
+       }
+      ]
+     },
+     "couverture_decisions": 0.04318181818181818,
+     "proportion_rejetees": 0.9568181818181818,
+     "esperance_realisee_retenues_bp": 3.455816998315437,
+     "precision_decisions": 0.5263157894736842,
+     "frequence_labels_positifs": 0.46136363636363636
+    }
+   },
+   "verdict": "M2_PREDICTIVE_ECONOMIC_SIGNAL_SUPPORTED_HISTORICALLY"
+  },
+  "B09": {
+   "contrat": "B09",
+   "effectifs": {
+    "APPRENTISSAGE": {
+     "n_etiquetes": 1133,
+     "positifs": 474,
+     "minorite": 474
+    },
+    "CALIBRATION": {
+     "n_etiquetes": 356,
+     "positifs": 180,
+     "minorite": 176
+    },
+    "EVALUATION": {
+     "n_etiquetes": 435,
+     "positifs": 227,
+     "minorite": 208
+    }
+   },
+   "M0_ECON": 0.4183583406884378,
+   "G_bp": 40.37520041618053,
+   "L_bp": 38.3765376577021,
+   "P_BE": 0.48731035779424103,
+   "evaluations": {
+    "CALIBRATION": {
+     "M0_ECON": {
+      "brier": 0.25758268254988187,
+      "log_loss": 0.7085100476079079,
+      "auc": 0.5,
+      "precision_seuil_0_5": null,
+      "rappel_seuil_0_5": 0.0
+     },
+     "M2": {
+      "brier": 0.2594002016338578,
+      "log_loss": 0.7122144981407615,
+      "auc": 0.48450126262626264,
+      "precision_seuil_0_5": 0.5172413793103449,
+      "rappel_seuil_0_5": 0.08333333333333333
+     },
+     "calibration_M2": {
+      "intercept": -0.0029744240889066167,
+      "pente": -0.08369552701617644,
+      "deciles": [
+       {
+        "decile": 0,
+        "n": 36,
+        "predit_moyen": 0.3657197968017198,
+        "observe": 0.5277777777777778
+       },
+       {
+        "decile": 1,
+        "n": 36,
+        "predit_moyen": 0.3848167996314129,
+        "observe": 0.5833333333333334
+       },
+       {
+        "decile": 2,
+        "n": 35,
+        "predit_moyen": 0.3943274274403119,
+        "observe": 0.5142857142857142
+       },
+       {
+        "decile": 3,
+        "n": 36,
+        "predit_moyen": 0.4018247303771141,
+        "observe": 0.3333333333333333
+       },
+       {
+        "decile": 4,
+        "n": 35,
+        "predit_moyen": 0.40986542006045473,
+        "observe": 0.5428571428571428
+       },
+       {
+        "decile": 5,
+        "n": 36,
+        "predit_moyen": 0.4176609056202629,
+        "observe": 0.5833333333333334
+       },
+       {
+        "decile": 6,
+        "n": 35,
+        "predit_moyen": 0.428329497743431,
+        "observe": 0.5714285714285714
+       },
+       {
+        "decile": 7,
+        "n": 36,
+        "predit_moyen": 0.44628082241207623,
+        "observe": 0.5
+       },
+       {
+        "decile": 8,
+        "n": 35,
+        "predit_moyen": 0.4721190968399048,
+        "observe": 0.42857142857142855
+       },
+       {
+        "decile": 9,
+        "n": 36,
+        "predit_moyen": 0.528791983904555,
+        "observe": 0.4722222222222222
+       }
+      ]
+     },
+     "couverture_decisions": 0.10674157303370786,
+     "proportion_rejetees": 0.8932584269662921,
+     "esperance_realisee_retenues_bp": 7.4444799154400565,
+     "precision_decisions": 0.47368421052631576,
+     "frequence_labels_positifs": 0.5056179775280899
+    },
+    "EVALUATION": {
+     "M0_ECON": {
+      "brier": 0.26023131806829386,
+      "log_loss": 0.7138551640135146,
+      "auc": 0.5,
+      "precision_seuil_0_5": null,
+      "rappel_seuil_0_5": 0.0
+     },
+     "M2": {
+      "brier": 0.26042842022239576,
+      "log_loss": 0.7143308724331427,
+      "auc": 0.5103354794984751,
+      "precision_seuil_0_5": 0.47368421052631576,
+      "rappel_seuil_0_5": 0.07929515418502203
+     },
+     "calibration_M2": {
+      "intercept": 0.1041803771333684,
+      "pente": 0.05793124880444018,
+      "deciles": [
+       {
+        "decile": 0,
+        "n": 44,
+        "predit_moyen": 0.36957403144243,
+        "observe": 0.5227272727272727
+       },
+       {
+        "decile": 1,
+        "n": 43,
+        "predit_moyen": 0.38598972981820695,
+        "observe": 0.3953488372093023
+       },
+       {
+        "decile": 2,
+        "n": 44,
+        "predit_moyen": 0.3971789224196654,
+        "observe": 0.5454545454545454
+       },
+       {
+        "decile": 3,
+        "n": 43,
+        "predit_moyen": 0.40344437796867433,
+        "observe": 0.4418604651162791
+       },
+       {
+        "decile": 4,
+        "n": 44,
+        "predit_moyen": 0.410945604758281,
+        "observe": 0.6590909090909091
+       },
+       {
+        "decile": 5,
+        "n": 43,
+        "predit_moyen": 0.4205203222139559,
+        "observe": 0.627906976744186
+       },
+       {
+        "decile": 6,
+        "n": 43,
+        "predit_moyen": 0.4324247210535742,
+        "observe": 0.46511627906976744
+       },
+       {
+        "decile": 7,
+        "n": 44,
+        "predit_moyen": 0.44929702296534124,
+        "observe": 0.6363636363636364
+       },
+       {
+        "decile": 8,
+        "n": 43,
+        "predit_moyen": 0.47661169131312725,
+        "observe": 0.4186046511627907
+       },
+       {
+        "decile": 9,
+        "n": 44,
+        "predit_moyen": 0.539516069752921,
+        "observe": 0.5
+       }
+      ]
+     },
+     "couverture_decisions": 0.11954022988505747,
+     "proportion_rejetees": 0.8804597701149426,
+     "esperance_realisee_retenues_bp": -1.2357690680822075,
+     "precision_decisions": 0.5192307692307693,
+     "frequence_labels_positifs": 0.5218390804597701
+    }
+   },
+   "verdict": "M2_NO_ECONOMIC_PREDICTIVE_IMPROVEMENT"
+  }
+ }
+}
