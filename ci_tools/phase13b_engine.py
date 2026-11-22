@@ -190,6 +190,11 @@ def mode_analyse():
                       sorted(glob.glob(str(R13 / 'P13B_BARS_*.csv.gz')))])
     assert bars.ts.nunique() >= 0 and len(glob.glob(str(R13 / 'P13B_BARS_*.csv.gz'))) == 8, '8 lots requis'
     bars['ts'] = pd.to_datetime(bars.ts)
+    if bars.ts.dt.tz is not None:
+        bars['ts'] = bars.ts.dt.tz_localize(None)
+    for c in ('first_tick_ts', 'last_tick_ts'):
+        col = pd.to_datetime(bars[c])
+        bars[c] = col.dt.tz_localize(None) if col.dt.tz is not None else col
     bars = bars.drop_duplicates('ts').sort_values('ts').reset_index(drop=True)
     B = bars.set_index('ts')
     tick_frames = []
