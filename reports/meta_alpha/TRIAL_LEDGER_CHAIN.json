@@ -4027,6 +4027,30 @@
     "statut": "PHASE 12-B TERMINEE - aucune etape ulterieure autorisee automatiquement"
    },
    "entry_hash": "5b07e888a2708a26450536f1299687dfc4926cfd2cf5abe4edef69ca92506beb"
+  },
+  {
+   "seq": 314,
+   "prev_hash": "5b07e888a2708a26450536f1299687dfc4926cfd2cf5abe4edef69ca92506beb",
+   "entry": {
+    "type": "GEL",
+    "phase": "12-B",
+    "objet": "GEL DEFINITIF PHASE 12-B (PHASE12B_FROZEN). Resultats geles: H1 F10-01 PREDICTIVE_SIGNAL_SUPPORTED_HISTORICALLY (evaluation 543, minorite 133; M0 Brier 0,18495878470019708 log-loss 0,5567479510569909; M1 Brier 0,16538954947396367 delta -0,01956923522623341 +10,58 %, log-loss 0,5468387473824291 delta -0,009909203674561828 +1,78 %; AUC 0,6942967174032643; calibration pente 0,7501785957184135 ordonnee 0,09589707234295108); H4 F10-03 NON_EVALUABLE (evaluation 130, minorite 18 < 50; aucun modele H4 valide, aucun pooling/oversampling/seuil modifie). Controles verifies: protocole 12-A 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e, dictionnaire 933feff779e2f1a54ef1f538610a8fb2a481b48f702b72c6eedcf7f3d1df2519, preenregistrement 005d1e69752141234132588e74d8d8eef699cedc31abb685628f0f77cd8f8bf2; livrables 12-B FEATURES 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485, AUDIT a16cb94ed5e03a6a48f2fb19ced07d4593835de4bb5001325b69df626f053a25, EVALUATION 7d8ced8ae64fc64cf65b30004b6495173192deae7be13f7992f9ae0b5ccc0583, RESULTS 93e7d5ca3a03496e61b5f160fa4a36e4ccfdedca8a93f0f5d57c7aaa65f5786b, FINAL_REPORT 346a23d4b013901773f701b6fe427a929ee2b23575527dbc102c561b0145ef17; run 45028022637 vert (8/8 lots, job analyse, tests 5/5, commit CI c033adf); chaine continue depuis seq311; distant 46cc173, arbre propre. ANO-12B-01 OUVERTE: coefficients beta/intercept M1 H1 et versions pandas/numpy NON archives dans les artefacts (seules pente/ordonnee de calibration presentes); aucun reentrainement pendant le gel. Retrouves et geles: ordre/encodage des variables (reference ASIA), aucune transformation, convention de prediction, code moteur a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b, donnees d apprentissage commitees, frequence M0 gelee 0,7591463414634146 (1245/1640), formules des metriques. Qualification: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE. Proces-verbal: PHASE12B_FREEZE_RECORD.md sha256 a4c7f37dac178c351368a4b1fba1b3d9687140b19e3b51e44e34d90efb0c241f.",
+    "verdict": "PHASE12B_FROZEN",
+    "statut": "PHASE 12-B GELEE DEFINITIVEMENT"
+   },
+   "entry_hash": "586aa79a763a6cab493510bb4819bc343f9c6ef4dfdbd5caf7a049de23793a7b"
+  },
+  {
+   "seq": 315,
+   "prev_hash": "586aa79a763a6cab493510bb4819bc343f9c6ef4dfdbd5caf7a049de23793a7b",
+   "entry": {
+    "type": "PREREG",
+    "phase": "12-C",
+    "objet": "Conception et preenregistrement documentaires de la confirmation independante H1 (aucun acces holdout: ni montage, ni listage, ni lecture de donnees ou metadonnees; aucun entrainement ni extraction). Livrables: PHASE12C_INDEPENDENT_CONFIRMATION_PROTOCOL.md bf3b9adf0975b62bfab9eb17d6cc82fc9cfb58f48ff3427bc86ba4ffe26d4b9a; PHASE12C_MODEL_FREEZE_MANIFEST.json c69da0fae3a6438099f40890032a991fc73f94a93a48cc0fcc883aa769c68c43; PHASE12C_CONFIRMATION_PREREGISTRATION.json 66daa3be05ca4fa318aec4374ff00061a8207342348fbac7ee45ec71aa685989; PHASE12C_DEPENDENCY_AND_BOUNDARY_AUDIT.md 4f6abb73f71d5ce42cbf9c8cefdd93d2975a7383fa6698b9ced4a7871a4df9b1. Contenu fige: modele exact 12-B (apprentissage 2010-2015; reestimation IS complet non retenue), M0 gele 0,7591463414634146 jamais recalcule sur holdout, frontiere 2020-01-01T00:00 UTC, exclusion des fenetres chevauchant la frontiere et des grappes mixtes, evaluation unique terminale, metriques Brier/log-loss sur memes evenements (AUC/calibration secondaires, jamais probantes seules), criteres 100/50 -> NON_EVALUABLE, verdicts CONFIRMED_HISTORICAL_HOLDOUT / NO_PREDICTIVE_IMPROVEMENT_HOLDOUT / NON_EVALUABLE / BLOCKED preenregistres, donnees manquantes sans imputation, H4 NON_EVALUABLE_IN_PHASE12B hors perimetre. VERDICT: PHASE12C_BLOCKED - unique point bloquant ANO-12B-01: coefficients M1 non archives; levee uniquement par une etape de reproduction deterministe separement autorisee (re-ajustement IRLS sur le segment d apprentissage commite, versions epinglees, metriques 12-B reproduites a la precision publiee, coefficients geles par amendement chaine), sans holdout. Aucune autorisation d ouverture du holdout accordee ni prejugee.",
+    "verdict": "PHASE12C_BLOCKED",
+    "statut": "PHASE 12-C CONCUE MAIS BLOQUEE (ANO-12B-01) - holdout non autorise"
+   },
+   "entry_hash": "9a6b36bcf273cfe2106b3983451151bda47a593c6690377ec5437ec5c290c395"
   }
  ]
 }

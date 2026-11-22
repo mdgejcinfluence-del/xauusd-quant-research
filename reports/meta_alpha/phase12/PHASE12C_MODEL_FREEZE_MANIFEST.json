@@ -1,0 +1,39 @@
+{
+  "phase": "12-C",
+  "objet": "Manifeste de gel du modele H1 en vue d une confirmation independante - AUCUN acces holdout effectue",
+  "statut": "BLOQUE_COEFFICIENTS_NON_ARCHIVES",
+  "anomalie": "ANO-12B-01: les coefficients beta et l intercept du modele M1 H1 (Phase 12-B) n ont ete ecrits dans aucun artefact verifiable. Conformement a la mission, aucun reentrainement n a ete effectue pendant le gel. Le modele exact n est donc pas encore fige comme objet reproductible.",
+  "modele": {
+    "famille": "F10-01 (H1 uniquement)",
+    "type": "regression logistique non penalisee, Newton-Raphson amorti (IRLS), tolerance 1e-10, 200 iterations max, ridge purement numerique 1e-8",
+    "ordre_variables": ["RATIO_REPLI_EXTENSION_A_TREINT", "DUREE_EXTREME_VERS_TREINT_MIN", "MFE_A_TREINT_BP", "NB_TOUCHES_P0_AVANT_TREINT", "SESSION_REINTEGRATION=LONDON", "SESSION_REINTEGRATION=LONDON_NY_OVERLAP", "SESSION_REINTEGRATION=NY_AFTERNOON", "SESSION_REINTEGRATION=NIGHT_OTHER"],
+    "encodage_categoriel": "indicatrices binaires, categorie de reference ASIA, ordre fixe SESSIONS_ORDRE du code",
+    "transformations": "AUCUNE (variables brutes, pas de standardisation, pas de plafonnement; ratio > 100 % conserve)",
+    "convention_prediction": "p = 1/(1+exp(-z)), z = intercept + somme(beta_i x_i), z ecrêté a [-35, 35]; metriques: probabilites ecrêtees a [1e-15, 1-1e-15]; seuil fixe 0,5 pour precision/rappel",
+    "coefficients_beta": null,
+    "intercept": null,
+    "coefficients_statut": "NON ARCHIVES - a regenerer par l etape de reproduction prealable du protocole 12-C (ajustement deterministe sur le seul segment APPRENTISSAGE de PHASE12B_FEATURES.csv, sans holdout, avec verification exacte des metriques d evaluation 12-B), puis a figer ici par amendement chaine AVANT toute autorisation holdout"
+  },
+  "donnees_entrainement": {
+    "fichier": "reports/meta_alpha/phase12/PHASE12B_FEATURES.csv",
+    "sha256": "6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485",
+    "segment": "ensemble == APPRENTISSAGE et famille == F10-01 et cible etiquetee (RESUMPTION_0/1)",
+    "n": 1640, "classe1": 1245, "classe0": 395
+  },
+  "code": {
+    "moteur": "ci_tools/phase12b_engine.py", "sha256": "a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b",
+    "tests_temporels": "ci_tools/phase12b_temporal_tests.py", "sha256_tests": "b21bc998299220adf85730c87a7610e7855a01cdbca1aca48da1fadbc271c1cd",
+    "fonctions_critiques": "features_bornees (extraction bornee), logistique_irls (entrainement), metriques, calibration"
+  },
+  "dependances": {"statut": "NON EPINGLEES (pip install -q pandas numpy dans le workflow du run 45028022637); versions exactes non enregistrees - a epingler et verifier lors de l etape de reproduction",
+                  "python_ci": "3.11"},
+  "M0": {"definition": "probabilite constante = frequence de reprise du segment d apprentissage H1 2010-2015 de la Phase 12-B",
+         "valeur_gelee": 0.7591463414634146, "fraction": "1245/1640",
+         "regle_holdout": "cette valeur exacte sera appliquee telle quelle sur le holdout; jamais recalculee sur le holdout ni sur une autre periode"},
+  "metriques_evaluation_12B_a_reproduire": {"M0_brier": 0.18495878470019708, "M1_brier": 0.16538954947396367,
+    "M0_log_loss": 0.5567479510569909, "M1_log_loss": 0.5468387473824291, "M1_auc": 0.6942967174032643,
+    "segment_evaluation_12B": "543 evenements H1 etiquetes (410/133)"},
+  "cible": "RESUMPTION selon la definition gelee (PHASE12A_PREDICTABILITY_PROTOCOL.md sha256 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e): depassement en cloture M1 de l ancien meilleur niveau de cloture favorable apres t_reintegration, dans la fenetre de 8 bougies; CENSORED si horizon < 8, AMBIGUOUS si ordre intraminute indetermine; jamais de conversion en etiquettes",
+  "etape_prealable_bloquante": "REPRODUCTION DETERMINISTE (a autoriser separement, sans holdout): re-ajuster IRLS sur le segment d apprentissage commite, epingler les versions, verifier la reproduction des metriques 12-B a la precision publiee, archiver beta et intercept dans ce manifeste par amendement chaine. Sans cette etape: PHASE12C_BLOCKED.",
+  "reestimation_IS_complet": "NON RETENUE: une reestimation sur l integralite de l IS 2010-2020 ne serait pas equivalente au modele evalue en 12-B et exigerait un preenregistrement distinct (protocole 12-C, section 7)"
+}
