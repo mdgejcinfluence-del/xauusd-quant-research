@@ -1,0 +1,155 @@
+{
+ "phase": "17-C",
+ "type": "DIAGNOSTIC SUR ARTEFACTS EXISTANTS - AUCUN NOUVEAU MODELE, AUCUN NOUVEL APPRENTISSAGE",
+ "qualification": "HISTORIQUE EXPLORATOIRE - POPULATION DEJA ETUDIEE",
+ "base": "seq347 (17-B gelee)",
+ "sources": "artefacts committes PHASE17A_* et PHASE17B_* uniquement; aucune lecture de ticks, aucun nouveau label",
+ "restitution_probabilites": {
+  "methode": "application deterministe des parametres geles 17-B aux features committies (aucun ajustement)",
+  "validation_contre_PHASE17B_ECONOMIC_DECISIONS": {
+   "B08": {
+    "n_communs": 440,
+    "ecart_max_q": 1.1102230246251565e-16
+   },
+   "B09": {
+    "n_communs": 435,
+    "ecart_max_q": 1.1102230246251565e-16
+   }
+  }
+ },
+ "reconciliation_effectifs": {
+  "candidats_par_segment": {
+   "APPRENTISSAGE": 1143,
+   "CALIBRATION": 360,
+   "EVALUATION": 443
+  },
+  "B08": {
+   "etiquetes": {
+    "APPRENTISSAGE": 1137,
+    "CALIBRATION": 357,
+    "EVALUATION": 440
+   },
+   "succes": {
+    "APPRENTISSAGE": 402,
+    "CALIBRATION": 156,
+    "EVALUATION": 203
+   },
+   "echecs": {
+    "APPRENTISSAGE": 735,
+    "CALIBRATION": 201,
+    "EVALUATION": 237
+   },
+   "censures": {
+    "APPRENTISSAGE": 5,
+    "CALIBRATION": 2,
+    "EVALUATION": 3
+   },
+   "non_execution": {
+    "APPRENTISSAGE": 1,
+    "CALIBRATION": 1,
+    "EVALUATION": 0
+   },
+   "decisions_evaluation": {
+    "retenues": 19,
+    "rejetees": 421,
+    "couverture": 0.04318181818181818,
+    "esperance_retenues_bp": 3.455816998315437
+   },
+   "decisions_calibration_depuis_resultats_17B": {
+    "retenues": 10,
+    "couverture": 0.028011204481792718,
+    "esperance_retenues_bp": -7.927884599479033
+   }
+  },
+  "B09": {
+   "etiquetes": {
+    "APPRENTISSAGE": 1133,
+    "CALIBRATION": 356,
+    "EVALUATION": 435
+   },
+   "succes": {
+    "APPRENTISSAGE": 474,
+    "CALIBRATION": 180,
+    "EVALUATION": 227
+   },
+   "echecs": {
+    "APPRENTISSAGE": 659,
+    "CALIBRATION": 176,
+    "EVALUATION": 208
+   },
+   "censures": {
+    "APPRENTISSAGE": 9,
+    "CALIBRATION": 3,
+    "EVALUATION": 8
+   },
+   "non_execution": {
+    "APPRENTISSAGE": 1,
+    "CALIBRATION": 1,
+    "EVALUATION": 0
+   },
+   "decisions_evaluation": {
+    "retenues": 52,
+    "rejetees": 383,
+    "couverture": 0.11954022988505747,
+    "esperance_retenues_bp": -1.2357690680822075
+   },
+   "decisions_calibration_depuis_resultats_17B": {
+    "retenues": 38,
+    "couverture": 0.10674157303370786,
+    "esperance_retenues_bp": 7.4444799154400565
+   }
+  }
+ },
+ "metriques_17B_retrouvees": {
+  "B08": {
+   "brier_M0": 0.2601284230698882,
+   "brier_M2": 0.2595512153262611,
+   "logloss_M0": 0.7146733066980279,
+   "logloss_M2": 0.7137519347209633,
+   "auc": 0.49046995489596973,
+   "pente_calibration": 0.14831952960304923,
+   "statut_formel_conserve": "M2_PREDICTIVE_ECONOMIC_SIGNAL_SUPPORTED_HISTORICALLY",
+   "mention_obligatoire": "FORMAL_METRIC_PASS_WITH_NEGLIGIBLE_EFFECT_NO_USABLE_ECONOMIC_INFORMATION_DEMONSTRATED"
+  },
+  "B09": {
+   "auc": 0.5103354794984751,
+   "pente_calibration": 0.05793124880444018,
+   "statut_formel_conserve": "M2_NO_ECONOMIC_PREDICTIVE_IMPROVEMENT"
+  }
+ },
+ "mecanismes_constates": [
+  {
+   "id": "MEC-1",
+   "constat": "Absence de pouvoir de classement des sept variables sur le signe economique: probabilites comprimees (ecart-type 0,036 a 0,057; evaluation B08 q10-q90 = 0,325-0,409 pour un seuil a 0,437), deciles d'evaluation sans gradient (taux positifs observes 0,34 a 0,59 sans monotonie), AUC 0,490/0,510, pentes de calibration 0,148/0,058 et negative en calibration 2016-2017 pour B08. Le modele ne separe pas les evenements; il ne peut donc pas selectionner.",
+   "statut": "ETABLI descriptivement; impossible de distinguer, a variables donnees, insuffisance des variables vs signe intrinsequement imprevisible"
+  },
+  {
+   "id": "MEC-2",
+   "constat": "Le label binaire est quasi deterministe par le mecanisme (TP toujours positif, SL toujours negatif, seules les verticales sont mixtes) et detruit l'amplitude: ecarts-types intra-classe de 9 a 29 bp, positifs de +0,03 a +219,96 bp en apprentissage. La cible predit une course de barrieres, pas une esperance.",
+   "statut": "ETABLI"
+  },
+  {
+   "id": "MEC-3",
+   "constat": "Non-stationnarite de l'echelle des payoffs: G/L d'apprentissage (41,2/32,0 bp B08; 40,4/38,4 B09) tombent a 25,3/22,4 et 24,9/27,3 en evaluation, en parallele d'une derive d'ATR14_H1 (SMD -0,66) et du spread (SMD -0,88). Le P_BE implicite des payoffs realises d'evaluation (0,470 B08; 0,523 B09 - descriptif seul, aucun nouveau seuil) depasse le seuil gele (0,437; 0,487): la representation a payoffs fixes n'est pas transportable entre regimes. Le seuil gele n'a pas ete modifie.",
+   "statut": "ETABLI descriptivement"
+  },
+  {
+   "id": "MEC-4",
+   "constat": "Derive conjointe de regime et biais de selection herite: frequence positive +10,7 points (B08) et +10,4 points (B09) entre apprentissage filtre en echantillon par M1 et evaluation hors entrainement M1, amplitudes en baisse d'environ 40%, calibration 2016-2017 contredisant le modele B08. Aucune correction tentee, M1 non reestime, populations intactes.",
+   "statut": "ETABLI descriptivement; aucune interpretation causale"
+  }
+ ],
+ "ponderation_grappe": "resultats quasi inchanges a poids egal par grappe (taille moyenne de grappe 1,08; taux positifs et PL moyens bougent de moins de 0,7 point / 0,35 bp; top-5 grappes = 2,6 a 6,7% du PL absolu): l'echec n'est pas un artefact de concentration par grappe.",
+ "H4": "statut historique NON_EVALUABLE_IN_PHASE12B conserve; aucun diagnostic au-dela du documentaire; informations manquantes deja consignees en 17-A (PHASE17A_H4_FEASIBILITY.md); aucun entrainement ni pooling.",
+ "verdict_phase": "M2_FAILURE_MECHANISM_PARTIALLY_IDENTIFIED",
+ "justification_verdict": "MEC-2, MEC-3 et MEC-4 sont etablis et MEC-1 est etabli comme absence de classement; en revanche le diagnostic ne peut pas separer, parmi les causes de MEC-1, l'insuffisance des sept variables de l'imprevisibilite intrinseque du signe a information causale donnee. Aucun verdict de rentabilite emis.",
+ "frontiere": "ce diagnostic n'autorise ni nouveau modele, ni nouvelle cible, ni nouveau seuil; toute suite exige une decision distincte et, le cas echeant, des donnees n'ayant servi ni a la conception ni a la selection; holdout 2020-2026 definitivement exclu.",
+ "sha256_livrables": {
+  "PHASE17C_OUTCOME_DECOMPOSITION.csv": "c8a669345693611963ad2fe4f8df66bdbf6e1177f33496c873870327cf7db9bf",
+  "PHASE17C_PAYOFF_DISTRIBUTION.csv": "82c498bf19e19f38113ab79d750b8e495ecf833370f59739c459c578ea27d578",
+  "PHASE17C_M2_CALIBRATION_DIAGNOSTIC.csv": "ea5890658bf089b281ed3bcf8d6b73f4d4fa6cb8c875924e19ee93feec76b758",
+  "PHASE17C_SPLIT_DISTRIBUTION_AUDIT.csv": "c238abdcb4259cbe25dc949b4a0573d02f488ed189c999caaf0a98819988380d",
+  "PHASE17C_BINARY_LABEL_INFORMATION_AUDIT.md": "445f75850679306499abf52eb8e5d1f4a7fef5fe0be976dea21aae05cbb6f458",
+  "PHASE17C_CLUSTER_WEIGHTING.csv": "7ad1fb47f35cdabc6d29c4ab78f6a2ea8731afc6e4ed99517de1bade68879ff0"
+ }
+}

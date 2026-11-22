@@ -4429,6 +4429,49 @@
     "statut": "PHASE 17-B TERMINEE - aucune etape suivante autorisee automatiquement"
    },
    "entry_hash": "b8c2e3ebf8c55fae17f96e825e5357b656ab4f2b36d64873738416ec9dff35d5"
+  },
+  {
+   "seq": 348,
+   "prev_hash": "b8c2e3ebf8c55fae17f96e825e5357b656ab4f2b36d64873738416ec9dff35d5",
+   "entry": {
+    "type": "PHASE17C_AUTHORIZATION",
+    "phase": "17-C",
+    "decision": "AUTORISATION DIAGNOSTIC ECONOMIQUE APPROFONDI SUR ARTEFACTS EXISTANTS PHASES 17-A/17-B UNIQUEMENT",
+    "interdits": [
+     "holdout",
+     "nouvelle lecture ticks",
+     "nouveau label",
+     "reentrainement",
+     "modification M1/M2/seuil",
+     "nouvelle strategie"
+    ],
+    "verdicts_possibles": [
+     "M2_FAILURE_MECHANISM_IDENTIFIED",
+     "M2_FAILURE_MECHANISM_PARTIALLY_IDENTIFIED",
+     "M2_DIAGNOSTIC_INCONCLUSIVE",
+     "M2_DIAGNOSTIC_BLOCKED"
+    ],
+    "base_seq": 347
+   },
+   "entry_hash": "8dec0d76c652669286db94110e4bdf29050d2df013e1ba9aeb6ad629bdb903d2"
+  },
+  {
+   "seq": 349,
+   "prev_hash": "8dec0d76c652669286db94110e4bdf29050d2df013e1ba9aeb6ad629bdb903d2",
+   "entry": {
+    "type": "PHASE17C_VERDICT",
+    "phase": "17-C",
+    "verdict": "M2_FAILURE_MECHANISM_PARTIALLY_IDENTIFIED",
+    "mecanismes": [
+     "MEC-1 absence de classement (cause non separable)",
+     "MEC-2 label = course de barrieres, amplitude detruite",
+     "MEC-3 echelle des payoffs non stationnaire, seuil fixe non transportable",
+     "MEC-4 derive conjointe et biais de selection M1 herite"
+    ],
+    "mention_B08": "FORMAL_METRIC_PASS_WITH_NEGLIGIBLE_EFFECT_NO_USABLE_ECONOMIC_INFORMATION_DEMONSTRATED",
+    "base_seq": 348
+   },
+   "entry_hash": "18720a208cb2abdfebaa1112b09c57ac52ddd9b4e0693f19ba0d38533de8882d"
   }
  ]
 }
