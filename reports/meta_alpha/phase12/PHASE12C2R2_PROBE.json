@@ -1,0 +1,50 @@
+{
+ "phase": "12-C.2-R2",
+ "etape": "sonde",
+ "manifeste_lignes": 66,
+ "dossier_accessible": true,
+ "fichiers_enumeres": 348,
+ "parquet_enumeres": 348,
+ "noms_conformes_manifeste": false,
+ "manquants": [],
+ "supplementaires": [
+  "part_000001.parquet",
+  "part_000002.parquet",
+  "part_000003.parquet",
+  "part_000004.parquet",
+  "part_000005.parquet"
+ ],
+ "ids_correspondent_au_manifeste": true,
+ "ids_differents": [],
+ "test_contenu": {
+  "fichier": "part_000319.parquet",
+  "echec_telechargement": true,
+  "code_retour": 1
+ },
+ "destinations_kaggle": {
+  "shalom5123/xauusd-ho-b01": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  },
+  "shalom5123/xauusd-ho-b02": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  },
+  "shalom5123/xauusd-ho-b03": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  },
+  "shalom5123/xauusd-ho-b04": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  },
+  "shalom5123/xauusd-ho-b05": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  },
+  "shalom5123/xauusd-ho-b06": {
+   "existe": false,
+   "sortie": "api_extended import KaggleApi\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py\", line 266, in <module>\n    from ..models.upload_file import UploadFile\n  File \"/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py\", line 22, in <module>\n    import six\nModuleNotFoundError: No module named 'six'\n"
+  }
+ }
+}
