@@ -456,7 +456,7 @@ jobs:
 
         git config user.name ''github-actions''
 
-        git add reports/meta_alpha/phase12/P12C2_LOTLOG_${{ matrix.lot }}.txt reports/meta_alpha/phase12/P12C2_PROVENANCE_${{ matrix.lot }}.json
+        git add -A reports/meta_alpha/phase12/
 
         git diff --cached --quiet || git commit -m ''Phase 12-C.2: journal du lot ${{ matrix.lot }}''
 
