@@ -4108,6 +4108,18 @@
     "statut": "MIGRATION AUTORISEE - execution en cours"
    },
    "entry_hash": "f319ddbaf8f3f695b24e5ed60776686057abe1044f662828502521dc184d13b6"
+  },
+  {
+   "seq": 321,
+   "prev_hash": "f319ddbaf8f3f695b24e5ed60776686057abe1044f662828502521dc184d13b6",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.2-R",
+    "objet": "MIGRATION HOLDOUT: HOLDOUT_MIGRATION_BLOCKED (aucune modalite reellement disponible). Perimetre resolu sans supposition depuis l inventaire commite: 66 partitions part_000283-part_000348 consecutives (13,66 Go); part_000282 est IS (deja Kaggle xauusd-is-missing13, contexte detecteur hors transfert); part_000283 chevauche la frontiere (debut 2019-12-17), transferee telle quelle le cas echeant, exclusions analytiques inchangees. Manifeste PHASE12C2_HOLDOUT_TRANSFER_MANIFEST.csv (66 lignes, drive_id/tailles/periode/destination shalom5123/xauusd-ho-b01..b06 prives). Sonde CI run 45032424958 (metadonnees seules, aucun secret expose, PHASE12C2_PROBE.json): kaggle_auth_ok=true, mais GDRIVE_SA_JSON et GDRIVE_ROOT_FOLDER_ID ABSENTS du depot - modalite B (compte de service) inexistante; modalite anonyme deja bloquee par quota Google (runs 45030043384/45030489413/45031240112 conserves). Controle cryptographique: 0/66 verifiees, aucune comparaison effectuee ni presentee comme reussie (inventaire historique sans SHA-256 source: empreintes a etablir au transfert authentifie). Instructions exactes de transfert proprietaire dans PHASE12C2_HOLDOUT_PROVENANCE.md (fichiers originaux inchanges, datasets prives, aucune donnee dans Git). Audit PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json; rapport final complete par addendum sans ecraser les journaux. Evaluation 12-C.2 toujours NON CONSOMMEE; verdict evaluation BLOCKED maintenu. Reprise unique possible apres transfert proprietaire + verification 66/66 + nouvelle validation du responsable.",
+    "verdict": "HOLDOUT_MIGRATION_BLOCKED",
+    "statut": "EN ATTENTE DU TRANSFERT PROPRIETAIRE - evaluation non consommee"
+   },
+   "entry_hash": "098ecb1b543fa009c5bf79e6f362fa386b5218c3c423194a72cc09a436f75d8a"
   }
  ]
 }

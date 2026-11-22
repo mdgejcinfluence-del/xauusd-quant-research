@@ -89,3 +89,28 @@ suspendue jusqu'à décision du responsable sur la voie de
 déblocage. Qualification inchangée des résultats 12-B :
 `HISTORIQUEMENT ÉVALUÉE — NON INDÉPENDAMMENT CONFIRMÉE`.
 Aucune autorisation ultérieure ne découle du présent rapport.
+
+---
+
+## Addendum Phase 12-C.2-R (migration contrôlée, seq320)
+
+La migration autorisée par la mission 12-C.2-R a été instruite :
+manifeste exact des 66 partitions (`part_000283`–`part_000348`,
+13,66 Go ; ambiguïté 66/67 résolue au §1 de
+`PHASE12C2_HOLDOUT_PROVENANCE.md`), puis sonde d'accès authentifié
+en CI (run `45032424958`, métadonnées seules, aucun secret exposé,
+preuve `PHASE12C2_PROBE.json`). Résultat : l'accès Kaggle est
+authentifié, mais le secret de compte de service Drive
+(`GDRIVE_SA_JSON`) est **absent du dépôt** — la modalité B
+(transfert authentifié direct) n'existe donc pas, et la modalité
+Drive anonyme reste bloquée par quota (trois runs documentés).
+**Verdict de migration : `HOLDOUT_MIGRATION_BLOCKED`** (audit
+`PHASE12C2_HOLDOUT_TRANSFER_AUDIT.json` : 0/66 vérifiées, aucune
+comparaison présentée comme réussie, l'inventaire historique ne
+contenant aucun SHA-256 source). Les instructions exactes de
+transfert par le propriétaire (six datasets Kaggle privés
+`xauusd-ho-b01..b06`, fichiers originaux inchangés) figurent dans
+`PHASE12C2_HOLDOUT_PROVENANCE.md`. L'évaluation de confirmation
+reste **non consommée** ; le verdict d'évaluation demeure
+`BLOCKED` jusqu'à transfert vérifié (66/66 correspondances
+cryptographiques) suivi d'une reprise unique validée.
