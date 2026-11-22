@@ -4369,6 +4369,18 @@
     "statut": "GEL EFFECTUE - execution Phase 16 autorisee"
    },
    "entry_hash": "7453d50dd3e0ae1b20a1490b4f4d5c7d3b486914e1341ea3531112debfa37af0"
+  },
+  {
+   "seq": 343,
+   "prev_hash": "7453d50dd3e0ae1b20a1490b4f4d5c7d3b486914e1341ea3531112debfa37af0",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "16",
+    "objet": "Entree passive E3 unique executee sur cohorte IS figee apres gel seq342 (run CI 45060504262 entierement vert, exit 0; holdout jamais accede). Audit de remplissabilite gele: ticks = cotations Bid/Ask sans transactions, volume ni profondeur, statut QUOTE_CROSSING_PROXY_ONLY pour toute l etude (aucun remplissage presente comme reellement execute). Controle: cotation de reference 443/443 identique au tick d entree 13-B. Franchissements proxy: 221/443 (49,9 %), delai median 15,1 s, 222 NO_FILL expires a 60 s, 20 egalites strictes ecartees; taux situe dans la zone intermediaire de la grille gelee: PASSIVE_ENTRY_ANALYSIS_INCONCLUSIVE. Amelioration mediane +0,97 bp, mecanique (demi-spread initial), conditionnelle au franchissement. Economie selon la grille gelee (X0, cohorte 443, E0 rendue comparable a slippage de sortie seule): E3 inferieure a E0 sous S0/S1/S2 (-1,29/-1,53/-1,76 contre +0,11/-0,37/-0,85), barrieres X1/X2 egalement inferieures a leurs references E0: EXPLORATORY_PASSIVE_ENTRY_ADVANTAGE_NOT_FOUND. Mecanisme: selection adverse (les remplis sont les evenements qui reculaient: conditionnel X0 S0 -2,77 bp) et abandon des continuations immediates; le gain mecanique ne compense pas. 22 incompletes conservees et traitees selon 14/14.1. Aucune strategie; aucune etape suivante autorisee.",
+    "verdict": "PASSIVE_ENTRY_ANALYSIS_INCONCLUSIVE + QUOTE_CROSSING_PROXY_ONLY + EXPLORATORY_PASSIVE_ENTRY_ADVANTAGE_NOT_FOUND",
+    "statut": "PHASE 16 TERMINEE - aucune etape suivante autorisee automatiquement"
+   },
+   "entry_hash": "bf35eb5926a225d724a41147ee76a0161de247891fa7123389d72edcb3a87d90"
   }
  ]
 }
