@@ -3920,6 +3920,29 @@
     "statut": "EXECUTION APPROUVEE - analyse en cours"
    },
    "entry_hash": "234d35512b5cfeb7b42943efe25b42b08dbec29a91bb2eba62b1345cca6fdba1"
+  },
+  {
+   "seq": 306,
+   "prev_hash": "234d35512b5cfeb7b42943efe25b42b08dbec29a91bb2eba62b1345cca6fdba1",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "11-C",
+    "objet": "Mission corrective Phase 11-C executee: diagnostic complet avant toute relance (aucune relance effectuee pendant le diagnostic). Chronologie etablie par l API GitHub Actions: run 45015419598 (head 4f74a4b) en echec a l etape d analyse - SyntaxError ligne 141, moteur ci_tools/phase11c_engine.py tronque en pleine expression (141 lignes); journal d erreur conserve au commit 4c3d2a8 apres cd4601b; run 45016320712 meme echec (moteur non corrige) plus echec secondaire du job historique de synthese Phase 10 a son commit (anomalie de workflow documentee, sans effet sur les livrables 11-C); commit de correction 18d4e27 (+157/-2, moteur complete a 297 lignes: reintegration, retracement, archetypes, bootstrap grappes graine 20261122, main et synthese); run unique de reprise 45017167617 (head 18d4e27) entierement vert en 25 min, 8/8 lots verts, livrables committes par le workflow au commit 746b645 (HEAD distant verifie = HEAD local). L interruption finale de l interface n est pas un echec CI. Audits: py_compile OK et relecture integrale du moteur; workflow 11-C conforme (input dedie, needs lots, permissions minimales), anomalie residuelle du job de synthese Phase 10 documentee non corrigee; tests synthetiques 11-C non tracables dans le depot (mention au seul message de commit 18d4e27) - limite de preuve consignee, aucun test invente. Garde-fous verifies: protocole gele fdfb04ed inchange, chaine valide 305 avant checkpoint, carte 11-B.1 3281f594 et manifeste 57b7b8af inchanges, populations sans redetection, holdout jamais accede, aucune economie/backtest/p-value. Resultats descriptifs (IS, jamais une rentabilite): H1 MFE median t+8 32,9 bp, MAE 31,5, cloture mediane -2,2 bp; reintegration confirmee 86,7 %, reprise post-reintegration 75,4 %, archetype dominant REINTEGRATION_PUIS_REPRISE 65,4 %, CONTINUATION_SANS_REPLI_CONFIRME 0 %; H4 MFE 65,2, MAE 62,9, cloture -4,6; reintegration 95,8 %, reprise 85,8 %, archetype dominant 81,7 %; censures 3+3 lacunes anormales; chevauchement descriptif H1 dans episodes H4: 1514/3107 sans causalite. Livrables completes par le rapport d anatomie redige depuis les sorties commitees. Verdict: CI_RECOVERED_AND_PHASE11C_COMPLETED.",
+    "sha256_livrables": {
+     "PHASE11C_ANATOMY_REPORT.md": "91e6554b8475df75bdb722ba06ebb8b64ea46a65fab91ef243dd75ccdabd1ea3",
+     "PHASE11C_INCIDENT_AND_RECOVERY.md": "265ce5c7859c3af23f62a45788b385163319b5696818723d62fdae7f1e83f877",
+     "PHASE11C_EVENT_PATHS.csv": "c487e3891c18ab6e3c6b37d6958e4c4e3a709fadcf0463473e3f4dee972e4540",
+     "PHASE11C_HORIZON_METRICS.csv": "3642e84f10a7febe388c913828b493d7e9c2a8c3633e5ad2fa1bb91b1a819eca",
+     "PHASE11C_ARCHETYPES.csv": "f6d0fd77ff56e60333fd3aadc5f72a4db4c0a4d22f9872d50e7fb1884157e00a",
+     "PHASE11C_SESSION_ANATOMY.csv": "4d8bc39eebd64ec97c964f77b8ebcf11f12ee484830be8c07325b038889d825f",
+     "PHASE11C_COVERAGE_CENSORING.csv": "e931268556588661199b9a848f30c1b133b0eba8df283145267f84068bff6bea",
+     "PHASE11C_RESULTS.json": "243e7899855811bd9fdf4fd7674b0e1f198b58b4270907131a214ab99138a008",
+     "ci_tools/phase11c_engine.py": "305d2a9662292731cc74bdd0a147eaed30a32299989d6fcac21e989c9ab4b35e"
+    },
+    "verdict": "CI_RECOVERED_AND_PHASE11C_COMPLETED",
+    "statut": "PHASE 11-C TERMINEE - derniere etape descriptive autorisee; phase suivante sur decision distincte uniquement"
+   },
+   "entry_hash": "60cd1418988511e84190983a9b8d36914248aeaa4c3ef8630e14658846fcc08b"
   }
  ]
 }
