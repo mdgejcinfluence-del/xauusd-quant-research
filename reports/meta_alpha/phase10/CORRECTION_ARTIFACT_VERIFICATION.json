@@ -1,0 +1,35 @@
+{
+ "run_moteur": "44919631588",
+ "fichiers_evenements": [
+  "old_artifacts/PHASE10_EVENTS.csv.gz"
+ ],
+ "evenements_par_famille_artefacts": {
+  "F10-02": 5652,
+  "F10-04": 1257,
+  "F10-06": 657,
+  "F10-05": 246
+ },
+ "concordance_avec_resultats_seq288": {
+  "F10-01": true,
+  "F10-02": true,
+  "F10-03": true,
+  "F10-04": true,
+  "F10-05": true,
+  "F10-06": true
+ },
+ "familles_cibles_avant_correction": {
+  "F10-01": 0,
+  "F10-03": 0
+ },
+ "fichiers_couverture": [
+  "old_artifacts/P10_COVERAGE.json"
+ ],
+ "partitions_chargees": 282,
+ "partitions_attendues": 282,
+ "barres_tf": {
+  "H1": 59184,
+  "H4": 15195,
+  "D1": 2572
+ },
+ "conclusion": "Artefacts evenementiels integres et concordants; ils ne contiennent pas les series de barres: recomputation ciblee F10-01/F10-03 sur le meme corpus IS (amendement seq289, section C)."
+}

@@ -1,0 +1,32 @@
+{
+ "mode": "CIBLE_F10-01_F10-03_ETAPE2",
+ "amendement": "seq289",
+ "lots_barres": 8,
+ "barres_m1": 3540993,
+ "diagnostics": {
+  "F10-01": {
+   "barres_examinees": 59184,
+   "fenetres_examinees": 59184,
+   "rendements_valides_total": 14206360,
+   "rendements_non_finis_total": 558265,
+   "fenetres_ineligibles_causal_window": 202,
+   "valides_min": 0,
+   "valides_mediane": 239.0,
+   "proportion_non_finis": 0.037810984024314875
+  },
+  "F10-03": {
+   "barres_examinees": 15195,
+   "fenetres_examinees": 15195,
+   "rendements_valides_total": 3623693,
+   "rendements_non_finis_total": 143682,
+   "fenetres_ineligibles_causal_window": 208,
+   "valides_min": 0,
+   "valides_mediane": 241.0,
+   "proportion_non_finis": 0.0381384916553303
+  }
+ },
+ "evenements_par_famille": {
+  "F10-01": 3134,
+  "F10-03": 762
+ }
+}
