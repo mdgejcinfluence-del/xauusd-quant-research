@@ -4225,6 +4225,18 @@
     "statut": "PHASE 13-A.1 TERMINEE - contrat economique gele; aucune etude economique autorisee automatiquement"
    },
    "entry_hash": "b5233718df68e066a07d579657d13017bd03200d6ad119368c8a09d4eff9373b"
+  },
+  {
+   "seq": 331,
+   "prev_hash": "b5233718df68e066a07d579657d13017bd03200d6ad119368c8a09d4eff9373b",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "13-B",
+    "objet": "Execution autorisee de l etude economique exploratoire IS 2010-2020 (niveau 2, jamais confirmation) selon le contrat gele 13-A.1 (seq330, ECONOMIC_CONTRACT_FROZEN). Preflight conforme: chaine 330 valide, commit ba8510c, livrables 13-A/13-A.1 et modele H1 (1bcb3b70...) integres, M0 gele 0,7591463414634146. Population primaire preenregistree: F10-01 H1, ensemble EVALUATION de Phase 12-B (separation chronologique par grappe 2018-2020, 543 evenements etiquetes, hors entrainement; apprentissage et calibration exclus des metriques principales), directions depuis PHASE11C_EVENT_PATHS.csv, probabilites par application deterministe des coefficients geles aux features 12-B (controle de reproduction des metriques predictives 12-B consigne). Entree tick reelle strictement dans (t_decision, t_decision+60s) extraite des partitions tick IS Kaggle privees (lots par batch comme les phases precedentes); sortie Bid/Ask de cloture de la derniere minute M1 de la fenetre de 8 bougies H1; excursions MFE/MAE aux prix de liquidation des barres M1 Bid/Ask issues des memes ticks; scenarios S0/S1/S2 geles; commissions exclues (etiquette NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE); conditions d arret >10 % NON_EXECUTION (denominateur: evenements exposes) et >5 % spreads non finis (denominateur: minutes d entree et de sortie des evenements executes) documentees. Grille de verdict fixee avant resultats dans le moteur: POSITIVE si moyennes evenement et grappe et mediane evenement > 0 sous S0, S1 et S2 sans franchir les conditions d arret; NEGATIVE si moyennes evenement et grappe < 0 sous les trois scenarios; sinon INCONCLUSIVE; NON_MESURABLE si conditions d arret franchies; BLOCKED si ambiguite bloquante. Holdout 2020-2026 integralement interdit (aucun montage, listage, lecture ni metadonnees). Aucune optimisation, variante, H4, strategie ni depense.",
+    "verdict": "EXECUTION_AUTORISEE",
+    "statut": "PHASE 13-B EN COURS"
+   },
+   "entry_hash": "bc2f1745a74608cc9cb1e7cbe08a60dc0dde1b5042472a2835ce816383ec477c"
   }
  ]
 }

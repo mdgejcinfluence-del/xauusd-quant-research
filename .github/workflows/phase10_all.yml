@@ -54,6 +54,10 @@ name: phase10_all
         description: 'Phase 12-C.2-R3: verification 66/66 Kaggle puis confirmation H1 (seq324)'
         type: boolean
         default: false
+      phase13b:
+        description: 'Phase 13-B: evaluation economique exploratoire IS H1 (seq331, contrat gele 13-A.1)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -774,5 +778,97 @@ jobs:
       with:
         name: p12c2r3-livrables
         path: reports/meta_alpha/phase12
+        retention-days: 90
+        if-no-files-found: warn
+
+  lots13b:
+    name: P13B lot ${{ matrix.batch }} (barres M1 + ticks entree IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase13b }}
+    permissions:
+      actions: read
+      contents: read
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Barres et ticks d'entree du lot (IS uniquement, holdout jamais accede)
+      env:
+        P13B_BATCH: ${{ matrix.batch }}
+      run: python ci_tools/phase13b_engine.py lot
+    - name: Publier les sorties du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p13b-lot-${{ matrix.batch }}
+        path: |
+          reports/meta_alpha/phase13/P13B_BARS_${{ matrix.batch }}.csv.gz
+          reports/meta_alpha/phase13/P13B_TICKS_${{ matrix.batch }}.csv
+        retention-days: 90
+        if-no-files-found: error
+  analyse13b:
+    name: P13-B evaluation economique exploratoire IS (contrat gele 13-A.1)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase13b }}
+    needs:
+    - lots13b
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p13b-lot-*
+        path: reports/meta_alpha/phase13
+        merge-multiple: true
+    - name: Evaluation economique exploratoire Phase 13-B
+      run: |
+        set +e
+        python ci_tools/phase13b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase13/PHASE13B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase13/PHASE13B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 13-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p13out && cp -a reports/meta_alpha/phase13/. /tmp/p13out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p13out/. reports/meta_alpha/phase13/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase13/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 13-B: livrables evaluation economique exploratoire IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p13b-livrables
+        path: reports/meta_alpha/phase13
         retention-days: 90
         if-no-files-found: warn
