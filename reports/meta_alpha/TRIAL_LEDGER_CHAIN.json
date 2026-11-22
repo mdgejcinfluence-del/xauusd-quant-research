@@ -4015,6 +4015,18 @@
     "statut": "PHASE 12-B AUTORISEE - execution en cours"
    },
    "entry_hash": "e2e9cff385d18b79be4b36035cdf4cfb6d8caf9dd07036e7a15f639a84a2c468"
+  },
+  {
+   "seq": 313,
+   "prev_hash": "e2e9cff385d18b79be4b36035cdf4cfb6d8caf9dd07036e7a15f639a84a2c468",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-B",
+    "objet": "PHASE 12-B EXECUTEE conformement au protocole 12-A gele (seq311, sha256 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e inchange). Preflight: hashes 12-A/manifeste 57b7b8af/carte 3281f594/PHASE11C_EVENT_PATHS c487e389 conformes, chaine valide a seq311, HEAD distant 2c6cec5. Extraction bornee CI run 45028022637 entierement vert (8/8 lots M1 IS, tests synthetiques temporels 5/5 en local et en CI, job analyse vert), livrables committes CI c033adf. 3327 evenements reintegres (2695 H1, 632 H4), cinq variables sur minutes <= t_reintegration uniquement, 0 valeur manquante, 0 anomalie (reintegration reconciliee 3327/3327, MFE borne jamais superieur au MFE fenetre, sessions reverifiees), 0 grappe partagee (2977 grappes), purge chevauchements: 2 H1. Cible materialisee 11-C jamais recalculee: H1 2032/660 + 3 censures, H4 539/90 + 3 censures, 0 ambigu. H1 EVALUABLE (apprentissage 1640, evaluation 543, minorite 133): M0 p=0,7591 Brier 0,1850 log-loss 0,5567; M1 Brier 0,1654 (delta -0,0196, +10,58 %) log-loss 0,5468 (delta -0,0099, +1,78 %), AUC 0,694, calibration pente 0,750 ordonnee 0,096 deciles publies => PREDICTIVE_SIGNAL_SUPPORTED_HISTORICALLY. H4 NON EVALUABLE (evaluation 130 mais minorite 18 < 50, critere gele; aucun modele ajuste, aucun pooling/oversampling/seuil modifie). Decision globale: mixte par famille. Qualification: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE; amelioration predictive sans aucune interpretation de rentabilite. SHA-256: FEATURES 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485, FEATURE_AUDIT a16cb94ed5e03a6a48f2fb19ced07d4593835de4bb5001325b69df626f053a25, MODEL_EVALUATION 7d8ced8ae64fc64cf65b30004b6495173192deae7be13f7992f9ae0b5ccc0583, RESULTS 93e7d5ca3a03496e61b5f160fa4a36e4ccfdedca8a93f0f5d57c7aaa65f5786b, FINAL_REPORT 346a23d4b013901773f701b6fe427a929ee2b23575527dbc102c561b0145ef17, LOG 4537b9fc34f7e0a5e81a746916f21d6c0a130876d9ae582ef9d7705929ca2f58, moteur phase12b_engine.py a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b. Sources gelees intactes apres execution. Holdout jamais accede. Aucune autorisation automatique ulterieure (strategie, optimisation, holdout): decision distincte requise.",
+    "verdict": "H1: PREDICTIVE_SIGNAL_SUPPORTED_HISTORICALLY; H4: NON_EVALUABLE; decision globale mixte par famille",
+    "statut": "PHASE 12-B TERMINEE - aucune etape ulterieure autorisee automatiquement"
+   },
+   "entry_hash": "5b07e888a2708a26450536f1299687dfc4926cfd2cf5abe4edef69ca92506beb"
   }
  ]
 }
