@@ -3772,6 +3772,17 @@
     "statut": "BLOCAGE EXTERNE DOCUMENTE - en attente secret Kaggle ou quota Drive"
    },
    "entry_hash": "7bee680cc106b20dd239a59572690c2be7a0aab99ce6e7c0468e164c74cc85c0"
+  },
+  {
+   "seq": 293,
+   "prev_hash": "7bee680cc106b20dd239a59572690c2be7a0aab99ce6e7c0468e164c74cc85c0",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "Apres annonce de restauration du secret, le diagnostic 45009634171 montre toujours KAGGLE_API_TOKEN absent des runs (journal identique, aucun commit de diagnostic) et Kaggle 403/Drive quota inchanges: le secret restaure n est pas visible des workflows Actions du depot (emplacement ou nom a verifier par le proprietaire: Settings > Secrets and variables > Actions > Repository secrets, nom exact KAGGLE_API_TOKEN). Le dispatch de diagnostic a aussi declenche par erreur les trois moteurs complets (logique d inputs), run annule immediatement, aucune donnee exploitee; logique corrigee (moteurs derriere input explicite moteurs). Relance ciblee toujours en attente.",
+    "statut": "EN ATTENTE DE VERIFICATION DU SECRET PAR LE PROPRIETAIRE"
+   },
+   "entry_hash": "1cb68d34697732c471de2a5543efe1539bd348725e180636eb486068dfb0a02f"
   }
  ]
 }
