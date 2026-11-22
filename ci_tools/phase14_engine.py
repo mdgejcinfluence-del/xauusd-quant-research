@@ -21,6 +21,7 @@ import json
 import os
 import pathlib
 import shutil
+import zipfile
 import sys
 
 import numpy as np
