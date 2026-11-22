@@ -4345,6 +4345,30 @@
     "statut": "PHASE 15 TERMINEE - aucune etape suivante autorisee automatiquement"
    },
    "entry_hash": "6cf365fde74240ed72e70ecc084867c17a7cc50fca24d75459da17367dc80068"
+  },
+  {
+   "seq": 341,
+   "prev_hash": "6cf365fde74240ed72e70ecc084867c17a7cc50fca24d75459da17367dc80068",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "16",
+    "objet": "Recherche exploratoire IS autorisee d une unique entree passive E3: apres t_decision, premiere cotation Bid/Ask reelle (Bid_0/Ask_0 deja materialisee comme tick d entree 13-B), P_limit = (Bid_0 + Ask_0)/2, ordre limite unique fixe (Buy Limit long / Sell Limit short) actif apres cette cotation et expirant a t_decision + 60 secondes strictement; remplissage candidat a la premiere observation ulterieure dans la validite avec Ask < P_limit (long) ou Bid > P_limit (short), inegalites strictes, prix de remplissage = P_limit sans amelioration supposee; sinon NO_FILL (ni perte ni gain, jamais masque). Audit prealable de remplissabilite sur la nature des ticks (cotations Bid/Ask seules attendues: ni transactions, ni volume, ni profondeur, ni priorite de file): si la preuve de remplissage n est pas disponible, statut QUOTE_CROSSING_PROXY_ONLY et jamais de presentation comme ordre reellement executable. Sorties conservees X0/X1/X2 uniquement (ATR a t_decision, echeance originale fixe), matrice 1 x 3 x 3 = 9 cellules toutes presentees; slippage S0/S1/S2 applique a la seule sortie (0 / 0,5 / 1,0 bp defavorable), entree limite jamais remplie moins favorablement que P_limit; commissions exclues. Presentation obligatoire: conditionnel aux remplis, cohorte entiere de 443 (non-remplis a 0), opportunites non capturees; comparaison E0 sur la meme cohorte avec convention de slippage de sortie seule rendue comparable et reconciliation E0 standard 13-B/Phase 14. Preenregistrement gele avant tout calcul. Holdout interdit; modele, M0, probabilites, grappes intouches; aucune autre politique, aucun offset, aucun delai supplementaire, aucune strategie ni depense.",
+    "verdict": "EXECUTION_EXPLORATOIRE_AUTORISEE_SOUS_PREENREGISTREMENT",
+    "statut": "PHASE 16 EN COURS - GEL DU PROTOCOLE ET AUDIT DE REMPLISSABILITE"
+   },
+   "entry_hash": "3263e9b7d8ae32916081724bca78ac870cf74d9bab18daaaca83c7b93862a15f"
+  },
+  {
+   "seq": 342,
+   "prev_hash": "3263e9b7d8ae32916081724bca78ac870cf74d9bab18daaaca83c7b93862a15f",
+   "entry": {
+    "type": "PREREG",
+    "phase": "16",
+    "objet": "Gel avant tout calcul du protocole d entree passive E3 (PHASE16_PASSIVE_ENTRY_PROTOCOL.md) et de l audit de remplissabilite (PHASE16_FILLABILITY_AUDIT.md), empreintes consignees au commit. Audit documentaire sur les schemas existants: les ticks IS sont des cotations Bid/Ask (timestamp, bid, ask, mid) sans transactions, volume, profondeur ni priorite de file dans aucun artefact du programme: statut de qualite d execution fixe ex ante a QUOTE_CROSSING_PROXY_ONLY, TRADE_FILL_SUPPORTED inaccessible, aucun remplissage presente comme reellement executable. Politique unique gelee: P_limit = milieu du premier spread apres t_decision, ordre fixe expirant a t_decision + 60 s, franchissement strict (Ask < P_limit long / Bid > P_limit court), prix de remplissage P_limit sans amelioration supposee, NO_FILL sinon. Matrice E3 x X0/X1/X2 x S0/S1/S2 (9 cellules), slippage a la seule sortie, comparaison E0 standard reconciliee et E0 rendue comparable (slippage de sortie seule), presentations conditionnelle/cohorte 443/opportunites manquees toujours ensemble, criteres de verdict geles au protocole.",
+    "verdict": "QUOTE_CROSSING_PROXY_ONLY (qualite d execution) + PHASE16_PREREGISTRATION_FROZEN",
+    "statut": "GEL EFFECTUE - execution Phase 16 autorisee"
+   },
+   "entry_hash": "7453d50dd3e0ae1b20a1490b4f4d5c7d3b486914e1341ea3531112debfa37af0"
   }
  ]
 }
