@@ -3862,6 +3862,17 @@
     "statut": "GELE DEFINITIVEMENT - execution non autorisee"
    },
    "entry_hash": "ff5772b1db775edb00554edc255c4170c2af5efa132bdcae2a5c24cbb2eb7109"
+  },
+  {
+   "seq": 301,
+   "prev_hash": "ff5772b1db775edb00554edc255c4170c2af5efa132bdcae2a5c24cbb2eb7109",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-B",
+    "objet": "Mission officielle Phase 11-B executee: audit d integrite, de provenance et d admissibilite des manifestes Phase 10 (lecture seule), reference methodologique Phase 11-A gelee definitivement (seq300). Perimetre strict: F10-01 (references 3134 detectes/3107 admissibles/2617 grappes/27 non admissibles) et F10-03 (762/660/597/102), populations separees, divergences documentees jamais corrigees silencieusement. Controles: provenance des campagnes 44919631588 (initiale defectueuse NaN) et 45011013927 (corrective), empreintes SHA-256, coherence 282 partitions IS, audit structurel (unicite des identifiants d evenements, identifiants de grappes, timeframes, horodatages UTC, bougie declencheuse, t0/P0/direction, statuts d admissibilite, exclusions et motifs, doublons), fenetres causales ineligibles (H1 202, H4 208 INELIGIBLE_CAUSAL_WINDOW), compatibilite avec le protocole gele 11-A sans calculer aucune trajectoire. Interdictions: nouvelle detection, recalcul des seuils ou des grappes, trajectoires/MFE/MAE, statistiques, economie, backtest, holdout (ni monte, ni liste, ni lu), S12, T0/J2/J3, depenses; lecture seule sur les sources, aucune correction de manifeste. Livrables: PHASE11B_MANIFEST_AUDIT.md, PHASE11B_MANIFEST_INVENTORY.csv, PHASE11B_AUDIT_RESULT.json, proces-verbal chaine. Verdict binaire: ADMISSIBLE POUR PHASE 11-C seulement si toutes les verifications critiques passent pour les deux populations, sinon BLOQUE avec defaut exact. Meme en cas de succes, ne pas commencer la Phase 11-C (autorisation distincte requise).",
+    "statut": "EXECUTION APPROUVEE - audit en cours"
+   },
+   "entry_hash": "c2f881eb6a2f2f337e4ebdd6fee33ffb2b74015e57e0cba7f4e105ae235e2671"
   }
  ]
 }
