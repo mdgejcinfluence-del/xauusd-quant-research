@@ -1,5 +1,5 @@
-token present: False longueur: 0
-kaggle direct bearer -> 403 application/json None
+token present: True longueur: 37
+kaggle direct bearer -> 200 application/zip 74667310
 kaggle direct basic -> 403 application/json None
 test Drive partition: part_000001.parquet taille attendue: 1763664
 Failed to retrieve file url:
