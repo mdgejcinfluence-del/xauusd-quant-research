@@ -3943,6 +3943,22 @@
     "statut": "PHASE 11-C TERMINEE - derniere etape descriptive autorisee; phase suivante sur decision distincte uniquement"
    },
    "entry_hash": "60cd1418988511e84190983a9b8d36914248aeaa4c3ef8630e14658846fcc08b"
+  },
+  {
+   "seq": 307,
+   "prev_hash": "60cd1418988511e84190983a9b8d36914248aeaa4c3ef8630e14658846fcc08b",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "11-C.1",
+    "objet": "Reconciliation numerique Phase 11-C executee exclusivement depuis les livrables committes (EVENT_PATHS, ARCHETYPES, HORIZON_METRICS, RESULTS), sans relance du moteur, sans extraction M1, sans recalcul de grappes, sans acces holdout. Effectifs exacts retrouves: H1 admissibles 3107, complets 3104, censures 3 (LACUNE_ANORMALE); reintegration 2695/3107 = 86,74 % (communique 86,7); reprise conditionnelle 2033/2695 = 75,44 % (75,4); archetype REINTEGRATION_PUIS_REPRISE 2032/3107 = 65,40 % (65,4); produit des taux 65,43 %, ecart = 1 evenement reintegré avec reprise mais censure, classe CENSURE par la hierarchie gelee. H4: admissibles 660, complets 657, censures 3; reintegration 632/660 = 95,76 % (95,8); reprise 542/632 = 85,76 % (85,8); archetype 539/660 = 81,67 % (81,7); produit 82,12 %, ecart = 3 evenements censures reintegrés avec reprise. CONTINUATION_SANS_REPLI_CONFIRME: numerateur 0 reel sur admissibles et sur complets des deux populations, ambigus intraminutes 0, censures classees a part. Coherence MFE/cloture expliquee (maximum cumule intrabougie vs deplacement terminal a t+8, memes ensembles complets et unites): H1 32,88 vs -2,24 bp; H4 65,22 vs -4,64 bp. Ponderation grappe verifiee sur les grappe_id de la carte 11-B.1 sans recalcul (2617/597 grappes, 2614/594 parmi les complets), differences evenement/grappe faibles. Limites de preuve conservees au registre (tests synthetiques non tracables, anomalie du job de synthese Phase 10, 3+3 censures, IS seul sans validation holdout, aucune exploitabilite demontree). VERDICT: RECONCILIATION_CONFORME; resultats Phase 11-C geles en l etat.",
+    "sha256": {
+     "PHASE11C_RECONCILIATION_ADDENDUM.md": "voir commit",
+     "PHASE11C_RECONCILIATION.json": "voir commit"
+    },
+    "verdict": "RECONCILIATION_CONFORME",
+    "statut": "PHASE 11-C.1 TERMINEE - resultats 11-C geles; phase suivante sur decision distincte"
+   },
+   "entry_hash": "7720f349d3637faad472b3b9b85aa3c50d530d7e4dbec8f1466d64d3d9c2e8c5"
   }
  ]
 }

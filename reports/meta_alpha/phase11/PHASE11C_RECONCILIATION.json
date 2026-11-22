@@ -1,0 +1,46 @@
+{
+  "phase": "11-C.1",
+  "verdict": "RECONCILIATION_CONFORME",
+  "sources_uniquement": ["PHASE11C_EVENT_PATHS.csv (c487e389...)", "PHASE11C_ARCHETYPES.csv", "PHASE11C_HORIZON_METRICS.csv", "PHASE11C_RESULTS.json"],
+  "aucun_recalcul_sur_donnees_brutes": true,
+  "populations": {
+    "F10-01": {
+      "admissibles": 3107, "complets_horizon_8": 3104, "censures": 3, "censures_motifs": {"LACUNE_ANORMALE": 3},
+      "reintegration": {"numerateur": 2695, "denominateur_admissibles": 3107, "taux_pct": 86.74,
+                        "numerateur_complets_seuls": 2692, "denominateur_complets": 3104, "taux_complets_pct": 86.73, "communique": 86.7},
+      "reprise_conditionnelle": {"numerateur": 2033, "denominateur_reintegres": 2695, "taux_pct": 75.44,
+                                 "numerateur_complets_seuls": 2032, "denominateur_reintegres_complets": 2692, "taux_complets_pct": 75.48, "communique": 75.4},
+      "archetype_REINTEGRATION_PUIS_REPRISE": {"numerateur": 2032, "denominateur_admissibles": 3107, "proportion_pct": 65.40, "communique": 65.4},
+      "produit_des_taux_pct": 65.43,
+      "ecart_produit_moins_archetype_evenements": 1,
+      "explication_ecart": "1 evenement H1 reintegré avec reprise mais censure (horizon < 8) est classe CENSURE et n entre pas dans l archetype; le produit des deux taux (denominateurs 3107 puis 2695) compte cet evenement, la proportion d archetype (denominateur 3107) ne le compte pas.",
+      "archetype_CONTINUATION_SANS_REPLI_CONFIRME": {"numerateur": 0, "denominateur_admissibles": 3107, "denominateur_complets": 3104, "ambigus_intra_minute": 0, "lecture": "zero reel sur la population admissible et sur les seuls complets; les 3 censures sont classees CENSURE, hors archetypes"},
+      "mfe_mae_cloture_t8": {"mfe_median_bp": 32.88, "mae_median_bp": 31.50, "cloture_mediane_bp": -2.24, "n": 3104,
+                             "mfe_median_grappe_bp": 32.60, "cloture_mediane_grappe_bp": -4.20, "n_grappes_complets": 2614}
+    },
+    "F10-03": {
+      "admissibles": 660, "complets_horizon_8": 657, "censures": 3, "censures_motifs": {"LACUNE_ANORMALE": 3},
+      "reintegration": {"numerateur": 632, "denominateur_admissibles": 660, "taux_pct": 95.76,
+                        "numerateur_complets_seuls": 629, "denominateur_complets": 657, "taux_complets_pct": 95.74, "communique": 95.8},
+      "reprise_conditionnelle": {"numerateur": 542, "denominateur_reintegres": 632, "taux_pct": 85.76,
+                                 "numerateur_complets_seuls": 539, "denominateur_reintegres_complets": 629, "taux_complets_pct": 85.69, "communique": 85.8},
+      "archetype_REINTEGRATION_PUIS_REPRISE": {"numerateur": 539, "denominateur_admissibles": 660, "proportion_pct": 81.67, "communique": 81.7},
+      "produit_des_taux_pct": 82.12,
+      "ecart_produit_moins_archetype_evenements": 3,
+      "explication_ecart": "3 evenements H4 reintegrés avec reprise mais censures (horizon < 8) sont classes CENSURE; le produit des taux les compte, la proportion d archetype non.",
+      "archetype_CONTINUATION_SANS_REPLI_CONFIRME": {"numerateur": 0, "denominateur_admissibles": 660, "denominateur_complets": 657, "ambigus_intra_minute": 0, "lecture": "zero reel sur la population admissible et sur les seuls complets; les 3 censures sont classees CENSURE, hors archetypes"},
+      "mfe_mae_cloture_t8": {"mfe_median_bp": 65.22, "mae_median_bp": 62.92, "cloture_mediane_bp": -4.64, "n": 657,
+                             "mfe_median_grappe_bp": 64.72, "cloture_mediane_grappe_bp": -6.65, "n_grappes_complets": 594}
+    }
+  },
+  "ponderation_grappe": "Statistiques par grappe = mediane intra-grappe puis quantiles entre grappes (PHASE11C_HORIZON_METRICS, colonnes *_grappe), calculees avec les grappe_id de la carte PHASE 11-B.1 (jointure du moteur sur la carte, aucun recalcul de clustering); grappes presentes dans les trajectoires: 2617/597 au total, 2614/594 parmi les complets (3 grappes par population ne contiennent que l evenement censure). Differences evenement vs grappe faibles (H1 MFE t+8: 32,88 vs 32,60 bp; cloture: -2,24 vs -4,20 bp; H4: 65,22 vs 64,72; -4,64 vs -6,65).",
+  "coherence_MFE_cloture": "Aucune contradiction: le MFE est le maximum cumule de l excursion favorable intrabougie (extrema Mid) sur toute la fenetre, la cloture est le deplacement directionnel terminal a t+8 (cloture Mid vs P0). Par evenement, MFE >= deplacement terminal par construction; leurs medianes (sur les memes ensembles complets, n=3104/657, memes unites bp relatifs, memes horizons) peuvent donc differer fortement: la trajectoire mediane s etend puis revient sous P0.",
+  "limites_de_preuve_conservees": [
+    "Absence d artefacts tracables des tests synthetiques 11-C (mention au seul message du commit 18d4e27)",
+    "Anomalie du job historique de synthese Phase 10 pouvant echouer a son etape de commit lors des runs 11-C (sans effet sur les livrables 11-C)",
+    "3 censures LACUNE_ANORMALE H1 et 3 H4",
+    "Corpus IS 2010-2020 uniquement, aucune validation independante sur holdout (jamais accede)",
+    "Aucune demonstration d exploitabilite economique; resultats descriptifs uniquement"
+  ],
+  "anomalies_residuelles": "Aucune incoherence numerique non expliquee. Les limites ci-dessus restent au registre."
+}
