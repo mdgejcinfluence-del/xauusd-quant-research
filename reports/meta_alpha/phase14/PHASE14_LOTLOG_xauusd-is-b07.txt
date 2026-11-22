@@ -1,0 +1,11 @@
+Kaggle xauusd-is-b07 200
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase14_engine.py", line 453, in <module>
+    mode_lot()
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase14_engine.py", line 94, in mode_lot
+    localdir = telecharger_batch(batch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase14_engine.py", line 77, in telecharger_batch
+    zipfile.ZipFile(io.BytesIO(r.content)).extractall(localdir)
+    ^^^^^^^
+NameError: name 'zipfile' is not defined
