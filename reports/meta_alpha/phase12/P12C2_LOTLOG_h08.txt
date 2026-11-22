@@ -1,0 +1,38 @@
+Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1fTKN8ei8IHGI7705URt_skeLHv5ZN8Sd
+
+but Gdown can't. Please check connections and permissions.
+P12C2 telechargement a reessayer part_000343.parquet 0
+Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1fTKN8ei8IHGI7705URt_skeLHv5ZN8Sd
+
+but Gdown can't. Please check connections and permissions.
+P12C2 telechargement a reessayer part_000343.parquet 1
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 190, in <module>
+    if os.environ.get('P12C2_ETAPE') == 'bars': mode_bars()
+                                                ^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 46, in mode_bars
+    if not ok: raise RuntimeError(f'telechargement Drive impossible: {nom}')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: telechargement Drive impossible: part_000343.parquet
