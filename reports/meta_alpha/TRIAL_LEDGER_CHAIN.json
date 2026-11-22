@@ -4120,6 +4120,17 @@
     "statut": "EN ATTENTE DU TRANSFERT PROPRIETAIRE - evaluation non consommee"
    },
    "entry_hash": "098ecb1b543fa009c5bf79e6f362fa386b5218c3c423194a72cc09a436f75d8a"
+  },
+  {
+   "seq": 322,
+   "prev_hash": "098ecb1b543fa009c5bf79e6f362fa386b5218c3c423194a72cc09a436f75d8a",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-C.2-R2",
+    "objet": "Decision officielle R2: activation de la modalite B depuis le dossier Drive partage en lecture seule (dossier PARTITIONS dans XAUUSD_DGP_CHRONOLOGICAL_V5R10, lien de partage fourni par le responsable - non consigne en clair dans les livrables) vers les six datasets Kaggle prives existants shalom5123/xauusd-ho-b01..b06 (aucun nouveau dataset a creer; existence, propriete, confidentialite et contenu a controler avant migration, arret si fichiers etrangers). Reference absolue: PHASE12C2_HOLDOUT_TRANSFER_MANIFEST.csv sha256 b112b7ab0aecc94699334f0a36b4b0b3c40648f9cbb83d5a4fb7598d1a2c397f (66 partitions part_000283-part_000348; part_000282 exclue, IS deja Kaggle). Test d acces reel obligatoire (capabilities.canDownload si API, contenu binaire effectif, jamais la seule page HTML); GDRIVE_SA_JSON non requis si le partage public permet l acces; aucune nouvelle authentification inventee, aucun secret demande ni expose, aucun contournement de quota: en cas de message Too many users, arret documente. Architecture: Drive partage -> runner temporaire -> verification source (nom, taille, SHA-256 a la reception, MD5 Drive si fourni, PAR1 debut/fin, espace disque) -> nouvelle version du dataset prive -> re-telechargement Kaggle -> comparaison SHA-256 fichier par fichier; lots sequentiels; GitHub jamais stockage intermediaire; sources Drive en lecture seule stricte. HOLDOUT_MIGRATION_VERIFIED exige 66/66 (attendus/recus/tailles/SHA identiques, zero manquante/supplementaire/doublon); un seul fichier non verifie => HOLDOUT_MIGRATION_BLOCKED, aucun PASS partiel. Apres verification seulement: reprise terminale unique 12-C.2 (protocole 12-C, modele gele 12-C.1 charge du JSON, M0 0,7591463414634146, criteres 100/50) sans nouvelle demande; aucune adaptation apres metriques. Livrables R2: PHASE12C2_TRANSFER_EXECUTION.json, audit et provenance mis a jour, puis livrables d evaluation si migration verifiee. H4 hors perimetre; strategie/backtest/economie/S12/T0/J2/J3/depenses interdits.",
+    "statut": "PHASE 12-C.2-R2 AUTORISEE - execution en cours"
+   },
+   "entry_hash": "25166ead438f4563bb250813873b36991789bb341ec71cc9ec917c6267019892"
   }
  ]
 }
