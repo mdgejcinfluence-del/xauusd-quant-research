@@ -1,0 +1,12 @@
+{
+ "mode": "probe",
+ "gdrive_sa_present": false,
+ "gdrive_root_id_present": false,
+ "kaggle_api_token_present": true,
+ "kaggle_username_present": true,
+ "kaggle_key_present": true,
+ "sa_auth_ok": false,
+ "acces_metadonnees": {},
+ "kaggle_auth_ok": true,
+ "kaggle_datasets_visibles": []
+}
