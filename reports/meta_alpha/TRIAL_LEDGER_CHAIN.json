@@ -4051,6 +4051,29 @@
     "statut": "PHASE 12-C CONCUE MAIS BLOQUEE (ANO-12B-01) - holdout non autorise"
    },
    "entry_hash": "9a6b36bcf273cfe2106b3983451151bda47a593c6690377ec5437ec5c290c395"
+  },
+  {
+   "seq": 316,
+   "prev_hash": "9a6b36bcf273cfe2106b3983451151bda47a593c6690377ec5437ec5c290c395",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-C.1",
+    "objet": "Ordre officiel: EXECUTION PHASE 12-C.1 AUTORISEE - reconstruction deterministe du modele H1 pour resoudre ANO-12B-01 (coefficients M1 non archives en 12-B). Perimetre: seules donnees d apprentissage IS commitees (PHASE12B_FEATURES.csv 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485, segment APPRENTISSAGE F10-01, 1640 observations attendues, M0 gele 0,7591463414634146 = 1245/1640) et code historique gele (phase12b_engine.py a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b, IRLS tolerance 1e-10, 200 iter. max, ridge numerique 1e-8, variables brutes, reference ASIA). UNE seule reconstruction conforme; aucun ajustement post-hoc, aucune modification de variables/ordre/encodage/seuil, aucune reestimation IS complet, evaluation IS commitee utilisee uniquement pour verifier la reproduction (Brier M1 0,1654, log-loss M1 0,5468 apres arrondi 4 decimales; M0 0,1850/0,5567; AUC 0,694; pente 0,750). Seconde reproduction independante obligatoire dans le meme environnement epingle. Versions historiques du run 45028022637 non retrouvees dans les journaux CI (pip -q sans versions): a declarer explicitement, reconstruction numerique controlee avec versions epinglees documentees, jamais presentee comme runtime original. Livrables: PHASE12C1_MODEL_PARAMETERS.json, PHASE12C1_MODEL_REPRODUCTION.md, PHASE12C1_REPRODUCTION_RESULTS.json, PHASE12C1_MODEL_MANIFEST.json. Verdicts: MODEL_RECONSTRUCTION_CONFORME ou MODEL_RECONSTRUCTION_BLOCKED, jamais d ajustement pour obtenir un PASS. Holdout integralement interdit (aucun acces/listage/metadonnees), H4 exclu (NON_EVALUABLE_IN_PHASE12B). Reussite sans autorisation automatique d ouverture du holdout.",
+    "statut": "PHASE 12-C.1 AUTORISEE - execution en cours"
+   },
+   "entry_hash": "06e20b051ba8db7d4b2fcc0691d1ea00f3f6ad1f40739caad0a617937b5d9191"
+  },
+  {
+   "seq": 317,
+   "prev_hash": "06e20b051ba8db7d4b2fcc0691d1ea00f3f6ad1f40739caad0a617937b5d9191",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.1",
+    "objet": "PHASE 12-C.1 EXECUTEE: reconstruction deterministe conforme du modele H1 (ANO-12B-01 RESOLUE). Code historique importe tel quel (phase12b_engine.py a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b), donnees commitees PHASE12B_FEATURES.csv 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485, segment F10-01 APPRENTISSAGE etiquete controle par assertions: 1640 obs (1245/395), M0 reproduit sans consulter l evaluation: 0,7591463414634146. Une seule reconstruction conforme (IRLS tolerance 1e-10, 200 iter., ridge numerique 1e-8, variables brutes, reference ASIA, aucun ajustement post-hoc): intercept 1,682585515770129; RATIO 0,11131670535544635; DUREE -0,008882903513982094; MFE -0,026100748302710385 corrige -0,026100748302110385; TOUCHES 0,0010678267238513; LONDON 0,2780303741498772; OVERLAP -0,34122969210402093; NY_AFTERNOON -0,25555560769720237; NIGHT_OTHER -0,30759954837396397. Validation sur evaluation IS commitee (543, jamais utilisee en entrainement): metriques reproduites EXACTEMENT a la pleine precision float64 publiee (Brier M0 0,18495878470019708, M1 0,16538954947396367, log-loss M0 0,5567479510569909, M1 0,5468387473824291, AUC 0,6942967174032643, calibration pente/ordonnee identiques; arrondis 0,1850/0,1654/0,5567/0,5468). Seconde reproduction independante: coefficients, 543 predictions, metriques et empreinte de sortie (fcffb41a5904251dbe4f2f45728457ae870a067f2d0b695b2be9195416b21f86) identiques. Versions historiques du run 45028022637 NON retrouvees (journaux CI sans versions): declare explicitement; reconstruction numerique controlee en environnement epingle Python 3.11.2 / pandas 3.1.1 / numpy 2.4.6, jamais presentee comme runtime original. Livrables: PHASE12C1_MODEL_PARAMETERS.json, PHASE12C1_MODEL_REPRODUCTION.md, PHASE12C1_REPRODUCTION_RESULTS.json, PHASE12C1_MODEL_MANIFEST.json (empreintes dans le commit associe). Verdict: MODEL_RECONSTRUCTION_CONFORME - coefficients gelables comme objet modele. Holdout jamais accede; H4 exclu; Phase 12-C toujours suspendue a une autorisation distincte d ouverture du holdout.",
+    "verdict": "MODEL_RECONSTRUCTION_CONFORME",
+    "statut": "MODELE H1 RECONSTRUIT ET GELABLE - Phase 12-C non autorisee"
+   },
+   "entry_hash": "f2b7afd80578003e0f7ab43d34a92dab46fc5cbb41004c312c073a3b0bbf12b2"
   }
  ]
 }

@@ -1,0 +1,55 @@
+{
+ "phase": "12-C.1",
+ "objet": "Parametres reconstruits du modele H1 M1 (Phase 12-B) - reconstruction deterministe conforme, ANO-12B-01 resolue sous reserve du gel par checkpoint",
+ "modele": "regression logistique non penalisee, Newton-Raphson amorti (IRLS) du code gele ci_tools/phase12b_engine.py (logistique_irls)",
+ "ordre_variables": [
+  "INTERCEPT",
+  "RATIO_REPLI_EXTENSION_A_TREINT",
+  "DUREE_EXTREME_VERS_TREINT_MIN",
+  "MFE_A_TREINT_BP",
+  "NB_TOUCHES_P0_AVANT_TREINT",
+  "SESSION_REINTEGRATION=LONDON",
+  "SESSION_REINTEGRATION=LONDON_NY_OVERLAP",
+  "SESSION_REINTEGRATION=NY_AFTERNOON",
+  "SESSION_REINTEGRATION=NIGHT_OTHER"
+ ],
+ "intercept": 1.682585515770129,
+ "coefficients": {
+  "RATIO_REPLI_EXTENSION_A_TREINT": 0.11131670535544635,
+  "DUREE_EXTREME_VERS_TREINT_MIN": -0.008882903513982094,
+  "MFE_A_TREINT_BP": -0.026100748302110385,
+  "NB_TOUCHES_P0_AVANT_TREINT": 0.0010678267238513,
+  "SESSION_REINTEGRATION=LONDON": 0.2780303741498772,
+  "SESSION_REINTEGRATION=LONDON_NY_OVERLAP": -0.34122969210402093,
+  "SESSION_REINTEGRATION=NY_AFTERNOON": -0.25555560769720237,
+  "SESSION_REINTEGRATION=NIGHT_OTHER": -0.30759954837396397
+ },
+ "encodage": "SESSION_REINTEGRATION: indicatrices binaires LONDON, LONDON_NY_OVERLAP, NY_AFTERNOON, NIGHT_OTHER; categorie de reference ASIA; ordre fixe SESSIONS_ORDRE",
+ "transformations": "AUCUNE (variables brutes; ratio >100 % conserve; aucune standardisation)",
+ "convention_prediction": "p = 1/(1+exp(-z)), z = intercept + somme(beta_i x_i), z ecrêté a [-35, 35]; metriques: probabilites ecrêtees a [1e-15, 1-1e-15]",
+ "parametres_irls": {
+  "tolerance_convergence": 1e-10,
+  "iterations_max": 200,
+  "regle_arret": "max|delta beta| < tolerance",
+  "regularisation": "aucune penalisation; ridge purement numerique 1e-8 ajoute a la matrice d information",
+  "gestion_singularites": "np.linalg.solve sur matrice regularisee 1e-8 I",
+  "valeurs_manquantes": "aucune presente (0/1640); aucune imputation dans le code",
+  "initialisation": "beta = 0"
+ },
+ "environnement_epingle": {
+  "python": "3.11.2",
+  "pandas": "3.1.1",
+  "numpy": "2.4.6",
+  "plateforme": "Linux-6.1.158+-x86_64-with-glibc2.36",
+  "statut": "environnement de reconstruction CONTROLE et epingle ci-dessus; les versions historiques exactes du run CI 45028022637 n ont pas ete retrouvees (pip install -q sans journal de versions) et ne sont pas pretendues retrouvees"
+ },
+ "sources": {
+  "donnees": "reports/meta_alpha/phase12/PHASE12B_FEATURES.csv sha256 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485",
+  "segment": "famille F10-01, ensemble APPRENTISSAGE, cible etiquetee: 1640 observations (1245 reprises / 395 absences)",
+  "code": "ci_tools/phase12b_engine.py sha256 a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b (importe tel quel, aucune copie modifiee)",
+  "script_reconstruction": "ci_tools/phase12c1_reproduce.py"
+ },
+ "M0_probabilite_gelee": 0.7591463414634146,
+ "precision_numerique": "coefficients en float64; reproduction des metriques 12-B exacte a la pleine precision float64 publiee (voir PHASE12C1_REPRODUCTION_RESULTS.json)",
+ "reproductibilite": "deux executions independantes: coefficients, predictions (543) et metriques identiques; empreinte du fichier de sortie identique (voir resultats)"
+}

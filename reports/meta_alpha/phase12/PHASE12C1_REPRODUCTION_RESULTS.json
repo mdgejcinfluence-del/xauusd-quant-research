@@ -1,0 +1,75 @@
+{
+ "phase": "12-C.1",
+ "statut_global": "MODEL_RECONSTRUCTION_CONFORME",
+ "integrite_sources": {
+  "protocole_12A_sha256": "580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e",
+  "features_sha256": "6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485",
+  "code_sha256": "a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b",
+  "n_apprentissage": 1640,
+  "classe1": 1245,
+  "classe0": 395,
+  "M0_reproduit": 0.7591463414634146,
+  "M0_reference": 0.7591463414634146,
+  "sources_inchangees": true
+ },
+ "dependances": {
+  "statut": "VERSIONS_HISTORIQUES_NON_RETROUVEES (journaux CI sans versions, pip -q); reconstruction numerique controlee avec environnement epingle documente dans PHASE12C1_MODEL_PARAMETERS.json; jamais presentee comme runtime original",
+  "python": "3.11.2",
+  "pandas": "3.1.1",
+  "numpy": "2.4.6"
+ },
+ "reconstruction": {
+  "statut": "CONFORME (une seule reconstruction, specification historique exacte, aucun ajustement post-hoc)",
+  "intercept": 1.682585515770129,
+  "coefficients": {
+   "RATIO_REPLI_EXTENSION_A_TREINT": 0.11131670535544635,
+   "DUREE_EXTREME_VERS_TREINT_MIN": -0.008882903513982094,
+   "MFE_A_TREINT_BP": -0.026100748302110385,
+   "NB_TOUCHES_P0_AVANT_TREINT": 0.0010678267238513,
+   "SESSION_REINTEGRATION=LONDON": 0.2780303741498772,
+   "SESSION_REINTEGRATION=LONDON_NY_OVERLAP": -0.34122969210402093,
+   "SESSION_REINTEGRATION=NY_AFTERNOON": -0.25555560769720237,
+   "SESSION_REINTEGRATION=NIGHT_OTHER": -0.30759954837396397
+  }
+ },
+ "concordance_metriques": {
+  "reference_publiee": {
+   "M0_brier": 0.18495878470019708,
+   "M1_brier": 0.16538954947396367,
+   "M0_log_loss": 0.5567479510569909,
+   "M1_log_loss": 0.5468387473824291,
+   "M1_auc": 0.6942967174032643,
+   "calibration_pente": 0.7501785957184135,
+   "calibration_intercept": 0.09589707234295108
+  },
+  "reconstruit": {
+   "M0_brier": 0.18495878470019708,
+   "M1_brier": 0.16538954947396367,
+   "M0_log_loss": 0.5567479510569909,
+   "M1_log_loss": 0.5468387473824291,
+   "M1_auc": 0.6942967174032643,
+   "calibration_pente": 0.7501785957184135,
+   "calibration_intercept": 0.09589707234295108
+  },
+  "arrondi_4_decimales": {
+   "M0_brier": 0.185,
+   "M1_brier": 0.1654,
+   "M0_log_loss": 0.5567,
+   "M1_log_loss": 0.5468
+  },
+  "concordance": "EXACTE a la pleine precision float64 publiee pour les deux metriques principales et tous les diagnostics compares; ensemble d evaluation jamais utilise dans l entrainement"
+ },
+ "reproductibilite": {
+  "executions_independantes": 2,
+  "coefficients_identiques": true,
+  "predictions_identiques": true,
+  "metriques_identiques": true,
+  "empreinte_fichier_sortie_sha256": "fcffb41a5904251dbe4f2f45728457ae870a067f2d0b695b2be9195416b21f86",
+  "identique_entre_executions": true
+ },
+ "anomalies": [
+  "Versions historiques pandas/numpy du run 45028022637 non consignees (defaut documentaire leve pour l avenir par l epinglage de la reconstruction; n affecte pas la concordance numerique obtenue)"
+ ],
+ "decision": "MODELE H1 DISPONIBLE POUR LA PHASE 12-C: coefficients reproductibles et gelables par le checkpoint d execution; la confirmation independante (12-C) reste suspendue a une autorisation distincte d ouverture du holdout, non accordee par la presente mission",
+ "qualification": "HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE"
+}
