@@ -194,7 +194,7 @@ def mode_analyse():
         if len(tf):
             frames.append(tf)
     P = pd.concat(frames)
-    P['ts'] = pd.to_datetime(P.ts)
+    P['ts'] = pd.to_datetime(P.ts, format='mixed')
     seq_rows, path = [], {}
     controle_entree = {'verifies': 0, 'divergents': 0}
     for r in E.itertuples():
@@ -203,7 +203,7 @@ def mode_analyse():
                .sort_values('ts').reset_index(drop=True))
         trous = d[d.kind == 'HOLE']
         bounds = d[d.kind == 'BOUND']
-        dernier_tick = pd.to_datetime(bounds.ts2).max() if len(bounds) else pd.NaT
+        dernier_tick = pd.to_datetime(bounds.ts2, format='mixed').max() if len(bounds) else pd.NaT
         premier_trou = pd.to_datetime(trous.ts).min() if len(trous) else pd.NaT
         # extremes globaux (nouveaux extremes courants sur la sequence fusionnee)
         recs, cmax, cmin = [], -np.inf, np.inf
@@ -212,7 +212,7 @@ def mode_analyse():
                 recs.append(t)
                 cmax = max(cmax, t.liq)
                 cmin = min(cmin, t.liq)
-        path[r.event_id] = {'recs': recs, 'trous_fin': set(pd.to_datetime(trous.ts2)) if len(trous) else set(),
+        path[r.event_id] = {'recs': recs, 'trous_fin': set(pd.to_datetime(trous.ts2, format='mixed')) if len(trous) else set(),
                             'premier_trou': premier_trou, 'dernier_tick': dernier_tick}
         if len(recs):
             t0 = recs[0]
