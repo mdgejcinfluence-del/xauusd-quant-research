@@ -50,6 +50,10 @@ name: phase10_all
         description: 'Phase 12-C.2-R2: migration dossier partage -> Kaggle (seq322)'
         type: boolean
         default: false
+      phase12c2r3:
+        description: 'Phase 12-C.2-R3: verification 66/66 Kaggle puis confirmation H1 (seq324)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -644,3 +648,127 @@ jobs:
         git diff --cached --quiet || git commit -m ''Phase 12-C.2-R2: sonde dossier Drive partage''
 
         git push origin HEAD:arena/afe12737-xauusd-quant-research'
+
+  verif12c2r3:
+    name: P12C2-R3 verification cryptographique 66/66 Kaggle
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase12c2r3 }}
+    permissions:
+      contents: write
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Installer dependances (six requis par le CLI Kaggle)
+      run: pip install -q pandas numpy requests six kaggle && python -c "import six; print('six', six.__version__)"
+    - name: Verification 66/66 (lecture seule Kaggle)
+      run: python ci_tools/phase12c2r3_verify.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12C2R3_VERIFY_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les preuves de verification
+      if: always()
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2-R3: preuves de verification 66/66''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+  lots12c2r3:
+    name: P12C2-R3 lot ${{ matrix.lot }} (barres M1 depuis Kaggle verifie)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase12c2r3 }}
+    needs:
+    - verif12c2r3
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - { lot: ctx, parts: '282-282', dataset: 'shalom5123/xauusd-is-missing13' }
+        - { lot: hb01, parts: '283-293', dataset: 'shalom5123/xauusd-ho-b01' }
+        - { lot: hb02, parts: '294-304', dataset: 'shalom5123/xauusd-ho-b02' }
+        - { lot: hb03, parts: '305-315', dataset: 'shalom5123/xauusd-ho-b03' }
+        - { lot: hb04, parts: '316-326', dataset: 'shalom5123/xauusd-ho-b04' }
+        - { lot: hb05, parts: '327-337', dataset: 'shalom5123/xauusd-ho-b05' }
+        - { lot: hb06, parts: '338-348', dataset: 'shalom5123/xauusd-ho-b06' }
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Installer dependances legeres
+      run: pip install -q pandas numpy duckdb requests six
+    - name: Barres M1 du lot (source Kaggle verifiee seq324)
+      env:
+        P12C2_ETAPE: bars
+        P12C2_LOT: ${{ matrix.lot }}
+        P12C2_PARTS: ${{ matrix.parts }}
+        P12C2_SOURCE_DATASET: ${{ matrix.dataset }}
+      run: python ci_tools/phase12c2_engine.py
+    - name: Publier les barres du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p12c2r3-bars-${{ matrix.lot }}
+        path: |
+          reports/meta_alpha/phase12/P12C2_BARS_${{ matrix.lot }}.csv.gz
+          reports/meta_alpha/phase12/P12C2_PROVENANCE_${{ matrix.lot }}.json
+        retention-days: 90
+        if-no-files-found: error
+  analyse12c2r3:
+    name: P12C2-R3 confirmation unique H1 (modele gele 12-C.1)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase12c2r3 }}
+    needs:
+    - lots12c2r3
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les barres des 7 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p12c2r3-bars-*
+        path: bars_artifacts
+        merge-multiple: true
+    - name: Confirmation terminale unique Phase 12-C.2
+      env:
+        BARS_DIR: bars_artifacts
+      run: python ci_tools/phase12c2_engine.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12C2_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les livrables Phase 12-C.2
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git status --porcelain
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2 (R3): livrables confirmation holdout H1 (run CI)''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+      if: always()
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p12c2r3-livrables
+        path: reports/meta_alpha/phase12
+        retention-days: 90
+        if-no-files-found: warn

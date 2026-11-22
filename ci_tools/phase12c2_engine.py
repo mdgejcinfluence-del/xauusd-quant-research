@@ -15,7 +15,7 @@ mixtes, sans nouveau clustering), anatomie par analyser_event gele
 (aucun reentrainement), M0 gele 0,7591463414634146. Evaluation
 unique terminale, criteres 100/50 et verdicts du preenregistrement
 12-C."""
-import glob, hashlib, json, os, pathlib, subprocess, sys, time
+import glob, hashlib, io, json, os, pathlib, subprocess, sys, time
 import numpy as np
 import pandas as pd
 sys.path.insert(0, 'ci_tools')
@@ -28,15 +28,50 @@ def sha256_fichier(p):
     return hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 
 # ---------------- mode bars ----------------
+def telecharger_kaggle_dataset(ref, dossier):
+    """Telecharge un dataset Kaggle prive (jeton secret, jamais affiche) et
+    retourne le chemin du dossier extrait. Utilise en Phase 12-C.2-R3."""
+    import requests, zipfile
+    tok = os.environ.get('KAGGLE_API_TOKEN', '')
+    r = requests.get(f'https://www.kaggle.com/api/v1/datasets/download/{ref}',
+                     headers={'Authorization': f'Bearer {tok}'}, timeout=1800)
+    r.raise_for_status()
+    cible = pathlib.Path(dossier); cible.mkdir(parents=True, exist_ok=True)
+    zipfile.ZipFile(io.BytesIO(r.content)).extractall(cible)
+    return cible
+
 def mode_bars():
     import duckdb
     lot = os.environ.get('P12C2_LOT', 'lot')
     debut, fin = [int(x) for x in os.environ['P12C2_PARTS'].split('-')]
+    source_kaggle = os.environ.get('P12C2_SOURCE_DATASET')
+    local_kaggle = {}
+    if source_kaggle:
+        import io as _io  # noqa: F401 (utilise par telecharger_kaggle_dataset)
+        dossier = telecharger_kaggle_dataset(source_kaggle, '/tmp/kaggle_lot')
+        for f in dossier.rglob('*.parquet'):
+            local_kaggle[f.name] = str(f)
+        print('P12C2 lot Kaggle', source_kaggle, len(local_kaggle), 'fichiers', flush=True)
     inv = {p['name']: p for p in json.load(open('reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json'))['partitions']}
     con = duckdb.connect(); con.execute("SET memory_limit='5GB'"); con.execute("SET threads=2")
     frames, provenance = [], []
     for n in range(debut, fin + 1):
         nom = f'part_{n:06d}.parquet'; p = inv[nom]; local = f'/tmp/{nom}'
+        if source_kaggle:
+            # source Kaggle verifiee (12-C.2-R3): aucun acces Drive
+            if nom not in local_kaggle: raise RuntimeError(f'partition absente du dataset {source_kaggle}: {nom}')
+            local = local_kaggle[nom]
+            h = sha256_fichier(local)
+            q = f"""SELECT time_bucket(INTERVAL 1 MINUTE, timestamp_utc) AS ts,
+                    arg_min(bid, timestamp_utc) AS bo, max(bid) AS bh, min(bid) AS bl, arg_max(bid, timestamp_utc) AS bc,
+                    arg_min(ask, timestamp_utc) AS ao, max(ask) AS ah, min(ask) AS al, arg_max(ask, timestamp_utc) AS ac,
+                    arg_min(mid, timestamp_utc) AS mo, max(mid) AS mh, min(mid) AS ml, arg_max(mid, timestamp_utc) AS mc,
+                    median((ask-bid)/mid)*10000 AS sp
+                    FROM read_parquet('{local}') GROUP BY 1 ORDER BY 1"""
+            b = con.execute(q).df(); b['ts'] = pd.to_datetime(b.ts).dt.tz_localize(None)
+            frames.append(b); provenance.append({'partition': nom, 'sha256': h, 'octets': pathlib.Path(local).stat().st_size, 'barres_m1': int(len(b)), 'source': source_kaggle})
+            print('P12C2', lot, nom, len(b), 'barres M1 (Kaggle)', flush=True)
+            continue
         ok = False
         # voie 1: gdown (historique Phase 10); voie 2: URL directe drive.usercontent
         # (repli historique de ci_tools/kaggle_migrate.py:dl, seq migration Kaggle)
@@ -81,7 +116,7 @@ def mode_bars():
 def charger_barres():
     dossier = os.environ.get('BARS_DIR', 'bars_artifacts')
     fs = sorted(glob.glob(f'{dossier}/**/P12C2_BARS_*.csv.gz', recursive=True))
-    if len(fs) < 8: raise RuntimeError(f'integrite lots: {len(fs)}/8 fichiers de barres')
+    if len(fs) < 7: raise RuntimeError(f'integrite lots: {len(fs)}/7 fichiers de barres')
     bars = pd.concat([pd.read_csv(f) for f in fs])
     bars['ts'] = pd.to_datetime(bars.ts)
     return bars.drop_duplicates('ts').sort_values('ts').reset_index(drop=True), len(fs)
