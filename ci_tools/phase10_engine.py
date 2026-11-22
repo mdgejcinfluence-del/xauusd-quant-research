@@ -30,6 +30,9 @@ def charger():
     parts = [p for p in inv if p['timestamp_max_footer'] and dt.datetime.fromisoformat(p['timestamp_max_footer'].replace('Z', '+00:00')).replace(tzinfo=None) <= IS_END]
     kstate = json.loads(pathlib.Path('reports/meta_alpha/kaggle_migration/STATE.json').read_text())
     batchof = {name: info['batch'] for name, info in kstate['uploaded'].items()}
+    lot = os.environ.get('P10_BATCH')
+    if lot:  # mode par lot (seq291): chaque partition n'est telechargee qu'une fois
+        parts = [p for p in parts if batchof.get(p['name']) == lot]
     CHARGER_STATS['attendues'] = len(parts)
     print('P10 ALL', len(parts), 'partitions attendues', flush=True)
     con = duckdb.connect(); con.execute("SET memory_limit='5GB'"); con.execute("SET threads=2")
@@ -264,6 +267,16 @@ def main_cible():
     print(json.dumps(resume), flush=True)
 
 def main():
+    if os.environ.get('P10_ETAPE') == 'bars':
+        # mode par lot (seq291): telecharge uniquement le lot P10_BATCH, ecrit les barres M1
+        bars = charger()
+        if CHARGER_STATS['chargees'] < CHARGER_STATS['attendues']:
+            (ROOT / 'ERROR_INTEGRITE.txt').write_text(f"partitions {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']}")
+            raise RuntimeError(f"integrite lot: {CHARGER_STATS['chargees']}/{CHARGER_STATS['attendues']} partitions")
+        lot = os.environ.get('P10_BATCH', 'lot').replace('/', '_')
+        bars.round(6).to_csv(ROOT / f'P10_BARS_{lot}.csv.gz', index=False, compression='gzip')
+        print(json.dumps({'lot': lot, 'partitions': CHARGER_STATS['chargees'], 'barres_m1': int(len(bars))}), flush=True)
+        return
     if os.environ.get('P10_CIBLE') == '1':
         main_cible(); return
     bars = charger()

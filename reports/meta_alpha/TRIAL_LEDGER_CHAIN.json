@@ -3750,6 +3750,17 @@
     "statut": "RELANCE SEQUENTIELLE AUTORISEE PAR L AMENDEMENT (logistique seule)"
    },
    "entry_hash": "78623e4d0338bc8082c16fe9a47168e57a956953e3596179217ba7b392d91de1"
+  },
+  {
+   "seq": 291,
+   "prev_hash": "78623e4d0338bc8082c16fe9a47168e57a956953e3596179217ba7b392d91de1",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "Run sequentiel 44982176571 en echec a l etape moteur apres environ 4h40 (meme degradation des telechargements externes; les telechargements repetes des memes lots Kaggle saturent). Mesure logistique: restructuration en 8 jobs paralleles par lot Kaggle (chaque partition telechargee une seule fois) produisant les barres M1, puis agregation et recomputation ciblee F10-01/F10-03. Aucune definition, aucun parametre, aucun perimetre modifies; holdout jamais accede.",
+    "statut": "RESTRUCTURATION LOGISTIQUE - relance en preparation"
+   },
+   "entry_hash": "7fbc923e2f07f462798a5694ff6063abb26bdc619dc95311ebc03411aa797df2"
   }
  ]
 }

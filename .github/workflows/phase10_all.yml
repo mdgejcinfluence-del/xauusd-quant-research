@@ -127,7 +127,7 @@ jobs:
     - run0
     - run1
     - run2
-    - cible_moteur
+    - lots
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -150,17 +150,28 @@ jobs:
         merge-multiple: true
         run-id: 44919631588
         github-token: ${{ github.token }}
+    - name: Recuperer les barres des 8 lots
+      if: ${{ inputs.cible }}
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p10-bars-*
+        path: bars_artifacts
+        merge-multiple: true
+    - name: 'Etape 2: agregation barres et recomputation ciblee F10-01/F10-03'
+      if: ${{ inputs.cible }}
+      env:
+        BARS_DIR: bars_artifacts
+      run: python ci_tools/phase10_stage2.py 2>&1 | tee reports/meta_alpha/phase10/STAGE2_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
     - name: Fusionner les lots
-      run: "python - <<'PYEOF'\nimport glob, pathlib, pandas as pd, json, shutil\n\
-        pathlib.Path('reports/meta_alpha/phase10').mkdir(parents=True, exist_ok=True)\n\
-        fc=sorted(glob.glob('artifacts/**/PHASE10_EVENTS_CIBLE.csv.gz', recursive=True))\n\
-        if fc:\n    ev=pd.concat([pd.read_csv(f) for f in fc]).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal')\n\
+      run: "python - <<'PYEOF'\nimport glob, pathlib, pandas as pd\npathlib.Path('reports/meta_alpha/phase10').mkdir(parents=True,\
+        \ exist_ok=True)\nfc=sorted(glob.glob('artifacts/**/PHASE10_EVENTS_CIBLE.csv.gz',\
+        \ recursive=True))\nif fc:\n    ev=pd.concat([pd.read_csv(f) for f in fc]).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal')\n\
         \    ev.round(4).to_csv('reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz',\
-        \ index=False, compression='gzip')\n    covs=sorted(glob.glob('artifacts/**/P10_CIBLE_COVERAGE.json',\
-        \ recursive=True))\n    if covs: shutil.copy(covs[0], 'reports/meta_alpha/phase10/P10_CIBLE_COVERAGE.json')\n\
-        \    print('evenements cibles fusionnes', len(ev))\nelse:\n    fs=sorted(glob.glob('artifacts/**/PHASE10_EVENTS.csv.gz',\
-        \ recursive=True))\n    print('lots', fs)\n    dfs=[pd.read_csv(f) for f in\
-        \ fs]\n    ev=pd.concat(dfs).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal')\
+        \ index=False, compression='gzip')\n    print('evenements cibles fusionnes',\
+        \ len(ev))\nelif pathlib.Path('reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz').exists():\n\
+        \    print('evenements cibles deja produits par l etape 2')\nelse:\n    fs=sorted(glob.glob('artifacts/**/PHASE10_EVENTS.csv.gz',\
+        \ recursive=True))\n    dfs=[pd.read_csv(f) for f in fs]\n    ev=pd.concat(dfs).drop_duplicates(subset=['famille','t_signal','t_entree']).sort_values('t_signal')\
         \ if dfs else pd.DataFrame()\n    ev.round(4).to_csv('reports/meta_alpha/phase10/PHASE10_EVENTS.csv.gz',\
         \ index=False, compression='gzip')\n    print('evenements fusionnes', len(ev))\n\
         PYEOF"
@@ -219,17 +230,29 @@ jobs:
         retention-days: 90
         if-no-files-found: error
       if: always()
-    if: ${{ always() && (inputs.synth_only || needs.cible_moteur.result == 'success'
-      || (needs.run0.result == 'success' && needs.run1.result == 'success' && needs.run2.result
-      == 'success')) }}
-  cible_moteur:
-    name: P10 moteur cible sequentiel F10-01/F10-03 (seq289)
+    if: ${{ always() && (inputs.synth_only || needs.lots.result == 'success' || (needs.run0.result
+      == 'success' && needs.run1.result == 'success' && needs.run2.result == 'success'))
+      }}
+  lots:
+    name: P10 lot ${{ matrix.batch }} (barres M1)
     runs-on: ubuntu-latest
     timeout-minutes: 360
     if: ${{ inputs.cible }}
     permissions:
       actions: read
       contents: read
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
     env:
       KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
     steps:
@@ -241,15 +264,15 @@ jobs:
       run: pip install -q pandas numpy pyarrow duckdb gdown kaggle
     - name: Tests temporels synthetiques
       run: python ci_tools/phase10_temporal_tests.py
-    - name: Moteur cible Phase 10 (F10-01/F10-03 uniquement, partitions IS, holdout
-        jamais accede)
+    - name: Barres M1 du lot (partitions IS uniquement, holdout jamais accede)
       env:
-        P10_CIBLE: '1'
+        P10_ETAPE: bars
+        P10_BATCH: ${{ matrix.batch }}
       run: python ci_tools/phase10_engine.py
-    - name: Publier PHASE10_EVENTS_CIBLE
+    - name: Publier les barres du lot
       uses: actions/upload-artifact@v4
       with:
-        name: p10-events-cible
-        path: reports/meta_alpha/phase10
+        name: p10-bars-${{ matrix.batch }}
+        path: reports/meta_alpha/phase10/P10_BARS_${{ matrix.batch }}.csv.gz
         retention-days: 90
         if-no-files-found: error
