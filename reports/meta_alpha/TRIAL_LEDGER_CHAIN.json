@@ -3840,6 +3840,28 @@
     "statut": "VERSION DEFINITIVE SOUMISE A DECISION DE GEL; EXECUTION NON AUTORISEE"
    },
    "entry_hash": "4bb5903193179314ff439c9a90dfe020263d66e59a79c5fee5bc289cc9dd4188"
+  },
+  {
+   "seq": 299,
+   "prev_hash": "4bb5903193179314ff439c9a90dfe020263d66e59a79c5fee5bc289cc9dd4188",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-A",
+    "objet": "Ordre officiel du responsable: GEL DEFINITIF de la Phase 11-A autorise. La version definitive du protocole (hash commencant par fdfb04ed) est approuvee. Operations autorisees: verifier le hash complet et sa concordance avec la version presentee et chainee seq298, enregistrer le gel dans la chaine sans modifier le protocole, confirmer l integrite de la chaine, le commit distant et l arbre propre, produire le proces-verbal de gel. Le hash initial 0254ea47 de seq296 reste conserve dans l historique. Aucune modification silencieuse ni reecriture apres gel. Interdictions maintenues: aucun calcul, aucune extraction, aucun acces au corpus IS ni au holdout, aucun audit des manifestes, aucune production des livrables d execution, aucune strategie/optimisation/promotion/depense.",
+    "statut": "GEL AUTORISE - execution non autorisee"
+   },
+   "entry_hash": "a5895231a517916bf5acdc18799b25f2ed9144b304ecb5d2c89cf1fc6c9cfb3b"
+  },
+  {
+   "seq": 300,
+   "prev_hash": "a5895231a517916bf5acdc18799b25f2ed9144b304ecb5d2c89cf1fc6c9cfb3b",
+   "entry": {
+    "type": "GEL",
+    "phase": "11-A",
+    "objet": "GEL DEFINITIF PHASE 11-A. Document gele: reports/meta_alpha/phase11/PHASE11_PROTOCOL.md, sha256 complet fdfb04ed71cd5317e9b342a408194ac79c42ab06188555cbc1fcb3367aa38f94, reverifie a l octet pres et concordant avec la version definitive presentee et chainee seq298 (prefixe fdfb04ed de l ordre de gel). Hash initial seq296 conserve: 0254ea47e6ba70d1bae8fe5cf0cb3795f238eeb1cbd774b6135b12c7618fd8b6. Contenu reverifie: effectifs F10-01 3134/3107/2617 et F10-03 762/660/597, seuils Q95 geles, grappes originales, huit horizons, cinq categories UTC, six archetypes, graine bootstrap 20261122, aucune p-value confirmatoire ni rentabilite, champs d horodatage M1 des extremes (seq297-298). Proces-verbal: reports/meta_alpha/phase11/PHASE11_FREEZE_RECORD.md. Aucun calcul, extraction ni acces donnees effectues. PHASE 11-A GELEE DEFINITIVEMENT; PHASE 11-B (audit des manifestes) NON AUTORISEE; PHASE 11 (analyse comportementale) NON AUTORISEE; execution seulement sur decision distincte ulterieure.",
+    "statut": "GELE DEFINITIVEMENT - execution non autorisee"
+   },
+   "entry_hash": "ff5772b1db775edb00554edc255c4170c2af5efa132bdcae2a5c24cbb2eb7109"
   }
  ]
 }
