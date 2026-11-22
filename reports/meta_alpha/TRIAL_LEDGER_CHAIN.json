@@ -4529,6 +4529,38 @@
     "base_seq": 352
    },
    "entry_hash": "3b84905e0e73e8a919102977c057531485e7eef5ea92c0b986120d53e7ad44dd"
+  },
+  {
+   "seq": 354,
+   "prev_hash": "3b84905e0e73e8a919102977c057531485e7eef5ea92c0b986120d53e7ad44dd",
+   "entry": {
+    "type": "PHASE18A_AUTHORIZATION",
+    "phase": "18-A",
+    "decision": "AUTORISATION AUDIT DOCUMENTAIRE NOUVELLES VARIABLES CAUSALES (schemas/code/artefacts uniquement)",
+    "interdits": [
+     "lecture valeurs ticks",
+     "holdout",
+     "labels",
+     "entrainement",
+     "backtest",
+     "modification modeles geles"
+    ],
+    "base_seq": 353
+   },
+   "entry_hash": "8ec58d89cd3be2ef54cfa7e1496da8a3901976753943ad63e9603bf74be2fbd6"
+  },
+  {
+   "seq": 355,
+   "prev_hash": "8ec58d89cd3be2ef54cfa7e1496da8a3901976753943ad63e9603bf74be2fbd6",
+   "entry": {
+    "type": "PHASE18A_VERDICT",
+    "phase": "18-A",
+    "verdict": "PARTIALLY_AVAILABLE",
+    "candidats_valides": 6,
+    "familles": "microstructure cotations (extraction future), dynamique minute (barres committées), geometrie (1 limite, 1 ecarte)",
+    "base_seq": 354
+   },
+   "entry_hash": "846c7cbb4278902e35f20d64e06742b9835acecc17b01d5ec24f4437d658d24f"
   }
  ]
 }
