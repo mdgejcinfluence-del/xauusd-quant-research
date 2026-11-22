@@ -1,0 +1,17 @@
+{
+  "phase": "12-C.2",
+  "verdict": "BLOCKED",
+  "motif": "Acces aux sources holdout impossible: blocage de quota/partage Google Drive sur les deux voies connues (gdown et URL directe drive.usercontent, repli historique kaggle_migrate.dl). Partitions holdout 282-348 identifiees depuis l inventaire deja commite; jamais migrees vers Kaggle, contrairement aux 282 partitions IS.",
+  "runs_CI": ["45030043384", "45030489413", "45031240112"],
+  "runs_statut": "8/8 lots en echec au telechargement a chaque tentative; job d analyse jamais execute",
+  "metriques_produites": false,
+  "metriques_consultees": false,
+  "evaluation_preenregistree_consommee": false,
+  "effectifs": {"detectes": 0, "admissibles": 0, "etiquetes": 0, "classe1": 0, "classe0": 0},
+  "criteres_evaluabilite": {"n_min": 100, "minorite_min": 50, "satisfaits": false, "raison": "aucune donnee lue"},
+  "modele": "gele, inchange (PHASE12C1_MODEL_PARAMETERS.json 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e); M0 gele 0,7591463414634146 jamais applique",
+  "livrables_non_produits": ["PHASE12C2_HOLDOUT_FEATURES.csv", "PHASE12C2_HOLDOUT_PREDICTIONS.csv", "PHASE12C2_FEATURE_AUDIT.json"],
+  "journaux": "PHASE12C2_LOTLOG_h01..h08.txt committes par les runs (message de quota Google conserve)",
+  "deblocage": "decision du responsable: migration Kaggle des partitions holdout (par le proprietaire ou apres expiration du quota) ou retablissement de l acces Drive; aucune source de substitution utilisee",
+  "qualification": "Resultats 12-B inchanges: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE"
+}

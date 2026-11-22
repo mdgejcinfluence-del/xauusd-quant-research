@@ -4085,6 +4085,18 @@
     "statut": "PHASE 12-C.2 AUTORISEE - preflight conforme, execution en cours"
    },
    "entry_hash": "a70308541ceb299cdf21c0c3af9824e6804fbb2cd22d482262a9227a38fbf6ad"
+  },
+  {
+   "seq": 319,
+   "prev_hash": "a70308541ceb299cdf21c0c3af9824e6804fbb2cd22d482262a9227a38fbf6ad",
+   "entry": {
+    "type": "EXECUTION",
+    "phase": "12-C.2",
+    "objet": "PHASE 12-C.2: EVALUATION NON EXECUTEE - VERDICT BLOCKED (acces sources). Preflight conforme seq318 (protocole 12-A 580c39b1, parametres 12-C.1 1bcb3b70, code gele a1c9f52d, M0 0,7591463414634146). Sources holdout identifiees depuis le seul inventaire deja commite: partitions 282-348 (282-283 contexte detecteur), disponibles uniquement sur Google Drive, jamais migrees Kaggle contrairement aux 282 partitions IS. Trois runs CI (45030043384, 45030489413, 45031240112): 8/8 lots en echec au telechargement a chaque fois, job d analyse jamais execute, AUCUNE metrique produite ni consultee, evaluation preenregistree NON consommee (reprise sans biais possible). Cause racine conservee dans PHASE12C2_LOTLOG_h01..h08.txt committes: quota/partage Google Drive (Too many users have viewed or downloaded this file recently), sur gdown puis sur le repli historique drive.usercontent (kaggle_migrate.dl). Aucun parametre du test modifie entre les tentatives (instrumentation des journaux et repli historique seuls). Livrables FEATURES/PREDICTIONS/FEATURE_AUDIT non produits (les fabriquer serait une falsification); PHASE12C2_EVALUATION.json consigne BLOCKED. Deblocage soumis au responsable: migration Kaggle des partitions holdout (proprietaire ou apres expiration du quota) ou retablissement de l acces Drive; aucune source de substitution. Qualification 12-B inchangee: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE.",
+    "verdict": "BLOCKED",
+    "statut": "PHASE 12-C.2 BLOQUEE (acces Drive) - evaluation non consommee, reprise possible sous decision du responsable"
+   },
+   "entry_hash": "867326cdc32293cfbdf75ececcb81d451a5b0806047fc36537fd49dfc9aea37b"
   }
  ]
 }
