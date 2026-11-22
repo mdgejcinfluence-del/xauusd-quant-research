@@ -70,8 +70,16 @@ et week-ends distingués des interruptions anormales).
   retour à l'origine ou au-delà).
 - **Chronologie des extrema** : instant et numéro de bougie du MFE
   maximal et du MAE maximal ; minute exacte de l'extrême dans les
-  données M1 (aucune précision intraminute revendiquée) ; en cas
-  d'égalité, premier horodatage retenu et règle publiée.
+  données M1 ; en cas d'égalité, premier horodatage retenu et règle
+  publiée. Pour chaque extrême reconstruit à partir des barres M1,
+  trois champs sont publiés explicitement :
+  `extreme_minute_start_utc` (début de la minute contenant
+  l'extrême), `extreme_available_at_utc` (clôture de cette minute)
+  et `extreme_timestamp_resolution` (= `M1`). Aucun instant
+  intraminute exact n'est déductible des seules barres M1 : l'extrême
+  est localisé à la minute qui le contient, disponible à la clôture
+  de cette minute, et aucune précision inférieure à la minute n'est
+  revendiquée.
 - **Repli depuis l'extrême favorable** (distinct du MAE depuis P0) :
   premier instant de repli après extension, profondeur maximale (bp),
   durée sommet/creux favorable → extrême du repli, instant de cet

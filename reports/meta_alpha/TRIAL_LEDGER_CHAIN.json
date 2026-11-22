@@ -3817,6 +3817,29 @@
     "statut": "PROTOCOLE EN PREPARATION - SOUMIS A VALIDATION; GEL ET EXECUTION NON AUTORISES"
    },
    "entry_hash": "f5b40d382042a975e923a16de647560fb8e38fe1e99d8e08bdea2e97dee88ec8"
+  },
+  {
+   "seq": 297,
+   "prev_hash": "f5b40d382042a975e923a16de647560fb8e38fe1e99d8e08bdea2e97dee88ec8",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-A",
+    "objet": "Validation methodologique du protocole Phase 11-A par le responsable, avec derniere precision documentaire avant decision de gel: pour chaque extreme reconstruit a partir des barres M1, publier extreme_minute_start_utc (debut de la minute contenant l extreme), extreme_available_at_utc (cloture de cette minute) et extreme_timestamp_resolution (= M1); preciser qu aucun instant intraminute exact n est deductible des seules barres M1. Conservation imperative: 3134 evenements H1 detectes/3107 eligibles/2617 grappes, 762 H4 detectes/660 eligibles/597 grappes, seuils Q95 geles, grappes originales, huit horizons, cinq categories UTC, six archetypes descriptifs, graine bootstrap 20261122, absence de p-value confirmatoire et de calcul de rentabilite. Aucune autre definition modifiee. Apres integration, presenter la version definitive pour une decision distincte de gel.",
+    "statut": "VALIDATION METHODOLOGIQUE ACCEPTEE; GEL DEFINITIF EN ATTENTE; EXECUTION NON AUTORISEE"
+   },
+   "entry_hash": "d070d313ea23e505f32bf6c17077667f0ff9f639dcbc736c6c2f5675fc94facd"
+  },
+  {
+   "seq": 298,
+   "prev_hash": "d070d313ea23e505f32bf6c17077667f0ff9f639dcbc736c6c2f5675fc94facd",
+   "entry": {
+    "type": "ADDENDUM",
+    "phase": "11-A",
+    "objet": "Precision d horodatage des extremes integree a la section 4 (axe A, chronologie des extrema) de PHASE11_PROTOCOL.md: champs extreme_minute_start_utc, extreme_available_at_utc et extreme_timestamp_resolution (= M1) publies pour chaque extreme reconstruit depuis les barres M1; aucun instant intraminute exact deductible des seules barres M1, extreme localise a la minute le contenant et disponible a la cloture de cette minute. Aucune autre definition modifiee (effectifs, seuils, grappes, horizons, categories UTC, archetypes, graine 20261122, cadre descriptif sans p-value ni rentabilite inchanges). Nouveau sha256 du protocole: voir commit associe.",
+    "sha256_protocole": "0254ea47e6ba70d1bae8fe5cf0cb3795f238eeb1cbd774b6135b12c7618fd8b6 -> version definitive apres addendum (hash calcule au commit)",
+    "statut": "VERSION DEFINITIVE SOUMISE A DECISION DE GEL; EXECUTION NON AUTORISEE"
+   },
+   "entry_hash": "4bb5903193179314ff439c9a90dfe020263d66e59a79c5fee5bc289cc9dd4188"
   }
  ]
 }
