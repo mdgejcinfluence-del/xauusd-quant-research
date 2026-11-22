@@ -3982,6 +3982,28 @@
     "statut": "PHASE 12-A TERMINEE - protocole soumis a validation et gel; Phase 12-B non autorisee"
    },
    "entry_hash": "cf39c92489e541a85d220b69026ca8bf639205d8a858ca1e56848becd99fdae3"
+  },
+  {
+   "seq": 310,
+   "prev_hash": "cf39c92489e541a85d220b69026ca8bf639205d8a858ca1e56848becd99fdae3",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-A",
+    "objet": "Ordre officiel du responsable: GEL DEFINITIF de la Phase 12-A autorise, reference PHASE12A_PREDICTABILITY_PROTOCOL.md (prefixe annonce 580c39b1, verdict de conception PROTOCOL_READY_FOR_PHASE12B seq309). Operations autorisees: verifier le hash complet et la concordance avec seq309, verifier les empreintes des trois autres livrables (dictionnaire, preenregistrement JSON, faisabilite), le commit distant b22b9d3 et la continuite depuis seq307, la coherence des livrables, puis chainer l autorisation et le proces-verbal de gel avec les SHA-256 complets, verifier la chaine, le commit distant, le HEAD et l arbre propre. Aucune modification du contenu scientifique pendant le gel. Interdictions maintenues: acces M1, extraction, calcul predictif, entrainement, tests, populations, holdout, strategie/optimisation/economie, S12, T0/J2/J3, depenses. Statut visé apres verification complete: PHASE12A_FROZEN. Phase 12-B NON AUTORISEE par le gel.",
+    "statut": "GEL AUTORISE - Phase 12-B non autorisee"
+   },
+   "entry_hash": "9c70bd83aceffa7a810e011ca03c9e9da04391fb9e613836f31b41fda48e0e1d"
+  },
+  {
+   "seq": 311,
+   "prev_hash": "9c70bd83aceffa7a810e011ca03c9e9da04391fb9e613836f31b41fda48e0e1d",
+   "entry": {
+    "type": "GEL",
+    "phase": "12-A",
+    "objet": "GEL DEFINITIF PHASE 12-A (PHASE12A_FROZEN). Documents geles, SHA-256 complets reverifies a l octet pres et identiques aux preuves seq309: PHASE12A_PREDICTABILITY_PROTOCOL.md 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e; PHASE12A_FEATURE_DICTIONARY.csv 933feff779e2f1a54ef1f538610a8fb2a481b48f702b72c6eedcf7f3d1df2519; PHASE12A_PREREGISTRATION.json 005d1e69752141234132588e74d8d8eef699cedc31abb685628f0f77cd8f8bf2; PHASE12A_FEASIBILITY_REPORT.md 6e8c26181639987085da703463cd131969fbd4bf32b57de6a703e4e9e8c367cb. Proces-verbal: reports/meta_alpha/phase12/PHASE12A_FREEZE_RECORD.md. Decisions conservees sans modification: t_reintegration comme instant de decision; aucune variable posterieure a cet instant; mesures de fenetre complete de 8 bougies et derives de la cible (archetype) exclus comme variables; cinq variables a extraction bornee en Phase 12-B; M0 contre logistique simple sans reglage; H1/H4 separes; separation chronologique par grappe entiere 2010-2015/2016-2017/2018-2020 avec purge des chevauchements; metriques principales Brier et log-loss vs M0, calibration et AUC jamais probantes seules; criteres d insuffisance preenregistres; qualification obligatoire HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE. Aucune modification scientifique pendant le gel, aucun acces donnees. PHASE 12-B NON AUTORISEE (extraction et test sur decision distincte).",
+    "statut": "PHASE12A_FROZEN - Phase 12-B non autorisee"
+   },
+   "entry_hash": "5d038d1d891c8d1bd808f1b2ac2ef9bc1f746b9976dfc331e219b6aa32ce49ca"
   }
  ]
 }
