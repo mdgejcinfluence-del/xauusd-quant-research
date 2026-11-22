@@ -1,34 +1,30 @@
 {
- "phase": "12-C.2-R",
- "verdict_migration": "HOLDOUT_MIGRATION_BLOCKED",
- "motif": "Aucune modalite de transfert reellement disponible depuis la CI: (A) telechargement Google Drive anonyme bloque par quota (3 runs, journaux committes); (B) acces authentifie par compte de service indisponible: secret GDRIVE_SA_JSON absent du depot (sonde CI run 45032424958, PHASE12C2_PROBE.json commite: gdrive_sa_present=false, gdrive_root_id_present=false). Kaggle authentifie et joignable (kaggle_auth_ok=true) mais aucune source a y transferer sans acces aux originaux.",
- "sonde": {
-  "run": "45032424958",
-  "fichier": "PHASE12C2_PROBE.json",
-  "contenu_telecharge": "aucun (metadonnees seules prevues, non atteintes faute de secret SA)"
+ "phase": "12-C.2-R3",
+ "verdict_migration": "HOLDOUT_MIGRATION_VERIFIED",
+ "controle": {
+  "attendus": 66,
+  "presents_verifies": 66,
+  "manquants_ou_doublons": 0,
+  "divergences": 0,
+  "inventaires_datasets_conformes": true,
+  "confidentialite": {
+   "shalom5123/xauusd-ho-b01": true,
+   "shalom5123/xauusd-ho-b02": true,
+   "shalom5123/xauusd-ho-b03": true,
+   "shalom5123/xauusd-ho-b04": true,
+   "shalom5123/xauusd-ho-b05": true,
+   "shalom5123/xauusd-ho-b06": true
+  },
+  "versions": {
+   "shalom5123/xauusd-ho-b01": 1,
+   "shalom5123/xauusd-ho-b02": 1,
+   "shalom5123/xauusd-ho-b03": 1,
+   "shalom5123/xauusd-ho-b04": 1,
+   "shalom5123/xauusd-ho-b05": 1,
+   "shalom5123/xauusd-ho-b06": 1
+  }
  },
- "controle_cryptographique": {
-  "partitions_attendues": 66,
-  "partitions_presentes_kaggle": 0,
-  "correspondances_verifiees": 0,
-  "manquantes": 66,
-  "supplementaires": 0,
-  "divergences_sha256": "sans objet (aucun transfert)",
-  "limite_explicite": "l inventaire historique ne contient aucun SHA-256 source; aucune comparaison source/copie n a ete effectuee ni presentee comme reussie; les empreintes de reference devront etre etablies au moment du transfert authentifie (voir PHASE12C2_HOLDOUT_PROVENANCE.md)"
- },
- "tentatives_precedentes_conservees": [
-  "45030043384",
-  "45030489413",
-  "45031240112"
- ],
- "donnees_dans_git": "aucune partition commitee; seuls manifestes, sondes et journaux",
- "suite_requise": "transfert par le proprietaire selon les instructions de PHASE12C2_HOLDOUT_PROVENANCE.md (datasets Kaggle prives shalom5123/xauusd-ho-b01..b06, fichiers originaux inchanges), puis verification cryptographique individuelle et reprise unique 12-C.2 sous nouvelle confirmation",
- "evaluation": "NON CONSOMMEE (aucune metrique produite ni consultee)",
- "addendum_R2": {
-  "verdict_R2": "HOLDOUT_MIGRATION_BLOCKED",
-  "preuve": "run 45034907980 / PHASE12C2R2_PROBE.json: dossier accessible, 348 fichiers enumeres, 66/66 noms et drive_id conformes au manifeste, test de contenu bloque par quota Google (memes objets Drive, aucune copie nouvelle)",
-  "fichiers_transferes": 0,
-  "fichiers_verifies": 0,
-  "conclusion": "aucune des conditions 66/66 reunie; aucun PASS partiel; voir PHASE12C2_TRANSFER_EXECUTION.json"
- }
+ "provenance_empreintes_source": "SOURCE_SHA256_66_PARTITIONS.json (proprietaire, Colab authentifie sur les originaux Drive) sha256 du fichier recu: voir checkpoint; empreintes jamais recalculees depuis la destination pour servir de reference",
+ "historique": "verdicts precedents HOLDOUT_MIGRATION_BLOCKED (seq321, seq323) par indisponibilite des sources; le present controle compare les copies Kaggle aux empreintes source fournies, sans aucun nouvel acces Drive",
+ "fichiers_a_problemes": []
 }

@@ -1,0 +1,102 @@
+P12C2R3 shalom5123/xauusd-ho-b01 version 1 prive True fichiers 11
+P12C2R3 part_000283.parquet IDENTIQUE
+P12C2R3 part_000284.parquet IDENTIQUE
+P12C2R3 part_000285.parquet IDENTIQUE
+P12C2R3 part_000286.parquet IDENTIQUE
+P12C2R3 part_000287.parquet IDENTIQUE
+P12C2R3 part_000288.parquet IDENTIQUE
+P12C2R3 part_000289.parquet IDENTIQUE
+P12C2R3 part_000290.parquet IDENTIQUE
+P12C2R3 part_000291.parquet IDENTIQUE
+P12C2R3 part_000292.parquet IDENTIQUE
+P12C2R3 part_000293.parquet IDENTIQUE
+P12C2R3 shalom5123/xauusd-ho-b02 version 1 prive True fichiers 11
+P12C2R3 part_000294.parquet IDENTIQUE
+P12C2R3 part_000295.parquet IDENTIQUE
+P12C2R3 part_000296.parquet IDENTIQUE
+P12C2R3 part_000297.parquet IDENTIQUE
+P12C2R3 part_000298.parquet IDENTIQUE
+P12C2R3 part_000299.parquet IDENTIQUE
+P12C2R3 part_000300.parquet IDENTIQUE
+P12C2R3 part_000301.parquet IDENTIQUE
+P12C2R3 part_000302.parquet IDENTIQUE
+P12C2R3 part_000303.parquet IDENTIQUE
+P12C2R3 part_000304.parquet IDENTIQUE
+P12C2R3 shalom5123/xauusd-ho-b03 version 1 prive True fichiers 11
+P12C2R3 part_000305.parquet IDENTIQUE
+P12C2R3 part_000306.parquet IDENTIQUE
+P12C2R3 part_000307.parquet IDENTIQUE
+P12C2R3 part_000308.parquet IDENTIQUE
+P12C2R3 part_000309.parquet IDENTIQUE
+P12C2R3 part_000310.parquet IDENTIQUE
+P12C2R3 part_000311.parquet IDENTIQUE
+P12C2R3 part_000312.parquet IDENTIQUE
+P12C2R3 part_000313.parquet IDENTIQUE
+P12C2R3 part_000314.parquet IDENTIQUE
+P12C2R3 part_000315.parquet IDENTIQUE
+P12C2R3 shalom5123/xauusd-ho-b04 version 1 prive True fichiers 11
+P12C2R3 part_000316.parquet IDENTIQUE
+P12C2R3 part_000317.parquet IDENTIQUE
+P12C2R3 part_000318.parquet IDENTIQUE
+P12C2R3 part_000319.parquet IDENTIQUE
+P12C2R3 part_000320.parquet IDENTIQUE
+P12C2R3 part_000321.parquet IDENTIQUE
+P12C2R3 part_000322.parquet IDENTIQUE
+P12C2R3 part_000323.parquet IDENTIQUE
+P12C2R3 part_000324.parquet IDENTIQUE
+P12C2R3 part_000325.parquet IDENTIQUE
+P12C2R3 part_000326.parquet IDENTIQUE
+P12C2R3 shalom5123/xauusd-ho-b05 version 1 prive True fichiers 11
+P12C2R3 part_000327.parquet IDENTIQUE
+P12C2R3 part_000328.parquet IDENTIQUE
+P12C2R3 part_000329.parquet IDENTIQUE
+P12C2R3 part_000330.parquet IDENTIQUE
+P12C2R3 part_000331.parquet IDENTIQUE
+P12C2R3 part_000332.parquet IDENTIQUE
+P12C2R3 part_000333.parquet IDENTIQUE
+P12C2R3 part_000334.parquet IDENTIQUE
+P12C2R3 part_000335.parquet IDENTIQUE
+P12C2R3 part_000336.parquet IDENTIQUE
+P12C2R3 part_000337.parquet IDENTIQUE
+P12C2R3 shalom5123/xauusd-ho-b06 version 1 prive True fichiers 11
+P12C2R3 part_000338.parquet IDENTIQUE
+P12C2R3 part_000339.parquet IDENTIQUE
+P12C2R3 part_000340.parquet IDENTIQUE
+P12C2R3 part_000341.parquet IDENTIQUE
+P12C2R3 part_000342.parquet IDENTIQUE
+P12C2R3 part_000343.parquet IDENTIQUE
+P12C2R3 part_000344.parquet IDENTIQUE
+P12C2R3 part_000345.parquet IDENTIQUE
+P12C2R3 part_000346.parquet IDENTIQUE
+P12C2R3 part_000347.parquet IDENTIQUE
+P12C2R3 part_000348.parquet IDENTIQUE
+{
+ "phase": "12-C.2-R3",
+ "verdict_migration": "HOLDOUT_MIGRATION_VERIFIED",
+ "controle": {
+  "attendus": 66,
+  "presents_verifies": 66,
+  "manquants_ou_doublons": 0,
+  "divergences": 0,
+  "inventaires_datasets_conformes": true,
+  "confidentialite": {
+   "shalom5123/xauusd-ho-b01": true,
+   "shalom5123/xauusd-ho-b02": true,
+   "shalom5123/xauusd-ho-b03": true,
+   "shalom5123/xauusd-ho-b04": true,
+   "shalom5123/xauusd-ho-b05": true,
+   "shalom5123/xauusd-ho-b06": true
+  },
+  "versions": {
+   "shalom5123/xauusd-ho-b01": 1,
+   "shalom5123/xauusd-ho-b02": 1,
+   "shalom5123/xauusd-ho-b03": 1,
+   "shalom5123/xauusd-ho-b04": 1,
+   "shalom5123/xauusd-ho-b05": 1,
+   "shalom5123/xauusd-ho-b06": 1
+  }
+ },
+ "provenance_empreintes_source": "SOURCE_SHA256_66_PARTITIONS.json (proprietaire, Colab authentifie sur les originaux Drive) sha256 du fichier recu: voir checkpoint; empreintes jamais recalculees depuis la destination pour servir de reference",
+ "historique": "verdicts precedents HOLDOUT_MIGRATION_BLOCKED (seq321, seq323) par indisponibilite des sources; le present controle compare les copies Kaggle aux empreintes source fournies, sans aucun nouvel acces Drive",
+ "fichiers_a_problemes": []
+}
