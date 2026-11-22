@@ -249,7 +249,7 @@ jobs:
     name: P10 lot ${{ matrix.batch }} (barres M1)
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    if: ${{ inputs.cible || inputs.phase11c }}
+    if: ${{ inputs.cible || inputs.phase11c || inputs.phase12b }}
     permissions:
       actions: read
       contents: read
@@ -356,5 +356,55 @@ jobs:
       with:
         name: p11c-livrables
         path: reports/meta_alpha/phase11
+        retention-days: 90
+        if-no-files-found: warn
+  analyse12b:
+    name: P12-B extraction bornee + evaluation predictive (protocole gele 12-A, seq312)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase12b }}
+    needs:
+    - lots
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les barres des 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p10-bars-*
+        path: bars_artifacts
+        merge-multiple: true
+    - name: Tests synthetiques temporels Phase 12-B
+      run: python ci_tools/phase12b_temporal_tests.py
+    - name: Extraction bornee et evaluation Phase 12-B
+      env:
+        BARS_DIR: bars_artifacts
+      run: python ci_tools/phase12b_engine.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12B_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les livrables Phase 12-B
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git status --porcelain
+
+        git diff --cached --quiet || git commit -m ''Phase 12-B: livrables extraction bornee et evaluation (run CI)''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+      if: always()
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p12b-livrables
+        path: reports/meta_alpha/phase12
         retention-days: 90
         if-no-files-found: warn

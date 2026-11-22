@@ -4004,6 +4004,17 @@
     "statut": "PHASE12A_FROZEN - Phase 12-B non autorisee"
    },
    "entry_hash": "5d038d1d891c8d1bd808f1b2ac2ef9bc1f746b9976dfc331e219b6aa32ce49ca"
+  },
+  {
+   "seq": 312,
+   "prev_hash": "5d038d1d891c8d1bd808f1b2ac2ef9bc1f746b9976dfc331e219b6aa32ce49ca",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-B",
+    "objet": "Ordre officiel du responsable: EXECUTION PHASE 12-B AUTORISEE. Extraction bornee des cinq variables preenregistrees (protocole 12-A gele seq311, sha256 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e, PHASE12A_FROZEN, commit de gel 2c6cec5) aux seules minutes <= t_reintegration, puis evaluation predictive prespecifiee M0 (frequence apprentissage) vs M1 (logistique simple sans reglage, cinq variables brutes, SESSION_REINTEGRATION categorielle), H1/H4 separes, sans pooling. Populations gelees: F10-01 3107 admissibles/2695 reintegres/2033 reprises; F10-03 660/632/542. Cible RESUMPTION 1/0/CENSORED/AMBIGUOUS depuis reprise_apres_reintegration 11-C validee, jamais recalculee sous une nouvelle definition. Separation chronologique par grappe entiere 2010-2015 apprentissage/2016-2017 calibration/2018-2020 evaluation avec purge des fenetres chevauchant le segment suivant. Metriques principales Brier et log-loss vs M0 (meme observations), AUC et calibration jamais probantes seules, aucun test de significativite. Criteres d insuffisance obligatoires: evaluation <100 etiquetes ou minorite <50 => NON EVALUABLE par famille (H4: 90 absences au total, verdict NON EVALUABLE a accepter si les criteres echouent; aucun pooling/elargissement/oversampling/seuil modifie). Interdits comme predicteurs: toutes colonnes fenetre complete et derives de la cible. Livrables: PHASE12B_FEATURES.csv, PHASE12B_FEATURE_AUDIT.json, PHASE12B_MODEL_EVALUATION.csv, PHASE12B_RESULTS.json, PHASE12B_FINAL_REPORT.md + proces-verbal chaine. Qualification obligatoire: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE. Holdout scelle, aucune strategie/rentabilite/optimisation, S12 T0 J2 J3 interdits. Execution via CI (lots M1 IS Kaggle comme Phase 11-C), tests synthetiques temporels avant production.",
+    "statut": "PHASE 12-B AUTORISEE - execution en cours"
+   },
+   "entry_hash": "e2e9cff385d18b79be4b36035cdf4cfb6d8caf9dd07036e7a15f639a84a2c468"
   }
  ]
 }
