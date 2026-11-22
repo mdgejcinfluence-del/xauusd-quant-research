@@ -10,6 +10,10 @@ name: phase10_all
         description: Relance ciblee F10-01/F10-03 (amendement seq289)
         type: boolean
         default: false
+      diag:
+        description: Diagnostic acces Kaggle/Drive (journal committe)
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -276,3 +280,24 @@ jobs:
         path: reports/meta_alpha/phase10/P10_BARS_${{ matrix.batch }}.csv.gz
         retention-days: 90
         if-no-files-found: error
+  diag:
+    name: P10 diagnostic acces sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: ${{ inputs.diag }}
+    permissions:
+      contents: write
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q requests gdown
+    - name: Diagnostic (journal committe dans le depot)
+      run: 'python ci_tools/phase10_diag.py 2>&1 | tee reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt;
+        git config user.email ''actions@github.com''; git config user.name ''github-actions'';
+        git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
+        --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
+        origin HEAD:arena/afe12737-xauusd-quant-research'
