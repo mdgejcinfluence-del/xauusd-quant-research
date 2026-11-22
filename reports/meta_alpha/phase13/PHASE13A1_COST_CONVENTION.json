@@ -1,0 +1,40 @@
+{
+  "phase": "13-A.1",
+  "nature": "convention definitive de traitement des couts - gelee avant toute extraction, simulation ou calcul economique",
+  "spread": {
+    "statut": "INTEGRE_AUX_PRIX_EXECUTABLES",
+    "regle": "entree et sortie aux prix Bid/Ask reels (Ask a l achat, Bid a la vente; Bid a la liquidation longue, Ask a la liquidation courte); le spread est ainsi compte exactement une fois",
+    "interdiction": "aucune seconde soustraction du spread; la convention historique Phase 10 sur prix Mid (2,302 bp observes + 1,7 bp hypothetiques = 4,002 bp deduits une fois) ne s applique pas au present contrat"
+  },
+  "commissions": {
+    "decision": "COMMISSION_EXCLUDED_BY_DESIGN",
+    "motif": "aucun bareme de commission verifiable n est disponible dans les artefacts; aucun tarif ne doit etre invente",
+    "etiquette_obligatoire_des_resultats": "NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE",
+    "interdiction": "les resultats ne doivent jamais etre qualifies de rendement net complet ni de rentabilite nette demontree",
+    "condition_validation_complete_future": "un bareme reel documente ou une exclusion explicitement justifiee devra etre consigne avant toute validation economique complete"
+  },
+  "slippage": {
+    "statut": "SCENARIOS_HYPOTHETIQUES - aucune observation historique d executions reelles",
+    "grille_gelee": [
+      {"scenario": "S0", "par_cote_bp": 0.0, "aller_retour_bp": 0.0},
+      {"scenario": "S1", "par_cote_bp": 0.5, "aller_retour_bp": 1.0},
+      {"scenario": "S2", "par_cote_bp": 1.0, "aller_retour_bp": 2.0}
+    ],
+    "application": "defavorablement a chacune des deux executions (entree et sortie), en bp par cote",
+    "formules_prix": {
+      "position_longue": "prix_entree_ajuste = Ask_entree * (1 + s/10000); prix_sortie_ajuste = Bid_sortie * (1 - s/10000)",
+      "position_courte": "prix_entree_ajuste = Bid_entree * (1 - s/10000); prix_sortie_ajuste = Ask_sortie * (1 + s/10000)",
+      "s": "par_cote_bp du scenario (0 / 0,5 / 1,0)"
+    },
+    "interdiction": "aucun scenario supplementaire ne peut etre ajoute apres observation des resultats; ces valeurs ne doivent jamais etre presentees comme des mesures"
+  },
+  "financement_et_swaps": {
+    "statut": "INCONNUS_NON_MODELISES",
+    "regle": "non modelises au primaire; fenetre <= 8 bougies H1; limite documentee obligatoire dans tout rapport de resultats"
+  },
+  "profondeur_et_taille": {
+    "statut": "NON_DISPONIBLE",
+    "regle": "aucune donnee de carnet d ordres; aucune affirmation d executabilite en taille n est autorisee"
+  },
+  "rendement_primaire": "direction * ln(prix_sortie_executable_ajuste_selon_scenario / prix_entree_executable_ajuste_selon_scenario) * 10000 (bp log), calcule separement pour S0, S1 et S2, toujours etiquete NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE"
+}

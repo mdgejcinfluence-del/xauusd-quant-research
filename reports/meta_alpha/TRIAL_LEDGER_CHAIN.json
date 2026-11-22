@@ -4201,6 +4201,30 @@
     "statut": "PHASE 13-A TERMINEE - aucune etude economique autorisee automatiquement"
    },
    "entry_hash": "08e81d5596af774c794c94ea5ed1d495e5f9cebf8796e710664d67046d21f437"
+  },
+  {
+   "seq": 329,
+   "prev_hash": "08e81d5596af774c794c94ea5ed1d495e5f9cebf8796e710664d67046d21f437",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "13-A.1",
+    "objet": "Execution documentaire autorisee: correction de causalite de l entree (t_decision = cloture UTC de la M1 confirmant la reintegration; probabilite calculee apres cette cloture; entree au premier Ask/Bid dont le timestamp est strictement posterieur a t_decision et strictement inferieur a t_decision+60s, verifie sur ticks Bid/Ask reels; NON_EXECUTION sinon), sortie executable unique a la cloture de la fenetre de 8 bougies H1 (Bid long / Ask court), spread compte une seule fois, commissions COMMISSION_EXCLUDED_BY_DESIGN avec etiquette NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE, grille de slippage hypothetique gelee S0/S1/S2 (0 / 0,5 / 1,0 bp par cote), regle p_M1 > M0 gele 0,7591463414634146 inchangee. Nouveaux livrables V2 et addendum uniquement, aucun ancien document ecrase. Interdits: holdout, extraction, backtest, simulation, calcul economique, optimisation, strategie, depense. Verdicts possibles: ECONOMIC_CONTRACT_FROZEN ou ECONOMIC_CONTRACT_BLOCKED. Phase 13-B soumise a decision distincte.",
+    "verdict": "EXECUTION_DOCUMENTAIRE_AUTORISEE",
+    "statut": "PHASE 13-A.1 EN COURS"
+   },
+   "entry_hash": "8a36d53ed27ca4474e84ad8178a524b2533911d33284788ae8b1718e40d2c2ae"
+  },
+  {
+   "seq": 330,
+   "prev_hash": "8a36d53ed27ca4474e84ad8178a524b2533911d33284788ae8b1718e40d2c2ae",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "13-A.1",
+    "objet": "Correction de causalite et gel du contrat economique H1, sans aucun backtest/simulation/calcul/extraction. Defaut 13-A consigne: le prix d ouverture de la minute de t_reintegration etait anterieur a la disponibilite du signal (look-ahead). Convention gelee: t_decision = cloture UTC de la M1 confirmant la reintegration; p_M1 calcule apres cette cloture; exposition si et seulement si p_M1 > M0 gele 0,7591463414634146; entree a la premiere cotation tick Bid/Ask reelle avec t_decision < quote_timestamp < t_decision + 60 secondes (Ask si long, Bid si court), NON_EXECUTION comptee sinon, horodatages exacts conserves, jamais de Mid reconstruit ni de substitution favorable. Sortie primaire unique inchangee: cloture de la fenetre gelee de 8 bougies H1, Bid (long) / Ask (court) de cloture de la derniere minute M1; spread integre exactement une fois par les prix executables. Commissions: COMMISSION_EXCLUDED_BY_DESIGN (aucun bareme verifiable, aucun tarif invente), etiquette obligatoire NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE, jamais de rentabilite nette complete. Slippage: grille hypothetique gelee S0/S1/S2 = 0 / 0,5 / 1,0 bp par cote (aller-retour 0 / 1,0 / 2,0 bp) appliquee defavorablement aux deux executions avec formules par direction; aucun scenario ajoutable apres observation des resultats. Controles automatises de coherence inter-documents tous conformes (7 criteres); anciens livrables 13-A inchanges verifies par SHA-256. Livrables: addendum 4b3d9265abad..., convention couts e7e273667418..., contrat V2 86ae5d343696..., preenregistrement V2 cf0243265d3b..., rapport de validation edd987644654.... Phase 13-B (etude IS niveau 2) soumise a decision distincte; holdout 2020-2026 definitivement exclu.",
+    "verdict": "ECONOMIC_CONTRACT_FROZEN",
+    "statut": "PHASE 13-A.1 TERMINEE - contrat economique gele; aucune etude economique autorisee automatiquement"
+   },
+   "entry_hash": "b5233718df68e066a07d579657d13017bd03200d6ad119368c8a09d4eff9373b"
   }
  ]
 }

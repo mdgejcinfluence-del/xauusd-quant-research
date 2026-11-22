@@ -1,0 +1,48 @@
+{
+  "phase": "13-A.1",
+  "version": "V2 - remplace la convention d entree du contrat 13-A (PHASE13A_EXECUTION_CONTRACT.json, 03e1f7eb...) sans modifier les anciens documents",
+  "nature": "contrat d execution economique GELE - aucun backtest, aucune simulation, aucun calcul effectues",
+  "modele": {
+    "reference": "PHASE12C1_MODEL_PARAMETERS.json sha256 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e",
+    "regle": "modele H1, coefficients et encodage strictement geles; aucun reentrainement, recalibrage, nouvelle variable ni ajustement; H4 exclu (NON_EVALUABLE_IN_PHASE12B)"
+  },
+  "regle_exposition": {
+    "regle": "exposition si et seulement si p_M1 > 0.7591463414634146",
+    "M0": 0.7591463414634146,
+    "statut": "seuil gele non optimise (probabilite du modele nul, apprentissage 2010-2015); aucun autre seuil, aucune selection de sessions, aucun sous-groupe choisi apres observation des performances"
+  },
+  "causalite_et_entree": {
+    "t_decision": "timestamp UTC de cloture de la minute M1 confirmant la reintegration (definition gelee inchangee)",
+    "calcul_probabilite": "p_M1 calcule apres disponibilite de la cloture a t_decision; aucune information posterieure a t_decision dans p_M1",
+    "fenetre_execution": "t_decision < quote_timestamp < t_decision + 60 secondes (bornes strictes)",
+    "source_prix": "ticks Bid/Ask reels (partitions tick IS Kaggle prive du proprietaire pour le niveau 2); jamais de reconstruction depuis des prix Mid",
+    "direction_+1_long": "prix d entree = Ask de la premiere cotation tick dont le timestamp est dans la fenetre",
+    "direction_-1_court": "prix d entree = Bid de la premiere cotation tick dont le timestamp est dans la fenetre",
+    "non_execution": "aucune cotation executable dans la fenetre => NON_EXECUTION, comptee et publiee; jamais de prix invente, jamais de cotation anterieure ou egale a t_decision, jamais de substitution par une cotation ulterieure plus favorable",
+    "tracabilite": ["t_decision", "quote_timestamp exact", "cote utilise (Ask/Bid)", "prix d entree", "direction", "p_M1", "statut EXECUTE/NON_EXECUTION et motif"]
+  },
+  "sortie": {
+    "convention_primaire_unique": "cloture de la fenetre gelee de huit bougies H1 suivant la bougie declencheuse (definition des phases anterieures); la cible predictive de continuation n est pas une sortie",
+    "position_longue": "prix de sortie = Bid de cloture de la derniere minute M1 de la fenetre (dernier tick de cette minute)",
+    "position_courte": "prix de sortie = Ask de cloture de la derniere minute M1 de la fenetre (dernier tick de cette minute)",
+    "tracabilite": ["quote_timestamp exact de la cotation de sortie", "cote utilise", "prix de sortie"],
+    "censure": "fenetre censuree, minute de sortie absente, prix non fini ou <= 0 ou spread non fini => evenement exclu de la mesure primaire avec motif consigne; jamais prolonge ni remplace",
+    "alternatives": "toute sortie alternative reste NON PREENREGISTREE et ne doit pas etre testee pour choisir la plus rentable"
+  },
+  "rendement_et_couts": {
+    "rendement": "direction * ln(prix_sortie / prix_entree) * 10000 (bp log), aux prix executables ajustes selon le scenario de slippage",
+    "spread": "integre une seule fois par les prix Bid/Ask d entree et de sortie; aucune seconde soustraction",
+    "commissions": "COMMISSION_EXCLUDED_BY_DESIGN; etiquette obligatoire NET_OF_SPREAD_BEFORE_COMMISSION_AND_SLIPPAGE; jamais de rendement net complet ni de rentabilite nette demontree",
+    "slippage": "scenarios hypothetiques geles S0 = 0, S1 = 0,5, S2 = 1,0 bp par cote, appliques defavorablement a l entree et a la sortie (voir PHASE13A1_COST_CONVENTION.json); aucun scenario supplementaire apres observation des resultats",
+    "financement_swaps": "inconnus, non modelises au primaire; limite documentee",
+    "convention_complete": "PHASE13A1_COST_CONVENTION.json"
+  },
+  "mesures_risque_preenregistrees": ["MFE/MAE executables post-entree", "quantiles des rendements (p1, p5, p25, mediane, p75, p95) par scenario de slippage", "perte maximale observee", "part de positions positives", "duree d exposition", "taux de NON_EXECUTION", "resultats par evenement et ponderes par grappe"],
+  "stratifications_descriptives_autorisees": ["direction", "session de reintegration", "bandes de probabilite aux bornes fixes 0,7591 / 0,85 / 0,92 (descriptif uniquement, jamais regles d exposition)"],
+  "conditions_arret": ["taux de NON_EXECUTION > 10 % des eligibles => NON MESURABLE en l etat", "minutes a spread non fini > 5 % des fenetres mesurees => NON MESURABLE", "divergence de provenance des prix => BLOCKED"],
+  "donnees_autorisees": "IS 2010-2020 uniquement (ticks Bid/Ask IS et agregats M1 deja produits); holdout 2020-2026 CONSOMME: aucun acces, aucun usage economique, aucune optimisation, aucune selection",
+  "niveaux_de_preuve": {"niveau_2": "IS: exploratoire descriptif uniquement, jamais confirmation", "niveau_3": "donnees posterieures au gel du present contrat uniquement, sous decision distincte"},
+  "interdits": ["reutilisation du holdout pour tout choix (seuil, session, entree, sortie, sous-groupe, modele, strategie)", "optimisation", "selection post-hoc de variantes ou de sous-groupes", "reestimation", "strategie executable", "H4", "depense"],
+  "conditions_prealables_execution": ["decision distincte du responsable pour la Phase 13-B (etude exploratoire IS, niveau 2)", "pour toute validation economique complete future: bareme de commissions reel documente ou exclusion explicitement justifiee, consigne par decision chainee"],
+  "verdict": "ECONOMIC_CONTRACT_FROZEN"
+}
