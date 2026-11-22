@@ -1,0 +1,53 @@
+{
+  "phase": "12-A",
+  "nature": "preenregistrement documentaire - aucun calcul predictif effectue",
+  "question": "A partir des informations disponibles a t_reintegration, peut-on distinguer les evenements qui reprendront leur mouvement initial de ceux qui ne le reprendront pas ?",
+  "protocole_parent": "PHASE11_PROTOCOL.md gele definitivement (seq300, sha256 fdfb04ed71cd5317e9b342a408194ac79c42ab06188555cbc1fcb3367aa38f94)",
+  "populations": {
+    "F10-01": {"timeframe": "H1", "admissibles": 3107, "reintegres": 2695, "reprises": 2033, "absences_de_reprise": 662,
+               "reintegres_complets": 2692, "reprises_complets": 2032, "absences_complets": 660, "reintegres_censures": 3, "grappes": 2617},
+    "F10-03": {"timeframe": "H4", "admissibles": 660, "reintegres": 632, "reprises": 542, "absences_de_reprise": 90,
+               "reintegres_complets": 629, "reprises_complets": 539, "absences_complets": 90, "reintegres_censures": 3, "grappes": 597},
+    "regle": "populations fermees, H1 et H4 jamais melanges, aucune modification pour ameliorer les effectifs"
+  },
+  "instant_de_decision": "t_reintegration = cloture de la minute M1 confirmant la premiere reintegration de P0 (definition gelee 11-A)",
+  "variable_cible": {
+    "nom": "RESUMPTION",
+    "definition": "1 si le critere de continuation gele (depassement en cloture M1 de l ancien meilleur niveau de cloture favorable anterieur) est atteint apres t_reintegration et avant la fin de la fenetre de 8 bougies; 0 si la fenetre est completement observable sans atteinte; CENSORED si horizon < 8; AMBIGUOUS si ordre intraminute indetermine affectant la sequence (0 cas observes en 11-C)",
+    "exclusions_des_classes": ["CENSORED", "AMBIGUOUS"],
+    "source_existante": "reprise_apres_reintegration (PHASE11C_EVENT_PATHS.csv) pour les reintegres, croisee avec horizon_atteint et intra_minute_order_unknown"
+  },
+  "hypotheses": [
+    {"id": "H12-A", "nom": "Profondeur du repli", "variable": "RATIO_REPLI_EXTENSION_A_TREINT", "regle": "retracements > 100 % conserves, aucun plafonnement"},
+    {"id": "H12-B", "nom": "Vitesse du repli", "variable": "DUREE_EXTREME_VERS_TREINT_MIN (+ DUREE_T0_TREINT_MIN en contexte)"},
+    {"id": "H12-C", "nom": "Structure de l extension initiale", "variable": "MFE_A_TREINT_BP (+ DUREE_T0_MFE_MIN en extraction)"},
+    {"id": "H12-D", "nom": "Structure des retours a P0", "variable": "NB_TOUCHES_P0_AVANT_TREINT"},
+    {"id": "H12-E", "nom": "Contexte temporel", "variable": "SESSION_REINTEGRATION (SESSION_DECLENCHEMENT en contexte)"},
+    {"id": "H12-F", "nom": "Differences H1/H4", "regle": "meme protocole par famille, comparaison descriptive, aucun pooling"}
+  ],
+  "modele_principal_prespecifie": "Regression logistique sans reglage, par famille: RATIO_REPLI_EXTENSION_A_TREINT + DUREE_EXTREME_VERS_TREINT_MIN + MFE_A_TREINT_BP + NB_TOUCHES_P0_AVANT_TREINT + SESSION_REINTEGRATION (categorielle). Aucune selection de variables, aucune combinaison automatisee, aucun hyperparametre optimise.",
+  "modele_de_reference": "M0: probabilite constante egale a la frequence de reprise du segment d apprentissage; toute amelioration mesuree contre M0",
+  "variables_statut": "5 variables du modele exigent une extraction bornee aux minutes <= t_reintegration (autorisation distincte en Phase 12-B); les versions fenetre complete de PHASE11C_EVENT_PATHS.csv sont interdites comme variables (fuite). Voir PHASE12A_FEATURE_DICTIONARY.csv.",
+  "regles_anti_fuite": [
+    "Aucune variable explicative ne peut utiliser une minute posterieure a t_reintegration",
+    "archetype et reprise_apres_reintegration sont des derives de la cible: interdits comme variables",
+    "Colonnes fenetre complete interdites en l etat (repli_profondeur_max_bp, fraction_corps_reprise, repli_relatif_extension_pct, mfe_max_bp, mae_max_bp, nb_retours, horizons mfe/mae/disp posterieurs a t_reintegration)",
+    "Aucune grappe partagee entre apprentissage, calibration et evaluation",
+    "Purge des evenements d apprentissage dont la fenetre chevauche le segment suivant"
+  ],
+  "separation_temporelle": {"apprentissage": "2010-2015", "calibration": "2016-2017", "evaluation": "2018-2020",
+    "affectation": "grappe entiere affectee au segment de la date de t_reintegration de son premier evenement reintegre", "familles_separees": true},
+  "metriques": {"principales": ["Brier score (amelioration relative vs M0)", "log-loss (amelioration relative vs M0)"],
+    "secondaires": ["AUC (jamais presentee seule comme preuve)", "calibration: pente, ordonnee, courbe par deciles", "precision et rappel au seuil fixe 0,5"],
+    "justification": "classes desequilibrees (minorite H4 = 90 absences au total): les metriques probabilistes et la calibration priment"},
+  "criteres_insuffisance": {"par_famille": "segment d evaluation < 100 evenements etiquetes OU classe minoritaire < 50 => NON EVALUABLE pour le test predictif (descriptif seul); calibration non publiee si < 200 evenements d evaluation", "modification_des_populations_pour_seuils": "interdite"},
+  "conditions_arret": [
+    "Variable bornee non extractible sans utiliser le futur => arret et rapport de blocage",
+    "Critere d insuffisance atteint pour une famille => famille NON EVALUABLE, pas de substitution de segment ni de pooling H1/H4",
+    "Toute fuite temporelle detectee invalide le test concerne"
+  ],
+  "niveau_de_preuve": "HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE (hypotheses inspirees de l IS 2010-2020 deja observe; une partition chronologique interne n est pas une confirmation independante)",
+  "holdout": "2020-2026 scelle; ouverture eventuelle uniquement par autorisation distincte, explicite et posterieure au gel du present protocole",
+  "verdict": "PROTOCOL_READY_FOR_PHASE12B",
+  "phase_suivante": "Phase 12-B non automatique: extraction bornee des variables et test predictif uniquement sur decision distincte, apres gel formel du present protocole"
+}

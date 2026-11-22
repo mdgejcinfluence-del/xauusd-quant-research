@@ -3959,6 +3959,29 @@
     "statut": "PHASE 11-C.1 TERMINEE - resultats 11-C geles; phase suivante sur decision distincte"
    },
    "entry_hash": "7720f349d3637faad472b3b9b85aa3c50d530d7e4dbec8f1466d64d3d9c2e8c5"
+  },
+  {
+   "seq": 308,
+   "prev_hash": "7720f349d3637faad472b3b9b85aa3c50d530d7e4dbec8f1466d64d3d9c2e8c5",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-A",
+    "objet": "Mission officielle Phase 12-A executee: conception et preenregistrement d une recherche de previsibilite post-reintegration (documentaire et methodologique uniquement). Question: a partir des informations disponibles a t_reintegration (cloture M1 confirmant la premiere reintegration de P0, definition gelee 11-A), peut-on distinguer les evenements qui reprendront leur mouvement initial de ceux qui ne le reprendront pas? H1 et H4 separes; objectif de previsibilite statistique, pas de rentabilite. Hypotheses preenregistrees H12-A (profondeur du repli, retracements >100 % conserves), H12-B (vitesse du repli), H12-C (structure de l extension initiale), H12-D (structure des retours a P0), H12-E (contexte temporel UTC), H12-F (differences H1/H4 sans melange des donnees) - candidats non demontres, aucune selection. Cible: RESUMPTION=1/0/CENSORED/AMBIGUOUS selon la definition de continuation gelee, censure et ambigus exclus des classes principales. Inventaire limite aux schemas et livrables Phase 11-C existants; variables absentes classees comme necessitant une extraction autorisee ulterieure. Architecture future: modele de reference par frequence historique vs modeles simples prespecifies, separation chronologique respectant les grappes (jamais partagees entre apprentissage et evaluation), metriques et calibration a fixer avant execution. Niveau de preuve impose: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE (hypotheses inspirees de l IS deja observe); holdout 2020-2026 scelle, acces futur par autorisation distincte posterieure au gel. Interdictions: aucun calcul predictif, correlation, entrainement, test, extraction, recalcul, strategie, backtest, economie, S12, T0/J2/J3, depense. Livrables: PHASE12A_PREDICTABILITY_PROTOCOL.md, PHASE12A_FEATURE_DICTIONARY.csv, PHASE12A_PREREGISTRATION.json, PHASE12A_FEASIBILITY_REPORT.md. Verdict: PROTOCOL_READY_FOR_PHASE12B ou PROTOCOL_BLOCKED; Phase 12-B non automatique, decision distincte requise.",
+    "statut": "CONCEPTION DOCUMENTAIRE AUTORISEE UNIQUEMENT"
+   },
+   "entry_hash": "c397a40c9dedaca538121832ced822bb1ee5028c8850cd563e7e74c37815230d"
+  },
+  {
+   "seq": 309,
+   "prev_hash": "c397a40c9dedaca538121832ced822bb1ee5028c8850cd563e7e74c37815230d",
+   "entry": {
+    "type": "PREREG",
+    "phase": "12-A",
+    "objet": "Protocole de previsibilite post-reintegration preenregistre sans aucun calcul predictif. Question: distinguer a t_reintegration (definition gelee 11-A) les evenements qui reprendront de ceux qui ne reprendront pas, H1 et H4 separes. Hypotheses candidates H12-A a H12-F preenregistrees (profondeur du repli >100 % conservee, vitesse, structure d extension, retours a P0, contexte UTC, differences H1/H4 sans pooling), aucune selection. Cible RESUMPTION=1/0/CENSORED/AMBIGUOUS selon la continuation gelee, censure et ambigus exclus des classes. Inventaire sur schemas reels 11-C (75 colonnes): regles anti-fuite strictes - les colonnes fenetre complete (repli_profondeur_max_bp, fraction_corps_reprise, mfe_max_bp, nb_retours, archetype) interdites comme variables; 5 variables du modele prespecifie exigent une extraction bornee aux minutes <= t_reintegration en Phase 12-B (classees comme telles, jamais declarees disponibles a tort); disponibles sans fuite: sessions, direction, corps/range declencheurs, delai t0-t_reintegration; cible deja materialisee. Architecture future: M0 frequence d apprentissage vs logistique prespecifiee sans reglage, separation chronologique par grappe entiere (2010-2015/2016-2017/2018-2020, purge des chevauchements), metriques principales Brier et log-loss vs M0, AUC jamais seule, calibration; criteres d insuffisance fixes (evaluation <100 etiquetes ou minorite <50 => NON EVALUABLE par famille). Effectifs: H1 2692 reintegres complets (2032/660), H4 629 (539/90, minorite fragile a risque de NON EVALUABLE). Niveau de preuve impose: HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE; holdout scelle, ouverture seulement par autorisation distincte posterieure au gel. Livrables: PHASE12A_PREDICTABILITY_PROTOCOL.md, PHASE12A_FEATURE_DICTIONARY.csv, PHASE12A_PREREGISTRATION.json, PHASE12A_FEASIBILITY_REPORT.md. Verdict: PROTOCOL_READY_FOR_PHASE12B; gel du protocole puis Phase 12-B uniquement sur decisions distinctes.",
+    "verdict": "PROTOCOL_READY_FOR_PHASE12B",
+    "statut": "PHASE 12-A TERMINEE - protocole soumis a validation et gel; Phase 12-B non autorisee"
+   },
+   "entry_hash": "cf39c92489e541a85d220b69026ca8bf639205d8a858ca1e56848becd99fdae3"
   }
  ]
 }
