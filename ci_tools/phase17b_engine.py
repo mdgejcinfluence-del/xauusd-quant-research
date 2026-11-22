@@ -83,14 +83,19 @@ def mode_lot():
                     WHERE pmax IS NULL OR liq > pmax OR liq < pmin OR (pts IS NOT NULL AND epoch(ts) - epoch(pts) > 300)"""
             w = con.execute(q).df()
             if not len(w): continue
+            qlast = f"""SELECT timestamp_utc AS ts, bid, ask, {liq} AS liq FROM read_parquet('{local}')
+                    WHERE timestamp_utc > '{r.t_decision}' AND timestamp_utc <= '{r.fin}'
+                    ORDER BY timestamp_utc DESC LIMIT 1"""
+            qfirst = qlast.replace('DESC', 'ASC')
+            wlast = con.execute(qlast).df(); wfirst = con.execute(qfirst).df()
             w['ts'] = pd.to_datetime(w.ts).dt.tz_localize(None)
             for t in w[w.pts.notna() & ((w.ts - pd.to_datetime(w.pts, format='mixed').dt.tz_localize(None)).dt.total_seconds() > 300)].itertuples():
                 rows.append({'event_id': r.event_id, 'kind': 'HOLE', 'ts': str(pd.Timestamp(t.pts).tz_localize(None)), 'ts2': str(t.ts), 'liq': np.nan, 'bid': np.nan, 'ask': np.nan})
             for t in w[(w.pmax.isna()) | (w.liq > w.pmax) | (w.liq < w.pmin)].itertuples():
                 rows.append({'event_id': r.event_id, 'kind': 'EXTREME', 'ts': str(t.ts), 'ts2': '', 'liq': float(t.liq), 'bid': float(t.bid), 'ask': float(t.ask)})
-            rows.append({'event_id': r.event_id, 'kind': 'BOUND', 'ts': str(w.ts.iloc[0]), 'ts2': str(w.ts.iloc[-1]), 'liq': float(len(w)), 'bid': np.nan, 'ask': np.nan})
-            lt = w.iloc[-1]
-            rows.append({'event_id': r.event_id, 'kind': 'LAST', 'ts': str(lt.ts), 'ts2': '', 'liq': float(lt.liq), 'bid': float(lt.bid), 'ask': float(lt.ask)})
+            rows.append({'event_id': r.event_id, 'kind': 'BOUND', 'ts': str(pd.Timestamp(wfirst.ts.iloc[0]).tz_localize(None)), 'ts2': str(pd.Timestamp(wlast.ts.iloc[0]).tz_localize(None)), 'liq': float(len(w)), 'bid': np.nan, 'ask': np.nan})
+            lt = wlast.iloc[0]
+            rows.append({'event_id': r.event_id, 'kind': 'LAST', 'ts': str(pd.Timestamp(lt.ts).tz_localize(None)), 'ts2': '', 'liq': float(lt.liq), 'bid': float(lt.bid), 'ask': float(lt.ask)})
         print('P17 part', p['name'], flush=True)
     R17.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows, columns=['event_id', 'kind', 'ts', 'ts2', 'liq', 'bid', 'ask']).to_csv(R17 / f'P17_PATH_{batch}.csv', index=False)
@@ -291,7 +296,7 @@ def mode_analyse():
     (R17 / 'PHASE17B_FEATURE_AUDIT.json').write_text(json.dumps(audit_f, indent=1, ensure_ascii=False))
     audit_l = {'reconciliation_evaluation_phase14': recon,
                'regles': 'censures/NON_EXECUTION/UNAVAILABLE jamais etiquetes; mecanismes conserves; scenario primaire S2',
-               'effectifs_par_contrat': {c: labels[c].groupby(['ensemble', 'statut_label']).size().to_dict() for c in CONTRATS}}
+               'effectifs_par_contrat': {c: {f'{k[0]}|{k[1]}': int(v) for k, v in labels[c].groupby(['ensemble', 'statut_label']).size().items()} for c in CONTRATS}}
     (R17 / 'PHASE17B_LABEL_AUDIT.json').write_text(json.dumps(audit_l, indent=1, ensure_ascii=False, default=str))
     (R17 / 'PHASE17B_RESULTS.json').write_text(json.dumps(resultats, indent=1, ensure_ascii=False, default=str))
     print(json.dumps({'recon': recon, 'verdicts': {c: i['verdict'] for c, i in resultats['contrats'].items()}}, indent=1, default=str), flush=True)
