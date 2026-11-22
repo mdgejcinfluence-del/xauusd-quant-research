@@ -4074,6 +4074,17 @@
     "statut": "MODELE H1 RECONSTRUIT ET GELABLE - Phase 12-C non autorisee"
    },
    "entry_hash": "f2b7afd80578003e0f7ab43d34a92dab46fc5cbb41004c312c073a3b0bbf12b2"
+  },
+  {
+   "seq": 318,
+   "prev_hash": "f2b7afd80578003e0f7ab43d34a92dab46fc5cbb41004c312c073a3b0bbf12b2",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-C.2",
+    "objet": "Ordre officiel: OUVERTURE CONTROLEE DU HOLDOUT ET CONFIRMATION INDEPENDANTE H1 AUTORISEES - evaluation unique terminale. Preflight verifie avant tout acces: chaine valide seq317, distant f1ba282, protocole 12-A 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e, protocole 12-C bf3b9adf0975b62bfab9eb17d6cc82fc9cfb58f48ff3427bc86ba4ffe26d4b9a, PHASE12C1_MODEL_PARAMETERS.json 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e, PHASE12C1_MODEL_MANIFEST.json be2d0b23eccc1e7155325d4a7bae91a09f83c7887ff9d743e5c95a7767185118, code gele a1c9f52d9ddeb7160e2113ded3ad95da29926518ccc7b50117922117e2ee597b, donnees apprentissage 6f684ee882b4c840ab27255864266729095b4fa4b52275821923f10a53c16485; coefficients charges depuis le JSON (jamais recopies). Modele gele sans reentrainement/recalibrage; M0 gele 0,7591463414634146 jamais recalcule sur holdout. Perimetre: 2020-01-01T00:00 UTC a la derniere date couverte validee; partitions sources identifiees par l inventaire deja commite (partitions 282-348, 282-283 en contexte detecteur seul, aucun evenement IS importe); frontiere, exclusions fenetres/grappes mixtes, cible et cinq variables bornees selon protocole 12-C/12-A geles; detecteur F10-01 historique cible (amendement seq289) et composantes historiques sans nouveau clustering. Criteres 100/50 et regle de decision 12-C inchanges; verdicts CONFIRMED_HISTORICAL_HOLDOUT / NO_PREDICTIVE_IMPROVEMENT_HOLDOUT / NON_EVALUABLE / BLOCKED; qualification CONFIRMATION HISTORIQUE HORS IS - NON VALIDATION PROSPECTIVE, aucune rentabilite. Execution unique: incident technique avant production de metriques = arret documente, reprise identique seulement si aucune metrique consultee. H4 hors perimetre NON_EVALUABLE_IN_PHASE12B; strategie/backtest/economie/S12/T0/J2/J3/depenses interdits.",
+    "statut": "PHASE 12-C.2 AUTORISEE - preflight conforme, execution en cours"
+   },
+   "entry_hash": "a70308541ceb299cdf21c0c3af9824e6804fbb2cd22d482262a9227a38fbf6ad"
   }
  ]
 }

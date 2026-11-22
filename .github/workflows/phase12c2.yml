@@ -1,0 +1,91 @@
+name: Phase 12-C.2 Confirmation holdout H1 (seq318)
+'on':
+  workflow_dispatch: {}
+jobs:
+  lots:
+    name: P12C2 lot ${{ matrix.lot }} (barres M1 holdout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - { lot: h01, parts: '282-290' }
+        - { lot: h02, parts: '291-299' }
+        - { lot: h03, parts: '300-308' }
+        - { lot: h04, parts: '309-317' }
+        - { lot: h05, parts: '318-326' }
+        - { lot: h06, parts: '327-335' }
+        - { lot: h07, parts: '336-342' }
+        - { lot: h08, parts: '343-348' }
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Installer dependances legeres
+      run: pip install -q pandas numpy duckdb gdown
+    - name: Barres M1 du lot (holdout autorise seq318, partitions du lot uniquement)
+      env:
+        P12C2_ETAPE: bars
+        P12C2_LOT: ${{ matrix.lot }}
+        P12C2_PARTS: ${{ matrix.parts }}
+      run: python ci_tools/phase12c2_engine.py
+    - name: Publier les barres du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p12c2-bars-${{ matrix.lot }}
+        path: |
+          reports/meta_alpha/phase12/P12C2_BARS_${{ matrix.lot }}.csv.gz
+          reports/meta_alpha/phase12/P12C2_PROVENANCE_${{ matrix.lot }}.json
+        retention-days: 90
+        if-no-files-found: error
+  analyse:
+    name: P12C2 evaluation unique H1 (modele gele 12-C.1)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    needs:
+    - lots
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les barres des 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p12c2-bars-*
+        path: bars_artifacts
+        merge-multiple: true
+    - name: Evaluation terminale unique Phase 12-C.2
+      env:
+        BARS_DIR: bars_artifacts
+      run: python ci_tools/phase12c2_engine.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12C2_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les livrables Phase 12-C.2
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git status --porcelain
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2: livrables confirmation holdout H1 (run CI)''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+      if: always()
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p12c2-livrables
+        path: reports/meta_alpha/phase12
+        retention-days: 90
+        if-no-files-found: warn
