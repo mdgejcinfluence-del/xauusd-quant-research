@@ -3795,6 +3795,28 @@
     "statut": "PHASE 10: RAPPORT FINAL DES DEUX TESTS LIVRE - cloture soumise a validation du responsable"
    },
    "entry_hash": "30bf70c93804ce0b62a643613e7d0aafe628389a0888e260a551905883f0a363"
+  },
+  {
+   "seq": 295,
+   "prev_hash": "30bf70c93804ce0b62a643613e7d0aafe628389a0888e260a551905883f0a363",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-A",
+    "objet": "Responsable transmet le protocole preenregistre d anatomie des grands mouvements H1/H4 (etude comportementale et mecanistique descriptive). Question: distribution des trajectoires posterieures aux grands mouvements H1 et H4, de leur cloture jusqu aux huit bougies suivantes (MFE/MAE barre par barre, chronologie des extrema a la minute M1, repli depuis l extreme favorable, retracement de la bougie declencheuse, sessions UTC fixes, archetypes descriptifs faux/vrais departs). Populations sources exclusivement issues des manifestes de la correction Phase 10 (F10-01: 3134 detectes/3107 eligibles/2617 grappes; F10-03: 762/660/597), aucun nouvel evenement, populations H1 et H4 separees. Mid pour l anatomie, aucun cout ni rentabilite, aucune p-value confirmatoire, bootstrap grappes descriptif 2000 repetitions graine fixee. Mission autorisant uniquement la conception documentaire: dossier chaine et presente pour validation. GEL NON AUTORISE, EXECUTION NON AUTORISEE a ce stade.",
+    "statut": "CONCEPTION DOCUMENTAIRE AUTORISEE UNIQUEMENT"
+   },
+   "entry_hash": "36fe6b8c022fae494e518247296b76f956cd986bebb8e3ba1da8562f8fc98189"
+  },
+  {
+   "seq": 296,
+   "prev_hash": "36fe6b8c022fae494e518247296b76f956cd986bebb8e3ba1da8562f8fc98189",
+   "entry": {
+    "type": "PREREG",
+    "phase": "11-A",
+    "objet": "Protocole PHASE 11-A redige et soumis a validation: reports/meta_alpha/phase11/PHASE11_PROTOCOL.md, sha256 0254ea47e6ba70d1bae8fe5cf0cb3795f238eeb1cbd774b6135b12c7618fd8b6. Contenu: conventions t0/P0/d fixes a la cloture declencheuse, horizons t+1..t+8 (8h H1, 32h H4), MFE/MAE cumulees et incrementales avec quantiles preenregistres, deplacement de cloture, chronologie des extrema a la minute M1 (premier horodatage en cas d egalite), repli depuis l extreme favorable distinct du MAE (INTRA_MINUTE_ORDER_UNKNOWN sans ordre fictif), retracement non plafonne de la bougie declencheuse, cinq categories UTC fixes publiees integralement (NUIT/AUTRE non confirmatoire), distinction touch/reintegration confirmee, hierarchie d archetypes preetablie a t+8 sans categorie rentable, grappes Phase 10 reutilisees sans redefinition, censure a la premiere barre invalide sans imputation, bootstrap grappes 2000 repetitions graine 20261122 descriptif uniquement. Huit livrables definis. Aucun calcul, aucune extraction, aucun acces donnees effectues.",
+    "statut": "PROTOCOLE EN PREPARATION - SOUMIS A VALIDATION; GEL ET EXECUTION NON AUTORISES"
+   },
+   "entry_hash": "f5b40d382042a975e923a16de647560fb8e38fe1e99d8e08bdea2e97dee88ec8"
   }
  ]
 }
