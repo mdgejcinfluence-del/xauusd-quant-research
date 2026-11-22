@@ -62,6 +62,10 @@ name: phase10_all
         description: 'Phase 14-B: anatomie MFE/MAE et trois barrieres IS (seq333-334, preenregistrement gele)'
         type: boolean
         default: false
+      phase15:
+        description: 'Phase 15: engineering du point d entree H1 IS (seq338-339, preenregistrement gele)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -983,5 +987,114 @@ jobs:
       with:
         name: p14-livrables
         path: reports/meta_alpha/phase14
+        retention-days: 90
+        if-no-files-found: warn
+
+  lots15:
+    name: P15 lot ${{ matrix.batch }} (ticks d'entree E1/E2 IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase15 }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Ticks d'entree et extremes du lot (IS uniquement, holdout jamais accede)
+      env:
+        P15_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        python ci_tools/phase15_engine.py lot 2>&1 | tee reports/meta_alpha/phase15/PHASE15_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase15/PHASE15_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Consigner le journal du lot en cas d'echec
+      if: failure()
+      run: |
+        cp reports/meta_alpha/phase15/PHASE15_LOTLOG_${{ matrix.batch }}.txt /tmp/lotlog.txt
+        cp reports/meta_alpha/phase15/PHASE15_LOTEXIT_${{ matrix.batch }}.txt /tmp/lotexit.txt
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp /tmp/lotlog.txt reports/meta_alpha/phase15/PHASE15_LOTLOG_${{ matrix.batch }}.txt
+        cp /tmp/lotexit.txt reports/meta_alpha/phase15/PHASE15_LOTEXIT_${{ matrix.batch }}.txt
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add reports/meta_alpha/phase15/PHASE15_LOTLOG_${{ matrix.batch }}.txt reports/meta_alpha/phase15/PHASE15_LOTEXIT_${{ matrix.batch }}.txt
+        git diff --cached --quiet || git commit -m 'Phase 15: journal lot en echec (diagnostic)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les chemins du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p15-path-${{ matrix.batch }}
+        path: reports/meta_alpha/phase15/P15_PATH_${{ matrix.batch }}.csv
+        retention-days: 90
+        if-no-files-found: error
+  analyse15:
+    name: P15 engineering du point d'entree (preenregistrement gele seq339)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase15 }}
+    needs:
+    - lots15
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p15-path-*
+        path: reports/meta_alpha/phase15
+        merge-multiple: true
+    - name: Analyse Phase 15
+      run: |
+        set +e
+        python ci_tools/phase15_engine.py analyse 2>&1 | tee reports/meta_alpha/phase15/PHASE15_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase15/PHASE15_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 15 (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p15out && cp -a reports/meta_alpha/phase15/. /tmp/p15out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p15out/. reports/meta_alpha/phase15/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase15/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 15: livrables engineering du point d entree IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p15-livrables
+        path: reports/meta_alpha/phase15
         retention-days: 90
         if-no-files-found: warn
