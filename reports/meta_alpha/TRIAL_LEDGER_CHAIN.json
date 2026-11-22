@@ -4333,6 +4333,18 @@
     "statut": "GEL EFFECTUE - execution Phase 15 autorisee sans nouvelle demande"
    },
    "entry_hash": "53ce7e2e9cd4f2786ebac7d0475a0eaded531ca015ce52b51f5723f64b6bc1f2"
+  },
+  {
+   "seq": 340,
+   "prev_hash": "53ce7e2e9cd4f2786ebac7d0475a0eaded531ca015ce52b51f5723f64b6bc1f2",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "15",
+    "objet": "Engineering du point d entree H1 execute sur cohorte IS figee apres gel seq339 (run CI 45058110571 entierement vert, exit 0; holdout jamais accede). Reconciliations de reference conformes a l identique: E0/X0 = Phase 13-B (S0 +0,1113/-0,8918, n=421), E0/X1-X2 = Phase 14 (B08 +1,6110, B09 +1,9407). Anatomie (ENTRY_STRUCTURE_IDENTIFIED selon criteres geles): premier extreme tick favorable dans 60,3 % des 421 completes et premier adverse dans la premiere minute pour 87,4 % - microstructure a l echelle du tick; fenetres relatives sans regime durable (deplacement median de -0,49 a +0,75 bp puis -2,77 bp a 4-8 h) et extremes entrelaces 212/209 confirmant 14.1. Economie (EXPLORATORY_ENTRY_ADVANTAGE_NOT_FOUND selon la grille gelee, comparaison X0 sur cohorte 443): E1 (recuperation P0, 408 declenches, 35 NO_ENTRY_TRIGGER, 0 non-execution) paie un prix median degrade de 2,60 bp vs E0 (meilleur prix dans 0,7 % des cas) et reste inferieure a E0 sous S0/S1/S2 en moyenne de cohorte (-0,259/-1,135/-2,010 contre +0,106/-0,845/-1,795); E2 (deux clotures, 443 declenches, delai median 5 min, prix median -0,95 bp) egalement inferieure sous les trois scenarios; les sorties barrieres X1/X2 conservent le meme ordre (le retard erode la valeur ATR, echeance inchangee). Aucune des 27 cellules n est selectionnee; E0 reste la moins mauvaise convention relative sans etre validee economiquement (negative des S1 en 13-B). Quartiles descriptifs seulement; commissions exclues; commission theorique d equilibre rapportee par cellule comme borne. Aucune strategie ni etape suivante autorisee.",
+    "verdict": "ENTRY_STRUCTURE_IDENTIFIED + EXPLORATORY_ENTRY_ADVANTAGE_NOT_FOUND",
+    "statut": "PHASE 15 TERMINEE - aucune etape suivante autorisee automatiquement"
+   },
+   "entry_hash": "6cf365fde74240ed72e70ecc084867c17a7cc50fca24d75459da17367dc80068"
   }
  ]
 }
