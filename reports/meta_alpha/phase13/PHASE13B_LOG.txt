@@ -1,25 +1,16 @@
 controle reproduction 12-B: {'brier_M1_evaluation': 0.16538954947396367, 'attendues_12B': {'brier': 0.16538954947396367, 'log_loss': 0.5468387473824291}, 'log_loss_M1_evaluation': 0.5468387473824291, 'reproduction_conforme': True}
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3816, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 172, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 201, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7726, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7734, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'resultat_S0_bp'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase13b_engine.py", line 364, in <module>
-    mode_analyse()
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase13b_engine.py", line 306, in mode_analyse
-    par_ev = stats_ret(complets[col].values)
-                       ~~~~~~~~^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/frame.py", line 4330, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3823, in get_loc
-    raise KeyError(key) from err
-KeyError: 'resultat_S0_bp'
+{
+ "verdict": "ECONOMICALLY_INCONCLUSIVE_EXPLORATORY_IS",
+ "population": {
+  "candidats_evaluation": 543,
+  "exposes_p_superieur_M0": 443,
+  "sans_exposition": 100,
+  "executes": 443,
+  "non_executions": 0,
+  "clotures_conformes": 421,
+  "trajectoires_incompletes": 22
+ },
+ "taux_non_execution": 0.0,
+ "taux_spreads_nf": 0.0
+}
+P13B analyse terminee

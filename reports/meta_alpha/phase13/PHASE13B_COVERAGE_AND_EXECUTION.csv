@@ -1,0 +1,9 @@
+etape,effectif,motif
+DETECTES_F10_01_H1_REINTEGRES_TOUS_ENSEMBLES,2695,PHASE12B_RESULTS
+CANDIDATS_EVALUATION_PRIMAIRE,543,"F10-01 EVALUATION etiquetes 2018-2020, grappes entieres"
+SANS_EXPOSITION_P_INFERIEUR_M0,100,"conserves en couverture, aucune position"
+EXPOSES,443,"p_M1 > 0,7591463414634146"
+EXECUTES,443,"premier tick dans (t_decision, +60 s)"
+NON_EXECUTION,0,AUCUN_TICK_DANS_FENETRE_60S
+CLOTURES_CONFORMES,421,Bid/Ask cloture derniere minute fenetre 8H
+TRAJECTOIRES_INCOMPLETES,22,minute/prix/spread de sortie indisponible
