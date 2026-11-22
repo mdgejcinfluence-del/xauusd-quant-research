@@ -1,0 +1,401 @@
+{
+  "count": 66,
+  "files": [
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000283.parquet",
+      "size_bytes": 101622964,
+      "sha256_source": "ebcfb816f1e484ba09a79430aeb56fa2a9469129f1914b7d36ab1c1391903888"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000284.parquet",
+      "size_bytes": 178017009,
+      "sha256_source": "f0dcd1647afeb06a135896a0b0d48ba62fa04a317837bc2361fc05db06636c5f"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000285.parquet",
+      "size_bytes": 246515458,
+      "sha256_source": "433fae6268ff519cac013521044682f0a60d2e840cf601fb55d7ced6eee70304"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000286.parquet",
+      "size_bytes": 182911988,
+      "sha256_source": "9fe0eae581875d5783cb68c6969a9bb647d5506fdf3a3b95bfd5c81343967bbd"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000287.parquet",
+      "size_bytes": 182638288,
+      "sha256_source": "8bebc480392482ff8e5952225e92e2d0a873cc8a66c62a89b7b7d418e1c0b7ef"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000288.parquet",
+      "size_bytes": 173369888,
+      "sha256_source": "e4145fcfef052171ebcff9d82a89d1ff3b06957cb3d8765b5807c62d3f092d24"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000289.parquet",
+      "size_bytes": 264871195,
+      "sha256_source": "4d9752f5f2a44861e7e79010a3e86ac842cf464600452b758412bcdfb12c9c9f"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000290.parquet",
+      "size_bytes": 196839576,
+      "sha256_source": "636072b6dcde4d82ee8cbbed54d3e94a8b47a784c266129892301f05fb9c23aa"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000291.parquet",
+      "size_bytes": 182288144,
+      "sha256_source": "5bc37ef367356044ea2cb5ee79a5e6c2e318072b821257f39425a5a805712977"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000292.parquet",
+      "size_bytes": 165124245,
+      "sha256_source": "550e5f493c45c824f884d408477b23f31444c828d0ce34d2d26ab8bfd1e91ca9"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b01",
+      "file": "part_000293.parquet",
+      "size_bytes": 217480306,
+      "sha256_source": "9900eb78fe8c06688ffbbb089a4d5d8d66dfe6ffcbc30a1185e542842ad35a89"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000294.parquet",
+      "size_bytes": 264498325,
+      "sha256_source": "0d7ac64e91ab0a3dbaf7a21520eadc8a2bba88526a11253c6259371e4406d7a8"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000295.parquet",
+      "size_bytes": 199053621,
+      "sha256_source": "4b8f2b7cc1348c711472d28be358641d89924249f0c968e15b89e0cd2d01beee"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000296.parquet",
+      "size_bytes": 196038806,
+      "sha256_source": "bbaeccfc305e5af5ceebadafce080983117dcc9e95fb92f370471f6d541bf8e9"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000297.parquet",
+      "size_bytes": 169394216,
+      "sha256_source": "ec608bc1eac2e16e957fd0d5d7f0f9c0369d68b220dbacda4bedb43c46244d9c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000298.parquet",
+      "size_bytes": 128501891,
+      "sha256_source": "f343a8bd5e95e387ffc3a0c1ef8b8b0fe97612efcae76364e22f1e4606c54803"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000299.parquet",
+      "size_bytes": 148998922,
+      "sha256_source": "3a52ee7d6c136b2d233c022c63ea5c114029a9ce8bc7ded4c9d6086c6a05834f"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000300.parquet",
+      "size_bytes": 181100748,
+      "sha256_source": "b23a8863f311535da170f7d5796659fa8aeaddc28595ab7d6912821569c9255c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000301.parquet",
+      "size_bytes": 166384967,
+      "sha256_source": "4e8b2dbd18cceea9e04bd932e92044afefef57d7c0e046187cc36082eb8a9826"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000302.parquet",
+      "size_bytes": 149180770,
+      "sha256_source": "827ad16108d6c3c57e42a0cef702018c07388fd3288b68ae84b7cb1e88b2a4d2"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000303.parquet",
+      "size_bytes": 168003330,
+      "sha256_source": "07667fe693d3294a750d7b96e0e9c5090e6b784046b14c0b168b61870ffd83a7"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b02",
+      "file": "part_000304.parquet",
+      "size_bytes": 267314741,
+      "sha256_source": "2e3e6a1f71368c5773f4fc0fbb1d38df3564fbd629919b6354968d25c16faf96"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000305.parquet",
+      "size_bytes": 226535755,
+      "sha256_source": "d46731cf918e940a4e0c559a156125f70fdbfdb7cff6d4421b5477b461b80d73"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000306.parquet",
+      "size_bytes": 181757968,
+      "sha256_source": "aae417451b98d0a8e7a9dbfc06753f5c8776c20ac7e8fb8b8d2534f56381929d"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000307.parquet",
+      "size_bytes": 195941681,
+      "sha256_source": "7594d08ae5b1441309c6ad461e503980c8676ea14f0c778b01169a7ebdc02fc4"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000308.parquet",
+      "size_bytes": 195277891,
+      "sha256_source": "e7dbc91f72840744c6022308f3832587f7cf005c41291d2cd34235c27e640063"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000309.parquet",
+      "size_bytes": 196367859,
+      "sha256_source": "42e8536aa3958bee2626ce5a37b316d6130acd87dd553643f47f6c342970ae1c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000310.parquet",
+      "size_bytes": 205723203,
+      "sha256_source": "89ae615d3ca57b03dd0d5a92fc7c17b46b27fa272e7e0872d6e6eff8e5d8b13c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000311.parquet",
+      "size_bytes": 141716280,
+      "sha256_source": "ce243cb2f8a1f62a073c1d9add5512a551eae802b2575192601459a1b3a0ffed"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000312.parquet",
+      "size_bytes": 144914920,
+      "sha256_source": "15ba9c485d49f2ce503fd7a083d041f194870a801fbe683bb70819f4e4fc940d"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000313.parquet",
+      "size_bytes": 144155736,
+      "sha256_source": "0235e8f5c845a299d107afc87fcc8b362b3b8b8fcf8c89be98ea5704135a62d7"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000314.parquet",
+      "size_bytes": 161976393,
+      "sha256_source": "0cf7963709fd4eb7a08aceb6d31559079e1ad7d40ffe72b0c5de3da765addd25"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b03",
+      "file": "part_000315.parquet",
+      "size_bytes": 146350341,
+      "sha256_source": "27f1b088259a8afb36f4ac24e13346740bb3a537907327bcc382f0076d03c9a1"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000316.parquet",
+      "size_bytes": 126687409,
+      "sha256_source": "697b71c2378c6e0d7f74175865f2021adca83568720f97795ab5525109678183"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000317.parquet",
+      "size_bytes": 112676508,
+      "sha256_source": "6bb50edb6ddfc2c8495d4fcc259c06c1d7d78e1cf741f1e23ed617b8256eff2d"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000318.parquet",
+      "size_bytes": 90571482,
+      "sha256_source": "1da76553cb7f8e0c27b6b1d6edd556f9ce6251330bed33083c38339c52d48343"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000319.parquet",
+      "size_bytes": 76546140,
+      "sha256_source": "46148454c07a6821ddcd65345ca9c9e69827c6ca5722bd15218e86b33c3913f8"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000320.parquet",
+      "size_bytes": 104688399,
+      "sha256_source": "bc5cddc1a25bfbd296643561be08a530f48a6818bf7d08818413be37e93d9c4c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000321.parquet",
+      "size_bytes": 112945112,
+      "sha256_source": "00d1f70bec1ea930eb98522f40be9f26c913e48ccf44cad91801e97be521c56d"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000322.parquet",
+      "size_bytes": 112097557,
+      "sha256_source": "5517e68a9cb79126b7bb4d2616a08b14b831eee4771c253907817adb993803c1"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000323.parquet",
+      "size_bytes": 96031163,
+      "sha256_source": "6f7ea51afdf5ce9dd80c5d9482b755061a27650e481e02d1128cf2e5b0f870a1"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000324.parquet",
+      "size_bytes": 158913284,
+      "sha256_source": "2b7277ada02094c0a4ba74ee98558618d75e7cd1cb6fb2dcb5c51083f56c4a96"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000325.parquet",
+      "size_bytes": 212698160,
+      "sha256_source": "e133f93ec5f92d03437bcffca22cfccd9cc425bef2e5a42c7637a9b9f05cf2f9"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b04",
+      "file": "part_000326.parquet",
+      "size_bytes": 209339778,
+      "sha256_source": "00943569a6f7682fb71cb32175497830e252c560f066a91d5f7ebf6b0a46927e"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000327.parquet",
+      "size_bytes": 227858173,
+      "sha256_source": "a03eca34c5bba3d2d677cff62031609612acd5293b6e540bf32fb593eca37b55"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000328.parquet",
+      "size_bytes": 221561006,
+      "sha256_source": "3465b14f340b15384f571428cdbd3950298e16d82372f5cf12c3c1c70e9100c2"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000329.parquet",
+      "size_bytes": 227657084,
+      "sha256_source": "977837fdb72610e6cc6193a31c9f3f6057d7ae4526972c302e085bf2d15178bb"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000330.parquet",
+      "size_bytes": 247552438,
+      "sha256_source": "7ae3590c913f6469a29208c49daf286c55e88f94af5c9d885d749c5475d88643"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000331.parquet",
+      "size_bytes": 207791710,
+      "sha256_source": "305919b8982b907e3e7f2651488fba49a1a232cc707590b4b047bf78ae576fa5"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000332.parquet",
+      "size_bytes": 250442764,
+      "sha256_source": "b96eee2ba5dbfbe8f697d47109c07b78c66a694f1d99ba2c8e15450706b9031f"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000333.parquet",
+      "size_bytes": 241452477,
+      "sha256_source": "1d98fcc60ec8292bbf7b85b11541414c4495ed92f2f62751de6e358996a9792a"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000334.parquet",
+      "size_bytes": 272629495,
+      "sha256_source": "5d26982a0c3995c7babbf9d728d5af461c017711a4168159390cdabc9bb4d2a8"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000335.parquet",
+      "size_bytes": 223948800,
+      "sha256_source": "2fd35fe135d050540de70e4d81ace83cd0c8845d7a02fb462a967815e16be74e"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000336.parquet",
+      "size_bytes": 207903272,
+      "sha256_source": "abb3447e56d78b3bb90ed047463ba96cdb27be8eeae41ce2cd232e26add95e87"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b05",
+      "file": "part_000337.parquet",
+      "size_bytes": 202983469,
+      "sha256_source": "e5a758b04bceec97095eb538959896b656f8b90f5c8522f66109e46cb2568b30"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000338.parquet",
+      "size_bytes": 200054267,
+      "sha256_source": "d33e16509387cacf87c97c7ffe941e480f6bb5598412bfc513ac4d02e88bc7c3"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000339.parquet",
+      "size_bytes": 373311821,
+      "sha256_source": "934f8f2970a80f130e1f52b16d474dd0a9d4fa74e2f85f8433449c52947e633b"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000340.parquet",
+      "size_bytes": 320223101,
+      "sha256_source": "7128e47c66a59329ff392b7d87151a1ecab190bbdc4db7ecaa7bdc4111b0126c"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000341.parquet",
+      "size_bytes": 309496461,
+      "sha256_source": "236ac1732ea7921466a141603e98c202a781cb7dce4ff792512da3294e191df8"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000342.parquet",
+      "size_bytes": 469669819,
+      "sha256_source": "b78766a415d52b51d1135647ee71b7760cb3043986b4c31ef0f833aef6c2f40b"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000343.parquet",
+      "size_bytes": 391503237,
+      "sha256_source": "17edfc283df9125e11b37bd5a6cb486f7ae50f16129b35ea7a804f5bed63de8d"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000344.parquet",
+      "size_bytes": 331506018,
+      "sha256_source": "b8b491b5755ea1bf2f6337151675d48a6926e65ac95a21b2e97fe1b443253c66"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000345.parquet",
+      "size_bytes": 380253424,
+      "sha256_source": "24c7874ca8705435c9597a30a41a09a571bb3f0ef0a557fa0f10cf4231665798"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000346.parquet",
+      "size_bytes": 339672628,
+      "sha256_source": "c6e6a99ca06a658c1e3e42361c041c4e13e0eb17f640278f6b401f72ea1a0997"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000347.parquet",
+      "size_bytes": 237688594,
+      "sha256_source": "e27e9cc42f38fa6341721d1009ac2039c3aa7aae85d3d91ed7f6144a419adacb"
+    },
+    {
+      "dataset": "shalom5123/xauusd-ho-b06",
+      "file": "part_000348.parquet",
+      "size_bytes": 291913210,
+      "sha256_source": "aa18a6821ad4ab78bae9f73c833783a59d4a4c7b5f01f375608381ae9efbe42c"
+    }
+  ]
+}

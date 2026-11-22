@@ -4143,6 +4143,17 @@
     "statut": "EN ATTENTE D UNE VOIE D ACCES EFFECTIVE - evaluation non consommee"
    },
    "entry_hash": "add90dc53ff4c72ad915a7e13d4a5545451ca0ca4718c780555da6a18cbcf307"
+  },
+  {
+   "seq": 324,
+   "prev_hash": "add90dc53ff4c72ad915a7e13d4a5545451ca0ca4718c780555da6a18cbcf307",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-C.2-R3",
+    "objet": "Ordre officiel R3: verification cryptographique des 66 partitions Kaggle et reprise conditionnelle. Le proprietaire a transfere les 66 partitions originales Drive -> six datasets Kaggle prives via Colab authentifie, sans conversion. Fichier source recu comme artefact de mission et consigne au depot: SOURCE_SHA256_66_PARTITIONS.json sha256 5191e301070fb8f10c5ce7c0b1d407b900246947cd5bbd06cf6a45e5d9b1265d - valide avant tout controle: 66 entrees uniques, noms/tailles/datasets 100 % conformes au manifeste gele b112b7ab0aecc94699334f0a36b4b0b3c40648f9cbb83d5a4fb7598d1a2c397f, 66 SHA-256 hexadecimaux de 64 caracteres. Provenance a conserver telle quelle: empreintes calculees par le proprietaire sur les originaux dans Colab authentifie; jamais reconstruites depuis Kaggle, jamais remplacees par des empreintes de destination. Google Drive integralement interdit pendant cette mission. Kaggle en lecture seule (aucune nouvelle version publiee), dependance six a installer/verifier dans le runner, token jamais affiche. Verification sequentielle dataset par dataset: nom, taille, PAR1 debut/fin, SHA-256 Kaggle compare a SHA256_SOURCE_COLAB; HOLDOUT_MIGRATION_VERIFIED exige 66/66 (zero manquant/supplementaire/doublon/divergence), sinon HOLDOUT_MIGRATION_BLOCKED sans PASS partiel et sans analyse. Apres 66/66 seulement: preflight modele gele (PHASE12C1_MODEL_PARAMETERS.json 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e, manifeste be2d0b23eccc1e7155325d4a7bae91a09f83c7887ff9d743e5c95a7767185118, M0 0,7591463414634146) puis reprise unique terminale 12-C.2 (changements de code limites a la localisation des donnees: lots Kaggle holdout + contexte part_000282 depuis xauusd-is-missing13). Verdicts separes migration/evaluation; aucune rentabilite; H4 exclu; S12/T0/J2/J3/depenses interdits.",
+    "statut": "PHASE 12-C.2-R3 AUTORISEE - verification en cours"
+   },
+   "entry_hash": "90e576b675faaff31a2bd75d4ddf68a5407964d048e01c017580b5fc4aa91572"
   }
  ]
 }
