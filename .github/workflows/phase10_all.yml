@@ -58,6 +58,10 @@ name: phase10_all
         description: 'Phase 13-B: evaluation economique exploratoire IS H1 (seq331, contrat gele 13-A.1)'
         type: boolean
         default: false
+      phase14:
+        description: 'Phase 14-B: anatomie MFE/MAE et trois barrieres IS (seq333-334, preenregistrement gele)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -870,5 +874,95 @@ jobs:
       with:
         name: p13b-livrables
         path: reports/meta_alpha/phase13
+        retention-days: 90
+        if-no-files-found: warn
+
+  lots14:
+    name: P14 lot ${{ matrix.batch }} (chemins tick IS des 443 exposes)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase14 }}
+    permissions:
+      actions: read
+      contents: read
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Chemins tick du lot (IS uniquement, holdout jamais accede)
+      env:
+        P14_BATCH: ${{ matrix.batch }}
+      run: python ci_tools/phase14_engine.py lot
+    - name: Publier les chemins du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p14-path-${{ matrix.batch }}
+        path: reports/meta_alpha/phase14/P14_PATH_${{ matrix.batch }}.csv
+        retention-days: 90
+        if-no-files-found: error
+  analyse14:
+    name: P14-B anatomie MFE/MAE et barrieres (preenregistrement gele seq334)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase14 }}
+    needs:
+    - lots14
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p14-path-*
+        path: reports/meta_alpha/phase14
+        merge-multiple: true
+    - name: Anatomie et barrieres Phase 14-B
+      run: |
+        set +e
+        python ci_tools/phase14_engine.py analyse 2>&1 | tee reports/meta_alpha/phase14/PHASE14_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase14/PHASE14_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 14-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p14out && cp -a reports/meta_alpha/phase14/. /tmp/p14out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p14out/. reports/meta_alpha/phase14/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase14/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 14-B: livrables anatomie et barrieres exploratoires IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p14-livrables
+        path: reports/meta_alpha/phase14
         retention-days: 90
         if-no-files-found: warn
