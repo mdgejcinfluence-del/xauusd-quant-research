@@ -1,0 +1,41 @@
+{
+  "phase": "11-B",
+  "statut_global": "BLOQUE",
+  "verdict": "BLOQUE",
+  "populations": {
+    "F10-01": {
+      "statut": "BLOQUE (identifiants de grappes non materialises)",
+      "attendu": {"detectes": 3134, "admissibles": 3107, "grappes": 2617, "non_admissibles": 27},
+      "observe": {"detectes": 3134, "admissibles": 3107, "non_admissibles": 27,
+                  "non_admissibles_entree_ineligible": 4, "non_admissibles_fenetre_incomplete": 23,
+                  "grappes_enregistrees_agregees": 2617,
+                  "doublons_ligne_complete": 0, "doublons_cle_composite": 0,
+                  "t_signal_plage": ["2010-01-14 19:00:00", "2019-12-13 15:00:00"]},
+      "comptes_conformes": true
+    },
+    "F10-03": {
+      "statut": "BLOQUE (identifiants de grappes non materialises)",
+      "attendu": {"detectes": 762, "admissibles": 660, "grappes": 597, "non_admissibles": 102},
+      "observe": {"detectes": 762, "admissibles": 660, "non_admissibles": 102,
+                  "non_admissibles_entree_ineligible": 1, "non_admissibles_fenetre_incomplete": 101,
+                  "grappes_enregistrees_agregees": 597,
+                  "doublons_ligne_complete": 0, "doublons_cle_composite": 0,
+                  "t_signal_plage": ["2010-03-10 20:00:00", "2019-12-12 16:00:00"]},
+      "comptes_conformes": true
+    }
+  },
+  "statut_provenance": "CONFORME (manifeste definitif = PHASE10_EVENTS_CIBLE.csv.gz, run correctif 45011013927, commit 817b974; manifeste initial defectueux identifie et exclu comme source)",
+  "statut_identifiants_evenements": "PARTIEL (aucune colonne event_id; cle composite famille+t_signal+sens verifiee unique, 0 doublon)",
+  "statut_identifiants_grappes": "DEFECTUEUX - BLOQUANT (aucune colonne grappe_id dans le manifeste; comptes agreges 2617/597 seulement dans PHASE10_CORRECTION_RESULTS.json; mission interdisant tout recalcul et exigeant la conservation des identifiants historiques, l admissibilite par grappe n est pas materialisable en l etat)",
+  "statut_exclusions": "CONFORME (motifs tracables par entree_eligible et fenetre_complete; decompositions sans recouvrement: F10-01 4+23=27, F10-03 1+101=102)",
+  "statut_fenetres_causales": "CONFORME SUR COMPTES CHAINES (H1 202 et H4 208 INELIGIBLE_CAUSAL_WINDOW dans P10_CIBLE_COVERAGE.json seq294; limite: pas de registre par fenetre, verification individuelle impossible sans recalcul interdit)",
+  "statut_references_M1": "DECLAREES DISPONIBLES (corpus IS 282 partitions, 3540993 barres M1, 8 lots; completude par horizon t+1..t+8 a etablir en Phase 11-C, non verifiable a ce stade par construction de la mission)",
+  "statut_controle_IS_holdout": "CONFORME (audit limite aux artefacts du depot; holdout ni monte, ni liste, ni lu; aucune donnee de prix lue)",
+  "anomalies": [
+    {"id": "ANO-11B-01", "gravite": "CRITIQUE (bloquante)", "description": "Identifiants de grappes absents du manifeste definitif: aucune colonne grappe_id; les grappes de Phase 10 n ont jamais ete materialisees par evenement (calculees transitoirement dans la synthese). Tension documentaire: le protocole gele 11-A (section 2) prescrit des grappes reconstruites a l identique, tandis que la mission 11-B interdit tout recalcul et exige la conservation des identifiants historiques. Aucune des deux lectures ne peut etre choisie silencieusement par l audit.", "artefacts": ["reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz", "reports/meta_alpha/phase10/PHASE10_CORRECTION_RESULTS.json", "ci_tools/phase10_synthesize.py (fonction composantes)"]},
+    {"id": "ANO-11B-02", "gravite": "MINEURE (non bloquante)", "description": "Aucune colonne event_id dediee; identite d evenement garantie par la cle composite (famille, t_signal, sens) verifiee unique sur les deux populations.", "artefacts": ["reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz"]},
+    {"id": "ANO-11B-03", "gravite": "LIMITE DOCUMENTEE (non bloquante)", "description": "P0 (Mid de cloture de la bougie declencheuse) non stocke dans le manifeste; t0 est identifiable sans ambiguite (t_signal = fin de la bougie declencheuse, timeframe, sens presents), P0 devra etre relu sur les barres M1 en Phase 11-C conformement au protocole.", "artefacts": ["reports/meta_alpha/phase10/PHASE10_EVENTS_CIBLE.csv.gz"]},
+    {"id": "ANO-11B-04", "gravite": "LIMITE DOCUMENTEE (non bloquante)", "description": "Fenetres causales ineligibles tracees uniquement en agregat (202/208); aucun registre par fenetre dans les artefacts, verification unitaire impossible sans recalcul interdit par la mission.", "artefacts": ["reports/meta_alpha/phase10/P10_CIBLE_COVERAGE.json"]}
+  ],
+  "decision_admissibilite_phase_suivante": "BLOQUE - correction documentaire requise avant Phase 11-C: decision distincte du responsable autorisant soit (a) la materialisation, dans un nouvel artefact documentaire sans modification des populations, des identifiants event_id (cle composite) et grappe_id par l algorithme historique inchange des composantes connexes de Phase 10, soit (b) un amendement formel du protocole gele precisant le mode d identification retenu. Aucune correction appliquee par le present audit."
+}

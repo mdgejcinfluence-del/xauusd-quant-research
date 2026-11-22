@@ -3873,6 +3873,18 @@
     "statut": "EXECUTION APPROUVEE - audit en cours"
    },
    "entry_hash": "c2f881eb6a2f2f337e4ebdd6fee33ffb2b74015e57e0cba7f4e105ae235e2671"
+  },
+  {
+   "seq": 302,
+   "prev_hash": "c2f881eb6a2f2f337e4ebdd6fee33ffb2b74015e57e0cba7f4e105ae235e2671",
+   "entry": {
+    "type": "RESULTAT",
+    "phase": "11-B",
+    "objet": "Audit Phase 11-B execute en lecture seule sur les artefacts du depot (script versionne ci_tools/phase11b_audit.py), sans trajectoire, sans recalcul de seuils ni de grappes, sans acces holdout. VERDICT: BLOQUE. Conforme: provenance (manifeste definitif PHASE10_EVENTS_CIBLE.csv.gz sha256 57b7b8af, run correctif 45011013927, commit 817b974; manifeste initial defectueux 44919631588 identifie et exclu comme source), comptes exacts pour les deux populations (F10-01 3134/3107/27, F10-03 762/660/102; zero doublon, cle composite famille+t_signal+sens unique, horodatages IS parsables), exclusions tracables par motifs (F10-01 4 entrees + 23 fenetres; F10-03 1 + 101), fenetres causales ineligibles H1 202 / H4 208 sur comptes chaines seq294, perimetre IS/holdout conforme. Defaut critique ANO-11B-01 (bloquant): aucune colonne grappe_id ni event_id dans le manifeste definitif; grappes Phase 10 jamais materialisees par evenement (seuls agregats 2617/597 dans PHASE10_CORRECTION_RESULTS.json); tension entre le protocole gele 11-A section 2 (grappes reconstruites a l identique) et la mission 11-B (aucun recalcul, conservation des identifiants historiques) - l audit ne tranche pas silencieusement. Anomalies mineures/limites ANO-11B-02 a 04 (cle composite d evenement, P0 non stocke mais t0 identifiable, registre des fenetres en agregat). Correction documentaire requise par decision distincte: (a) materialisation sans modification des populations des identifiants par l algorithme historique inchange des composantes connexes, ou (b) amendement formel du protocole gele. Aucune correction appliquee. Livrables: PHASE11B_MANIFEST_AUDIT.md, PHASE11B_MANIFEST_INVENTORY.csv, PHASE11B_AUDIT_RESULT.json.",
+    "verdict": "BLOQUE",
+    "statut": "PHASE 11-B TERMINEE - BLOQUE (ANO-11B-01); Phase 11-C non autorisee"
+   },
+   "entry_hash": "c4a3776f6f34025ed1ebe7975acaefd06ef1a69cd19c1786e2431c388ba843d1"
   }
  ]
 }
