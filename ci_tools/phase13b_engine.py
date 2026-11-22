@@ -153,7 +153,7 @@ def mode_lot():
     R13.mkdir(parents=True, exist_ok=True)
     bars.round(6).to_csv(R13 / f'P13B_BARS_{batch}.csv.gz', index=False,
                          compression='gzip')
-    pd.DataFrame(tick_rows).to_csv(R13 / f'P13B_TICKS_{batch}.csv', index=False)
+    pd.DataFrame(tick_rows, columns=['event_id', 'quote_timestamp', 'bid', 'ask', 'partition']).to_csv(R13 / f'P13B_TICKS_{batch}.csv', index=False)
     print('P13B lot termine', batch, len(bars), 'barres,',
           len(tick_rows), 'ticks entree', flush=True)
 
@@ -192,8 +192,15 @@ def mode_analyse():
     bars['ts'] = pd.to_datetime(bars.ts)
     bars = bars.drop_duplicates('ts').sort_values('ts').reset_index(drop=True)
     B = bars.set_index('ts')
-    ticks = pd.concat([pd.read_csv(f) for f in
-                       sorted(glob.glob(str(R13 / 'P13B_TICKS_*.csv')))])
+    tick_frames = []
+    for f in sorted(glob.glob(str(R13 / 'P13B_TICKS_*.csv'))):
+        try:
+            tf = pd.read_csv(f)
+        except pd.errors.EmptyDataError:
+            continue
+        if len(tf):
+            tick_frames.append(tf)
+    ticks = pd.concat(tick_frames)
     ticks['quote_timestamp'] = pd.to_datetime(ticks.quote_timestamp).dt.tz_localize(None)
     ticks = (ticks.sort_values('quote_timestamp')
              .drop_duplicates('event_id', keep='first').set_index('event_id'))
