@@ -1,0 +1,154 @@
+{
+ "phase": "12-B",
+ "statut_execution": "TERMINE",
+ "lots_barres": 8,
+ "protocole": "PHASE12A_PREDICTABILITY_PROTOCOL.md GELE sha256 580c39b114397143e6eaa7fc63e529afb79ad61ec3f9cbd843116d3484a4e99e",
+ "qualification": "HISTORIQUEMENT EVALUEE - NON INDEPENDAMMENT CONFIRMEE",
+ "familles": {
+  "F10-01": {
+   "famille": "F10-01",
+   "timeframe": "H1",
+   "n_reintegres": 2695,
+   "n_censures": 3,
+   "n_ambigus": 0,
+   "n_apprentissage": 1640,
+   "classe1_apprentissage": 1245,
+   "n_calibration": 507,
+   "n_evaluation": 543,
+   "classe1_evaluation": 410,
+   "classe0_evaluation": 133,
+   "criteres_insuffisance": "NON EVALUABLE si n_evaluation < 100 ou classe minoritaire < 50",
+   "statut_evaluabilite": "EVALUABLE",
+   "verdict": "PREDICTIVE_SIGNAL_SUPPORTED_HISTORICALLY",
+   "M0_probabilite_apprentissage": 0.7591463414634146,
+   "M0_brier": 0.18495878470019708,
+   "M1_brier": 0.16538954947396367,
+   "delta_brier_M1_moins_M0": -0.01956923522623341,
+   "M0_log_loss": 0.5567479510569909,
+   "M1_log_loss": 0.5468387473824291,
+   "delta_log_loss_M1_moins_M0": -0.009909203674561828,
+   "amelioration_relative_brier_pct": 10.580322128496642,
+   "amelioration_relative_log_loss_pct": 1.779836576991279,
+   "M0_auc": 0.5,
+   "M1_auc": 0.6942967174032643,
+   "M1_precision_0_5": 0.7748091603053435,
+   "M1_rappel_0_5": 0.9902439024390244,
+   "calibration_M1": {
+    "intercept": 0.09589707234295108,
+    "pente": 0.7501785957184135,
+    "deciles": [
+     {
+      "decile": 0,
+      "n": 55,
+      "predit_moyen": 0.5091170081479157,
+      "observe": 0.4
+     },
+     {
+      "decile": 1,
+      "n": 54,
+      "predit_moyen": 0.7393419745701075,
+      "observe": 0.5925925925925926
+     },
+     {
+      "decile": 2,
+      "n": 54,
+      "predit_moyen": 0.7750002235257738,
+      "observe": 0.6851851851851852
+     },
+     {
+      "decile": 3,
+      "n": 54,
+      "predit_moyen": 0.7914298455235278,
+      "observe": 0.8888888888888888
+     },
+     {
+      "decile": 4,
+      "n": 55,
+      "predit_moyen": 0.8040053429656205,
+      "observe": 0.8181818181818182
+     },
+     {
+      "decile": 5,
+      "n": 54,
+      "predit_moyen": 0.816595382640071,
+      "observe": 0.7962962962962963
+     },
+     {
+      "decile": 6,
+      "n": 54,
+      "predit_moyen": 0.8356005515295721,
+      "observe": 0.7407407407407407
+     },
+     {
+      "decile": 7,
+      "n": 54,
+      "predit_moyen": 0.8562345042953247,
+      "observe": 0.7962962962962963
+     },
+     {
+      "decile": 8,
+      "n": 54,
+      "predit_moyen": 0.8778199184940542,
+      "observe": 0.9259259259259259
+     },
+     {
+      "decile": 9,
+      "n": 55,
+      "predit_moyen": 0.9266171394647166,
+      "observe": 0.9090909090909091
+     }
+    ]
+   },
+   "convention_signe": "delta negatif = M1 meilleur que M0"
+  },
+  "F10-03": {
+   "famille": "F10-03",
+   "timeframe": "H4",
+   "n_reintegres": 632,
+   "n_censures": 3,
+   "n_ambigus": 0,
+   "n_apprentissage": 379,
+   "classe1_apprentissage": 321,
+   "n_calibration": 120,
+   "n_evaluation": 130,
+   "classe1_evaluation": 112,
+   "classe0_evaluation": 18,
+   "criteres_insuffisance": "NON EVALUABLE si n_evaluation < 100 ou classe minoritaire < 50",
+   "statut_evaluabilite": "NON_EVALUABLE",
+   "verdict": "NON_EVALUABLE",
+   "motif": "n_evaluation=130, minorite=18 (seuils 100/50)"
+  }
+ },
+ "decision_globale": "MIXTE PAR FAMILLE (voir verdicts separes)",
+ "variables_extraites": [
+  "RATIO_REPLI_EXTENSION_A_TREINT",
+  "DUREE_EXTREME_VERS_TREINT_MIN",
+  "MFE_A_TREINT_BP",
+  "NB_TOUCHES_P0_AVANT_TREINT",
+  "SESSION_REINTEGRATION"
+ ],
+ "controles_anti_fuite": {
+  "borne_temporelle_par_variable": "VERIFIEE (extraction tronquee a i_reint; colonne borne_max_minute_utilisee = minute de reintegration)",
+  "separation_cible_predicteurs": "VERIFIEE (cible = reprise_apres_reintegration 11-C materialisee; aucune colonne fenetre complete dans la matrice: RATIO/DUREE/MFE/NB_TOUCHES recalcules bornes, SESSION)",
+  "colonnes_interdites_absentes_de_la_matrice": [
+   "mfe_max_bp",
+   "mae_max_bp",
+   "repli_profondeur_max_bp",
+   "fraction_corps_reprise",
+   "repli_relatif_extension_pct",
+   "nb_retours",
+   "archetype",
+   "reprise_apres_reintegration (hors cible)",
+   "disp_1..8"
+  ],
+  "grappes_partagees_entre_ensembles": 0,
+  "ordre_chronologique": "apprentissage 2010-2015 < calibration 2016-2017 < evaluation 2018-2020; aucune donnee d evaluation utilisee pour M0/M1",
+  "purge_chevauchements": "evenements d apprentissage/calibration dont fin_fenetre_observation depasse le debut du segment suivant exclus (motif consigne)",
+  "reglage_apres_resultats": "AUCUN (modele unique prespecifie, variables brutes, aucun hyperparametre optimise)",
+  "reproductibilite": "moteur deterministe; logistique IRLS deterministe"
+ },
+ "separation": "grappe entiere par famille; segments 2010-2015/2016-2017/2018-2020; purge des fenetres chevauchant le segment suivant; calibration non utilisee pour ajuster ni selectionner (aucune recalibration prespecifiee)",
+ "criteres_insuffisance_appliques": "evaluation <100 etiquetes ou minorite <50 => NON EVALUABLE",
+ "anomalies": [],
+ "interdits_respectes": "aucune variable fenetre complete, aucun test de significativite, aucune optimisation, aucun acces holdout, aucune rentabilite"
+}
