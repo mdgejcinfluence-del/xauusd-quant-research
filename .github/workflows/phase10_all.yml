@@ -18,6 +18,10 @@ name: phase10_all
         description: Lancer les moteurs complets (mode historique)
         type: boolean
         default: false
+      phase11c:
+        description: 'Phase 11-C: anatomie des mouvements (seq305)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -245,7 +249,7 @@ jobs:
     name: P10 lot ${{ matrix.batch }} (barres M1)
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    if: ${{ inputs.cible }}
+    if: ${{ inputs.cible || inputs.phase11c }}
     permissions:
       actions: read
       contents: read
@@ -305,3 +309,51 @@ jobs:
         git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
         --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
         origin HEAD:arena/afe12737-xauusd-quant-research'
+  analyse11c:
+    name: P11-C anatomie H1/H4 (protocole gele seq300, seq305)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase11c }}
+    needs:
+    - lots
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy
+    - name: Recuperer les barres des 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p10-bars-*
+        path: bars_artifacts
+        merge-multiple: true
+    - name: Analyse anatomique Phase 11-C
+      env:
+        BARS_DIR: bars_artifacts
+      run: python ci_tools/phase11c_engine.py 2>&1 | tee reports/meta_alpha/phase11/PHASE11C_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les livrables Phase 11-C
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase11/
+
+        git status --porcelain
+
+        git diff --cached --quiet || git commit -m ''Phase 11-C: livrables analyse
+        anatomique (run CI)''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p11c-livrables
+        path: reports/meta_alpha/phase11
+        retention-days: 90
+        if-no-files-found: warn
