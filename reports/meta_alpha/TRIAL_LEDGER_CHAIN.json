@@ -4417,6 +4417,18 @@
     "statut": "PHASE 17-B EN COURS"
    },
    "entry_hash": "af725b3a3ee5326d54277aefb8d94989347e70e6e50cd05178442f6e16b6682b"
+  },
+  {
+   "seq": 347,
+   "prev_hash": "af725b3a3ee5326d54277aefb8d94989347e70e6e50cd05178442f6e16b6682b",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "17-B",
+    "objet": "Construction et evaluation exploratoire IS des deux modeles economiques M2 (run CI final 45069518288 entierement vert, exit 0; incidents moteur consignes et corriges: serialisation d audit, premier/dernier tick reels des sorties verticales detecte par la reconciliation). Reconciliation avec la Phase 14 gelee parfaite: P&L S2 d evaluation identiques sur 440 (B08) et 435 (B09) evenements communs, ecart maximal ~1e-14 bp. Populations etiquetees apres exclusions preenregistrees: B08 1137/357/440 (positifs 402/156/203), B09 1133/356/435 (474/180/227); aucun NON_EVALUABLE. M0_ECON: B08 0,3536, B09 0,4184; seuils P_BE sur le seul apprentissage: B08 0,437 (G +41,2 / L 32,0 bp), B09 0,487 (G +40,4 / L 38,4). Evaluation (HISTORIQUE EXPLORATOIRE - POPULATION DEJA ETUDIEE): B08 franchit formellement le critere gele en evaluation (Brier 0,2601 -> 0,2596; log-loss 0,7147 -> 0,7138) mais avec des grandeurs d effet negligeables (~0,2 %), AUC 0,490 et pente de calibration 0,148, et une calibration 2016-2017 contradictoire (M2 moins bon que M0_ECON, AUC 0,442, pente -0,767): verdict formel M2_PREDICTIVE_ECONOMIC_SIGNAL_SUPPORTED_HISTORICALLY pour B08, sans information economique utilisable demontree. B09: aucune amelioration sur aucun segment, M2_NO_ECONOMIC_PREDICTIVE_IMPROVEMENT. Decisions au seuil: couverture 4,3 % (B08, esperance realisee +3,5 bp sur 19 evenements) et 12,0 % (B09, esperance realisee -1,2 bp); retenues de calibration B08 a -7,9 bp. Aucune couche M2 ne doit etre utilisee pour exposer un capital. Limites maintenues: biais de selection en echantillon du filtre d apprentissage, p_M1 exclu, commissions exclues, slippage S2 hypothetique dans les labels memes. Holdout definitivement exclu; aucune etape suivante autorisee.",
+    "verdict": "B08: M2_PREDICTIVE_ECONOMIC_SIGNAL_SUPPORTED_HISTORICALLY (formel, effets negligeables) / B09: M2_NO_ECONOMIC_PREDICTIVE_IMPROVEMENT",
+    "statut": "PHASE 17-B TERMINEE - aucune etape suivante autorisee automatiquement"
+   },
+   "entry_hash": "b8c2e3ebf8c55fae17f96e825e5357b656ab4f2b36d64873738416ec9dff35d5"
   }
  ]
 }
