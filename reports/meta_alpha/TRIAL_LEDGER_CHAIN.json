@@ -4097,6 +4097,17 @@
     "statut": "PHASE 12-C.2 BLOQUEE (acces Drive) - evaluation non consommee, reprise possible sous decision du responsable"
    },
    "entry_hash": "867326cdc32293cfbdf75ececcb81d451a5b0806047fc36537fd49dfc9aea37b"
+  },
+  {
+   "seq": 320,
+   "prev_hash": "867326cdc32293cfbdf75ececcb81d451a5b0806047fc36537fd49dfc9aea37b",
+   "entry": {
+    "type": "MISSION",
+    "phase": "12-C.2-R",
+    "objet": "Ordre officiel: MIGRATION CONTROLEE DU HOLDOUT VERS KAGGLE PRIVEE ET REPRISE 12-C.2 AUTORISEES. Ambiguite 66/67 resolue depuis l inventaire commite sans supposition: 66 partitions exactement, part_000283 a part_000348 consecutives (timestamp_max > borne IS 2020-01-20T09:36:27), 13,66 Go; la plage 282-348 (67 numeros) incluait a tort part_000282 (2019-11-10/2019-12-16, partition IS deja migree Kaggle dans xauusd-is-missing13, conservee comme contexte detecteur hors transfert). part_000283 chevauche la frontiere (debute 2019-12-17): transferee, exclusions analytiques de frontiere inchangees. Manifeste PHASE12C2_HOLDOUT_TRANSFER_MANIFEST.csv (66 lignes, drive_id et tailles de l inventaire; sha256 source absent de l inventaire historique: a etablir au transfert authentifie, jamais presente comme preexistant). Modalites: A transfert proprietaire, B transfert authentifie deja autorise (compte de service Drive GDRIVE_SA_JSON dont la presence reelle doit etre prouvee en CI sans exposer de secret; Kaggle authentifie, api_token KGAT deja verifie). Datasets prives par lots xauusd-ho-b01..b06. Controle cryptographique individuel obligatoire: 66 attendues/66 presentes/66 correspondances, zero manquante/supplementaire/divergence; empreinte copie seule insuffisante. Aucune donnee committee dans Git, aucun artefact public, aucune autre utilisation du holdout. Reprise unique 12-C.2 uniquement apres HOLDOUT_MIGRATION_VERIFIED, logique analytique identique (changements limites a la localisation des donnees). Incidents 45030043384/45030489413/45031240112 conserves. Verdicts: HOLDOUT_MIGRATION_VERIFIED ou HOLDOUT_MIGRATION_BLOCKED, puis verdicts 12-C inchanges.",
+    "statut": "MIGRATION AUTORISEE - execution en cours"
+   },
+   "entry_hash": "f319ddbaf8f3f695b24e5ed60776686057abe1044f662828502521dc184d13b6"
   }
  ]
 }

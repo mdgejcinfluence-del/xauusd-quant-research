@@ -30,6 +30,14 @@ name: phase10_all
         description: 'Phase 12-C.2: confirmation holdout H1 (seq318)'
         type: boolean
         default: false
+      probe12c2r:
+        description: 'Phase 12-C.2-R: sonde acces authentifie Drive/Kaggle (seq320, metadonnees seules)'
+        type: boolean
+        default: false
+      migration12c2r:
+        description: 'Phase 12-C.2-R: migration holdout Drive->Kaggle privee (seq320)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -516,3 +524,78 @@ jobs:
         path: reports/meta_alpha/phase12
         retention-days: 90
         if-no-files-found: warn
+
+  probe12c2r:
+    name: P12C2-R sonde acces authentifie (metadonnees seules)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: ${{ inputs.probe12c2r }}
+    permissions:
+      contents: write
+    env:
+      GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+      GDRIVE_ROOT_FOLDER_ID: ${{ secrets.GDRIVE_ROOT_FOLDER_ID }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy google-api-python-client google-auth requests
+    - name: Sonde (aucun contenu, aucun secret affiche)
+      env:
+        P12C2R_MODE: probe
+      run: python ci_tools/phase12c2_migrate.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12C2_PROBE_LOG.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer la sonde
+      if: always()
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2-R: sonde acces authentifie''
+
+        git push origin HEAD:arena/afe12737-xauusd-quant-research'
+  migration12c2r:
+    name: P12C2-R migration lot ${{ matrix.lot }} Drive->Kaggle
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.migration12c2r }}
+    permissions:
+      contents: write
+    env:
+      GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+    strategy:
+      fail-fast: false
+      matrix:
+        lot: [b01, b02, b03, b04, b05, b06]
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy google-api-python-client google-auth kaggle requests
+    - name: Migration et verification du lot
+      env:
+        P12C2R_MODE: lot
+        P12C2R_LOT: ${{ matrix.lot }}
+      run: python ci_tools/phase12c2_migrate.py 2>&1 | tee reports/meta_alpha/phase12/PHASE12C2_MIGRATION_LOG_${{ matrix.lot }}.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer les preuves du lot (aucune donnee)
+      if: always()
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add -A reports/meta_alpha/phase12/
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2-R: preuves migration lot ${{ matrix.lot }}''
+
+        for i in 1 2 3 4 5; do git pull -q --rebase origin arena/afe12737-xauusd-quant-research && git push -q origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 15; done'
