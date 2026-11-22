@@ -3908,6 +3908,18 @@
     "statut": "PHASE 11-B.1 TERMINEE; PHASE 11-C suspendue a decision distincte"
    },
    "entry_hash": "2a8698dd21ed53501c1f9dcc4e0b552777ca27a159e177c7bbd15d2fb006eacf"
+  },
+  {
+   "seq": 305,
+   "prev_hash": "2a8698dd21ed53501c1f9dcc4e0b552777ca27a159e177c7bbd15d2fb006eacf",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-C",
+    "objet": "Mission officielle Phase 11-C executee: analyse anatomique descriptive des grands mouvements H1 (F10-01) et H4 (F10-03) selon le protocole PHASE 11-A gele definitivement (sha256 fdfb04ed71cd5317e9b342a408194ac79c42ab06188555cbc1fcb3367aa38f94). Preflight conforme verifie dans le depot avant tout calcul: protocole present et hash conforme, chaine valide 304 entrees (tete seq304), rapport de reconstruction 11-B.1 present, carte PHASE11B_EVENT_CLUSTER_MAP.csv presente sha256 3281f594 (3896 lignes, event_id uniques, grappes 2617/597), manifeste definitif PHASE10_EVENTS_CIBLE.csv.gz sha256 57b7b8af rattache au run correctif 45011013927, populations coherentes (3134/3107/27 et 762/660/102; 3767 admissibles). Identifiants 11-B.1 utilises sans reconstruction ni nouveau clustering. Populations fermees, H1/H4 separes, IS 2010-2020 exclusivement (282 partitions), holdout jamais accede. Mesures gelees: t0/P0/d fixes, horizons t+1..t+8, MFE/MAE cumulees et incrementales, deplacement de cloture, repli depuis l extreme favorable distinct du MAE, retracement non plafonne, touch vs reintegration confirmee, reprise en cloture, champs extreme_*_utc resolution M1, INTRA_MINUTE_ORDER_UNKNOWN, six archetypes en hierarchie gelee, sessions UTC fixes,chevauchements H1/H4 descriptifs, censure a la premiere barre invalide sans imputation, distributions poids evenement et poids grappe, bootstrap grappes 2000 repetitions graine 20261122 descriptif uniquement. Aucune p-value confirmatoire, aucune rentabilite, strategie, backtest, optimisation, S12, T0/J2/J3 ni depense.",
+    "preflight": "CONFORME (9 points verifies)",
+    "statut": "EXECUTION APPROUVEE - analyse en cours"
+   },
+   "entry_hash": "234d35512b5cfeb7b42943efe25b42b08dbec29a91bb2eba62b1345cca6fdba1"
   }
  ]
 }
