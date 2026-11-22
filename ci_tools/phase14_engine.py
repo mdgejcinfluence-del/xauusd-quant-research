@@ -374,19 +374,23 @@ def mode_analyse():
     M = pd.DataFrame(grid_rows)
     # comparaison obligatoire: sortie fixe 13-B sur le meme sous-ensemble
     Eidx = E.set_index('event_id')
+    complet_ids = set(E.loc[E.statut_completude == 'COMPLET', 'event_id'])
     comp_rows = []
     for _, m in M.iterrows():
-        ids = comp_fixe[(m.normalisation, m.configuration, m.scenario)]
+        ids_all = comp_fixe[(m.normalisation, m.configuration, m.scenario)]
+        ids = [e for e in ids_all if e in complet_ids]  # meme sous-ensemble comparable (protocole gele section 7)
         sous = EV[(EV.normalisation == m.normalisation) & (EV.configuration == m.configuration) &
                   (EV.scenario == m.scenario) & (EV.event_id.isin(ids))]
         comp = Eidx.loc[ids]
         comp_rows.append({'normalisation': m.normalisation, 'configuration': m.configuration,
                           'scenario': m.scenario, 'n_comparable': len(ids),
-                          'barriere_moyenne_ev': m.ev_moyenne, 'barriere_mediane_ev': m.ev_mediane,
+                          'barriere_moyenne_ev': float(sous.resultat_bp.mean()),
+                          'barriere_mediane_ev': float(sous.resultat_bp.median()),
                           'fixe13B_moyenne_ev': float(comp[f'resultat_{m.scenario}_bp'].mean()),
                           'fixe13B_mediane_ev': float(comp[f'resultat_{m.scenario}_bp'].median()),
-                          'barriere_moyenne_gr': m.gr_moyenne,
+                          'barriere_moyenne_gr': float(sous.groupby('grappe_id').resultat_bp.mean().mean()),
                           'fixe13B_moyenne_gr': float(comp.groupby('grappe_id')[f'resultat_{m.scenario}_bp'].mean().mean()),
+                          'classes_hors_comparaison_dont_incompletes': int(len(ids_all) - len(ids)),
                           'incompletes_13B_separees': 22})
     CW = pd.DataFrame(comp_rows)
     CW.to_csv(R14 / 'PHASE14_CLUSTER_WEIGHTING.csv', index=False)
