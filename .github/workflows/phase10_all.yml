@@ -423,7 +423,7 @@ jobs:
     timeout-minutes: 360
     if: ${{ inputs.phase12c2 }}
     permissions:
-      contents: read
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -448,7 +448,19 @@ jobs:
         P12C2_ETAPE: bars
         P12C2_LOT: ${{ matrix.lot }}
         P12C2_PARTS: ${{ matrix.parts }}
-      run: python ci_tools/phase12c2_engine.py
+      run: python ci_tools/phase12c2_engine.py 2>&1 | tee reports/meta_alpha/phase12/P12C2_LOTLOG_${{ matrix.lot }}.txt;
+        test ${PIPESTATUS[0]} -eq 0
+    - name: Committer le journal du lot
+      if: always()
+      run: 'git config user.email ''actions@github.com''
+
+        git config user.name ''github-actions''
+
+        git add reports/meta_alpha/phase12/P12C2_LOTLOG_${{ matrix.lot }}.txt reports/meta_alpha/phase12/P12C2_PROVENANCE_${{ matrix.lot }}.json
+
+        git diff --cached --quiet || git commit -m ''Phase 12-C.2: journal du lot ${{ matrix.lot }}''
+
+        for i in 1 2 3 4 5; do git pull -q --rebase origin arena/afe12737-xauusd-quant-research && git push -q origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 15; done'
     - name: Publier les barres du lot
       uses: actions/upload-artifact@v4
       with:
