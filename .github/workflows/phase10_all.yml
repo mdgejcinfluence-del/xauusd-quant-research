@@ -884,7 +884,7 @@ jobs:
     if: ${{ inputs.phase14 }}
     permissions:
       actions: read
-      contents: read
+      contents: write
     strategy:
       matrix:
         batch:
@@ -908,7 +908,26 @@ jobs:
     - name: Chemins tick du lot (IS uniquement, holdout jamais accede)
       env:
         P14_BATCH: ${{ matrix.batch }}
-      run: python ci_tools/phase14_engine.py lot
+      run: |
+        set +e
+        python ci_tools/phase14_engine.py lot 2>&1 | tee reports/meta_alpha/phase14/PHASE14_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase14/PHASE14_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Consigner le journal du lot en cas d'echec
+      if: failure()
+      run: |
+        cp reports/meta_alpha/phase14/PHASE14_LOTLOG_${{ matrix.batch }}.txt /tmp/lotlog.txt
+        cp reports/meta_alpha/phase14/PHASE14_LOTEXIT_${{ matrix.batch }}.txt /tmp/lotexit.txt
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp /tmp/lotlog.txt reports/meta_alpha/phase14/PHASE14_LOTLOG_${{ matrix.batch }}.txt
+        cp /tmp/lotexit.txt reports/meta_alpha/phase14/PHASE14_LOTEXIT_${{ matrix.batch }}.txt
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add reports/meta_alpha/phase14/PHASE14_LOTLOG_${{ matrix.batch }}.txt reports/meta_alpha/phase14/PHASE14_LOTEXIT_${{ matrix.batch }}.txt
+        git diff --cached --quiet || git commit -m 'Phase 14-B: journal lot en echec (diagnostic)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
     - name: Publier les chemins du lot
       uses: actions/upload-artifact@v4
       with:
