@@ -1,0 +1,15 @@
+{
+  "phase": "17-A",
+  "spread": "integre une seule fois via les prix Bid/Ask d entree et de liquidation; aucune seconde soustraction",
+  "slippage": {"primaire_labels": "S2 = 1,0 bp par cote, hypothetique, applique defavorablement a l entree et a la sortie",
+               "sensibilites": {"S0": 0.0, "S1": 0.5}, "declenchements": "jamais ajustes par le slippage (conventions Phase 14)"},
+  "commissions": {"statut": "COMMISSION_EXCLUDED_BY_DESIGN", "regle": "aucun tarif invente; resultats jamais presentes comme P&L net de tous les frais",
+                  "commission_theorique_equilibre": "moyenne des P&L d apprentissage par observation (bp), rapportee comme borne theorique uniquement"},
+  "baseline": {"M0_ECON": "frequence de Y_ECON = 1 sur le seul apprentissage filtre, calculee separement pour M2-B08 et M2-B09; le M0 directionnel de M1 (0,7591463414634146) n est jamais reutilise comme baseline economique"},
+  "modele_M2": {"forme": "regression logistique simple, variables brutes, encodage SESSION identique a M1 (reference ASIA)", "reglages": "aucun reglage automatique, aucune recherche de variables, aucune selection apres performances",
+                "metriques": ["Brier (primaire)", "log-loss", "calibration (pente, ordonnee, deciles)", "AUC (diagnostic secondaire uniquement)"]},
+  "seuil_decision_economique": {"formule": "exposition si q > L / (G + L), avec G = gain moyen conditionnel et L = perte moyenne conditionnelle (valeur absolue) des P&L d apprentissage sous le scenario primaire S2",
+                                "source": "apprentissage uniquement, gele avant evaluation", "non_evaluable_si": "G ou L non estimable (classe absente ou effectif insuffisant)"},
+  "criteres_non_evaluabilite": "par contrat et segment: n etiquetes Y_ECON < 100 ou classe minoritaire < 50 => NON_EVALUABLE (aucun pooling, aucun assouplissement)",
+  "etiquettes_resultats": "NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION (primaire); sensibilites S0/S1 etiquetees avec leur niveau de slippage hypothetique"
+}

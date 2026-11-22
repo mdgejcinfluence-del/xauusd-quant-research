@@ -1,0 +1,23 @@
+{
+  "phase": "17-A",
+  "nature": "conception et faisabilite du meta-modele economique - aucun entrainement, aucune etiquette nouvelle hors evaluation existante, aucune performance nouvelle",
+  "modele_primaire": {"M1": "H1 gele PHASE12C1 (sha256 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e), filtre inchange p_M1 > 0.7591463414634146, aucune modification"},
+  "modele_secondaire": {"nom": "M2_ECONOMIC_META_LABELER", "forme": "regression logistique simple, variables brutes, encodage SESSION identique a M1 (reference ASIA), aucun reglage automatique, aucune recherche de variables",
+                        "cible": "Y_ECON sous contrat (voir PHASE17A_LABEL_DEFINITION.json), scenario primaire S2, etiquette NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION"},
+  "contrats": {"M2-B08": "TP 1,5 ATR / SL 1,0 ATR", "M2-B09": "TP 1,5 ATR / SL 1,5 ATR", "regle": "deux hypotheses distinctes rapportees integralement, aucune selection entre elles, aucune troisieme configuration, entree E0, echeance huit bougies H1"},
+  "variables_M2": ["RATIO_REPLI_EXTENSION_A_TREINT", "DUREE_EXTREME_VERS_TREINT_MIN", "MFE_A_TREINT_BP", "NB_TOUCHES_P0_AVANT_TREINT", "SESSION_REINTEGRATION", "ATR14_H1", "SPREAD_DECISION_BP"],
+  "variable_exclue": {"p_M1": "aucune serie strictement hors echantillon pour l apprentissage 2010-2015; conserve uniquement comme filtre primaire gele en amont de M2"},
+  "baseline": "M0_ECON par contrat, frequence Y_ECON de l apprentissage filtre uniquement; jamais le M0 directionnel",
+  "seuil_decision": "exposition si q > L/(G+L) (G, L: gains/pertes moyens conditionnels des P&L d apprentissage sous S2), gele avant evaluation; non estimable => NON_EVALUABLE",
+  "separation": {"APPRENTISSAGE": "2010-2015, 1640 etiquetes directionnels, 1143 filtres, 1466 grappes", "CALIBRATION": "2016-2017, 507, 360 filtres, 448 grappes", "EVALUATION": "2018-2020, 543, 443 filtres (= exposes Phases 13-B a 16), 489 grappes",
+                 "regles": "grappes entieres jamais partagees (0 verifie), purge des chevauchements d horizon 12-B reutilisee, intervalle [t_decision, fin_fenetre] contenu dans le segment, aucune separation aleatoire, evaluation jamais qualifiee de confirmation independante"},
+  "criteres_non_evaluabilite": "par contrat et segment: etiquettes Y_ECON < 100 ou classe minoritaire < 50 => NON_EVALUABLE, sans pooling ni assouplissement; a verifier a la construction des etiquettes en 17-B avant tout entrainement",
+  "metriques": ["Brier (primaire) contre M0_ECON", "log-loss", "calibration (pente, ordonnee, deciles)", "AUC diagnostic secondaire uniquement"],
+  "conditions_17B": ["construction des etiquettes apprentissage/calibration par le code gele des Phases 14/16 (meme machinerie, ticks IS), evaluation deja disponible",
+                     "verification des criteres par classe avant entrainement; arret NON_EVALUABLE si non satisfaits",
+                     "seuil economique gele sur l apprentissage avant toute lecture de l evaluation",
+                     "qualification exploratoire permanente; niveau 3 uniquement sur donnees posterieures au present gel, sous decision distincte"],
+  "H4": "bilan documentaire uniquement (PHASE17A_H4_FEASIBILITY.md): branche non faisable en l etat, aucun modele H4, aucun pooling",
+  "interdits": ["holdout", "modification de M1 ou de son seuil", "p_M1 comme variable M2", "variables posterieures a t_decision", "nouveau TP/SL ou troisieme contrat", "selection B08/B09", "optimisation du seuil sur l evaluation", "strategie ou capital"],
+  "verdict": "PHASE17A_READY_FOR_ECONOMIC_META_MODEL"
+}

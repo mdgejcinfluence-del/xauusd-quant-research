@@ -4381,6 +4381,30 @@
     "statut": "PHASE 16 TERMINEE - aucune etape suivante autorisee automatiquement"
    },
    "entry_hash": "bf35eb5926a225d724a41147ee76a0161de247891fa7123389d72edcb3a87d90"
+  },
+  {
+   "seq": 344,
+   "prev_hash": "bf35eb5926a225d724a41147ee76a0161de247891fa7123389d72edcb3a87d90",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "17-A",
+    "objet": "Conception et audit de faisabilite autorises du meta-modele economique M2_ECONOMIC_META_LABELER (aucun entrainement, aucune nouvelle performance economique, aucune selection B08/B09). M1 H1 gele intact (coefficients, cible, seuil p_M1 > 0,7591463414634146 comme filtre primaire separe). Cible M2: Y_ECON = 1 si P&L de liquidation strictement positif sous contrat a trois barrieres apres spread et slippage du scenario primaire S2 (1,0 bp par cote), avant commissions (COMMISSION_EXCLUDED_BY_DESIGN, etiquette NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION); S0/S1 sensibilites; mecanismes TP_FIRST/SL_FIRST/VERTICAL_FIRST conserves, censures et non-resolus jamais transformes en etiquettes. Deux contrats distincts sans selection: M2-B08 (TP 1,5 ATR / SL 1,0 ATR) et M2-B09 (1,5/1,5), entree E0, echeance huit bougies H1. Baseline M0_ECON par contrat sur le seul apprentissage. Variables: cinq variables causales M1, ATR14_H1 a t_decision, spread de decision; p_M1 EXCLU des variables faute de serie strictement hors echantillon pour l apprentissage (filtre conserve separement); audit anti-fuite par variable. Separation par grappe existante (apprentissage 2010-2015, calibration 2016-2017, evaluation 2018-2020 jamais qualifiee de confirmation), purge des chevauchements d horizon deja materialisee, criteres NON_EVALUABLE preenregistres. H4: bilan documentaire uniquement, aucun entrainement, aucun pooling. Holdout strictement interdit; aucune depense.",
+    "verdict": "CONCEPTION_ET_FAISABILITE_AUTORISEES",
+    "statut": "PHASE 17-A EN COURS"
+   },
+   "entry_hash": "d7413d9671002826a2d90934c48d47d124970ec38f1a40de1d85f18760f7be48"
+  },
+  {
+   "seq": 345,
+   "prev_hash": "d7413d9671002826a2d90934c48d47d124970ec38f1a40de1d85f18760f7be48",
+   "entry": {
+    "type": "PREREG",
+    "phase": "17-A",
+    "objet": "Conception et faisabilite du meta-modele M2_ECONOMIC_META_LABELER etablies sans entrainement ni nouvelle performance. Architecture gelee: M1 H1 intact (filtre p_M1 > 0,7591463414634146 en amont), M2 regression logistique simple predictant Y_ECON (P&L de liquidation strictement positif sous contrat, scenario primaire S2, etiquette NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION, commissions exclues) pour deux contrats distincts jamais selectionnes (M2-B08 1,5/1,0 ATR; M2-B09 1,5/1,5 ATR; entree E0, echeance huit bougies H1). Variables gelees: cinq variables causales M1 + ATR14_H1 + SPREAD_DECISION_BP, toutes bornees a t_decision et auditees; p_M1 EXCLU des variables (aucune serie hors echantillon pour l apprentissage) et conserve comme filtre separe. Faisabilite constatee sur artefacts: etiquetes directionnels F10-01 apprentissage 1640 (1143 filtres), calibration 507 (360), evaluation 543 (443 = exposes 13-B a 16, coherence verifiee); 0 grappe partagee; purge d horizon 12-B reutilisee; variables sans manquants; ATR et spread reconstructibles sur tout l IS depuis les barres committes; criteres NON_EVALUABLE preenregistres (n < 100 ou minorite < 50 par contrat et segment, a verifier a la construction des etiquettes); baseline M0_ECON et seuil L/(G+L) calculables sur le seul apprentissage. Limites consignees: filtre d apprentissage en echantillon (biais de selection herite), evaluation 2018-2020 deja utilisee (jamais confirmation), commissions exclues. H4: bilan documentaire de non-faisabilite en l etat, aucun modele H4. Phase 17-B soumise a decision distincte.",
+    "verdict": "PHASE17A_READY_FOR_ECONOMIC_META_MODEL",
+    "statut": "PHASE 17-A TERMINEE - aucun entrainement autorise automatiquement"
+   },
+   "entry_hash": "6f1f995aff047e5d1740a40709621c6d2118b6ae06490db65122dc4e8b40fcc3"
   }
  ]
 }

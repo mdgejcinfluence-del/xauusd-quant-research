@@ -1,0 +1,19 @@
+{
+  "phase": "17-A",
+  "cible": "Y_ECON",
+  "definition": "1 si le P&L de liquidation sous le contrat est strictement positif apres spread integre et slippage du scenario primaire S2, avant commissions; 0 si P&L nul ou negatif",
+  "etiquette_obligatoire": "NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION",
+  "commissions": "COMMISSION_EXCLUDED_BY_DESIGN",
+  "scenario_primaire_labellisation": {"scenario": "S2", "slippage_par_cote_bp": 1.0, "application": "defavorablement aux remplissages d entree et de sortie (conventions 13-A.1)"},
+  "sensibilites": {"S0": 0.0, "S1": 0.5, "regle": "memes mecanismes, jamais utilisees pour rechoisir le scenario primaire"},
+  "contrats": {
+    "M2-B08": {"entree": "E0 (premier Ask/Bid strictement apres t_decision, < 60 s)", "TP": "1,5 x ATR14_H1", "SL": "1,0 x ATR14_H1", "verticale": "fin de la fenetre des huit bougies H1"},
+    "M2-B09": {"entree": "E0", "TP": "1,5 x ATR14_H1", "SL": "1,5 x ATR14_H1", "verticale": "fin de la fenetre des huit bougies H1"}
+  },
+  "mecanismes_conserves": ["TP_FIRST", "SL_FIRST", "VERTICAL_FIRST"],
+  "statuts_jamais_etiquetes": {"CENSORED": "exclu de l apprentissage et de l evaluation, compte et publie", "GAP_CROSSING_UNRESOLVED": "idem", "ORDER_UNRESOLVED": "idem"},
+  "prix": "liquidation Bid (long) / Ask (court) aux ticks reels; franchissement au premier tick, prix du tick (gap au premier prix observable, limites 14.1); spread integre une seule fois",
+  "ancrage_barrieres": "prix reel d entree E0; ATR14_H1 disponible a t_decision (Wilder, bougies H1 Mid cloturees)",
+  "population": "evenements F10-01 H1 etiquetes directionnels (Phases 12-B) passant le filtre primaire gele p_M1 > 0,7591463414634146; apprentissage 1143, calibration 360, evaluation 443 (effectifs de population constates en 17-A, aucune etiquette economique encore construite hors evaluation)",
+  "intervalle_etiquetage": "[t_decision, fin_fenetre] contenu dans le segment de la grappe (purge 12-B deja materialisee)"
+}
