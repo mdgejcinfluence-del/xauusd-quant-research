@@ -29,10 +29,10 @@ You may still be able to access the file from the browser:
 but Gdown can't. Please check connections and permissions.
 P12C2 telechargement a reessayer part_000291.parquet 1
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 190, in <module>
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 206, in <module>
     if os.environ.get('P12C2_ETAPE') == 'bars': mode_bars()
                                                 ^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 46, in mode_bars
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase12c2_engine.py", line 62, in mode_bars
     if not ok: raise RuntimeError(f'telechargement Drive impossible: {nom}')
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: telechargement Drive impossible: part_000291.parquet
