@@ -3739,6 +3739,17 @@
     "statut": "AMENDEMENT CHAINE - correction autorisee, relance en attente"
    },
    "entry_hash": "92d5ca92db473e41fe094876a908597b38f7a6376010dfef4e51ab72e7604a8f"
+  },
+  {
+   "seq": 290,
+   "prev_hash": "92d5ca92db473e41fe094876a908597b38f7a6376010dfef4e51ab72e7604a8f",
+   "entry": {
+    "type": "INCIDENT",
+    "phase": "10",
+    "objet": "Relance ciblee seq289: run 44957524560, trois jobs moteur en echec simultane apres 4h53 (etape moteur), synthese non executee; degradation des telechargements externes deja observee (run 44922628325). Aucune donnee de production exploitee, aucune definition modifiee. Mesure logistique uniquement: passage a un seul job moteur sequentiel pour la recomputation ciblee F10-01/F10-03 (eviter la triple telechargement parallele des memes lots), perimetre et definitions inchanges.",
+    "statut": "RELANCE SEQUENTIELLE AUTORISEE PAR L AMENDEMENT (logistique seule)"
+   },
+   "entry_hash": "78623e4d0338bc8082c16fe9a47168e57a956953e3596179217ba7b392d91de1"
   }
  ]
 }

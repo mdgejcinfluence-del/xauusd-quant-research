@@ -45,7 +45,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
-    if: ${{ !inputs.synth_only }}
+    if: ${{ !inputs.synth_only && !inputs.cible }}
   run1:
     name: P10 moteur 2016 (repris C8)
     runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
-    if: ${{ !inputs.synth_only }}
+    if: ${{ !inputs.synth_only && !inputs.cible }}
   run2:
     name: P10 moteur 2020 (repris C8)
     runs-on: ubuntu-latest
@@ -115,7 +115,7 @@ jobs:
         path: reports/meta_alpha/phase10
         retention-days: 90
         if-no-files-found: error
-    if: ${{ !inputs.synth_only }}
+    if: ${{ !inputs.synth_only && !inputs.cible }}
   synthese:
     name: P10 synthese portes+BY
     runs-on: ubuntu-latest
@@ -127,6 +127,7 @@ jobs:
     - run0
     - run1
     - run2
+    - cible_moteur
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -218,5 +219,37 @@ jobs:
         retention-days: 90
         if-no-files-found: error
       if: always()
-    if: ${{ always() && (inputs.synth_only || (needs.run0.result == 'success' && needs.run1.result
-      == 'success' && needs.run2.result == 'success')) }}
+    if: ${{ always() && (inputs.synth_only || needs.cible_moteur.result == 'success'
+      || (needs.run0.result == 'success' && needs.run1.result == 'success' && needs.run2.result
+      == 'success')) }}
+  cible_moteur:
+    name: P10 moteur cible sequentiel F10-01/F10-03 (seq289)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.cible }}
+    permissions:
+      actions: read
+      contents: read
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Installer dependances legeres
+      run: pip install -q pandas numpy pyarrow duckdb gdown kaggle
+    - name: Tests temporels synthetiques
+      run: python ci_tools/phase10_temporal_tests.py
+    - name: Moteur cible Phase 10 (F10-01/F10-03 uniquement, partitions IS, holdout
+        jamais accede)
+      env:
+        P10_CIBLE: '1'
+      run: python ci_tools/phase10_engine.py
+    - name: Publier PHASE10_EVENTS_CIBLE
+      uses: actions/upload-artifact@v4
+      with:
+        name: p10-events-cible
+        path: reports/meta_alpha/phase10
+        retention-days: 90
+        if-no-files-found: error
