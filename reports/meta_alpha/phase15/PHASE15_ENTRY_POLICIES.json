@@ -1,0 +1,38 @@
+{
+  "phase": "15",
+  "statut": "POLITIQUES GELEES AVANT TOUT CALCUL - exactement 3 entrees x 3 sorties x 3 scenarios = 27 cellules, toutes presentees, aucune selection",
+  "cohorte": {"candidats": 543, "exposes": 443, "completes": 421, "incompletes": 22,
+              "regle_exposition": "p_M1 > 0.7591463414634146 (inchangee, aucun autre seuil)"},
+  "entrees": {
+    "E0": {"nom": "ENTREE IMMEDIATE (reference 13-B)", "regle": "premier Ask (long) / Bid (court) reel strictement apres t_decision, < 60 s; reprise des artefacts 13-B/14 sans recalcul"},
+    "E1": {"nom": "RECUPERATION DE P0",
+           "declencheur": "premiere bougie M1 candidate entierement cloturee (cloture Mid mc, debut >= t_decision, cloture <= fin_fenetre) telle que direction x (cloture - P0) > 0 strict",
+           "entree": "premier tick Ask (long) / Bid (court) avec cloture_declenchante < ts < cloture_declenchante + 60 s",
+           "sans_declenchement": "NO_ENTRY_TRIGGER (jamais une perte)"},
+    "E2": {"nom": "CONFIRMATION DE REPRISE - DEUX CLOTURES DIRECTIONNELLES",
+           "declencheur": "deux progressions consecutives de clotures M1 Mid entre bougies adjacentes (60 s), reference C0 = cloture de la bougie se terminant a t_decision; toute minute absente rompt la chaine; declenchement a la cloture de la deuxieme progression",
+           "entree": "premier tick Ask (long) / Bid (court) avec cloture_declenchante < ts < cloture_declenchante + 60 s",
+           "sans_declenchement": "NO_ENTRY_TRIGGER (jamais une perte)",
+           "interdit": "aucune variante a 3, 4 ou 5 clotures"}
+  },
+  "non_execution": "declenchement present mais aucun tick dans la fenetre de 60 s, ou premier tick >= fin_fenetre: NON_EXECUTION (motif consigne)",
+  "sorties": {
+    "X0": "echeance originale des huit bougies H1 (fin_fenetre inchangee, prix 13-B)",
+    "X1": "ATR B08: TP 1,5 x ATR14_H1, SL 1,0 x ATR14_H1 (ATR a t_decision, conventions Phase 14)",
+    "X2": "ATR B09: TP 1,5 x ATR14_H1, SL 1,5 x ATR14_H1 (idem)"
+  },
+  "ancrage_barrieres": "prix reel d entree de chaque politique; declenchement au premier tick de liquidation (Bid long / Ask court); gap: premier prix observable, ordre intra-gap indetermine = GAP_CROSSING_UNRESOLVED (limites 14.1)",
+  "scenarios": {"S0": 0.0, "S1": 0.5, "S2": 1.0},
+  "etiquettes": {"S0": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_ZERO_ADDITIONAL_SLIPPAGE",
+                 "S1": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_0_5_BP_PER_SIDE",
+                 "S2": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_1_0_BP_PER_SIDE"},
+  "commissions": "COMMISSION_EXCLUDED_BY_DESIGN; commission theorique d equilibre = moyenne S0 de la cellule (borne theorique, jamais un tarif)",
+  "reconciliations_obligatoires": {"E0_X0_vs_13B_S0": {"moyenne": 0.11130282596408449, "mediane": -0.8917991641155775, "n": 421},
+                                   "E0_X1_vs_PHASE14_B08_S0": {"moyenne": 1.6110129974118665}, "E0_X2_vs_PHASE14_B09_S0": {"moyenne": 1.9407198587729937},
+                                   "regle": "toute divergence arrete la phase pour audit"},
+  "presentations": ["par cellule: effectifs, capture, rendements, quantiles P1-P99, perte max, MFE/MAE, duree, TP/SL/VERTICAL/censures",
+                    "ponderations evenement et grappe (moyenne intra-grappe puis moyenne des grappes)",
+                    "resultats sur executes ET rapportes a la cohorte de 443 (non declenches/non executes a 0)",
+                    "quartiles Q1-Q4 descriptifs uniquement (p_M1 seul), jamais filtre"],
+  "criteres_verdict_geles": "voir PHASE15_ENTRY_ENGINEERING_PROTOCOL.md section 6"
+}

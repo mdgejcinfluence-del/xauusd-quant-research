@@ -4309,6 +4309,30 @@
     "statut": "PHASE 14.1 TERMINEE - resultats Phase 14 geles tels que reconcilies"
    },
    "entry_hash": "470a58c969ddf99a3236b160a288f5c3f38f98455eb3349fcbf0b9a6acb9309b"
+  },
+  {
+   "seq": 338,
+   "prev_hash": "470a58c969ddf99a3236b160a288f5c3f38f98455eb3349fcbf0b9a6acb9309b",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "15",
+    "objet": "Execution autorisee de la Phase 15 (engineering du point d entree, IS 2010-2020, cohorte H1 evaluee figee: 543 candidats, 443 exposes, 421 completes, 22 incompletes - references seq332/335/337), sous preenregistrement obligatoire gele avant tout nouveau calcul. Trois politiques d entree exactement: E0 immediate (reference 13-B), E1 premiere bougie M1 entierement cloturee apres t_decision dont la cloture Mid revient strictement du cote favorable de P0 (d x (cloture - P0) > 0), E2 deux clotures M1 consecutives progressant dans la direction initiale (reference C0 = cloture de la minute se terminant a t_decision; chaines rompues par toute minute absente); entree au premier tick executable strictement apres la cloture declenchante et dans les 60 secondes, sinon NON_EXECUTION (declenchement absent avant l echeance: NO_ENTRY_TRIGGER, jamais une perte). Trois sorties conservees uniquement: X0 echeance huit bougies H1, X1 = ATR B08 (TP 1,5 / SL 1,0), X2 = ATR B09 (TP 1,5 / SL 1,5), ATR a t_decision et conventions Phase 14, niveaux ancres au prix reel de chaque politique. Matrice exacte 3 entrees x 3 sorties x S0/S1/S2 = 27 cellules maximum, toutes presentees, aucune selection; E0/X0 reconcilie avec 13-B et E0/X1-X2 avec Phase 14 (toute divergence de reference arrete pour audit). Probabilites p_M1, event_id, grappe_id repris sans recalcul; modele et M0 inchanges; quartiles descriptifs seulement; commissions exclues avec etiquettes exactes; commission aller-retour theorique maximale compatible avec une moyenne nulle rapportee sans l assimiler a un tarif; gaps documentes sans interpolation (ordre indetermine: GAP_CROSSING_UNRESOLVED, limites 14.1 respectees); resultats rapportes aux executes et a la cohorte initiale de 443. Holdout strictement interdit; aucune extension de population, strategie, optimisation ni depense.",
+    "verdict": "EXECUTION_AUTORISEE_SOUS_PREENREGISTREMENT",
+    "statut": "PHASE 15 EN COURS - GEL DU PREENREGISTREMENT"
+   },
+   "entry_hash": "c447d8ac5352bb19bb8341fcfcc6bb0b8eb01ca4b8a485c21e8f9767d2f83388"
+  },
+  {
+   "seq": 339,
+   "prev_hash": "c447d8ac5352bb19bb8341fcfcc6bb0b8eb01ca4b8a485c21e8f9767d2f83388",
+   "entry": {
+    "type": "PREREG",
+    "phase": "15",
+    "objet": "Gel du preenregistrement Phase 15 avant tout nouveau calcul: protocole PHASE15_ENTRY_ENGINEERING_PROTOCOL.md et politiques PHASE15_ENTRY_POLICIES.json (empreintes consignees au commit). Definitions causales gelees: bougies candidates M1 (cloture Mid mc, debut >= t_decision, cloture <= fin_fenetre); E1 premier close directionnel strict au-dela de P0; E2 deux progressions consecutives entre bougies adjacentes avec reference C0 a t_decision et rupture de chaine sur minute absente; entree au premier tick reel dans les 60 s strictes suivant la cloture declenchante; NO_ENTRY_TRIGGER distinct de NON_EXECUTION. Matrice exacte E0/E1/E2 x X0/X1/X2 x S0/S1/S2 (27 cellules), sorties X1/X2 = ATR B08/B09 gelees ancrees au prix reel de chaque politique. Reconciliations obligatoires E0/X0 vs 13-B et E0/X1-X2 vs Phase 14 (toute divergence arrete pour audit). Presentations gelees: executes et cohorte 443 (non declenches a 0), ponderations evenement/grappe, quartiles descriptifs, commission theorique d equilibre bornee. Criteres de verdict de l avantage d entree et de la structure fixes en section 6 du protocole avant tout resultat. Aucune variante supplementaire autorisee.",
+    "verdict": "PHASE15_PREREGISTRATION_FROZEN",
+    "statut": "GEL EFFECTUE - execution Phase 15 autorisee sans nouvelle demande"
+   },
+   "entry_hash": "53ce7e2e9cd4f2786ebac7d0475a0eaded531ca015ce52b51f5723f64b6bc1f2"
   }
  ]
 }
