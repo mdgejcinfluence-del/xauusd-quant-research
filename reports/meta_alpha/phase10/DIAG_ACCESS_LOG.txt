@@ -1,0 +1,19 @@
+token present: False longueur: 0
+kaggle direct bearer -> 403 application/json None
+kaggle direct basic -> 403 application/json None
+test Drive partition: part_000001.parquet taille attendue: 1763664
+Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1xG29NnfqvwVNgOmJvfVkzXgmWbaLeaXq
+
+but Gdown can't. Please check connections and permissions.
+gdown rc: 1 fichier present: False taille: None
