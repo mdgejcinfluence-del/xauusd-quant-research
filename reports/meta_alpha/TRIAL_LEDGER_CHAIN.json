@@ -3885,6 +3885,17 @@
     "statut": "PHASE 11-B TERMINEE - BLOQUE (ANO-11B-01); Phase 11-C non autorisee"
    },
    "entry_hash": "c4a3776f6f34025ed1ebe7975acaefd06ef1a69cd19c1786e2431c388ba843d1"
+  },
+  {
+   "seq": 303,
+   "prev_hash": "c4a3776f6f34025ed1ebe7975acaefd06ef1a69cd19c1786e2431c388ba843d1",
+   "entry": {
+    "type": "MISSION",
+    "phase": "11-B.1",
+    "objet": "Mission officielle Phase 11-B.1 executee: reconstruction deterministe des identifiants d evenements et des grappes historiques pour resoudre ANO-11B-01 (audit 11-B bloque seq302). Decision du responsable: reconstruction autorisee sous conditions strictes, protocole PHASE11_PROTOCOL.md gele et inchange, aucun amendement. Conditions: retrouver d abord l algorithme historique exact de clustering Phase 10 (code, version/commit, parametres, definition de connexion, separation H1/H4, egalites, ordre de traitement, perimetre des evenements clusterises, exclusions) - interdiction de concevoir un nouvel algorithme ou de choisir un parametre par convenance; si preuves insuffisantes, arret et blocage. Materialiser event_id deterministe depuis la cle composite reelle (serialisation canonique documentee, unicite verifiee, aucun numero de ligne ni hasard) et grappe_id par reproduction exacte de l algorithme historique, populations separees, exclus conservant leur statut sans grappe artificielle. Nouvel artefact derive uniquement, manifeste source jamais modifie (empreintes avant/apres). Controles de reproductibilite (double execution identique) et concordance des comptes historiques (F10-01 3134/3107/27/2617; F10-03 762/660/102/597) selon le perimetre d origine retrouve. Anomalies ANO-11B-02/03/04 conservees et evaluees explicitement contre le protocole gele. Livrables: PHASE11B_EVENT_CLUSTER_MAP.csv, PHASE11B_11A_CLUSTER_RECONSTRUCTION.md, PHASE11B_1_RESULT.json, proces-verbal chaine. Verdicts: RECONSTRUCTION CONFORME (puis reprise des controles finaux 11-B) ou BLOQUE. Phase 11-C non autorisee par cette mission.",
+    "statut": "EXECUTION APPROUVEE - reconstruction en cours"
+   },
+   "entry_hash": "5258b57999bec4d316997e11297c37ab048d34a0817ca05cf028de0c1880534f"
   }
  ]
 }
