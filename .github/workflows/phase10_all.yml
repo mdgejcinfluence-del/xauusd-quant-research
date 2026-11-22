@@ -70,6 +70,10 @@ name: phase10_all
         description: 'Phase 16: entree passive E3 proxy de franchissement IS (seq341-342, preenregistrement gele)'
         type: boolean
         default: false
+      phase17b:
+        description: 'Phase 17-B: labels economiques B08/B09 et modeles M2 IS (seq346, preenregistrement 17-A)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -1209,5 +1213,114 @@ jobs:
       with:
         name: p16-livrables
         path: reports/meta_alpha/phase16
+        retention-days: 90
+        if-no-files-found: warn
+
+  lots17b:
+    name: P17B lot ${{ matrix.batch }} (chemins tick des evenements filtres M1)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase17b }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six scipy
+    - name: Chemins tick du lot (IS uniquement, holdout jamais accede)
+      env:
+        P17_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        python ci_tools/phase17b_engine.py lot 2>&1 | tee reports/meta_alpha/phase17/PHASE17B_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase17/PHASE17B_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Consigner le journal du lot en cas d'echec
+      if: failure()
+      run: |
+        cp reports/meta_alpha/phase17/PHASE17B_LOTLOG_${{ matrix.batch }}.txt /tmp/lotlog.txt
+        cp reports/meta_alpha/phase17/PHASE17B_LOTEXIT_${{ matrix.batch }}.txt /tmp/lotexit.txt
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp /tmp/lotlog.txt reports/meta_alpha/phase17/PHASE17B_LOTLOG_${{ matrix.batch }}.txt
+        cp /tmp/lotexit.txt reports/meta_alpha/phase17/PHASE17B_LOTEXIT_${{ matrix.batch }}.txt
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add reports/meta_alpha/phase17/PHASE17B_LOTLOG_${{ matrix.batch }}.txt reports/meta_alpha/phase17/PHASE17B_LOTEXIT_${{ matrix.batch }}.txt
+        git diff --cached --quiet || git commit -m 'Phase 17-B: journal lot en echec (diagnostic)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les chemins du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p17b-path-${{ matrix.batch }}
+        path: reports/meta_alpha/phase17/P17_PATH_${{ matrix.batch }}.csv
+        retention-days: 90
+        if-no-files-found: error
+  analyse17b:
+    name: P17-B labels B08/B09 et modeles M2 (preenregistrement 17-A gele)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase17b }}
+    needs:
+    - lots17b
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy scipy
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p17b-path-*
+        path: reports/meta_alpha/phase17
+        merge-multiple: true
+    - name: Labels et modeles Phase 17-B
+      run: |
+        set +e
+        python ci_tools/phase17b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase17/PHASE17B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase17/PHASE17B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 17-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p17out && cp -a reports/meta_alpha/phase17/. /tmp/p17out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p17out/. reports/meta_alpha/phase17/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase17/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 17-B: livrables labels B08/B09 et modeles M2 IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p17b-livrables
+        path: reports/meta_alpha/phase17
         retention-days: 90
         if-no-files-found: warn

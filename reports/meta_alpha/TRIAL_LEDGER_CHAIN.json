@@ -4405,6 +4405,18 @@
     "statut": "PHASE 17-A TERMINEE - aucun entrainement autorise automatiquement"
    },
    "entry_hash": "6f1f995aff047e5d1740a40709621c6d2118b6ae06490db65122dc4e8b40fcc3"
+  },
+  {
+   "seq": 346,
+   "prev_hash": "6f1f995aff047e5d1740a40709621c6d2118b6ae06490db65122dc4e8b40fcc3",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "17-B",
+    "objet": "Execution explicitement autorisee de la Phase 17-B: construction des etiquettes economiques B08/B09 (scenario primaire S2, etiquette NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION) pour les populations filtrees gelees (apprentissage 1143, calibration 360, evaluation 443 de reference), entrainement de deux regressions logistiques simples et distinctes M2_B08 et M2_B09 (aucune fusion, aucun reglage, implementation logistique du code gele Phase 12-B importee telle quelle), baselines M0_ECON_B08/B09 et seuils P_BE = L/(G+L) calcules sur le seul apprentissage, evaluation separee par contrat sur calibration (validation chronologique selon le role gele 17-A: aucune calibration de probabilite, aucun reentrainement, aucun seuil) puis sur l evaluation 2018-2020 qualifiee en permanence HISTORIQUE EXPLORATOIRE - POPULATION DEJA ETUDIEE. Preflight conforme: chaine 345, commit b43ec46, huit livrables 17-A integres par SHA-256. Censures et non-resolus jamais etiquetes; criteres NON_EVALUABLE 100/50 par contrat et segment sans pooling; p_M1 exclu des variables; modele M1 strictement intact; holdout definitivement exclu; aucune optimisation, strategie ni depense. Reconciliation obligatoire des etiquettes d evaluation avec les resultats Phase 14 geles (B08/B09 en S2), toute divergence critique arrete pour audit.",
+    "verdict": "EXECUTION_EXPLICITEMENT_AUTORISEE",
+    "statut": "PHASE 17-B EN COURS"
+   },
+   "entry_hash": "af725b3a3ee5326d54277aefb8d94989347e70e6e50cd05178442f6e16b6682b"
   }
  ]
 }
