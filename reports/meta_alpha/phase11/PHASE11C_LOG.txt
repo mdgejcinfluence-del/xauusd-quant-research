@@ -1,4 +1,72 @@
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase11c_engine.py", line 141
-    cand = np.where(y[p
-                     ^
-SyntaxError: '[' was never closed
+P11C F10-01 evenements traites 3107
+P11C F10-03 evenements traites 660
+{
+ "statut_execution": "TERMINE",
+ "lots_barres": 8,
+ "barres_tf": {
+  "F10-01": 59184,
+  "F10-03": 15195
+ },
+ "populations": {
+  "F10-01": {
+   "admissibles_analyses": 3107,
+   "trajectoires_completes": 3104,
+   "censurees": 3,
+   "bootstrap_grappes_t8": {
+    "mfe_8_mediane": {
+     "observe": 32.87837582223296,
+     "ic95_bas": 31.286662300110443,
+     "ic95_haut": 34.64709083947698
+    },
+    "mae_8_mediane": {
+     "observe": 31.498588905472428,
+     "ic95_bas": 30.091852894725832,
+     "ic95_haut": 32.753631688254565
+    },
+    "disp_8_mediane": {
+     "observe": -2.2369669989578487,
+     "ic95_bas": -4.099732100690633,
+     "ic95_haut": -0.2402466449220279
+    }
+   },
+   "censures": {
+    "COMPLETE": 3104,
+    "LACUNE_ANORMALE": 3
+   }
+  },
+  "F10-03": {
+   "admissibles_analyses": 660,
+   "trajectoires_completes": 657,
+   "censurees": 3,
+   "bootstrap_grappes_t8": {
+    "mfe_8_mediane": {
+     "observe": 65.22298060309303,
+     "ic95_bas": 60.50500720601938,
+     "ic95_haut": 72.743825183002
+    },
+    "mae_8_mediane": {
+     "observe": 62.91823077132388,
+     "ic95_bas": 57.33347136287732,
+     "ic95_haut": 66.59940030042345
+    },
+    "disp_8_mediane": {
+     "observe": -4.640462782577154,
+     "ic95_bas": -10.56607327530287,
+     "ic95_haut": 1.7676977680067436
+    }
+   },
+   "censures": {
+    "COMPLETE": 657,
+    "LACUNE_ANORMALE": 3
+   }
+  }
+ },
+ "anomalies": [],
+ "reproductibilite": "moteur deterministe (aucun hasard hors bootstrap a graine fixee 20261122)",
+ "chevauchement_H1_dans_episodes_H4": {
+  "evenements_H1_concernes": 1514,
+  "total_H1": 3107,
+  "definition": "t0 H1 dans [debut de la bougie declencheuse H4, t0 H4 + 32 h]",
+  "interpretation": "descriptif uniquement, aucune causalite"
+ }
+}
