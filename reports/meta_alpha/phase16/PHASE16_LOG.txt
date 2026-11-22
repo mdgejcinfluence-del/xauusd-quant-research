@@ -1,0 +1,13 @@
+{
+ "taux": 0.49887133182844245,
+ "verdicts": [
+  "PASSIVE_ENTRY_ANALYSIS_INCONCLUSIVE",
+  "EXPLORATORY_PASSIVE_ENTRY_ADVANTAGE_NOT_FOUND"
+ ],
+ "controle_ref": {
+  "conformes": 443,
+  "divergents": 0,
+  "sans_cotation": 0
+ }
+}
+P16 analyse terminee

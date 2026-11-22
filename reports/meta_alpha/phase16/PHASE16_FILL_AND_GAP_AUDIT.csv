@@ -1,0 +1,9 @@
+element,effectif,detail
+opportunites_exposees,443,cohorte figee
+cotations_de_reference_trouvees,443,"controle vs tick 13-B: {'conformes': 443, 'divergents': 0, 'sans_cotation': 0}"
+franchissements_proxy,221,QUOTE_CROSSING_PROXY_ONLY - execution reelle non prouvee
+NO_FILL_expiration_60s,222,ni perte ni gain; conserves dans la cohorte
+egalites_strictes_non_comptees,20,Ask == P_limit ou Bid == P_limit ne sont pas des franchissements
+remplissages_premier_tick_apres_trou_fenetre,0,trou > 5 min dans la fenetre de 60 s (fermetures)
+incompletes_13B,22,"identifiees; barrieres classees seulement avant premiere interruption, sinon CENSORED"
+franchissements_barrieres_apres_trou,15,lignes evenement x cellule; ordre intra-gap jamais suppose (limites 14.1)
