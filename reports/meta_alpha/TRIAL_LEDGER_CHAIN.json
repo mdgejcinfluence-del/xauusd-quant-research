@@ -4273,6 +4273,18 @@
     "statut": "ETAPE 14-A TERMINEE - execution 14-B autorisee"
    },
    "entry_hash": "535822ebfedb6380de739e2fa9e929b545875b8b064f1ccd72074638adbbd02e"
+  },
+  {
+   "seq": 335,
+   "prev_hash": "535822ebfedb6380de739e2fa9e929b545875b8b064f1ccd72074638adbbd02e",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "14-B",
+    "objet": "Execution exploratoire IS apres gel 14-A (seq334): run CI final 45054081666 entierement vert (exit 0), incidents moteur consignes (import zipfile, formats d horodatage, denominateur de comparaison corrige selon le protocole gele). Controle d entree: 443/443 prix retrouves a l identique au premier tick du chemin. Question A (MFE_MAE_SEQUENCE_ANALYZED): MAE_BEFORE_MFE 223 (50,3 %) contre MFE_BEFORE_MAE 220 (49,7 %), aucun ordre indetermine ni censure d ordre; MFE median 24,9 bp et MAE median 21,5 bp atteints apres des delais medians comparables (~2,7 h): pas d avance favorable systematique; description retrospective, jamais filtre. Quartiles sur p_M1 seul (seuils consignes Q1 0,7599-0,7961 a Q4 0,8666-0,9996): relation non monotone, Q4 descriptif uniquement (MFE median 30,8, MAE median 18,0), aucune regle creee. Question B (BARRIER_MATRIX_COMPLETED_EXPLORATORY_IS): 18 configurations toutes rapportees - normalisation R_EVENT universellement negative (-1,7 a -2,5 bp des S0, degradation face a la sortie fixe +0,11 sur les 421 comparables); normalisation ATR heterogene (-1,5 a +1,9 bp en S0), configurations larges B09/B08/B06 au-dessus de la sortie fixe en moyenne mais medianes souvent negatives, fragiles au slippage (S2 ~ 0 ou negatif), pertes maximales tronquees (-32 a -66 bp contre -203,5). Aucune configuration selectionnee ni declaree meilleure; commissions exclues; qualification EXPLORATOIRE_IS - HYPOTHESES POSTERIEURES AUX RESULTATS DE PHASE 13-B. 209 trous de cotation, 84 franchissements apres trou au premier tick reel; 22 incompletes traitees separement. Holdout jamais accede; aucune strategie; niveau 3 non autorise.",
+    "verdict": "MFE_MAE_SEQUENCE_ANALYZED + BARRIER_MATRIX_COMPLETED_EXPLORATORY_IS",
+    "statut": "PHASE 14 TERMINEE - aucune etape suivante autorisee automatiquement"
+   },
+   "entry_hash": "8a7248ee1c61ac9db7e801305cc065745d2a1f63deab325067bc99d3402242a5"
   }
  ]
 }
