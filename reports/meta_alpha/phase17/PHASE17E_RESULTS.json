@@ -1,0 +1,344 @@
+{
+ "phase": "17-E",
+ "qualification": "EXPLORATOIRE_IS - MODELE DE PAYOFF CONTINU",
+ "preenregistrement": "PHASE17D_PREREGISTRATION.json (gele seq351)",
+ "methode": "OLS numpy.linalg.lstsq, variables brutes + intercept + sessions one-hot (ASIA ref.), aucune regularisation ni selection",
+ "M0_R": {
+  "B08": -0.20589555073720303,
+  "B09": -0.12707836462357924,
+  "decision_baseline": "moyennes d'apprentissage negatives pour les deux contrats: AUCUNE_EXPOSITION theorique"
+ },
+ "resultats": {
+  "B08": {
+   "M0_R": -0.20589555073720303,
+   "n": {
+    "APPRENTISSAGE": 1137,
+    "CALIBRATION": 357,
+    "EVALUATION": 440
+   },
+   "segments": {
+    "APPRENTISSAGE": {
+     "M2R": {
+      "n": 1137,
+      "MAE": 1.0221677145621988,
+      "RMSE": 1.1265654134778171,
+      "erreur_moyenne": 1.7701075629203902e-15,
+      "biais": 1.7701075629203902e-15,
+      "residu_q25": -1.524362091818833,
+      "residu_mediane": 0.7509881095078617,
+      "residu_q75": 0.8890520440337818
+     },
+     "M0R": {
+      "n": 1137,
+      "MAE": 1.028432458881111,
+      "RMSE": 1.131218466957588,
+      "erreur_moyenne": 0.0,
+      "biais": 0.0,
+      "residu_q25": -1.6218921110324165,
+      "residu_mediane": 0.8420760316995218,
+      "residu_q75": 0.8799430622374963
+     },
+     "decisions": {
+      "contrat": "B08",
+      "ensemble": "APPRENTISSAGE",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 1137,
+      "n_retenues": 31,
+      "couverture": 0.027264731750219876,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": -0.02240607130791237,
+      "retenues_mediane": -0.9396409080811023,
+      "retenues_P1": -1.1552004381587182,
+      "retenues_P5": -1.1326545708974676,
+      "retenues_P25": -1.0427070701782806,
+      "retenues_P75": 1.4600626646014283,
+      "retenues_P95": 1.4905805080628114,
+      "retenues_P99": 1.643191214167998,
+      "retenues_perte_extreme": -1.1585551093459645,
+      "retenues_part_positifs": 0.3870967741935484,
+      "retenues_moyenne_grappes": 0.025030768084317787,
+      "retenues_PL_S2_moyen_bp": 7.762199732555575
+     },
+     "calibration": {
+      "intercept": -1.2109567490691655e-15,
+      "pente": 1.0000000000000024
+     }
+    },
+    "CALIBRATION": {
+     "M2R": {
+      "n": 357,
+      "MAE": 1.0960292611388474,
+      "RMSE": 1.1956577497158614,
+      "erreur_moyenne": -0.18053890225835528,
+      "biais": -0.18053890225835528,
+      "residu_q25": -1.6048249009680249,
+      "residu_mediane": 0.3458943966069763,
+      "residu_q75": 0.9047760299233927
+     },
+     "M0R": {
+      "n": 357,
+      "MAE": 1.0935944188075677,
+      "RMSE": 1.196291321373445,
+      "erreur_moyenne": -0.20260190370322873,
+      "biais": -0.20260190370322873,
+      "residu_q25": -1.6286169133545716,
+      "residu_mediane": 0.30701205079451754,
+      "residu_q75": 0.8918935463370709
+     },
+     "decisions": {
+      "contrat": "B08",
+      "ensemble": "CALIBRATION",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 357,
+      "n_retenues": 4,
+      "couverture": 0.011204481792717087,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": -0.10106784174144873,
+      "retenues_mediane": -0.34998301319854735,
+      "retenues_P1": -1.1252889579576761,
+      "retenues_P5": -1.1250995940768411,
+      "retenues_P25": -1.1241527746726658,
+      "retenues_P75": 0.6731019197326698,
+      "retenues_P95": 1.2714451506338815,
+      "retenues_P99": 1.391113796814124,
+      "retenues_perte_extreme": -1.125336298927885,
+      "retenues_part_positifs": 0.5,
+      "retenues_moyenne_grappes": -0.10106784174144873,
+      "retenues_PL_S2_moyen_bp": 5.561583122582015
+     },
+     "calibration": {
+      "intercept": -0.0020426783325136876,
+      "pente": 0.006804935830332042
+     }
+    },
+    "EVALUATION": {
+     "M2R": {
+      "n": 440,
+      "MAE": 1.0942797489972886,
+      "RMSE": 1.1835988450157329,
+      "erreur_moyenne": -0.18380776084786862,
+      "biais": -0.18380776084786862,
+      "residu_q25": -1.5967824076026815,
+      "residu_mediane": 0.3303083384433594,
+      "residu_q75": 0.909567397652493
+     },
+     "M0R": {
+      "n": 440,
+      "MAE": 1.0924013599348246,
+      "RMSE": 1.1842621121884709,
+      "erreur_moyenne": -0.20804299072867893,
+      "biais": -0.20804299072867893,
+      "residu_q25": -1.6073770405529502,
+      "residu_mediane": 0.29647345677296316,
+      "residu_q75": 0.9037440595371689
+     },
+     "decisions": {
+      "contrat": "B08",
+      "ensemble": "EVALUATION",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 440,
+      "n_retenues": 13,
+      "couverture": 0.029545454545454545,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": 0.3525893280377066,
+      "retenues_mediane": 0.4423361375304068,
+      "retenues_P1": -1.1589248419233378,
+      "retenues_P5": -1.147659031251732,
+      "retenues_P25": -0.7216244411653895,
+      "retenues_P75": 1.4051089233087728,
+      "retenues_P95": 1.4838523024736319,
+      "retenues_P99": 1.5213226444027146,
+      "retenues_perte_extreme": -1.161741294591239,
+      "retenues_part_positifs": 0.6153846153846154,
+      "retenues_moyenne_grappes": 0.3525893280377066,
+      "retenues_PL_S2_moyen_bp": 8.977174236799998
+     },
+     "calibration": {
+      "intercept": -0.0152891451755016,
+      "pente": -0.09598455559682463
+     }
+    }
+   }
+  },
+  "B09": {
+   "M0_R": -0.12707836462357924,
+   "n": {
+    "APPRENTISSAGE": 1133,
+    "CALIBRATION": 356,
+    "EVALUATION": 435
+   },
+   "segments": {
+    "APPRENTISSAGE": {
+     "M2R": {
+      "n": 1133,
+      "MAE": 0.7898251969117986,
+      "RMSE": 0.8737852278262023,
+      "erreur_moyenne": 9.234547029185769e-16,
+      "biais": 9.234547029185769e-16,
+      "residu_q25": -1.0265973441708547,
+      "residu_mediane": 0.1804570798470333,
+      "residu_q75": 0.8867789316601342
+     },
+     "M0R": {
+      "n": 1133,
+      "MAE": 0.7956714255503213,
+      "RMSE": 0.87820241210345,
+      "erreur_moyenne": -6.271339238835836e-18,
+      "biais": -6.271339238835836e-18,
+      "residu_q25": -1.0792109975554816,
+      "residu_mediane": 0.18346935374271695,
+      "residu_q75": 0.9215525927976841
+     },
+     "decisions": {
+      "contrat": "B09",
+      "ensemble": "APPRENTISSAGE",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 1133,
+      "n_retenues": 81,
+      "couverture": 0.07149161518093557,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": 0.16891064841988515,
+      "retenues_mediane": 0.4518548106057723,
+      "retenues_P1": -1.094855880357391,
+      "retenues_P5": -1.0554737524802902,
+      "retenues_P25": -1.0123166210679582,
+      "retenues_P75": 0.9779056901989651,
+      "retenues_P95": 1.0380102527327486,
+      "retenues_P99": 1.250257695753544,
+      "retenues_perte_extreme": -1.1084192006406604,
+      "retenues_part_positifs": 0.5802469135802469,
+      "retenues_moyenne_grappes": 0.17086175093523934,
+      "retenues_PL_S2_moyen_bp": 18.35187661023442
+     },
+     "calibration": {
+      "intercept": -1.0638895258388233e-15,
+      "pente": 0.9999999999999986
+     }
+    },
+    "CALIBRATION": {
+     "M2R": {
+      "n": 356,
+      "MAE": 0.8294930232874019,
+      "RMSE": 0.9030434139292184,
+      "erreur_moyenne": -0.13308020377265542,
+      "biais": -0.13308020377265542,
+      "residu_q25": -1.0694344462376397,
+      "residu_mediane": -0.11450474167900472,
+      "residu_q75": 0.9024492468929279
+     },
+     "M0R": {
+      "n": 356,
+      "MAE": 0.8282484644810946,
+      "RMSE": 0.9023491817808265,
+      "erreur_moyenne": -0.15075137508689543,
+      "biais": -0.15075137508689543,
+      "residu_q25": -1.0785177416424059,
+      "residu_mediane": -0.14950899598101758,
+      "residu_q75": 0.9210008111299126
+     },
+     "decisions": {
+      "contrat": "B09",
+      "ensemble": "CALIBRATION",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 356,
+      "n_retenues": 16,
+      "couverture": 0.0449438202247191,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": 0.16060459556491874,
+      "retenues_mediane": 0.21972461576163782,
+      "retenues_P1": -1.0787191663940265,
+      "retenues_P5": -1.0728108411205395,
+      "retenues_P25": -0.7364532961953826,
+      "retenues_P75": 0.9724179462448147,
+      "retenues_P95": 1.1711376626527357,
+      "retenues_P99": 1.2955084519684281,
+      "retenues_perte_extreme": -1.0801962477123983,
+      "retenues_part_positifs": 0.625,
+      "retenues_moyenne_grappes": 0.10482384964656817,
+      "retenues_PL_S2_moyen_bp": 16.329822436541406
+     },
+     "calibration": {
+      "intercept": 0.02698843254916984,
+      "pente": 0.030303510999314175
+     }
+    },
+    "EVALUATION": {
+     "M2R": {
+      "n": 435,
+      "MAE": 0.8301795528631363,
+      "RMSE": 0.9010326579259842,
+      "erreur_moyenne": -0.10715621468137694,
+      "biais": -0.10715621468137694,
+      "residu_q25": -1.0667460515617386,
+      "residu_mediane": -0.16506977200508333,
+      "residu_q75": 0.9043807089381435
+     },
+     "M0R": {
+      "n": 435,
+      "MAE": 0.826664157939292,
+      "RMSE": 0.8960630015687671,
+      "erreur_moyenne": -0.1262887368245562,
+      "biais": -0.1262887368245562,
+      "residu_q25": -1.0634912461420343,
+      "residu_mediane": -0.1881396915852524,
+      "residu_q75": 0.9315332885970087
+     },
+     "decisions": {
+      "contrat": "B09",
+      "ensemble": "EVALUATION",
+      "regle": "PREDICTED_EXPECTED_R > 0",
+      "n_evalue": 435,
+      "n_retenues": 37,
+      "couverture": 0.08505747126436781,
+      "decision_M0R": "AUCUNE_EXPOSITION",
+      "retenues_moyenne": -0.11103217079844376,
+      "retenues_mediane": -0.3853834302563127,
+      "retenues_P1": -1.0927766696212486,
+      "retenues_P5": -1.0874750646665203,
+      "retenues_P25": -0.949768239135914,
+      "retenues_P75": 0.9227552546399418,
+      "retenues_P95": 0.9738771909565654,
+      "retenues_P99": 1.011551504974658,
+      "retenues_perte_extreme": -1.094106386109563,
+      "retenues_part_positifs": 0.40540540540540543,
+      "retenues_moyenne_grappes": -0.11157402560715275,
+      "retenues_PL_S2_moyen_bp": -5.524661136372156
+     },
+     "calibration": {
+      "intercept": -0.048797513831535494,
+      "pente": -0.4447404821656688
+     }
+    }
+   }
+  }
+ },
+ "verdicts": {
+  "B08": "NO_CONTINUOUS_PAYOFF_IMPROVEMENT",
+  "B09": "NO_CONTINUOUS_PAYOFF_IMPROVEMENT"
+ },
+ "lecture_verdicts": {
+  "critere_gele": "CONTINUOUS_PAYOFF_SIGNAL_SUPPORTED_HISTORICALLY exigeait MAE et RMSE d'evaluation strictement inferieurs a M0_R, plus coherence de la decision",
+  "B08": "MAE evaluation 1,0943 contre 1,0924 pour M0_R (degradee); RMSE 1,1836 contre 1,1843 (gain relatif 0,06%, negligeable); pente de calibration de la valeur -0,096 en evaluation et 0,007 en 2016-2017: aucun transport. Les 13 retenues a +0,35 R moyen contredisent les 4 retenues de calibration a -0,10 R et ne reposent sur aucune qualite predictive etablie: decision non coherente au sens gele.",
+  "B09": "MAE et RMSE d'evaluation tous deux degrades (0,8302/0,9010 contre 0,8267/0,8961); pente de calibration -0,445; retenues d'evaluation a -0,111 R moyen: decision contraire a l'esperance annoncee."
+ },
+ "conclusion": "a variables causales identiques, passer du signe binaire a l'esperance continue normalisee par le risque ne cree pas d'information predictive: les sept variables ne portent ni le signe (17-B) ni l'amplitude conditionnelle (17-E) de facon transportable sur cette cohorte. La normalisation R stabilise l'echelle (17-D) mais ne suffit pas.",
+ "limites": [
+  "biais de selection M1 en echantillon sur l'apprentissage",
+  "p_M1 exclu des predicteurs",
+  "evaluation 2018-2020 deja etudiee, jamais confirmation independante",
+  "commissions exclues, slippage S2 hypothetique",
+  "cotations Bid/Ask sans profondeur ni remplissage reel"
+ ],
+ "sha256_livrables": {
+  "PHASE17E_TARGETS_B08.csv": "3e024d5004a84a852a9ae7e6323a5e1204852dbbe3f101e4a0d79cd300349816",
+  "PHASE17E_TARGETS_B09.csv": "8c6f6f6b19dabed57e86f48d6f005fc444bd382b5691873fa09ca4525e4dee60",
+  "PHASE17E_M2R_B08_PARAMETERS.json": "6b3a25d4a10ec13aa748bd258f69f017a0ae5480997f3ee229eec6eb97b02795",
+  "PHASE17E_M2R_B09_PARAMETERS.json": "b70fd75fcf0b286e764945e857688af5d13e232324d47db56135c98687bcaaa1",
+  "PHASE17E_PREDICTIONS_B08.csv": "29d87063060c60f7b64bbead30ace7f2fbf99d3ed89a86b1205a3e1a86d680d8",
+  "PHASE17E_PREDICTIONS_B09.csv": "9471891dd4511138bdee3f725454f63036378f30e9468e3776647b14696ccb3a",
+  "PHASE17E_MODEL_EVALUATION.csv": "495828b7103f0e617749ac1607e62a7c0ad07a3d874a8436b0860b711579714b",
+  "PHASE17E_ECONOMIC_DECISIONS.csv": "8da6cdbd47f09c9730307a2e41da863dbaa0bea0c3faf90daf52c6ab056a91b0",
+  "PHASE17E_FEATURE_AUDIT.json": "e2e480a19caa9fef28a4b761c6e813d5832a0005729eb8d9b3ba862cdf867807",
+  "PHASE17E_TARGET_AUDIT.json": "1b7a7d0a881d056d6e34f93d9adc47cea16697ffa7f0dc99776aa755155d08c6"
+ }
+}

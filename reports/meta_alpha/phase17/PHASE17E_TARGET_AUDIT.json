@@ -1,0 +1,72 @@
+{
+ "B08": {
+  "candidats": 1946,
+  "etiquetes": 1934,
+  "exclus": {
+   "CENSORED": 10,
+   "NON_EXECUTION": 2
+  },
+  "R_par_ensemble": {
+   "APPRENTISSAGE": {
+    "n": 1137,
+    "moyenne": -0.20589555073720303,
+    "mediane": -1.0479715824367248,
+    "ecart_type": 1.131716252885732,
+    "minimum": -1.5086766778364868,
+    "maximum": 2.6211425582328767
+   },
+   "CALIBRATION": {
+    "n": 357,
+    "moyenne": -0.0032936470339743266,
+    "mediane": -0.5129076015317205,
+    "ecart_type": 1.180665097427239,
+    "minimum": -1.3424345553603405,
+    "maximum": 2.269439928525098
+   },
+   "EVALUATION": {
+    "n": 440,
+    "moyenne": 0.0021474399914758815,
+    "mediane": -0.5023690075101661,
+    "ecart_type": 1.1671722153298296,
+    "minimum": -1.6212487095900283,
+    "maximum": 2.643238046487605
+   }
+  },
+  "regle": "censures/NON_EXECUTION exclus, jamais convertis en zero; aucun clipping; payoffs aux prix executables, aucun +1R/-1R automatique"
+ },
+ "B09": {
+  "candidats": 1946,
+  "etiquetes": 1924,
+  "exclus": {
+   "CENSORED": 20,
+   "NON_EXECUTION": 2
+  },
+  "R_par_ensemble": {
+   "APPRENTISSAGE": {
+    "n": 1133,
+    "moyenne": -0.12707836462357924,
+    "mediane": -0.3105477183662962,
+    "ecart_type": 0.8785902250665361,
+    "minimum": -1.8796012602445251,
+    "maximum": 1.974977283580354
+   },
+   "CALIBRATION": {
+    "n": 356,
+    "moyenne": 0.023673010463316196,
+    "mediane": 0.022430631357438342,
+    "ecart_type": 0.89091956368892,
+    "minimum": -1.6002240445397211,
+    "maximum": 1.5129599523500656
+   },
+   "EVALUATION": {
+    "n": 435,
+    "moyenne": -0.0007896277990230066,
+    "mediane": 0.061061326961673164,
+    "ecart_type": 0.8881404032229695,
+    "minimum": -2.170386303324355,
+    "maximum": 1.7621586976584036
+   }
+  },
+  "regle": "censures/NON_EXECUTION exclus, jamais convertis en zero; aucun clipping; payoffs aux prix executables, aucun +1R/-1R automatique"
+ }
+}

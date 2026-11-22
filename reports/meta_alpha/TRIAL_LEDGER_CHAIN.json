@@ -4505,6 +4505,30 @@
     "base_seq": 350
    },
    "entry_hash": "e101af6f44355ae9eb86221a74df67e1c03e8be815aeff63a24d16c830ebea91"
+  },
+  {
+   "seq": 352,
+   "prev_hash": "e101af6f44355ae9eb86221a74df67e1c03e8be815aeff63a24d16c830ebea91",
+   "entry": {
+    "type": "PHASE17E_AUTHORIZATION",
+    "phase": "17-E",
+    "decision": "AUTORISATION ENTRAINEMENT ET EVALUATION M2R_B08/M2R_B09 (regression lineaire, cible R_REALIZED_S2) STRICTEMENT SELON PREENREGISTREMENT 17-D",
+    "base_seq": 351
+   },
+   "entry_hash": "e1439e853ba3212219280322ae8e145a79956cde509d33624775fc72161f1088"
+  },
+  {
+   "seq": 353,
+   "prev_hash": "e1439e853ba3212219280322ae8e145a79956cde509d33624775fc72161f1088",
+   "entry": {
+    "type": "PHASE17E_VERDICTS",
+    "phase": "17-E",
+    "M2R_B08": "NO_CONTINUOUS_PAYOFF_IMPROVEMENT",
+    "M2R_B09": "NO_CONTINUOUS_PAYOFF_IMPROVEMENT",
+    "qualification": "EXPLORATOIRE_IS - MODELE DE PAYOFF CONTINU",
+    "base_seq": 352
+   },
+   "entry_hash": "3b84905e0e73e8a919102977c057531485e7eef5ea92c0b986120d53e7ad44dd"
   }
  ]
 }

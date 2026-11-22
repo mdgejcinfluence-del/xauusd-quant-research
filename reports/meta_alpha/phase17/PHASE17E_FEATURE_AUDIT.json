@@ -1,0 +1,56 @@
+{
+ "B08": {
+  "lignes": 1946,
+  "manquants": {
+   "event_id": 0,
+   "grappe_id": 0,
+   "ensemble": 0,
+   "SESSION_REINTEGRATION": 0,
+   "RATIO_REPLI_EXTENSION_A_TREINT": 0,
+   "DUREE_EXTREME_VERS_TREINT_MIN": 0,
+   "MFE_A_TREINT_BP": 0,
+   "NB_TOUCHES_P0_AVANT_TREINT": 0,
+   "ATR14_H1": 0,
+   "SPREAD_DECISION_BP": 0,
+   "Y_ECON": 12,
+   "statut_label": 0,
+   "mecanisme": 2
+  },
+  "sessions": {
+   "LONDON_NY_OVERLAP": 872,
+   "NY_AFTERNOON": 387,
+   "LONDON": 378,
+   "ASIA": 277,
+   "NIGHT_OTHER": 32
+  },
+  "controle_fuite": "7 variables gelees a t<=t_decision; p_M1 absent; aucun MFE/MAE final, mecanisme ou payoff en variable (mecanisme present uniquement comme statut de sortie dans les cibles)",
+  "encodage": "intercept + variables numeriques brutes + one-hot sessions (ASIA reference), convention 17-B"
+ },
+ "B09": {
+  "lignes": 1946,
+  "manquants": {
+   "event_id": 0,
+   "grappe_id": 0,
+   "ensemble": 0,
+   "SESSION_REINTEGRATION": 0,
+   "RATIO_REPLI_EXTENSION_A_TREINT": 0,
+   "DUREE_EXTREME_VERS_TREINT_MIN": 0,
+   "MFE_A_TREINT_BP": 0,
+   "NB_TOUCHES_P0_AVANT_TREINT": 0,
+   "ATR14_H1": 0,
+   "SPREAD_DECISION_BP": 0,
+   "Y_ECON": 22,
+   "statut_label": 0,
+   "mecanisme": 2
+  },
+  "sessions": {
+   "LONDON_NY_OVERLAP": 872,
+   "NY_AFTERNOON": 387,
+   "LONDON": 378,
+   "ASIA": 277,
+   "NIGHT_OTHER": 32
+  },
+  "controle_fuite": "7 variables gelees a t<=t_decision; p_M1 absent; aucun MFE/MAE final, mecanisme ou payoff en variable (mecanisme present uniquement comme statut de sortie dans les cibles)",
+  "encodage": "intercept + variables numeriques brutes + one-hot sessions (ASIA reference), convention 17-B"
+ }
+}
