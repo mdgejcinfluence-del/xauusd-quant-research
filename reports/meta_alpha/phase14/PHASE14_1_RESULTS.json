@@ -1,0 +1,107 @@
+{
+ "sequence": {
+  "exposes": 443,
+  "complets_421": 421,
+  "incomplets_22": 22,
+  "ordre_phase14_sur_443": {
+   "MAE_BEFORE_MFE": 223,
+   "MFE_BEFORE_MAE": 220
+  },
+  "ordre_reconcilie_sur_421_complets": {
+   "MAE_BEFORE_MFE": 212,
+   "MFE_BEFORE_MAE": 209
+  },
+  "incomplets_reclasses_CENSORED": 22,
+  "taux_MAE_avant_MFE_communique": 0.5033860045146726,
+  "taux_MAE_avant_MFE_reconcilie_denominateur_421": 0.503562945368171,
+  "conclusion_sens_inchange": true
+ },
+ "gaps": {
+  "trous_recenses_phase14": 209,
+  "lignes_gap_ev_x_config_x_scenario": 84,
+  "franchissements_uniques_ev_x_config": 28,
+  "evenements_uniques": 11,
+  "tous_franchissements_verifies_au_dela_du_niveau": true,
+  "tous_trous_retrouves": true,
+  "duree_trou_min_min": 60.12756666666667,
+  "duree_trou_min_max": 2941.52125,
+  "convention": "premier tick apres trou (gel seq334) - conforme, aucun amendement retroactif",
+  "limite_ouverte": "derniere cotation valide avant le trou non conservee en tant que telle dans les artefacts de chemin; ordre des mouvements pendant le trou non observable par construction"
+ },
+ "matrice": {
+  "cellules": 54,
+  "ecarts_numeriques": [],
+  "ATR_B09_S0": 1.9407198587729937,
+  "ATR_B09_S2": -0.05928014789346354,
+  "ATR_B08_S0": 1.6110129974118665,
+  "ATR_B08_S2": -0.3889870092545905,
+  "pertes_max_ATR_S0_min_max": [
+   -63.886296474660625,
+   -32.16562826567277
+  ],
+  "R_EVENT_toutes_negatives_S0": true,
+  "aucune_configuration_selectionnee": true
+ },
+ "grappes": {
+  "grappe_id_distincts_cohorte": 408,
+  "cellules_verifiees": 54,
+  "conforme": true
+ },
+ "quartiles": {
+  "construction": "p_M1 seul, departage event_id (verifie par reconstruction du classement)",
+  "concordance_avec_phase14": true,
+  "seuils": {
+   "Q1": {
+    "n": 111,
+    "p_min": 0.7599190827448735,
+    "p_max": 0.7960731179662582
+   },
+   "Q2": {
+    "n": 111,
+    "p_min": 0.7962613622413262,
+    "p_max": 0.8227572585886104
+   },
+   "Q3": {
+    "n": 111,
+    "p_min": 0.8228262686440693,
+    "p_max": 0.8659584681089152
+   },
+   "Q4": {
+    "n": 110,
+    "p_min": 0.8665583959712249,
+    "p_max": 0.9995515804536388
+   }
+  },
+  "Q4_mfe_median": 30.76782951388315,
+  "Q4_mae_median": 18.023496844912987,
+  "Q4_freq_MFE_avant_MAE": 0.4727272727272727,
+  "Q4_statut": "descriptif uniquement, aucun filtre cree",
+  "coherent_avec_PHASE14_RESULTS": true
+ },
+ "couts": {
+  "etiquettes": {
+   "S0": [
+    "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_ZERO_ADDITIONAL_SLIPPAGE"
+   ],
+   "S1": [
+    "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_0_5_BP_PER_SIDE"
+   ],
+   "S2": [
+    "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_1_0_BP_PER_SIDE"
+   ]
+  },
+  "statuts_identiques_entre_scenarios": true,
+  "delta_S1_moins_S0_median_bp": -1.0000000008343264,
+  "delta_S2_moins_S0_median_bp": -2.000000006666492,
+  "spread": "integre une seule fois aux prix Bid/Ask (aucune soustraction dans les artefacts)",
+  "commissions": "COMMISSION_EXCLUDED_BY_DESIGN - aucun tarif dans les artefacts"
+ },
+ "verdict_controles": {
+  "denominateurs_sequences": "DIVERGENCE DOCUMENTEE ET RECONCILIEE: le taux communique de 50,3 % portait sur 443 (22 incompletes classees); denominateur corrige 421, taux 50,36 %, sens inchange; les 22 incompletes sont re classees CENSORED pour l ordre global dans PHASE14_1_SEQUENCE_DENOMINATORS.csv",
+  "gaps": "CONFORME AU GEL (convention du premier tick apres trou preenregistree seq334 et appliquee telle quelle); limite epistemique consignee (ordre intra-trou non observable, derniere cotation avant trou non conservee en tant que telle)",
+  "matrice_54_cellules": "CONFORME",
+  "grappes": "CONFORME (aucun recalcul, moyennes intra-grappe puis moyenne des grappes verifiees)",
+  "quartiles": "CONFORME (p_M1 seul, departage event_id, seuils coherents)",
+  "couts": "CONFORME (etiquettes par scenario; slippage aux seuls remplissages: statuts et franchissements identiques entre scenarios, deltas medians -1/-2 bp)"
+ }
+}

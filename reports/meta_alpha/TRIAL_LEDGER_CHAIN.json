@@ -4285,6 +4285,30 @@
     "statut": "PHASE 14 TERMINEE - aucune etape suivante autorisee automatiquement"
    },
    "entry_hash": "8a7248ee1c61ac9db7e801305cc065745d2a1f63deab325067bc99d3402242a5"
+  },
+  {
+   "seq": 336,
+   "prev_hash": "8a7248ee1c61ac9db7e801305cc065745d2a1f63deab325067bc99d3402242a5",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "14.1",
+    "objet": "Audit de reconciliation Phase 14 autorise, exclusivement a partir des artefacts et journaux deja produits (aucune lecture de ticks bruts, aucun recalcul de barrieres, aucune nouvelle exploration). Points controles: denominateurs et classification temporelle MFE/MAE sur les 443 trajectoires (les extremes globaux d une fenetre censuree ne sont pas connaissables: un evenement incomplet sans extremes definitifs certains reste CENSORED pour l ordre global); validite des franchissements apres trous de cotation (distinction franchissement identifiable / premiere observation apres trou / execution indeterminable; convention effectivement appliquee comparee au preenregistrement gele seq334, aucun amendement retroactif); concordance des 54 cellules (18 configurations x S0/S1/S2), ponderations grappe, quartiles de confiance (p_M1 seul), etiquettes de couts et application du slippage aux seuls remplissages. Anciennete: tous les anciens livrables conserves. Verdicts: PHASE14_FROZEN_EXPLORATORY si reconciliation sans contradiction critique (gel PHASE14_FREEZE_RECORD.md alors emis), sinon PHASE14_RECONCILIATION_BLOCKED; toute anomalie non resoluble depuis les preuves disponibles reste ouverte et consignee.",
+    "verdict": "AUDIT_AUTORISE",
+    "statut": "PHASE 14.1 EN COURS"
+   },
+   "entry_hash": "e400969ef0e34a617dce4fc64b1d2613517f0fb74f57e9cff4424edff06891b6"
+  },
+  {
+   "seq": 337,
+   "prev_hash": "e400969ef0e34a617dce4fc64b1d2613517f0fb74f57e9cff4424edff06891b6",
+   "entry": {
+    "type": "VERDICT",
+    "phase": "14.1",
+    "objet": "Audit de reconciliation Phase 14 sur les seuls artefacts existants (script ci_tools/phase14_1_audit.py; aucune lecture de ticks bruts, aucun recalcul de barrieres). Controles: (1) denominateurs de sequence - divergence documentee et reconciliee: le taux communique MAE avant MFE de 50,3 % portait sur 443 en classant les 22 trajectoires incompletes; or les extremes globaux d une fenetre censuree ne sont pas connaissables: denominateur corrige 421 completes (212 MAE d abord = 50,36 %, 209 MFE d abord), 22 incompletes re classees CENSORED pour l ordre global dans PHASE14_1_SEQUENCE_DENOMINATORS.csv; sens de la conclusion inchange. (2) Gaps: les 84 lignes sont 28 franchissements uniques (11 evenements) x 3 scenarios; trous retrouves (60 a 2942 min, fermetures regulieres), premier tick apres trou present et franchissant le niveau dans le bon sens 28/28, horodatages reels; convention appliquee = convention du preenregistrement gele seq334, aucun amendement retroactif; limites ouvertes consignees: ordre intra-trou non observable et derniere cotation avant trou non conservee en tant que telle dans les artefacts (non verifiables sans nouvelle extraction, non autorisee). (3) Matrice: 54 cellules reconciliees sans aucun ecart (ATR B09 S0 +1,9407 / S2 -0,0593; B08 S0 +1,6110 / S2 -0,3890; pertes max ATR S0 -63,89 a -32,17; 9 R_EVENT toutes negatives en S0); aucune configuration selectionnee. (4) Grappes: 408 grappes reprises sans recalcul, moyennes intra-grappe puis moyenne des grappes verifiees sur 54 cellules, denominateurs explicites. (5) Quartiles: classement p_M1 seul avec departage event_id reconstruit a l identique, seuils coherents, Q4 descriptif confirme (MFE median 30,77, MAE median 18,02, aucun avantage d ordre). (6) Couts: etiquettes S0/S1/S2 exactes, statuts de franchissement identiques entre scenarios, deltas medians -1,00/-2,00 bp (slippage aux seuls remplissages, spread compte une fois, commissions exclues). Tous les controles critiques sont reconcilies sans contradiction critique: les resultats Phase 14 sont geles tels que reconcilies, livrables originaux inchanges, correction tracee dans la chaine. Qualification EXPLORATOIRE_IS maintenue; aucune etape suivante autorisee.",
+    "verdict": "PHASE14_FROZEN_EXPLORATORY",
+    "statut": "PHASE 14.1 TERMINEE - resultats Phase 14 geles tels que reconcilies"
+   },
+   "entry_hash": "470a58c969ddf99a3236b160a288f5c3f38f98455eb3349fcbf0b9a6acb9309b"
   }
  ]
 }
