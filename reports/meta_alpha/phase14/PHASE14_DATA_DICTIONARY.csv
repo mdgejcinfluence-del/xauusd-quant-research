@@ -1,0 +1,15 @@
+champ,source,definition,unite,disponibilite,usage
+event_id,PHASE13B_EVENT_EXECUTIONS.csv,identifiant d evenement Phase 11-C/12-B inchange,,t_decision,jointure et tracabilite
+grappe_id,PHASE13B_EVENT_EXECUTIONS.csv,grappe historique gelee jamais recalculee,,t_decision,ponderation par grappe
+p_M1,PHASE13B_EVENT_EXECUTIONS.csv,probabilite du modele H1 gele applique en 13-B,probabilite,t_decision,quartiles descriptifs Q1-Q4 (jamais regle)
+t_decision,PHASE13B_EVENT_EXECUTIONS.csv,cloture UTC de la minute M1 de reintegration,horodatage UTC,t_decision,origine des delais
+timestamp_entree,PHASE13B_EVENT_EXECUTIONS.csv,horodatage exact du premier tick d entree 13-B,horodatage UTC,apres t_decision,ancrage temporel des chemins
+prix_entree,PHASE13B_EVENT_EXECUTIONS.csv,Ask (long) ou Bid (court) du tick d entree 13-B,prix,apres t_decision,ancrage des niveaux de barrieres (avant slippage)
+direction,PHASE13B_EVENT_EXECUTIONS.csv,+1 long / -1 court,signe,t0,cote de liquidation
+tick bid/ask (chemin),partitions tick IS Kaggle prive (lots CI),cotations reelles dans la fenetre entree->echeance,prix et horodatages UTC,temps reel,extremes MFE/MAE et franchissements au premier tick
+prix de liquidation,ticks Bid/Ask,Bid si long / Ask si court au meme tick,prix,temps reel,MFE/MAE et sorties de barrieres (jamais Mid)
+R_EVENT,PHASE12B_FEATURES.csv (MFE_A_TREINT_BP),excursion favorable atteinte au plus tard a t_reintegration (definition 12-B),bp log,t_decision,normalisation A des distances
+ATR14_H1,barres M1 13-B agregees H1 Mid,bougies H1 Mid entierement cloturees a t_decision; TR et Wilder (init moyenne 14 TR),prix,t_decision,normalisation B des distances (unite seulement)
+fin_fenetre (echeance),PHASE13B_EVENT_EXECUTIONS.csv / features 12-B,fin de la fenetre des huit bougies H1,horodatage UTC,connue a t0,barriere verticale et sortie VERTICAL_FIRST (prix 13-B)
+resultat_*_bp (13-B),PHASE13B_EVENT_EXECUTIONS.csv,rendements de la sortie fixe huit H1 sous S0/S1/S2,bp log,apres echeance,comparaison a sous-ensemble identique
+statut_completude (13-B),PHASE13B_EVENT_EXECUTIONS.csv,COMPLET (421) ou INCOMPLET (22 trajectoires),,apres echeance,separation des incompletes et regles de censure

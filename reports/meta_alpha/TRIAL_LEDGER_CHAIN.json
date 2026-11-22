@@ -4249,6 +4249,30 @@
     "statut": "PHASE 13-B TERMINEE - aucune etape suivante autorisee automatiquement"
    },
    "entry_hash": "24a614ac554cdd25ef804253b85ce6e2583e76d0ade5f51d0d5ff114bc22c203"
+  },
+  {
+   "seq": 333,
+   "prev_hash": "24a614ac554cdd25ef804253b85ce6e2583e76d0ade5f51d0d5ff114bc22c203",
+   "entry": {
+    "type": "AUTORISATION",
+    "phase": "14",
+    "objet": "Execution exploratoire IS autorisee sous preenregistrement obligatoire en deux etapes: 14-A gel documentaire (protocole, grille de barrieres, preenregistrement, dictionnaire) chaine avant tout calcul d excursion ou de barriere; 14-B execution automatique apres gel verifie. Perimetre: cohorte figee Phase 13-B (543 candidats F10-01 H1 EVALUATION 2018-2020; 443 exposes p_M1 > M0 gele 0,7591463414634146; 421 clotures conformes; 22 incompletes; 0 non-execution), chemins reconstruits depuis les ticks Bid/Ask IS aux prix de liquidation (Bid long / Ask court), jamais de Mid pour la liquidation ni d ordre deduit d une barre M1. Question A: ordre temporel MFE/MAE (statuts MFE_BEFORE_MAE / MAE_BEFORE_MFE / MFE_MAE_SAME_TIMESTAMP / ORDER_UNRESOLVED / CENSORED) et quartiles descriptifs de confiance Q1-Q4 construits sur p_M1 seul (departage deterministe event_id, seuils obtenus consignes; Q4 jamais nouvelle regle). Question B: trois barrieres, 18 configurations gelees (normalisations R_EVENT = MFE_A_TREINT_BP 12-B et ATR14_H1 Wilder sur bougies H1 Mid entierement cloturees a t_decision; multiplicateurs TP/SL 0,5/1,0/1,5 en grille 3x3 par normalisation), franchissement au premier tick reel, prix de sortie = premier prix executable observe (gap inclus), barriere verticale = echeance 13-B inchangee, slippage S0/S1/S2 gele applique aux seuls remplissages, commissions exclues. Qualification obligatoire: EXPLORATOIRE_IS - HYPOTHESES POSTERIEURES AUX RESULTATS DE PHASE 13-B; aucun verdict ECONOMICALY_CONFIRMED_INDEPENDENTLY possible; aucune configuration selectionnee; holdout integralement exclu; modele, M0, grappes, populations intouches; aucune depense.",
+    "verdict": "EXECUTION_EXPLORATOIRE_AUTORISEE_SOUS_PREENREGISTREMENT",
+    "statut": "PHASE 14 EN COURS - ETAPE 14-A GEL DOCUMENTAIRE"
+   },
+   "entry_hash": "f072eee02d2b7c9b33a7c7b59f2b2eeff343c89681fdbd4bbd35307d8ed1813d"
+  },
+  {
+   "seq": 334,
+   "prev_hash": "f072eee02d2b7c9b33a7c7b59f2b2eeff343c89681fdbd4bbd35307d8ed1813d",
+   "entry": {
+    "type": "PREREG",
+    "phase": "14-A",
+    "objet": "Gel du preenregistrement Phase 14 avant tout calcul d excursion ou de barriere. Protocole PHASE14_EXPLORATORY_PROTOCOL.md da9e52a5022a..., grille PHASE14_BARRIER_GRID.json 791424f4790f... (9 configurations TP/SL 0,5/1,0/1,5 x 2 normalisations R_EVENT et ATR14_H1 Wilder = 18, toutes rapportees), preenregistrement PHASE14_PREREGISTRATION.json e1cc412d7718..., dictionnaire PHASE14_DATA_DICTIONARY.csv 3f6c56749f94.... Definitions gelees: liquidation Bid long / Ask court sur ticks reels (jamais Mid, jamais ordre deduit d une barre M1); statuts d ordre et de franchissement; trou de cotation > 5 min; franchissement apres trou determinable au premier tick suivant (drapeau GAP_AVANT_FRANCHISSEMENT); incompletes classees seulement si franchissement avant premiere interruption, sinon CENSORED; quartiles Q1-Q4 sur p_M1 seul (classement p_M1 puis event_id, 111/111/111/110), Q4 jamais regle; comparaison a la sortie fixe 13-B sur sous-ensemble comparable identique; etiquettes de couts par scenario; aucun nouveau seuil de reussite. Execution 14-B autorisee automatiquement apres le present gel.",
+    "verdict": "PHASE14_PREREGISTRATION_FROZEN",
+    "statut": "ETAPE 14-A TERMINEE - execution 14-B autorisee"
+   },
+   "entry_hash": "535822ebfedb6380de739e2fa9e929b545875b8b064f1ccd72074638adbbd02e"
   }
  ]
 }

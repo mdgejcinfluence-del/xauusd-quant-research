@@ -1,0 +1,27 @@
+{
+  "phase": "14-A",
+  "statut": "GRILLE GELEE AVANT TOUT CALCUL - 18 configurations, toutes rapportees, aucune selection",
+  "normalisations": {
+    "A_R_EVENT": {"echelle": "R_EVENT = MFE_A_TREINT_BP (PHASE12B_FEATURES.csv, bp log, connu a t_decision)",
+                  "distance": "niveau = ancrage * exp(+/- multiplicateur * R_EVENT / 10000)"},
+    "B_ATR14_H1": {"echelle": "ATR14_H1 Wilder sur bougies H1 Mid entierement cloturees a t_decision (init: moyenne des 14 premiers TR; lissage (13*ATR+TR)/14)",
+                   "distance": "niveau = ancrage +/- multiplicateur * ATR14_H1 (prix)"}
+  },
+  "ancrage": "prix executable d entree Phase 13-B (Ask si long, Bid si court), avant slippage hypothetique",
+  "declenchement": "premier tick reel: Bid >= TP ou Bid <= SL (long); Ask <= TP ou Ask >= SL (court); prix de sortie = prix de liquidation de ce tick (gap inclus), jamais le niveau theorique",
+  "barriere_verticale": "echeance Phase 13-B inchangee: fin de la fenetre des huit bougies H1 suivant l evenement",
+  "configurations": [
+    {"id": "B01", "tp_mult": 0.5, "sl_mult": 0.5},
+    {"id": "B02", "tp_mult": 0.5, "sl_mult": 1.0},
+    {"id": "B03", "tp_mult": 0.5, "sl_mult": 1.5},
+    {"id": "B04", "tp_mult": 1.0, "sl_mult": 0.5},
+    {"id": "B05", "tp_mult": 1.0, "sl_mult": 1.0},
+    {"id": "B06", "tp_mult": 1.0, "sl_mult": 1.5},
+    {"id": "B07", "tp_mult": 1.5, "sl_mult": 0.5},
+    {"id": "B08", "tp_mult": 1.5, "sl_mult": 1.0},
+    {"id": "B09", "tp_mult": 1.5, "sl_mult": 1.5}
+  ],
+  "application": "les 9 configurations sont appliquees a chacune des deux normalisations (18 au maximum; branche ATR UNAVAILABLE si moins de 15 bougies H1 cloturees avant t_decision)",
+  "scenarios_slippage": {"S0": 0.0, "S1": 0.5, "S2": 1.0},
+  "interdictions": ["aucun multiplicateur ajoute ou modifie apres resultats", "aucune configuration supprimee", "aucune configuration declaree meilleure pour usage reel", "aucune troisieme normalisation"]
+}

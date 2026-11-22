@@ -1,0 +1,22 @@
+{
+  "phase": "14",
+  "nature": "preenregistrement exploratoire IS - hypotheses posterieures aux resultats de Phase 13-B; aucune confirmation independante; aucun calcul d excursion ou de barriere avant le present gel",
+  "qualification_obligatoire": "EXPLORATOIRE_IS - HYPOTHESES POSTERIEURES AUX RESULTATS DE PHASE 13-B",
+  "cohorte_figee": {"source": "PHASE13B_EVENT_EXECUTIONS.csv sha256 20c5ae224997593c9c6dbd57566c32529bbe981cdb48727d1f8ac0abb8fa5885",
+                    "candidats": 543, "exposes": 443, "clotures_conformes_13B": 421, "incompletes_13B": 22, "non_executions_13B": 0,
+                    "regle_exposition": "p_M1 > 0.7591463414634146 (M0 gele, inchange)"},
+  "question_A": "ordre temporel MFE/MAE aux prix de liquidation tick (Bid long / Ask court), statuts MFE_BEFORE_MAE / MAE_BEFORE_MFE / MFE_MAE_SAME_TIMESTAMP / ORDER_UNRESOLVED / CENSORED; description retrospective, jamais filtre predictif",
+  "question_B": "trois barrieres (TP, SL, verticale = echeance 13-B) sur la grille gelee PHASE14_BARRIER_GRID.json: 9 configurations x 2 normalisations (R_EVENT = MFE_A_TREINT_BP; ATR14_H1 Wilder, bougies H1 Mid cloturees a t_decision)",
+  "confiance": "quartiles Q1-Q4 sur p_M1 seul, classement (p_M1, event_id), tailles 111/111/111/110, seuils obtenus consignes; Q4 descriptif, jamais regle",
+  "couts": {"spread": "integre une seule fois aux prix Bid/Ask", "commissions": "COMMISSION_EXCLUDED_BY_DESIGN",
+            "slippage": "S0/S1/S2 = 0 / 0,5 / 1,0 bp par cote, applique aux seuls remplissages, jamais au declenchement",
+            "etiquettes": {"S0": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_ZERO_ADDITIONAL_SLIPPAGE", "S1": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_0_5_BP_PER_SIDE", "S2": "NET_OF_SPREAD_BEFORE_COMMISSION_WITH_HYPOTHETICAL_1_0_BP_PER_SIDE"}},
+  "comparaison_obligatoire": "chaque configuration comparee a la sortie fixe 13-B sur exactement le meme sous-ensemble comparable; 22 incompletes presentees separement; ponderations evenement et grappe (moyenne intra-grappe puis moyenne des grappes) presentees separement",
+  "definitions_figees": {"trou_cotation": "intervalle > 5 minutes sans tick dans la fenetre",
+                         "franchissement_apres_trou": "determinable au premier tick suivant le trou, prix de ce tick utilise, drapeau GAP_AVANT_FRANCHISSEMENT",
+                         "incompletes": "barriere classee seulement si le tick de franchissement precede strictement la premiere interruption de trajectoire, sinon CENSORED"},
+  "verdicts_autorises": {"anatomie": ["MFE_MAE_SEQUENCE_ANALYZED", "SEQUENCE_ANALYSIS_BLOCKED"],
+                         "barrieres": ["BARRIER_MATRIX_COMPLETED_EXPLORATORY_IS", "BARRIER_MATRIX_INCONCLUSIVE", "BARRIER_MATRIX_NON_MESURABLE", "BARRIER_MATRIX_BLOCKED"],
+                         "interdit": "ECONOMICALLY_CONFIRMED_INDEPENDENTLY"},
+  "interdits": ["holdout sous toute forme", "modification modele/M0/grappes/populations", "re-detection, recalcul Q95 ou grappes", "H4", "selection de configuration, quartile ou seuil apres resultats", "scenarios ou multiplicateurs ajoutes", "position sizing, multi-position, courbe de capital-strategie", "depense", "T0/J2/J3", "36 cellules S12"]
+}
