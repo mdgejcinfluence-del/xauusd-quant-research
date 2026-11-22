@@ -38,11 +38,27 @@ def mode_bars():
     for n in range(debut, fin + 1):
         nom = f'part_{n:06d}.parquet'; p = inv[nom]; local = f'/tmp/{nom}'
         ok = False
+        # voie 1: gdown (historique Phase 10); voie 2: URL directe drive.usercontent
+        # (repli historique de ci_tools/kaggle_migrate.py:dl, seq migration Kaggle)
         for tentative in range(2):
             r = subprocess.run(['gdown', '-q', '--output', local, p['drive_id']])
-            if r.returncode == 0 and pathlib.Path(local).exists() and pathlib.Path(local).stat().st_size == p['file_bytes']:
+            if r.returncode == 0 and pathlib.Path(local).exists() and pathlib.Path(local).stat().st_size == p['file_bytes'] and open(local, 'rb').read(4) == b'PAR1':
                 ok = True; break
             print('P12C2 telechargement a reessayer', nom, tentative, flush=True); time.sleep(20 * (tentative + 1))
+        if not ok:
+            import requests as rq
+            url = f"https://drive.usercontent.google.com/download?id={p['drive_id']}&export=download&confirm=t"
+            for tentative in range(2):
+                try:
+                    with rq.get(url, stream=True, timeout=300, headers={'User-Agent': 'Mozilla/5.0'}) as r:
+                        r.raise_for_status()
+                        with open(local, 'wb') as f:
+                            for ch in r.iter_content(1 << 20): f.write(ch)
+                    if open(local, 'rb').read(4) == b'PAR1' and pathlib.Path(local).stat().st_size == p['file_bytes']:
+                        ok = True; break
+                except Exception as e:
+                    print('P12C2 repli direct KO', nom, str(e)[:80], flush=True)
+                time.sleep(30 * (tentative + 1))
         if not ok: raise RuntimeError(f'telechargement Drive impossible: {nom}')
         h = sha256_fichier(local)
         q = f"""SELECT time_bucket(INTERVAL 1 MINUTE, timestamp_utc) AS ts,
