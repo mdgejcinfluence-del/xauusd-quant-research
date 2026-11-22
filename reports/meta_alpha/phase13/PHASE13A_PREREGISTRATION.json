@@ -1,0 +1,20 @@
+{
+  "phase": "13-A",
+  "nature": "preenregistrement documentaire d evaluation economique - aucun backtest, aucune simulation, aucun calcul de rentabilite effectues",
+  "question": "La previsibilite H1 confirmee historiquement produit-elle une valeur economique positive apres spread, commissions, slippage et contraintes d execution?",
+  "base_gelee": {"modele": "PHASE12C1_MODEL_PARAMETERS.json sha256 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e",
+                 "confirmation": "PHASE 12-C.2 CONFIRMED_HISTORICAL_HOLDOUT (Brier 0,1798->0,1482; log-loss 0,5453->0,4850; n=1843)",
+                 "holdout": "2020-2026 CONSOMME: interdit pour tout choix economique (seuil, session, entree, sortie, sous-groupe) et pour toute nouvelle lecture de recherche"},
+  "regle_exposition": "p_M1 > 0,7591463414634146 (M0 gele) uniquement; aucun seuil optimise; alternatives non preenregistrees interdites de selection post-hoc",
+  "entree_sortie": "voir PHASE13A_EXECUTION_CONTRACT.json (entree premier Ask/Bid executable de la minute de t_reintegration, delai maximal cette minute, NON_EXECUTION sinon; sortie cloture de la fenetre gelee de 8 bougies H1 aux prix executables)",
+  "couts": {"spread": "integre aux prix Bid/Ask, jamais re-deduit", "commissions": "INCONNUES - a documenter ou exclusion assumee avant execution",
+            "slippage": "scenarios hypothetiques 0 / 0,5 / 1,0 bp a geler avant execution", "financement": "inconnu, non modelise au primaire"},
+  "metriques_primaires_futures": ["rendement net moyen et median par evenement (bp log, net de spread)", "rendement pondere par grappe", "part de trades positifs"],
+  "mesures_risque": ["MFE/MAE executables post-entree", "quantiles p1/p5/p25/p75/p95 des rendements nets", "perte maximale", "taux de NON_EXECUTION", "duree d exposition"],
+  "niveaux_de_preuve": {"niveau_2_IS": "exploratoire descriptif uniquement (IS 2010-2020), jamais confirmation",
+                        "niveau_3": "donnees posterieures au gel du protocole 13-A uniquement, processus prospectif ou source independante sous decision distincte"},
+  "conditions_arret": ["NON_EXECUTION > 10 % => NON MESURABLE en l etat", "spreads non finis > 5 % des fenetres => NON MESURABLE", "provenance des prix divergente => BLOCKED"],
+  "conditions_prealables_execution": ["bareme de commissions documente ou exclusion assumee chainee", "grille de slippage gelee chainee", "decision distincte du responsable pour l etude de niveau 2, puis pour le niveau 3"],
+  "interdits": ["holdout", "optimisation", "selection de seuil/session/sous-groupe sur performances", "reestimation", "H4", "strategie executable"],
+  "verdict": "PROTOCOL_READY_FOR_ECONOMIC_EVALUATION (sous conditions prealables consignees au contrat)"
+}

@@ -4178,6 +4178,29 @@
     "statut": "PHASE 12-C.2 TERMINEE - holdout consomme pour ce modele, aucune etape ulterieure autorisee"
    },
    "entry_hash": "537016202401e104f6ba2202b7c54b41d515b554cea47cbfaa55159a9d20a37e"
+  },
+  {
+   "seq": 327,
+   "prev_hash": "537016202401e104f6ba2202b7c54b41d515b554cea47cbfaa55159a9d20a37e",
+   "entry": {
+    "type": "MISSION",
+    "phase": "13-A",
+    "objet": "Ordre officiel: CONCEPTION DOCUMENTAIRE PHASE 13-A autorisee - protocole d evaluation de l exploitabilite economique du signal H1 (CONFIRMED_HISTORICAL_HOLDOUT seq326, Brier +17,6 %, log-loss +11,1 %, AUC 0,742, calibration 0,942, n=1843). Preflight: chaine valide seq326, distant aebe62a, rapport 12-C.2 542ed51434302bbd11b9681af5eeae518b338f8fbc36a7497f1cf10ae6d50735, parametres modele 1bcb3b706b74fbbd013f6aa7b6c4bccc0580f30a40ef88d8dc2682144c80956e, manifeste be2d0b23eccc1e7155325d4a7bae91a09f83c7887ff9d743e5c95a7767185118, predictions conservees. INTERDICTION ABSOLUE de reutiliser le holdout 2020-2026 consomme (ni seuil, ni session, ni entree/sortie, ni sous-groupe, ni lecture nouvelle pour la recherche economique). Phase documentaire uniquement: aucun backtest, simulation, calcul de rentabilite, selection de seuil, reestimation. Modele H1 gele inchange. Inventaire limite aux artefacts et sources IS autorises; couts distingues (observe/calcule/estime/hypothese): spread observe Phase 10 (mediane 2,30 bp), cout additionnel 1,7 bp = HYPOTHESE historique jamais mesure, commissions inconnues sans bareme verifiable. Niveaux de preuve: 1 previsibilite confirmee, 2 exploitabilite IS exploratoire seulement, 3 confirmation economique independante exigeant des donnees futures posterieures au gel du protocole economique. Livrables: PHASE13A_ECONOMIC_RESEARCH_PROTOCOL.md, PHASE13A_EXECUTION_CONTRACT.json, PHASE13A_COST_AND_DATA_INVENTORY.csv, PHASE13A_FEASIBILITY_REPORT.md, PHASE13A_PREREGISTRATION.json. Verdicts: PROTOCOL_READY_FOR_ECONOMIC_EVALUATION ou ECONOMIC_PROTOCOL_BLOCKED. H4 NON_EVALUABLE_IN_PHASE12B hors perimetre; S12/T0/J2/J3/depenses interdits. Toute etude economique ulterieure et toute strategie: decisions distinctes.",
+    "statut": "PHASE 13-A AUTORISEE (conception documentaire) - execution en cours"
+   },
+   "entry_hash": "56da856a79ff6f4359fe9705322fcc7a0880edcf4d0476574de1bc4b0ffcc52c"
+  },
+  {
+   "seq": 328,
+   "prev_hash": "56da856a79ff6f4359fe9705322fcc7a0880edcf4d0476574de1bc4b0ffcc52c",
+   "entry": {
+    "type": "PREREG",
+    "phase": "13-A",
+    "objet": "Conception documentaire du protocole d exploitabilite economique H1 (aucun backtest/simulation/calcul de rentabilite; holdout 2020-2026 consomme et integralement interdit pour tout choix economique et toute nouvelle lecture). Decisions preenregistrees sans aucune observation de performances economiques: exposition si et seulement si p_M1 > M0 gele 0,7591463414634146 (seuil = probabilite du modele nul, jamais optimise); entree au premier Ask/Bid executable de la minute M1 de t_reintegration (delai maximal cette minute, NON_EXECUTION comptee sinon, aucun prix invente); sortie primaire unique a la cloture de la fenetre gelee de 8 bougies H1 aux prix executables (la cible de continuation n est pas une sortie); rendement net en bp log aux prix Bid/Ask avec spread integre une seule fois (jamais re-deduit, contrairement a la convention Mid Phase 10: 2,302 bp observes + 1,7 bp hypothetiques); commissions INCONNUES sans bareme verifiable (resultat primaire net de spread hors commissions, aucun tarif invente); slippage sans historique reel (scenarios hypothetiques 0/0,5/1,0 bp a geler); financement et profondeur de marche inconnus documentes. Risques preenregistres (MFE/MAE executables, quantiles de perte, perte maximale, NON_EXECUTION, ponderation grappe) et conditions d arret (NON_EXECUTION > 10 %, spreads non finis > 5 %). Niveaux de preuve: 1 confirme (12-C.2), 2 IS exploratoire seulement, 3 donnees posterieures au gel uniquement. Conditions prealables a toute execution: bareme de commissions documente ou exclusion assumee, grille de slippage gelee - chacune par decisions distinctes. Verdict: PROTOCOL_READY_FOR_ECONOMIC_EVALUATION sous conditions consignees. H4 NON_EVALUABLE_IN_PHASE12B exclu.",
+    "verdict": "PROTOCOL_READY_FOR_ECONOMIC_EVALUATION",
+    "statut": "PHASE 13-A TERMINEE - aucune etude economique autorisee automatiquement"
+   },
+   "entry_hash": "08e81d5596af774c794c94ea5ed1d495e5f9cebf8796e710664d67046d21f437"
   }
  ]
 }
