@@ -22,6 +22,10 @@ name: phase10_all
         description: 'Phase 11-C: anatomie des mouvements (seq305)'
         type: boolean
         default: false
+      phase12b:
+        description: 'Phase 12-B: extraction bornee et evaluation predictive (seq312)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
