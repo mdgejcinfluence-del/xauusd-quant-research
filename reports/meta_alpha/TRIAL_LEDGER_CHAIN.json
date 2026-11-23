@@ -4579,6 +4579,20 @@
     "base_seq": 355
    },
    "entry_hash": "0e96538b9a8a6eb1c603183cdd4d9d371906b19f0c8f4dff7bb6d6b9bd3ae683"
+  },
+  {
+   "seq": 357,
+   "prev_hash": "0e96538b9a8a6eb1c603183cdd4d9d371906b19f0c8f4dff7bb6d6b9bd3ae683",
+   "entry": {
+    "type": "PHASE18B_VERDICT",
+    "phase": "18-B",
+    "verdict": "SIX_FEATURES_EXTRACTED_VALID",
+    "couverture_min": "98.6%",
+    "evenements": 1946,
+    "run_CI": 45125975580,
+    "base_seq": 356
+   },
+   "entry_hash": "b2175db580d1993e2c6a1e41d84aa0e8814389bd5de60776ae9eb4d387e8161c"
   }
  ]
 }
