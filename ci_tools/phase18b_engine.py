@@ -150,13 +150,13 @@ def mode_analyse():
             s = j[[v, a]].dropna()
             lignes.append(dict(nouvelle=v, ancienne=a, n=int(len(s)),
                                pearson=float(s[v].corr(s[a])) if len(s) > 2 else None,
-                               spearman=float(s[v].corr(s[a], method='spearman')) if len(s) > 2 else None))
+                               spearman=float(s[v].rank().corr(s[a].rank())) if len(s) > 2 else None))
     for i, v in enumerate(VARS6):
         for a in VARS6[i + 1:]:
             s = j[[v, a]].dropna()
             lignes.append(dict(nouvelle=v, ancienne=a, n=int(len(s)),
                                pearson=float(s[v].corr(s[a])) if len(s) > 2 else None,
-                               spearman=float(s[v].corr(s[a], method='spearman')) if len(s) > 2 else None))
+                               spearman=float(s[v].rank().corr(s[a].rank())) if len(s) > 2 else None))
     pd.DataFrame(lignes).to_csv(R18 / 'PHASE18B_REDUNDANCY_MATRIX.csv', index=False)
     print('P18 analyse terminee', len(out), 'evenements; doublons tick:', doublons, flush=True)
 
