@@ -4670,6 +4670,24 @@
     "base_seq": 362
    },
    "entry_hash": "0a2ae293f6a2cf5941769891d7a2c341c38cb21042b67a09d09f31151d11e3f7"
+  },
+  {
+   "seq": 364,
+   "prev_hash": "0a2ae293f6a2cf5941769891d7a2c341c38cb21042b67a09d09f31151d11e3f7",
+   "entry": {
+    "type": "PHASE19C_AUTHORIZATION",
+    "phase": "19-C",
+    "decision": "AUTORISATION EXPERIENCE APPARIEE H8 vs H16 (cohorte evaluation 443, entree identique, couts 19-B, aucun modele ni seuil)",
+    "interdits": [
+     "holdout",
+     "modification M1",
+     "barrieres",
+     "nouvel horizon",
+     "filtre M2"
+    ],
+    "base_seq": 363
+   },
+   "entry_hash": "d2e83692c12de8f21e18882fad1fad329a89fc19cece8af829b95747d771b164"
   }
  ]
 }
