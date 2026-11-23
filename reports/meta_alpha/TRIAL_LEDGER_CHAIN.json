@@ -4646,6 +4646,30 @@
     "base_seq": 360
    },
    "entry_hash": "1359c5eb91d0a0ad56c3936d39960dc1656b034b65dc0edb3adf06d6758df285"
+  },
+  {
+   "seq": 362,
+   "prev_hash": "1359c5eb91d0a0ad56c3936d39960dc1656b034b65dc0edb3adf06d6758df285",
+   "entry": {
+    "type": "PHASE19B_AUTHORIZATION",
+    "phase": "19-B",
+    "decision": "AUTORISATION AUDIT IMPLEMENTATION ECONOMIQUE (spread/slippage/unites/commissions) SUR CODE ET ARTEFACTS, AUCUNE MODIFICATION",
+    "base_seq": 361
+   },
+   "entry_hash": "801356790ec810800ec190ee4eceec5b25da5b61121ba3c95390dee8623e4094"
+  },
+  {
+   "seq": 363,
+   "prev_hash": "801356790ec810800ec190ee4eceec5b25da5b61121ba3c95390dee8623e4094",
+   "entry": {
+    "type": "PHASE19B_VERDICT",
+    "phase": "19-B",
+    "verdict": "BROKER_SPECIFICATION_UNVERIFIED",
+    "comptabilite": "spread une seule fois verifie; slippage coherent; commissions exclues; aucun defaut de double comptabilisation",
+    "tests_synthetiques": "10/10 PASS",
+    "base_seq": 362
+   },
+   "entry_hash": "0a2ae293f6a2cf5941769891d7a2c341c38cb21042b67a09d09f31151d11e3f7"
   }
  ]
 }

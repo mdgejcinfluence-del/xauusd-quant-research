@@ -1,0 +1,5 @@
+# PHASE 19-B — AUDIT DES COMMISSIONS
+
+Exclusion confirmée dans le code et les libellés gelés : étiquette obligatoire `NET_OF_SPREAD_AND_HYPOTHETICAL_S2_SLIPPAGE_BEFORE_COMMISSION` (17-A/17-D), mention `COMMISSION_EXCLUDED_BY_DESIGN` dans tous les rapports économiques des Phases 13 à 18 ; aucune ligne de code ne soustrait de commission (`grep commission` sur les moteurs 13-B/17-B : uniquement les mentions d'exclusion). **Aucun résultat historique n'est net de commissions et aucun ne doit être présenté comme tel.**
+
+Informations manquantes pour un calcul réel — toutes absentes des artefacts : broker et type de compte (standard/ECN/demo), instrument exact et taille de contrat (onces par lot), volume par transaction, barème (par lot, par côté ou par million), devise du compte, swaps éventuels. Aucun tarif n'est inventé dans le présent audit. Tant que ces éléments ne sont pas documentés par le propriétaire, toute rentabilité « nette » reste indéfinissable et les résultats doivent conserver leur qualification brute de commissions.

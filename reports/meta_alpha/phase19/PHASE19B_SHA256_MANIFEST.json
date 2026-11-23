@@ -1,0 +1,15 @@
+{
+ "phase": "19-B",
+ "verdict": "BROKER_SPECIFICATION_UNVERIFIED",
+ "comptabilite_interne": "spread integre exactement une fois par les prix executables; slippage S0/S1/S2 defavorable une fois par cote; conversions bp/R coherentes; commissions exclues et libellees",
+ "tests_synthetiques": "10/10 PASS (ci_tools/phase19b_synthetic_tests.py, donnees fictives)",
+ "sha256": {
+  "PHASE19B_SPREAD_ACCOUNTING_AUDIT.md": "c8cf4581f1ef2786cac1fafa3ef2705f87074b61d6c4b81c0b8e945bbd2b4173",
+  "PHASE19B_SLIPPAGE_AUDIT.md": "0858f6ca8ba1701705838d651d5b6625a09d1f4dd9eb5e01a59cd009d3a4947f",
+  "PHASE19B_XAUUSD_UNIT_CONVERSION_AUDIT.md": "ba189ce10bbf1bd6aa1bde8e841917ecca213eeb6cd2ec59727483622f1a7ffc",
+  "PHASE19B_COMMISSION_AUDIT.md": "46401e652707fbe773c47f5c2045b76e185e8ea4543f924f20435a97bdd71498",
+  "PHASE19B_SYNTHETIC_UNIT_TESTS.md": "6d1eacb1858c8d1727ee1d7d57ee161a6c38b1cbabcec398ffff52f20178f4b6",
+  "PHASE19B_HISTORICAL_IMPLEMENTATION_RECONCILIATION.md": "238357fdcb37916104df4b14340e00edff57a2254533ca754272c34cc09fb870",
+  "PHASE19B_FINAL_VERDICT.md": "ceab664324f676e8555c1b1226de8ff7e7033f8c839620bb58e5195c4e8d315e"
+ }
+}
