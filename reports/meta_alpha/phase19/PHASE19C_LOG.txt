@@ -1,11 +1,12 @@
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 147, in <module>
-    elif sys.argv[1] == 'analyse': mode_analyse()
-                                   ^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 106, in mode_analyse
-    d[f'PL_{scen}'] = [remplir(int(r.direction), float(r.prix_entree_calcule), float(r[f'prix_sortie_H{Hh}']), s)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 106, in <listcomp>
-    d[f'PL_{scen}'] = [remplir(int(r.direction), float(r.prix_entree_calcule), float(r[f'prix_sortie_H{Hh}']), s)
-                                                                                     ~^^^^^^^^^^^^^^^^^^^^^^
-TypeError: tuple indices must be integers or slices, not str
+{
+ "n_paires": 437,
+ "n_grappes": 402,
+ "delta_moyen_evenements": 0.43645135732881984,
+ "delta_moyen_grappes": 0.336163596903063,
+ "ic95_grappes": [
+  -2.250421728028111,
+  2.689628597286877
+ ],
+ "part_grappes_delta_positif": 0.4253731343283582
+}
+doublons lots: 0

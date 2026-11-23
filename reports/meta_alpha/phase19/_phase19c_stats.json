@@ -1,0 +1,11 @@
+{
+ "n_paires": 437,
+ "n_grappes": 402,
+ "delta_moyen_evenements": 0.43645135732881984,
+ "delta_moyen_grappes": 0.336163596903063,
+ "ic95_grappes": [
+  -2.250421728028111,
+  2.689628597286877
+ ],
+ "part_grappes_delta_positif": 0.4253731343283582
+}
