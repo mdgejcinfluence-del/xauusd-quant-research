@@ -1,0 +1,7 @@
+contrat,ensemble,n_etiquetes,n_commune,exclus,cause_exclusion
+B08,APPRENTISSAGE,1137,1122,15,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"
+B08,CALIBRATION,357,354,3,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"
+B08,EVALUATION,440,434,6,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"
+B09,APPRENTISSAGE,1133,1118,15,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"
+B09,CALIBRATION,356,353,3,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"
+B09,EVALUATION,435,429,6,"au moins une des 13 variables manquante (fenetre NON_VALIDABLE 18-B, aucune imputation)"

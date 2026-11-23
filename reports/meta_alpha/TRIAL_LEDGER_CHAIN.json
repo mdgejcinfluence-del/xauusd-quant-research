@@ -4593,6 +4593,37 @@
     "base_seq": 356
    },
    "entry_hash": "b2175db580d1993e2c6a1e41d84aa0e8814389bd5de60776ae9eb4d387e8161c"
+  },
+  {
+   "seq": 358,
+   "prev_hash": "b2175db580d1993e2c6a1e41d84aa0e8814389bd5de60776ae9eb4d387e8161c",
+   "entry": {
+    "type": "PHASE18C_AUTHORIZATION",
+    "phase": "18-C",
+    "decision": "AUTORISATION TEST DE VALEUR INCREMENTALE DES SIX NOUVELLES VARIABLES (M2R_BASE_7 vs M2R_EXT_13, population commune complete-case, criteres 4 conditions MAE/RMSE annonces)",
+    "interdits": [
+     "holdout",
+     "ticks bruts",
+     "imputation",
+     "nouveau seuil",
+     "modification variables/cibles/contrats"
+    ],
+    "base_seq": 357
+   },
+   "entry_hash": "a934934e24708e14458227a3ed71d7ff74aaeb5c489b41ca98dca0211c1cf679"
+  },
+  {
+   "seq": 359,
+   "prev_hash": "a934934e24708e14458227a3ed71d7ff74aaeb5c489b41ca98dca0211c1cf679",
+   "entry": {
+    "type": "PHASE18C_VERDICTS",
+    "phase": "18-C",
+    "B08": "STATISTICAL_IMPROVEMENT_WITHOUT_ECONOMIC_SELECTION",
+    "B09": "STATISTICAL_IMPROVEMENT_WITHOUT_ECONOMIC_SELECTION",
+    "qualification": "exploratoire post-hoc, aucune confirmation independante",
+    "base_seq": 358
+   },
+   "entry_hash": "d5e1f982251a5038b60da6036b2aec019acdcae1a0a7cdc532e39a1494feeac5"
   }
  ]
 }
