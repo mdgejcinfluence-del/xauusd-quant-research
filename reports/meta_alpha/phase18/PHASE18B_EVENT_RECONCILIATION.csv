@@ -1,0 +1,4 @@
+ensemble,evenements_attendus,retrouves_parquet,doublons_tick_bruts,sans_lot_tick
+APPRENTISSAGE,1143,1143,0,0
+CALIBRATION,360,360,0,0
+EVALUATION,443,443,0,0
