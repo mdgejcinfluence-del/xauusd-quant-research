@@ -1,0 +1,3 @@
+# PHASE 19-C — AUDIT D'IDENTITÉ DES ENTRÉES
+
+Entrée unique commune à H8 et H16, recalculée par les lots (premier tick strictement postérieur à `t_decision`, Ask si LONG / Bid si SHORT) puis rapprochée des artefacts gelés 17-B sur les 443 événements exposés : **écart maximal de prix d'entrée = 0,0** et **100 % d'horodatages d'entrée identiques** à `PHASE17B_LABELS_B08.csv`. Aucune différence d'entrée entre les deux horizons n'est donc possible par construction (même ligne d'événement, même `prix_entree_calcule`). Population : 543 candidats 13-B avant filtre (référence documentaire), 443 exposés après filtre M1 gelé — identifiants et grappes inchangés.

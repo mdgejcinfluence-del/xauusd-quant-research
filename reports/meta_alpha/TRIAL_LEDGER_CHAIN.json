@@ -4688,6 +4688,24 @@
     "base_seq": 363
    },
    "entry_hash": "d2e83692c12de8f21e18882fad1fad329a89fc19cece8af829b95747d771b164"
+  },
+  {
+   "seq": 365,
+   "prev_hash": "d2e83692c12de8f21e18882fad1fad329a89fc19cece8af829b95747d771b164",
+   "entry": {
+    "type": "PHASE19C_VERDICT",
+    "phase": "19-C",
+    "verdict": "NO_MATERIAL_HOLDING_TIME_ADVANTAGE",
+    "delta_S2_bp": 0.436,
+    "IC95_grappes": [
+     -2.25,
+     2.69
+    ],
+    "n_paires": 437,
+    "run_CI": 45235937089,
+    "base_seq": 364
+   },
+   "entry_hash": "1556b4c6ff26a986ca88c412ed937346ba52df9808fe20b2ceb453587cff7074"
   }
  ]
 }
