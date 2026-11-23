@@ -86,7 +86,7 @@ def mode_lot():
             rec[f'duree_observee_s_H{H}'] = float((seg.ts.iloc[-1] - te).total_seconds())
         rows.append(rec)
     R19.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(rows).to_csv(R19 / f'P19_HORIZONS_{batch}.csv', index=False)
+    pd.DataFrame(rows, columns=['event_id','source_batch','ts_entree','prix_entree_calcule']).to_csv(R19 / f'P19_HORIZONS_{batch}.csv', index=False) if not rows else pd.DataFrame(rows).to_csv(R19 / f'P19_HORIZONS_{batch}.csv', index=False)
     print('P19 lot termine', batch, len(rows), flush=True)
 
 def remplir(direction, pe, ps, s):
@@ -96,7 +96,7 @@ def remplir(direction, pe, ps, s):
 
 def mode_analyse():
     E = population()
-    H = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R19 / 'P19_HORIZONS_*.csv')))])
+    H = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R19 / 'P19_HORIZONS_*.csv'))) if pathlib.Path(f).stat().st_size > 50])
     doublons = int(H.event_id.duplicated().sum()); H = H.drop_duplicates('event_id')
     j = E.merge(H, on='event_id', how='left')
     resultats = {}
