@@ -4561,6 +4561,24 @@
     "base_seq": 354
    },
    "entry_hash": "846c7cbb4278902e35f20d64e06742b9835acecc17b01d5ec24f4437d658d24f"
+  },
+  {
+   "seq": 356,
+   "prev_hash": "846c7cbb4278902e35f20d64e06742b9835acecc17b01d5ec24f4437d658d24f",
+   "entry": {
+    "type": "PHASE18B_AUTHORIZATION",
+    "phase": "18-B",
+    "decision": "AUTORISATION EXTRACTION CONTROLEE DES SIX VARIABLES CAUSALES VALIDEES EN 18-A (IS 2010-2020 uniquement, formules gelees 18-A)",
+    "interdits": [
+     "holdout",
+     "entrainement",
+     "labels",
+     "backtest",
+     "resultats economiques de selection"
+    ],
+    "base_seq": 355
+   },
+   "entry_hash": "0e96538b9a8a6eb1c603183cdd4d9d371906b19f0c8f4dff7bb6d6b9bd3ae683"
   }
  ]
 }
