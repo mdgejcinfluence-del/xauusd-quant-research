@@ -53,7 +53,7 @@ def mode_lot():
     rows = []
     for r in E.itertuples():
         liq = 'bid' if r.direction == 1 else 'ask'
-        debut = r.t_decision; fin = r.t_decision + pd.Timedelta(hours=20)
+        debut = r.t_decision; fin = r.t_decision + pd.Timedelta(days=4)  # premier tick >= sortie theorique, malgre fermeture de week-end
         frames = []
         for a, b, name in spans:
             if b < debut or a > fin: continue
@@ -103,8 +103,11 @@ def mode_analyse():
     for Hh in (8, 16):
         d = j[j[f'sortie_disponible_H{Hh}'] == 1].copy()
         for scen, s in [('S0', 0.0), ('S1', 0.5), ('S2', 1.0)]:
-            d[f'PL_{scen}'] = [remplir(int(r.direction), float(r.prix_entree_calcule), float(r[f'prix_sortie_H{Hh}']), s)
-                               for r in d.itertuples()]
+            pe = d.prix_entree_calcule.values.astype(float); ps = d[f'prix_sortie_H{Hh}'].values.astype(float)
+            dirv = d.direction.values.astype(float)
+            a = np.where(dirv == 1, pe * (1 + s / 10000), pe * (1 - s / 10000))
+            b = np.where(dirv == 1, ps * (1 - s / 10000), ps * (1 + s / 10000))
+            d[f'PL_{scen}'] = dirv * np.log(b / a) * 10000
         d = d.rename(columns={f'ts_sortie_H{Hh}': 'ts_sortie', f'prix_sortie_H{Hh}': 'prix_sortie',
                               f'delai_sortie_s_H{Hh}': 'delai_sortie_s', f'MFE_H{Hh}': 'MFE_prix',
                               f'MAE_H{Hh}': 'MAE_prix', f'temps_en_perte_s_H{Hh}': 'temps_en_perte_s',
