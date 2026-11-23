@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 147, in <module>
+    elif sys.argv[1] == 'analyse': mode_analyse()
+                                   ^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 99, in mode_analyse
+    H = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R19 / 'P19_HORIZONS_*.csv')))])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase19c_engine.py", line 99, in <listcomp>
+    H = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R19 / 'P19_HORIZONS_*.csv')))])
+                   ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1866, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 423, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 2721, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 3006, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 107, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 735, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
