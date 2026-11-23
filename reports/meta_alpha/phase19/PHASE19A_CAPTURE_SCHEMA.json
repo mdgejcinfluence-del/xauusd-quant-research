@@ -1,0 +1,17 @@
+{
+ "version": "PHASE19A_CAPTURE_SCHEMA v1 (conception, aucune capture demarree)",
+ "A_cotations": {
+   "champs": ["source_id", "timestamp_utc", "bid", "ask", "mid_derive", "timestamp_reception_utc (si disponible)", "sequence_mise_a_jour (si disponible)", "evenement_interruption (debut/reprise de cotation, si detectable)"],
+   "regles": ["horodatage UTC monotone par source", "aucune correction retroactive silencieuse: toute reprise de cotation est un evenement consigne", "conservation brute immutable avant tout agregat"]
+ },
+ "B_decisions": {
+   "champs": ["timestamp_decision_utc", "version_modele", "direction", "probabilites_disponibles (p_M1 le cas echeant, calculee par le modele gele)", "variables_disponibles_a_cet_instant (snapshot complet)", "snapshot_cotation (dernier bid/ask <= timestamp_decision)"],
+   "regles": ["snapshot fige au moment de la decision, jamais recalcule apres coup", "version_modele = empreinte du modele gele utilise"]
+ },
+ "C_execution_si_existante": {
+   "champs": ["intention_ordre", "timestamp_envoi", "accuse_reception", "timestamp_execution", "prix_execution", "quantite_executee", "executions_partielles", "rejets_annulations", "commission_reelle", "swap_reel_si_applicable"],
+   "regles": ["un franchissement de cotation n'est JAMAIS une execution", "la presente phase n'autorise ni envoi d'ordre ni capital: section renseignee uniquement si une capture d'execution sans engagement est mise en place par decision distincte"]
+ },
+ "conservation": ["fichiers bruts immuables + somme SHA-256 par lot", "journal d'acces: toute ouverture de NEW_LOCKED_VALIDATION_DATA est consignee et chainee au registre"],
+ "statut": "SCHEMA DE CONCEPTION - AUCUNE CAPTURE AUTORISEE PAR CETTE PHASE"
+}

@@ -1,0 +1,7 @@
+periode,debut,fin,source,etat_usage,preuve_documentaire,usage_anterieur,statut_independance
+IS apprentissage,2010-01-04,2015-12-31,partitions IS Kaggle (xauusd-is-b01..b07 + missing13),ENTIEREMENT ETUDIEE,"INVENTORY_348_EXHAUSTIVE.json (footers); PHASE17A_TRAINING_SPLIT_AUDIT.csv",conception et entrainement M1/M2/M2R/EXT_13,NON INDEPENDANTE
+IS calibration,2016-01-01,2017-12-31,partitions IS,ENTIEREMENT ETUDIEE,PHASE17A_TRAINING_SPLIT_AUDIT.csv,validation chronologique repetee des Phases 12 a 18,NON INDEPENDANTE
+IS evaluation,2018-01-01,2020-01-20,partitions IS,ENTIEREMENT ETUDIEE,PHASE17A_TRAINING_SPLIT_AUDIT.csv; rapports Phases 13-B a 18-C,evaluations exploratoires repetees,NON INDEPENDANTE (post-hoc)
+Holdout confirme,2020-01-21,2026-09-30,partitions holdout (66 verifiees seq325),CONSOMMEE,PHASE12C2_HOLDOUT_TRANSFER_MANIFEST.csv; seq326 CONFIRMED_HISTORICAL_HOLDOUT,confirmation unique du modele H1 en 12-C.2,INTERDITE - aucune reutilisation
+Periode posterieure a la couverture,2026-10-01,,aucune source actuelle,NON CAPTUREE,INVENTORY_348_EXHAUSTIVE.json: timestamp_max_footer global 2026-09-30T23:59:58Z,aucun,INDEPENDANTE PAR CONSTRUCTION SI CAPTURE PROSPECTIVE SOUS CONTRAT GELE
+Historique meme periode autre fournisseur,2010-01-04,2026-09-30,fournisseur tiers hypothetique,NON ACQUISE,ordre de mission Phase 19-A section 2,meme evenements deja utilises en conception/selection,NON INDEPENDANTE (rejetee)

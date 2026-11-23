@@ -4624,6 +4624,28 @@
     "base_seq": 358
    },
    "entry_hash": "d5e1f982251a5038b60da6036b2aec019acdcae1a0a7cdc532e39a1494feeac5"
+  },
+  {
+   "seq": 360,
+   "prev_hash": "d5e1f982251a5038b60da6036b2aec019acdcae1a0a7cdc532e39a1494feeac5",
+   "entry": {
+    "type": "PHASE19A_AUTHORIZATION",
+    "phase": "19-A",
+    "decision": "AUTORISATION AUDIT DE DISPONIBILITE ET CONCEPTION CAPTURE DONNEES INDEPENDANTES (metadonnees uniquement, aucun entrainement, holdout interdit)",
+    "base_seq": 359
+   },
+   "entry_hash": "dfbc1db5c29fc2e5ab3c7a708d8b6824d867d48701d60c8630f348e6a35d32d4"
+  },
+  {
+   "seq": 361,
+   "prev_hash": "dfbc1db5c29fc2e5ab3c7a708d8b6824d867d48701d60c8630f348e6a35d32d4",
+   "entry": {
+    "type": "PHASE19A_VERDICT",
+    "phase": "19-A",
+    "verdict": "DATA_CAPTURE_REQUIRED",
+    "base_seq": 360
+   },
+   "entry_hash": "1359c5eb91d0a0ad56c3936d39960dc1656b034b65dc0edb3adf06d6758df285"
   }
  ]
 }
