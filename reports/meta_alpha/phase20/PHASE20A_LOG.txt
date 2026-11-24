@@ -1,0 +1,23 @@
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py:106: Pandas4Warning: Series.dt.dayofweek is deprecated and will be removed in a future version. Use Series.dt.day_of_week instead.
+  b['slot_utc'] = b.bar_start.dt.hour; b['jour_semaine'] = b.bar_start.dt.dayofweek
+controle synthetique randomisation: p = 0.727 (attendu non significatif en general)
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py", line 357, in <module>
+    elif sys.argv[1] == 'analyse': mode_analyse()
+                                   ^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py", line 200, in mode_analyse
+    cond, tests = comportements(j, ev)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py", line 291, in comportements
+    base['_serie_test'] = serie
+    ~~~~^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/frame.py", line 4659, in __setitem__
+    self._set_item(key, value)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/frame.py", line 4895, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/frame.py", line 6406, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/common.py", line 612, in require_length_match
+    raise ValueError(
+ValueError: Length of values (15942) does not match length of index (21804)

@@ -1,0 +1,11 @@
+verif,n
+barres_presentes,15942
+barres_attendues_grille_4h,21804
+barres_absentes_grille,5862
+barres_completes,13191
+barres_partielles_ou_trou,2751
+doublons_bar_start,0
+prix_non_positifs,0
+bid_sup_ask_ouverture,0
+ohlc_incoherentes,0
+GAP_CAUSE_UNVERIFIED (intervalles sans cotation: cause non etablie),5862
