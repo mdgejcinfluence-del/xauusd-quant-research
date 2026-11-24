@@ -2755,7 +2755,7 @@ jobs:
         python ci_tools/edge02_shadow.py selftest 2>&1 | tee research/MA-EDGE-02/SELFTEST_LOG.txt
         python ci_tools/edge02_dukascopy.py probe 2>&1 | tee research/MA-EDGE-02/PROBE_LOG.txt
         FIN=$(date -u +%Y-%m-%dT%H:00)
-        python ci_tools/edge02_dukascopy.py collect 2026-11-24T17:00 "$FIN" 2>&1 | tee research/MA-EDGE-02/COLLECT_LOG.txt
+        python ci_tools/edge02_dukascopy.py collect 2026-11-20T00:00 "$FIN" 2>&1 | tee research/MA-EDGE-02/COLLECT_LOG.txt
         echo $? > research/MA-EDGE-02/COLLECT_EXIT.txt
     - name: Committer collecte (robuste)
       if: always()
