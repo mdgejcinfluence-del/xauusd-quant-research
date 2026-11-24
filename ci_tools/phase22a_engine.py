@@ -86,7 +86,7 @@ def mode_lot():
         wi = np.where(win)[0]
         tw, mw, sw = tt[wi], m[wi], sp[wi]
         ser = pd.Series(sw, index=pd.to_datetime(tw))
-        buf = ser.rolling('5min').median().fillna(method='bfill').values
+        buf = ser.rolling('5min').median().bfill().values
         for level_id, niveau, cote, centre, oppose in niveaux:
             seuil_prix = niveau * np.exp(buf / 10000) if cote == 'HIGH' else niveau * np.exp(-buf / 10000)
             franchit = mw > seuil_prix if cote == 'HIGH' else mw < seuil_prix
