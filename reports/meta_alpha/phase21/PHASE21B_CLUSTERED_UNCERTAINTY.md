@@ -1,0 +1,3 @@
+# PHASE 21-B — INCERTITUDE PAR GRAPPES
+
+Bootstrap par grappes de semaines ISO (10 000 replications, graine 2111), population primaire = premiere journee de chaque episode d'expansion (episodes preserves, jamais scindes). References normales regroupees par semaine ISO. p percentile bilaterale `2*min(P(delta<=0), P(delta>=0))`, IC95 percentiles du bootstrap, BH q=0,05 sur 24 tests preenregistres. Minima: 50 evenements et 20 semaines ISO par groupe sinon NON_EVALUABLE_INFERENTIAL. Les fenetres futures chevauchantes restent correlees au sein d'une meme semaine; le bootstrap par grappes hebdomadaires est la methode deja eprouvee (Phases 20-B/21-A). Aucun test IID naif.

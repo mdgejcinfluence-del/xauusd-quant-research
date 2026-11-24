@@ -4831,6 +4831,40 @@
     "profitable_edge": false
    },
    "entry_hash": "6f987d18d9429b496e1740a36b9f0d7f173896f91b6c038bc07420e3056cb3a7"
+  },
+  {
+   "seq": 374,
+   "prev_hash": "6f987d18d9429b496e1740a36b9f0d7f173896f91b6c038bc07420e3056cb3a7",
+   "entry": {
+    "type": "PHASE21B_AUTHORIZATION",
+    "phase": "21-B",
+    "statut": "EXPLORATORY_POST_HOC",
+    "question": "signe expansion D1: direction/amplitude future au-dela memoire amplitude 21-A",
+    "artefacts": "21-A uniquement, holdout interdit, M1 interdit",
+    "graine": 2111,
+    "replications": 10000
+   },
+   "entry_hash": "20f3a3b0537bf9cb4c69b0b0ef067fec3bbf23fb98d1e0c4d040ffe03ff3af27"
+  },
+  {
+   "seq": 375,
+   "prev_hash": "20f3a3b0537bf9cb4c69b0b0ef067fec3bbf23fb98d1e0c4d040ffe03ff3af27",
+   "entry": {
+    "type": "PHASE21B_VERDICT",
+    "phase": "21-B",
+    "verdict": "D1_AMPLITUDE_PERSISTENCE_WITHOUT_DIRECTION",
+    "continuation_retournement": "non attribues (0/24 tests significatifs, q_min 0.968)",
+    "asymetrie_signee": "D1_SIGNED_EXPANSION_ASYMMETRY_IDENTIFIED non attribue",
+    "stabilite": "moyennes brutes inversees 2010-2015 vs 2016-2019, non significatives",
+    "episodes": 126,
+    "primaire": {
+     "positifs": 57,
+     "negatifs": 69
+    },
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "0190eeab65aee9040458802d71c0dc6c2d0ad343188782cc3a67f789e86522e9"
   }
  ]
 }
