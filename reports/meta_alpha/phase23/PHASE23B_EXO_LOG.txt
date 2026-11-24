@@ -1,4 +1,10 @@
 FETCH https://api.db.nomics.world/v22/series/FRED/DTWEXBGS?observations=1&observation_date_from=2009-06-01 400 244
+FETCH https://raw.githubusercontent.com/danielmiessler/Substrate/main/Data/US-Common-Metrics/us-metrics-historical.c 200 16725
+FETCH https://api.db.nomics.world/v22/series/FRED/DGS10?observations=1&observation_date_from=2009-06-01 400 244
+FETCH https://raw.githubusercontent.com/Apress/Statistical-Quantitative-Methods-in-Finance/main/data/DGS10.csv 200 258674
+FETCH https://raw.githubusercontent.com/upathare1/Advanced-Term-Structures/main/Code/data/DGS10.csv 200 20742
+FETCH https://raw.githubusercontent.com/ethanteng/finsight/main/src/datasets/DFII10.csv 200 98859
+FETCH https://raw.githubusercontent.com/js5810/TreasuryAuction/main/data/FRED_data/DFII10.csv 200 90325
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2010.htm 200 96396
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2011.htm 200 98403
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2012.htm 200 98324
@@ -9,19 +15,20 @@ FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm 200 9
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2017.htm 200 95376
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2018.htm 200 95881
 FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2019.htm 200 97520
-# PHASE 23-B — RECONCILIATION DES SOURCES
-
-- DTWEXBGS via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DTWEXBGS via FRED fredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DTWEXBGS: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
-- DGS10 via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DGS10 via FRED fredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DGS10 via DBnomics miroir FRED: ECHEC ReadTimeout HTTPSConnectionPool(host='api.db.nomics.world', port=443): Read timed out. (read timeout=120)
-- DGS10: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
-- DFII10 via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DFII10 via FRED fredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
-- DFII10 via DBnomics miroir FRED: ECHEC ReadTimeout HTTPSConnectionPool(host='api.db.nomics.world', port=443): Read timed out. (read timeout=120)
-- DFII10: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
-- FOMC parse (communiques officiels): 0 decisions 2010-2019
-- CPI/PCE/NFP: dates officielles non enumerables de facon verifiable sans cle API (archives BLS/BEA non indexees par date de publication); familles classees INSUFFICIENT_HISTORICAL_COVERAGE plutot que reconstruites.
-- Catalogue VIDE: etude B non evaluable (SOURCE_RECONCILIATION_FAILED)
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase23b_engine.py:127: Pandas4Warning: Timestamp.dayofweek is deprecated and will be removed in a future version. Use Timestamp.day_of_week instead.
+  jour_semaine=cand.dayofweek, source='temoin meme jour de semaine/creneau, sans annonce'))
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase23b_engine.py", line 336, in <module>
+    if sys.argv[1] == 'exo': mode_exo()
+                             ^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase23b_engine.py", line 132, in mode_exo
+    E_out = pd.concat([E[cols + ['groupe_annonce', 'n_annonces_jour']], T[cols]], ignore_index=True)
+                                                                        ~^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/frame.py", line 4336, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6557, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6609, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['heure_et'] not in index"
