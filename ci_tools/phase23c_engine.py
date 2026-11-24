@@ -165,7 +165,11 @@ def mode_analyse():
     P = pd.concat([pd.read_parquet(f) for f in _g.glob(str(R23 / 'P23C_PATH_*.parquet'))])
     P = P.drop_duplicates(['role', 'ts_utc']).sort_values(['ts_utc', 'role'])
     P.to_parquet(R23 / 'PHASE23C_EVENT_PATH_METRICS.parquet', index=False)
-    rev = pd.concat([pd.read_csv(f) for f in _g.glob(str(R23 / 'P23C_REV_*.csv'))]).drop_duplicates(['role', 'ts_utc'])
+    _revs = []
+    for f in _g.glob(str(R23 / 'P23C_REV_*.csv')):
+        if pathlib.Path(f).stat().st_size > 10:
+            _revs.append(pd.read_csv(f))
+    rev = pd.concat(_revs).drop_duplicates(['role', 'ts_utc']) if _revs else pd.DataFrame()
     rev.to_csv(R23 / 'PHASE23C_FIRST_REVISIT_CATALOG.csv', index=False)
     cols = [c for c in P.columns if any(k in c for k in ('MFE_post15', 'MAE_post15', 't_MFE', 't_MAE', 'amplitude_conservee', 'n_retours'))]
     P[['role', 'ts_utc', 'direction', 'reaction_initiale_bp'] + cols].to_parquet(
