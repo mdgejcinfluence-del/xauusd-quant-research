@@ -98,6 +98,10 @@ name: phase10_all
         description: 'Phase 24-F: economie calibration 2016-2017 tick IS (seq400)'
         type: boolean
         default: false
+      phase25b:
+        description: 'Phase 25-B: extraction GVZ/COT + cartographie (seq406)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2689,4 +2693,41 @@ jobs:
         git add -A reports/meta_alpha/phase24/
         git status --porcelain
         git diff --cached --quiet || git commit -m 'Phase 24-F: economie calibration (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+  exo25b:
+    name: P25-B extraction GVZ/COT et cartographie causale
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    if: ${{ inputs.phase25b }}
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow requests
+    - name: Extraction documentee et analyse
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase25
+        python ci_tools/phase25b_engine.py exo 2>&1 | tee reports/meta_alpha/phase25/PHASE25B_EXO_LOG.txt
+        echo $? > reports/meta_alpha/phase25/PHASE25B_EXO_EXIT.txt
+        python ci_tools/phase25b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase25/PHASE25B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase25/PHASE25B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer extraction et cartographie (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p25bout && cp -a reports/meta_alpha/phase25/. /tmp/p25bout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p25bout/. reports/meta_alpha/phase25/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase25/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 25-B: extraction et cartographie (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research

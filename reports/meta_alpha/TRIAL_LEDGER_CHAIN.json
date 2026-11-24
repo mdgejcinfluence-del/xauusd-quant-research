@@ -5310,6 +5310,19 @@
     "profitable_edge": false
    },
    "entry_hash": "a7aafdc06bb006876410026cb695fa36569904f82d9a3b0469fbd4c98104d6cf"
+  },
+  {
+   "seq": 406,
+   "prev_hash": "a7aafdc06bb006876410026cb695fa36569904f82d9a3b0469fbd4c98104d6cf",
+   "entry": {
+    "type": "PHASE25B_AUTORISATION",
+    "phase": "25-B",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "execution du protocole 25-B transmis: cartographie causale GVZ J-1 et COT publie, terciles fixes sur calibration 2016-2017, relecture post-hoc 2018-2019",
+    "regles": "sources independantes, aucune fusion GVZxCOT, aucun entrainement, aucun filtre, M15_TIME_ONLY inchange, holdout ferme"
+   },
+   "entry_hash": "efc6d11caafb559c9af2cce67589f590c8d3710bf4edd4ea144bf5afd34f0d69"
   }
  ]
 }
