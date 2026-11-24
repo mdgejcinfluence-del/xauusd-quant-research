@@ -102,6 +102,10 @@ name: phase10_all
         description: 'Phase 24-E: premier passage label M15 tick IS (seq398)'
         type: boolean
         default: false
+      phase24f:
+        description: 'Phase 24-F: economie calibration 2016-2017 tick IS (seq400)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2605,4 +2609,92 @@ jobs:
         git add -A reports/meta_alpha/phase24/
         git status --porcelain
         git diff --cached --quiet || git commit -m 'Phase 24-E: analyse premier passage (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+  lots24f:
+    name: P24F lot ${{ matrix.batch }} (economie calibration tick IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase24f }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Economie calibration du lot (IS uniquement)
+      env:
+        P23_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase24
+        python ci_tools/phase24f_engine.py lot 2>&1 | tee reports/meta_alpha/phase24/PHASE24F_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase24/PHASE24F_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Publier les fragments du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p24f-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase24/P24F_*_${{ matrix.batch }}.parquet
+        retention-days: 90
+        if-no-files-found: error
+  analyse24f:
+    name: P24-F fusion economie calibration
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase24f }}
+    needs:
+    - lots24f
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p24f-frag-*
+        path: reports/meta_alpha/phase24
+        merge-multiple: true
+    - name: Fusion Phase 24-F
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase24
+        python ci_tools/phase24f_engine.py analyse 2>&1 | tee reports/meta_alpha/phase24/PHASE24F_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase24/PHASE24F_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 24-F (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p24fout && cp -a reports/meta_alpha/phase24/. /tmp/p24fout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p24fout/. reports/meta_alpha/phase24/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase24/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 24-F: economie calibration (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research

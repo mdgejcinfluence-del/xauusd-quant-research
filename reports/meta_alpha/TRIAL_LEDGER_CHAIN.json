@@ -5226,6 +5226,20 @@
     "profitable_edge": false
    },
    "entry_hash": "ad4807ecc9ca8c9d2d002c4a815b0ef395dfdb8bb43ddc47e8c2ec2450f50efc"
+  },
+  {
+   "seq": 400,
+   "prev_hash": "ad4807ecc9ca8c9d2d002c4a815b0ef395dfdb8bb43ddc47e8c2ec2450f50efc",
+   "entry": {
+    "type": "PHASE24F_AUTORISATION",
+    "phase": "24-F",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "audit de selectivite economique du score M15; frontiere P_BE construite UNIQUEMENT sur calibration 2016-2017; evaluation 2018-2019 = diagnostic post-hoc seulement",
+    "grille_score_figee": "<0,560955; [0,560955,0,60); [0,60,0,65); [0,65,0,70); [0,70,0,75); [0,75,0,80); [0,80,0,85); [0,85,0,90); [0,90,1]",
+    "interdictions": "aucun seuil choisi sur 2018-2019, aucun nouvel entrainement/filtre, holdout ferme"
+   },
+   "entry_hash": "c5cfbb91e212b84874e2351e946067f8bd62515a764a0a468f0623028205c9cf"
   }
  ]
 }
