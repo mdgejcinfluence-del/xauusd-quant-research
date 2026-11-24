@@ -154,11 +154,11 @@ def mode_lot():
                                       extension_range_bp=float(crange[j_end] - crange[i]),
                                       retracement_depuis_extreme_bp=float(abs(logbp(np.array([m[seg].max() if trig != 'LOW' else m[seg].min()]), np.array([m[j_end]]))[0]))))
     R21.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(day_rows).to_csv(R21 / f'P21D_DAY_{batch}.csv', index=False)
-    pd.DataFrame(pass_rows).to_csv(R21 / f'P21D_PASSAGE_{batch}.csv', index=False)
-    pd.DataFrame(post_rows).to_csv(R21 / f'P21D_POST_{batch}.csv', index=False)
-    pd.DataFrame(rec_rows).to_csv(R21 / f'P21D_RECORD_{batch}.csv', index=False)
-    pd.DataFrame(spread_rows).to_csv(R21 / f'P21D_SPREAD_{batch}.csv', index=False)
+    pd.DataFrame(day_rows).to_parquet(R21 / f'P21D_DAY_{batch}.parquet', index=False)
+    pd.DataFrame(pass_rows).to_parquet(R21 / f'P21D_PASSAGE_{batch}.parquet', index=False)
+    pd.DataFrame(post_rows).to_parquet(R21 / f'P21D_POST_{batch}.parquet', index=False)
+    pd.DataFrame(rec_rows).to_parquet(R21 / f'P21D_RECORD_{batch}.parquet', index=False)
+    pd.DataFrame(spread_rows).to_parquet(R21 / f'P21D_SPREAD_{batch}.parquet', index=False)
     print('lot termine', batch, len(day_rows), 'jours', len(pass_rows), 'passages', len(rec_rows), 'records', flush=True)
 
 
@@ -176,11 +176,11 @@ def boot_diff(a, b, mesure, rng):
 
 
 def mode_analyse():
-    day = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_DAY_*.csv')))])
-    pas = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_PASSAGE_*.csv')))])
-    post = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_POST_*.csv')))])
-    rec = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_RECORD_*.csv')))])
-    spr = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_SPREAD_*.csv')))])
+    day = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_DAY_*.parquet')))])
+    pas = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_PASSAGE_*.parquet')))])
+    post = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_POST_*.parquet')))])
+    rec = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_RECORD_*.parquet')))])
+    spr = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_SPREAD_*.parquet')))])
     # journees scindees entre deux lots (fragments partiels): exclues et documentees, jamais fusionnees
     jours_dup = sorted(day[day.duplicated('jour', keep=False)].jour.unique())
     for nom, df in [('day', day), ('pas', pas), ('post', post), ('rec', rec), ('spr', spr)]:

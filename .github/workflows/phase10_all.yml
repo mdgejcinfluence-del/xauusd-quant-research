@@ -1841,7 +1841,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: p21d-frag-${{ matrix.batch }}
-        path: reports/meta_alpha/phase21/P21D_*.csv
+        path: reports/meta_alpha/phase21/P21D_*.parquet
         retention-days: 90
         if-no-files-found: error
   analyse21d:
