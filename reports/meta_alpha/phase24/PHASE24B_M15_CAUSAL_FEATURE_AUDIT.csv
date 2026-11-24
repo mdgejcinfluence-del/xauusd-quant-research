@@ -1,0 +1,6 @@
+concept,variable_M15,formule,disponible_a,statut,note
+ratio de retracement,ratio_repli,profondeur du repli (extreme favorable -> extreme adverse jusqu a reintegration) / MFE atteint a t_reintegration,t_reintegration (cloture M15 confirmante),CAUSAL_VALIDE,borne a la reintegration; jamais fenetre complete
+duree extreme -> reintegration,duree_extreme_vers_treint_min,15 min x (indice barre de reintegration - indice barre de extreme favorable),t_reintegration,CAUSAL_VALIDE,"resolution M15 (15 min), conversion documentee"
+MFE a la decision,MFE_A_TREINT_BP,"10000 x ln(extreme favorable Mid jusqu a reintegration / P0), oriente",t_reintegration,CAUSAL_VALIDE,extrema des barres <= reintegration uniquement
+touches de P0 avant reintegration,nb_touches_P0,nombre de barres M15 dont extreme touche P0 dans le sens du retour avant la cloture de reintegration,t_reintegration,CAUSAL_VALIDE,resolution barre M15 (historique: minutes M1) - conversion documentee
+contexte temporel,Horloge UTC 08:00-16:00 (permission),"permission binaire, pas une variable du modele",t_decision,CAUSAL_VALIDE,aucune indicatrice ASIA/NIGHT creee; pas de dictionnaire de session M1 reproduit
