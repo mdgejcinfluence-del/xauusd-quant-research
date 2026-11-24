@@ -4955,6 +4955,21 @@
     "profitable_edge": false
    },
    "entry_hash": "c464d57a1297304c2ac509e936b53c8e13fd4f240e7180839808c9c84608da92"
+  },
+  {
+   "seq": 382,
+   "prev_hash": "c464d57a1297304c2ac509e936b53c8e13fd4f240e7180839808c9c84608da92",
+   "entry": {
+    "type": "PHASE22B_AUTHORIZATION",
+    "phase": "22-B",
+    "statut": "EXPLORATORY_POST_HOC",
+    "objet": "sorties structurelles preenregistrees: A stop au-dela extreme balaye, cibles centre/extremite opposee; B stop extreme pullback, TP 1,5R/2R, expiration 8 barres",
+    "sources": "evenements certifies 22-A + ticks IS limites aux evenements; holdout interdit",
+    "couts": "19-B S0/S1/S2, S2 principal",
+    "graine": 2119,
+    "replications": 10000
+   },
+   "entry_hash": "9a2c21545eda65be5735169e8aaba3df1b24d82d7a65ed9422df8a3f175508b6"
   }
  ]
 }

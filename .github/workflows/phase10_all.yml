@@ -98,6 +98,10 @@ name: phase10_all
         description: 'Phase 22-A: Sweep&Reclaim tick + Impulse-Pullback-Resumption H4 IS (seq380, post-hoc)'
         type: boolean
         default: false
+      phase22b:
+        description: 'Phase 22-B: sorties structurelles familles A+B IS (seq382, post-hoc)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2008,6 +2012,118 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: p22a-livrables
+        path: reports/meta_alpha/phase22
+        retention-days: 90
+        if-no-files-found: warn
+
+  lots22b:
+    name: P22B lot ${{ matrix.batch }} (sorties structurelles tick IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase22b }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Sorties structurelles du lot (IS uniquement)
+      env:
+        P22_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase22
+        python ci_tools/phase22b_engine.py lot 2>&1 | tee reports/meta_alpha/phase22/PHASE22B_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase22/PHASE22B_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Consigner le journal du lot en cas d'echec
+      if: failure()
+      run: |
+        cp reports/meta_alpha/phase22/PHASE22B_LOTLOG_${{ matrix.batch }}.txt /tmp/lotlog.txt
+        cp reports/meta_alpha/phase22/PHASE22B_LOTEXIT_${{ matrix.batch }}.txt /tmp/lotexit.txt
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        mkdir -p reports/meta_alpha/phase22
+        cp /tmp/lotlog.txt reports/meta_alpha/phase22/PHASE22B_LOTLOG_${{ matrix.batch }}.txt
+        cp /tmp/lotexit.txt reports/meta_alpha/phase22/PHASE22B_LOTEXIT_${{ matrix.batch }}.txt
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add reports/meta_alpha/phase22/PHASE22B_LOTLOG_${{ matrix.batch }}.txt reports/meta_alpha/phase22/PHASE22B_LOTEXIT_${{ matrix.batch }}.txt
+        git diff --cached --quiet || git commit -m 'Phase 22-B: journal lot en echec (diagnostic)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les fragments du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p22b-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase22/P22B_*_${{ matrix.batch }}.parquet
+        retention-days: 90
+        if-no-files-found: error
+  analyse22b:
+    name: P22-B sorties structurelles (familles separees)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase22b }}
+    needs:
+    - lots22b
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p22b-frag-*
+        path: reports/meta_alpha/phase22
+        merge-multiple: true
+    - name: Analyse Phase 22-B
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase22
+        python ci_tools/phase22b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase22/PHASE22B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase22/PHASE22B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 22-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p22bout && cp -a reports/meta_alpha/phase22/. /tmp/p22bout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p22bout/. reports/meta_alpha/phase22/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase22/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 22-B: sorties structurelles IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p22b-livrables
         path: reports/meta_alpha/phase22
         retention-days: 90
         if-no-files-found: warn
