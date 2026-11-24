@@ -1,0 +1,18 @@
+{
+ "A_evenements_primaires": 3073,
+ "A_par_niveau": {
+  "A2_OVERNIGHT_LOW": 1165,
+  "A1_OVERNIGHT_HIGH": 1064,
+  "A4_PREVIOUS_DAY_LOW": 440,
+  "A3_PREVIOUS_DAY_HIGH": 404
+ },
+ "A_sans_reclaim": 1281,
+ "B_statuts": {
+  "RESUMPTION_CONFIRMED": 505,
+  "IMPULSE_FULL_RETRACE_INVALIDATION": 300,
+  "NO_RESUMPTION_WITHIN_8_H4": 97,
+  "NO_PULLBACK_WITHIN_8_H4": 3
+ },
+ "n_tests": 18,
+ "n_sig": 12
+}

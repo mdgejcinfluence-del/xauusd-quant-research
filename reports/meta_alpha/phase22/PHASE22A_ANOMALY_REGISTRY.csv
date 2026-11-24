@@ -1,0 +1,19 @@
+famille,comparaison,q_value,qualification
+A,"A1_OVERNIGHT_HIGH 1h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A1_OVERNIGHT_HIGH 4h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A1_OVERNIGHT_HIGH EOD, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A2_OVERNIGHT_LOW 1h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A2_OVERNIGHT_LOW 4h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A2_OVERNIGHT_LOW EOD, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A3_PREVIOUS_DAY_HIGH 1h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A3_PREVIOUS_DAY_HIGH 4h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A3_PREVIOUS_DAY_HIGH EOD, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A4_PREVIOUS_DAY_LOW 1h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A4_PREVIOUS_DAY_LOW 4h, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+A,"A4_PREVIOUS_DAY_LOW EOD, net S2 vs 0",0.0,EFFET_SIGNIFICATIF (candidat a qualifier)
+B,"reprise confirmee H2 barres, net S2 vs 0",0.6736,NO_ECONOMIC_ASYMMETRY_SUPPORTED
+B,"reprise vs sans-reprise H2 (terminal aligne mid, descriptif)",,INSUFFICIENT_EVIDENCE
+B,"reprise confirmee H4 barres, net S2 vs 0",0.6405000000000001,NO_ECONOMIC_ASYMMETRY_SUPPORTED
+B,"reprise vs sans-reprise H4 (terminal aligne mid, descriptif)",,INSUFFICIENT_EVIDENCE
+B,"reprise confirmee H8 barres, net S2 vs 0",0.2979230769230769,NO_ECONOMIC_ASYMMETRY_SUPPORTED
+B,"reprise vs sans-reprise H8 (terminal aligne mid, descriptif)",,INSUFFICIENT_EVIDENCE
