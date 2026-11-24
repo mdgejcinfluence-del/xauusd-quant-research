@@ -1,34 +1,14 @@
-FETCH https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm 200 166359
-FETCH https://www.bls.gov/schedule/2010/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2011/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2012/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2013/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2014/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2015/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2016/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2017/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2018/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bls.gov/schedule/2019/home.htm 403 1325
-FETCH https://www.bls.gov/schedule/news_release/current_year.asp 403 1325
-FETCH https://www.bea.gov/news/schedule/2010 200 61331
-FETCH https://www.bea.gov/news/schedule/2011 200 61331
-FETCH https://www.bea.gov/news/schedule/2012 200 61331
-FETCH https://www.bea.gov/news/schedule/2013 200 61331
-FETCH https://www.bea.gov/news/schedule/2014 200 61331
-FETCH https://www.bea.gov/news/schedule/2015 200 61331
-FETCH https://www.bea.gov/news/schedule/2016 200 61331
-FETCH https://www.bea.gov/news/schedule/2017 200 61331
-FETCH https://www.bea.gov/news/schedule/2018 200 61331
-FETCH https://www.bea.gov/news/schedule/2019 200 61331
+FETCH https://api.db.nomics.world/v22/series/FRED/DTWEXBGS?observations=1&observation_date_from=2009-06-01 400 244
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2010.htm 200 96396
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2011.htm 200 98403
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2012.htm 200 98324
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2013.htm 200 95985
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2014.htm 200 96265
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2015.htm 200 95417
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm 200 96005
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2017.htm 200 95376
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2018.htm 200 95881
+FETCH https://www.federalreserve.gov/monetarypolicy/fomchistorical2019.htm 200 97520
 # PHASE 23-B — RECONCILIATION DES SOURCES
 
 - DTWEXBGS via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
@@ -36,9 +16,12 @@ FETCH https://www.bea.gov/news/schedule/2019 200 61331
 - DTWEXBGS: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
 - DGS10 via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
 - DGS10 via FRED fredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
+- DGS10 via DBnomics miroir FRED: ECHEC ReadTimeout HTTPSConnectionPool(host='api.db.nomics.world', port=443): Read timed out. (read timeout=120)
 - DGS10: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
 - DFII10 via ALFRED alfredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
 - DFII10 via FRED fredgraph.csv: ECHEC ReadTimeout HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=120)
+- DFII10 via DBnomics miroir FRED: ECHEC ReadTimeout HTTPSConnectionPool(host='api.db.nomics.world', port=443): Read timed out. (read timeout=120)
 - DFII10: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)
-- FOMC parse: 0 reunions 2010-2019
+- FOMC parse (communiques officiels): 0 decisions 2010-2019
+- CPI/PCE/NFP: dates officielles non enumerables de facon verifiable sans cle API (archives BLS/BEA non indexees par date de publication); familles classees INSUFFICIENT_HISTORICAL_COVERAGE plutot que reconstruites.
 - Catalogue VIDE: etude B non evaluable (SOURCE_RECONCILIATION_FAILED)
