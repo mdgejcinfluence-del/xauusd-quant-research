@@ -5184,6 +5184,21 @@
     "interdictions": "holdout ferme, aucun portefeuille, aucun ordre, aucun horizon alternatif"
    },
    "entry_hash": "a9efbadfe9e470f2c478a412b5fcadc544c32a19c660088344f59b12e0df6545"
+  },
+  {
+   "seq": 397,
+   "prev_hash": "a9efbadfe9e470f2c478a412b5fcadc544c32a19c660088344f59b12e0df6545",
+   "entry": {
+    "type": "PHASE24D_VERDICT",
+    "phase": "24-D",
+    "verdict_global": "M15_PREDICTIVE_SIGNAL_WITHOUT_ECONOMIC_EDGE",
+    "P0": "M15_TIME_ONLY_PREDICTIVE_BUT_NOT_ECONOMIC (S2 -3,31 bp, IC95 grappe [-5,97;-0,61])",
+    "P1": "M15_H4_GATE_NO_INCREMENTAL_VALUE (-7,01 bp)",
+    "P2": "M15_D1_GATE_NO_INCREMENTAL_VALUE (-0,40 bp, inversion 2018/2019)",
+    "note": "le label de reprise ne se convertit pas en rendement de detention 8h; aucun candidat economique",
+    "profitable_edge": false
+   },
+   "entry_hash": "ffd90d1a8420e50af106018eb61b511c53bd1c9120e462a09dc4086f6d6abefc"
   }
  ]
 }
