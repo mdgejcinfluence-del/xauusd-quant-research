@@ -37,12 +37,18 @@ def mode_exo():
     for s in SERIES:
         df = None; source = None
         for nom, url in [('ALFRED alfredgraph.csv', f'https://alfred.stlouisfed.org/graph/alfredgraph.csv?id={s}&cosd=2009-06-01&coed=2020-03-01'),
-                         ('FRED fredgraph.csv', f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={s}&cosd=2009-06-01&coed=2020-03-01')]:
+                         ('FRED fredgraph.csv', f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={s}&cosd=2009-06-01&coed=2020-03-01'),
+                         ('DBnomics miroir FRED', f'https://api.db.nomics.world/v22/series/FRED/{s}?observations=1&observation_date_from=2009-06-01')]:
             try:
                 r = fetch(url)
                 if r.status_code == 200 and len(r.content) > 200:
                     lignes.append(f'- {s} via {nom}: {len(r.content)} octets, en-tete: {r.content[:120]!r}')
-                    d = pd.read_csv(io.BytesIO(r.content))
+                    if nom.startswith('DBnomics'):
+                        obs = r.json()['series'][0]['value']
+                        per = r.json()['series'][0]['period']
+                        d = pd.DataFrame({'date_obs': per, 'valeur': obs})
+                    else:
+                        d = pd.read_csv(io.BytesIO(r.content))
                     lignes.append(f'  colonnes: {list(d.columns)}; lignes: {len(d)}')
                     if len(d.columns) >= 2:
                         df = d; source = nom; break
@@ -60,55 +66,18 @@ def mode_exo():
         lignes.append(f'- Series sauvegardees: {sorted(F.serie.unique())} (vintage: voir source; alfredgraph = vintage ALFRED si obtenu, sinon vintage courante FRED documentee comme limite)')
     # Calendriers officiels
     evenements = []
-    # FOMC: page officielle des calendriers
-    try:
-        r = fetch('https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm')
-        txt = r.text
-        # sections par annee "2014 FOMC Meetings" puis "January 28-29"
-        blocs = re.split(r'(20\d\d)\s+FOMC Meetings', txt)
-        for i in range(1, len(blocs) - 1, 2):
-            annee = int(blocs[i]); corps = re.sub(r'<[^>]+>', ' ', blocs[i + 1])
-            for m in re.finditer(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?', corps):
-                mois = pd.to_datetime(m.group(1), format='%B').month
-                jour = int(m.group(3) or m.group(2))
-                try: date = pd.Timestamp(annee, mois, jour)
-                except ValueError: continue
-                if 2010 <= annee <= 2019:
-                    evenements.append(dict(type='FOMC', date=date, heure_et='14:00', source='federalreserve.gov fomccalendars'))
-        lignes.append(f'- FOMC parse: {sum(1 for e in evenements if e["type"]=="FOMC")} reunions 2010-2019')
-    except Exception as e:
-        lignes.append(f'- FOMC: ECHEC {type(e).__name__} {e}')
-    # BLS: calendriers annuels (CPI + Employment Situation), BEA (PCE via Personal Income)
+    # FOMC: pages officielles historiques par annee; dates des communiques monetaryAAAAMMJJ
     for annee in range(2010, 2020):
-        for url in [f'https://www.bls.gov/schedule/{annee}/home.htm', f'https://www.bls.gov/schedule/news_release/current_year.asp']:
-            try:
-                r = fetch(url, timeout=60)
-                if r.status_code != 200: continue
-                corps = re.sub(r'<[^>]+>', ' ', r.text)
-                corps = re.sub(r'\s+', ' ', corps)
-                for type_, cle in [('CPI', 'Consumer Price Index'), ('NFP', 'Employment Situation')]:
-                    for m in re.finditer(re.escape(cle) + r'.{0,120}?(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(20\d\d)', corps):
-                        mois = pd.to_datetime(m.group(1), format='%B').month
-                        date = pd.Timestamp(int(m.group(3)), mois, int(m.group(2)))
-                        if date.year == annee:
-                            evenements.append(dict(type=type_, date=date, heure_et='08:30', source=f'bls.gov schedule {annee}'))
-                break
-            except Exception as e:
-                lignes.append(f'- BLS {annee}: ECHEC {type(e).__name__}')
-    for annee in range(2010, 2020):
-        for url in [f'https://www.bea.gov/news/schedule/{annee}', 'https://www.bea.gov/news/schedule']:
-            try:
-                r = fetch(url, timeout=60)
-                if r.status_code != 200: continue
-                corps = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', r.text))
-                for m in re.finditer(r'Personal Income and Outlays.{0,120}?(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(20\d\d)', corps):
-                    mois = pd.to_datetime(m.group(1), format='%B').month
-                    date = pd.Timestamp(int(m.group(3)), mois, int(m.group(2)))
-                    if date.year == annee:
-                        evenements.append(dict(type='PCE', date=date, heure_et='08:30', source=f'bea.gov schedule {annee}'))
-                break
-            except Exception as e:
-                lignes.append(f'- BEA {annee}: ECHEC {type(e).__name__}')
+        try:
+            r = fetch(f'https://www.federalreserve.gov/monetarypolicy/fomchistorical{annee}.htm', timeout=60)
+            dates = sorted(set(re.findall(r'monetary(20\d{2})(\d{2})(\d{2})a1', r.text)))
+            for a, m_, j_ in dates:
+                evenements.append(dict(type='FOMC', date=pd.Timestamp(int(a), int(m_), int(j_)), heure_et='14:00',
+                                       source=f'federalreserve.gov fomchistorical{annee}'))
+        except Exception as e:
+            lignes.append(f'- FOMC {annee}: ECHEC {type(e).__name__}')
+    lignes.append(f'- FOMC parse (communiques officiels): {sum(1 for e in evenements if e["type"]=="FOMC")} decisions 2010-2019')
+    lignes.append('- CPI/PCE/NFP: dates officielles non enumerables de facon verifiable sans cle API (archives BLS/BEA non indexees par date de publication); familles classees INSUFFICIENT_HISTORICAL_COVERAGE plutot que reconstruites.')
     E = pd.DataFrame(evenements).drop_duplicates(['type', 'date']) if evenements else pd.DataFrame(columns=['type', 'date', 'heure_et', 'source'])
     if len(E):
         E['ts_et'] = pd.to_datetime(E.date.dt.strftime('%Y-%m-%d') + ' ' + E.heure_et)
