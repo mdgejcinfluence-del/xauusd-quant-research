@@ -1,4 +1,4 @@
-  2026-11-11 00:00:00 INDISPONIBLE (URLError: <urlopen error timed out>)
+  2026-11-11 08:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>)
   2026-11-11 08:00:00 INDISPONIBLE (URLError: <urlopen error timed out>)
   2026-11-11 13:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>)
 {'ticks_jour': 17155, 'octets_parquet_estimes_par_jour': 167965, 'estimation_GB_par_an_250j': 0.04, 'estimation_GB_2010_2026': 0.7}
