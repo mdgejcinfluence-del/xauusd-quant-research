@@ -10,24 +10,10 @@
   "dernier": "2026-11-24 15:59:59.961000"
  },
  "2026-11-24 14:00:00+00:00": {
-  "ticks": 42899,
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true,
-  "spread_mediane_unites": 0.42000000000007276,
-  "spread_p95_unites": 0.5399999999999636,
-  "ecart_max_sec": 2.67,
-  "premier": "2026-11-24 14:00:00.023000",
-  "dernier": "2026-11-24 14:59:59.757000"
+  "ticks": 0
  },
  "2026-11-23 15:00:00+00:00": {
-  "ticks": 47023,
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true,
-  "spread_mediane_unites": 0.3999999999996362,
-  "spread_p95_unites": 0.5059999999998581,
-  "ecart_max_sec": 1.007,
-  "premier": "2026-11-23 15:00:00.026000",
-  "dernier": "2026-11-23 15:59:59.982000"
+  "ticks": 0
  },
  "2026-11-22 15:00:00+00:00": {
   "ticks": 0
