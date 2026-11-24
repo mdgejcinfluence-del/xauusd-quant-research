@@ -86,6 +86,10 @@ name: phase10_all
         description: 'Phase 23-B: fenetres tick annonces macro IS (seq386, catalogue requis)'
         type: boolean
         default: false
+      phase23c:
+        description: 'Phase 23-C: trajectoires FOMC tick IS (seq388, developpement)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2235,3 +2239,49 @@ jobs:
         git status --porcelain
         git diff --cached --quiet || git commit -m 'Phase 23-B: etudes A+B IS (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research
+
+  lots23c:
+    name: P23C lot ${{ matrix.batch }} (trajectoires FOMC tick IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase23c }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Trajectoires FOMC du lot (IS uniquement)
+      env:
+        P23_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase23
+        python ci_tools/phase23c_engine.py lot 2>&1 | tee reports/meta_alpha/phase23/PHASE23C_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase23/PHASE23C_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Publier les fragments du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p23c-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase23/P23C_*_${{ matrix.batch }}.*
+        retention-days: 90
+        if-no-files-found: error

@@ -5045,6 +5045,20 @@
     "profitable_edge": false
    },
    "entry_hash": "e198aec4fd328270249c241a2618777a86004fbf3f4aa00552236312997c7523"
+  },
+  {
+   "seq": 388,
+   "prev_hash": "e198aec4fd328270249c241a2618777a86004fbf3f4aa00552236312997c7523",
+   "entry": {
+    "type": "PHASE23C_AUTORISATION",
+    "phase": "23-C",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "anatomie temporelle reactions FOMC (73 evt + 73 temoins consommes, developpement uniquement), audit 71%/88%, candidat directionnel fige pour validation prospective",
+    "regle_figee": "direction = signe P15 vs P0 a t+15; entree premier Ask/Bid strictement apres decision, delai max 60s; sorties t+60 et t+240; S2 principal; aucun seuil/stop/TP",
+    "interdictions": "holdout ferme, aucun nouvel evenement historique, aucune confirmation independante revendiquee, aucun ordre"
+   },
+   "entry_hash": "f7e9d6de27991bdde975884c214a01500ea10e39c83ce836f0eedf2cc3de2b00"
   }
  ]
 }
