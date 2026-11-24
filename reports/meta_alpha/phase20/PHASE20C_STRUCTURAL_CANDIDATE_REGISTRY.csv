@@ -1,0 +1,6 @@
+configuration,n_primaires,qualification,q_min,note
+CFG_A,153,UNSTABLE_STRUCTURAL_CANDIDATE,0.48,"classification descriptive, jamais une strategie ni un edge rentable"
+CFG_B,145,UNSTABLE_STRUCTURAL_CANDIDATE,0.48,"classification descriptive, jamais une strategie ni un edge rentable"
+CFG_C,686,AMPLITUDE_ONLY,,"classification descriptive, jamais une strategie ni un edge rentable"
+CFG_D,74,DIRECTIONAL_ASYMMETRY_CANDIDATE,0.48,"classification descriptive, jamais une strategie ni un edge rentable"
+CFG_E,43,INSUFFICIENT_EVIDENCE,0.5904,"classification descriptive, jamais une strategie ni un edge rentable"

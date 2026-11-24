@@ -1,0 +1,6 @@
+configuration,n_toutes,n_episodes,n_primaires,n_semaines,chevauchements,atr_valides
+CFG_A,208,202,182,176,CFG_B:0;CFG_C:0;CFG_D:26;CFG_E:0,22
+CFG_B,196,190,167,152,CFG_A:0;CFG_C:0;CFG_D:0;CFG_E:13,26
+CFG_C,929,803,767,409,CFG_A:0;CFG_B:0;CFG_D:78;CFG_E:50,129
+CFG_D,104,100,84,87,CFG_A:26;CFG_B:0;CFG_C:78;CFG_E:0,17
+CFG_E,63,61,48,56,CFG_A:0;CFG_B:13;CFG_C:50;CFG_D:0,6

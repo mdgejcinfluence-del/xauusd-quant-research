@@ -4771,6 +4771,30 @@
     "base_seq": 368
    },
    "entry_hash": "dae6d12f6f0640ed4ff86cae5e4ba6d62cab07d86a94466ccd8885d21513edf3"
+  },
+  {
+   "seq": 370,
+   "prev_hash": "dae6d12f6f0640ed4ff86cae5e4ba6d62cab07d86a94466ccd8885d21513edf3",
+   "entry": {
+    "type": "PHASE20C_AUTHORIZATION",
+    "phase": "20-C",
+    "decision": "AUTORISATION MORPHOLOGIE DES GRANDES AMPLITUDES H4 (configurations A-E preenregistrees, artefacts 20-A uniquement, aucun modele/P&L)",
+    "statut": "EXPLORATORY_POST_HOC",
+    "base_seq": 369
+   },
+   "entry_hash": "098263b016694bc22ebc84cb4b2ec32898c5252a1a9cc32bbe8cef4a8304945b"
+  },
+  {
+   "seq": 371,
+   "prev_hash": "098263b016694bc22ebc84cb4b2ec32898c5252a1a9cc32bbe8cef4a8304945b",
+   "entry": {
+    "type": "PHASE20C_VERDICT",
+    "phase": "20-C",
+    "verdict": "H4_NO_DIRECTIONAL_ASYMMETRY_SUPPORTED",
+    "statut": "EXPLORATORY_POST_HOC",
+    "base_seq": 370
+   },
+   "entry_hash": "3cd2ddc13a2e7a298eb40687f77c00e8d3a91e2b0da9c9c2cdb55d6090b93c80"
   }
  ]
 }

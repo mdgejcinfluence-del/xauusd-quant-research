@@ -1,0 +1,14 @@
+# PHASE 20-C — RAPPORT FINAL : MORPHOLOGIE DES GRANDES AMPLITUDES H4
+
+**`EXPLORATORY_POST_HOC` — aucune stratégie, aucun modèle, aucun P&L, aucun M1.** Sources : barset et excursions certifiés 20-A uniquement. Population : 1 333 barres d'expansion (Q90 roulant causal, référence 250 barres complètes), 1 116 épisodes ; population primaire = première barre de chaque épisode. Configurations (drapeaux non exclusifs) : A clôture haute (208 barres / 153 primaires), B clôture basse (196/145), C clôture centrale (929/686), D mèche supérieure dominante (104/74), E mèche inférieure dominante (63/43). Censure documentée : les horizons futurs exigent des barres complètes strictement consécutives, ce qui réduit fortement les effectifs aux horizons 3–4 (ex. A : 153 → 36) — aucune imputation.
+
+## Résultat principal
+Sur les 16 comparaisons primaires préenregistrées (A/B/D/E contre C, terminal orienté, horizons 1–4, bootstrap par épisode, Benjamini-Hochberg), **aucune n'est significative** (q minimale = 0,48). À amplitude initiale comparable, ni la position de clôture ni la prédominance de mèche ne distinguent de façon démontrée le déplacement terminal futur parmi les grandes bougies H4. Les excursions favorables restent importantes en niveau (MFE médians de 18 à 76 bp selon configuration et horizon, très supérieurs aux références de coûts `REFERENCE_COST_UNVERIFIED` de 4,0/4,5 bp), mais les MAE les accompagnent presque toujours (médians de 21 à 96 bp) et les déplacements terminaux médians restent proches de zéro : **l'amplitude est réelle, l'asymétrie directionnelle ne l'est pas**.
+
+## Lectures secondaires (descriptives, non probantes)
+- B (clôture basse) affiche les écarts bruts les plus favorables (+22 à +30 bp aux horizons 2–4 contre C orienté), mais sur 50 → 33 événements, `NON_EVALUABLE_INFERENTIAL` aux horizons 3–4, et une stabilité illusoire (la sous-période 2016–2020 ne compte que 4 événements primaires à H4) → `UNSTABLE_STRUCTURAL_CANDIDATE`.
+- D (mèche supérieure dominante) se déplace **à l'inverse** du rejet apparent (−8 à −31 bp contre C orienté dans le sens du rejet), sans significativité → simple candidat d'asymétrie descriptive, jamais une règle.
+- A est instable entre sous-périodes ; C est `AMPLITUDE_ONLY` par construction ; E manque d'effectifs (`INSUFFICIENT_EVIDENCE`).
+
+## Verdict global : `H4_NO_DIRECTIONAL_ASYMMETRY_SUPPORTED`
+Parmi les grandes amplitudes H4, la morphologie du corps, de la clôture et des mèches ne permet pas d'identifier, au standard corrigé des comparaisons multiples, des excursions futures dont l'amplitude favorable dominerait nettement l'amplitude défavorable. La carte des morphologies est livrée (métriques par barre, excursions événement par événement, couverture des coûts en diagnostic `AMPLITUDE_COST_COVERAGE_DIAGNOSTIC`) ; toute recherche économique ultérieure exigerait un contrat préenregistré distinct et, pour sortir du post-hoc, des données nouvelles.
