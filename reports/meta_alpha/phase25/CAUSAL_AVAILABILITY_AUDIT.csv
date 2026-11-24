@@ -1,0 +1,11 @@
+source,instant_formation,instant_disponibilite,instant_decision_M15,retard_traitement,statut_causal,condition
+Volatilite implicite or (GVZ),voir inventaire,cloture publiee apres la seance; utilisable en J-1 uniquement (convention causale 23-A),t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),CAUSAL_VERIFIE_CONDITIONNEL,J-1 strict (GVZ) / dernier rapport publie (COT)
+Positionnement COT (or COMEX),voir inventaire,vendredi 15:30 ET pour positions du mardi precedent (retard reel 3 jours),t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),CAUSAL_VERIFIE_CONDITIONNEL,J-1 strict (GVZ) / dernier rapport publie (COT)
+Volume et open interest intraday GC (COMEX),voir inventaire,temps reel sous licence uniquement,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+Profondeur de carnet GC / flux agressif,voir inventaire,temps reel payant,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+"Options or intraday: skew, risk reversal, surface IV",voir inventaire,temps reel licencie; surfaces EoD parfois differees,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+Volume reel / carnet du spot XAUUSD,voir inventaire,jamais,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+"Inter-marches intraday (DXY futures, taux US futures, SPX futures, argent)",voir inventaire,temps reel licencie,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+"Variations quotidiennes taux/dollar (DGS10, DFII10, DTWEXBGS)",voir inventaire,J-1 uniquement (23-A/23-B),t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),DEJA_TESTE,n/a
+Surprise macro (consensus contemporain),voir inventaire,consensus contemporain non libre,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),NON_CAUSAL_OU_BLOQUE,n/a
+Calendrier macro / fenetres FOMC,voir inventaire,connue a l avance,t_reintegration (cloture M15),nul (valeur figee avant la journee/la semaine),DEJA_TESTE,n/a

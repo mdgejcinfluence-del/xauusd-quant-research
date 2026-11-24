@@ -5253,6 +5253,36 @@
     "profitable_edge": false
    },
    "entry_hash": "27ac70a3e0186cbd15913676c146adb8ea07e909d820dc8ee9e645cdb9e55502"
+  },
+  {
+   "seq": 402,
+   "prev_hash": "27ac70a3e0186cbd15913676c146adb8ea07e909d820dc8ee9e645cdb9e55502",
+   "entry": {
+    "type": "PHASE25A_AUTORISATION",
+    "phase": "25-A",
+    "statut": "CARTOGRAPHIE_DOCUMENTAIRE",
+    "budget_fcfa": 0,
+    "objet": "inventaire des nouvelles sources d information orthogonales; aucun entrainement, aucune depense, aucun telechargement massif",
+    "contraintes": "XAUUSD uniquement, holdout ferme, M15_TIME_ONLY et seuil inchanges"
+   },
+   "entry_hash": "c8671490a20570f7860f182f316f00e5dc0b801842c7d53544deea33784a089c"
+  },
+  {
+   "seq": 403,
+   "prev_hash": "c8671490a20570f7860f182f316f00e5dc0b801842c7d53544deea33784a089c",
+   "entry": {
+    "type": "PHASE25A_VERDICT",
+    "phase": "25-A",
+    "verdict_global": "PHASE25A_CANDIDATE_INFORMATION_SOURCE_IDENTIFIED",
+    "candidats": {
+     "GVZCLS": "NOVEL_INFORMATION_SOURCE_SUPPORTED (J-1 strict)",
+     "COT_or": "NOVEL_INFORMATION_SOURCE_SUPPORTED (dernier rapport publie)"
+    },
+    "bloques": "volume/carnet/options intraday COMEX et inter-marches: LICENSE_OR_COST_BLOCKED; volume spot: SOURCE_NOT_VERIFIABLE; taux quotidiens et FOMC: DUPLICATE",
+    "proposition_25B": "cartographie causale GVZ J-1 par terciles (calibration puis relecture post-hoc), cout 0 FCFA, aucun entrainement",
+    "depense": 0
+   },
+   "entry_hash": "ce04bba598185424ce779fa51bcf8527e87da628fa1625c3ac7ade14e10c61c0"
   }
  ]
 }

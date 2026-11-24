@@ -1,0 +1,11 @@
+source,couverture,granularite,lacunes,part_evenements_M15
+Volatilite implicite or (GVZ),2008-06+ (CBOE; FRED GVZCLS),quotidienne (cloture),"serie d indice continue, revisions mineures",~100% (contexte quotidien)
+Positionnement COT (or COMEX),1986+ (formats recents disaggreges 2009+),hebdomadaire (positions au mardi),revisions hebdomadaires mineures; calendrier de publication officiel,~100% (contexte hebdomadaire fige)
+Volume et open interest intraday GC (COMEX),profonde mais sous licence,tick / messages,excellente si licenciee,potentiellement ~100%
+Profondeur de carnet GC / flux agressif,historique profond payant; temps reel par abonnement,message par message,bonne si licenciee,potentiellement ~100% (a partir de l abonnement)
+"Options or intraday: skew, risk reversal, surface IV",sous licence,intraday sous licence,reconstruction de surface = risque de vintage,potentiellement elevee
+Volume reel / carnet du spot XAUUSD,aucune serie centrale verifiable,sans objet,"le tick volume broker = compteur de cotations, pas des tailles",0%
+"Inter-marches intraday (DXY futures, taux US futures, SPX futures, argent)",sous licence,tick sous licence,bonne si licenciee,potentiellement ~100%
+"Variations quotidiennes taux/dollar (DGS10, DFII10, DTWEXBGS)",longue,quotidienne,bonne,~100%
+Surprise macro (consensus contemporain),payante,evenementielle,vintages payantes,partielle
+Calendrier macro / fenetres FOMC,officielle partielle,evenementielle,dates CPI/PCE/NFP non enumerables gratuitement (23-B),faible (jours d annonce seulement)
