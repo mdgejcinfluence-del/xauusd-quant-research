@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 149, in <module>
+    elif sys.argv[1] == 'analyse': mode_analyse()
+                                   ^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 130, in mode_analyse
+    mg = pd.merge_asof(M.sort_values('date_decision'), G, left_on='date_decision', right_on='date',
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 913, in merge_asof
+    op = _AsOfMerge(
+         ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2460, in __init__
+    _OrderedMerge.__init__(
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2372, in __init__
+    _MergeOperation.__init__(
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 1022, in __init__
+    self._maybe_require_matching_dtypes(self.left_join_keys, self.right_join_keys)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2585, in _maybe_require_matching_dtypes
+    _check_dtype_match(lk, rk, i)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2581, in _check_dtype_match
+    raise MergeError(msg)
+pandas.errors.MergeError: incompatible merge keys [0] dtype('<M8[ns]') and dtype('<M8[us]'), must be the same type
