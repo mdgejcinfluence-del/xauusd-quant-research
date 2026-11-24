@@ -61,30 +61,36 @@ def barres(df, freq):
 
 def mode_probe():
     DONNEES.mkdir(parents=True, exist_ok=True)
-    jour = pd.Timestamp('2026-11-18')  # mercredi recent, journee complete attendue
+    jour = pd.Timestamp('2026-11-11')  # mercredi, recul suffisant pour publication complete
     morceaux, rapports = [], []
-    for hh in range(24):
-        df = heure_eurusd(jour + pd.Timedelta(hours=hh))
+    import time as _t
+    for hh in [0, 6, 8, 13, 16, 21]:
+        df = None
+        for essai in range(3):
+            df = heure_eurusd(jour + pd.Timedelta(hours=hh))
+            if df is not None and len(df): break
+            _t.sleep(20)
         if df is not None and len(df):
             morceaux.append(df)
     if morceaux:
         T = pd.concat(morceaux).sort_values('ts')
-        rapports.append(qc_ticks(T, 'EURUSD 2026-11-18 journee'))
+        rapports.append(qc_ticks(T, 'EURUSD 2026-11-11 heures echantillon 00/06/08/13/16/21'))
         taille = {'ticks_jour': int(len(T)), 'octets_parquet_estimes_par_jour': None}
-        p = DONNEES / 'echantillon_ticks_2026-11-18.parquet'
+        p = DONNEES / 'echantillon_ticks_2026-11-11.parquet'
         T.to_parquet(p, index=False)
         taille['octets_parquet_estimes_par_jour'] = p.stat().st_size
         taille['estimation_GB_par_an_250j'] = round(p.stat().st_size * 250 / 1e9, 2)
         taille['estimation_GB_2010_2026'] = round(p.stat().st_size * 250 * 17 / 1e9, 1)
         for freq, nom in [('1min', 'M1'), ('5min', 'M5'), ('15min', 'M15'), ('30min', 'M30'), ('1h', 'H1'), ('4h', 'H4')]:
             B = barres(T, freq)
-            B.to_parquet(DONNEES / f'echantillon_barres_{nom}_2026-11-18.parquet')
+            B.to_parquet(DONNEES / f'echantillon_barres_{nom}_2026-11-11.parquet')
             rapports.append({'barres': nom, 'n': int(len(B))})
         (OUT / 'PROBE_TAILLES.json').write_text(json.dumps(taille, indent=1))
         print(taille)
-    vieux = heure_eurusd(pd.Timestamp('2010-06-15 10:00'))
+    import time as _t; _t.sleep(10)
+    vieux = heure_eurusd(pd.Timestamp('2015-06-15 10:00'))
     if vieux is not None and len(vieux):
-        rapports.append(qc_ticks(vieux, 'EURUSD 2010-06-15 10h (heure temoin historique)'))
+        rapports.append(qc_ticks(vieux, 'EURUSD 2015-06-15 10h (heure temoin historique)'))
     (OUT / 'PROBE_QC.json').write_text(json.dumps(rapports, indent=1, default=str))
     print(json.dumps(rapports, indent=1, default=str))
 
@@ -103,7 +109,10 @@ def mode_cot():
                 d = pd.read_csv(z.open(nom), low_memory=False)
                 col_code = [c for c in d.columns if 'CFTC_Market_Code' in c or 'CFTC Contract Market Code' in c]
                 col_nom = [c for c in d.columns if 'Market_and_Exchange' in c]
-                m = d[(d[col_code[0]].astype(str).str.strip() == '099741')] if col_code else d.iloc[0:0]
+                if an == 2015:
+                    log.append('DIAG colonnes: ' + ' | '.join(map(str, d.columns[:14])))
+                    if col_code: log.append('DIAG codes uniques: ' + str(d[col_code[0]].astype(str).str.strip().str.zfill(6).unique()[:12]))
+                m = d[(d[col_code[0]].astype(str).str.strip().str.zfill(6) == '099741')] if col_code else d.iloc[0:0]
                 if len(m) == 0 and col_nom:
                     m = d[d[col_nom[0]].astype(str).str.contains('EURO FX', na=False)]
                 log.append(f'COT {an}: {len(m)} lignes EURO FX 099741')
@@ -127,10 +136,10 @@ def mode_rates():
     DONNEES.mkdir(parents=True, exist_ok=True)
     essais = {
         'ECB_SDMX_DFR': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.G_N_A.SV_CRES?startPeriod=2010-01-01&format=csvdata',
+        'DBNOMICS_DEXUSEU': 'https://api.db.nomics.world/v22/series/FRED/DEXUSEU/DEXUSEU?observations=1&format=json',
+        'DBNOMICS_DGS10': 'https://api.db.nomics.world/v22/series/FRED/DGS10/DGS10?observations=1&format=json',
         'FRED_DEXUSEU': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2010-01-01',
-        'FRED_DGS2_DGS10_DFII10': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2,DGS10,DFII10&cosd=2010-01-01',
-        'FRED_FEDFUNDS_IR14270': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS,IR14270&cosd=2010-01-01',
-        'USTREASURY_DAILY': 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/dailyTextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611',
+        'USTREASURY_DAILY': 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611',
     }
     statut = {}
     for nom, url in essais.items():
