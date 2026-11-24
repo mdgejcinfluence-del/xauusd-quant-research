@@ -160,3 +160,38 @@ def mode_lot():
 
 if __name__ == '__main__':
     if sys.argv[1] == 'lot': mode_lot()
+    elif sys.argv[1] == 'analyse': mode_analyse()
+
+
+def mode_analyse():
+    import glob as _g
+    P = pd.concat([pd.read_parquet(f) for f in _g.glob(str(R23 / 'P23C_PATH_*.parquet'))])
+    P = P.drop_duplicates(['role', 'ts_utc']).sort_values(['ts_utc', 'role'])
+    P.to_parquet(R23 / 'PHASE23C_EVENT_PATH_METRICS.parquet', index=False)
+    rev = pd.concat([pd.read_csv(f) for f in _g.glob(str(R23 / 'P23C_REV_*.csv'))]).drop_duplicates(['role', 'ts_utc'])
+    rev.to_csv(R23 / 'PHASE23C_FIRST_REVISIT_CATALOG.csv', index=False)
+    cols = [c for c in P.columns if any(k in c for k in ('MFE_post15', 'MAE_post15', 't_MFE', 't_MAE', 'amplitude_conservee', 'n_retours'))]
+    P[['role', 'ts_utc', 'direction', 'reaction_initiale_bp'] + cols].to_parquet(
+        R23 / 'PHASE23C_POST_15M_EXCURSION_RESULTS.parquet', index=False)
+    lignes = []
+    comp = []
+    for nom, g0 in [('EVENEMENT', P[P.role == 'EVENEMENT']), ('CONTROLE', P[P.role == 'CONTROLE'])]:
+        g = g0[g0.direction != 0]
+        d = dict(groupe=nom, n=len(g))
+        for h in (60, 240):
+            d[f'cont_depuis_P0_{h}'] = float(g[f'cont_depuis_P0_{h}'].mean())
+            d[f'cont_apres_15_{h}'] = float(g[f'cont_apres_15_{h}'].mean())
+            d[f'MFE_med_{h}'] = float(g[f'MFE_post15_{h}'].median()); d[f'MAE_med_{h}'] = float(g[f'MAE_post15_{h}'].median())
+            d[f'depl_term_med_{h}'] = float(g[f'depl_term_signe_{h}'].median())
+            d[f'netS2_moy_{h}'] = float(g[f'net_S2_{h}'].mean()); d[f'netS2_med_{h}'] = float(g[f'net_S2_{h}'].median())
+            d[f'netS2_sd_{h}'] = float(g[f'net_S2_{h}'].std())
+        d['revisite_240 part'] = float((g.revisite_fenetre != 'aucune').mean())
+        d['premiere_revisite_mediane_min'] = float(g.premiere_revisite_min.median())
+        comp.append(d)
+    C = pd.DataFrame(comp); C.to_csv(R23 / 'PHASE23C_EVENT_VS_CONTROL_COMPARISON.csv', index=False)
+    ev = C[C.groupe == 'EVENEMENT'].iloc[0]
+    stats = dict(n_evt=int(ev.n), cont_apres15_60=float(ev.cont_apres_15_60), cont_apres15_240=float(ev.cont_apres_15_240),
+                 netS2_60=float(ev.netS2_moy_60), netS2_240=float(ev.netS2_moy_240),
+                 puissance={str(h): int(np.ceil(((1.96 + 0.84) * float(ev[f'netS2_sd_{h}']) / 10) ** 2)) for h in (60, 240)})
+    (R23 / '_phase23c_stats.json').write_text(json.dumps(stats, indent=1))
+    print(C.round(3).to_string()); print(stats, flush=True)

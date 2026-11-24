@@ -2285,3 +2285,47 @@ jobs:
         path: reports/meta_alpha/phase23/P23C_*_${{ matrix.batch }}.*
         retention-days: 90
         if-no-files-found: error
+
+  analyse23c:
+    name: P23-C analyse trajectoires (developpement, aucun modele)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase23c }}
+    needs:
+    - lots23c
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p23c-frag-*
+        path: reports/meta_alpha/phase23
+        merge-multiple: true
+    - name: Analyse Phase 23-C
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase23
+        python ci_tools/phase23c_engine.py analyse 2>&1 | tee reports/meta_alpha/phase23/PHASE23C_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase23/PHASE23C_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 23-C (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p23cout && cp -a reports/meta_alpha/phase23/. /tmp/p23cout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p23cout/. reports/meta_alpha/phase23/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase23/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 23-C: analyse trajectoires FOMC (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
