@@ -100,8 +100,7 @@ def mode_cot():
     frames, log = [], []
     for an in range(2010, 2027):
         ok = False
-        for base in (f'https://www.cftc.gov/files/dea/history/fut_disagg_txt_{an}.zip',
-                     f'https://www.cftc.gov/files/dea/history/fut_disagg_txt_{an}.zip'.replace('files/dea', 'files/dea')):
+        for base in (f'https://www.cftc.gov/files/dea/history/fut_fin_txt_{an}.zip',):  # TFF: l Euro FX est un futur financier, absent du Disaggregated (matieres physiques)
             try:
                 brut = fetch(base, 120)
                 z = zipfile.ZipFile(io.BytesIO(brut))
@@ -126,7 +125,7 @@ def mode_cot():
             pass
     if frames:
         C = pd.concat(frames, ignore_index=True)
-        C.to_parquet(DONNEES / 'CFTC_COT_EUROFX_099741_brut.parquet', index=False)
+        C.to_parquet(DONNEES / 'CFTC_COT_EUROFX_099741_TFF_brut.parquet', index=False)
         log.append(f'COT total brut: {len(C)} lignes, colonnes: {len(C.columns)}')
     (OUT / 'COT_LOG.txt').write_text('\n'.join(log))
     print('\n'.join(log))
