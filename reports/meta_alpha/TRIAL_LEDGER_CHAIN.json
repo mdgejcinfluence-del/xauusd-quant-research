@@ -5380,6 +5380,20 @@
     "suite": "collecte automatique; detection sur premieres journees completes; connecteur MT5 demo a preparer (identite fondateur requise, non inventee)"
    },
    "entry_hash": "6ef08017fa957622d3739b98559d45f404be2f07da2d636716f3635d6234c094"
+  },
+  {
+   "seq": 411,
+   "prev_hash": "6ef08017fa957622d3739b98559d45f404be2f07da2d636716f3635d6234c094",
+   "entry": {
+    "type": "MA_EDGE_02_PREREGISTRATION",
+    "mission": "MA-EDGE-02",
+    "experiences": "EXP-08 trajectoire precoce; EXP-09 familles nouvelles (continuation/fade/confirmation locale/entree differee) + placebo 200 tirages; EXP-10 geometrie du risque; EXP-11 asymetrie excursions; EXP-12 abstention cout",
+    "statut": "EXPLORATORY_POST_HOC, donnees consommees 2010-2019, prix Mid = majorant, scenarios cout 0/2/4 bp",
+    "periodes": "decouverte 2010-2015, controle 2016-2017, rejeu 2018-2019; coherence = meme signe sur les trois",
+    "fichier": "research/MA-EDGE-02/EXPERIMENT_PREREGISTRATION_02.md (ecrit avant calcul)",
+    "collecte": "limitation decouverte: le cron GitHub ne s execute que depuis la branche par defaut; collecte relancee par dispatch manuel, a re-declencher periodiquement"
+   },
+   "entry_hash": "038dd93f5d96be214cb225725c19ea8c28243e39e217c645cad487a257fbea69"
   }
  ]
 }
