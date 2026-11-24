@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+"""EUR-EDGE-01 — Socle de donnees EUR/USD.
+Modes:
+  probe : echantillon technique Dukascopy EURUSD (1 journee recente complete + 1 heure 2010),
+          QC complet, barres derivees M1..D1, estimation de taille. ECHANTILLON LIMITE:
+          les conditions Dukascopy interdisent base de donnees/redistribution sans accord
+          ecrit -> aucun telechargement massif, aucun transfert Kaggle de ces ticks.
+  cot   : CFTC officiel, marche EURO FX code 099741 (Disaggregated futures-only), 2010-2026.
+  rates : taux BCE/Fed par sources officielles tentees une a une (statut journalise).
+"""
+import io, json, lzma, pathlib, struct, sys, urllib.request, zipfile
+import numpy as np
+import pandas as pd
+
+RACINE = pathlib.Path(__file__).resolve().parents[1]
+OUT = RACINE / 'research' / 'EUR-EDGE-01'
+DONNEES = OUT / 'data'
+UA = {'User-Agent': 'Mozilla/5.0 META-ALPHA-research'}
+
+
+def fetch(url, timeout=90):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
+        return r.read()
+
+
+def heure_eurusd(h: pd.Timestamp) -> pd.DataFrame | None:
+    u = f'https://datafeed.dukascopy.com/datafeed/EURUSD/{h.year}/{h.month - 1:02d}/{h.day:02d}/{h.hour:02d}h_ticks.bi5'
+    try:
+        brut = fetch(u, 60)
+    except Exception as e:
+        print(f'  {h} INDISPONIBLE ({type(e).__name__}: {e})')
+        return None
+    if not brut:
+        return None
+    dec = lzma.decompress(brut)
+    n = len(dec) // 20
+    arr = np.frombuffer(dec[:n * 20], dtype='>u4').reshape(n, 5)
+    base = np.datetime64(h.tz_localize(None), 'ms')
+    return pd.DataFrame({'ts': base + arr[:, 0].astype(np.int64).astype('timedelta64[ms]'),
+                         'ask': arr[:, 1] / 100000.0, 'bid': arr[:, 2] / 100000.0})
+
+
+def qc_ticks(df, nom):
+    sp = df.ask - df.bid
+    ecarts = df.ts.diff().dt.total_seconds()
+    return {'echantillon': nom, 'ticks': int(len(df)), 'debut': str(df.ts.min()), 'fin': str(df.ts.max()),
+            'viol_bid_ge_ask': int((df.bid >= df.ask).sum()), 'prix_nonpositifs': int(((df.bid <= 0) | (df.ask <= 0)).sum()),
+            'ts_croissants': bool(df.ts.is_monotonic_increasing), 'doublons_ts': int(df.ts.duplicated().sum()),
+            'spread_med_pips': round(float(sp.median()) * 10000, 3), 'spread_p95_pips': round(float(sp.quantile(.95)) * 10000, 3),
+            'spread_max_pips': round(float(sp.max()) * 10000, 2), 'ecart_max_s': float(ecarts.max()),
+            'saut_max_bp': round(float((np.log(df.bid).diff().abs()).max()) * 10000, 2)}
+
+
+def barres(df, freq):
+    t = df.copy()
+    t['mid'] = (t.bid + t.ask) / 2
+    t['b'] = t.ts.dt.floor(freq)
+    g = t.groupby('b').mid
+    return pd.DataFrame({'open': g.first(), 'high': g.max(), 'low': g.min(), 'close': g.last(), 'n_ticks': g.size()})
+
+
+def mode_probe():
+    DONNEES.mkdir(parents=True, exist_ok=True)
+    jour = pd.Timestamp('2026-11-18')  # mercredi recent, journee complete attendue
+    morceaux, rapports = [], []
+    for hh in range(24):
+        df = heure_eurusd(jour + pd.Timedelta(hours=hh))
+        if df is not None and len(df):
+            morceaux.append(df)
+    if morceaux:
+        T = pd.concat(morceaux).sort_values('ts')
+        rapports.append(qc_ticks(T, 'EURUSD 2026-11-18 journee'))
+        taille = {'ticks_jour': int(len(T)), 'octets_parquet_estimes_par_jour': None}
+        p = DONNEES / 'echantillon_ticks_2026-11-18.parquet'
+        T.to_parquet(p, index=False)
+        taille['octets_parquet_estimes_par_jour'] = p.stat().st_size
+        taille['estimation_GB_par_an_250j'] = round(p.stat().st_size * 250 / 1e9, 2)
+        taille['estimation_GB_2010_2026'] = round(p.stat().st_size * 250 * 17 / 1e9, 1)
+        for freq, nom in [('1min', 'M1'), ('5min', 'M5'), ('15min', 'M15'), ('30min', 'M30'), ('1h', 'H1'), ('4h', 'H4')]:
+            B = barres(T, freq)
+            B.to_parquet(DONNEES / f'echantillon_barres_{nom}_2026-11-18.parquet')
+            rapports.append({'barres': nom, 'n': int(len(B))})
+        (OUT / 'PROBE_TAILLES.json').write_text(json.dumps(taille, indent=1))
+        print(taille)
+    vieux = heure_eurusd(pd.Timestamp('2010-06-15 10:00'))
+    if vieux is not None and len(vieux):
+        rapports.append(qc_ticks(vieux, 'EURUSD 2010-06-15 10h (heure temoin historique)'))
+    (OUT / 'PROBE_QC.json').write_text(json.dumps(rapports, indent=1, default=str))
+    print(json.dumps(rapports, indent=1, default=str))
+
+
+def mode_cot():
+    DONNEES.mkdir(parents=True, exist_ok=True)
+    frames, log = [], []
+    for an in range(2010, 2027):
+        ok = False
+        for base in (f'https://www.cftc.gov/files/dea/history/fut_disagg_txt_{an}.zip',
+                     f'https://www.cftc.gov/files/dea/history/fut_disagg_txt_{an}.zip'.replace('files/dea', 'files/dea')):
+            try:
+                brut = fetch(base, 120)
+                z = zipfile.ZipFile(io.BytesIO(brut))
+                nom = z.namelist()[0]
+                d = pd.read_csv(z.open(nom), low_memory=False)
+                col_code = [c for c in d.columns if 'CFTC_Market_Code' in c or 'CFTC Contract Market Code' in c]
+                col_nom = [c for c in d.columns if 'Market_and_Exchange' in c]
+                m = d[(d[col_code[0]].astype(str).str.strip() == '099741')] if col_code else d.iloc[0:0]
+                if len(m) == 0 and col_nom:
+                    m = d[d[col_nom[0]].astype(str).str.contains('EURO FX', na=False)]
+                log.append(f'COT {an}: {len(m)} lignes EURO FX 099741')
+                if len(m):
+                    frames.append(m)
+                ok = True
+                break
+            except Exception as e:
+                log.append(f'COT {an}: echec ({type(e).__name__})')
+        if not ok:
+            pass
+    if frames:
+        C = pd.concat(frames, ignore_index=True)
+        C.to_parquet(DONNEES / 'CFTC_COT_EUROFX_099741_brut.parquet', index=False)
+        log.append(f'COT total brut: {len(C)} lignes, colonnes: {len(C.columns)}')
+    (OUT / 'COT_LOG.txt').write_text('\n'.join(log))
+    print('\n'.join(log))
+
+
+def mode_rates():
+    DONNEES.mkdir(parents=True, exist_ok=True)
+    essais = {
+        'ECB_SDMX_DFR': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.G_N_A.SV_CRES?startPeriod=2010-01-01&format=csvdata',
+        'FRED_DEXUSEU': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2010-01-01',
+        'FRED_DGS2_DGS10_DFII10': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2,DGS10,DFII10&cosd=2010-01-01',
+        'FRED_FEDFUNDS_IR14270': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS,IR14270&cosd=2010-01-01',
+        'USTREASURY_DAILY': 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/dailyTextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611',
+    }
+    statut = {}
+    for nom, url in essais.items():
+        try:
+            brut = fetch(url, 90)
+            (DONNEES / f'rates_{nom}.csv').write_bytes(brut)
+            statut[nom] = f'OK {len(brut)} octets'
+        except Exception as e:
+            statut[nom] = f'ECHEC {type(e).__name__}: {e}'
+        print(nom, statut[nom])
+    (OUT / 'RATES_LOG.json').write_text(json.dumps(statut, indent=1))
+
+
+if __name__ == '__main__':
+    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates}[sys.argv[1]]()

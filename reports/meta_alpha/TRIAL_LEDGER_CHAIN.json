@@ -5435,6 +5435,19 @@
     "suite": "programme EUR-EDGE-01 devient principal (instruction fondateur); archives XAUUSD conservees, collecte SHADOW non abandonnee mais non prioritaire"
    },
    "entry_hash": "3e634111e4ad0a3e925569a648df11abdeacddc7887a96f2b253a775fb82979b"
+  },
+  {
+   "seq": 415,
+   "prev_hash": "3e634111e4ad0a3e925569a648df11abdeacddc7887a96f2b253a775fb82979b",
+   "entry": {
+    "type": "EUR_EDGE_01_OPENING",
+    "mission": "EUR-EDGE-01",
+    "marche": "EUR/USD (nouveau principal); XAUUSD archive et conserve, SHADOW en arriere-plan",
+    "perimetre": "socle de donnees 2010-2026 documente, licences auditees, budget 0",
+    "constat_juridique": "Dukascopy: usage personnel non commercial, base de donnees et redistribution interdites sans accord ecrit -> echantillon technique limite, AUCUN transfert Kaggle des ticks, acquisition massive suspendue a autorisation ecrite ou source alternative licite",
+    "kaggle": "datasets prives uniquement pour sources redistribuables (CFTC domaine public, officiels BCE/Fed selon conditions); jamais de ticks broker sans droit"
+   },
+   "entry_hash": "a163099b3c6488572a3019bfca900b936ff36e2ada3a547c6024fc9a651d6d5b"
   }
  ]
 }

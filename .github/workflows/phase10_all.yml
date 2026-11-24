@@ -94,8 +94,8 @@ name: phase10_all
         description: 'Phase 24-E: premier passage label M15 tick IS (seq398)'
         type: boolean
         default: false
-      phase24f:
-        description: 'Phase 24-F: economie calibration 2016-2017 tick IS (seq400)'
+      eur01:
+        description: 'EUR-EDGE-01: socle EURUSD probe/COT/rates (seq415)'
         type: boolean
         default: false
       phase25b:
@@ -2769,4 +2769,43 @@ jobs:
         git add -A research/MA-EDGE-02/
         git status --porcelain
         git diff --cached --quiet || git commit -m 'MA-EDGE-02: collecte Dukascopy (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+
+  eur01:
+    name: EUR-EDGE-01 socle donnees EURUSD
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.eur01 }}
+    permissions:
+      actions: read
+      contents: write
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow kaggle
+    - name: Probe + COT + rates + etat Kaggle
+      run: |
+        set +e
+        mkdir -p research/EUR-EDGE-01/data
+        python ci_tools/eur01_engine.py probe 2>&1 | tee research/EUR-EDGE-01/PROBE_LOG.txt
+        python ci_tools/eur01_engine.py cot 2>&1 | tee research/EUR-EDGE-01/COT_RUN_LOG.txt
+        python ci_tools/eur01_engine.py rates 2>&1 | tee research/EUR-EDGE-01/RATES_RUN_LOG.txt
+        (kaggle datasets list --mine 2>&1 | head -20; kaggle config view 2>&1 | head -5) | tee research/EUR-EDGE-01/KAGGLE_ETAT.txt
+        echo "fin"
+    - name: Committer socle (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/eur01out && cp -a research/EUR-EDGE-01/. /tmp/eur01out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/eur01out/. research/EUR-EDGE-01/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A research/EUR-EDGE-01/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'EUR-EDGE-01: socle donnees (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research
