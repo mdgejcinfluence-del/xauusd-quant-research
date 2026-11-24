@@ -4909,6 +4909,22 @@
     "replications": 10000
    },
    "entry_hash": "819c05d46a00f9ab4cec8c944a3feb5729572e59f29efae12a7a6e82cbf88fb8"
+  },
+  {
+   "seq": 379,
+   "prev_hash": "819c05d46a00f9ab4cec8c944a3feb5729572e59f29efae12a7a6e82cbf88fb8",
+   "entry": {
+    "type": "PHASE21D_VERDICT",
+    "phase": "21-D",
+    "verdict": "TICK_LEVEL_AMPLITUDE_STRUCTURE_IDENTIFIED_BIDIRECTIONAL_ONLY",
+    "ordre_extremes": "LOW 1006 / HIGH 983 (equilibre)",
+    "declencheur": "aucun avantage (0/36, q_min 0.137)",
+    "jours": 1989,
+    "ticks": 224360143,
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "89a98c4a8ea58f031a747d8a474084e2adc921dafc22ac1267e13d2057f50a18"
   }
  ]
 }

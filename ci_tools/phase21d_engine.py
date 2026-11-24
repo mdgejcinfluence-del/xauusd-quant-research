@@ -183,8 +183,11 @@ def mode_analyse():
     spr = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R21 / 'P21D_SPREAD_*.parquet')))])
     # journees scindees entre deux lots (fragments partiels): exclues et documentees, jamais fusionnees
     jours_dup = sorted(day[day.duplicated('jour', keep=False)].jour.unique())
-    for nom, df in [('day', day), ('pas', pas), ('post', post), ('rec', rec), ('spr', spr)]:
-        df.drop(df[df.jour.isin(jours_dup)].index, inplace=True)
+    day = day[~day.jour.isin(jours_dup)].reset_index(drop=True)
+    pas = pas[~pas.jour.isin(jours_dup)].reset_index(drop=True)
+    post = post[~post.jour.isin(jours_dup)].reset_index(drop=True)
+    rec = rec[~rec.jour.isin(jours_dup)].reset_index(drop=True)
+    spr = spr[~spr.jour.isin(jours_dup)].reset_index(drop=True)
     print('journees scindees entre lots, exclues:', jours_dup, flush=True)
     d1 = pd.read_parquet(R21 / 'PHASE21A_D1_BARSET.parquet')
     d1['jour'] = d1.jour.dt.strftime('%Y-%m-%d')
