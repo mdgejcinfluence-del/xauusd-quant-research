@@ -1,0 +1,6 @@
+population,n,PNL_moyen,PNL_mediane,part_positive
+realises (719): liquidation au premier passage,719,11.365,8.763,0.943
+memes realises: liquidation fixe 8h,719,12.498,8.753,0.622
+difference appariee FP - 8h (realises),719,,,
+diagnostic complet (realises au FP + non-realises a 8h),1124,-4.004,4.167,0.642
+P0 reference 24-D (tous a 8h),1122,-3.307,-4.949,0.438

@@ -1,0 +1,6 @@
+categorie,n
+"vrais positifs (selectionnes, label realise)",719
+"faux positifs (selectionnes, label non realise)",405
+"faux negatifs (non selectionnes, label realise)",93
+"vrais negatifs (non selectionnes, label non realise)",252
+"evenements economiquement gagnants en 24-D (S2>0, distinct des categories ci-dessus)",491

@@ -5213,6 +5213,19 @@
     "interdictions": "holdout ferme, aucun reentrainement, aucun filtre Directeur, aucune strategie revendiquee"
    },
    "entry_hash": "186977474da43f3e978ff7caf687a7b1c63e818e2e26954ba859d09b0ecdb92c"
+  },
+  {
+   "seq": 399,
+   "prev_hash": "186977474da43f3e978ff7caf687a7b1c63e818e2e26954ba859d09b0ecdb92c",
+   "entry": {
+    "type": "PHASE24E_VERDICT",
+    "phase": "24-E",
+    "verdict_realisation": "LABEL_EVENT_EARLY_AND_ECONOMICALLY_CAPTUREABLE (delai median 60 min; +11,36 bp S2 au premier prix executable; 94,3% positifs)",
+    "verdict_conversion": "NO_ECONOMIC_IMPROVEMENT_FROM_FIRST_PASSAGE_EXIT (8h sur memes realises: +12,50; diff -1,11 IC95 [-4,72;+2,39]; diagnostic complet -4,00 vs -3,31)",
+    "cause_perte": "faux positifs non realises: 405 evenements a -31,29 bp",
+    "profitable_edge": false
+   },
+   "entry_hash": "ad4807ecc9ca8c9d2d002c4a815b0ef395dfdb8bb43ddc47e8c2ec2450f50efc"
   }
  ]
 }
