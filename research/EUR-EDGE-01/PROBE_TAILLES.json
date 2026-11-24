@@ -1,6 +1,6 @@
 {
- "ticks_jour": 15742,
- "octets_parquet_estimes_par_jour": 133232,
- "estimation_GB_par_an_250j": 0.03,
- "estimation_GB_2010_2026": 0.6
+ "ticks_jour": 17155,
+ "octets_parquet_estimes_par_jour": 167965,
+ "estimation_GB_par_an_250j": 0.04,
+ "estimation_GB_2010_2026": 0.7
 }

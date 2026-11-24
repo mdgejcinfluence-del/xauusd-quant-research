@@ -1,62 +1,63 @@
-  2026-11-18 03:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 06:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 07:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 09:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 11:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 12:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 14:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 15:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 18:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 19:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-  2026-11-18 23:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
-{'ticks_jour': 15742, 'octets_parquet_estimes_par_jour': 133232, 'estimation_GB_par_an_250j': 0.03, 'estimation_GB_2010_2026': 0.6}
-  2010-06-15 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 00:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 06:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 06:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 08:00:00 INDISPONIBLE (TimeoutError: The read operation timed out)
+  2026-11-11 16:00:00 INDISPONIBLE (URLError: <urlopen error timed out>)
+{'ticks_jour': 17155, 'octets_parquet_estimes_par_jour': 167965, 'estimation_GB_par_an_250j': 0.04, 'estimation_GB_2010_2026': 0.7}
 [
  {
-  "echantillon": "EURUSD 2026-11-18 journee",
-  "ticks": 15742,
-  "debut": "2026-11-18 00:00:00.088000",
-  "fin": "2026-11-18 05:59:57.502000",
+  "echantillon": "EURUSD 2026-11-11 heures echantillon 00/06/08/13/16/21",
+  "ticks": 17155,
+  "debut": "2026-11-11 00:00:00.087000",
+  "fin": "2026-11-11 21:59:59.510000",
   "viol_bid_ge_ask": 0,
   "prix_nonpositifs": 0,
   "ts_croissants": true,
   "doublons_ts": 0,
   "spread_med_pips": 0.3,
   "spread_p95_pips": 0.5,
-  "spread_max_pips": 0.6,
-  "ecart_max_s": 3603.616,
-  "saut_max_bp": 2.09
+  "spread_max_pips": 1.3,
+  "ecart_max_s": 18002.022,
+  "saut_max_bp": 14.72
  },
  {
   "barres": "M1",
-  "n": 300
+  "n": 359
  },
  {
   "barres": "M5",
-  "n": 60
+  "n": 72
  },
  {
   "barres": "M15",
-  "n": 20
+  "n": 24
  },
  {
   "barres": "M30",
-  "n": 10
+  "n": 12
  },
  {
   "barres": "H1",
-  "n": 5
+  "n": 6
  },
  {
   "barres": "H4",
-  "n": 2
+  "n": 6
+ },
+ {
+  "echantillon": "EURUSD 2015-06-15 10h (heure temoin historique)",
+  "ticks": 5526,
+  "debut": "2015-06-15 10:00:00.064000",
+  "fin": "2015-06-15 10:59:58.726000",
+  "viol_bid_ge_ask": 0,
+  "prix_nonpositifs": 0,
+  "ts_croissants": true,
+  "doublons_ts": 0,
+  "spread_med_pips": 0.2,
+  "spread_p95_pips": 0.4,
+  "spread_max_pips": 0.7,
+  "ecart_max_s": 18.962,
+  "saut_max_bp": 1.87
  }
 ]

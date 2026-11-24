@@ -1,15 +1,25 @@
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/bin/kaggle", line 3, in <module>
-    from kaggle.cli import main
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/__init__.py", line 3, in <module>
-    from kaggle.api.kaggle_api_extended import KaggleApi
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/api/kaggle_api_extended.py", line 266, in <module>
-    from ..models.upload_file import UploadFile
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/models/upload_file.py", line 22, in <module>
-    import six
-ModuleNotFoundError: No module named 'six'
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/bin/kaggle", line 3, in <module>
-    from kaggle.cli import main
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/kaggle/__init__.py", line 3, in <module>
-    from kaggle.api.kaggle_api_extended import KaggleApi
+ref                                       title                                size  lastUpdated                 downloadCount  voteCount  usabilityRating  
+----------------------------------------  -----------------------------  ----------  --------------------------  -------------  ---------  ---------------  
+shalom5123/xauusd-is-b07                  xauusd-is-b07                  3747066826  2026-11-17 15:16:13.320000             82          0  0.23529412       
+shalom5123/xauusd-is-b05                  xauusd-is-b05                   359512384  2026-11-17 14:47:12.943000             82          0  0.23529412       
+shalom5123/xauusd-is-b04                  xauusd-is-b04                   147341844  2026-11-17 14:37:24.730000             82          0  0.23529412       
+shalom5123/xauusd-is-b02                  xauusd-is-b02                    90004929  2026-11-17 14:17:04.647000             82          0  0.23529412       
+shalom5123/xauusd-is-missing13            xauusd-is-missing13            1267886636  2026-11-17 13:25:40.103000             86          0  0.23529412       
+shalom5123/xauusd-is-b06                  xauusd-is-b06                  3426957429  2026-11-17 15:05:57.033000             82          0  0.23529412       
+shalom5123/xauusd-is-b03                  xauusd-is-b03                   112810896  2026-11-17 14:27:10.433000             82          0  0.23529412       
+shalom5123/xauusd-is-b01                  xauusd-is-b01                    74667310  2026-11-17 13:56:19.030000             85          0  0.23529412       
+shalom5123/xauusd-ho-b06                  XAUUSD HO B06                  3448969886  2026-11-22 15:35:38.847000              6          0  0.23529412       
+shalom5123/xauusd-ho-b02                  XAUUSD HO B02                  1921631641  2026-11-22 15:29:30.363000              6          0  0.23529412       
+shalom5123/xauusd-ho-b05                  XAUUSD HO B05                  2390088359  2026-11-22 15:33:32.893000              6          0  0.23529412       
+shalom5123/xauusd-ho-b04                  XAUUSD HO B04                  1332655387  2026-11-22 15:31:50.617000              6          0  0.23529412       
+shalom5123/xauusd-ho-b03                  XAUUSD HO B03                  1834020317  2026-11-22 15:30:47.697000              6          0  0.23529412       
+shalom5123/xauusd-ho-b01                  XAUUSD HO B01                  1971987238  2026-11-22 15:15:27.410000              6          0  0.23529412       
+shalom5123/wan-animate-v2                 wan-animate-V2                   24487279  2026-11-04 17:11:38.550000              0          0  0.11764706       
+shalom5123/wan-oyono-inputs               wan-oyono-inputs                 24487279  2026-11-04 11:03:31.090000              0          0  0.11764706       
+shalom5123/xauusd-nr-corpus               xauusd-nr-corpus                   578057  2026-11-19 11:47:41.480000              0          0  0.23529412       
+shalom5123/xauusd-exogenous-pack-holdout  xauusd-exogenous-pack-holdout      341982  2026-11-18 23:30:17.303000              0          0  0.23529412       
+Configuration values from /home/runner/.config/kaggle
+- username: shalom5123
+- auth_method: ACCESS_TOKEN
+- path: None
+- proxy: None
