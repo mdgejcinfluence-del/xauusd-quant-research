@@ -4706,6 +4706,24 @@
     "base_seq": 364
    },
    "entry_hash": "1556b4c6ff26a986ca88c412ed937346ba52df9808fe20b2ceb453587cff7074"
+  },
+  {
+   "seq": 366,
+   "prev_hash": "1556b4c6ff26a986ca88c412ed937346ba52df9808fe20b2ceb453587cff7074",
+   "entry": {
+    "type": "PHASE20A_AUTHORIZATION",
+    "phase": "20-A",
+    "decision": "AUTORISATION RADIOGRAPHIE STRUCTURELLE H4 DESCRIPTIVE IS 2010-2020 (EXPLORATORY_POST_HOC, aucun modele/strategie/P&L)",
+    "interdits": [
+     "holdout",
+     "strategie",
+     "entrainement",
+     "seuil optimise",
+     "P&L de strategie"
+    ],
+    "base_seq": 365
+   },
+   "entry_hash": "bba3aea67275f837c386d68130cf5d5b63d21cf01cd3698ee3a8ace9186cce13"
   }
  ]
 }
