@@ -4970,6 +4970,21 @@
     "replications": 10000
    },
    "entry_hash": "9a2c21545eda65be5735169e8aaba3df1b24d82d7a65ed9422df8a3f175508b6"
+  },
+  {
+   "seq": 383,
+   "prev_hash": "9a2c21545eda65be5735169e8aaba3df1b24d82d7a65ed9422df8a3f175508b6",
+   "entry": {
+    "type": "PHASE22B_VERDICT",
+    "phase": "22-B",
+    "famille_A": "SWEEP_STRUCTURAL_STOP_FAILURE (stop avant objectif 72-80%, net S2 significativement negatif 7/8)",
+    "famille_B": "IMPULSE_STRUCTURAL_STOP_FAILURE (TP 24%/14%, net S2 -6,8/-9,3 bp, R realise negatif)",
+    "candidats": "0/10 configurations (criteres cumulatifs sec.7 non satisfaits)",
+    "archivage": "concepts archives sous definitions testees; aucune relance parametrique sur memes evenements",
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "06d4d0fb23a2f3cb0d5b8c56ddac7dc8bad33ec0bd848a224890f3084a0e833e"
   }
  ]
 }
