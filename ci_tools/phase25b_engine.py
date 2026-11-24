@@ -79,8 +79,11 @@ def mode_exo():
     if frames:
         C = pd.concat(frames)
         coldate = [c for c in C.columns if 'Report_Date' in c][0]
-        mm_long = [c for c in C.columns if 'M_Money_Positions_Long' in c][0]
-        mm_short = [c for c in C.columns if 'M_Money_Positions_Short' in c][0]
+        def pick(mot, exclure=('Old', 'Other')):
+            cand = [c for c in C.columns if mot in c and 'All' in c] or [c for c in C.columns if mot in c and not any(e in c for e in exclure)] or [c for c in C.columns if mot in c]
+            return cand[0]
+        mm_long = pick('M_Money_Positions_Long'); mm_short = pick('M_Money_Positions_Short')
+        lignes.append(f'- COT colonnes managed money: {mm_long} / {mm_short}')
         C['date_rapport'] = pd.to_datetime(C[coldate])
         C['net_managed_money'] = pd.to_numeric(C[mm_long], errors='coerce') - pd.to_numeric(C[mm_short], errors='coerce')
         C['disponible_depuis'] = C.date_rapport + pd.Timedelta(days=4)  # vendredi 15:30 ET + marge jours feries (conservateur)
@@ -122,10 +125,10 @@ def mode_analyse():
     M = P.merge(pnl, on='event_id', how='left')
     M = M[M.split.isin(['CALIBRATION', 'EVALUATION'])]
     M = M[(M.split == 'EVALUATION') & M.horloge_ok | (M.split == 'CALIBRATION') & M.horloge_ok]
-    M['date_decision'] = pd.to_datetime(M.t_decision).dt.normalize()
+    M['date_decision'] = pd.to_datetime(M.t_decision).dt.normalize().astype('datetime64[ns]')
     sorties = []
     if (R25 / 'PHASE25B_GVZ_DATA.parquet').exists():
-        G = pd.read_parquet(R25 / 'PHASE25B_GVZ_DATA.parquet').sort_values('date')
+        G = pd.read_parquet(R25 / 'PHASE25B_GVZ_DATA.parquet').sort_values('date'); G['date'] = G.date.astype('datetime64[ns]')
         # J-1 strict: derniere date GVZ strictement anterieure a la date de decision
         mg = pd.merge_asof(M.sort_values('date_decision'), G, left_on='date_decision', right_on='date',
                            direction='backward', allow_exact_matches=False)
@@ -134,7 +137,7 @@ def mode_analyse():
         sorties.append(f'GVZ frontieres calibration: {np.round(qs, 2)}')
         print(t.to_string(), flush=True)
     if (R25 / 'PHASE25B_COT_DATA.parquet').exists():
-        C = pd.read_parquet(R25 / 'PHASE25B_COT_DATA.parquet').sort_values('disponible_depuis')
+        C = pd.read_parquet(R25 / 'PHASE25B_COT_DATA.parquet').sort_values('disponible_depuis'); C['disponible_depuis'] = C.disponible_depuis.astype('datetime64[ns]')
         mg = pd.merge_asof(M.sort_values('date_decision'), C, left_on='date_decision', right_on='disponible_depuis',
                            direction='backward')
         t, qs = terciles_analyse(mg, 'net_managed_money', 'COT')

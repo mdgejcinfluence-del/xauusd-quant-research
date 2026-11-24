@@ -1,0 +1,9 @@
+{
+  "contrat": "MA-EDGE-01 SHADOW v1 (preenregistre, aucun ordre)",
+  "borne_prospective_utc": "2026-09-30T23:59:58.864Z (fin de couverture du holdout consomme, manifeste PHASE12C2)",
+  "modele_gele": "M15_TIME_ONLY (PHASE24C_MODEL_REGISTRY.json), seuil 0.560955",
+  "regle": "deadline de non-realisation 120 min (NON_REALIZATION_DEADLINE_PREREGISTRATION.md); reference: sortie fixe t_decision + 32x15 min",
+  "graine_bootstrap": 2129,
+  "champs_par_evenement": ["event_id", "t_decision_utc", "informations_disponibles", "probabilite_modele", "direction", "bid_entree", "ask_entree", "prix_entree_theorique", "echeance_non_realisation_utc", "label_confirme", "t_confirmation_utc", "prix_sortie_theorique", "motif_sortie", "PNL_S0", "PNL_S1", "PNL_S2", "MFE_bp", "MAE_bp", "duree_exposition_min", "incidents_cotation", "donnees_manquantes"],
+  "interdictions": ["aucun ordre reel ou demo", "aucun capital", "aucune modification de regle pendant la collecte"]
+}

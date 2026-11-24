@@ -5323,6 +5323,18 @@
     "regles": "sources independantes, aucune fusion GVZxCOT, aucun entrainement, aucun filtre, M15_TIME_ONLY inchange, holdout ferme"
    },
    "entry_hash": "efc6d11caafb559c9af2cce67589f590c8d3710bf4edd4ea144bf5afd34f0d69"
+  },
+  {
+   "seq": 407,
+   "prev_hash": "efc6d11caafb559c9af2cce67589f590c8d3710bf4edd4ea144bf5afd34f0d69",
+   "entry": {
+    "type": "MA_EDGE_01_PREREGISTRATION_DEADLINE",
+    "mission": "MA-EDGE-01",
+    "regle": "evenements M15 geles (seuil 0,560955); si aucune cloture confirmante a t_decision+120 min, liquidation au premier prix executable (delai 60s); sinon sortie 24-D a 8h; S2 principal",
+    "population": "evenements strictement posterieurs a 2026-09-30T23:59:58.864Z uniquement (SHADOW); interdite sur evenements consommes",
+    "justification_echeance": "entre mediane (60 min) et P75 (135 min) de la distribution 24-E gelee; non optimisee sur un P&L"
+   },
+   "entry_hash": "4f1f115d44481a99cc790a3ee59434c09825ceec8ab72cdeafeb7852bcd37b30"
   }
  ]
 }
