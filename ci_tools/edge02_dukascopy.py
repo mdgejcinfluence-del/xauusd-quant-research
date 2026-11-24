@@ -18,10 +18,10 @@ URL = 'https://datafeed.dukascopy.com/datafeed/XAUUSD/{a}/{m:02d}/{j:02d}/{h:02d
 def telecharger_heure(h: pd.Timestamp) -> pd.DataFrame | None:
     u = URL.format(a=h.year, m=h.month - 1, j=h.day, h=h.hour)
     try:
-        with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'META-ALPHA-research/1.0'}), timeout=60) as r:
+        with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 META-ALPHA-research'}), timeout=60) as r:
             brut = r.read()
     except Exception as e:
-        print(f'  {h} INDISPONIBLE ({type(e).__name__})')
+        print(f'  {h} INDISPONIBLE ({type(e).__name__}: {e}) URL={u}')
         return None
     if not brut:
         return None
