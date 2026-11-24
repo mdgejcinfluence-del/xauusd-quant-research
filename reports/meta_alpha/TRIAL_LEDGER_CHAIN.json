@@ -5107,6 +5107,21 @@
     "profitable_edge": false
    },
    "entry_hash": "0d990191e1ed139624543fe73c3567db5a4921fd70ba49333548905e2d890b79"
+  },
+  {
+   "seq": 392,
+   "prev_hash": "0d990191e1ed139624543fe73c3567db5a4921fd70ba49333548905e2d890b79",
+   "entry": {
+    "type": "PHASE24B_AUTORISATION",
+    "phase": "24-B",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "dictionnaire evenementiel M15 + audit de faisabilite sous Directeurs H4/D1 inchanges et Horloge 08-16 UTC; aucun entrainement, aucun P&L",
+    "definition_figee": "impulsion M15 |BODY|>=Q90 des 250 barres M15 precedentes (barre exclue); fenetre 32 barres M15 (=8h, conversion H1 8 bougies); reintegration = cloture M15 strictement autre cote de P0 apres cloture confirmant le deplacement; Y_RESUMPTION = cloture M15 au-dela du meilleur niveau de cloture favorable anterieur avant fin de fenetre; invalidation = cloture au-dela de extreme adverse de la barre d impulsion",
+    "parametres_envisages": "4 variables numeriques + intercept = 5 (aucune indicatrice de session)",
+    "interdictions": "holdout ferme, aucune fusion H4/D1, aucune modification Directeur/Horloge, aucune selection post-hoc"
+   },
+   "entry_hash": "93deaa24281889f0b9562972a9a3d97b1d2dac3c47ead3eb0bc4879abaa822df"
   }
  ]
 }

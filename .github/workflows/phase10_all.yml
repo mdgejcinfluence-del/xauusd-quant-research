@@ -90,6 +90,10 @@ name: phase10_all
         description: 'Phase 23-C: trajectoires FOMC tick IS (seq388, developpement)'
         type: boolean
         default: false
+      phase24b:
+        description: 'Phase 24-B: barset M15 + evenements M15 IS (seq392, faisabilite)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2328,4 +2332,93 @@ jobs:
         git add -A reports/meta_alpha/phase23/
         git status --porcelain
         git diff --cached --quiet || git commit -m 'Phase 23-C: analyse trajectoires FOMC (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+
+  lots24b:
+    name: P24B lot ${{ matrix.batch }} (barres M15 tick IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase24b }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Barres M15 du lot (IS uniquement)
+      env:
+        P23_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase24
+        python ci_tools/phase24b_engine.py lot 2>&1 | tee reports/meta_alpha/phase24/PHASE24B_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase24/PHASE24B_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Publier les fragments du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p24b-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase24/P24B_*_${{ matrix.batch }}.parquet
+        retention-days: 90
+        if-no-files-found: error
+  analyse24b:
+    name: P24-B analyse faisabilite M15 (aucun entrainement)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase24b }}
+    needs:
+    - lots24b
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p24b-frag-*
+        path: reports/meta_alpha/phase24
+        merge-multiple: true
+    - name: Analyse Phase 24-B
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase24
+        python ci_tools/phase24b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase24/PHASE24B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase24/PHASE24B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 24-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p24bout && cp -a reports/meta_alpha/phase24/. /tmp/p24bout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p24bout/. reports/meta_alpha/phase24/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase24/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 24-B: analyse faisabilite M15 (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research
