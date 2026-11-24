@@ -53,6 +53,7 @@ def premier(cond):
 
 
 def mode_lot():
+    """Traitement borne par journee (memoire limitee): requetes DuckDB par jour."""
     import duckdb
     batch = os.environ['P22_BATCH']
     inv = json.loads((ROOT / 'reports/meta_alpha/INVENTORY_348_EXHAUSTIVE.json').read_text())['partitions']
@@ -65,110 +66,128 @@ def mode_lot():
     fichiers = [str(localdir / p['name']) for p in parts if (localdir / p['name']).exists()]
     con = duckdb.connect(); con.execute("SET memory_limit='6GB'"); con.execute('SET threads=3')
     lst = '[' + ','.join(f"'{f}'" for f in fichiers) + ']'
-    arr = con.execute(f"""SELECT timestamp_utc AS ts, bid, ask FROM read_parquet({lst})
-                         WHERE timestamp_utc < '{IS_END}' ORDER BY timestamp_utc""").fetchnumpy()
-    tt = arr['ts'].astype('datetime64[ns]').astype('int64')
-    bid = arr['bid'].astype(float); ask = arr['ask'].astype(float); del arr
     NS = 10**9
-    jours_lot = set(pd.to_datetime(tt).strftime('%Y-%m-%d'))
+
+    def requete(debut, fin):
+        a = con.execute(f"""SELECT timestamp_utc AS ts, bid, ask FROM read_parquet({lst})
+                            WHERE timestamp_utc >= '{debut}' AND timestamp_utc < '{fin}'
+                            ORDER BY timestamp_utc""").fetchnumpy()
+        return (a['ts'].astype('datetime64[ns]').astype('int64'),
+                a['bid'].astype(float), a['ask'].astype(float))
+
+    jours_dispo = con.execute(f"""SELECT DISTINCT CAST(timestamp_utc AS DATE) AS d FROM read_parquet({lst})
+                                  WHERE timestamp_utc < '{IS_END}'""").fetchnumpy()['d']
+    jours_lot = set(pd.to_datetime(jours_dispo).strftime('%Y-%m-%d'))
+    print('lot', batch, len(jours_lot), 'jours disponibles', flush=True)
 
     ev = pd.read_parquet(R22 / 'PHASE22A_SWEEP_RECLAIM_EVENTS.parquet')
     ev = ev[(ev.statut == 'SWEEP_RECLAIM_CONFIRME') & (ev.population == 'PRIMAIRE')]
     cat = pd.read_parquet(R22 / 'PHASE22A_SWEEP_LEVEL_CATALOG.parquet').set_index(['jour', 'LEVEL_ID'])
     ev = ev[ev.jour.isin(jours_lot)]
     rowsA = []
-    for r in ev.itertuples():
-        ds = int(np.searchsorted(tt, pd.Timestamp(r.jour).value)); de = int(np.searchsorted(tt, (pd.Timestamp(r.jour) + pd.Timedelta(days=1)).value))
-        if de - ds < 10: continue
-        t_j, b_j, a_j = tt[ds:de], bid[ds:de], ask[ds:de]
-        m_j = (b_j + a_j) / 2.0; s_j = logbp(b_j, a_j)
-        i_frac = int(np.searchsorted(t_j, pd.Timestamp(r.ts_franchissement).value))
-        i_ent = int(np.searchsorted(t_j, pd.Timestamp(r.ts_reintegration).value))
-        if i_ent >= len(t_j): continue
-        buf = float(np.median(s_j[max(0, int(np.searchsorted(t_j, t_j[i_frac] - 300 * NS))):i_frac])) if i_frac > 0 else float(s_j[0])
-        d = int(r.direction_candidate); entree = float(r.prix_entree)
-        extreme = float(r.extreme_balayee)
-        stop_ref = extreme * np.exp(buf / 10000) if d < 0 else extreme * np.exp(-buf / 10000)
-        ligne = cat.loc[(r.jour, r.LEVEL_ID)]
-        boite_h, boite_l = max(ligne.niveau_prix, ligne.oppose_reference), min(ligne.niveau_prix, ligne.oppose_reference)
-        centre = float(np.sqrt(boite_h * boite_l)); oppose = float(ligne.oppose_reference)
-        for arch, cible in [('CENTRE', centre), ('OPPOSE', oppose)]:
-            if d < 0:
-                i_stop = premier(a_j[i_ent:] >= stop_ref); i_cib = premier(a_j[i_ent:] <= cible)
-            else:
-                i_stop = premier(b_j[i_ent:] <= stop_ref); i_cib = premier(b_j[i_ent:] >= cible)
-            i_stop = None if i_stop is None else i_stop + i_ent
-            i_cib = None if i_cib is None else i_cib + i_ent
-            if i_stop is not None and i_cib is not None and i_stop == i_cib:
-                resultat, i_sort, prix_sort = 'ORDER_SEQUENCE_AMBIGUOUS', i_stop, (a_j[i_stop] if d < 0 else b_j[i_stop])
-            elif i_stop is not None and (i_cib is None or i_stop < i_cib):
-                resultat, i_sort, prix_sort = 'STOP_AVANT_OBJECTIF', i_stop, (a_j[i_stop] if d < 0 else b_j[i_stop])
-            elif i_cib is not None:
-                resultat, i_sort, prix_sort = 'OBJECTIF_AVANT_STOP', i_cib, cible
-            else:
-                resultat, i_sort = 'EXPIRATION', len(t_j) - 1
-                prix_sort = a_j[i_sort] if d < 0 else b_j[i_sort]
-            seg = m_j[i_ent:i_sort + 1]
-            mfe = float(d * logbp(np.array([m_j[i_ent]]), np.array([seg.max() if d > 0 else seg.min()]))[0]) if d > 0 else \
-                float(logbp(np.array([seg.min()]), np.array([m_j[i_ent]]))[0])
-            mae = float(-d * logbp(np.array([m_j[i_ent]]), np.array([seg.min() if d > 0 else seg.max()]))[0]) if d > 0 else \
-                float(logbp(np.array([seg.max()]), np.array([m_j[i_ent]]))[0])
-            row = dict(SWEEP_EVENT_ID=r.SWEEP_EVENT_ID, jour=r.jour, LEVEL_ID=r.LEVEL_ID, architecture=arch,
-                       direction=d, resultat=resultat, prix_entree=entree, prix_sortie=float(prix_sort),
-                       stop_reference=float(stop_ref), cible=float(cible), buffer_bp=buf,
-                       distance_stop_bp=float(abs(logbp(np.array([entree]), np.array([stop_ref]))[0])),
-                       distance_cible_bp=float(abs(logbp(np.array([entree]), np.array([cible]))[0])),
-                       delai_evenement_min=float((t_j[i_sort] - t_j[i_ent]) / (60 * NS)), MFE_BP=mfe, MAE_BP=mae,
-                       semaine_iso=pd.Timestamp(r.jour).strftime('%G-W%V'), annee=pd.Timestamp(r.jour).year,
-                       gap_dans_fenetre=bool((np.diff(t_j[i_ent:i_sort + 1]) > 300 * NS).any()) if i_sort > i_ent else False)
-            row.update(nets(d, entree, float(prix_sort), None))
-            row['ratio_structurel'] = row['distance_cible_bp'] / row['distance_stop_bp'] if row['distance_stop_bp'] > 0 else np.nan
-            rowsA.append(row)
+    for jour, gev in ev.groupby('jour'):
+        tt, bid, ask = requete(jour, (pd.Timestamp(jour) + pd.Timedelta(days=1)).strftime('%Y-%m-%d'))
+        if len(tt) < 10: continue
+        mid = (bid + ask) / 2.0; spread = logbp(bid, ask)
+        for r in gev.itertuples():
+            i_frac = int(np.searchsorted(tt, pd.Timestamp(r.ts_franchissement).value))
+            i_ent = int(np.searchsorted(tt, pd.Timestamp(r.ts_reintegration).value))
+            if i_ent >= len(tt): continue
+            lo5 = max(0, int(np.searchsorted(tt, tt[i_frac] - 300 * NS))) if i_frac < len(tt) else 0
+            buf = float(np.median(spread[lo5:i_frac])) if i_frac > 0 else float(spread[0])
+            d = int(r.direction_candidate); entree = float(r.prix_entree)
+            extreme = float(r.extreme_balayee)
+            stop_ref = extreme * np.exp(buf / 10000) if d < 0 else extreme * np.exp(-buf / 10000)
+            ligne = cat.loc[(r.jour, r.LEVEL_ID)]
+            if isinstance(ligne, pd.DataFrame): ligne = ligne.iloc[0]
+            boite_h, boite_l = max(ligne.niveau_prix, ligne.oppose_reference), min(ligne.niveau_prix, ligne.oppose_reference)
+            centre = float(np.sqrt(boite_h * boite_l)); oppose = float(ligne.oppose_reference)
+            for arch, cible in [('CENTRE', centre), ('OPPOSE', oppose)]:
+                if d < 0:
+                    i_stop = premier(ask[i_ent:] >= stop_ref); i_cib = premier(ask[i_ent:] <= cible)
+                else:
+                    i_stop = premier(bid[i_ent:] <= stop_ref); i_cib = premier(bid[i_ent:] >= cible)
+                i_stop = None if i_stop is None else i_stop + i_ent
+                i_cib = None if i_cib is None else i_cib + i_ent
+                if i_stop is not None and i_cib is not None and i_stop == i_cib:
+                    resultat, i_sort, prix_sort = 'ORDER_SEQUENCE_AMBIGUOUS', i_stop, (ask[i_stop] if d < 0 else bid[i_stop])
+                elif i_stop is not None and (i_cib is None or i_stop < i_cib):
+                    resultat, i_sort, prix_sort = 'STOP_AVANT_OBJECTIF', i_stop, (ask[i_stop] if d < 0 else bid[i_stop])
+                elif i_cib is not None:
+                    resultat, i_sort, prix_sort = 'OBJECTIF_AVANT_STOP', i_cib, cible
+                else:
+                    resultat, i_sort = 'EXPIRATION', len(tt) - 1
+                    prix_sort = ask[i_sort] if d < 0 else bid[i_sort]
+                seg = mid[i_ent:i_sort + 1]
+                if d > 0:
+                    mfe = float(logbp(np.array([mid[i_ent]]), np.array([seg.max()]))[0])
+                    mae = float(logbp(np.array([seg.min()]), np.array([mid[i_ent]]))[0])
+                else:
+                    mfe = float(logbp(np.array([seg.min()]), np.array([mid[i_ent]]))[0])
+                    mae = float(logbp(np.array([mid[i_ent]]), np.array([seg.max()]))[0])
+                row = dict(SWEEP_EVENT_ID=r.SWEEP_EVENT_ID, jour=r.jour, LEVEL_ID=r.LEVEL_ID, architecture=arch,
+                           direction=d, resultat=resultat, prix_entree=entree, prix_sortie=float(prix_sort),
+                           stop_reference=float(stop_ref), cible=float(cible), buffer_bp=buf,
+                           distance_stop_bp=float(abs(logbp(np.array([entree]), np.array([stop_ref]))[0])),
+                           distance_cible_bp=float(abs(logbp(np.array([entree]), np.array([cible]))[0])),
+                           delai_evenement_min=float((tt[i_sort] - tt[i_ent]) / (60 * NS)), MFE_BP=mfe, MAE_BP=mae,
+                           semaine_iso=pd.Timestamp(r.jour).strftime('%G-W%V'), annee=pd.Timestamp(r.jour).year,
+                           gap_dans_fenetre=bool((np.diff(tt[i_ent:i_sort + 1]) > 300 * NS).any()) if i_sort > i_ent else False)
+                row.update(nets(d, entree, float(prix_sort), None))
+                row['ratio_structurel'] = row['distance_cible_bp'] / row['distance_stop_bp'] if row['distance_stop_bp'] > 0 else np.nan
+                rowsA.append(row)
+        print('A jour traite', jour, flush=True)
 
     inpB = pd.read_parquet(R22 / 'PHASE22B_FAMILY_B_INPUT.parquet')
     inpB['jour_entree'] = pd.to_datetime(inpB.ts_entree).dt.strftime('%Y-%m-%d')
     inpB = inpB[inpB.jour_entree.isin(jours_lot)]
     rowsB = []
-    for r in inpB.itertuples():
-        i_ent = int(np.searchsorted(tt, pd.Timestamp(r.ts_entree).value))
-        i_conf = int(np.searchsorted(tt, pd.Timestamp(r.ts_confirmation).value))
-        i_exp = int(np.searchsorted(tt, pd.Timestamp(r.ts_expiration).value, side='right') - 1)
-        if i_ent >= len(tt) or i_exp <= i_ent: continue
-        lo5 = max(0, int(np.searchsorted(tt, tt[i_conf] - 300 * NS)))
-        buf = float(np.median(logbp(bid[lo5:i_conf], ask[lo5:i_conf]))) if i_conf > 0 else float(logbp(bid[:1], ask[:1])[0])
-        d = int(r.direction)
-        entree = ask[i_ent] if d > 0 else bid[i_ent]
-        stop_ref = float(r.pullback_extreme) * np.exp(-buf / 10000) if d > 0 else float(r.pullback_extreme) * np.exp(buf / 10000)
-        R_bp = float(logbp(np.array([stop_ref]), np.array([entree]))[0]) if d > 0 else float(logbp(np.array([entree]), np.array([stop_ref]))[0])
-        if R_bp <= 0:
-            rowsB.append(dict(IMPULSE_EPISODE_ID=r.IMPULSE_EPISODE_ID, statut='INVALID_STRUCTURAL_RISK')); continue
-        seg_m = (bid[i_ent:i_exp + 1] + ask[i_ent:i_exp + 1]) / 2.0; m_ent = seg_m[0]
-        mfe = float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0]) if d > 0 else float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0])
-        mae = float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0]) if d > 0 else float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0])
-        for K in (1.5, 2.0):
-            cible = entree * np.exp(d * K * R_bp / 10000)
-            if d > 0:
-                i_stop = premier(bid[i_ent:i_exp + 1] <= stop_ref); i_cib = premier(bid[i_ent:i_exp + 1] >= cible)
-            else:
-                i_stop = premier(ask[i_ent:i_exp + 1] >= stop_ref); i_cib = premier(ask[i_ent:i_exp + 1] <= cible)
-            if i_stop is not None and i_cib is not None and i_stop == i_cib:
-                resultat, ii, prix_sort = 'ORDER_SEQUENCE_AMBIGUOUS', i_stop, (bid[i_ent + i_stop] if d > 0 else ask[i_ent + i_stop])
-            elif i_stop is not None and (i_cib is None or i_stop < i_cib):
-                resultat, ii = 'STOP_AVANT_TP', i_stop; prix_sort = bid[i_ent + ii] if d > 0 else ask[i_ent + ii]
-            elif i_cib is not None:
-                resultat, ii, prix_sort = 'TP_AVANT_STOP', i_cib, cible
-            else:
-                resultat, ii = 'EXPIRATION', i_exp - i_ent; prix_sort = bid[i_exp] if d > 0 else ask[i_exp]
-            row = dict(IMPULSE_EPISODE_ID=r.IMPULSE_EPISODE_ID, direction=d, objectif_K=K, resultat=resultat,
-                       R_BP=R_bp, prix_entree=float(entree), prix_sortie=float(prix_sort), stop_reference=float(stop_ref),
-                       cible=float(cible), MFE_BP=mfe, MAE_BP=mae, buffer_bp=buf,
-                       duree_min=float((tt[i_ent + ii] - tt[i_ent]) / (60 * NS)),
-                       semaine_iso=r.semaine_iso, annee=pd.Timestamp(r.ts_entree).year,
-                       gap_dans_fenetre=bool((np.diff(tt[i_ent:i_ent + ii + 1]) > 300 * NS).any()) if ii > 0 else False,
-                       ecart_entree_22a_bp=float(logbp(np.array([r.prix_entree_22a]), np.array([entree]))[0]))
-            row.update(nets(d, float(entree), float(prix_sort), None))
-            row['R_realise'] = row['NET_S2_BP'] / R_bp
-            rowsB.append(row)
+    for jour, gin in inpB.groupby('jour_entree'):
+        debut_f = pd.Timestamp(gin.ts_entree.min()) - pd.Timedelta(minutes=10)
+        fin_f = pd.Timestamp(gin.ts_expiration.max()) + pd.Timedelta(minutes=1)
+        tt, bid, ask = requete(debut_f.strftime('%Y-%m-%d %H:%M:%S'), fin_f.strftime('%Y-%m-%d %H:%M:%S'))
+        if len(tt) < 10: continue
+        mid = (bid + ask) / 2.0
+        for r in gin.itertuples():
+            i_ent = int(np.searchsorted(tt, pd.Timestamp(r.ts_entree).value))
+            i_conf = i_ent
+            i_exp = int(np.searchsorted(tt, pd.Timestamp(r.ts_expiration).value, side='right') - 1)
+            if i_ent >= len(tt) or i_exp <= i_ent: continue
+            lo5 = max(0, int(np.searchsorted(tt, tt[i_conf] - 300 * NS)))
+            buf = float(np.median(logbp(bid[lo5:i_conf], ask[lo5:i_conf]))) if i_conf > 0 else float(logbp(bid[:1], ask[:1])[0])
+            d = int(r.direction)
+            entree = ask[i_ent] if d > 0 else bid[i_ent]
+            stop_ref = float(r.pullback_extreme) * np.exp(-buf / 10000) if d > 0 else float(r.pullback_extreme) * np.exp(buf / 10000)
+            R_bp = float(logbp(np.array([stop_ref]), np.array([entree]))[0]) if d > 0 else float(logbp(np.array([entree]), np.array([stop_ref]))[0])
+            if R_bp <= 0:
+                rowsB.append(dict(IMPULSE_EPISODE_ID=r.IMPULSE_EPISODE_ID, statut='INVALID_STRUCTURAL_RISK')); continue
+            seg_m = mid[i_ent:i_exp + 1]; m_ent = seg_m[0]
+            mfe = float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0]) if d > 0 else float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0])
+            mae = float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0]) if d > 0 else float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0])
+            for K in (1.5, 2.0):
+                cible = entree * np.exp(d * K * R_bp / 10000)
+                if d > 0:
+                    i_stop = premier(bid[i_ent:i_exp + 1] <= stop_ref); i_cib = premier(bid[i_ent:i_exp + 1] >= cible)
+                else:
+                    i_stop = premier(ask[i_ent:i_exp + 1] >= stop_ref); i_cib = premier(ask[i_ent:i_exp + 1] <= cible)
+                if i_stop is not None and i_cib is not None and i_stop == i_cib:
+                    resultat, ii, prix_sort = 'ORDER_SEQUENCE_AMBIGUOUS', i_stop, (bid[i_ent + i_stop] if d > 0 else ask[i_ent + i_stop])
+                elif i_stop is not None and (i_cib is None or i_stop < i_cib):
+                    resultat, ii = 'STOP_AVANT_TP', i_stop; prix_sort = bid[i_ent + ii] if d > 0 else ask[i_ent + ii]
+                elif i_cib is not None:
+                    resultat, ii, prix_sort = 'TP_AVANT_STOP', i_cib, cible
+                else:
+                    resultat, ii = 'EXPIRATION', i_exp - i_ent; prix_sort = bid[i_exp] if d > 0 else ask[i_exp]
+                row = dict(IMPULSE_EPISODE_ID=r.IMPULSE_EPISODE_ID, direction=d, objectif_K=K, resultat=resultat,
+                           R_BP=R_bp, prix_entree=float(entree), prix_sortie=float(prix_sort), stop_reference=float(stop_ref),
+                           cible=float(cible), MFE_BP=mfe, MAE_BP=mae, buffer_bp=buf,
+                           duree_min=float((tt[i_ent + ii] - tt[i_ent]) / (60 * NS)),
+                           semaine_iso=r.semaine_iso, annee=pd.Timestamp(r.ts_entree).year,
+                           gap_dans_fenetre=bool((np.diff(tt[i_ent:i_ent + ii + 1]) > 300 * NS).any()) if ii > 0 else False,
+                           ecart_entree_22a_bp=float(logbp(np.array([r.prix_entree_22a]), np.array([entree]))[0]))
+                row.update(nets(d, float(entree), float(prix_sort), None))
+                row['R_realise'] = row['NET_S2_BP'] / R_bp
+                rowsB.append(row)
     R22.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rowsA).to_parquet(R22 / f'P22B_A_{batch}.parquet', index=False)
     pd.DataFrame(rowsB).to_parquet(R22 / f'P22B_B_{batch}.parquet', index=False)
