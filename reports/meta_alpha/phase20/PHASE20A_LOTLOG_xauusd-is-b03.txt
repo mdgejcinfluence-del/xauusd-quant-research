@@ -1,0 +1,13 @@
+Kaggle xauusd-is-b03 200
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py", line 356, in <module>
+    if sys.argv[1] == 'lot': mode_lot()
+                             ^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase20a_engine.py", line 60, in mode_lot
+    b = con.execute(q).df()
+        ^^^^^^^^^^^^^^
+_duckdb.BinderException: Binder Error: Referenced column "filename" not found in FROM clause!
+Candidate bindings: "spread_bp"
+
+LINE 14:                    count(DISTINCT filename) AS n_partitions_sources
+                                           ^^^^^^^^
