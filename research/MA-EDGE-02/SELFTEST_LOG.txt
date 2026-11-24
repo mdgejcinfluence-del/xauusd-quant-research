@@ -1,0 +1,2 @@
+SELFTEST OK: evenement detecte t_decision=2026-12-03T21:15:00.000000 p=0.737 statut=DEADLINE_120 pnl_regle=-0.38 bp pnl_ref=-1145.65 bp
+Depart prospectif verrouille: 2026-11-24 17:12:57+00:00

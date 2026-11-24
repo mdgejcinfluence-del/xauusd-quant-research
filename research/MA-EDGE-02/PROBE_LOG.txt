@@ -1,0 +1,11 @@
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/edge02_dukascopy.py:57: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  now = pd.Timestamp.utcnow().floor('h')
+  2026-11-24 15:00:00+00:00 INDISPONIBLE (HTTPError)
+2026-11-24 15:00:00+00:00 {'ticks': 0}
+  2026-11-24 14:00:00+00:00 INDISPONIBLE (HTTPError)
+2026-11-24 14:00:00+00:00 {'ticks': 0}
+  2026-11-23 15:00:00+00:00 INDISPONIBLE (HTTPError)
+2026-11-23 15:00:00+00:00 {'ticks': 0}
+  2026-11-22 15:00:00+00:00 INDISPONIBLE (HTTPError)
+2026-11-22 15:00:00+00:00 {'ticks': 0}
+probe ecrite: /home/runner/work/xauusd-quant-research/xauusd-quant-research/research/MA-EDGE-02/DUKASCOPY_PROBE.json
