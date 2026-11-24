@@ -5059,6 +5059,23 @@
     "interdictions": "holdout ferme, aucun nouvel evenement historique, aucune confirmation independante revendiquee, aucun ordre"
    },
    "entry_hash": "f7e9d6de27991bdde975884c214a01500ea10e39c83ce836f0eedf2cc3de2b00"
+  },
+  {
+   "seq": 389,
+   "prev_hash": "f7e9d6de27991bdde975884c214a01500ea10e39c83ce836f0eedf2cc3de2b00",
+   "entry": {
+    "type": "PHASE23C_VERDICT",
+    "phase": "23-C",
+    "verdict_historique": "FOMC_VOLATILITY_ONLY",
+    "verdict_protocole": "FOMC_PROSPECTIVE_PROTOCOL_FROZEN",
+    "audit_71": "continuation depuis prix de depart, pas post-P15; post-15 = 52,1% a 60m",
+    "audit_88": "revisites concentrees avant t+15m",
+    "netS2_60m": -7.79,
+    "netS2_240m": 0.19,
+    "validation_min": "81 evenements futurs (15bp, 60m)",
+    "profitable_edge": false
+   },
+   "entry_hash": "3e66d4e67c8eaebb595dca3c2d3154b0e8b49133dcd80fc9e54b1a16b980cf54"
   }
  ]
 }
