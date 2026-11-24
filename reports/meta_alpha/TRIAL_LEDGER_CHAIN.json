@@ -4940,6 +4940,21 @@
     "replications": 10000
    },
    "entry_hash": "6f23efa0afeed88d6e75eec09fc81b988e0aa729d5719473a4e23038185b1715"
+  },
+  {
+   "seq": 381,
+   "prev_hash": "6f23efa0afeed88d6e75eec09fc81b988e0aa729d5719473a4e23038185b1715",
+   "entry": {
+    "type": "PHASE22A_VERDICT",
+    "phase": "22-A",
+    "famille_A": "SWEEP_RECLAIM_NO_ASYMMETRY (net S2 -3,7 a -8,2 bp, significativement negatif; queues lourdes)",
+    "famille_B": "H4_IMPULSE_WITHOUT_RESUMPTION_ADVANTAGE (net S2 -1,2 a -6,7 bp, aucun significatif)",
+    "candidats": "aucun ECONOMIC_CANDIDATE_EXPLORATORY",
+    "familles_separees": true,
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "c464d57a1297304c2ac509e936b53c8e13fd4f240e7180839808c9c84608da92"
   }
  ]
 }
