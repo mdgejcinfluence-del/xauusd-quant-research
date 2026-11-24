@@ -90,6 +90,10 @@ name: phase10_all
         description: 'Phase 20-B: confluence H4 x M1 cohorte evaluation IS (seq368, post-hoc)'
         type: boolean
         default: false
+      phase21d:
+        description: 'Phase 21-D: anatomie tick des grandes amplitudes D1 IS (seq378, post-hoc)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -1778,5 +1782,116 @@ jobs:
       with:
         name: p20b-livrables
         path: reports/meta_alpha/phase20
+        retention-days: 90
+        if-no-files-found: warn
+  lots21d:
+    name: P21D lot ${{ matrix.batch }} (chemins tick journaliers IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase21d }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Chemins tick du lot (IS uniquement, holdout jamais accede)
+      env:
+        P21_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase21
+        python ci_tools/phase21d_engine.py lot 2>&1 | tee reports/meta_alpha/phase21/PHASE21D_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase21/PHASE21D_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Consigner le journal du lot en cas d'echec
+      if: failure()
+      run: |
+        cp reports/meta_alpha/phase21/PHASE21D_LOTLOG_${{ matrix.batch }}.txt /tmp/lotlog.txt
+        cp reports/meta_alpha/phase21/PHASE21D_LOTEXIT_${{ matrix.batch }}.txt /tmp/lotexit.txt
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        mkdir -p reports/meta_alpha/phase21
+        cp /tmp/lotlog.txt reports/meta_alpha/phase21/PHASE21D_LOTLOG_${{ matrix.batch }}.txt
+        cp /tmp/lotexit.txt reports/meta_alpha/phase21/PHASE21D_LOTEXIT_${{ matrix.batch }}.txt
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add reports/meta_alpha/phase21/PHASE21D_LOTLOG_${{ matrix.batch }}.txt reports/meta_alpha/phase21/PHASE21D_LOTEXIT_${{ matrix.batch }}.txt
+        git diff --cached --quiet || git commit -m 'Phase 21-D: journal lot en echec (diagnostic)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les fragments tick du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p21d-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase21/P21D_*.csv
+        retention-days: 90
+        if-no-files-found: error
+  analyse21d:
+    name: P21-D anatomie tick D1 (descriptif, aucun modele)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase21d }}
+    needs:
+    - lots21d
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p21d-frag-*
+        path: reports/meta_alpha/phase21
+        merge-multiple: true
+    - name: Analyse Phase 21-D
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase21
+        python ci_tools/phase21d_engine.py analyse 2>&1 | tee reports/meta_alpha/phase21/PHASE21D_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase21/PHASE21D_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 21-D (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p21dout && cp -a reports/meta_alpha/phase21/. /tmp/p21dout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p21dout/. reports/meta_alpha/phase21/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase21/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 21-D: anatomie tick D1 IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+    - name: Publier les livrables
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: p21d-livrables
+        path: reports/meta_alpha/phase21
         retention-days: 90
         if-no-files-found: warn

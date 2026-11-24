@@ -4895,6 +4895,20 @@
     "profitable_edge": false
    },
    "entry_hash": "ce14abbb6c44ecba1dcdf760be57dc224bf68a700000e299055e6b76c6315d2e"
+  },
+  {
+   "seq": 378,
+   "prev_hash": "ce14abbb6c44ecba1dcdf760be57dc224bf68a700000e299055e6b76c6315d2e",
+   "entry": {
+    "type": "PHASE21D_AUTHORIZATION",
+    "phase": "21-D",
+    "statut": "EXPLORATORY_POST_HOC",
+    "question": "chronologie tick exacte des grandes amplitudes D1: ordre extremes, premiers passages, records",
+    "sources": "ticks IS Kaggle (lots CI) + journees certifiees 21-A; holdout interdit",
+    "graine": 2115,
+    "replications": 10000
+   },
+   "entry_hash": "819c05d46a00f9ab4cec8c944a3feb5729572e59f29efae12a7a6e82cbf88fb8"
   }
  ]
 }
