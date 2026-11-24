@@ -2798,7 +2798,7 @@ jobs:
         (kaggle datasets list --mine 2>&1 | head -20) | tee research/EUR-EDGE-01/KAGGLE_ETAT.txt
         mkdir -p /tmp/kaggle_cot && cp research/EUR-EDGE-01/data/CFTC_COT_EUROFX_099741_TFF_clean.parquet /tmp/kaggle_cot/ 2>/dev/null
         cat > /tmp/kaggle_cot/dataset-metadata.json << 'JSON'
-        {"title": "EURUSD CFTC COT Euro FX 099741 TFF", "id": "shalom5123/eurusd-cftc-cot", "licenses": [{"name": "other"}], "subtitle": "CFTC Traders in Financial Futures, EURO FX code 099741, futures-only, 2010-2026. Source: CFTC public files (US public domain). report_date = Tuesday reference; available_from = conservative availability (+4 days)."}
+        {"title": "EURUSD CFTC COT Euro FX 099741 TFF", "id": "shalom5123/eurusd-cftc-cot", "licenses": [{"name": "other"}], "subtitle": "CFTC TFF EURO FX 099741 futures-only 2010-2026 (domaine public US)"}
         JSON
         (kaggle datasets create -p /tmp/kaggle_cot -q 2>&1 || kaggle datasets version -p /tmp/kaggle_cot -m 'MAJ EUR-EDGE-01' -q 2>&1) | tee research/EUR-EDGE-01/KAGGLE_UPLOAD_COT_LOG.txt
         echo "fin"
