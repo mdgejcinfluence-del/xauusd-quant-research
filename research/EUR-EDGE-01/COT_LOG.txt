@@ -5,9 +5,9 @@ COT 2013: 0 lignes EURO FX 099741
 COT 2014: 0 lignes EURO FX 099741
 DIAG colonnes: Market_and_Exchange_Names | As_of_Date_In_Form_YYMMDD | Report_Date_as_YYYY-MM-DD | CFTC_Contract_Market_Code | CFTC_Market_Code | CFTC_Region_Code | CFTC_Commodity_Code | Open_Interest_All | Prod_Merc_Positions_Long_All | Prod_Merc_Positions_Short_All | Swap_Positions_Long_All | Swap__Positions_Short_All | Swap__Positions_Spread_All | M_Money_Positions_Long_All
 DIAG codes uniques: <ArrowStringArray>
-['000CBT', '000MGE', '00IFED', '00NYME', '00PBOT', '00ICUS', '000CME',
- '00NODX', '00ICEU', '00DUMX', '000CMX']
-Length: 11, dtype: str
+['001602', '001612', '001626', '002602', '004603', '005602', '005603',
+ '006393', '00639H', '00639Y', '00639Z', '007601']
+Length: 12, dtype: str
 COT 2015: 0 lignes EURO FX 099741
 COT 2016: 0 lignes EURO FX 099741
 COT 2017: 0 lignes EURO FX 099741
