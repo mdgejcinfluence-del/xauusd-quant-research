@@ -5240,6 +5240,19 @@
     "interdictions": "aucun seuil choisi sur 2018-2019, aucun nouvel entrainement/filtre, holdout ferme"
    },
    "entry_hash": "c5cfbb91e212b84874e2351e946067f8bd62515a764a0a468f0623028205c9cf"
+  },
+  {
+   "seq": 401,
+   "prev_hash": "c5cfbb91e212b84874e2351e946067f8bd62515a764a0a468f0623028205c9cf",
+   "entry": {
+    "type": "PHASE24F_VERDICT",
+    "phase": "24-F",
+    "calibration": "M15_SCORE_PREDICTIVE_BUT_ECONOMICALLY_NONMONOTONIC + M15_ECONOMIC_BREAK_EVEN_NOT_REACHED (P_BE=0,654 franchi en frequence a [0,70;0,75) mais PnL -4,36)",
+    "evaluation": "M15_SCORE_PREDICTIVE_BUT_ECONOMICALLY_NONMONOTONIC + M15_FALSE_POSITIVES_NOT_SEPARABLE",
+    "note": "le score classe la frequence du label, pas l esperance; aucune regle de selection produite",
+    "profitable_edge": false
+   },
+   "entry_hash": "27ac70a3e0186cbd15913676c146adb8ea07e909d820dc8ee9e645cdb9e55502"
   }
  ]
 }
