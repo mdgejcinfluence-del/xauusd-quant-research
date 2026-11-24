@@ -5168,6 +5168,22 @@
     "profitable_edge": false
    },
    "entry_hash": "10189c07fef4b2fad4c54080075f7c70420459e81e90fa5ec0b15e7cdf47342b"
+  },
+  {
+   "seq": 396,
+   "prev_hash": "10189c07fef4b2fad4c54080075f7c70420459e81e90fa5ec0b15e7cdf47342b",
+   "entry": {
+    "type": "PHASE24D_AUTORISATION",
+    "phase": "24-D",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "evaluation economique du Chauffeur M15 generaliste gele 24-C; Directeurs comme permissions seules (P0/P1/P2); aucun reentrainement",
+    "seuil_gele": 0.5609549968307628,
+    "sortie": "t_decision + 32x15min, premier tick Bid/Ask, aucun stop/TP",
+    "couts": "19-B, S2 principal",
+    "interdictions": "holdout ferme, aucun portefeuille, aucun ordre, aucun horizon alternatif"
+   },
+   "entry_hash": "a9efbadfe9e470f2c478a412b5fcadc544c32a19c660088344f59b12e0df6545"
   }
  ]
 }
