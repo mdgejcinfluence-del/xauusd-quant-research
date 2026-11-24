@@ -1,0 +1,13 @@
+lignes EURO FX: 0
+CFTC_Contract_Market_Code -> <ArrowStringArray>
+[]
+Length: 0, dtype: str
+CFTC_Market_Code -> <ArrowStringArray>
+[]
+Length: 0, dtype: str
+CFTC_Commodity_Code -> <ArrowStringArray>
+[]
+Length: 0, dtype: str
+noms: <ArrowStringArray>
+[]
+Length: 0, dtype: str
