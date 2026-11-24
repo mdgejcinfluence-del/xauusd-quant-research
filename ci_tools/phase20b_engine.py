@@ -150,7 +150,7 @@ def mode_analyse():
             a = np.where(dirv == 1, pe * (1 + s / 10000), pe * (1 - s / 10000))
             bb = np.where(dirv == 1, ps * (1 - s / 10000), ps * (1 + s / 10000))
             d[f'PL_{scen}'] = dirv * np.log(bb / a) * 10000
-        paths.append(d[['event_id', 'grappe_id', 'direction', 'passe_filtre', 'etat_h4', 'ts_entree', 'prix_entree'] +
+        paths.append(d[['event_id', 'grappe_id', 'direction', 'passe_filtre', 'etat_h4', 't_decision', 'ts_entree', 'prix_entree'] +
                         [f'{c}_H{Hh}' for c in ['ts_sortie', 'prix_sortie', 'delai_sortie_s', 'MFE', 'MAE', 't_MFE_min', 't_MAE_min']] +
                         ['PL_S0', 'PL_S1', 'PL_S2']].assign(horizon=Hh))
     pd.concat(paths).to_parquet(R20 / 'PHASE20B_EVENT_FORWARD_PATHS.parquet', index=False)
@@ -182,11 +182,15 @@ def mode_analyse():
             if len(g) < 5 or len(norm) < 5: continue
             # bootstrap par grappe de la difference des moyennes PL_S2
             gg = g.groupby('grappe_id').PL_S2.mean().values; nn = norm.groupby('grappe_id').PL_S2.mean().values
-            boots = [rng.choice(gg, len(gg), replace=True).mean() - rng.choice(nn, len(nn), replace=True).mean() for _ in range(2000)]
+            boots = np.array([rng.choice(gg, len(gg), replace=True).mean() - rng.choice(nn, len(nn), replace=True).mean() for _ in range(2000)])
             obs = float(g.PL_S2.mean() - norm.PL_S2.mean())
-            p = float((np.abs(np.array(boots) - np.mean(boots)) >= abs(obs - np.mean(boots))).mean())
+            p = float(min(1.0, 2 * min((boots <= 0).mean(), (boots >= 0).mean())))
+            sem_etat = int(pd.to_datetime(g.t_decision).dt.strftime('%G-W%V').nunique())
+            sem_norm = int(pd.to_datetime(norm.t_decision).dt.strftime('%G-W%V').nunique())
+            statut = 'EVALUE' if (len(g) >= 50 and sem_etat >= 20) else 'NON_EVALUABLE_INFERENTIAL'
             tests.append(dict(comparaison=f'{etat} vs NORMAL', horizon=Hh, mesure='PL_S2 moyen (difference)',
-                              n_etat=int(len(g)), n_normal=int(len(norm)), effet=float(obs), p_value=p,
+                              n_etat=int(len(g)), n_normal=int(len(norm)), semaines_etat=sem_etat, semaines_normal=sem_norm,
+                              effet=float(obs), p_value=p, statut=statut,
                               ic95=[float(np.quantile(boots, .025)), float(np.quantile(boots, .975))]))
             lignes.append(dict(population='COMPARAISON', horizon=Hh, regime=f'{etat} vs NORMAL', n=int(len(g)),
                                PL_S2_moyen=float(obs)))

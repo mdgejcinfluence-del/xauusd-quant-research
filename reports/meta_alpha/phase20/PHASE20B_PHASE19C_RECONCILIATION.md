@@ -1,0 +1,3 @@
+# PHASE 20-B — RÉCONCILIATION AVEC LES PHASES 19-C ET 20-A
+
+Entrées recalculées par les lots puis rapprochées des artefacts gelés : H8 — 442 événements communs, **écart maximal de prix d'entrée 0,0 et de P&L S2 exactement 0,0** ; H16 — 437 communs, mêmes écarts nuls. Les résultats non conditionnels de 19-C sont donc reproduits à l'identique avant toute comparaison conditionnelle. Les régimes proviennent des définitions 20-A reproduites sur le barset committé (mêmes quantiles roulants, même exclusion de la barre courante) ; aucune découverte 20-A n'est revendiquée à nouveau. La population secondaire des 543 candidats a été examinée descriptivement pour l'amplitude (MFE/MAE par régime, sortie du moteur) sans jamais remplacer la population principale.

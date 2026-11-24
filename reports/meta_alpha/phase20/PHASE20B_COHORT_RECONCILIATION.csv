@@ -1,0 +1,9 @@
+population,n,source,statut
+candidats_evaluation_M1_2018_2020,543,PHASE12B_FEATURES (F10-01 etiquetes EVALUATION) + directions PHASE11C,population secondaire descriptive uniquement
+exposes_filtre_M1_gele (population principale),443,p_M1 > 0.7591463414634146 (recalcule par le modele gele 12-C.1; entrees identiques a 17-B/19-C),population principale
+EXPANSION (principale),128,alignement H4 causal (derniere barre complete avant t_decision),evaluable inferentiellement
+NORMAL (principale),308,alignement H4 causal,evaluable inferentiellement
+COMPRESSION (principale),7,alignement H4 causal,NON_EVALUABLE_INFERENTIAL (< 50 evenements et < 20 semaines)
+H4_STATE_UNAVAILABLE (principale),0,alignement H4 causal,aucun
+paires_reconciliees_19C_H8,442,PHASE19C_H8_EVENT_RESULTS,ecarts prix d'entree et PL_S2 exactement 0.0
+paires_reconciliees_19C_H16,437,PHASE19C_H16_EVENT_RESULTS,ecarts prix d'entree et PL_S2 exactement 0.0

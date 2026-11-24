@@ -4756,6 +4756,21 @@
     "base_seq": 367
    },
    "entry_hash": "7343d0fe2b72c45796a707bcc4c1ea92c27006b5ac016abf79628dda89e8318d"
+  },
+  {
+   "seq": 369,
+   "prev_hash": "7343d0fe2b72c45796a707bcc4c1ea92c27006b5ac016abf79628dda89e8318d",
+   "entry": {
+    "type": "PHASE20B_VERDICTS",
+    "phase": "20-B",
+    "EXPANSION": "H4_REGIME_DOES_NOT_IMPROVE_M1_CAPTURE",
+    "COMPRESSION": "H4_STATE_INSUFFICIENTLY_REPRESENTED",
+    "global": "H4_REGIME_DOES_NOT_IMPROVE_M1_CAPTURE",
+    "statut": "EXPLORATORY_POST_HOC",
+    "run_CI": 45352958144,
+    "base_seq": 368
+   },
+   "entry_hash": "dae6d12f6f0640ed4ff86cae5e4ba6d62cab07d86a94466ccd8885d21513edf3"
   }
  ]
 }
