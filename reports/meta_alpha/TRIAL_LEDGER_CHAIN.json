@@ -4865,6 +4865,36 @@
     "profitable_edge": false
    },
    "entry_hash": "0190eeab65aee9040458802d71c0dc6c2d0ad343188782cc3a67f789e86522e9"
+  },
+  {
+   "seq": 376,
+   "prev_hash": "0190eeab65aee9040458802d71c0dc6c2d0ad343188782cc3a67f789e86522e9",
+   "entry": {
+    "type": "PHASE21C_AUTHORIZATION",
+    "phase": "21-C",
+    "statut": "EXPLORATORY_POST_HOC",
+    "question": "anatomie intrajournaliere D1, premiers passages, nouveaux extremes",
+    "artefacts": "20-A/21-A uniquement, holdout interdit",
+    "graine": 2113,
+    "replications": 10000
+   },
+   "entry_hash": "e364eea8b4a4994896c313ec21151a78a25bb7b6a629c4a07e48f639239275a4"
+  },
+  {
+   "seq": 377,
+   "prev_hash": "e364eea8b4a4994896c313ec21151a78a25bb7b6a629c4a07e48f639239275a4",
+   "entry": {
+    "type": "PHASE21C_VERDICT",
+    "phase": "21-C",
+    "verdict": "D1_AMPLITUDE_WITHOUT_DIRECTION",
+    "anatomie": "construction graduelle, pic tranche 12:00-16:00 UTC, stable 2010-2019",
+    "nouveaux_extremes": "extensions futures bidirectionnelles +9,6 a +14,4 bp (q~0), terminal nul",
+    "direction_partielle": "aucune asymetrie (q>=0,086)",
+    "passage_precoce_tardif": "effet mecanique temps restant, non candidat",
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "ce14abbb6c44ecba1dcdf760be57dc224bf68a700000e299055e6b76c6315d2e"
   }
  ]
 }
