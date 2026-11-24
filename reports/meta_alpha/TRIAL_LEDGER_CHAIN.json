@@ -4795,6 +4795,42 @@
     "base_seq": 370
    },
    "entry_hash": "3cd2ddc13a2e7a298eb40687f77c00e8d3a91e2b0da9c9c2cdb55d6090b93c80"
+  },
+  {
+   "seq": 372,
+   "prev_hash": "3cd2ddc13a2e7a298eb40687f77c00e8d3a91e2b0da9c9c2cdb55d6090b93c80",
+   "entry": {
+    "type": "PHASE21A_AUTHORIZATION",
+    "phase": "21-A",
+    "decision": "AUTORISATION RADIOGRAPHIE STRUCTURELLE D1 DEPUIS BARRES H4 CERTIFIEES 20-A (descriptif, aucun modele/strategie)",
+    "statut": "EXPLORATORY_POST_HOC",
+    "interdits": [
+     "holdout",
+     "ticks bruts",
+     "modele",
+     "backtest",
+     "seuil optimise"
+    ],
+    "base_seq": 371
+   },
+   "entry_hash": "68ff8672ea013234b0ba448c7059f319c488ac2d2ddcaa6dc3f7118787bc709f"
+  },
+  {
+   "seq": 373,
+   "prev_hash": "68ff8672ea013234b0ba448c7059f319c488ac2d2ddcaa6dc3f7118787bc709f",
+   "entry": {
+    "type": "PHASE21A_VERDICT",
+    "phase": "21-A",
+    "verdict": "D1_AMPLITUDE_STRUCTURE_SUPPORTED_DESCRIPTIVE",
+    "candidat": "D1_EXPANSION amplitude future H1/2/3/5 (q BH 0-0,007), descriptif uniquement",
+    "sequences": "ARTEFACT_IDENTIFICATION_EX_POST_NON_CAUSAL (controle causal nul)",
+    "directionnel": "aucune asymetrie D1 significative (q>=0,39)",
+    "n_journees": 1992,
+    "n_tests": 18,
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "6f987d18d9429b496e1740a36b9f0d7f173896f91b6c038bc07420e3056cb3a7"
   }
  ]
 }

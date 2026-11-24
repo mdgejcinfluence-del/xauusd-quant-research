@@ -1,0 +1,6 @@
+famille,q_min,qualification,note
+D1_COMPRESSION amplitude future,0.06762857142857143,RARE_D1_STRUCTURAL_OBSERVATION,candidat descriptif uniquement; jamais un PROFITABLE_EDGE
+D1_COMPRESSION terminal directionnel,0.504,RARE_D1_STRUCTURAL_OBSERVATION,candidat descriptif uniquement; jamais un PROFITABLE_EDGE
+D1_EXPANSION amplitude future,0.0,D1_VOLATILITY_ANOMALY_CANDIDATE,candidat descriptif uniquement; jamais un PROFITABLE_EDGE
+D1_EXPANSION terminal directionnel,0.31745454545454543,RARE_D1_STRUCTURAL_OBSERVATION,candidat descriptif uniquement; jamais un PROFITABLE_EDGE
+SEQUENCE >= 3 jours,0.0,ARTEFACT_IDENTIFICATION_EX_POST_NON_CAUSAL,"la fin de sequence n'est connue qu'apres la journee suivante (92,9 % de journees suivantes de sens non identique par construction); controle causal (3e journee consecutive de meme sens, connu a sa cloture): +2,7 bp (H1) / +6,0 bp (H5), aucun effet; aucun candidat retenu"
