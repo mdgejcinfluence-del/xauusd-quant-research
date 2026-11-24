@@ -65,11 +65,10 @@ def mode_lot():
     fichiers = [str(localdir / p['name']) for p in parts if (localdir / p['name']).exists()]
     con = duckdb.connect(); con.execute("SET memory_limit='6GB'"); con.execute('SET threads=3')
     lst = '[' + ','.join(f"'{f}'" for f in fichiers) + ']'
-    df = con.execute(f"""SELECT timestamp_utc AS ts, bid, ask FROM read_parquet({lst})
-                         WHERE timestamp_utc < '{IS_END}' ORDER BY timestamp_utc""").df()
-    tt = pd.to_datetime(df.ts).values.astype('datetime64[ns]').astype('int64')
-    bid = df.bid.values.astype(float); ask = df.ask.values.astype(float); del df
-    mid = (bid + ask) / 2.0; spread = logbp(bid, ask)
+    arr = con.execute(f"""SELECT timestamp_utc AS ts, bid, ask FROM read_parquet({lst})
+                         WHERE timestamp_utc < '{IS_END}' ORDER BY timestamp_utc""").fetchnumpy()
+    tt = arr['ts'].astype('datetime64[ns]').astype('int64')
+    bid = arr['bid'].astype(float); ask = arr['ask'].astype(float); del arr
     NS = 10**9
     jours_lot = set(pd.to_datetime(tt).strftime('%Y-%m-%d'))
 
@@ -81,7 +80,8 @@ def mode_lot():
     for r in ev.itertuples():
         ds = int(np.searchsorted(tt, pd.Timestamp(r.jour).value)); de = int(np.searchsorted(tt, (pd.Timestamp(r.jour) + pd.Timedelta(days=1)).value))
         if de - ds < 10: continue
-        t_j, m_j, b_j, a_j, s_j = tt[ds:de], mid[ds:de], bid[ds:de], ask[ds:de], spread[ds:de]
+        t_j, b_j, a_j = tt[ds:de], bid[ds:de], ask[ds:de]
+        m_j = (b_j + a_j) / 2.0; s_j = logbp(b_j, a_j)
         i_frac = int(np.searchsorted(t_j, pd.Timestamp(r.ts_franchissement).value))
         i_ent = int(np.searchsorted(t_j, pd.Timestamp(r.ts_reintegration).value))
         if i_ent >= len(t_j): continue
@@ -134,16 +134,17 @@ def mode_lot():
         i_conf = int(np.searchsorted(tt, pd.Timestamp(r.ts_confirmation).value))
         i_exp = int(np.searchsorted(tt, pd.Timestamp(r.ts_expiration).value, side='right') - 1)
         if i_ent >= len(tt) or i_exp <= i_ent: continue
-        buf = float(np.median(spread[max(0, int(np.searchsorted(tt, tt[i_conf] - 300 * NS))):i_conf])) if i_conf > 0 else float(spread[0])
+        lo5 = max(0, int(np.searchsorted(tt, tt[i_conf] - 300 * NS)))
+        buf = float(np.median(logbp(bid[lo5:i_conf], ask[lo5:i_conf]))) if i_conf > 0 else float(logbp(bid[:1], ask[:1])[0])
         d = int(r.direction)
         entree = ask[i_ent] if d > 0 else bid[i_ent]
         stop_ref = float(r.pullback_extreme) * np.exp(-buf / 10000) if d > 0 else float(r.pullback_extreme) * np.exp(buf / 10000)
         R_bp = float(logbp(np.array([stop_ref]), np.array([entree]))[0]) if d > 0 else float(logbp(np.array([entree]), np.array([stop_ref]))[0])
         if R_bp <= 0:
             rowsB.append(dict(IMPULSE_EPISODE_ID=r.IMPULSE_EPISODE_ID, statut='INVALID_STRUCTURAL_RISK')); continue
-        seg_m = mid[i_ent:i_exp + 1]
-        mfe = float(logbp(np.array([mid[i_ent]]), np.array([seg_m.max()]))[0]) if d > 0 else float(logbp(np.array([seg_m.min()]), np.array([mid[i_ent]]))[0])
-        mae = float(logbp(np.array([seg_m.min()]), np.array([mid[i_ent]]))[0]) if d > 0 else float(logbp(np.array([mid[i_ent]]), np.array([seg_m.max()]))[0])
+        seg_m = (bid[i_ent:i_exp + 1] + ask[i_ent:i_exp + 1]) / 2.0; m_ent = seg_m[0]
+        mfe = float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0]) if d > 0 else float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0])
+        mae = float(logbp(np.array([seg_m.min()]), np.array([m_ent]))[0]) if d > 0 else float(logbp(np.array([m_ent]), np.array([seg_m.max()]))[0])
         for K in (1.5, 2.0):
             cible = entree * np.exp(d * K * R_bp / 10000)
             if d > 0:
