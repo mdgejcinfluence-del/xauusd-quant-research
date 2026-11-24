@@ -78,14 +78,6 @@ name: phase10_all
         description: 'Phase 22-B: sorties structurelles familles A+B IS (seq382, post-hoc)'
         type: boolean
         default: false
-      phase23b_exo:
-        description: 'Phase 23-B exo: extraction FRED/ALFRED + calendriers officiels (seq386)'
-        type: boolean
-        default: false
-      phase23b:
-        description: 'Phase 23-B: fenetres tick annonces macro IS (seq386, catalogue requis)'
-        type: boolean
-        default: false
       phase23c:
         description: 'Phase 23-C: trajectoires FOMC tick IS (seq388, developpement)'
         type: boolean
@@ -2136,7 +2128,7 @@ jobs:
     name: P23-B extraction exogene (FRED/calendriers, 0 FCFA)
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    if: ${{ inputs.phase23b_exo }}
+    if: ${{ false }}
     permissions:
       actions: read
       contents: write
@@ -2171,7 +2163,7 @@ jobs:
     name: P23B lot ${{ matrix.batch }} (fenetres annonces tick IS)
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    if: ${{ inputs.phase23b }}
+    if: ${{ false }}
     permissions:
       actions: read
       contents: write
@@ -2216,7 +2208,7 @@ jobs:
     name: P23-B etudes A+B (post-hoc, aucun modele)
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    if: ${{ inputs.phase23b }}
+    if: ${{ false }}
     needs:
     - lots23b
     permissions:
