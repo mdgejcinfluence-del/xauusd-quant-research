@@ -5138,6 +5138,36 @@
     "profitable_edge": false
    },
    "entry_hash": "78bb59e27608b02cbb7650621f637bce3aad4b1914a300f76b1894d7dcb6dd5c"
+  },
+  {
+   "seq": 394,
+   "prev_hash": "78bb59e27608b02cbb7650621f637bce3aad4b1914a300f76b1894d7dcb6dd5c",
+   "entry": {
+    "type": "PHASE24C_AUTORISATION",
+    "phase": "24-C",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "entrainement et evaluation predictive des 3 Chauffeurs M15 (TIME_ONLY, H4_TIME, D1_TIME); aucun P&L",
+    "architecture": "logistique IRLS non penalisee (reproduction 12-B documentee), 4 variables + intercept; seuil = prevalence majoritaire du train propre; bootstrap par grappe 10000, graine 2123",
+    "comparaisons": "chaque conditionnel vs son M0 et vs TIME_ONLY applique aux memes evenements d evaluation",
+    "interdictions": "holdout ferme, aucune nouvelle variable, aucun tuning, aucune economie"
+   },
+   "entry_hash": "d78736870f613bacba15f0c7ca0bc797cd3bf083d0811a593e032d9b07446b86"
+  },
+  {
+   "seq": 395,
+   "prev_hash": "d78736870f613bacba15f0c7ca0bc797cd3bf083d0811a593e032d9b07446b86",
+   "entry": {
+    "type": "PHASE24C_VERDICT",
+    "phase": "24-C",
+    "verdict_global": "TIME_ONLY_PREDICTIVE_VALUE_SUPPORTED",
+    "M15_TIME_ONLY": "M15_TIME_ONLY_PREDICTIVE_SIGNAL_SUPPORTED (Brier eval 0,2215 vs M0 0,2473; AUC 0,712)",
+    "M15_H4_TIME": "M15_H4_NO_INCREMENTAL_PREDICTIVE_VALUE (cond 0,2098 vs generaliste 0,1993 memes evenements; IC95 grappe [+0,0008;+0,0208])",
+    "M15_D1_TIME": "M15_D1_NO_INCREMENTAL_PREDICTIVE_VALUE (0,2271 vs 0,2171; IC95 [-0,0008;+0,0209])",
+    "note": "selection de population porte le signal, reentrainement conditionnel le degrade; aucune rentabilite",
+    "profitable_edge": false
+   },
+   "entry_hash": "10189c07fef4b2fad4c54080075f7c70420459e81e90fa5ec0b15e7cdf47342b"
   }
  ]
 }

@@ -1,0 +1,4 @@
+modele,train,calibration,evaluation,reference_24B
+M15_TIME_ONLY,4733,1377,1469,"(4733, 1469)"
+M15_H4_TIME,408,83,139,"(408, 139)"
+M15_D1_TIME,469,106,198,"(469, 198)"

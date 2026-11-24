@@ -1,0 +1,59 @@
+{
+ "M15_TIME_ONLY": {
+  "population": "perm_TIME_ONLY",
+  "n_train": 4733,
+  "prevalence_train": 0.5609549968307628,
+  "seuil_classification": 0.5609549968307628,
+  "parametres": 5,
+  "variables": [
+   "ratio_repli",
+   "duree_extreme_vers_treint_min",
+   "MFE_A_TREINT_BP",
+   "nb_touches_P0"
+  ],
+  "graine": 2123,
+  "algorithme": "IRLS non penalise (reproduction phase12b), ridge numerique 1e-8, tol 1e-10, max 200 iter"
+ },
+ "M15_H4_TIME": {
+  "population": "perm_H4_TIME",
+  "n_train": 408,
+  "prevalence_train": 0.5343137254901961,
+  "seuil_classification": 0.5343137254901961,
+  "parametres": 5,
+  "variables": [
+   "ratio_repli",
+   "duree_extreme_vers_treint_min",
+   "MFE_A_TREINT_BP",
+   "nb_touches_P0"
+  ],
+  "graine": 2123,
+  "algorithme": "IRLS non penalise (reproduction phase12b), ridge numerique 1e-8, tol 1e-10, max 200 iter"
+ },
+ "M15_D1_TIME": {
+  "population": "perm_D1_TIME",
+  "n_train": 469,
+  "prevalence_train": 0.5884861407249466,
+  "seuil_classification": 0.5884861407249466,
+  "parametres": 5,
+  "variables": [
+   "ratio_repli",
+   "duree_extreme_vers_treint_min",
+   "MFE_A_TREINT_BP",
+   "nb_touches_P0"
+  ],
+  "graine": 2123,
+  "algorithme": "IRLS non penalise (reproduction phase12b), ridge numerique 1e-8, tol 1e-10, max 200 iter"
+ },
+ "_meta": {
+  "phase": "24-C",
+  "graine": 2123,
+  "nboot": 10000,
+  "variables": [
+   "ratio_repli",
+   "duree_extreme_vers_treint_min",
+   "MFE_A_TREINT_BP",
+   "nb_touches_P0"
+  ],
+  "note": "Q90 M15 vs Q95 H1 historique: evenements differents des evenements H1; aucun coefficient M1 reutilise"
+ }
+}
