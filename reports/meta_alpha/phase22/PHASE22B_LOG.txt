@@ -1,0 +1,7 @@
+{
+ "A_resultats": 6148,
+ "B_resultats": 1010,
+ "n_tests": 10,
+ "n_sig": 8,
+ "candidats": 0
+}
