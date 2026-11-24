@@ -114,7 +114,8 @@ def mode_lot():
                     break
                 j = i + int(rec[0]); rep += 1
                 direction = -1 if cote == 'HIGH' else 1
-                entree = bd[j] if direction < 0 else ak[j]
+                gj_entree = int(wi[j])
+                entree = bd[gj_entree] if direction < 0 else ak[gj_entree]
                 ev_rows.append(dict(SWEEP_EVENT_ID=eid, jour=js, LEVEL_ID=level_id, cote=cote,
                                     statut='SWEEP_RECLAIM_CONFIRME', population='PRIMAIRE' if rep == 1 else 'SECONDAIRE',
                                     ts_franchissement=pd.Timestamp(tw[i]), ts_reintegration=pd.Timestamp(tw[j]),
@@ -261,9 +262,19 @@ def famille_b(tests, rng):
 
 def mode_analyse():
     R22.mkdir(parents=True, exist_ok=True)
-    lvl = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R22 / 'P22A_LEVEL_*.parquet')))]).reset_index(drop=True)
-    ev = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R22 / 'P22A_EVENT_*.parquet')))]).reset_index(drop=True)
-    post = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(str(R22 / 'P22A_POST_*.parquet')))]).reset_index(drop=True)
+    def lire(motif):
+        frames = []
+        for f in sorted(glob.glob(str(R22 / motif))):
+            d = pd.read_parquet(f)
+            d['lot_source'] = pathlib.Path(f).stem.rsplit('_', 1)[-1]
+            frames.append(d)
+        return pd.concat(frames).reset_index(drop=True)
+    lvl = lire('P22A_LEVEL_*.parquet')
+    ev = lire('P22A_EVENT_*.parquet')
+    post = lire('P22A_POST_*.parquet')
+    # identifiant global: SWEEP_EVENT_ID n'est unique que dans un lot
+    for d in (ev, post):
+        d['SWEEP_EVENT_ID'] = d.lot_source + '-' + d.SWEEP_EVENT_ID.astype(str)
     for df in (lvl, ev, post):
         df['semaine_iso'] = pd.to_datetime(df.jour).dt.strftime('%G-W%V'); df['annee'] = pd.to_datetime(df.jour).dt.year
     lvl.to_parquet(R22 / 'PHASE22A_SWEEP_LEVEL_CATALOG.parquet', index=False)
