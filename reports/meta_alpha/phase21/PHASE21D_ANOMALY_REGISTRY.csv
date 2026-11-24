@@ -1,0 +1,13 @@
+seuil_bp,horizon,q_min,qualification
+30,1h,0.1566,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+30,2h,0.17485714285714288,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+30,4h,0.17485714285714288,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+30,EOD,0.1566,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+60,1h,0.21869999999999998,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+60,2h,0.26136,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+60,4h,0.664,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+60,EOD,0.5356799999999999,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+100,1h,0.17485714285714288,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+100,2h,0.1566,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+100,4h,0.1566,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle
+100,EOD,0.26136,AUCUN_EFFET_SIGNIFICATIF - expansion bidirectionnelle

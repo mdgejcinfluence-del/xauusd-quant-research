@@ -1,0 +1,28 @@
+{
+ "jours": 1992,
+ "ordre": {
+  "LOW_FINAL_FIRST": 1010,
+  "HIGH_FINAL_FIRST": 985
+ },
+ "passages": {
+  "30": 1995,
+  "60": 1878,
+  "100": 1255
+ },
+ "declencheurs": {
+  "30": {
+   "LOW": 1008,
+   "HIGH": 987
+  },
+  "60": {
+   "LOW": 1005,
+   "HIGH": 873
+  },
+  "100": {
+   "LOW": 660,
+   "HIGH": 595
+  }
+ },
+ "n_tests": 36,
+ "n_sig": 0
+}
