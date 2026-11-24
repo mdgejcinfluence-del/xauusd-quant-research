@@ -1,0 +1,4 @@
+variante,n_total,train_minoritaire,parametres,train_min_par_param,eval_n,eval_minoritaire,faisable
+M15_TIME_ONLY,7579,2078,5,415.6,1469,657,True
+M15_H4_TIME,630,190,5,38.0,139,62,True
+M15_D1_TIME,773,193,5,38.6,198,88,True
