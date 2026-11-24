@@ -5448,6 +5448,21 @@
     "kaggle": "datasets prives uniquement pour sources redistribuables (CFTC domaine public, officiels BCE/Fed selon conditions); jamais de ticks broker sans droit"
    },
    "entry_hash": "a163099b3c6488572a3019bfca900b936ff36e2ada3a547c6024fc9a651d6d5b"
+  },
+  {
+   "seq": 416,
+   "prev_hash": "a163099b3c6488572a3019bfca900b936ff36e2ada3a547c6024fc9a651d6d5b",
+   "entry": {
+    "type": "EUR_EDGE_01_RESULTS",
+    "mission": "EUR-EDGE-01",
+    "COT": "853 rapports CFTC TFF futures-only EURO FX 099741 (2010-07-20→2026-11-17); Disaggregated sans FX (diagnostic CI); dataset Kaggle prive shalom5123/eurusd-cftc-cot cree et verifie",
+    "taux": "BCE DFR via SDMX officiel OK (6172 lignes); Tresor US officiel OK; FRED injoignable du runner (miroirs a fiabiliser)",
+    "spot": "echantillon Dukascopy propre (0 violation, spread median 0,2-0,3 pip, ~0,7 Go/17 ans) mais DROITS: base de donnees et redistribution interdites sans accord ecrit -> archive massive et Kaggle ticks INTERDITS; suspension documentee, alternatives demo fondateur preparees",
+    "bloques": "CME 6E detaille et IV/RR25/BF25: LICENSE_OR_COST_BLOCKED; consensus macro: manquant declare, jamais fabrique",
+    "profitable_edge": false,
+    "suite": "taux US par miroirs, bloc publications macro, demande autorisation Dukascopy/connecteurs demo, puis programme scientifique EUR/USD preenregistre sur donnees licites"
+   },
+   "entry_hash": "67d37847eda9f99439cc96c75edf44eb317641f4ba38173623cb45a2b3445787"
   }
  ]
 }
