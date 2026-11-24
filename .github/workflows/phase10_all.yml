@@ -102,6 +102,14 @@ name: phase10_all
         description: 'Phase 22-B: sorties structurelles familles A+B IS (seq382, post-hoc)'
         type: boolean
         default: false
+      phase23b_exo:
+        description: 'Phase 23-B exo: extraction FRED/ALFRED + calendriers officiels (seq386)'
+        type: boolean
+        default: false
+      phase23b:
+        description: 'Phase 23-B: fenetres tick annonces macro IS (seq386, catalogue requis)'
+        type: boolean
+        default: false
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2127,3 +2135,127 @@ jobs:
         path: reports/meta_alpha/phase22
         retention-days: 90
         if-no-files-found: warn
+
+  exo23b:
+    name: P23-B extraction exogene (FRED/calendriers, 0 FCFA)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    if: ${{ inputs.phase23b_exo }}
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow requests
+    - name: Extraction documentee
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase23
+        python ci_tools/phase23b_engine.py exo 2>&1 | tee reports/meta_alpha/phase23/PHASE23B_EXO_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase23/PHASE23B_EXO_EXIT.txt
+        exit $ec
+    - name: Committer extraction et catalogue (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p23out && cp -a reports/meta_alpha/phase23/. /tmp/p23out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p23out/. reports/meta_alpha/phase23/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase23/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 23-B: extraction exogene et catalogue (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+  lots23b:
+    name: P23B lot ${{ matrix.batch }} (fenetres annonces tick IS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: ${{ inputs.phase23b }}
+    permissions:
+      actions: read
+      contents: write
+    strategy:
+      matrix:
+        batch:
+        - xauusd-is-b01
+        - xauusd-is-b02
+        - xauusd-is-b03
+        - xauusd-is-b04
+        - xauusd-is-b05
+        - xauusd-is-b06
+        - xauusd-is-b07
+        - xauusd-is-missing13
+      fail-fast: false
+    env:
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow duckdb requests six
+    - name: Fenetres annonces du lot (IS uniquement)
+      env:
+        P23_BATCH: ${{ matrix.batch }}
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase23
+        python ci_tools/phase23b_engine.py lot 2>&1 | tee reports/meta_alpha/phase23/PHASE23B_LOTLOG_${{ matrix.batch }}.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase23/PHASE23B_LOTEXIT_${{ matrix.batch }}.txt
+        exit $ec
+    - name: Publier les fragments du lot
+      uses: actions/upload-artifact@v4
+      with:
+        name: p23b-frag-${{ matrix.batch }}
+        path: reports/meta_alpha/phase23/P23B_*_${{ matrix.batch }}.parquet
+        retention-days: 90
+        if-no-files-found: error
+  analyse23b:
+    name: P23-B etudes A+B (post-hoc, aucun modele)
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    if: ${{ inputs.phase23b }}
+    needs:
+    - lots23b
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Recuperer les 8 lots
+      uses: actions/download-artifact@v4
+      with:
+        pattern: p23b-frag-*
+        path: reports/meta_alpha/phase23
+        merge-multiple: true
+    - name: Analyse Phase 23-B
+      run: |
+        set +e
+        mkdir -p reports/meta_alpha/phase23
+        python ci_tools/phase23b_engine.py analyse 2>&1 | tee reports/meta_alpha/phase23/PHASE23B_LOG.txt
+        ec=${PIPESTATUS[0]}
+        echo "$ec" > reports/meta_alpha/phase23/PHASE23B_ENGINE_EXIT.txt
+        exit $ec
+    - name: Committer les livrables Phase 23-B (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/p23bout && cp -a reports/meta_alpha/phase23/. /tmp/p23bout/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/p23bout/. reports/meta_alpha/phase23/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A reports/meta_alpha/phase23/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'Phase 23-B: etudes A+B IS (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research

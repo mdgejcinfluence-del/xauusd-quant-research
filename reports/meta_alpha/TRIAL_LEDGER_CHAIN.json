@@ -5014,6 +5014,22 @@
     "statut": "EXPLORATORY_RESEARCH_DESIGN"
    },
    "entry_hash": "07c29158aff18fdf4e20c37ab452925a02877e927e74947c41c29a4efbd48516"
+  },
+  {
+   "seq": 386,
+   "prev_hash": "07c29158aff18fdf4e20c37ab452925a02877e927e74947c41c29a4efbd48516",
+   "entry": {
+    "type": "PHASE23B_AUTHORIZATION",
+    "phase": "23-B",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget": "0 FCFA",
+    "etudeA": "contexte J-1 DTWEXBGS/DGS10/DFII10 (registre 23-A ferme, 6 candidats) vs resultats D1 futurs 1/2/5j",
+    "etudeB": "fenetres CPI/PCE/NFP/FOMC heures officielles ET->UTC avec DST, temoins meme jour de semaine/creneau; aucun consensus/surprise",
+    "sources": "FRED/ALFRED libre + calendriers officiels + ticks IS lots CI; holdout interdit",
+    "graine": 2121,
+    "replications": 10000
+   },
+   "entry_hash": "024e0e5d670721b2032762f10a12451cddce78afcd350f65bd0f6cd40bb588fe"
   }
  ]
 }
