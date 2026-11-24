@@ -1,18 +1,27 @@
-{
- "A_evenements_primaires": 3073,
- "A_par_niveau": {
-  "A2_OVERNIGHT_LOW": 1165,
-  "A1_OVERNIGHT_HIGH": 1064,
-  "A4_PREVIOUS_DAY_LOW": 440,
-  "A3_PREVIOUS_DAY_HIGH": 404
- },
- "A_sans_reclaim": 1281,
- "B_statuts": {
-  "RESUMPTION_CONFIRMED": 505,
-  "IMPULSE_FULL_RETRACE_INVALIDATION": 300,
-  "NO_RESUMPTION_WITHIN_8_H4": 97,
-  "NO_PULLBACK_WITHIN_8_H4": 3
- },
- "n_tests": 18,
- "n_sig": 12
-}
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase22a_engine.py", line 359, in <module>
+    else: mode_analyse()
+          ^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase22a_engine.py", line 273, in mode_analyse
+    ev = lire('P22A_EVENT_*.parquet')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase22a_engine.py", line 268, in lire
+    d = pd.read_parquet(f)
+        ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parquet.py", line 760, in read_parquet
+    return impl.read(
+           ^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parquet.py", line 296, in read
+    pa_table = self.api.parquet.read_table(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pyarrow/parquet/core.py", line 1915, in read_table
+    dataset = ParquetDataset(
+              ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pyarrow/parquet/core.py", line 1480, in __init__
+    [fragment], schema=schema or fragment.physical_schema,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_dataset.pyx", line 1479, in pyarrow._dataset.Fragment.physical_schema.__get__
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+OSError: Could not open Parquet input source '/home/runner/work/xauusd-quant-research/xauusd-quant-research/reports/meta_alpha/phase22/P22A_EVENT_xauusd-is-b03.parquet': Couldn't deserialize thrift: TProtocolException: Invalid data
+
