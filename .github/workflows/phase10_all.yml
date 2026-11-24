@@ -78,8 +78,8 @@ name: phase10_all
         description: 'Phase 22-B: sorties structurelles familles A+B IS (seq382, post-hoc)'
         type: boolean
         default: false
-      phase23c:
-        description: 'Phase 23-C: trajectoires FOMC tick IS (seq388, developpement)'
+      edge02:
+        description: 'MA-EDGE-02: flux Dukascopy + SHADOW (seq409)'
         type: boolean
         default: false
       phase24b:
