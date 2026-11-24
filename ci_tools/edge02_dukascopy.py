@@ -75,7 +75,7 @@ def mode_collect(debut: str, fin: str):
     par_jour = {}
     for h in heures:
         cle = str(h)
-        if cle in man:
+        if cle in man and man[cle].get('statut') in ('OK', 'VIDE_ANCIEN_FIGE'):
             continue
         df = telecharger_heure(h)
         if df is None or len(df) == 0:
