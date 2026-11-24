@@ -1,0 +1,9 @@
+source,usage_interne,usage_commercial,redistribution,stockage_base,transfert_kaggle,action
+DUKASCOPY_BI5,usage interne recherche personnelle,non commercial,INTERDITE sans accord ecrit,INTERDITE,INTERDITS,ACCORD ECRIT DUKASCOPY REQUIS avant toute base massive/Kaggle
+CFTC_COT,oui,oui (domaine public),autorisee avec citation CFTC,autorisee,AUTORISES prive,Kaggle prive autorise
+ECB_SDMX,oui,selon politique BCE (citation),autorisee avec citation,autorisee,AUTORISES prive,Kaggle prive autorise
+FRED_FED,oui,citation requise,autorisee avec citation des sources primaires,autorisee,AUTORISES prive,Kaggle prive autorise
+USTREASURY,oui,oui,autorisee,autorisee,AUTORISES prive,Kaggle prive autorise
+TRUEFX,interne uniquement,non,INTERDITE,restreinte,INTERDITS,aucun transfert
+HISTDATA,personnel/educatif,non,INTERDITE,restreinte,INTERDITS,aucun transfert
+CME_6E,licence requise,licence requise,licence requise,licence requise,INTERDITS sans licence,aucun sans licence

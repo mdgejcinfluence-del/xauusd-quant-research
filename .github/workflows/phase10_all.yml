@@ -2791,6 +2791,7 @@ jobs:
       run: |
         set +e
         mkdir -p research/EUR-EDGE-01/data
+        python ci_tools/eur01_engine.py cotdiag 2>&1 | tee research/EUR-EDGE-01/COTDIAG_LOG.txt
         python ci_tools/eur01_engine.py probe 2>&1 | tee research/EUR-EDGE-01/PROBE_LOG.txt
         python ci_tools/eur01_engine.py cot 2>&1 | tee research/EUR-EDGE-01/COT_RUN_LOG.txt
         python ci_tools/eur01_engine.py rates 2>&1 | tee research/EUR-EDGE-01/RATES_RUN_LOG.txt

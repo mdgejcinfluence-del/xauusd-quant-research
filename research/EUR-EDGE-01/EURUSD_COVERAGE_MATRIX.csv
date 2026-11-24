@@ -1,0 +1,11 @@
+bloc,source,couverture_visee,frequence,statut,note
+Spot ticks Bid/Ask EURUSD,Dukascopy (echantillon),2003→2026 (temoins 2015 et 2026 verifies),tick ms,INTERNE LIMITE,accord ecrit requis pour archive complete
+Barres M1-M30/H1/H4/D1 derivees,derivees des ticks echantillon,echantillons 2015/2026,M1→D1,INTERNE,derivees soumis aux memes restrictions que la source
+COT Euro FX 099741,CFTC officiel,2010→2026,hebdo,COMPLET EN COURS,"publication vendredi 15:30 ET, positions du mardi"
+Taux BCE (DFR/MRO),ECB SDMX,2010→,quotidien (changements),EN COURS,"cle SDMX corrigee, verification CI"
+"Taux US (2Y/5Y/10Y, reels, FEDFUNDS)",Fed/FRED/Treasury,2010→,quotidien,PARTIEL (Treasury OK),FRED injoignable du runner: miroirs GitHub ou H.15 Fed
+Reference DEXUSEU,Fed via FRED,2010→,quotidien,EN COURS,"taux de reference midi NY, NON executable, ne remplace pas Bid/Ask"
+Futures 6E (prix/volume/OI detailles),CME,—,—,BLOQUE LICENCE,aucune depense autorisee
+Vol implicite / RR25 / BF25,CME/fournisseurs,—,—,BLOQUE LICENCE,aucune IV inventee
+Macro zone euro / USA (valeurs publiees),Eurostat/BCE/BLS/BEA,2010→,mensuel/evenement,A CONSTRUIRE phase suivante,"millésimes: premiere valeur + revisions, jamais de consensus fabrique"
+Cross assets justifies,Dukascopy/Fed,selon source,tick/quotidien,EN ATTENTE justification par hypothese,pas de telechargement systematique

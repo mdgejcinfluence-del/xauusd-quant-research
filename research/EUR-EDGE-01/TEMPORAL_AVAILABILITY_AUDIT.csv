@@ -1,0 +1,6 @@
+donnee,horodatage_source,disponibilite_reelle,regle
+Ticks Dukascopy,horodatage tick UTC ms,"immediate (fichier horaire, retard de publication mesure)",recherche temps differe uniquement
+COT 099741,mardi (positions),vendredi 15:30 ET (utilisable + marge conservative),ne jamais utiliser la date de reference
+Taux BCE,date de decision/publication BCE,publication BCE,valeur en vigueur connue a l annonce
+Taux US Treasury,date de publication quotidienne,publication Treasury/Fed,pas de revision retroactive silencieuse: archiver les millesimes telecharges
+DEXUSEU,date de reference,publication Fed J+1 ouvrable,"reference, non executable"

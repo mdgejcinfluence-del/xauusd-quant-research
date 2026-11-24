@@ -156,5 +156,17 @@ def mode_rates():
     (OUT / 'RATES_LOG.json').write_text(json.dumps(statut, indent=1))
 
 
+def mode_cotdiag():
+    brut = fetch('https://www.cftc.gov/files/dea/history/fut_disagg_txt_2020.zip', 120)
+    z = zipfile.ZipFile(io.BytesIO(brut))
+    d = pd.read_csv(z.open(z.namelist()[0]), low_memory=False)
+    noms = [c for c in d.columns if 'Market_and_Exchange' in c][0]
+    m = d[d[noms].astype(str).str.contains('EURO FX', na=False)]
+    print('lignes EURO FX:', len(m))
+    for c in ['CFTC_Contract_Market_Code', 'CFTC_Market_Code', 'CFTC_Commodity_Code']:
+        print(c, '->', m[c].astype(str).str.strip().unique()[:5] if c in d.columns else 'ABSENTE')
+    print('noms:', m[noms].astype(str).unique()[:5])
+
+
 if __name__ == '__main__':
-    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates}[sys.argv[1]]()
+    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag}[sys.argv[1]]()

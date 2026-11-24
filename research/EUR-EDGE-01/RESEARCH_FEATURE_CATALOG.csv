@@ -1,0 +1,8 @@
+variable,definition,unite,frequence,source,disponibilite_causale,note
+RET_LOG,rendement log Mid,bp,barre,ticks source,cloture barre,standard
+RV,volatilite realisee (somme des carres des rendements M1),bp,jour/barre,barres M1,fenetre passee uniquement,standard
+SPREAD_MED,spread median par barre,pips,barre,ticks,dans la barre,standard
+EXCURSION,MFE/MAE directionnels a horizon fixe,bp,evenement,barres,apres decision uniquement pour evaluation,standard
+RATE_DIFF_2Y,differentiel 2 ans US-DE (Bund via source licite),bp,quotidien,Fed/BCE/Bund,dernier taux publie avant decision,Bund: source a confirmer
+COT_NET_PCT,position nette managed money / open interest,% OI,hebdo,CFTC,"publication vendredi + marge, jamais la date de reference",standard
+VOL_REGIME,quantile passe de RV,—,barre,barres,250 barres passees,standard
