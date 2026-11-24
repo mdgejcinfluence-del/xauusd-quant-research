@@ -1,0 +1,10 @@
+Kaggle xauusd-is-b01 200
+lot xauusd-is-b01 1787662 ticks, 44 journees
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase22a_engine.py", line 347, in <module>
+    if sys.argv[1] == 'lot': mode_lot()
+                             ^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase22a_engine.py", line 89, in mode_lot
+    buf = ser.rolling('5min').median().fillna(method='bfill').values
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: NDFrame.fillna() got an unexpected keyword argument 'method'
