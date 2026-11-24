@@ -4925,6 +4925,21 @@
     "profitable_edge": false
    },
    "entry_hash": "89a98c4a8ea58f031a747d8a474084e2adc921dafc22ac1267e13d2057f50a18"
+  },
+  {
+   "seq": 380,
+   "prev_hash": "89a98c4a8ea58f031a747d8a474084e2adc921dafc22ac1267e13d2057f50a18",
+   "entry": {
+    "type": "PHASE22A_AUTHORIZATION",
+    "phase": "22-A",
+    "statut": "EXPLORATORY_POST_HOC",
+    "familles": "A Sweep&Reclaim tick (niveaux overnight/previous day); B Impulse-Pullback-Resumption H4; familles separees, aucune fusion",
+    "sources": "ticks IS Kaggle lots CI + barsets certifies 20-A/21-A; holdout interdit",
+    "couts": "19-B spread une fois, S0/S1/S2, commissions exclues",
+    "graine": 2117,
+    "replications": 10000
+   },
+   "entry_hash": "6f23efa0afeed88d6e75eec09fc81b988e0aa729d5719473a4e23038185b1715"
   }
  ]
 }
