@@ -82,7 +82,7 @@ def mode_lot():
         i_fh_first = int(np.argmax(m >= fh)); i_fl_first = int(np.argmax(m <= fl))
         i_fh_last = int(len(m) - 1 - np.argmax((m >= fh)[::-1])); i_fl_last = int(len(m) - 1 - np.argmax((m <= fl)[::-1]))
         rec_h = np.where(np.r_[True, np.diff(runh) > 0])[0]
-        rec_l = np.where(np.r_[True, np.diff(runl) > 0])[0]
+        rec_l = np.where(np.r_[True, np.diff(runl) < 0])[0]
         ordre = ('HIGH_FINAL_FIRST' if tt[i_fh_first] < tt[i_fl_first] else
                  'LOW_FINAL_FIRST' if tt[i_fl_first] < tt[i_fh_first] else 'FINAL_EXTREMES_SAME_TIMESTAMP')
         day_rows.append(dict(jour=js, n_ticks=len(m), open_tick=o, high_tick=fh, low_tick=fl, close_tick=m[-1],
@@ -181,6 +181,11 @@ def mode_analyse():
     post = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_POST_*.csv')))])
     rec = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_RECORD_*.csv')))])
     spr = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_SPREAD_*.csv')))])
+    # journees scindees entre deux lots (fragments partiels): exclues et documentees, jamais fusionnees
+    jours_dup = sorted(day[day.duplicated('jour', keep=False)].jour.unique())
+    for nom, df in [('day', day), ('pas', pas), ('post', post), ('rec', rec), ('spr', spr)]:
+        df.drop(df[df.jour.isin(jours_dup)].index, inplace=True)
+    print('journees scindees entre lots, exclues:', jours_dup, flush=True)
     d1 = pd.read_parquet(R21 / 'PHASE21A_D1_BARSET.parquet')
     d1['jour'] = d1.jour.dt.strftime('%Y-%m-%d')
     info = d1.set_index('jour')
@@ -199,6 +204,7 @@ def mode_analyse():
     audit = ['# PHASE 21-D — AUDIT SOURCE TICK', '', 'Statut : EXPLORATORY_POST_HOC. Ticks IS Kaggle '
              '(timestamp_utc, bid, ask), Mid=(bid+ask)/2, journees certifiees 21-A uniquement, holdout jamais accede.', '',
              f"- Journees tick reconstruites : {day.jour.nunique()} (certifiees 21-A : {len(info)})",
+             f"- Journees scindees entre deux lots, exclues des analyses (fragments partiels, jamais fusionnees) : {jours_dup}",
              f"- Ticks totaux traites : {int(day.n_ticks.sum())}",
              f"- Doublons timestamp : {int(day.doublons_ts.sum())} ; bid>ask : {int(day.bid_sup_ask.sum())} ; prix non positifs : {int(day.prix_non_positifs.sum())}",
              f"- Journees avec gap > 300 s : {int((day.n_gaps_sup_300s > 0).sum())} (cause non etablie : GAP_CAUSE_UNVERIFIED)",
