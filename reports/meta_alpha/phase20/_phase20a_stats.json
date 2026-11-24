@@ -1,0 +1,11 @@
+{
+ "n_barres": 15942,
+ "n_completes": 13191,
+ "periode": [
+  "2010-01-04 00:00:00",
+  "2019-12-16 20:00:00"
+ ],
+ "n_evenements": 37132,
+ "n_tests": 56,
+ "n_q_significatifs": 6
+}
