@@ -1,0 +1,7 @@
+id,niveau,hypothese,population,methode,resultat,decision,justification
+EXP-01,2-predictif,le score classe le payoff a horizon court,"evenements M15 calibration+evaluation, terciles de score",rendements Mid signes 4/8/16/32 barres,"aucun classement monotone; T1 meilleur en calibration a 32 barres (+1,76) ; evaluation T3 +2,03",REJETEE,"le score ne classe pas le payoff, a aucun horizon teste"
+EXP-02,1-descriptif,derives horaires UTC stables,"238k barres M15, deux moities",rendement moyen par heure,"amplitudes <0,3 bp/barre, signes instables entre moities",REJETEE,aucune saisonnalite exploitable
+EXP-03,1/2,continuation apres compression asiatique,"jours 2010-2019, terciles de range 00-08",rendement signe 08-16 selon direction asiatique,"expansion: +5,28 (2010-15) puis -1,83 (2016-19)",REJETEE,inversion temporelle
+EXP-04,1,asymetrie de premier passage favorable,1122 evenements selectionnes 24-D,barrieres symetriques 20/30/50 bp High/Low M15,"20 bp: 39,8% favorable d abord vs 42,6% adverse",REJETEE,geometrie symetrique
+EXP-05,donnees,GVZ/COT exploitables causalement,sources 25-A,audit documentaire (Phase 25-A),"deux sources libres causales identifiees, aucune serie extraite dans cette mission",OUVERTE,exige la phase 25-B proposee (fondateur)
+EXP-06,1,asymetrie par direction et par grappe,1122 evenements 24-D,P&L S2 par direction et taille de grappe,"LONG -2,33 / SHORT -4,39; isoles +1,54 (mediane -2,00, n=89)",REJETEE comme regle,deux directions negatives; sous-groupe isole fragile et non replicable sans calibration

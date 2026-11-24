@@ -5283,6 +5283,33 @@
     "depense": 0
    },
    "entry_hash": "ce04bba598185424ce779fa51bcf8527e87da628fa1625c3ac7ade14e10c61c0"
+  },
+  {
+   "seq": 404,
+   "prev_hash": "ce04bba598185424ce779fa51bcf8527e87da628fa1625c3ac7ade14e10c61c0",
+   "entry": {
+    "type": "MA_EDGE_01_AUTORISATION",
+    "mission": "MA-EDGE-01",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "recherche autonome d un avantage economique net XAUUSD; cible = payoff net realisable, pas un label de trajectoire",
+    "perimetre": "branche de session uniquement, dossier research/MA-EDGE-01; holdout ferme; modeles/seuils geles inchanges; aucune depense; aucun ordre"
+   },
+   "entry_hash": "e0ef413df8a57db550437124894639ba086e0914636b09be315de8fb93490e04"
+  },
+  {
+   "seq": 405,
+   "prev_hash": "e0ef413df8a57db550437124894639ba086e0914636b09be315de8fb93490e04",
+   "entry": {
+    "type": "MA_EDGE_01_VERDICT",
+    "mission": "MA-EDGE-01",
+    "verdict": "MA_EDGE_01_PREDICTIVE_INFORMATION_WITHOUT_ECONOMIC_EDGE",
+    "experiences": "EXP-01..06 toutes negatives ou fragiles (aucun classement payoff par score/horizon, pas de saisonnalite, compression instable, premier passage symetrique, directions negatives)",
+    "diagnostic": "la cible historique (labels de trajectoire) est mal posee: les faux positifs lents (-31,29 bp) detruisent l esperance; le payoff net doit devenir la cible",
+    "pistes_ouvertes": "H01 GVZ J-1, H02 COT, H05 deadline de non-realisation (preenregistrement + evenements frais requis)",
+    "profitable_edge": false
+   },
+   "entry_hash": "a7aafdc06bb006876410026cb695fa36569904f82d9a3b0469fbd4c98104d6cf"
   }
  ]
 }
