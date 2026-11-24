@@ -1957,7 +1957,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: p22a-frag-${{ matrix.batch }}
-        path: reports/meta_alpha/phase22/P22A_*.parquet
+        path: reports/meta_alpha/phase22/P22A_*_${{ matrix.batch }}.parquet
         retention-days: 90
         if-no-files-found: error
   analyse22a:
