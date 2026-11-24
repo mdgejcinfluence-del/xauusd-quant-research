@@ -1,0 +1,4 @@
+population,evenements_TIME_ONLY,avec_PNL_complet,censures_sortie,selectionnes_seuil_gele,usage
+DEVELOPPEMENT_2016_2017,1377,1372,5,975,frontiere P_BE et cartographie (aucune validation independante)
+EVALUATION_2018_2019_posthoc,1469,1122,2,1124,diagnostic retrospectif uniquement; PnL indisponible sous le seuil (jamais selectionnes en 24-D)
+TRAIN_2010_2015,4733,non calcule,-,-,exclu de toute selection de regle (predictions in-sample)
