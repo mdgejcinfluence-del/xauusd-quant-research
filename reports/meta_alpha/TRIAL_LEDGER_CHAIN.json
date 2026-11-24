@@ -5422,6 +5422,19 @@
     "profitable_edge": false
    },
    "entry_hash": "7ab1b3bfc94ea2141138d6ea016c220b64af809a0e080ff3e674f7a7385a3c27"
+  },
+  {
+   "seq": 414,
+   "prev_hash": "7ab1b3bfc94ea2141138d6ea016c220b64af809a0e080ff3e674f7a7385a3c27",
+   "entry": {
+    "type": "MA_EDGE_02_CHECKPOINT",
+    "mission": "MA-EDGE-02",
+    "checkpoint": 2,
+    "rapport": "MA_EDGE_02_CONSOLIDATED_REPORT.md (15 questions): continuation 32 barres sous les couts; excursions symetriques; geometrie label sans payoff; etat +60 min separateur descriptif",
+    "collecte": "premiere heure post-preenregistrement collectee (19:00 UTC, 32375 ticks, 0 violation); chauffe 250 barres etendue au 2026-11-20 (contexte seul); cron inoperant sur branche non-defaut, dispatch manuel a chaque session",
+    "suite": "programme EUR-EDGE-01 devient principal (instruction fondateur); archives XAUUSD conservees, collecte SHADOW non abandonnee mais non prioritaire"
+   },
+   "entry_hash": "3e634111e4ad0a3e925569a648df11abdeacddc7887a96f2b253a775fb82979b"
   }
  ]
 }
