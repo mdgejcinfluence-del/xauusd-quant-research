@@ -1,22 +1,23 @@
-COT 2010: 0 lignes EURO FX 099741
-COT 2011: 0 lignes EURO FX 099741
-COT 2012: 0 lignes EURO FX 099741
-COT 2013: 0 lignes EURO FX 099741
-COT 2014: 0 lignes EURO FX 099741
-DIAG colonnes: Market_and_Exchange_Names | As_of_Date_In_Form_YYMMDD | Report_Date_as_YYYY-MM-DD | CFTC_Contract_Market_Code | CFTC_Market_Code | CFTC_Region_Code | CFTC_Commodity_Code | Open_Interest_All | Prod_Merc_Positions_Long_All | Prod_Merc_Positions_Short_All | Swap_Positions_Long_All | Swap__Positions_Short_All | Swap__Positions_Spread_All | M_Money_Positions_Long_All
+COT 2010: 24 lignes EURO FX 099741
+COT 2011: 52 lignes EURO FX 099741
+COT 2012: 53 lignes EURO FX 099741
+COT 2013: 52 lignes EURO FX 099741
+COT 2014: 52 lignes EURO FX 099741
+DIAG colonnes: Market_and_Exchange_Names | As_of_Date_In_Form_YYMMDD | Report_Date_as_YYYY-MM-DD | CFTC_Contract_Market_Code | CFTC_Market_Code | CFTC_Region_Code | CFTC_Commodity_Code | Open_Interest_All | Dealer_Positions_Long_All | Dealer_Positions_Short_All | Dealer_Positions_Spread_All | Asset_Mgr_Positions_Long_All | Asset_Mgr_Positions_Short_All | Asset_Mgr_Positions_Spread_All
 DIAG codes uniques: <ArrowStringArray>
-['001602', '001612', '001626', '002602', '004603', '005602', '005603',
- '006393', '00639H', '00639Y', '00639Z', '007601']
+['090741', '092741', '096742', '097741', '099741', '232741', '089741',
+ '095741', '102741', '112741', '122741', '12460+']
 Length: 12, dtype: str
-COT 2015: 0 lignes EURO FX 099741
-COT 2016: 0 lignes EURO FX 099741
-COT 2017: 0 lignes EURO FX 099741
-COT 2018: 0 lignes EURO FX 099741
-COT 2019: 0 lignes EURO FX 099741
-COT 2020: 0 lignes EURO FX 099741
-COT 2021: 0 lignes EURO FX 099741
-COT 2022: 0 lignes EURO FX 099741
-COT 2023: 0 lignes EURO FX 099741
-COT 2024: 0 lignes EURO FX 099741
-COT 2025: 0 lignes EURO FX 099741
-COT 2026: 0 lignes EURO FX 099741
+COT 2015: 52 lignes EURO FX 099741
+COT 2016: 52 lignes EURO FX 099741
+COT 2017: 52 lignes EURO FX 099741
+COT 2018: 53 lignes EURO FX 099741
+COT 2019: 52 lignes EURO FX 099741
+COT 2020: 52 lignes EURO FX 099741
+COT 2021: 52 lignes EURO FX 099741
+COT 2022: 52 lignes EURO FX 099741
+COT 2023: 52 lignes EURO FX 099741
+COT 2024: 53 lignes EURO FX 099741
+COT 2025: 52 lignes EURO FX 099741
+COT 2026: 46 lignes EURO FX 099741
+COT total brut: 853 lignes, colonnes: 88
