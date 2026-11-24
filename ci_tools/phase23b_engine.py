@@ -40,7 +40,7 @@ def mode_exo():
                          ('FRED fredgraph.csv', f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={s}&cosd=2009-06-01&coed=2020-03-01'),
                          ('DBnomics miroir FRED', f'https://api.db.nomics.world/v22/series/FRED/{s}?observations=1&observation_date_from=2009-06-01')]:
             try:
-                r = fetch(url)
+                r = fetch(url, timeout=45)
                 if r.status_code == 200 and len(r.content) > 200:
                     lignes.append(f'- {s} via {nom}: {len(r.content)} octets, en-tete: {r.content[:120]!r}')
                     if nom.startswith('DBnomics'):
@@ -54,6 +54,36 @@ def mode_exo():
                         df = d; source = nom; break
             except Exception as e:
                 lignes.append(f'- {s} via {nom}: ECHEC {type(e).__name__} {e}')
+        if df is None:
+            MIROIRS = {
+                'DTWEXBGS': ['https://raw.githubusercontent.com/danielmiessler/Substrate/main/Data/US-Common-Metrics/us-metrics-historical.csv'],
+                'DGS10': ['https://raw.githubusercontent.com/Apress/Statistical-Quantitative-Methods-in-Finance/main/data/DGS10.csv',
+                          'https://raw.githubusercontent.com/upathare1/Advanced-Term-Structures/main/Code/data/DGS10.csv'],
+                'DFII10': ['https://raw.githubusercontent.com/ethanteng/finsight/main/src/datasets/DFII10.csv',
+                           'https://raw.githubusercontent.com/js5810/TreasuryAuction/main/data/FRED_data/DFII10.csv'],
+            }
+            candidats = []
+            for url in MIROIRS.get(s, []):
+                try:
+                    r = fetch(url, timeout=45)
+                    if r.status_code == 200:
+                        d = pd.read_csv(io.BytesIO(r.content))
+                        dc = [c for c in d.columns if 'date' in c.lower() or 'DATE' in c]
+                        vc = [c for c in d.columns if s in c or c.lower() in ('value', 'valeur', 'close')]
+                        if dc and vc:
+                            dd = pd.DataFrame({'date_obs': pd.to_datetime(d[dc[0]]), 'valeur': pd.to_numeric(d[vc[0]], errors='coerce')}).dropna()
+                            dd = dd[(dd.date_obs >= '2009-06-01') & (dd.date_obs <= '2020-03-01')]
+                            lignes.append(f'- {s} miroir {url[:80]}: {len(dd)} obs, {dd.date_obs.min()} -> {dd.date_obs.max()}')
+                            if len(dd) > 2000: candidats.append(dd)
+                except Exception as e:
+                    lignes.append(f'- {s} miroir ECHEC {type(e).__name__}')
+            if candidats:
+                df = candidats[0]; source = 'miroir GitHub de FRED (vintage courante)'
+                if len(candidats) > 1:
+                    m = candidats[0].merge(candidats[1], on='date_obs', suffixes=('_a', '_b')).dropna()
+                    ecart = float((m.valeur_a - m.valeur_b).abs().max()) if len(m) else float('nan')
+                    lignes.append(f'- {s} reconciliation deux miroirs: {len(m)} dates communes, ecart max {ecart}')
+                    source += f', reconcilie (ecart max {ecart})'
         if df is None:
             lignes.append(f'- {s}: AUCUNE SOURCE — serie exclue (SOURCE_RECONCILIATION_FAILED partiel)')
             continue
@@ -70,7 +100,7 @@ def mode_exo():
     for annee in range(2010, 2020):
         try:
             r = fetch(f'https://www.federalreserve.gov/monetarypolicy/fomchistorical{annee}.htm', timeout=60)
-            dates = sorted(set(re.findall(r'monetary(20\d{2})(\d{2})(\d{2})a1', r.text)))
+            dates = sorted(set(re.findall(r'monetary(20\d{2})(\d{2})(\d{2})a\.htm', r.text)))
             for a, m_, j_ in dates:
                 evenements.append(dict(type='FOMC', date=pd.Timestamp(int(a), int(m_), int(j_)), heure_et='14:00',
                                        source=f'federalreserve.gov fomchistorical{annee}'))
