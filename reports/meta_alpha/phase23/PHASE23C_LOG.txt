@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase23c_engine.py", line 163, in <module>
+    elif sys.argv[1] == 'analyse': mode_analyse()
+                                   ^^^^^^^^^^^^
+NameError: name 'mode_analyse' is not defined
