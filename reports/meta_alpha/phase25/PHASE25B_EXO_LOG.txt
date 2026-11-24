@@ -14,12 +14,6 @@ FETCH https://www.cftc.gov/files/dea/history/fut_disagg_txt_2016.zip 200 1834436
 FETCH https://www.cftc.gov/files/dea/history/fut_disagg_txt_2017.zip 200 1805242
 FETCH https://www.cftc.gov/files/dea/history/fut_disagg_txt_2018.zip 200 1961740
 FETCH https://www.cftc.gov/files/dea/history/fut_disagg_txt_2019.zip 200 1981332
-/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py:87: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  C['date_rapport'] = pd.to_datetime(C[coldate])
-/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py:88: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  C['net_managed_money'] = pd.to_numeric(C[mm_long], errors='coerce') - pd.to_numeric(C[mm_short], errors='coerce')
-/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py:89: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  C['disponible_depuis'] = C.date_rapport + pd.Timedelta(days=4)  # vendredi 15:30 ET + marge jours feries (conservateur)
 # PHASE 25-B — RECONCILIATION DES SOURCES GVZ / COT
 
 - GVZ miroir https://raw.githubusercontent.com/HK-Tan/ORACLE-VARX/main/dataset/GVZCLS_20080603_20201231: 2706 obs 2009-06-01 00:00:00 -> 2020-02-28 00:00:00
@@ -39,5 +33,4 @@ FETCH https://www.cftc.gov/files/dea/history/fut_disagg_txt_2019.zip 200 1981332
 - COT 2017: 52 lignes or (istory/fut_disagg_txt_2017.zip)
 - COT 2018: 53 lignes or (istory/fut_disagg_txt_2018.zip)
 - COT 2019: 52 lignes or (istory/fut_disagg_txt_2019.zip)
-- COT colonnes managed money: M_Money_Positions_Long_All / M_Money_Positions_Short_All
-- COT sauvegarde: 157 rapports hebdomadaires
+- COT sauvegarde: 522 rapports hebdomadaires, 10 annees

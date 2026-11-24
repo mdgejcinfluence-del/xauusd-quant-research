@@ -17,5 +17,4 @@
 - COT 2017: 52 lignes or (istory/fut_disagg_txt_2017.zip)
 - COT 2018: 53 lignes or (istory/fut_disagg_txt_2018.zip)
 - COT 2019: 52 lignes or (istory/fut_disagg_txt_2019.zip)
-- COT colonnes managed money: M_Money_Positions_Long_All / M_Money_Positions_Short_All
-- COT sauvegarde: 157 rapports hebdomadaires
+- COT sauvegarde: 522 rapports hebdomadaires, 10 annees
