@@ -158,9 +158,6 @@ def mode_lot():
     print('lot termine', batch, len(rows), 'fenetres', flush=True)
 
 
-if __name__ == '__main__':
-    if sys.argv[1] == 'lot': mode_lot()
-    elif sys.argv[1] == 'analyse': mode_analyse()
 
 
 def mode_analyse():
@@ -195,3 +192,8 @@ def mode_analyse():
                  puissance={str(h): int(np.ceil(((1.96 + 0.84) * float(ev[f'netS2_sd_{h}']) / 10) ** 2)) for h in (60, 240)})
     (R23 / '_phase23c_stats.json').write_text(json.dumps(stats, indent=1))
     print(C.round(3).to_string()); print(stats, flush=True)
+
+
+if __name__ == '__main__':
+    if sys.argv[1] == 'lot': mode_lot()
+    elif sys.argv[1] == 'analyse': mode_analyse()
