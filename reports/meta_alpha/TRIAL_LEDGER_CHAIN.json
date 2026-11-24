@@ -5199,6 +5199,20 @@
     "profitable_edge": false
    },
    "entry_hash": "ffd90d1a8420e50af106018eb61b511c53bd1c9120e462a09dc4086f6d6abefc"
+  },
+  {
+   "seq": 398,
+   "prev_hash": "ffd90d1a8420e50af106018eb61b511c53bd1c9120e462a09dc4086f6d6abefc",
+   "entry": {
+    "type": "PHASE24E_AUTORISATION",
+    "phase": "24-E",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "reconciliation prediction M15 / premier passage du label / capture economique; diagnostic de liquidation au premier passage, aucun stop/TP ajoute",
+    "seuil_gele": 0.5609549968307628,
+    "interdictions": "holdout ferme, aucun reentrainement, aucun filtre Directeur, aucune strategie revendiquee"
+   },
+   "entry_hash": "186977474da43f3e978ff7caf687a7b1c63e818e2e26954ba859d09b0ecdb92c"
   }
  ]
 }
