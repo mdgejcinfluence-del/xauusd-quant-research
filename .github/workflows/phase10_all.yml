@@ -102,6 +102,8 @@ name: phase10_all
         description: 'Phase 25-B: extraction GVZ/COT + cartographie (seq406)'
         type: boolean
         default: false
+  schedule:
+    - cron: '30 3 * * *'
 jobs:
   run0:
     name: P10 moteur 2013 (repris C8)
@@ -2730,4 +2732,41 @@ jobs:
         git add -A reports/meta_alpha/phase25/
         git status --porcelain
         git diff --cached --quiet || git commit -m 'Phase 25-B: extraction et cartographie (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
+
+  edge02:
+    name: MA-EDGE-02 Dukascopy collect + SHADOW pipeline
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    if: ${{ inputs.edge02 || github.event_name == 'schedule' }}
+    permissions:
+      actions: read
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install -q pandas numpy pyarrow
+    - name: Probe + collecte depuis le preenregistrement + selftest
+      run: |
+        set +e
+        mkdir -p research/MA-EDGE-02/data
+        python ci_tools/edge02_shadow.py selftest 2>&1 | tee research/MA-EDGE-02/SELFTEST_LOG.txt
+        python ci_tools/edge02_dukascopy.py probe 2>&1 | tee research/MA-EDGE-02/PROBE_LOG.txt
+        FIN=$(date -u -d '-1 hour' +%Y-%m-%dT%H:00)
+        python ci_tools/edge02_dukascopy.py collect 2026-11-24T17:00 "$FIN" 2>&1 | tee research/MA-EDGE-02/COLLECT_LOG.txt
+        echo $? > research/MA-EDGE-02/COLLECT_EXIT.txt
+    - name: Committer collecte (robuste)
+      if: always()
+      run: |
+        mkdir -p /tmp/e02out && cp -a research/MA-EDGE-02/. /tmp/e02out/
+        git fetch origin arena/afe12737-xauusd-quant-research
+        git reset --hard origin/arena/afe12737-xauusd-quant-research
+        cp -a /tmp/e02out/. research/MA-EDGE-02/
+        git config user.email 'actions@github.com'
+        git config user.name 'github-actions'
+        git add -A research/MA-EDGE-02/
+        git status --porcelain
+        git diff --cached --quiet || git commit -m 'MA-EDGE-02: collecte Dukascopy (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research

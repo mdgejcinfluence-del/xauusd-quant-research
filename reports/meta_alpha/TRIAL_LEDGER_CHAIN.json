@@ -5349,6 +5349,20 @@
     "profitable_edge": false
    },
    "entry_hash": "0dca87a1a0ec5f27bd4c8ab6ce7c0bdb233632b44629ad682fff0ee7aed984e4"
+  },
+  {
+   "seq": 409,
+   "prev_hash": "0dca87a1a0ec5f27bd4c8ab6ce7c0bdb233632b44629ad682fff0ee7aed984e4",
+   "entry": {
+    "type": "MA_EDGE_02_OPENING",
+    "mission": "MA-EDGE-02",
+    "directive": "continuite permanente fondateur: recherche autonome jusqu a demonstration d un avantage economique; aucun arret apres rapport",
+    "flux": "solution Dukascopy flux public bi5 Bid/Ask sans compte (a verifier par run CI); classement sources A/B/C a produire",
+    "clarification_prospective": "depart prospectif reelle = horodatage public du preenregistrement seq407 (commit 2026-11-24T17:12:57Z), plus strict que la borne holdout 2026-09-30; evenements entre les deux = exploration documentee uniquement, jamais validation",
+    "regle_120min": "gelee, inchangee; clarifications d execution seulement (confirmation=cloture M15 stricte au-dela de la reference favorable a/avant echeance; invalidation sans effet de sortie; censure comptee et rapportee)",
+    "branche": "arena/afe12737-xauusd-quant-research (branche de session imposee, aucune autre branche creee)"
+   },
+   "entry_hash": "4bc67a9ab2e456e6e5a390e0614ad4e95721e571c1e7529a7f8f84f62ee6b136"
   }
  ]
 }
