@@ -42,7 +42,7 @@ def mode_lot():
     fichiers = [str(localdir / p['name']) for p in parts if (localdir / p['name']).exists()]
     con = duckdb.connect(); con.execute("SET memory_limit='6GB'"); con.execute('SET threads=3')
     lst = '[' + ','.join(f"'{f}'" for f in fichiers) + ']'
-    q = f"""WITH s AS (SELECT timestamp_utc AS ts, bid, ask, (bid+ask)/2 AS mid,
+    q = f"""WITH s AS (SELECT timestamp_utc AS ts, bid, ask, (bid+ask)/2 AS mid, filename,
                     10000*ln(ask/bid) AS spread_bp FROM read_parquet({lst}, filename=true)
                     WHERE timestamp_utc < '{IS_END}'),
             g AS (SELECT *, time_bucket(INTERVAL 4 HOUR, ts) AS bar_start,
