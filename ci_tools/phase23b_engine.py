@@ -123,7 +123,7 @@ def mode_exo():
             for delta in (-7, -14, 7, 14, -21, 21, -28, 28):
                 cand = r.ts_utc + pd.Timedelta(days=delta)
                 if cand.date() not in jours_annonce and pd.Timestamp('2010-01-04') <= cand <= pd.Timestamp('2019-12-16'):
-                    temoins.append(dict(type=r.type, role='CONTROLE', ts_utc=cand, evenement_ref=r.ts_utc,
+                    temoins.append(dict(type=r.type, role='CONTROLE', ts_utc=cand, heure_et=r.heure_et, evenement_ref=r.ts_utc,
                                         jour_semaine=cand.dayofweek, source='temoin meme jour de semaine/creneau, sans annonce'))
                     break
         T = pd.DataFrame(temoins)
