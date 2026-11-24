@@ -8,5 +8,397 @@
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
+ },
+ "2026-11-20 00:00:00": {
+  "ticks": 38842,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 01:00:00": {
+  "ticks": 51621,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 02:00:00": {
+  "ticks": 48008,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 03:00:00": {
+  "ticks": 43152,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 04:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 05:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 06:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 07:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 08:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 09:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 10:00:00": {
+  "ticks": 24337,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 11:00:00": {
+  "ticks": 18382,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 12:00:00": {
+  "ticks": 24866,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 13:00:00": {
+  "ticks": 41412,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 14:00:00": {
+  "ticks": 45235,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 15:00:00": {
+  "ticks": 49011,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 16:00:00": {
+  "ticks": 38528,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 17:00:00": {
+  "ticks": 42119,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 18:00:00": {
+  "ticks": 41800,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-20 19:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 20:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 21:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 22:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-20 23:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 00:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 01:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 02:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 03:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 04:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 05:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 06:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 07:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 08:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 09:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 10:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 11:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 12:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 13:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 14:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 15:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 16:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 17:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 18:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 19:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 20:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 21:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 22:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-21 23:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 00:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 01:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 02:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 03:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 04:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 05:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 06:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 07:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 08:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 09:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 10:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 11:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 12:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 13:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 14:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 15:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 16:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 17:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 18:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 19:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 20:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 23:00:00": {
+  "ticks": 35448,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 02:00:00": {
+  "ticks": 36425,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 03:00:00": {
+  "ticks": 29727,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 04:00:00": {
+  "ticks": 19506,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 05:00:00": {
+  "ticks": 32610,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 06:00:00": {
+  "ticks": 31396,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 07:00:00": {
+  "ticks": 25028,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 10:00:00": {
+  "ticks": 19297,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 17:00:00": {
+  "ticks": 35726,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 07:00:00": {
+  "ticks": 20509,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 08:00:00": {
+  "ticks": 26725,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 09:00:00": {
+  "ticks": 26169,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 10:00:00": {
+  "ticks": 26875,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 15:00:00": {
+  "ticks": 49642,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 16:00:00": {
+  "ticks": 44144,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
  }
 }
