@@ -1,28 +1,29 @@
-{
- "jours": 1992,
- "ordre": {
-  "LOW_FINAL_FIRST": 1010,
-  "HIGH_FINAL_FIRST": 985
- },
- "passages": {
-  "30": 1995,
-  "60": 1878,
-  "100": 1255
- },
- "declencheurs": {
-  "30": {
-   "LOW": 1008,
-   "HIGH": 987
-  },
-  "60": {
-   "LOW": 1005,
-   "HIGH": 873
-  },
-  "100": {
-   "LOW": 660,
-   "HIGH": 595
-  }
- },
- "n_tests": 36,
- "n_sig": 0
-}
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase21d_engine.py", line 294, in <module>
+    else: mode_analyse()
+          ^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase21d_engine.py", line 179, in mode_analyse
+    day = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_DAY_*.csv')))])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase21d_engine.py", line 179, in <listcomp>
+    day = pd.concat([pd.read_csv(f) for f in sorted(glob.glob(str(R21 / 'P21D_DAY_*.csv')))])
+                     ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1866, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 429, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 3061, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 297, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 1041, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 1182, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 1149, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 1170, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 4400, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 20 fields in line 412, saw 28
+
