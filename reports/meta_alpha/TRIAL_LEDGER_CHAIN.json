@@ -5363,6 +5363,23 @@
     "branche": "arena/afe12737-xauusd-quant-research (branche de session imposee, aucune autre branche creee)"
    },
    "entry_hash": "4bc67a9ab2e456e6e5a390e0614ad4e95721e571c1e7529a7f8f84f62ee6b136"
+  },
+  {
+   "seq": 410,
+   "prev_hash": "4bc67a9ab2e456e6e5a390e0614ad4e95721e571c1e7529a7f8f84f62ee6b136",
+   "entry": {
+    "type": "MA_EDGE_02_CHECKPOINT",
+    "mission": "MA-EDGE-02",
+    "checkpoint": 1,
+    "flux": "Dukascopy public bi5 VERIFIE en CI (43-50k ticks/h, 0 violation Bid<Ask, spread median ~0,42 USD); collecte quotidienne cron 03:30 UTC armee; retard de publication plusieurs heures documente",
+    "pipeline": "edge02_shadow selftest OK en CI; depart prospectif verrouille 2026-11-24T17:12:57Z",
+    "EXP07": "EXPLORATORY_POST_HOC: derive apres MFE dominante (265/405 FP, -39,0 bp); MAE median FP a 225 min",
+    "hypotheses": "H17-H20 consignees, aucune promue",
+    "shadow_evenements": 0,
+    "profitable_edge": false,
+    "suite": "collecte automatique; detection sur premieres journees completes; connecteur MT5 demo a preparer (identite fondateur requise, non inventee)"
+   },
+   "entry_hash": "6ef08017fa957622d3739b98559d45f404be2f07da2d636716f3635d6234c094"
   }
  ]
 }

@@ -34,6 +34,9 @@ avec les limites écrites ci-dessous.
    Si le fondateur désigne plus tard son courtier cible, la même architecture acceptera son flux
    MT5 démo (niveau A−) sans changer le protocole.
 
-Vérification technique (run CI `edge02`) : voir `DUKASCOPY_PROBE.json` et `COLLECT_LOG.txt` —
-critères : ticks > 0 sur les heures postérieures au préenregistrement, Bid < Ask partout,
-horodatages strictement croissants, spread médian cohérent avec XAUUSD spot.
+Vérification technique (runs CI `edge02` 45452658440 et suivants) : **critères satisfaits** sur
+les heures échantillons 2026-11-23/24 (42 899–49 642 ticks/heure, Bid < Ask sans exception,
+horodatages strictement croissants, spread médian 0,40–0,45 USD, écart maximal < 3 s).
+Retard de publication mesuré : fichiers horaires publiés par lots, plusieurs heures après la
+clôture de l'heure (17:00 UTC pas encore disponible à 18:50 UTC) → collecte quotidienne par cron
+(03:30 UTC) adoptée ; les heures en échec 503 sont réessayées automatiquement.
