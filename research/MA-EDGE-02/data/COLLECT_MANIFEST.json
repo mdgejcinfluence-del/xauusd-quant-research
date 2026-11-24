@@ -2,5 +2,11 @@
  "2026-11-24 17:00:00": {
   "ticks": 0,
   "statut": "VIDE_OU_INDISPONIBLE"
+ },
+ "2026-11-24 19:00:00": {
+  "ticks": 32375,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
  }
 }
