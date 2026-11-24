@@ -79,7 +79,10 @@ def mode_collect(debut: str, fin: str):
             continue
         df = telecharger_heure(h)
         if df is None or len(df) == 0:
-            man[cle] = {'ticks': 0, 'statut': 'VIDE_OU_INDISPONIBLE'}
+            # une heure recente peut n'etre pas encore publiee (503): ne jamais la
+            # marquer definitivement; seuls les vides anciens (>48 h) sont figes
+            if h < pd.Timestamp.now(tz='UTC').tz_localize(None) - pd.Timedelta(hours=48):
+                man[cle] = {'ticks': 0, 'statut': 'VIDE_ANCIEN_FIGE'}
             continue
         man[cle] = {'ticks': int(len(df)), 'statut': 'OK', **{k: v for k, v in qualite(df).items() if k in ('bid_lt_ask_violations', 'ts_croissants')}}
         par_jour.setdefault(str(h.date()), []).append(df)
