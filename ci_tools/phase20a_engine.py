@@ -288,7 +288,7 @@ def comportements(j, ev):
                                part_sup60=float(np.nanmean((np.abs(j[f'TERMINAL_{H}'].values[idx]) > 60))) if idx.any() else None,
                                part_sup100=float(np.nanmean((np.abs(j[f'TERMINAL_{H}'].values[idx]) > 100))) if idx.any() else None))
             if idx.sum() >= 50 and n_sem >= 20:
-                base['_serie_test'] = serie
+                base['_serie_test'] = base.bar_start.map(pd.Series(serie, index=j.bar_start.values))
                 p = p_decalage(semaines_depuis_grille(base, '_serie_test'), masque_grille(base, g.bar_start), rng)
                 tests.append(dict(famille=fam, horizon=H, mesure=f'TERMINAL_{H} (ou amplitude pour compression/expansion)',
                                   n_evenements=int(idx.sum()), n_semaines=int(n_sem), effet=float(obs - ref), p_value=float(p),
