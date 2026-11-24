@@ -54,20 +54,26 @@ def mode_lot():
     df = con.execute(f"""SELECT timestamp_utc AS ts, bid, ask FROM read_parquet({lst})
                          WHERE timestamp_utc < '{IS_END}' ORDER BY timestamp_utc""").df()
     ts = pd.to_datetime(df.ts).values.astype('datetime64[ns]')
-    bid = df.bid.values.astype(float); ask = df.ask.values.astype(float)
-    mid = (bid + ask) / 2.0
-    spread = logbp(bid, ask)
-    jour_str = pd.to_datetime(ts).strftime('%Y-%m-%d')
-    jours = sorted(set(jour_str) & jours_cert)
-    print('lot', batch, len(df), 'ticks,', len(jours), 'journees certifiees', flush=True)
+    bid_all = df.bid.values.astype(np.float64); ask_all = df.ask.values.astype(np.float64)
+    del df
+    mid_all = (bid_all + ask_all) / 2.0
+    spread_all = logbp(bid_all, ask_all)
+    # groupes de jours par ordinal (aucune chaine par tick: economie memoire lots denses)
+    ord_jour = ts.astype('datetime64[D]')
+    uniques, debuts = np.unique(ord_jour, return_index=True)
+    bornes = list(debuts) + [len(ts)]
+    groupes_jours = []
+    for k, u in enumerate(uniques):
+        js = str(u)
+        if js in jours_cert:
+            groupes_jours.append((js, np.arange(bornes[k], bornes[k + 1])))
+    print('lot', batch, len(ts), 'ticks,', len(groupes_jours), 'journees certifiees', flush=True)
     day_rows, pass_rows, post_rows, rec_rows, spread_rows = [], [], [], [], []
     NS_H = 3600 * 10**9
-    for js in jours:
-        idx = np.where(jour_str == js)[0]
-        t_ms, m, sp = mid[idx], mid[idx], spread[idx]
+    for js, idx in groupes_jours:
         tt = ts[idx].astype('int64')
-        tsm = mid[idx]  # placeholder
-        m = mid[idx]
+        m = mid_all[idx]; sp = spread_all[idx]
+        bid_j, ask_j = bid_all[idx], ask_all[idx]
         o = m[0]
         runh = np.maximum.accumulate(m); runl = np.minimum.accumulate(m)
         crange = logbp(runl, runh)
@@ -83,8 +89,8 @@ def mode_lot():
                              ts_premier_high_final=pd.Timestamp(ts[idx][i_fh_first]), ts_premier_low_final=pd.Timestamp(ts[idx][i_fl_first]),
                              ts_dernier_high_final=pd.Timestamp(ts[idx][i_fh_last]), ts_dernier_low_final=pd.Timestamp(ts[idx][i_fl_last]),
                              ordre_extremes_finaux=ordre, n_records_high=len(rec_h), n_records_low=len(rec_l),
-                             doublons_ts=int(len(tt) - len(np.unique(tt))), bid_sup_ask=int((bid[idx] > ask[idx]).sum()),
-                             prix_non_positifs=int(((bid[idx] <= 0) | (ask[idx] <= 0)).sum()),
+                             doublons_ts=int(len(tt) - len(np.unique(tt))), bid_sup_ask=int((bid_j > ask_j).sum()),
+                             prix_non_positifs=int(((bid_j <= 0) | (ask_j <= 0)).sum()),
                              max_gap_s=float(gaps.max()) if len(gaps) else 0.0,
                              n_gaps_sup_300s=int((gaps > 300).sum()), spread_mediane_bp=float(np.median(sp)),
                              duree_premier_au_dernier_high_s=float((tt[i_fh_last] - tt[i_fh_first]) / 1e9)))
