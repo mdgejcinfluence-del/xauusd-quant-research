@@ -5076,6 +5076,37 @@
     "profitable_edge": false
    },
    "entry_hash": "3e66d4e67c8eaebb595dca3c2d3154b0e8b49133dcd80fc9e54b1a16b980cf54"
+  },
+  {
+   "seq": 390,
+   "prev_hash": "3e66d4e67c8eaebb595dca3c2d3154b0e8b49133dcd80fc9e54b1a16b980cf54",
+   "entry": {
+    "type": "PHASE24A_AUTORISATION",
+    "phase": "24-A",
+    "statut": "EXPLORATORY_POST_HOC",
+    "budget_fcfa": 0,
+    "objet": "preenregistrement et audit de faisabilite Energie x Horloge x Chauffeur H1; aucun entrainement, aucun P&L",
+    "gates": "H4 20-B exact (Q90 roulant 250 barres precedentes, derniere barre complete close avant decision); D1 21-A exact (Q90 250 journees precedentes, journee precedente complete certifiee); aucune fusion OR/AND",
+    "horloge": "08:00<=decision et entree UTC<16:00",
+    "chauffeur": "evenements H1 12-B, 5 variables gelees, cible RESUMPTION, logistique M1 en reference seulement",
+    "interdictions": "holdout ferme, aucun P&L/MFE futur par variante, aucune selection par resultats"
+   },
+   "entry_hash": "154ed20c49afe2dcc7648ece07a0802c61c0ac1c0a8b11ff961d6960375e7a1d"
+  },
+  {
+   "seq": 391,
+   "prev_hash": "154ed20c49afe2dcc7648ece07a0802c61c0ac1c0a8b11ff961d6960375e7a1d",
+   "entry": {
+    "type": "PHASE24A_VERDICT",
+    "phase": "24-A",
+    "verdict_global": "CONDITIONAL_ARCHITECTURE_NOT_FEASIBLE",
+    "H4_GATE": "CONDITIONAL_CHAUFFEUR_INSUFFICIENT_SAMPLE (train 107/min 26, eval 34/min 5)",
+    "D1_GATE": "CONDITIONAL_CHAUFFEUR_INSUFFICIENT_SAMPLE (train 86/min 15, eval 43/min 12)",
+    "causalite": "permissions Directeur/Horloge/variables demontrees sans fuite; directeurs reproduits exactement",
+    "entrainement": "AUCUN",
+    "profitable_edge": false
+   },
+   "entry_hash": "0d990191e1ed139624543fe73c3567db5a4921fd70ba49333548905e2d890b79"
   }
  ]
 }

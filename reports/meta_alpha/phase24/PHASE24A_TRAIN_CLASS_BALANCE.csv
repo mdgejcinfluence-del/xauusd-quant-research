@@ -1,0 +1,7 @@
+configuration,n_train,classe1,classe0,minoritaire,parametres_M1,minoritaire_par_parametre,critere_20_par_parametre
+BASELINE,1640,1245,395,395,9,43.9,OK
+TIME_ONLY,916,715,201,201,9,22.3,OK
+H4_ONLY,472,337,135,135,9,15.0,INSUFFISANT
+H4_TIME,107,81,26,26,9,2.9,INSUFFISANT
+D1_ONLY,200,167,33,33,9,3.7,INSUFFISANT
+D1_TIME,86,71,15,15,9,1.7,INSUFFISANT
