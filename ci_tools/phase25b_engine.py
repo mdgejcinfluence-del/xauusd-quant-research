@@ -76,21 +76,22 @@ def mode_exo():
                 break
             except Exception as e:
                 lignes.append(f'- COT {an}: ECHEC {type(e).__name__}')
-    if frames:
-        C = pd.concat(frames)
-        coldate = [c for c in C.columns if 'Report_Date' in c][0]
-        def pick(mot, exclure=('Old', 'Other')):
-            cand = [c for c in C.columns if mot in c and 'All' in c] or [c for c in C.columns if mot in c and not any(e in c for e in exclure)] or [c for c in C.columns if mot in c]
-            return cand[0]
-        mm_long = pick('M_Money_Positions_Long'); mm_short = pick('M_Money_Positions_Short')
-        lignes.append(f'- COT colonnes managed money: {mm_long} / {mm_short}')
-        C['date_rapport'] = pd.to_datetime(C[coldate])
-        C['net_managed_money'] = pd.to_numeric(C[mm_long], errors='coerce') - pd.to_numeric(C[mm_short], errors='coerce')
-        C['disponible_depuis'] = C.date_rapport + pd.Timedelta(days=4)  # vendredi 15:30 ET + marge jours feries (conservateur)
-        C = C[['date_rapport', 'disponible_depuis', 'net_managed_money']].dropna().sort_values('date_rapport')
+    propres = []
+    for or_ in frames:
+        coldate = [c for c in or_.columns if 'Report_Date' in c][0]
+        def pick2(mot):
+            cand = [c for c in or_.columns if mot in c and 'All' in c] or [c for c in or_.columns if mot in c and 'Old' not in c and 'Other' not in c] or [c for c in or_.columns if mot in c]
+            return cand[0] if cand else None
+        ml, ms = pick2('M_Money_Positions_Long'), pick2('M_Money_Positions_Short')
+        if ml is None: continue
+        propres.append(pd.DataFrame({'date_rapport': pd.to_datetime(or_[coldate], errors='coerce'),
+                                     'net_managed_money': pd.to_numeric(or_[ml], errors='coerce') - pd.to_numeric(or_[ms], errors='coerce')}))
+    if propres:
+        C = pd.concat(propres).dropna().sort_values('date_rapport')
+        C['disponible_depuis'] = C.date_rapport + pd.Timedelta(days=4)
         C['source'] = 'CFTC fut_disagg_txt officiel (disponibilite conservative +4 j)'
         C.to_parquet(R25 / 'PHASE25B_COT_DATA.parquet', index=False)
-        lignes.append(f'- COT sauvegarde: {len(C)} rapports hebdomadaires')
+        lignes.append(f'- COT sauvegarde: {len(C)} rapports hebdomadaires, {C.date_rapport.dt.year.nunique()} annees')
     else:
         lignes.append('- COT: AUCUNE SOURCE — etude COT bloquee')
     (R25 / 'PHASE25B_SOURCE_RECONCILIATION.md').write_text('\n'.join(lignes))
