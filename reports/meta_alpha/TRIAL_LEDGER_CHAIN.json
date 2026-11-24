@@ -4738,6 +4738,24 @@
     "base_seq": 366
    },
    "entry_hash": "c12b0e29bc779545a23e9886ae89504b47d0b4d47f56643284a959e40be00b87"
+  },
+  {
+   "seq": 368,
+   "prev_hash": "c12b0e29bc779545a23e9886ae89504b47d0b4d47f56643284a959e40be00b87",
+   "entry": {
+    "type": "PHASE20B_AUTHORIZATION",
+    "phase": "20-B",
+    "decision": "AUTORISATION ETUDE EVENEMENTIELLE H4 x M1 PREENREGISTREE (regimes 20-A geles, cohorte evaluation, horizons fixes 4/8/12/16h, couts S2)",
+    "interdits": [
+     "holdout",
+     "nouveau modele/seuil",
+     "modification regimes Q10/Q90",
+     "strategie"
+    ],
+    "statut": "EXPLORATORY_POST_HOC",
+    "base_seq": 367
+   },
+   "entry_hash": "7343d0fe2b72c45796a707bcc4c1ea92c27006b5ac016abf79628dda89e8318d"
   }
  ]
 }
