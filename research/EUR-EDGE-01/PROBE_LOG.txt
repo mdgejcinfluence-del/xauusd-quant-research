@@ -1,0 +1,62 @@
+  2026-11-18 03:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 06:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 07:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 09:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 11:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 12:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 14:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 15:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 18:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 19:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-18 23:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+{'ticks_jour': 15742, 'octets_parquet_estimes_par_jour': 133232, 'estimation_GB_par_an_250j': 0.03, 'estimation_GB_2010_2026': 0.6}
+  2010-06-15 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+[
+ {
+  "echantillon": "EURUSD 2026-11-18 journee",
+  "ticks": 15742,
+  "debut": "2026-11-18 00:00:00.088000",
+  "fin": "2026-11-18 05:59:57.502000",
+  "viol_bid_ge_ask": 0,
+  "prix_nonpositifs": 0,
+  "ts_croissants": true,
+  "doublons_ts": 0,
+  "spread_med_pips": 0.3,
+  "spread_p95_pips": 0.5,
+  "spread_max_pips": 0.6,
+  "ecart_max_s": 3603.616,
+  "saut_max_bp": 2.09
+ },
+ {
+  "barres": "M1",
+  "n": 300
+ },
+ {
+  "barres": "M5",
+  "n": 60
+ },
+ {
+  "barres": "M15",
+  "n": 20
+ },
+ {
+  "barres": "M30",
+  "n": 10
+ },
+ {
+  "barres": "H1",
+  "n": 5
+ },
+ {
+  "barres": "H4",
+  "n": 2
+ }
+]

@@ -1,0 +1,41 @@
+[
+ {
+  "echantillon": "EURUSD 2026-11-18 journee",
+  "ticks": 15742,
+  "debut": "2026-11-18 00:00:00.088000",
+  "fin": "2026-11-18 05:59:57.502000",
+  "viol_bid_ge_ask": 0,
+  "prix_nonpositifs": 0,
+  "ts_croissants": true,
+  "doublons_ts": 0,
+  "spread_med_pips": 0.3,
+  "spread_p95_pips": 0.5,
+  "spread_max_pips": 0.6,
+  "ecart_max_s": 3603.616,
+  "saut_max_bp": 2.09
+ },
+ {
+  "barres": "M1",
+  "n": 300
+ },
+ {
+  "barres": "M5",
+  "n": 60
+ },
+ {
+  "barres": "M15",
+  "n": 20
+ },
+ {
+  "barres": "M30",
+  "n": 10
+ },
+ {
+  "barres": "H1",
+  "n": 5
+ },
+ {
+  "barres": "H4",
+  "n": 2
+ }
+]
