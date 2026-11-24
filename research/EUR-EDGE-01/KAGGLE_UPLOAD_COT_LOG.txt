@@ -1,0 +1,2 @@
+Subtitle length must be between 20 and 80 characters
+Subtitle length must be between 20 and 80 characters

@@ -18,8 +18,3 @@ shalom5123/wan-animate-v2                 wan-animate-V2                   24487
 shalom5123/wan-oyono-inputs               wan-oyono-inputs                 24487279  2026-11-04 11:03:31.090000              0          0  0.11764706       
 shalom5123/xauusd-nr-corpus               xauusd-nr-corpus                   578057  2026-11-19 11:47:41.480000              0          0  0.23529412       
 shalom5123/xauusd-exogenous-pack-holdout  xauusd-exogenous-pack-holdout      341982  2026-11-18 23:30:17.303000              0          0  0.23529412       
-Configuration values from /home/runner/.config/kaggle
-- username: shalom5123
-- auth_method: ACCESS_TOKEN
-- path: None
-- proxy: None

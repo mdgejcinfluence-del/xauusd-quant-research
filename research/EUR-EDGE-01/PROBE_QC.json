@@ -1,41 +1,56 @@
 [
  {
   "echantillon": "EURUSD 2026-11-11 heures echantillon 00/06/08/13/16/21",
-  "ticks": 14396,
+  "ticks": 17155,
   "debut": "2026-11-11 00:00:00.087000",
-  "fin": "2026-11-11 16:59:57.061000",
+  "fin": "2026-11-11 21:59:59.510000",
   "viol_bid_ge_ask": 0,
   "prix_nonpositifs": 0,
   "ts_croissants": true,
   "doublons_ts": 0,
   "spread_med_pips": 0.3,
   "spread_p95_pips": 0.5,
-  "spread_max_pips": 0.8,
-  "ecart_max_s": 25200.816,
+  "spread_max_pips": 1.3,
+  "ecart_max_s": 18002.022,
   "saut_max_bp": 14.72
  },
  {
   "barres": "M1",
-  "n": 240
+  "n": 359
  },
  {
   "barres": "M5",
-  "n": 48
+  "n": 72
  },
  {
   "barres": "M15",
-  "n": 16
+  "n": 24
  },
  {
   "barres": "M30",
-  "n": 8
+  "n": 12
  },
  {
   "barres": "H1",
-  "n": 4
+  "n": 6
  },
  {
   "barres": "H4",
-  "n": 4
+  "n": 6
+ },
+ {
+  "echantillon": "EURUSD 2015-06-15 10h (heure temoin historique)",
+  "ticks": 5526,
+  "debut": "2015-06-15 10:00:00.064000",
+  "fin": "2015-06-15 10:59:58.726000",
+  "viol_bid_ge_ask": 0,
+  "prix_nonpositifs": 0,
+  "ts_croissants": true,
+  "doublons_ts": 0,
+  "spread_med_pips": 0.2,
+  "spread_p95_pips": 0.4,
+  "spread_max_pips": 0.7,
+  "ecart_max_s": 18.962,
+  "saut_max_bp": 1.87
  }
 ]
