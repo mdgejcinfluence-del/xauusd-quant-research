@@ -254,7 +254,7 @@ def mode_analyse():
         jours_ouvres = pd.bdate_range(ser.index.min(), ser.index.max() + pd.Timedelta(days=3))
         pub = pd.Series(ser.index, index=ser.index).map(lambda t: jours_ouvres[jours_ouvres > t][0] + pd.Timedelta(hours=21, minutes=15)) if len(ser) else pd.Series(dtype='datetime64[ns]')
         for r in j.itertuples():
-            connues = ser[pub.values < r.jour.value] if len(ser) else ser
+            connues = ser[pub < r.jour] if len(ser) else ser
             if len(connues) >= 2:
                 v, vp = connues.iloc[-1], connues.iloc[-2]
                 var_bp = float(logbp(np.array([vp]), np.array([v]))[0]) if s == 'DTWEXBGS' else float(v - vp)
@@ -276,6 +276,7 @@ def mode_analyse():
             for mesure, col in [('rendement signe', f'TERMINAL_{H}'), ('amplitude UP+DOWN', None)]:
                 gg = g.copy()
                 gg['y'] = (jj.loc[gg.jour, f'UP_{H}'].values + jj.loc[gg.jour, f'DOWN_{H}'].values) if col is None else jj.loc[gg.jour, col].values
+                gg = gg.dropna(subset=['y', 'variation'])
                 a = gg[gg.tercile == 'haut']; b_ = gg[gg.tercile == 'bas']
                 eff, p, ci, ev = boot_diff(a.rename(columns={'y': 'Y'}), b_.rename(columns={'y': 'Y'}), 'Y', rng)
                 testsA.append(dict(etude='A', variable=s, horizon=H, mesure=mesure, comparaison='tercile haut vs bas',

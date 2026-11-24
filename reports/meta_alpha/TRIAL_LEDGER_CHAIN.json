@@ -5030,6 +5030,21 @@
     "replications": 10000
    },
    "entry_hash": "024e0e5d670721b2032762f10a12451cddce78afcd350f65bd0f6cd40bb588fe"
+  },
+  {
+   "seq": 387,
+   "prev_hash": "024e0e5d670721b2032762f10a12451cddce78afcd350f65bd0f6cd40bb588fe",
+   "entry": {
+    "type": "PHASE23B_VERDICT",
+    "phase": "23-B",
+    "etudeA": "J1_NO_ROBUST_ASSOCIATION (DGS10/DFII10, 12/12 NS q>=0,094); DTWEXBGS INSUFFICIENT_HISTORICAL_COVERAGE",
+    "etudeB_FOMC": "MACRO_EVENT_VOLATILITY_RESPONSE (+80,8 bp a 60m vs temoins, q~0; direction nulle; continuation descriptive 71%)",
+    "CPI_PCE_NFP": "INSUFFICIENT_HISTORICAL_COVERAGE",
+    "candidat": "fenetre FOMC comme regime d amplitude (recherche distincte seulement)",
+    "statut": "EXPLORATORY_POST_HOC",
+    "profitable_edge": false
+   },
+   "entry_hash": "e198aec4fd328270249c241a2618777a86004fbf3f4aa00552236312997c7523"
   }
  ]
 }
