@@ -4,7 +4,7 @@
 
 ## Réponses aux trois questions de clôture
 1. **Les régimes sont-ils identifiables causalement ?** Oui pour EXPANSION (128 événements) et NORMAL (308) ; **COMPRESSION ne compte que 7 événements** aux instants de décision M1 → `NON_EVALUABLE_INFERENTIAL`. L'état H4 est donc identifiable, mais le régime de compression est structurellement rare là où M1 décide.
-2. **L'expansion améliore-t-elle la capture directionnelle ?** Non : P&L S2 moyens d'EXPANSION jamais supérieurs à NORMAL (jusqu'à −5,1 bp d'écart à H16), MFE non supérieurs, MAE comparables, toutes différences compatibles avec zéro après bootstrap par grappe et correction BH (q = 1,0). L'expansion n'amplifie même pas les excursions aux instants M1 : elle augmente l'amplitude sur toutes les barres (20-A), pas sur celles que M1 sélectionne.
+2. **L'expansion améliore-t-elle la capture directionnelle ?** Non : P&L S2 moyens d'EXPANSION jamais supérieurs à NORMAL (jusqu'à −5,1 bp d'écart à H16), MFE non supérieurs, MAE comparables, toutes différences compatibles avec zéro après bootstrap par grappe et correction BH (q de 0,44 à 0,67). L'expansion n'amplifie même pas les excursions aux instants M1 : elle augmente l'amplitude sur toutes les barres (20-A), pas sur celles que M1 sélectionne.
 3. **La combinaison améliore-t-elle le résultat économique en S2 sans dégrader le risque ?** Non démontré : aucun horizon, aucun régime n'améliore le résultat directionnel de façon mesurable, et les excursions défavorables ne s'améliorent pas.
 
 ## Verdicts
