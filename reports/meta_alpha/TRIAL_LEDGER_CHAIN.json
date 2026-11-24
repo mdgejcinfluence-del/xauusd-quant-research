@@ -5335,6 +5335,20 @@
     "justification_echeance": "entre mediane (60 min) et P75 (135 min) de la distribution 24-E gelee; non optimisee sur un P&L"
    },
    "entry_hash": "4f1f115d44481a99cc790a3ee59434c09825ceec8ab72cdeafeb7852bcd37b30"
+  },
+  {
+   "seq": 408,
+   "prev_hash": "4f1f115d44481a99cc790a3ee59434c09825ceec8ab72cdeafeb7852bcd37b30",
+   "entry": {
+    "type": "PHASE25B_VERDICT",
+    "phase": "25-B",
+    "GVZ": "aucune separation economique (calibration: -2,87/-4,45/-4,01 bp par tercile; G et L croissent ensemble)",
+    "COT": "aucune separation economique (calibration: -3,43/-5,43/-2,46 bp; hypothese d encombrement non soutenue)",
+    "extraction": "GVZ 2706 obs reconciliees ecart 0,0; COT 522 rapports CFTC officiels",
+    "deadline": "regle 120 min preenregistree seq407, testable sans fuite en SHADOW uniquement",
+    "profitable_edge": false
+   },
+   "entry_hash": "0dca87a1a0ec5f27bd4c8ab6ce7c0bdb233632b44629ad682fff0ee7aed984e4"
   }
  ]
 }

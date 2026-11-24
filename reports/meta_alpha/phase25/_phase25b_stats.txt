@@ -1,2 +1,0 @@
-GVZ frontieres calibration: [ 9.43 12.99 16.36 28.37]
-COT frontieres calibration: [-27201. 106941. 172050. 273076.]
