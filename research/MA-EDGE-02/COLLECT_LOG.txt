@@ -1,2 +1,3 @@
   2026-11-24 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/17h_ticks.bi5
+  2026-11-24 18:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/18h_ticks.bi5
 manifeste: 1 heures tracees

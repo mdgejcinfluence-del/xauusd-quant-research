@@ -1,10 +1,11 @@
 /home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/edge02_dukascopy.py:57: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
   now = pd.Timestamp.utcnow().floor('h')
-2026-11-24 15:00:00+00:00 {'ticks': 49642, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.4499999999998181, 'spread_p95_unites': 0.5790000000001783, 'ecart_max_sec': 0.908, 'premier': '2026-11-24 15:00:00.060000', 'dernier': '2026-11-24 15:59:59.961000'}
-  2026-11-24 14:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/14h_ticks.bi5
-2026-11-24 14:00:00+00:00 {'ticks': 0}
-  2026-11-23 15:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/23/15h_ticks.bi5
-2026-11-23 15:00:00+00:00 {'ticks': 0}
-  2026-11-22 15:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/22/15h_ticks.bi5
-2026-11-22 15:00:00+00:00 {'ticks': 0}
+  2026-11-24 16:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/16h_ticks.bi5
+2026-11-24 16:00:00+00:00 {'ticks': 0}
+  2026-11-24 15:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/15h_ticks.bi5
+2026-11-24 15:00:00+00:00 {'ticks': 0}
+  2026-11-23 16:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/23/16h_ticks.bi5
+2026-11-23 16:00:00+00:00 {'ticks': 0}
+  2026-11-22 16:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/22/16h_ticks.bi5
+2026-11-22 16:00:00+00:00 {'ticks': 0}
 probe ecrite: /home/runner/work/xauusd-quant-research/xauusd-quant-research/research/MA-EDGE-02/DUKASCOPY_PROBE.json
