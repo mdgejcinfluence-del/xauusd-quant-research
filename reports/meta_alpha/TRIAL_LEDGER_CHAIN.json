@@ -5122,6 +5122,22 @@
     "interdictions": "holdout ferme, aucune fusion H4/D1, aucune modification Directeur/Horloge, aucune selection post-hoc"
    },
    "entry_hash": "93deaa24281889f0b9562972a9a3d97b1d2dac3c47ead3eb0bc4879abaa822df"
+  },
+  {
+   "seq": 393,
+   "prev_hash": "93deaa24281889f0b9562972a9a3d97b1d2dac3c47ead3eb0bc4879abaa822df",
+   "entry": {
+    "type": "PHASE24B_VERDICT",
+    "phase": "24-B",
+    "verdict_global": "M15_CONDITIONAL_ARCHITECTURE_FEASIBLE",
+    "M15_TIME_ONLY": "READY (train min 2078, eval 1469/657)",
+    "M15_H4_TIME": "READY (train min 190, eval 139/62)",
+    "M15_D1_TIME": "READY (train min 193, eval 198/88)",
+    "label": "definition M15 gelee seq392 (fenetre 32 barres, clotures M15)",
+    "entrainement": "AUCUN - aucune autorisation automatique",
+    "profitable_edge": false
+   },
+   "entry_hash": "78bb59e27608b02cbb7650621f637bce3aad4b1914a300f76b1894d7dcb6dd5c"
   }
  ]
 }
