@@ -1,0 +1,7 @@
+variable,source,connu_a_l_avance,couverture_2010_2020,doublon_phases_anterieures,verdict
+Jours feries US (NYSE/Federal Reserve),calendriers officiels publics,oui,complete,partiel (jours de semaine deja en 20-A/21-A),CAUSAL_HISTORY_VERIFIABLE
+Horaires particuliers CME (veilles de feries),CME Group avis publics,oui,complete si archivee par annee,non,PARTIALLY_AVAILABLE (archivage annuel a verifier)
+Changements d heure saisonniers US/UE (DST),regles publiques,oui,complete,partiel (creneaux UTC deja cartographies),CAUSAL_HISTORY_VERIFIABLE
+Fenetres de publications macro (08:30/14:00 ET),BLS/BEA/Fed,oui,complete,non (jamais utilise comme variable),CAUSAL_HISTORY_VERIFIABLE
+Echeances et derniers jours de negociation GC,CME Group,oui,complete,non,CAUSAL_HISTORY_VERIFIABLE
+Chevauchements de seances (Londres/New York),horaires publics,oui,complete,oui (creneau 12-16 UTC deja identifie 20-A/21-C: risque de simple redescription),HISTORICAL_COVERAGE_PARTIAL (doublon documente)

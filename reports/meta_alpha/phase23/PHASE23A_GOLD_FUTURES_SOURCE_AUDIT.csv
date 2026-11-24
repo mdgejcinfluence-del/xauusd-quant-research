@@ -1,0 +1,6 @@
+donnee,source,granularite,timestamps,couverture_2010_2020,conditions_acces,cout,verdict,distinction
+Prix GC temps reel,CME Group / revendeurs licencies,tick,temps reel exchange,licenciee,licence market data CME,payant,SOURCE_OR_LICENSE_BLOCKED,prix futures != prix spot XAU/USD
+Prix GC differe,plateformes gratuites,>=10 min de retard,temps reel moins delai impose,pas d historique tick libre verifiable,conditions des plateformes,0 FCFA mais differe,SOURCE_UNVERIFIED pour usage causal historique,ne jamais assimiler au spot
+Volume et open interest GC quotidiens,CME Group (rapports quotidiens),quotidienne,date de seance,archives officielles limitees / DataMine historique payant,licence historique CME,payant,SOURCE_OR_LICENSE_BLOCKED,volume futures reel mais distinct du marche spot (aucun volume spot observable)
+Reglements (settlements) GC quotidiens,CME Group,quotidienne,date de seance,site CME historique partiel,conditions CME,partiellement libre,HISTORICAL_COVERAGE_PARTIAL,settlement != cotation spot continue
+Roulements et echeances GC,CME Group (calendrier contrat),evenementielle,dates connues a l avance,calendrier public,publique,0 FCFA,CAUSAL_HISTORY_VERIFIABLE,regle de roulement a documenter separement du prix

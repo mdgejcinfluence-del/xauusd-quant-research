@@ -1,0 +1,10 @@
+candidat,source,timestamp_economique,timestamp_publication,timestamp_disponibilite_historique,revision,fuite_principale,usage_causal_admissible,verdict
+DTWEXBGS J-1,FRED H.10/ALFRED,date J-1,publication J ~16:15 ET,ALFRED vintage ulterieure (valeur non revisee),poids annuels seulement,utiliser la valeur du jour J pour le jour J,etat connu avant ouverture du jour J,CAUSAL_HISTORY_VERIFIABLE
+DEXUSEU J-1,FRED H.10/ALFRED,date J-1,publication J,ALFRED,rare,meme,etat J-1 avant jour J,CAUSAL_HISTORY_VERIFIABLE
+DGS10 variation J-1 -> J-2,FRED H.15/ALFRED,dates J-1 et J-2,publication J et J-1,ALFRED vintages,revisions tracees,meme,derivee de valeurs connues avant jour J,CAUSAL_HISTORY_VERIFIABLE
+DFII10 variation J-1 -> J-2,FRED H.15/ALFRED,dates J-1 et J-2,publication J et J-1,ALFRED vintages,revisions tracees,meme,derivee de valeurs connues avant jour J,CAUSAL_HISTORY_VERIFIABLE
+Fenetre de publication macro (dummy heure),BLS/BEA/Fed,heure officielle,calendrier publie a l avance,calendrier archive,aucune,confondre heure ET et UTC selon DST,fenetre [publication; publication+60min] connue a l avance,CAUSAL_HISTORY_VERIFIABLE
+Valeur surprise CPI/NFP,consensus commercial inconnu,date J,08:30 ET,non disponible en version contemporaine libre,forte (NFP),reconstruire le consensus a posteriori,aucun en l etat,SOURCE_OR_LICENSE_BLOCKED
+GC prix/volume intrajournalier,CME,temps reel,seance,licence historique payante,regles de contrat,assimiler volume futures et spot,aucun a budget 0,SOURCE_OR_LICENSE_BLOCKED
+GC echeance/roulement (dummy calendrier),CME,date de contrat,calendrier public,calendrier archive,aucune,confondre contrat actif et spot,etat connu a l avance,CAUSAL_HISTORY_VERIFIABLE
+Jour ferie US (dummy),NYSE/Fed,date,calendrier public,calendrier archive,aucune,aucune majeure,etat connu a l avance,CAUSAL_HISTORY_VERIFIABLE

@@ -1,0 +1,11 @@
+rang,famille,candidat,mecanisme_theorique,usage_causal,verdict,risque_doublon
+1,A dollar/taux,Variation quotidienne du dollar large DTWEXBGS connue en J-1,un dollar qui se renforce la veille modifie le contexte de valorisation de l or le lendemain (sans signe presume),etat et variation J-1 avant ouverture J,CAUSAL_HISTORY_VERIFIABLE,faible (variable jamais utilisee)
+2,A dollar/taux,Variation DGS10 J-1 moins J-2,hausse des taux nominaux la veille = cout d opportunite plus eleve pour l or (mecanisme a tester sans signe impose),derivee connu avant jour J,CAUSAL_HISTORY_VERIFIABLE,faible
+3,A dollar/taux,Variation DFII10 (reel 10Y) J-1 moins J-2,les taux reels sont le canal theorique le plus direct du cout de detention de l or,derivee connu avant jour J,CAUSAL_HISTORY_VERIFIABLE,faible
+1,B macro,Fenetre de publication CPI/NFP/PCE (timestamp seul),l incertitude se resout a heure fixe: amplitude et asymetrie peuvent differer pendant la fenetre d annonce,fenetre [08:30 ET; +60 min] connue a l avance,CAUSAL_HISTORY_VERIFIABLE,aucun (jamais utilise)
+2,B macro,Fenetre FOMC (annonce 14:00 ET + conference),revelation de politique monetaire a heure fixe,fenetre connue a l avance,CAUSAL_HISTORY_VERIFIABLE,aucun
+3,B macro,Valeur publiee premiere vintage (CPI/NFP) alignee apres publication,la reaction peut dependre du niveau publie (pas de la surprise faute de consensus),utilisable uniquement apres l heure de publication exacte,HISTORICAL_TIMESTAMP_LIMITATION,modere (confusion valeur/surprise a eviter)
+1,C futures,Echeance/dernier jour de negociation GC (calendrier),les flux de roulement peuvent modifier le comportement autour des echeances,etat connu a l avance,CAUSAL_HISTORY_VERIFIABLE,aucun
+2,C futures,GC prix/volume/open interest,le marche a terme pourrait mener le spot,BLOQUE licence CME a budget 0,SOURCE_OR_LICENSE_BLOCKED,sans objet
+1,D calendrier,Jour ferie US / veille de ferie,liquidite reduite = amplitude et spread differents,etat connu a l avance,CAUSAL_HISTORY_VERIFIABLE,modere (regime deja partiellement decrit)
+2,D calendrier,Fenetre DST asymetrique US/UE (decalages de mars/novembre),le decalage temporaire des seances deplace les heures d activite en UTC,etat connu a l avance,CAUSAL_HISTORY_VERIFIABLE,modere (creneaux UTC deja cartographies)

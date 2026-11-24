@@ -1,0 +1,11 @@
+candidat,2010_2012,2013_2015,2016_2019,granularite_max_verifiable,limite_principale
+DTWEXBGS,complete,complete,complete,quotidienne (J-1),pas d intrajournalier causal libre
+DEXUSEU,complete,complete,complete,quotidienne (J-1),pas d intrajournalier causal libre
+DGS2/DGS10,complete,complete,complete,quotidienne (J-1),variation intrajournaliere non disponible en libre
+DFII10,complete,complete,complete,quotidienne (J-1),idem
+Calendriers macro (timestamps),complets,complets,complets,evenementielle (heure exacte),consensus indisponible
+Valeurs macro premiere vintage (ALFRED),complete,complete,complete,evenementielle,revisions ulterieures a ne jamais utiliser
+Conferences de presse Fed,partielle (a partir de 2011),complete,complete,evenementielle,couverture debut de periode
+GC prix/volume/open interest,licenciee,licenciee,licenciee,non accessible a budget 0,licence CME
+GC calendrier echeances,complet,complet,complet,evenementielle,regles de roulement a figer
+Feries US / DST,complets,complets,complets,quotidienne,risque de doublon avec variables deja etudiees

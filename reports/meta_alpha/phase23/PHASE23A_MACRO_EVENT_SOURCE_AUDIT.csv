@@ -1,0 +1,7 @@
+evenement,source,heure_officielle,fuseau,valeur_initiale,consensus_historique,surprise_calculable,couverture_2010_2020,verdict
+CPI,BLS (calendrier de publication archive),08:30,America/New_York,ALFRED premiere vintage,non libre avec provenance,non,calendriers et valeurs complets,PARTIALLY_AVAILABLE (timestamp + valeur vintage uniquement)
+PCE,BEA,08:30,America/New_York,ALFRED premiere vintage,non libre avec provenance,non,complets,PARTIALLY_AVAILABLE (timestamp + valeur vintage uniquement)
+Non-Farm Payrolls,BLS Employment Situation,08:30 (vendredi en regle generale),America/New_York,ALFRED premiere vintage (fortement revisee ensuite),non libre avec provenance,non,complets,PARTIALLY_AVAILABLE (timestamp + valeur vintage uniquement)
+Decisions FOMC,Federal Reserve,14:00,America/New_York,communique officiel,attentes de taux non libres de maniere verifiable,non,calendrier officiel complet,CAUSAL_HISTORY_VERIFIABLE (timestamp et decision)
+Conferences de presse Fed,Federal Reserve,14:30 (apres FOMC concernees),America/New_York,sans objet,non,non,horaires publics depuis 2011 (toutes reunions depuis 2019),PARTIALLY_AVAILABLE
+Discours officiels Fed,Federal Reserve / banques regionales,horaires publies,divers,sans objet,non,non,archives partielles selon orateur,HISTORICAL_COVERAGE_PARTIAL

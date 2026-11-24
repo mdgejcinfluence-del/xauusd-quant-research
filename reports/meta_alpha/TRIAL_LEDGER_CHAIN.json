@@ -4985,6 +4985,35 @@
     "profitable_edge": false
    },
    "entry_hash": "06d4d0fb23a2f3cb0d5b8c56ddac7dc8bad33ec0bd848a224890f3084a0e833e"
+  },
+  {
+   "seq": 384,
+   "prev_hash": "06d4d0fb23a2f3cb0d5b8c56ddac7dc8bad33ec0bd848a224890f3084a0e833e",
+   "entry": {
+    "type": "PHASE23A_AUTHORIZATION",
+    "phase": "23-A",
+    "statut": "EXPLORATORY_RESEARCH_DESIGN",
+    "objet": "audit documentaire variables exogenes XAU/USD: dollar/taux, macro, futures or, calendrier; aucune extraction massive, aucun modele, aucun P&L",
+    "budget": "0 FCFA",
+    "holdout": "interdit"
+   },
+   "entry_hash": "57b147364d72ac2753075b2b2acfd37c240fd5eeeddce04b96b8238aaf23a3f7"
+  },
+  {
+   "seq": 385,
+   "prev_hash": "57b147364d72ac2753075b2b2acfd37c240fd5eeeddce04b96b8238aaf23a3f7",
+   "entry": {
+    "type": "PHASE23A_VERDICT",
+    "phase": "23-A",
+    "verdict": "PARTIALLY_AVAILABLE",
+    "famille_dollar_taux": "NEW_CAUSAL_EXTERNAL_INFORMATION_AVAILABLE en quotidien J-1 uniquement (FRED/ALFRED); HISTORICAL_TIMESTAMP_LIMITATION intrajournalier",
+    "famille_macro": "timestamps CAUSAL_HISTORY_VERIFIABLE; surprise SOURCE_OR_LICENSE_BLOCKED (consensus non libre)",
+    "famille_futures": "SOURCE_OR_LICENSE_BLOCKED (CME payant, budget 0); calendrier echeances verifiable",
+    "famille_calendrier": "CAUSAL_HISTORY_VERIFIABLE (risque doublon documente)",
+    "extraction": "aucune lancee; contrat distinct requis",
+    "statut": "EXPLORATORY_RESEARCH_DESIGN"
+   },
+   "entry_hash": "07c29158aff18fdf4e20c37ab452925a02877e927e74947c41c29a4efbd48516"
   }
  ]
 }
