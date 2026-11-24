@@ -1,21 +1,23 @@
+  source        split   tercile    n  grappes  freq_Y      G      L  esperance_S2  mediane_S2  MAE_mediane
+0    GVZ  CALIBRATION    T1_bas  459      140   0.597  13.22  26.69         -2.87       -2.29         23.7
+1    GVZ  CALIBRATION  T2_moyen  459      142   0.588  19.06  38.03         -4.45       -3.13         32.0
+2    GVZ  CALIBRATION   T3_haut  454      124   0.559  22.06  37.11         -4.01       -2.25         42.8
+3    GVZ   EVALUATION    T1_bas  827      284   0.628   9.70  28.75         -4.62       -4.76         25.7
+4    GVZ   EVALUATION  T2_moyen  203       82   0.704  20.22  43.67          1.34       -1.98         29.9
+5    GVZ   EVALUATION   T3_haut   37       13   0.622  23.98  39.94         -0.21       -6.01         44.2
 Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 149, in <module>
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 152, in <module>
     elif sys.argv[1] == 'analyse': mode_analyse()
                                    ^^^^^^^^^^^^^^
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 130, in mode_analyse
-    mg = pd.merge_asof(M.sort_values('date_decision'), G, left_on='date_decision', right_on='date',
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 913, in merge_asof
-    op = _AsOfMerge(
-         ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2460, in __init__
-    _OrderedMerge.__init__(
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2372, in __init__
-    _MergeOperation.__init__(
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 1022, in __init__
-    self._maybe_require_matching_dtypes(self.left_join_keys, self.right_join_keys)
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2585, in _maybe_require_matching_dtypes
-    _check_dtype_match(lk, rk, i)
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 2581, in _check_dtype_match
-    raise MergeError(msg)
-pandas.errors.MergeError: incompatible merge keys [0] dtype('<M8[ns]') and dtype('<M8[us]'), must be the same type
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 143, in mode_analyse
+    t, qs = terciles_analyse(mg, 'net_managed_money', 'COT')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/phase25b_engine.py", line 103, in terciles_analyse
+    df = df.copy(); df['tercile'] = pd.cut(df[col], qs, labels=['T1_bas', 'T2_moyen', 'T3_haut'], include_lowest=True, duplicates='drop')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/tile.py", line 288, in cut
+    fac, bins = _bins_to_cuts(
+                ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/pandas/core/reshape/tile.py", line 552, in _bins_to_cuts
+    raise ValueError(
+ValueError: Bin labels must be one fewer than the number of bin edges
