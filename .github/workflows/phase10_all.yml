@@ -1588,6 +1588,7 @@ jobs:
         P20_BATCH: ${{ matrix.batch }}
       run: |
         set +e
+        mkdir -p reports/meta_alpha/phase20
         python ci_tools/phase20a_engine.py lot 2>&1 | tee reports/meta_alpha/phase20/PHASE20A_LOTLOG_${{ matrix.batch }}.txt
         ec=${PIPESTATUS[0]}
         echo "$ec" > reports/meta_alpha/phase20/PHASE20A_LOTEXIT_${{ matrix.batch }}.txt
@@ -1638,6 +1639,7 @@ jobs:
     - name: Analyse Phase 20-A
       run: |
         set +e
+        mkdir -p reports/meta_alpha/phase20
         python ci_tools/phase20a_engine.py analyse 2>&1 | tee reports/meta_alpha/phase20/PHASE20A_LOG.txt
         ec=${PIPESTATUS[0]}
         echo "$ec" > reports/meta_alpha/phase20/PHASE20A_ENGINE_EXIT.txt
