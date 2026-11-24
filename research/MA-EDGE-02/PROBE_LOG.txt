@@ -1,11 +1,7 @@
 /home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/edge02_dukascopy.py:57: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
   now = pd.Timestamp.utcnow().floor('h')
-  2026-11-24 15:00:00+00:00 INDISPONIBLE (HTTPError)
-2026-11-24 15:00:00+00:00 {'ticks': 0}
-  2026-11-24 14:00:00+00:00 INDISPONIBLE (HTTPError)
-2026-11-24 14:00:00+00:00 {'ticks': 0}
-  2026-11-23 15:00:00+00:00 INDISPONIBLE (HTTPError)
-2026-11-23 15:00:00+00:00 {'ticks': 0}
-  2026-11-22 15:00:00+00:00 INDISPONIBLE (HTTPError)
+2026-11-24 15:00:00+00:00 {'ticks': 49642, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.4499999999998181, 'spread_p95_unites': 0.5790000000001783, 'ecart_max_sec': 0.908, 'premier': '2026-11-24 15:00:00.060000', 'dernier': '2026-11-24 15:59:59.961000'}
+2026-11-24 14:00:00+00:00 {'ticks': 42899, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.42000000000007276, 'spread_p95_unites': 0.5399999999999636, 'ecart_max_sec': 2.67, 'premier': '2026-11-24 14:00:00.023000', 'dernier': '2026-11-24 14:59:59.757000'}
+2026-11-23 15:00:00+00:00 {'ticks': 47023, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.3999999999996362, 'spread_p95_unites': 0.5059999999998581, 'ecart_max_sec': 1.007, 'premier': '2026-11-23 15:00:00.026000', 'dernier': '2026-11-23 15:59:59.982000'}
 2026-11-22 15:00:00+00:00 {'ticks': 0}
 probe ecrite: /home/runner/work/xauusd-quant-research/xauusd-quant-research/research/MA-EDGE-02/DUKASCOPY_PROBE.json
