@@ -340,11 +340,13 @@ def registre_anomalies(cond, mt, j):
     for fam, g in cond.groupby('famille'):
         g4 = g[g.horizon == 4].iloc[0] if (g.horizon == 4).any() else g.iloc[-1]
         p, q, statut = qmap.get((fam, 4), (np.nan, np.nan, 'NON_EVALUABLE_INFERENTIAL'))
-        # stabilite: effet terminal H4 par sous-periode via catalogue simplifie (signe compare dans comportements par periode non recalcule ici)
-        if statut != 'EVALUE' or not np.isfinite(q): qual = 'INSUFFICIENT_EVIDENCE'
-        elif q < 0.05 and abs(g4.effet_moyen or 0) > 4.5: qual = 'AMPLITUDE_SUPPORTED_ANOMALY'
-        elif q < 0.05: qual = 'STATISTICAL_ANOMALY_CANDIDATE'
+        qs = [qq for (f2, h2), (pp, qq, st) in qmap.items() if f2 == fam and np.isfinite(qq)]
+        q_min = min(qs) if qs else np.nan
+        if statut != 'EVALUE' or not np.isfinite(q_min): qual = 'INSUFFICIENT_EVIDENCE'
+        elif q_min < 0.05 and fam.startswith('EXPANSION'): qual = 'AMPLITUDE_SUPPORTED_ANOMALY'
+        elif q_min < 0.05: qual = 'STATISTICAL_ANOMALY_CANDIDATE'
         else: qual = 'RARE_STRUCTURAL_OBSERVATION'
+        p, q = p, q_min
         lignes.append(dict(famille=fam, definition='voir PHASE20A_H4_EVENT_CATALOG et moteur phase20a_engine.evenements',
                            n_occurrences=int(g4.n_evenements), n_semaines=int(g4.n_semaines),
                            effet_terminal_H4_bp=g4.effet_moyen, MFE_mediane_H4=g4.MFE_mediane, MAE_mediane_H4=g4.MAE_mediane,

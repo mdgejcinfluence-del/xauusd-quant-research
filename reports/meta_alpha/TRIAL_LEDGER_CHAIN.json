@@ -4724,6 +4724,20 @@
     "base_seq": 365
    },
    "entry_hash": "bba3aea67275f837c386d68130cf5d5b63d21cf01cd3698ee3a8ace9186cce13"
+  },
+  {
+   "seq": 367,
+   "prev_hash": "bba3aea67275f837c386d68130cf5d5b63d21cf01cd3698ee3a8ace9186cce13",
+   "entry": {
+    "type": "PHASE20A_VERDICT",
+    "phase": "20-A",
+    "verdict": "H4_AMPLITUDE_SUPPORTED_CANDIDATES_IDENTIFIED",
+    "portee": "descriptif uniquement: persistance d amplitude (expansion/compression), aucune anomalie directionnelle robuste, aucun edge declare",
+    "statut": "EXPLORATORY_POST_HOC",
+    "run_CI": 45349197214,
+    "base_seq": 366
+   },
+   "entry_hash": "c12b0e29bc779545a23e9886ae89504b47d0b4d47f56643284a959e40be00b87"
   }
  ]
 }
