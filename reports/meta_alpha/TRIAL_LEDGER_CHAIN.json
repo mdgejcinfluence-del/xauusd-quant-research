@@ -5394,6 +5394,34 @@
     "collecte": "limitation decouverte: le cron GitHub ne s execute que depuis la branche par defaut; collecte relancee par dispatch manuel, a re-declencher periodiquement"
    },
    "entry_hash": "038dd93f5d96be214cb225725c19ea8c28243e39e217c645cad487a257fbea69"
+  },
+  {
+   "seq": 412,
+   "prev_hash": "038dd93f5d96be214cb225725c19ea8c28243e39e217c645cad487a257fbea69",
+   "entry": {
+    "type": "MA_EDGE_02_PREREGISTRATION_H17",
+    "mission": "MA-EDGE-02",
+    "bras": "H17 secondaire: sortie anticipee a +60 min si rendement Mid directionnel < -10 bp, sinon regle principale; population prospective posterieure a ce preenregistrement uniquement",
+    "interdictions": "aucune selection entre bras; seuil et horizon figes; ne modifie ni n interrompt l etude deadline seq407",
+    "motivation": "EXP-08 post-hoc (ADVERSE -24,0 / PLAT -4,2 / FAVORABLE +20,5 bp, rejeu seul)"
+   },
+   "entry_hash": "c33f0cda71de6e3734c60fd223f52e2be250e18f14e5161271765ad0552471e3"
+  },
+  {
+   "seq": 413,
+   "prev_hash": "c33f0cda71de6e3734c60fd223f52e2be250e18f14e5161271765ad0552471e3",
+   "entry": {
+    "type": "MA_EDGE_02_RESULTS_EXP08_12",
+    "mission": "MA-EDGE-02",
+    "statut": "EXPLORATORY_POST_HOC",
+    "EXP09": "continuation 32 barres +0,62/+1,18/+1,30 bp (Mid) signe coherent mais sous les couts (scenarios 2-4 bp) et sous le placebo en decouverte: REFUTEE economiquement",
+    "EXP11": "excursions quasi symetriques (MFE+MAE median -1,3 a +0,2 bp): pas d asymetrie exploitable post-impulsion",
+    "EXP10": "le ratio potentiel/risque predit le label (0,70/0,51/0,33 sur 3 periodes) mais pas le PnL (-3,3/-1,9/-5,1): geometrie informative, economiquement non separante",
+    "EXP12": "spread de decision eleve associe a PnL degrade (-6,1 vs -1,9 bp, rejeu seul, descriptif)",
+    "EXP08": "etat +60 min separe le PnL terminal (rejeu seul) -> bras prospectif H17 preenregistre seq412",
+    "profitable_edge": false
+   },
+   "entry_hash": "7ab1b3bfc94ea2141138d6ea016c220b64af809a0e080ff3e674f7a7385a3c27"
   }
  ]
 }

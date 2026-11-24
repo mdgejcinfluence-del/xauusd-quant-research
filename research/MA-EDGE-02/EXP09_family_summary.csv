@@ -1,0 +1,7 @@
+regle,H,n,moy_DEC,moy_CTL,moy_REJ,p97_5_placebo
+A_continuation,8,14210,0.09,-0.09,0.77,0.46
+A_continuation,32,14209,0.62,1.18,1.3,0.89
+B_fade,8,14210,-0.09,0.09,-0.77,
+B_fade,32,14209,-0.62,-1.18,-1.3,
+C_confirmation,8,6372,-0.1,-0.69,1.28,
+D_differee,8,9452,-0.16,0.36,1.02,
