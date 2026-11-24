@@ -107,7 +107,7 @@ def mode_cot():
                 z = zipfile.ZipFile(io.BytesIO(brut))
                 nom = z.namelist()[0]
                 d = pd.read_csv(z.open(nom), low_memory=False)
-                col_code = [c for c in d.columns if 'CFTC_Market_Code' in c or 'CFTC Contract Market Code' in c]
+                col_code = [c for c in d.columns if c.strip() == 'CFTC_Contract_Market_Code'] or [c for c in d.columns if 'CFTC_Contract_Market_Code' in c]
                 col_nom = [c for c in d.columns if 'Market_and_Exchange' in c]
                 if an == 2015:
                     log.append('DIAG colonnes: ' + ' | '.join(map(str, d.columns[:14])))
@@ -135,7 +135,10 @@ def mode_cot():
 def mode_rates():
     DONNEES.mkdir(parents=True, exist_ok=True)
     essais = {
-        'ECB_SDMX_DFR': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.G_N_A.SV_CRES?startPeriod=2010-01-01&format=csvdata',
+        'ECB_SDMX_DFR': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.DFR.LEV?startPeriod=2010-01-01&format=csvdata',
+        'ECB_SDMX_MRO': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_MBR.LEV?startPeriod=2010-01-01&format=csvdata',
+        'DBNOMICS_FRED_DEXUSEU': 'https://api.db.nomics.world/v22/series/FRED/DEXUSEU?observations=1',
+        'FED_H15_DAILY': 'https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=c5d8264962a56d48f89f462d8471faab&lastobs=5&filetype=csv&label=include&layout=seriescolumn',
         'DBNOMICS_DEXUSEU': 'https://api.db.nomics.world/v22/series/FRED/DEXUSEU/DEXUSEU?observations=1&format=json',
         'DBNOMICS_DGS10': 'https://api.db.nomics.world/v22/series/FRED/DGS10/DGS10?observations=1&format=json',
         'FRED_DEXUSEU': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2010-01-01',
