@@ -160,7 +160,11 @@ def mode_cotdiag():
     brut = fetch('https://www.cftc.gov/files/dea/history/fut_disagg_txt_2020.zip', 120)
     z = zipfile.ZipFile(io.BytesIO(brut))
     d = pd.read_csv(z.open(z.namelist()[0]), low_memory=False)
+    print('fichiers zip:', z.namelist())
     noms = [c for c in d.columns if 'Market_and_Exchange' in c][0]
+    tous = sorted(d[noms].astype(str).unique())
+    print('marches contenant EUR:', [x for x in tous if 'EUR' in x.upper()][:20])
+    print('nb marches:', len(tous), '| lignes:', len(d))
     m = d[d[noms].astype(str).str.contains('EURO FX', na=False)]
     print('lignes EURO FX:', len(m))
     for c in ['CFTC_Contract_Market_Code', 'CFTC_Market_Code', 'CFTC_Commodity_Code']:
