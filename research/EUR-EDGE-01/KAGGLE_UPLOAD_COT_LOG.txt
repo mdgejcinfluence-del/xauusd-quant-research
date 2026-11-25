@@ -1,1 +1,1 @@
-Your private Dataset is being created. Please check progress at https://www.kaggle.com/datasets/shalom5123/eurusd-cftc-cot
+Dataset creation error: The requested slug "eurusd-cftc-cot" is already in use by a dataset. Please choose another slug.

@@ -1,23 +1,5 @@
-COT 2010: 24 lignes EURO FX 099741
-COT 2011: 52 lignes EURO FX 099741
-COT 2012: 53 lignes EURO FX 099741
-COT 2013: 52 lignes EURO FX 099741
-COT 2014: 52 lignes EURO FX 099741
-DIAG colonnes: Market_and_Exchange_Names | As_of_Date_In_Form_YYMMDD | Report_Date_as_YYYY-MM-DD | CFTC_Contract_Market_Code | CFTC_Market_Code | CFTC_Region_Code | CFTC_Commodity_Code | Open_Interest_All | Dealer_Positions_Long_All | Dealer_Positions_Short_All | Dealer_Positions_Spread_All | Asset_Mgr_Positions_Long_All | Asset_Mgr_Positions_Short_All | Asset_Mgr_Positions_Spread_All
-DIAG codes uniques: <ArrowStringArray>
-['090741', '092741', '096742', '097741', '099741', '232741', '089741',
- '095741', '102741', '112741', '122741', '12460+']
-Length: 12, dtype: str
-COT 2015: 52 lignes EURO FX 099741
-COT 2016: 52 lignes EURO FX 099741
-COT 2017: 52 lignes EURO FX 099741
-COT 2018: 53 lignes EURO FX 099741
-COT 2019: 52 lignes EURO FX 099741
-COT 2020: 52 lignes EURO FX 099741
-COT 2021: 52 lignes EURO FX 099741
-COT 2022: 52 lignes EURO FX 099741
-COT 2023: 52 lignes EURO FX 099741
-COT 2024: 53 lignes EURO FX 099741
-COT 2025: 52 lignes EURO FX 099741
-COT 2026: 46 lignes EURO FX 099741
-COT total brut: 853 lignes, colonnes: 88
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/eur01_engine.py", line 175, in <module>
+    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()
+                                                                                                   ^^^^^^^^^^^
+NameError: name 'mode_rates2' is not defined. Did you mean: 'mode_rates'?
