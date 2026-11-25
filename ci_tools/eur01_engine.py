@@ -172,4 +172,58 @@ def mode_cotdiag():
 
 
 if __name__ == '__main__':
-    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag}[sys.argv[1]]()
+    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()
+
+
+def mode_rates2():
+    """Completion taux: Bund (Bundesbank), H.15 Fed, Tresor parse, BCE MRO cle alternative."""
+    DONNEES.mkdir(parents=True, exist_ok=True)
+    essais = {
+        'BUNDESBANK_10Y': 'https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R10XX.R.A.A._Z._Z.A?startPeriod=2010-01&format=csv',
+        'FED_H15_CSV': 'https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=c5d8264962a56d48f89f462d8471faab&lastobs=5&filetype=csv&label=include&layout=seriescolumn',
+        'ECB_MRO2': 'https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_MBR.LEV?format=csvdata',
+        'DBNOMICS_ALFRED_CPI': 'https://api.db.nomics.world/v22/series/ALFRED/CPIAUCNS?observations=1',
+        'FRED_MIRROR_DGS10_GH': 'https://raw.githubusercontent.com/datasets/fred/master/data/DGS10.csv',
+    }
+    statut = {}
+    for nom, url in essais.items():
+        try:
+            brut = fetch(url, 90)
+            (DONNEES / f'rates2_{nom}.csv').write_bytes(brut)
+            statut[nom] = f'OK {len(brut)} octets, debut: {brut[:80]!r}'
+        except Exception as e:
+            statut[nom] = f'ECHEC {type(e).__name__}: {e}'
+        print(nom, statut[nom])
+    (OUT / 'RATES2_LOG.json').write_text(json.dumps(statut, indent=1))
+
+
+def mode_macro():
+    """Vintages/publications officielles: BLS (CPI), Eurostat (HICP) — valeurs et dates reelles.
+    Aucun consensus. Les premieres valeurs BLS/Eurostat exigeant des archives de parution,
+    chaque ligne porte sa source et son mode d'obtention."""
+    DONNEES.mkdir(parents=True, exist_ok=True)
+    statut = {}
+    # BLS API publique sans cle (limites: fenetres de 10 ans)
+    for serie in ('CPIAUCNS', 'CPILFESL', 'PAYEMS', 'UNRATE'):
+        morceaux = []
+        for a0, a1 in ((2010, 2019), (2020, 2026)):
+            try:
+                brut = fetch(f'https://api.bls.gov/publicAPI/v2/timeseries/data/{serie}?startyear={a0}&endyear={a1}', 90)
+                d = json.loads(brut)
+                for x in d['Results']['series'][0]['data']:
+                    morceaux.append({'serie': serie, 'annee': int(x['year']), 'periode': x['period'],
+                                     'valeur': float(x['value']), 'source': 'BLS public API (valeur courante, revisee le cas echeant)'})
+                statut[f'BLS_{serie}_{a0}'] = 'OK'
+            except Exception as e:
+                statut[f'BLS_{serie}_{a0}'] = f'ECHEC {type(e).__name__}: {e}'
+        if morceaux:
+            pd.DataFrame(morceaux).to_csv(DONNEES / f'macro_BLS_{serie}.csv', index=False)
+    # Eurostat HICP zone euro (indice mensuel)
+    try:
+        brut = fetch('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=JSON&lang=EN&geo=EA20&coicop=CP00&unit=I15&sinceTimePeriod=2010-01', 120)
+        (DONNEES / 'macro_EUROSTAT_HICP_raw.json').write_bytes(brut)
+        statut['EUROSTAT_HICP'] = f'OK {len(brut)} octets'
+    except Exception as e:
+        statut['EUROSTAT_HICP'] = f'ECHEC {type(e).__name__}: {e}'
+    (OUT / 'MACRO_LOG.json').write_text(json.dumps(statut, indent=1))
+    print(json.dumps(statut, indent=1))

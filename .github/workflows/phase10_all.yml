@@ -2795,6 +2795,13 @@ jobs:
         python ci_tools/eur01_engine.py probe 2>&1 | tee research/EUR-EDGE-01/PROBE_LOG.txt
         python ci_tools/eur01_engine.py cot 2>&1 | tee research/EUR-EDGE-01/COT_RUN_LOG.txt
         python ci_tools/eur01_engine.py rates 2>&1 | tee research/EUR-EDGE-01/RATES_RUN_LOG.txt
+        python ci_tools/eur01_engine.py rates2 2>&1 | tee research/EUR-EDGE-01/RATES2_RUN_LOG.txt
+        python ci_tools/eur01_engine.py macro 2>&1 | tee research/EUR-EDGE-01/MACRO_RUN_LOG.txt
+        mkdir -p /tmp/kaggle_cb && cp research/EUR-EDGE-01/data/rates_ECB_SDMX_DFR.csv /tmp/kaggle_cb/ 2>/dev/null; cp research/EUR-EDGE-01/data/rates_USTREASURY_DAILY.csv /tmp/kaggle_cb/ 2>/dev/null
+        cat > /tmp/kaggle_cb/dataset-metadata.json << 'JSON'
+        {"title": "EURUSD Central Banks Rates ECB Fed Treasury", "id": "shalom5123/eurusd-central-banks", "licenses": [{"name": "other"}], "subtitle": "Taux officiels BCE (SDMX) et Tresor US, sources publiques"}
+        JSON
+        (kaggle datasets create -p /tmp/kaggle_cb -q 2>&1 || kaggle datasets version -p /tmp/kaggle_cb -m 'MAJ EUR-EDGE-02' -q 2>&1) | tee research/EUR-EDGE-01/KAGGLE_UPLOAD_CB_LOG.txt
         (kaggle datasets list --mine 2>&1 | head -20) | tee research/EUR-EDGE-01/KAGGLE_ETAT.txt
         mkdir -p /tmp/kaggle_cot && cp research/EUR-EDGE-01/data/CFTC_COT_EUROFX_099741_TFF_clean.parquet /tmp/kaggle_cot/ 2>/dev/null
         cat > /tmp/kaggle_cot/dataset-metadata.json << 'JSON'

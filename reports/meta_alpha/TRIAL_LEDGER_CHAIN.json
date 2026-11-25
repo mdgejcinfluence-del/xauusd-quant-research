@@ -5463,6 +5463,18 @@
     "suite": "taux US par miroirs, bloc publications macro, demande autorisation Dukascopy/connecteurs demo, puis programme scientifique EUR/USD preenregistre sur donnees licites"
    },
    "entry_hash": "67d37847eda9f99439cc96c75edf44eb317641f4ba38173623cb45a2b3445787"
+  },
+  {
+   "seq": 417,
+   "prev_hash": "67d37847eda9f99439cc96c75edf44eb317641f4ba38173623cb45a2b3445787",
+   "entry": {
+    "type": "EUR_EDGE_02_OPENING",
+    "mission": "EUR-EDGE-02",
+    "ref": "EUR-EDGE-01 seq416",
+    "priorites": "source de prix legale (decision documentee + courrier Dukascopy prepare, jamais signe); taux US/EU complets; vintages macro officiels sans consensus fabrique; reconciliation COT finale; schema canonique + adaptateurs; moteur de recherche EUR/USD (TP/SL en pips, couts, validation chronologique)",
+    "interdits": "aucune depense, aucune signature, aucun identifiant invente, aucun transfert Kaggle sous licence incertaine, aucun melange de volumes"
+   },
+   "entry_hash": "413411114f13816c9e91c32e4d8833d06e5317ca20ad0560683b0c3d67b5f7e6"
   }
  ]
 }
