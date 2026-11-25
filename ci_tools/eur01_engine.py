@@ -171,8 +171,6 @@ def mode_cotdiag():
     print('noms:', m[noms].astype(str).unique()[:5])
 
 
-if __name__ == '__main__':
-    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()
 
 
 def mode_rates2():
@@ -227,3 +225,7 @@ def mode_macro():
         statut['EUROSTAT_HICP'] = f'ECHEC {type(e).__name__}: {e}'
     (OUT / 'MACRO_LOG.json').write_text(json.dumps(statut, indent=1))
     print(json.dumps(statut, indent=1))
+
+
+if __name__ == '__main__':
+    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()

@@ -1,0 +1,11 @@
+dataset_id,nom,contenu,couverture,visibilite,licence,statut
+shalom5123/eurusd-cftc-cot,EURUSD-CFTC-COT,CFTC TFF 099741 nettoye,853 rapports 2010-2026,prive,domaine public US (citation),CREE ET VERIFIE CI EUR-EDGE-01
+shalom5123/eurusd-central-banks,EURUSD-CENTRAL-BANKS,taux BCE SDMX + Tresor US bruts,2010-2026 partiel,prive,"officiel BCE/US, citation",CREATION EN COURS CI EUR-EDGE-02
+EURUSD-SPOT-TICKS,ticks spot broker,—,prive,INTERDIT sans accord ecrit,NON CREE,
+EURUSD-SPOT-OHLC,barres derivees spot,—,prive,INTERDIT sans accord ecrit,NON CREE,
+EURUSD-MACRO-EUROZONE,publications zone euro,a construire,prive,"officiel, citation",PLANIFIE,
+EURUSD-MACRO-USA,publications USA,a construire,prive,"officiel, citation",PLANIFIE,
+EURUSD-FUTURES-6E,futures CME,—,prive,licence CME requise,NON CREE,
+EURUSD-OPTIONS-VOLATILITY,IV/RR/BF,—,prive,licence requise,NON CREE,
+EURUSD-CROSS-ASSETS,actifs justifies,selon source,prive,selon source,PLANIFIE,
+EURUSD-RESEARCH-FEATURES,variables derivees de sources autorisees,—,prive,derivees de sources autorisees uniquement,PLANIFIE,

@@ -1,0 +1,5 @@
+source,contenu,frequence,acces,statut,decision
+CME site produit 6E,"specifications du contrat (multiplicateur 125000, echeances)",reference,gratuit public,"consultable, non telecharge en serie",OK documente
+CME DataMine,"Time & Sales, BBO, carnet, historiques par echeance",tick/quotidien,licence payante,non acquis,BLOQUE LICENCE
+CME pages volume/OI agreges,volumes quotidiens agreges affiches,quotidien,gratuit public (affichage),serie historique non constituee licitement par scraping massif,NON CONSTITUE
+Vendeurs tiers,historiques 6E revendus,variable,payant,non acquis,BLOQUE COUT
