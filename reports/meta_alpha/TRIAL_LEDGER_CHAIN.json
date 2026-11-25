@@ -5475,6 +5475,21 @@
     "interdits": "aucune depense, aucune signature, aucun identifiant invente, aucun transfert Kaggle sous licence incertaine, aucun melange de volumes"
    },
    "entry_hash": "413411114f13816c9e91c32e4d8833d06e5317ca20ad0560683b0c3d67b5f7e6"
+  },
+  {
+   "seq": 418,
+   "prev_hash": "413411114f13816c9e91c32e4d8833d06e5317ca20ad0560683b0c3d67b5f7e6",
+   "entry": {
+    "type": "EUR_EDGE_02_PROGRESS",
+    "mission": "EUR-EDGE-02",
+    "acquis": "taux BCE DFR quotidiens 2010-2026 (SDMX officiel) + dataset Kaggle prive eurusd-central-banks verifie; HICP Eurostat 192 mois; COT 853 rapports reconcilies (8 semaines absentes expliquees)",
+    "juridique": "decision prix documentee: aucune voie gratuite (acquisition+stockage+Kaggle) licite; courrier Dukascopy prepare (signature fondateur); connecteurs demo specifies",
+    "blocages_precis": "BLS API 200 sans donnees (cle requise) -> macro US non acquise; FRED injoignable du runner, Bund 400, H.15 vide -> differentiels non calcules; CME 6E/IV bloques licence; consensus inexistant -> surprise interdite",
+    "moteur": "schema canonique, adaptateurs, design payoff-first (TP/SL pips, decoupage 2010-15/2016-18/2019-22/test reserve 2023-26)",
+    "statut_mission": "OUVERTE - condition de sortie non atteinte (archive spot licite manquante)",
+    "profitable_edge": false
+   },
+   "entry_hash": "7537cd8822f9c31689e25581f27c79247c45f3896bf3fb0f5b7f96cbcd935265"
   }
  ]
 }

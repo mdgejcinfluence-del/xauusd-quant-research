@@ -1,0 +1,7 @@
+publication,frequence,parution_habituelle,statut_acquisition,premieres_valeurs,decision
+HICP zone euro (Eurostat),mensuel,~mi-mois suivant,API Eurostat OK (JSON-stat),valeur courante telechargee; premiere valeur exacte exige l archive des communiques,UTILISABLE avec prudence de revision
+CPI / Core CPI USA (BLS),mensuel,08:30 ET jour de parution,API BLS: reponse 200 SANS donnees (enregistrement requis),non acquise,NON ACQUIS - cle API gratuite BLS a demander par le fondateur ou archives BLS publiques
+NFP / chomage / salaires USA (BLS),mensuel,08:30 ET,idem BLS,non acquise,NON ACQUIS
+PIB / PCE USA (BEA),trimestriel/mensuel,08:30 ET,non tente (API BEA = cle gratuite),non acquise,A FAIRE avec cle BEA fondateur ou fichiers publics BEA
+Decisions BCE / FOMC,evenement,heure de communique officielle,calendriers officiels BCE/Fed publics,"dates connues, pas de consensus",UTILISABLE (dates seules)
+Consensus macro historique,evenement,avant parution,aucune source gratuite verifiable,INEXISTANT dans nos acces,SURPRISE INTERDITE sans consensus verifie
