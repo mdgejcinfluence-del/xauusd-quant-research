@@ -1,5 +1,56 @@
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/eur01_engine.py", line 175, in <module>
-    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()
-                                                                                                   ^^^^^^^^^^^
-NameError: name 'mode_rates2' is not defined. Did you mean: 'mode_rates'?
+  2026-11-11 00:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 00:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 06:00:00 INDISPONIBLE (URLError: <urlopen error timed out>)
+  2026-11-11 06:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>)
+  2026-11-11 06:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>)
+  2026-11-11 08:00:00 INDISPONIBLE (URLError: <urlopen error timed out>)
+  2026-11-11 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+  2026-11-11 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable)
+{'ticks_jour': 6337, 'octets_parquet_estimes_par_jour': 56317, 'estimation_GB_par_an_250j': 0.01, 'estimation_GB_2010_2026': 0.2}
+  2015-06-15 10:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>)
+[
+ {
+  "echantillon": "EURUSD 2026-11-11 heures echantillon 00/06/08/13/16/21",
+  "ticks": 6337,
+  "debut": "2026-11-11 00:00:00.087000",
+  "fin": "2026-11-11 21:59:59.510000",
+  "viol_bid_ge_ask": 0,
+  "prix_nonpositifs": 0,
+  "ts_croissants": true,
+  "doublons_ts": 0,
+  "spread_med_pips": 0.3,
+  "spread_p95_pips": 0.5,
+  "spread_max_pips": 1.3,
+  "ecart_max_s": 54000.872,
+  "saut_max_bp": 62.35
+ },
+ {
+  "barres": "M1",
+  "n": 179
+ },
+ {
+  "barres": "M5",
+  "n": 36
+ },
+ {
+  "barres": "M15",
+  "n": 12
+ },
+ {
+  "barres": "M30",
+  "n": 6
+ },
+ {
+  "barres": "H1",
+  "n": 3
+ },
+ {
+  "barres": "H4",
+  "n": 3
+ }
+]

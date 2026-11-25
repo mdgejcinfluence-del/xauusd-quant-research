@@ -1,5 +1,11 @@
-Traceback (most recent call last):
-  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/eur01_engine.py", line 175, in <module>
-    {'probe': mode_probe, 'cot': mode_cot, 'rates': mode_rates, 'cotdiag': mode_cotdiag, 'rates2': mode_rates2, 'macro': mode_macro}[sys.argv[1]]()
-                                                                                                   ^^^^^^^^^^^
-NameError: name 'mode_rates2' is not defined. Did you mean: 'mode_rates'?
+{
+ "BLS_CPIAUCNS_2010": "OK",
+ "BLS_CPIAUCNS_2020": "OK",
+ "BLS_CPILFESL_2010": "OK",
+ "BLS_CPILFESL_2020": "OK",
+ "BLS_PAYEMS_2010": "OK",
+ "BLS_PAYEMS_2020": "OK",
+ "BLS_UNRATE_2010": "OK",
+ "BLS_UNRATE_2020": "OK",
+ "EUROSTAT_HICP": "OK 11679 octets"
+}
