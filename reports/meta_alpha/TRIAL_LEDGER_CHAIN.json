@@ -5635,6 +5635,18 @@
     "profitable_edge": false
    },
    "entry_hash": "81d7cb919ee304f9f1079aa3ffd5ccd74cc9acb480dd792c88fa024a954f8b4e"
+  },
+  {
+   "seq": 430,
+   "prev_hash": "81d7cb919ee304f9f1079aa3ffd5ccd74cc9acb480dd792c88fa024a954f8b4e",
+   "entry": {
+    "type": "HFM_SEQ430_PILOT_AND_ARCHITECTURE",
+    "mission": "HFM-NATIVE-DATA-ACQUISITION",
+    "4E": "pilote reel CI x4: guide HFM HTTP 200 (aucune donnee); HistData POST = HTTP 200 0 octet depuis IP CI (3 essais, anti-robot probable); Stooq = defi JS rejete, HTML supprime; aucun synthetique declare comme pilote",
+    "4F": "architecture finale: hfm-xauusd-native vide et jamais rempli sans preuve; Dukascopy = reference tick externe du projet; adaptateur HistData pret pour poste non filtre; prospective HFM uniquement apres compte fondateur",
+    "profitable_edge": false
+   },
+   "entry_hash": "644f085204c913d257d95cb71276f2161f317782980a113347377f07366c186a"
   }
  ]
 }
