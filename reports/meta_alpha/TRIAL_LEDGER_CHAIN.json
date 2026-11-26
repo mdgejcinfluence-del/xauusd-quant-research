@@ -5556,6 +5556,20 @@
     "holdout": "2020-2026 ferme; 2010-2019 EXPLORATORY_POST_HOC; SHADOW seq407 inchange et separe"
    },
    "entry_hash": "1aff3e5e65ce0271a084a96602f75db29bb75b4d198da62f5149a6b7c6ef317c"
+  },
+  {
+   "seq": 424,
+   "prev_hash": "1aff3e5e65ce0271a084a96602f75db29bb75b4d198da62f5149a6b7c6ef317c",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_03_RESULTS",
+    "mission": "MA-ALPHA-GOLD-03",
+    "decomposition_fade": "+0,17 bp moyen / +1,2-1,7 median, integralement en barre 1 (microstructure); par tercile de spread le reflux monte (0,75) sans couvrir l ecart; fourniture non mesurable sans fills",
+    "prime_variance": "robuste +1,9/+2,0 pts mediane (chevauchante, non-chevauchante, hors sauts); en compression par periode 2,73 -> 1,62 -> 0,65",
+    "registre": "20 hypotheses de monetisation (N01-N20) formulees en activites avec payeur nomme",
+    "architecture": "mesurer les primes / exercer les activites accessibles (deadline prospective) / n ouvrir le licencie que sur decision chiffree",
+    "profitable_edge": false
+   },
+   "entry_hash": "3b5db2b8790a02cef7cca380b5d2340202644a3213701428cfb734963b1ad854"
   }
  ]
 }

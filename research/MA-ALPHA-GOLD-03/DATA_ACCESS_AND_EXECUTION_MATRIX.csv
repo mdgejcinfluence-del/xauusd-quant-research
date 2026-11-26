@@ -1,0 +1,7 @@
+activite,execution_requise,donnees_disponibles,statut,condition_d_acces
+Fourniture de liquidite (limites),compte demo/reel avec limites + journal de fills,"Bid/Ask oui, fills NON",INACCESSIBLE a mesurer,ouvrir un compte demo fondateur
+Vente de variance,options CME/GLD + couverture delta,"GVZ oui, prix d options NON",LICENSE_BLOCKED,decision depense fondateur
+Hedging pressure futures,futures CME + COT,COT oui,"accessible en hebdo, refute comme regle",—
+Gestion de la derive,CFD/spot au marche,oui,ACCESSIBLE (en test),—
+Arbitrage de structure,deux jambes + financement,non,INACCESSIBLE,programme futures separe
+Market making carnet,carnet L2 + latence,non,INACCESSIBLE,non envisage

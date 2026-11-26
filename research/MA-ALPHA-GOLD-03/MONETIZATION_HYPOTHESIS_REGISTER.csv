@@ -1,0 +1,21 @@
+id,famille,hypothese_activite,payeur_mecanisme,variable,disponibilite,test_ou_statut,priorite
+N01,Liquidite,"Fournir pendant le flux reactif post-annonce (spread elargi, flux non informe dense)",Le participant contraint paie l immediatete,spread + absence d annonce dans 30 min,"PARTIEL (spread oui, flux non)",NON TESTABLE sans fills,elevee
+N02,Liquidite,Retrait systematique aux annonces planifiees,Eviter la selection adverse concentree,calendrier officiel,DISPONIBLE,Adopte comme hygiene,elevee
+N03,Liquidite,Fourniture asymetrique: un seul cote selon l inventaire,Reduire le risque d inventaire en cotant le cote qui le diminue,inventaire temps reel,NON DISPONIBLE (pas de fills),NON TESTABLE,moyenne
+N04,Variance,Vente d options a risque defini quand IV-RV > seuil historique,L assure paie la prime mesuree +2 pts,GVZ + prix d options,LICENSE_BLOCKED,Decision fondateur chiffree,elevee
+N05,Variance,Achat de protection avant regimes de saut (IV basse + stress montant),Payer une assurance sous-evaluee,GVZ bas + indicateurs de stress,PARTIEL,Theorique,moyenne
+N06,Risk premia,Portage hedging pressure multi-semaines (pas regle hebdo),Les hedgers paient le porteur,COT categories or,DISPONIBLE,Teste comme regle: instable; version lente non testee,moyenne
+N07,Risk premia,Prime d annonce: fournir la liquidite pendant FOMC au lieu de suivre,Le transfert de risque concentre paie l immediatete,calendrier + spread temps reel,NON TESTABLE sans fills,NON TESTABLE,moyenne
+N08,Comportement,Fournir contre les entrees tardives de foule (positionnement extreme + acceleration),Le reactif tardif paie,COT extreme + prix,DISPONIBLE (hebdo),"Formulation en activite, a preenregistrer si fills un jour",moyenne
+N09,Execution,Abstention par cout: ne jamais prendre quand spread > quantile propre,Eviter de payer le pire prix,spread a la decision,DISPONIBLE,Adopte (EXP-12),elevee
+N10,Execution,Entree passive conditionnelle (limite au Mid - demi-spread) si fills mesures un jour,Capter la moitie de l ecart au lieu de le payer,journal de fills demo,NON DISPONIBLE,"Protocole pret, donnees absentes",elevee
+N11,Gestion,Deadline de non-realisation (toutes familles de signaux futurs),Tronquer la derive des non-confirmes,confirmation horodatee,PROSPECTIF en cours,EN TEST (seq407),elevee
+N12,Gestion,Sortie par etat precoce (H17 generalisee a d autres signaux),Couper les positions deja adverses,etat a horizon fixe,PROSPECTIF (bras),EN TEST (seq412),moyenne
+N13,Structure,Basis CFD-courtier vs futures comme capteur de stress (pas arbitrage),Les tensions de financement signalent le risque,prix GC publics differes,PARTIEL (affichages),Descriptif seulement,faible
+N14,Structure,"Calendrier des echeances d options comme fenetres de risque (eviter, pas trader)",La couverture delta concentre les flux,calendrier CME public,DISPONIBLE (dates),Hygiene de calendrier,moyenne
+N15,Regime,Reduire l exposition quand la prime de variance devient negative (IV < RV passee),Ne pas porter un risque non remunere,GVZ vs RV passee,DISPONIBLE,A preenregistrer comme filtre de la jambe active si besoin,moyenne
+N16,Regime,Exposition proportionnelle a la prime mesuree (sizing par remuneration),Etre paye proportionnellement au risque porte,primes N01-N06,PARTIEL,Theorique,moyenne
+N17,Forced flows,Fournir pendant les liquidations identifiables par le COT suivant (ex post) pour la fois suivante,Les liquidations se repetent par regime,COT + prix,DISPONIBLE (hebdo),Faible: datation impossible ex ante,faible
+N18,Capital,"Politique de retrait des gains realises (gestion, pas edge)",Proteger le capital encaisse sans changer l esperance,journal d equity,DISPONIBLE,Cadre adopte; jamais presente comme rentabilite,connaissance
+N19,Capital,Dimensionnement par expected shortfall de position ouverte,Eviter la ruine avant de chercher le rendement,distributions mesurees,DISPONIBLE,Adopte,elevee
+N20,Multi-activites,Portefeuille mesure des primes: n assembler que des sources distinctes prouvees,La diversification exige des payeurs differents,resultats prospectifs,EN ATTENTE de preuves,Apres premieres validations seulement,elevee

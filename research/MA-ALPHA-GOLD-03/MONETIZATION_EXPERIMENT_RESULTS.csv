@@ -1,0 +1,11 @@
+experience,mesure,moyenne,mediane,part_positifs,moy_DEC,moy_CTL,moy_REJ
+N-EXP-01,"Fade brut H1 (Mid, avant couts)",0.168,1.169,0.555,0.186,0.053,0.23
+N-EXP-01,"Fade brut H2 (Mid, avant couts)",0.14,1.287,0.547,0.138,0.27,0.011
+N-EXP-01,"Fade brut H4 (Mid, avant couts)",0.169,1.502,0.537,0.216,0.193,-0.001
+N-EXP-01,"Fade brut H8 (Mid, avant couts)",0.084,1.705,0.532,0.257,-0.444,0.079
+N-EXP-02,Fade brut H2 par SP_bas (spread median du groupe: 1.99 bp),-0.019,0.959,0.538,0.066,-0.069,-0.086
+N-EXP-02,Fade brut H2 par SP_mid (spread median du groupe: 2.52 bp),-0.051,1.542,0.555,-0.5,1.236,0.455
+N-EXP-02,Fade brut H2 par SP_haut (spread median du groupe: 3.61 bp),0.75,1.981,0.556,0.848,-0.643,0.652
+N-EXP-03,Ecart IV-RV chevauchante (quotidienne),1.15,1.99,0.297,2.73,1.62,0.65
+N-EXP-03,Ecart IV-RV non-chevauchante (tous les 20 j),1.09,1.91,0.327,3.38,1.53,0.3
+N-EXP-03,Ecart IV-RV sans les 10 plus grands sauts RV,1.37,2.01,0.293,2.79,1.62,0.65
