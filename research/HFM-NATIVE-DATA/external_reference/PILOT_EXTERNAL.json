@@ -1,0 +1,12 @@
+{
+ "source_declared": "EXTERNAL_REFERENCE (HistData, flux generique \u2014 jamais HFM)",
+ "tentatives": {
+  "hfm_tickchart_pdf": {
+   "http": 200,
+   "octets": 2000
+  },
+  "histdata_201001": {
+   "erreur": "BadZipFile: File is not a zip file"
+  }
+ }
+}
