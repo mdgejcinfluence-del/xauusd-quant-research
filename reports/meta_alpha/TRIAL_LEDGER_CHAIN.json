@@ -5503,6 +5503,20 @@
     "rappels": "holdout 2020-2026 consomme interdit; 2010-2019 = EXPLORATORY_POST_HOC; modeles geles intouches; deadline seq407 conservee en prospectif; aucun edge presume"
    },
    "entry_hash": "4ff377ce41818fa3f78469275e126245fd2f5de69395cacdf2ada19c8c0b1cdb"
+  },
+  {
+   "seq": 420,
+   "prev_hash": "4ff377ce41818fa3f78469275e126245fd2f5de69395cacdf2ada19c8c0b1cdb",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_01_RESULTS",
+    "mission": "MA-ALPHA-GOLD-01",
+    "echeance": "2026-12-01T12:00+01:00",
+    "resultat": "47 regles preenregistrees (G-EXP-01..06), AUCUNE esperance nette positive coherente sur 3 periodes; barrieres TP/SL -1,4 a -2,6 bp partout; momentum inverse en rejeu; COT/GVZ/taux reels instables",
+    "candidats": "deadline 120 min + bras H17: READY_FOR_INDEPENDENT_CONFIRMATION (prospectif en collecte, rentabilite NON demontree); continuation journee extreme: POSITIVE_BUT_STATISTICALLY_FRAGILE (n=145)",
+    "portefeuille": "simulation en budget de risque 60/25/15, aucune jambe presentee comme rentable ni diversifiee",
+    "profitable_edge": false
+   },
+   "entry_hash": "a7e10d8db8873596d7fdda713b18b573c3a805bf2648c8a940cd8e8ec5ecf1c4"
   }
  ]
 }
