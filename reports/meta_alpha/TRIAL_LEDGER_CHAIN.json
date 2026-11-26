@@ -5517,6 +5517,19 @@
     "profitable_edge": false
    },
    "entry_hash": "a7e10d8db8873596d7fdda713b18b573c3a805bf2648c8a940cd8e8ec5ecf1c4"
+  },
+  {
+   "seq": 421,
+   "prev_hash": "a7e10d8db8873596d7fdda713b18b573c3a805bf2648c8a940cd8e8ec5ecf1c4",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_02_OPENING",
+    "mission": "MA-ALPHA-GOLD-02",
+    "correction_forensique": "GOLD-01: 2 regles positives sur 3 periodes (pas 0): continuation journee extreme (+21/+22/+77) et derive bloc 17-22 (+1,1/+0,1/+1,4 bp, sous les couts); 19 regles positives sur 2 periodes; la conclusion economique est inchangee mais la formulation est corrigee",
+    "journee_extreme": "moyenne +24,0 mais mediane +4,9; top-5 evenements = 140,6% du profit total; sans top-5 moyenne -10,1; ES95 perte 485 bp -> domine par la queue, non promu",
+    "experiences": "M-EXP-01..04 preenregistrees (liquidite court terme, risque de grille, prime de variance, exposition selective)",
+    "holdout": "verifie: populations GOLD-01 = barsets 2010-2019 uniquement; holdout 2020-2026 NON reutilise"
+   },
+   "entry_hash": "2817bbde6e2ddd21c208421d878417cf1f2ef1a984aa54d90c662e87a36e7b57"
   }
  ]
 }

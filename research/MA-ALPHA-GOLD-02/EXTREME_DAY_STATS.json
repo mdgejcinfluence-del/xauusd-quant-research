@@ -1,0 +1,13 @@
+{
+ "n": 145,
+ "moyenne": 24.05,
+ "mediane": 4.9,
+ "ES95_perte": 484.6,
+ "pire": -860.7,
+ "meilleur": 1104.0,
+ "part_positifs": 0.51,
+ "contribution_top5_pct": 140.6,
+ "moyenne_sans_top5": -10.1,
+ "moyenne_sans_top10": -30.22,
+ "seuil_Q90_bp": 165.6
+}
