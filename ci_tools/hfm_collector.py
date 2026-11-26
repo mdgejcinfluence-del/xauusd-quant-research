@@ -167,7 +167,7 @@ def mode_extpilot():
                    data={'tk': tk.group(1), 'date': '2010', 'datemonth': '201001',
                          'platform': 'ASCII', 'timeframe': 'TICK_DATA', 'fxpair': 'XAUUSD'})
         brut = r.content
-        res['tentatives']['histdata_reponse'] = {'http': r.status,
+        res['tentatives']['histdata_reponse'] = {'http': r.status_code,
             'content_type': r.headers.get('Content-Type'), 'octets': len(brut),
             'debut': brut[:200].decode('ascii', 'replace')}
         if not brut[:2] == b'PK':
@@ -176,14 +176,14 @@ def mode_extpilot():
                        data={'tk': tk.group(1), 'date': '2010', 'datemonth': '201001',
                              'platform': 'ASCII', 'timeframe': 'TICK_DATA', 'fxpair': 'XAUUSD'})
             brut = r.content
-            res['tentatives']['histdata_reponse']['retry_http'] = r.status
+            res['tentatives']['histdata_reponse']['retry_http'] = r.status_code
             res['tentatives']['histdata_reponse']['retry_debut'] = brut[:200].decode('ascii', 'replace')
         (EXT / 'raw').mkdir(exist_ok=True)
         (EXT / 'raw' / 'HISTDATA_T_XAUUSD_201001.zip').write_bytes(brut)
         z = zipfile.ZipFile(io.BytesIO(brut)); noms = z.namelist()
         nom = [n for n in noms if n.lower().endswith('.csv')][0]
         lignes = z.read(nom).decode('ascii', 'replace').splitlines()
-        res['tentatives']['histdata_201001'] = {'http': r.status, 'octets': len(brut),
+        res['tentatives']['histdata_201001'] = {'http': r.status_code, 'octets': len(brut),
             'fichiers_zip': noms, 'lignes_csv': len(lignes), 'premiere': lignes[0][:120],
             'derniere': lignes[-1][:120], 'sha256_zip': hashlib.sha256(brut).hexdigest()}
     except Exception as e:
