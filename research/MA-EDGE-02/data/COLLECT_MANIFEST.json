@@ -1,7 +1,9 @@
 {
  "2026-11-24 17:00:00": {
-  "ticks": 0,
-  "statut": "VIDE_OU_INDISPONIBLE"
+  "ticks": 36789,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
  },
  "2026-11-24 19:00:00": {
   "ticks": 32375,
@@ -397,6 +399,226 @@
  },
  "2026-11-24 16:00:00": {
   "ticks": 44144,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-22 21:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-22 22:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 00:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 01:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 08:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 09:00:00": {
+  "ticks": 17394,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 11:00:00": {
+  "ticks": 21051,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 12:00:00": {
+  "ticks": 29688,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 13:00:00": {
+  "ticks": 38570,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 14:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 15:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 16:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 18:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 19:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 20:00:00": {
+  "ticks": 35014,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-23 21:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 22:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-23 23:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 00:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 01:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 02:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 03:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 04:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 05:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 06:00:00": {
+  "ticks": 32425,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 18:00:00": {
+  "ticks": 33509,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 20:00:00": {
+  "ticks": 33283,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 21:00:00": {
+  "ticks": 13731,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 23:00:00": {
+  "ticks": 20378,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 01:00:00": {
+  "ticks": 44923,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 02:00:00": {
+  "ticks": 36755,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 03:00:00": {
+  "ticks": 28104,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 04:00:00": {
+  "ticks": 21196,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 05:00:00": {
+  "ticks": 31685,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 10:00:00": {
+  "ticks": 22532,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 11:00:00": {
+  "ticks": 23951,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 13:00:00": {
+  "ticks": 45959,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 14:00:00": {
+  "ticks": 48182,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 15:00:00": {
+  "ticks": 49248,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 23:00:00": {
+  "ticks": 21079,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 03:00:00": {
+  "ticks": 29413,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 04:00:00": {
+  "ticks": 19223,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 05:00:00": {
+  "ticks": 31045,
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
