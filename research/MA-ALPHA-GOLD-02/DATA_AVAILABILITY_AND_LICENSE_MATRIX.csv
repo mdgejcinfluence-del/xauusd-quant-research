@@ -1,0 +1,13 @@
+information,statut,source_ou_blocage,etat
+Ticks Bid/Ask spot historiques,OBSERVED,interne limite (licence Dukascopy),acquis echantillons + collecte prospective
+Barres M1-D1 Mid,DERIVED,derive des ticks,acquis 2010-2019
+Spread a la decision,DERIVED,barsets,acquis
+Volume de cotation,OBSERVED (par fournisseur),jamais volume mondial,"acquis, nomme comme tel"
+Volume reel COMEX / OI detaille,LICENSE_BLOCKED,CME DataMine,non acquis
+Carnet d ordres / files / fills,UNAVAILABLE,aucune source licite gratuite,non acquis
+COT or hebdo par categorie,OBSERVED,CFTC domaine public,acquis 2010-2019
+GVZ (IV 30 j),OBSERVED,FRED/CBOE gratuit,acquis 2009-2020
+"Options or: IV surface, skew, RR/BF",LICENSE_BLOCKED,CME/fournisseurs,non acquis
+Sentiment mediatique/social historique,LICENSE_BLOCKED,Market Psych etc.,non acquis
+Flux ETF or quotidiens,PROXY partiel,pages publiques differees,non constitue
+"Taux reels/nominaux US, calendriers officiels",OBSERVED,Fed/officiel,acquis (panel 23-B)

@@ -5530,6 +5530,20 @@
     "holdout": "verifie: populations GOLD-01 = barsets 2010-2019 uniquement; holdout 2020-2026 NON reutilise"
    },
    "entry_hash": "2817bbde6e2ddd21c208421d878417cf1f2ef1a984aa54d90c662e87a36e7b57"
+  },
+  {
+   "seq": 422,
+   "prev_hash": "2817bbde6e2ddd21c208421d878417cf1f2ef1a984aa54d90c662e87a36e7b57",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_02_RESULTS",
+    "mission": "MA-ALPHA-GOLD-02",
+    "question": "comment gagner sans edge directionnel: etre paye par un acteur identifiable (liquidite, assurance-variance, hedging pressure, gestion de la derive)",
+    "mesures": "fade impulsion brut +0,17 bp = le spread (preneur paie); prime de variance mediane +2,0 pts (options licenciees); grille 62% gagnante mais queue -1112 bp; exposition horaire negative nette",
+    "forensique": "47 regles: 2 positives/3 periodes (dont 1 sous les couts); journee extreme dechassee (top-5 = 140,6% du profit, ES95 -485 bp); holdout 2020-2026 non touche",
+    "portefeuille": "60/25/15 requalifie en allocation experimentale; aucune jambe rentable presentee; deadline prospective = seul test vivant",
+    "profitable_edge": false
+   },
+   "entry_hash": "42df09407d1f894146e47034dda982592a2a7f4f08c0ef6fba7befa18f34776e"
   }
  ]
 }

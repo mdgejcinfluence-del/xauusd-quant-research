@@ -1,0 +1,12 @@
+id,famille,mecanisme,qui_paie_et_pourquoi,variable,disponibilite,horizon,verdict,priorite
+M01,A-Risk premia,Hedging pressure futures (COT producteurs/speculatifs),Les hedgers paient les speculatifs pour porter le risque (Basu-Miffre 2013),COT hebdo categories,"DISPONIBLE (or, hebdo)",1-4 sem,TESTE comme regle: instable (G-EXP-01),moyenne
+M02,A,Prime de variance (IV>RV),Les acheteurs de protection surpaient l assurance-saut,GVZ vs RV suivante,DISPONIBLE (mesure),20 j,"MESUREE +2,0 pts mediane; monétisation options = licence",elevee (connaissance)
+M03,A,Prime de liquidite (spread elargi),L immediatete se paie quand la liquidite se retire,spread de decision,DISPONIBLE,intraday,Filtre d abstention seulement (EXP-12),moyenne
+M04,B-Carry,Structure a terme / basis spot-futures,Financement et convenience yield remunerent le portage,prix GC par echeance,LICENSE_BLOCKED,jours-semaines,NON TESTABLE,bloquee
+M05,C-Volatility harvesting,Reflux post-impulsion (fourniture de liquidite),Le suiveur paie le spread a qui absorbe,barres M15 Bid/Ask approximees Mid,DISPONIBLE (proxy),1-4 barres,MESURE: brut = spread; net preneur negatif,"elevee (mecanisme prouve, acces non)"
+M06,C,Grilles/paniers de retour a la moyenne,Encaisser l oscillation en portant l inventaire,barres M15,DISPONIBLE,intraday,"MESURE: queue -1112 bp, REJETE",close
+M07,D-Forced flows,Transfert de risque aux annonces,Les participants paient l immediatete pendant l annonce,calendrier FOMC + prix,CONSOMME (73 evenements),heures,"Amplitude oui, direction non (Phase 23)",close
+M08,E-Behavioural,Surreaction / poursuite tardive,Erreurs repetitives des participants reactifs,"impulsions, COT, GVZ",DISPONIBLE,minutes-semaines,"Rente captee par le fournisseur, pas le reactif",moyenne
+M09,F-Execution,"Non-degradation: spread, session, abstention",Eviter de payer le pire prix ne cree pas d esperance mais la protege,spread/session a la decision,DISPONIBLE,intraday,Adopte comme hygiene du protocole prospectif,elevee
+M10,G-Regime,"Gestion par etat post-entree (deadline, etat +60 min)",La derive des non-confirmes est la perte; la tronquer est la remuneration,confirmation a 120 min / etat 60 min,PROSPECTIF preenregistre,2-8 h,EN OBSERVATION (seq407/seq412),elevee
+M11,H-Business,Revenus de compte vs revenus commerciaux,Copy-trading/formation peuvent masquer un trading perdant,historiques de comptes verifies,NON DISPONIBLE,—,Cadre d analyse seulement,connaissance
