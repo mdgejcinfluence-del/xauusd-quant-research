@@ -6,7 +6,7 @@
    "octets": 2000
   },
   "histdata_201001": {
-   "erreur": "BadZipFile: File is not a zip file"
+   "erreur": "AttributeError: 'Response' object has no attribute 'status'"
   }
  }
 }
