@@ -391,6 +391,15 @@ jobs:
         git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
         --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
         origin HEAD:arena/afe12737-xauusd-quant-research'
+    - name: HFM addendum seq429 pilote externe sans compte (HistData, jamais HFM)
+      run: |
+        pip install -q pandas numpy pyarrow requests
+        mkdir -p research/HFM-NATIVE-DATA/external_reference
+        python ci_tools/hfm_collector.py extpilot 2>&1 | tee research/HFM-NATIVE-DATA/external_reference/PILOT_LOG.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add research/HFM-NATIVE-DATA/external_reference/
+        git diff --cached --quiet || git commit -m 'HFM seq429: pilote externe HistData (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
   analyse11c:
     name: P11-C anatomie H1/H4 (protocole gele seq300, seq305)
     runs-on: ubuntu-latest

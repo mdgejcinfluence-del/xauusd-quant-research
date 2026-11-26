@@ -5621,6 +5621,20 @@
     "profitable_edge": false
    },
    "entry_hash": "05821b404d255c6cc3294b3ea9fea053e10320f1ae4b55c7a2f665d69399d836"
+  },
+  {
+   "seq": 429,
+   "prev_hash": "05821b404d255c6cc3294b3ea9fea053e10320f1ae4b55c7a2f665d69399d836",
+   "entry": {
+    "type": "HFM_SEQ429_PUBLIC_ARCHIVE_EXTERNAL",
+    "mission": "HFM-NATIVE-DATA-ACQUISITION",
+    "4A": "Tick Chart Trader refute pour l historique par le guide officiel HFM (ticks depuis demarrage seulement, compte reel >=100 USD exige): aucun telechargement historique HFM public sans compte",
+    "4B": "aucune archive HFM/HotForex a provenance demontrable trouvee chez tiers",
+    "4C": "corpus externe retenu: HistData (flux independant, ticks des 2009, sans compte) en EXTERNAL_REFERENCE separe; Dukascopy existant non retelecharge; TrueFX/Darwinex ecartes",
+    "4D": "hfm_collector etendu: mode extpilot HTTP Linux; adaptateurs hfm_public/hfm_archived vides et explicites; MT5 conserve non bloquant",
+    "profitable_edge": false
+   },
+   "entry_hash": "81d7cb919ee304f9f1079aa3ffd5ccd74cc9acb480dd792c88fa024a954f8b4e"
   }
  ]
 }

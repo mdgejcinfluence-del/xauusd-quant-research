@@ -136,4 +136,50 @@ def mode_selftest():
 if __name__ == '__main__':
     m = sys.argv[1] if len(sys.argv)>1 else 'selftest'
     {'probe': mode_probe, 'pilot': mode_pilot, 'selftest': mode_selftest,
-     'collect': lambda: mode_collect(sys.argv[2], sys.argv[3])}[m]()
+     'collect': lambda: mode_collect(sys.argv[2], sys.argv[3]), 'extpilot': mode_extpilot}[m]()
+
+# --- Addendum seq429: adaptateurs multi-sources sans compte -----------------
+# hfm_public        : aucun telechargement historique public HFM identifie (voir 4A)
+# hfm_archived      : aucune archive tierce a provenance demontree identifiee (voir 4B)
+# xauusd_external   : HistData (pilote CI), Dukascopy (corpus existant, non retelecharge)
+# hfm_native_authenticated : modes probe/pilot/collect MT5 ci-dessus (futur, non requis)
+EXT = BASE / 'external_reference'
+
+def mode_extpilot():
+    import re, zipfile, io
+    import urllib.request
+    EXT.mkdir(parents=True, exist_ok=True)
+    res = {'source_declared': 'EXTERNAL_REFERENCE (HistData, flux generique — jamais HFM)',
+           'tentatives': {}}
+    # Preuve documentaire HFM Tick Chart Trader (PDF public, aucune donnee)
+    try:
+        r = urllib.request.urlopen(urllib.request.Request(
+            'https://static.hfm.com/assets/docs/tools_hfm/premium-trader-tools/tick-chart-trader-user-guide-HFSV-en.pdf',
+            headers={'User-Agent': 'Mozilla/5.0 META-ALPHA-research'}), timeout=60)
+        res['tentatives']['hfm_tickchart_pdf'] = {'http': r.status, 'octets': len(r.read(2000))}
+    except Exception as e:
+        res['tentatives']['hfm_tickchart_pdf'] = {'erreur': f'{type(e).__name__}: {e}'}
+    # Pilote HistData XAUUSD ticks 2010-01 (formulaire public, sans compte)
+    try:
+        import requests
+        s = requests.Session(); s.headers['User-Agent'] = 'Mozilla/5.0 META-ALPHA-research'
+        page = 'https://www.histdata.com/download-free-forex-data/?/ascii/tick-data-quotes/xauusd/2010/1'
+        html = s.get(page, timeout=60).text
+        tk = re.search(r'id="tk"[^>]*value="([^"]+)"', html) or re.search(r'name="tk"[^>]*value="([^"]+)"', html)
+        if not tk: raise RuntimeError('jeton de formulaire HistData introuvable (page modifiee ou protection)')
+        r = s.post('https://www.histdata.com/get.php', timeout=120, headers={'Referer': page},
+                   data={'tk': tk.group(1), 'date': '2010', 'datemonth': '201001',
+                         'platform': 'ASCII', 'timeframe': 'TICK_DATA', 'fxpair': 'XAUUSD'})
+        brut = r.content
+        (EXT / 'raw').mkdir(exist_ok=True)
+        (EXT / 'raw' / 'HISTDATA_T_XAUUSD_201001.zip').write_bytes(brut)
+        z = zipfile.ZipFile(io.BytesIO(brut)); noms = z.namelist()
+        nom = [n for n in noms if n.lower().endswith('.csv')][0]
+        lignes = z.read(nom).decode('ascii', 'replace').splitlines()
+        res['tentatives']['histdata_201001'] = {'http': r.status, 'octets': len(brut),
+            'fichiers_zip': noms, 'lignes_csv': len(lignes), 'premiere': lignes[0][:120],
+            'derniere': lignes[-1][:120], 'sha256_zip': hashlib.sha256(brut).hexdigest()}
+    except Exception as e:
+        res['tentatives']['histdata_201001'] = {'erreur': f'{type(e).__name__}: {e}'}
+    (EXT / 'PILOT_EXTERNAL.json').write_text(json.dumps(res, indent=1))
+    print(json.dumps(res, indent=1))
