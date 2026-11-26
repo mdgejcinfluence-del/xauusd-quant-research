@@ -1,0 +1,7 @@
+experience,hypotheses,protocole_fige,population,couts,critere
+G-EXP-01,G07/G16,"COT or hebdo (dispo +4 j): terciles et deciles extremes du net MM (% OI a calculer depuis brut 25-B: net seul disponible -> niveau net brut), rendements or 1/2 semaines suivants (D1), regles: fade decile haut/bas, momentum",2010-2019,couts: spread D1 median par periode deduit,signe coherent 3 periodes et > couts
+G-EXP-02,G06/G11,GVZ J-1: niveau (terciles annuels roulants passes) et variation 5 j vs rendements 5/20 j; ecart GVZ - RV20,2009-2020 (or 2010-2019),spread D1,idem
+G-EXP-03,G01,DFII10: variation 5 j connue en J-1 vs rendement or 5/20 j; regle: taux reels baissent -> long,2010-2019,spread D1,idem
+G-EXP-04,G13/G21/G22/G28,"D1: momentum 5 j (signe), fade journee extreme, continuation de cassure apres compression; horizons 1/5 j",2010-2019,spread D1 median,idem
+G-EXP-05,G20,"Barrieres TP/SL grille figee {(20,20),(30,15),(15,30),(40,20),(20,40),(30,30)} bp, max 32 barres M15, SL prioritaire si meme barre, populations: evenements selectionnes M15 (entree cloture decision) et continuation d impulsion; prix Mid + deduction spread median evenementiel + scenarios +0/+1 bp par cote",2010-2019 (splits 24),spread + scenarios,"cellule positive nette sur les 3 periodes, n suffisant"
+G-EXP-06,G03/G05,"Sessions UTC sur H4/M15: derive directionnelle moyenne par bloc horaire (00-07,07-13,13-17,17-22) et continuation post-13:00, vs placebo (rendements melanges intra-jour)",2010-2019,spread,derive > placebo p97.5 et > couts aller-retour quotidien

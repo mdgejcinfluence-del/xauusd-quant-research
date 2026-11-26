@@ -5490,6 +5490,19 @@
     "profitable_edge": false
    },
    "entry_hash": "7537cd8822f9c31689e25581f27c79247c45f3896bf3fb0f5b7f96cbcd935265"
+  },
+  {
+   "seq": 419,
+   "prev_hash": "7537cd8822f9c31689e25581f27c79247c45f3896bf3fb0f5b7f96cbcd935265",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_01_OPENING",
+    "mission": "MA-ALPHA-GOLD-01",
+    "echeance": "2026-12-01T12:00+01:00",
+    "atlas": "28 hypotheses (G01-G28) documentees",
+    "experiences": "G-EXP-01..06 preenregistrees AVANT calcul (fichier EXPERIMENT_PREREGISTRY.csv)",
+    "rappels": "holdout 2020-2026 consomme interdit; 2010-2019 = EXPLORATORY_POST_HOC; modeles geles intouches; deadline seq407 conservee en prospectif; aucun edge presume"
+   },
+   "entry_hash": "4ff377ce41818fa3f78469275e126245fd2f5de69395cacdf2ada19c8c0b1cdb"
   }
  ]
 }
