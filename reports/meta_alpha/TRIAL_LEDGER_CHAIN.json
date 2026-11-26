@@ -5596,6 +5596,31 @@
     "profitable_edge": false
    },
    "entry_hash": "d7d26a57e6e5781a46366c2f5b7626b877d4e0243e67b1be97119f598a231ce3"
+  },
+  {
+   "seq": 427,
+   "prev_hash": "d7d26a57e6e5781a46366c2f5b7626b877d4e0243e67b1be97119f598a231ce3",
+   "entry": {
+    "type": "HFM_NATIVE_DATA_OPENING",
+    "mission": "HFM-NATIVE-DATA-ACQUISITION",
+    "objet": "corpus XAUUSD natif HFM (MT5, compte Pro) 2010-2026 + prospectif; phases 0-7 ordonnees; collecte massive interdite avant pilote valide",
+    "verrous": "corpus Dukascopy certifie intact et jamais renomme; holdout ferme; aucun secret en depot; aucune donnee tierce presentee comme HFM; aucune strategie relancee"
+   },
+   "entry_hash": "5c49e78b6bac64137820e90dc329162f87ca9d401c78d213d38f7383e55e8db7"
+  },
+  {
+   "seq": 428,
+   "prev_hash": "5c49e78b6bac64137820e90dc329162f87ca9d401c78d213d38f7383e55e8db7",
+   "entry": {
+    "type": "HFM_NATIVE_DATA_PHASES_0_3",
+    "mission": "HFM-NATIVE-DATA-ACQUISITION",
+    "phases_0_1_3": "livrees: audit environnement, etude acces MT5, architecture + collecteur ci_tools/hfm_collector.py (probe/pilot/collect/selftest), pipeline valide en synthetique uniquement",
+    "pilote": "BLOCKED_CREDENTIALS_AND_TERMINAL: identifiants HFM absents, MetaTrader5 Windows-only, environnement Linux; 0 tick HFM, aucune donnee fabriquee",
+    "kaggle": "cible shalom5123/hfm-xauusd-native distincte, rien publie; Dukascopy 348 partitions intact",
+    "statuts": "toutes periodes UNAVAILABLE (non obtenues); profondeur 2010 inconnue jusqu au probe",
+    "profitable_edge": false
+   },
+   "entry_hash": "05821b404d255c6cc3294b3ea9fea053e10320f1ae4b55c7a2f665d69399d836"
   }
  ]
 }

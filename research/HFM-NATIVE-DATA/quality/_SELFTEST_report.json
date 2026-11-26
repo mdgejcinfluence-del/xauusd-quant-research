@@ -1,0 +1,10 @@
+{
+ "ticks": 5000,
+ "bid_ask_presents": 5000,
+ "bid_ge_ask": 0,
+ "doublons_exacts": 0,
+ "ts_monotones": true,
+ "premier_utc": "2026-01-05 08:04:43.471000+00:00",
+ "dernier_utc": "2026-01-14 02:23:49.664000+00:00",
+ "spread_med_usd": 0.33231105903360003
+}
