@@ -5544,6 +5544,18 @@
     "profitable_edge": false
    },
    "entry_hash": "42df09407d1f894146e47034dda982592a2a7f4f08c0ef6fba7befa18f34776e"
+  },
+  {
+   "seq": 423,
+   "prev_hash": "42df09407d1f894146e47034dda982592a2a7f4f08c0ef6fba7befa18f34776e",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_03_OPENING",
+    "mission": "MA-ALPHA-GOLD-03",
+    "objet": "monetisation: verifier et decomposer +0,17 bp (fade) et +2 pts (prime de variance); registre de 20+ hypotheses de monetisation; aucune nouvelle regle directionnelle",
+    "experiences": "N-EXP-01..04 preenregistrees avant calcul",
+    "holdout": "2020-2026 ferme; 2010-2019 EXPLORATORY_POST_HOC; SHADOW seq407 inchange et separe"
+   },
+   "entry_hash": "1aff3e5e65ce0271a084a96602f75db29bb75b4d198da62f5149a6b7c6ef317c"
   }
  ]
 }
