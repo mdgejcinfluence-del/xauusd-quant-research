@@ -5582,6 +5582,20 @@
     "interdits": "ne pas refaire les 47 regles ni les tests GOLD-02/03; holdout ferme; aucune depense"
    },
    "entry_hash": "59c7212e049f6c868f04c6890cb4e4c54db7cc3e225d6221b108c3c17420a2cb"
+  },
+  {
+   "seq": 426,
+   "prev_hash": "59c7212e049f6c868f04c6890cb4e4c54db7cc3e225d6221b108c3c17420a2cb",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_04_RESULTS",
+    "mission": "MA-ALPHA-GOLD-04",
+    "verdict": "META_ALPHA_ONLY_RISK_MANAGEMENT_IMPROVEMENT_IDENTIFIED + voie conditionnelle REQUIRES_ADDITIONAL_INSTRUMENT_ACCESS (variance/options)",
+    "P-EXP-01": "fourniture passive sur impulsions: borne optimiste (fill au touche, 91,7%) -0,43 bp avant spread de sortie; borne prudente -1,48 bp; preneur -2,40 bp -> selection adverse dominante, activite close",
+    "deadline": "reclassee RISK_MANAGEMENT_CANDIDATE_NOT_PROVEN_PROFIT_SOURCE; contrat seq407 inchange",
+    "instruments": "chaque prime attachee a son instrument (variance->options OG/GLD; hedging pressure/basis->GC/MGC; CFD facture le financement que le futures remunere)",
+    "profitable_edge": false
+   },
+   "entry_hash": "d7d26a57e6e5781a46366c2f5b7626b877d4e0243e67b1be97119f598a231ce3"
   }
  ]
 }

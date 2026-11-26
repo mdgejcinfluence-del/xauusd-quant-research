@@ -1,0 +1,8 @@
+instrument,formation_des_prix,couts_typiques,financement,ordres_limites,acces,note_META_ALPHA
+XAUUSD spot institutionnel,interbancaire OTC,"prix negocies, spread fin",frais de ligne/credit,compte institutionnel,inaccessible au fondateur retail,"reference de prix, pas un acces"
+XAUUSD CFD market maker,courtier contrepartie,"prix du courtier, spread 0,20-0,35 $/oz typique",swap nocturne facture,limites executees par le courtier contre son prix,accessible (compte fondateur),notre instrument actuel simule; pas un carnet
+XAUUSD CFD STP/ECN (a verifier par courtier),acheminement annonce,spread brut + commission ~6-7 $/lot AR,swap,limites selon politique du courtier,accessible (compte fondateur),qualification a verifier courtier par courtier
+Futures COMEX GC,carnet centralise CME,"tick 0,10 $ = 10 $, 100 oz",pas de swap; basis/rollover,limites reelles avec file,"compte futures, marge ~16,5 k$",instrument du hedging pressure et du basis
+Futures COMEX MGC (micro),carnet centralise CME,"10 oz, tick 1 $",idem GC,limites reelles,"compte futures, marge ~1,65 k$",vehicule realiste d un programme futures
+Options CME sur GC (OG),carnet CME,"spreads d options, IV/skew","marge vendeur, couverture delta",limites reelles,compte options + donnees OPRA/CME,instrument de la prime de variance
+Options sur ETF GLD,bourses d options US,spreads plus larges que OG,commissions options,limites reelles,compte titres options,alternative variance sans futures
