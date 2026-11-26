@@ -1,10 +1,11 @@
 /home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/edge02_dukascopy.py:57: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
   now = pd.Timestamp.utcnow().floor('h')
-  2026-11-26 08:00:00+00:00 INDISPONIBLE (URLError: <urlopen error timed out>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/08h_ticks.bi5
+  2026-11-26 09:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/09h_ticks.bi5
+2026-11-26 09:00:00+00:00 {'ticks': 0}
+  2026-11-26 08:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/08h_ticks.bi5
 2026-11-26 08:00:00+00:00 {'ticks': 0}
-2026-11-26 07:00:00+00:00 {'ticks': 19505, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.525000000000091, 'spread_p95_unites': 0.6080000000001746, 'ecart_max_sec': 5.523, 'premier': '2026-11-26 07:00:00.086000', 'dernier': '2026-11-26 07:59:59.966000'}
-  2026-11-25 08:00:00+00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/08h_ticks.bi5
-2026-11-25 08:00:00+00:00 {'ticks': 0}
-  2026-11-24 08:00:00+00:00 INDISPONIBLE (URLError: <urlopen error timed out>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/08h_ticks.bi5
-2026-11-24 08:00:00+00:00 {'ticks': 0}
+  2026-11-25 09:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/09h_ticks.bi5
+2026-11-25 09:00:00+00:00 {'ticks': 0}
+  2026-11-24 09:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/09h_ticks.bi5
+2026-11-24 09:00:00+00:00 {'ticks': 0}
 probe ecrite: /home/runner/work/xauusd-quant-research/xauusd-quant-research/research/MA-EDGE-02/DUKASCOPY_PROBE.json
