@@ -5,8 +5,16 @@
    "http": 200,
    "octets": 2000
   },
+  "histdata_reponse": {
+   "http": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "octets": 0,
+   "debut": "",
+   "retry_http": 200,
+   "retry_debut": ""
+  },
   "histdata_201001": {
-   "erreur": "AttributeError: 'Response' object has no attribute 'status'"
+   "erreur": "BadZipFile: File is not a zip file"
   }
  }
 }
