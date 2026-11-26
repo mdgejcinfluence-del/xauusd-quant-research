@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/hfm_collector.py", line 139, in <module>
+    'collect': lambda: mode_collect(sys.argv[2], sys.argv[3]), 'extpilot': mode_extpilot}[m]()
+                                                                           ^^^^^^^^^^^^^
+NameError: name 'mode_extpilot' is not defined. Did you mean: 'mode_pilot'?
