@@ -5570,6 +5570,18 @@
     "profitable_edge": false
    },
    "entry_hash": "3b5db2b8790a02cef7cca380b5d2340202644a3213701428cfb734963b1ad854"
+  },
+  {
+   "seq": 425,
+   "prev_hash": "3b5db2b8790a02cef7cca380b5d2340202644a3213701428cfb734963b1ad854",
+   "entry": {
+    "type": "MA_ALPHA_GOLD_04_OPENING",
+    "mission": "MA-ALPHA-GOLD-04",
+    "objet": "accessibilite: convertir les mecanismes en activites exercables; audit instruments/courtiers; bornes de captation passive P-EXP-01 preenregistrees",
+    "reclassification": "deadline 120 min = RISK_MANAGEMENT_CANDIDATE_NOT_PROVEN_PROFIT_SOURCE (jamais une source de profit demontree)",
+    "interdits": "ne pas refaire les 47 regles ni les tests GOLD-02/03; holdout ferme; aucune depense"
+   },
+   "entry_hash": "59c7212e049f6c868f04c6890cb4e4c54db7cc3e225d6221b108c3c17420a2cb"
   }
  ]
 }
