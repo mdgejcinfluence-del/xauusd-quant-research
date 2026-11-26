@@ -167,6 +167,17 @@ def mode_extpilot():
                    data={'tk': tk.group(1), 'date': '2010', 'datemonth': '201001',
                          'platform': 'ASCII', 'timeframe': 'TICK_DATA', 'fxpair': 'XAUUSD'})
         brut = r.content
+        res['tentatives']['histdata_reponse'] = {'http': r.status,
+            'content_type': r.headers.get('Content-Type'), 'octets': len(brut),
+            'debut': brut[:200].decode('ascii', 'replace')}
+        if not brut[:2] == b'PK':
+            import time; time.sleep(25)
+            r = s.post('https://www.histdata.com/get.php', timeout=120, headers={'Referer': page},
+                       data={'tk': tk.group(1), 'date': '2010', 'datemonth': '201001',
+                             'platform': 'ASCII', 'timeframe': 'TICK_DATA', 'fxpair': 'XAUUSD'})
+            brut = r.content
+            res['tentatives']['histdata_reponse']['retry_http'] = r.status
+            res['tentatives']['histdata_reponse']['retry_debut'] = brut[:200].decode('ascii', 'replace')
         (EXT / 'raw').mkdir(exist_ok=True)
         (EXT / 'raw' / 'HISTDATA_T_XAUUSD_201001.zip').write_bytes(brut)
         z = zipfile.ZipFile(io.BytesIO(brut)); noms = z.namelist()
