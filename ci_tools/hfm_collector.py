@@ -133,10 +133,6 @@ def mode_selftest():
     print('SELFTEST OK (synthetique, fichier prefixe _SELFTEST, a exclure de toute publication):', q)
     pathlib.Path(BASE/'normalized'/'ticks'/'_SELFTEST_SYNTHETIC.parquet').unlink()
 
-if __name__ == '__main__':
-    m = sys.argv[1] if len(sys.argv)>1 else 'selftest'
-    {'probe': mode_probe, 'pilot': mode_pilot, 'selftest': mode_selftest,
-     'collect': lambda: mode_collect(sys.argv[2], sys.argv[3]), 'extpilot': mode_extpilot}[m]()
 
 # --- Addendum seq429: adaptateurs multi-sources sans compte -----------------
 # hfm_public        : aucun telechargement historique public HFM identifie (voir 4A)
@@ -183,3 +179,8 @@ def mode_extpilot():
         res['tentatives']['histdata_201001'] = {'erreur': f'{type(e).__name__}: {e}'}
     (EXT / 'PILOT_EXTERNAL.json').write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=1))
+
+if __name__ == '__main__':
+    m = sys.argv[1] if len(sys.argv)>1 else 'selftest'
+    {'probe': mode_probe, 'pilot': mode_pilot, 'selftest': mode_selftest,
+     'collect': lambda: mode_collect(sys.argv[2], sys.argv[3]), 'extpilot': mode_extpilot}[m]()
