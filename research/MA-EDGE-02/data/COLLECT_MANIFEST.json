@@ -675,56 +675,20 @@
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
  },
- "2026-11-24 12:00:00": {
-  "ticks": 25442,
+ "2026-11-26 02:00:00": {
+  "ticks": 40356,
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
  },
- "2026-11-24 13:00:00": {
-  "ticks": 38685,
+ "2026-11-26 08:00:00": {
+  "ticks": 21306,
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
  },
- "2026-11-25 00:00:00": {
-  "ticks": 30631,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 08:00:00": {
-  "ticks": 29318,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 17:00:00": {
-  "ticks": 48254,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 18:00:00": {
-  "ticks": 44120,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 19:00:00": {
-  "ticks": 39621,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 20:00:00": {
-  "ticks": 40374,
-  "statut": "OK",
-  "bid_lt_ask_violations": 0,
-  "ts_croissants": true
- },
- "2026-11-25 21:00:00": {
-  "ticks": 17220,
+ "2026-11-26 10:00:00": {
+  "ticks": 19174,
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
