@@ -188,6 +188,19 @@ def mode_extpilot():
             'derniere': lignes[-1][:120], 'sha256_zip': hashlib.sha256(brut).hexdigest()}
     except Exception as e:
         res['tentatives']['histdata_201001'] = {'erreur': f'{type(e).__name__}: {e}'}
+    # Pilote externe n.2: Stooq XAUUSD quotidien (barres, jamais des ticks; sans compte)
+    try:
+        import requests as _rq
+        rr = _rq.get('https://stooq.com/q/d/l/?s=xauusd&i=d', timeout=60,
+                     headers={'User-Agent': 'Mozilla/5.0 META-ALPHA-research'})
+        lignes = rr.text.splitlines()
+        res['tentatives']['stooq_daily'] = {'http': rr.status_code, 'lignes': len(lignes),
+            'entete': lignes[0] if lignes else None, 'premiere': lignes[1][:80] if len(lignes)>1 else None,
+            'derniere': lignes[-1][:80] if lignes else None,
+            'sha256': hashlib.sha256(rr.content).hexdigest(), 'classe': 'EXTERNAL_REFERENCE barres quotidiennes (pas des ticks)'}
+        (EXT / 'raw').mkdir(exist_ok=True); (EXT / 'raw' / 'STOOQ_XAUUSD_DAILY.csv').write_bytes(rr.content)
+    except Exception as e:
+        res['tentatives']['stooq_daily'] = {'erreur': f'{type(e).__name__}: {e}'}
     (EXT / 'PILOT_EXTERNAL.json').write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=1))
 
