@@ -1,0 +1,10 @@
+decouverte,preuve_brute,methode,niveau_confiance,limite
+Fidelite entree V1 = 4/5 (correction seq446),REPLAY_RESULTS.json + heures reelles A-E,matching glouton +-120s recalcule (FILTER_LAB_RESULTS.json),etabli par recalcul,seq446 non reecrit; correction tracee seq448
+E manque par occupation parasite,panier simule 08:50:06-09:01:19 UTC couvrant 09:00,rejeu V1 journalise,fortement etaye (mecanique moteur),depend du fuseau UTC+2 suppose
+Faux paniers = reentrees en chaine (0.1-9s apres cloture),REPLAY_RESULTS.json,ecarts cloture->entree simulee,etabli sur sorties moteur,absence reelle hors couverture non prouvee
+5 premieres entrees reelles dans 5 bougies M15 distinctes,heures affichees serveur + UTC+2,audit bougies (RE-ENTRY-006 + present),fortement etaye,n=5; fuseau suppose
+F1 (ret15m>=5 sur voie rapide) refutee,features causales D (ret15m +0.8bp),FILTER_LAB_RESULTS.json,refutee sur D,en-echantillon
+F2 unicite M15 adoptee en V2 experimental,REPLAY_V2_RESULTS.json,rejeu V2 inchange sauf F2,exploratoire en-echantillon 5/5 et 15 paniers vs 58,falsifiable sur paniers futurs seulement
+Fidelite gestion V2 faible (positions 2/5; durees ~60s vs 650-1152s),REPLAY_V2_RESULTS.json vs paniers reels,comparaison nb/duree/volumes,etabli en-echantillon,regle de cloture reelle non identifiee
+Aucune observation nouvelle,page HFM recontrlee ce cycle (49595 fermes; dernier 2026-11-27 11:01),fetch_page journalise,etabli a la date du controle,fournisseur apparemment en pause
+Formule des lots / positions 4+ / stop,12 transactions observees,RE-ENTRY-004 seq440,non determinable,exige paniers profonds ou historique complet

@@ -5860,6 +5860,26 @@
     "profitable_edge": false
    },
    "entry_hash": "96bc6cd857c1b9b55ba47f9f593e52ecfd8d18f9142497707afd69e3b42eec9b"
+  },
+  {
+   "seq": 447,
+   "prev_hash": "96bc6cd857c1b9b55ba47f9f593e52ecfd8d18f9142497707afd69e3b42eec9b",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "COLORFUL-FILTER-001",
+    "note": "Audit du matching seq446 + recherche du filtre dentree. Hypotheses preenregistrees AVANT calcul: (F-AUDIT) le matching glouton +-120s donne A reproduit (~-16s) et seul E manque, par occupation du moteur dans un panier simule ouvert a 08:50 UTC; si confirme, correction tracee sans reecrire seq446. (F1) Filtre de fond unifie: la voie rapide exige aussi ret15m>=+5bp au tick dentree. (F2) Unicite par bougie M15: au plus une premiere entree par bougie M15. (F3) Delai minimal apres cloture >= 60s sauf reouverture evenementielle type B (2s apres cloture) - attendu: F3 seule incoherente avec B, testee pour etre refutee/confirmee. (F4) Filtre multi-horizon: ret30m et ret60m positifs aux entrees reelles, a comparer aux simulees non appariees. Methode: features causales calculees au tick dentree (aucun prix futur), ticks Dukascopy comparatifs jamais HFM, fuseau UTC+2 suppose. Toute discrimination trouvee sur A-E = EXPLORATOIRE en-echantillon, jamais validation; falsification reservee aux paniers futurs. Moteur gele colorful_replay.py intouche; moteur experimental separe."
+   },
+   "entry_hash": "02d0b97c4e1f9b91d457923018531bc90a041e72cdb8c5c14b7a0e83c4affc21"
+  },
+  {
+   "seq": 448,
+   "prev_hash": "02d0b97c4e1f9b91d457923018531bc90a041e72cdb8c5c14b7a0e83c4affc21",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "COLORFUL-FILTER-001",
+    "resultats": "Audit matching: fidelite entree V1 corrigee 4/5 (A -15.4s; seq446 disait 3/5, non reecrit). E seul manque, par occupation (panier simule 08:50 UTC). V1 = 58 paniers fenetres completes, 54 non apparies, reentrees mediane 0.1-9s apres cloture. F1 refutee (D), F3 refutee (B), F4 non discriminant. F2 unicite M15: V2 experimental (moteur gele intouche) = 15 paniers, entrees 5/5 appariees (E +0.6s), 10 non apparies; fidelite gestion faible (positions 2/5, durees ~60s vs 650-1152s). Tout est EN-ECHANTILLON exploratoire; falsification F2/H3 reservee aux paniers futurs. Page HFM inchangee, aucune observation nouvelle. profitable_edge=False (descriptif)."
+   },
+   "entry_hash": "8c167c7dd12acfe09401e59486edb0deedfd517a2c4c44373aa191d9824add78"
   }
  ]
 }
