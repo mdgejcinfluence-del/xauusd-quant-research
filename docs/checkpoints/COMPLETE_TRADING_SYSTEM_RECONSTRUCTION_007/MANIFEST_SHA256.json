@@ -1,0 +1,86 @@
+{
+ "CAUSAL_REPLAY_RESULTS.csv": {
+  "taille": 698,
+  "sha256": "d09ef5213ef16603cb28b4dc7c36798cf568fc725889c5195c93dae4cc90642e"
+ },
+ "COMPLETE_KNOWLEDGE_REGISTER.csv": {
+  "taille": 5320,
+  "sha256": "7e4540d37af15e9636c3d8a252ba4210bcf411de1b6bc9bb3a98dc44cb872c15"
+ },
+ "CTRS_007_EXECUTIVE_REPORT.md": {
+  "taille": 1493,
+  "sha256": "064b273795f86cf206f7cc8a7a55715ca20426902f391849173d995ae15f0ada"
+ },
+ "DATA_PROVENANCE.json": {
+  "taille": 638,
+  "sha256": "fea7ddaa55a238b6873965ff5ec854f260a798b9da40f506b23c6d0de942eae1"
+ },
+ "ECONOMIC_RECONSTRUCTION_FINAL.md": {
+  "taille": 1292,
+  "sha256": "33ca334a6c2d07fd8f3f4a9a16a047a47a15fd76b12a41966fd50499de3b0d57"
+ },
+ "ENTRY_MECHANISM_FINAL.md": {
+  "taille": 1245,
+  "sha256": "89bdce2496a1b58217c7e7a509488a604d83c214b5d2a888e2af497c16b5419d"
+ },
+ "EVIDENCE_AND_IDENTIFIABILITY_MATRIX.csv": {
+  "taille": 1491,
+  "sha256": "b2bde337d858d77703852d1fb79a0e38560e79a5583c577341139fcec76a56a5"
+ },
+ "EXIT_MECHANISM_FINAL.md": {
+  "taille": 1508,
+  "sha256": "f22bd1328b8e01cc513ad0a93115471c4bc7cd1d509ed4ebc312a62eb332d0ad"
+ },
+ "FINAL_SCIENTIFIC_VERDICT.md": {
+  "taille": 1856,
+  "sha256": "ff10df417a43f0681ac94658e6e410cc43abc8f9bd67ea72c31858c3e28e4522"
+ },
+ "FINAL_TEST_REPORT.md": {
+  "taille": 616,
+  "sha256": "451e5b7b40b33a28c9b14cee18b34cca9ee1eb3717939e91a8f6a64c0b43b3a4"
+ },
+ "FULL_SYSTEM_ARCHITECTURE.md": {
+  "taille": 1684,
+  "sha256": "e516e32f2fff1950ac8e69e9c2760de07ba1bab8e56a5794790eba913f40703a"
+ },
+ "FULL_SYSTEM_DATA_CONTRACT.json": {
+  "taille": 4086,
+  "sha256": "2db4c9d9ced038552f4a8b1fcd95ef68a801d005763bdc3481152d2d732339a2"
+ },
+ "IDENTIFIABILITY_BOUNDARY.md": {
+  "taille": 1670,
+  "sha256": "987ed3a1b81d97cc22eeb0687c21ea12f5bfdc4a32d5912b56625156ccfcf24e"
+ },
+ "INVENTORY_AND_RECOVERY_FINAL.md": {
+  "taille": 1022,
+  "sha256": "9ba03e771153830f9b53d2f6bd651a995d0b452bf6a86df6262ef9085885f0d2"
+ },
+ "MISSING_EVIDENCE_REGISTER.csv": {
+  "taille": 922,
+  "sha256": "25b029c2f8655f93adcf54b8c49dc5659d7d56e999060e62cd1a07c20bea544b"
+ },
+ "MODEL_COMPATIBILITY_MATRIX.csv": {
+  "taille": 698,
+  "sha256": "3cf2578c6a439bd022486ffc40ea5e5cbc694a70de1f78a3b88f33e58113caf2"
+ },
+ "POSITION_SIZING_FINAL.md": {
+  "taille": 788,
+  "sha256": "e82efc28f36eb23fdff02b1328fa95df198239156a74c7f4a2d14b8e2d6eb48d"
+ },
+ "REAL_VS_SIMULATED_CONFRONTATION.csv": {
+  "taille": 1010,
+  "sha256": "077210d2f8cc090c5d5a40a718d6f84f5ed74d3bdb1919dac13c139b3948a07a"
+ },
+ "REINFORCEMENT_MECHANISM_FINAL.md": {
+  "taille": 1189,
+  "sha256": "2ead426bdfee6ed24969fd91ae882df14b7a98eeb5aa73c1814e7b46d3c04d19"
+ },
+ "REPRODUCIBILITY.md": {
+  "taille": 578,
+  "sha256": "ff32a7e7aff6daec9b40a6ea9b56af61f860bc82d8dfaacb3115654484e8eb91"
+ },
+ "RISK_MODEL_FINAL.md": {
+  "taille": 1491,
+  "sha256": "5c50aa91d5425f473ba2bf862b80d5e4d5de0724b10a73f679bce2606887fe06"
+ }
+}

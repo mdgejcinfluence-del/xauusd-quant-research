@@ -1,0 +1,155 @@
+{
+ "version": "CTRS-007",
+ "modules": [
+  {
+   "nom": "MARKET_STATE_ENGINE",
+   "niveau_identification": "STRONGLY_SUPPORTED (calcul)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "ENTRY_SIGNAL_ENGINE",
+   "niveau_identification": "CANDIDATE (H3)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "ENTRY_PERMISSION_ENGINE",
+   "niveau_identification": "CANDIDATE (F2)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "POSITION_SIZING_ENGINE",
+   "niveau_identification": "NOT_IDENTIFIED (famille bornee)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "REINFORCEMENT_ENGINE",
+   "niveau_identification": "STRONGLY_SUPPORTED (intervalles observes)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "INVENTORY_ENGINE",
+   "niveau_identification": "STRONGLY_SUPPORTED (mecanique)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "WEIGHTED_AVERAGE_ENGINE",
+   "niveau_identification": "DEMONTRE (arithmetique)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "RECOVERY_STATE_ENGINE",
+   "niveau_identification": "STRONGLY_SUPPORTED (description)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "EXIT_PERMISSION_ENGINE",
+   "niveau_identification": "NOT_IDENTIFIED (3 familles equivalentes)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "EXIT_EXECUTION_ENGINE",
+   "niveau_identification": "NOT_IDENTIFIED (horloges non separables)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "RISK_CONTROL_ENGINE",
+   "niveau_identification": "NOT_IDENTIFIED (aucun stop observe)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  },
+  {
+   "nom": "ECONOMIC_ACCOUNTING_ENGINE",
+   "niveau_identification": "DEMONTRE pour nos moteurs (negatif)",
+   "entrees": [
+    "ticks passes",
+    "etat panier courant"
+   ],
+   "sorties": [
+    "etat/decisions horodatees"
+   ],
+   "parametres": "voir registre CTRS-007; aucun parametre invente pour les modules NOT_IDENTIFIED"
+  }
+ ],
+ "invariants": [
+  "aucun look-ahead",
+  "spread compte une fois",
+  "reel/simule separes",
+  "parametres traces"
+ ]
+}

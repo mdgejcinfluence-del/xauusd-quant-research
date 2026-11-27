@@ -1,0 +1,8 @@
+dimension,demontre,fortement_contraint,compatible_non_identifie,refute,impossible_a_distinguer
+entree,Buy seulement (echantillon); mecanique amorcage,H3+F2 meilleure fidelite en-echantillon,seuils H3 exacts; Sell,H1/H2 seuls,declencheur reel vs variantes H3 equivalentes
+renforcement,deplacement mecanique du PWA,recul -4.7 a -6.6bp (n=3); delais observes,seuil fixe vs conditionnel,-,formules de declenchement equivalentes sur 3 cas
+sizing,-,ratios observes 0.50/0.50/0.60,familles arithmetique/geometrique/hybride bornees,doublement universel,toute formule ponctuelle
+recovery,"trajectoires et bornes (latent min, temps sous PWA)",sortie au voisinage du PWA apres jambe favorable,variable de pilotage (PWA vs PnL monet.),mean-reversion d entree comme mecanisme principal,effet causal du renforcement (censure)
+sortie,premiers passages trop precoces (19-246s),etat favorable + jambe haussiere avant 5/5 clotures,cadence phase libre; hybride; variable hors-Mid,persistance unique; cadence ancree >1s; epuisement,les trois familles compatibles entre elles (n=5)
+risque,aucun stop observe; exposition croissante en excursion adverse,queue simulee longue sans stop (13.6j),stop catastrophe eventuel,-,capacite d absorption reelle du provider
+economie,nos moteurs geles non rentables apres couts (2026),"echec lie a l accumulation (paniers 3 positions -30.68 vs 2 positions +0.71, association)",part entree vs sizing vs sortie dans l echec,fidelite = rentabilite,rentabilite du provider

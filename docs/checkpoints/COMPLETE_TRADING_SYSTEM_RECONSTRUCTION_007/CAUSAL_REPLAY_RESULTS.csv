@@ -1,0 +1,7 @@
+replay,perimetre,resultat,type,source
+V1,nov. 2026,"379 paniers, -0.432 USD modele S0, PF 0.906",simulation moteur gele,BACKTEST-COLORFUL-2026-001 seq455
+V1,janv-sept 2026,"3728 paniers, -29.97 S0 (S3 -123.25)",simulation moteur gele,FULL-REPLAY-2026 seq457
+V2-F2,nov. 2026,"230 paniers, -0.930 PF 0.663",simulation moteur gele,STRATEGY-DISCOVERY-001 seq459
+contrefactuels sans 3e,nov. 2026,CAUSAL_EFFECT_NOT_IDENTIFIED (126/140 censures),contrefactuel,STRATEGY-DISCOVERY-001 seq459
+regles de sortie premier passage,A-E,toutes prematurees 19-246s,replay causal reel,EIDR-005 seq469 / EMI-006 seq471
+persistance/cadence grille,A-E,aucun point compatible 5/5,replay causal reel,EMI-006 seq471

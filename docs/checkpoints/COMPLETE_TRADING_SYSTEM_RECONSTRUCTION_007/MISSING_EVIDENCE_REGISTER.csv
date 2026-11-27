@@ -1,0 +1,6 @@
+preuve_manquante,pourquoi_necessaire,voie_legitime,statut
+nouvelles clotures reelles independantes (>=10-20) avec Bid/Ask,"departager cadence phase libre / hybride / persistance bornee; contraindre (N,phi)","captures publiques de la page provider (fenetre 6 lignes, sans contournement)",EN ATTENTE - 0 depuis 2026-11-27
+ticks Bid/Ask HFM XAUUSDc reels,"separer horloges decision/execution, mesurer spread reel a la cloture",compte demo propre (aucun ordre reel requis pour cotations),NON COLLECTE
+journaux d execution du provider,identifier decision vs transmission vs execution,aucune voie legitime (propriete du provider),INACCESSIBLE - aucun contournement
+paniers Sell et paniers en crise,"identifier direction, stop, plafond, risque de queue",observations futures uniquement,ABSENT de l echantillon
+positions 4+ reelles,identifier plafond et sizing tardif,observations futures uniquement,ABSENT de l echantillon

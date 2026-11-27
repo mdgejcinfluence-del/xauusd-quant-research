@@ -1,0 +1,6 @@
+panier,positions_reelles,volumes_reels,duree_reelle_s,pnl_reel_affiche_jpy,pnl_latent_cloture_bp,moteur_V1_entree,moteur_V1_sortie,ecart_mecanisme
+A,3,0.01/0.01/0.02,1152,11,6.18,"H3 approximee (4/5 V1, 5/5 V2 en-echantillon)",premier passage PWA: 17-205s trop tot (EIDR-005),sortie et sizing non reproduits ponctuellement
+B,3,0.01/0.01/0.02,715,13,7.91,"H3 approximee (4/5 V1, 5/5 V2 en-echantillon)",premier passage PWA: 17-205s trop tot (EIDR-005),sortie et sizing non reproduits ponctuellement
+C,3,0.01/0.01/0.03,650,-6,-0.25,"H3 approximee (4/5 V1, 5/5 V2 en-echantillon)",premier passage PWA: 17-205s trop tot (EIDR-005),sortie et sizing non reproduits ponctuellement
+D,1,0.01,17,1,2.83,"H3 approximee (4/5 V1, 5/5 V2 en-echantillon)",premier passage PWA: 17-205s trop tot (EIDR-005),sortie et sizing non reproduits ponctuellement
+E,2,0.01/0.01,87,3,3.4,"H3 approximee (4/5 V1, 5/5 V2 en-echantillon)",premier passage PWA: 17-205s trop tot (EIDR-005),sortie et sizing non reproduits ponctuellement

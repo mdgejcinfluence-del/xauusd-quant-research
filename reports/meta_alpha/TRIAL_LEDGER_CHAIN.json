@@ -6110,6 +6110,27 @@
     "resultats": "EMI-006: (1) persistance unique REFUTEE (pas seulement non identifiee): intersection des intervalles compatibles vide sur les 35 combinaisons theta{-1..+3bp} x {continu, tolerance 0.5/1/2s, cumulatif} - B a tenu 107.9s en etat favorable sans cloture contre segments finaux C 0.5s et D 5.5s; grille de replay 1-5 prematurees/manquees pour tout point. (2) Contre-exemple C: cloture a -0.25bp HORS etat favorable theta=0 (segment final termine 1.7s avant). (3) Cadence fixe ancree ouverture: intersection {1s} triviale seulement - REFUTEE pour N>1; cadence a phase libre NOT_IDENTIFIED (5 evenements ne contraignent pas (N,phi)). (4) Etat precedant les 5 clotures: PnL proche/au-dessus du PWA sur jambe haussiere (dPnL30s +1.6 a +7.2bp, 5/5). Restent equivalents: cadence phase libre, condition hybride, variable hors trajectoire Mid. Moteur causal evenementiel familles P/C/H/E/U livre (U n execute jamais). 7/7 tests PASS. profitable_edge=False."
    },
    "entry_hash": "0ac659eb80db0c6a5626cbf7cbfe4eaa419fc6d3195f65692f0aa8b0680bcdfc"
+  },
+  {
+   "seq": 472,
+   "prev_hash": "0ac659eb80db0c6a5626cbf7cbfe4eaa419fc6d3195f65692f0aa8b0680bcdfc",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "CTRS-007",
+    "perimetre": "CTRS-007 cloture scientifique: synthese du corpus RE-ENTRY-001..007, FILTER-002, BACKTEST-2026, DATA-RECOVERY, DISCOVERY-001, DEEP-REVERSE-001, AESR-002, DIRR-003, CDME-004, EIDR-005, EMI-006. Aucune nouvelle optimisation, aucun re-ajustement sur A-E ou 2026, moteurs V1/V2 geles intouches. Travaux neufs limites: (1) registre central des connaissances avec statuts conserves (contradictions incluses); (2) separation des trois horloges decision/transmission/execution bornee par les intervalles inter-ticks mesures autour des clotures (0.05-0.25s) et absence de Bid/Ask - non-separabilite a demontrer si confirmee; (3) matrice de confrontation reel vs simule depuis les trajectoires gelees; (4) architecture 12 modules avec niveaux didentification par module, aucun parametre invente; (5) verdict A/B/C selon criteres de la mission. profitable_edge=False maintenu."
+   },
+   "entry_hash": "c79b7279d80d63f174fbf4b3ff40b02a72180ce2a7e505773b873e8e6056d8c6"
+  },
+  {
+   "seq": 473,
+   "prev_hash": "c79b7279d80d63f174fbf4b3ff40b02a72180ce2a7e505773b873e8e6056d8c6",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "CTRS-007",
+    "verdict": "B",
+    "resultats": "CTRS-007 CLOTURE DE CAMPAGNE - VERDICT B (reconstruction partielle avec frontiere didentifiabilite). Demontre: mecanique PWA/deplacement par renforcement, trajectoires de recuperation bornees, refutations completes (premiers passages de sortie 19-246s trop tot, persistance unique 35 intersections vides, cadence ancree >1s, doublement universel du sizing, H1/H2, fidelite=rentabilite), economie negative des moteurs geles V1/V2 sur 2026. Fortement contraint: entree H3+F2 (fidelite en-echantillon), renforcement -4.7 a -6.6bp, signature pre-cloture (etat favorable + jambe haussiere 5/5). Non identifie et laisse en familles bornees: declencheur exact de cloture (cadence phase libre / hybride / variable hors-Mid equivalentes), formule de sizing, stop, Sell, plafond, separation des horloges decision/transmission/execution (resolution tick 0.05-0.25s, pas de Bid/Ask ni de logs). Rentabilite du candidat non chiffrable honnetement; profitable_edge=False. Architecture 12 modules avec niveaux explicites. 7/7 tests scientifiques PASS. Identification supplementaire impossible sans observations nouvelles (clotures reelles independantes avec Bid/Ask)."
+   },
+   "entry_hash": "d8faaf2fe08d26d76bf0eb47430d8a88780268fd990912c0a547519d11800914"
   }
  ]
 }

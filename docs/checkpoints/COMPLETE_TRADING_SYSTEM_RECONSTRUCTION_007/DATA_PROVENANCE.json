@@ -1,0 +1,17 @@
+{
+ "corpus": {
+  "transactions_reelles": "5 paniers / 12 transactions Colorful drops (HTML78 archive RE-ENTRY-007, SHA-256 2e3a9e19...)",
+  "trajectoires": "DIRR-003 TRAJECTORY_A..E.csv (ticks Dukascopy nov. 2026, Mid)",
+  "marches": "348 partitions certifiees 2010-01-04 a 2026-09-30 (685,118,625 ticks) + ticks nov. 2026 locaux",
+  "moteurs_geles": {
+   "V1": "ci_tools/colorful_replay.py (seq445-446)",
+   "V2": "ci_tools/colorful_replay_v2.py (FILTER-001)"
+  }
+ },
+ "absences": [
+  "Bid/Ask HFM reel",
+  "nouvelles clotures depuis 2026-11-27",
+  "logs provider"
+ ],
+ "regle": "reel, affiche, simule et contrefactuel jamais melanges"
+}

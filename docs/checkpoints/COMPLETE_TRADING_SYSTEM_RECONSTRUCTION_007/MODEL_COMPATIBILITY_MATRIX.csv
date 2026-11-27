@@ -1,0 +1,4 @@
+modele,entrees,renforcement,sizing,sortie,economie_2026,statut_final
+V1 gele (H3),4/5 fidelite,recul -5.5bp (placeholder moteur),0.02 troisieme (placeholder),Mid>=PWA premier passage (refute comme reel),nov -0.432; janv-sept -29.97,"REFERENCE GELEE - mecanisme partiel, sortie refutee"
+V2 gele (H3+F2),5/5 en-echantillon,idem V1,idem V1,idem V1,nov -0.930 PF 0.663,"REFERENCE GELEE - fidelite entree, economie inferieure"
+Famille reconstruite CTRS-007,H3/F2 CANDIDATE,intervalles observes,"famille bornee, C contre doublement",etat favorable + declencheur non ponctuel (3 familles equivalentes),non chiffrable honnetement (declencheur non identifie),VERDICT B - reconstruction partielle bornee
