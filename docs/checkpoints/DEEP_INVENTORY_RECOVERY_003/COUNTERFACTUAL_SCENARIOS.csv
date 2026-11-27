@@ -1,0 +1,13 @@
+panier,scenario,horizon,resultat_bp_pondere,resultat_reel_bp_pondere
+A,sans_renforcement (1 pos),cloture reelle (meme instant),2.05,6.18
+A,sans_3e (2 pos),cloture reelle (meme instant),4.18,6.18
+A,"cloture au premier retour PWA (scenario, regle refutee)",2026-11-26 11:47:07.024000,0.0,6.18
+B,sans_renforcement (1 pos),cloture reelle (meme instant),4.71,7.91
+B,sans_3e (2 pos),cloture reelle (meme instant),6.38,7.91
+B,"cloture au premier retour PWA (scenario, regle refutee)",2026-11-26 12:01:02.859000,0.0,7.91
+C,sans_renforcement (1 pos),cloture reelle (meme instant),-3.29,-0.25
+C,sans_3e (2 pos),cloture reelle (meme instant),-3.5,-0.25
+C,"cloture au premier retour PWA (scenario, regle refutee)",2026-11-27 08:40:30.804000,0.0,-0.25
+D,"cloture au premier retour PWA (scenario, regle refutee)",2026-11-27 08:45:00.109000,0.0,2.83
+E,sans_renforcement (1 pos),cloture reelle (meme instant),4.44,3.4
+E,"cloture au premier retour PWA (scenario, regle refutee)",2026-11-27 09:00:16.047000,0.0,3.4

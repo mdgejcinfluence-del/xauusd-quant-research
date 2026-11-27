@@ -1,0 +1,6 @@
+dimension,reel,V1,V2-F2,DIRR,statut
+entrees,5 paniers,4/5 en-echantillon,5/5 en-echantillon,regimes reel 3 recovery/2 immediats vs simule V1 69 longs/310 courts,PARTIEL
+volumes,0.01-0.03,placeholder,placeholder,non reconstruit,NOT_IDENTIFIED
+renforcements,recul ~-5bp,regle moteur compatible,identique,mecanisme soutenu faible n,STRONGLY_SUPPORTED (faible n)
+clotures,voisinage PWA declencheur inconnu,premier retour (refute comme regle reelle),identique,famille reduite a 3 mecanismes,NOT_IDENTIFIED
+sequence complete,5 paniers,aucun integral,aucun integral,aucun integral,NOT_IDENTIFIED

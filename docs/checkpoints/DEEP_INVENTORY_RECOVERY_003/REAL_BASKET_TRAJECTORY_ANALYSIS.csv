@@ -1,0 +1,6 @@
+panier,regime_observe,entrees,volumes,prix_entrees_mid,pwa_final,mid_cloture,ecart_cloture_vs_pwa_bp,pnl_latent_min_bp,pnl_latent_max_bp,temps_sous_pwa_pct,duree_s,profit_affiche_jpy
+A,INVENTORY_RECOVERY,3,0.01/0.01/0.02,3568.78/3567.26/3566.6,3567.31,3569.51,6.18,-8.78,8.33,86.3,1152.0,11
+B,INVENTORY_RECOVERY,3,0.01/0.01/0.02,3569.19/3568.0/3567.51,3568.05,3570.88,7.91,-4.99,8.37,65.3,715.0,13
+C,INVENTORY_RECOVERY,3,0.01/0.01/0.03,3674.64/3674.79/3672.72,3673.52,3673.43,-0.25,-15.3,2.46,87.7,650.0,-6
+D,IMMEDIATE,1,0.01,3675.06,3675.06,3676.09,2.83,-0.63,3.05,22.9,17.0,1
+E,IMMEDIATE,2,0.01/0.01,3677.56/3678.32,3677.94,3679.19,3.4,-1.59,5.24,11.8,87.0,3

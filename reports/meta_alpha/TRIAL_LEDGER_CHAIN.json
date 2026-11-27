@@ -6030,6 +6030,26 @@
     "resultats": "Mecanisme: signal dentree sans avantage directionnel forward (379 simulees: +0.31/+0.82/+0.14bp a 60/300/900s, ~50% positifs). Paniers reels longs A/B/C: 81-97% de leur vie sous la 1re entree, MAE -6.7 a -18.3bp, clotures pres du prix moyen; D/E regime immediat favorable (17s/87s). Mecanisme le mieux compatible: hybride contexte haussier + accumulation dinventaire en excursion adverse + sortie au voisinage du prix moyen, regime secondaire de scalp immediat (STRONGLY_SUPPORTED faible n). Profil: esperance affichee +6.01 yen/transaction portee par la frequence (67.4%), gain moyen < perte moyenne - signature queue. Market making NOT_IDENTIFIED (non observable). Fidelite et economie maintenues separees; moteurs geles perdants apres couts. 8/8 tests PASS. profitable_edge=False pour nos moteurs."
    },
    "entry_hash": "196585859fb3faf7f2e9a2b41c48146e70cbbdae03ea9b604429d05b0f32531a"
+  },
+  {
+   "seq": 464,
+   "prev_hash": "196585859fb3faf7f2e9a2b41c48146e70cbbdae03ea9b604429d05b0f32531a",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "DIRR-003",
+    "note": "Analyses preenregistrees: (T1) trajectoires completes des 5 paniers reels reconstruites tick par tick (PWA dynamique, PnL latent en bp pondere, temps sous PWA, evenements). (T2) contrefactuels a horizon commun: PnL a l instant de cloture REELLE avec inventaire tronque (sans 2e, sans 3e) - comparaisons conditionnelles a meme sortie, jamais presentees comme effets causaux de strategie alternative; cloture au premier retour PWA et PWA+couts deja refutees comme regles du trader, recalculees seulement comme scenarios chiffres. (T3) capture immediate D/E: trajectoire des 90 premieres secondes, gain latent maximal vs realise affiche. (T4) DIRR = architecture + classifieur de regimes applique aux paniers simules V2 (proportions immediat/adverse vs reelles 2/5-3/5); aucun seuil nouveau ajuste sur les paniers reels. Sizing: familles compatibles enumerees, aucune retenue sans contre-exemples."
+   },
+   "entry_hash": "5c6874068b14e7c5dc76d0ea9fbe6dadd7001a1541bdf23dd0214805dc73266e"
+  },
+  {
+   "seq": 465,
+   "prev_hash": "5c6874068b14e7c5dc76d0ea9fbe6dadd7001a1541bdf23dd0214805dc73266e",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "DIRR-003",
+    "resultats": "Trajectoires reelles tick par tick: paniers recovery 65-88% de leur vie sous le PWA, latent min -15.3bp (C), clotures -0.25 a +7.9bp du PWA. Contrefactuels a sortie identique: le renforcement convertit lexcursion en ecart de sortie faible (C: -3.3 -> -0.25bp) contre exposition accrue - echange documente, causalite globale toujours NOT_IDENTIFIED. Regime immediat = trajectoire post-entree, non condition dentree separable. Moteurs: 82% de paniers <=120s vs 40% reel - sur-production du scalp, sous-production de la patience. PWA = reference de mesure, pas declencheur (confirme). Sizing/sortie/plafond NOT_IDENTIFIED avec familles reduites. 7/7 tests PASS. profitable_edge=False (moteurs)."
+   },
+   "entry_hash": "6c3bac17f0c35f935b63f9fc9ad648cc6380cc7f0909fbb0c2827b06b03e080a"
   }
  ]
 }
