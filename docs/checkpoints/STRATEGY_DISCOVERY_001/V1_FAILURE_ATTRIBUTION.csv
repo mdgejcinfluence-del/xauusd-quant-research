@@ -1,0 +1,7 @@
+mecanisme,mesure,periode,contribution,statut
+Renforcement (3e position),paniers 3pos jan-sept,jan-sept 2026 (3728 paniers),-30.68 USD vs +0.71 (2pos),association mesuree; causalite NOT_IDENTIFIED (S8)
+Suractivite,~17 paniers/jour simules vs selectivite reelle observee,jan-sept + nov.,couts cumules absorbant le brut,SUPPORTED (diagnostic moteur)
+Couts,S0 -29.97 -> S3 -123.25,jan-sept,decisifs des S0,SUPPORTED
+Durees extremes,max 13.6 jours sans stop; 88 paniers >1h (nov+jan-sept),jan-sept,queue de risque non caracterisee,SUPPORTED (descriptif)
+Selection des entrees,voie rapide 90.6% des paniers,jan-sept,declenchement trop facile,SUPPORTED (diagnostic moteur)
+Cloture (regle moteur 60s/point mort),duree mediane ~61s vs reelles 17s-19min,nov.,regle moteur non reconstruite du reel,SUPPORTED

@@ -5970,6 +5970,26 @@
     "resultats": "7/7 partitions Drive recuperees en CI via gdown et VERIFIED (66 938 889 ticks, 2.44 Go, SHA-256 archives; partitions jamais commitees). Rejeu V1 gele 2026-01-12->09-30: 3728 paniers, PnL net S0 -29.97 USD modele; seul juin positif et bascule des S1; paniers 3 positions -30.68 vs 2 positions +0.71 (renforcement = premier contributeur de pertes); duree max ~13.6 jours sans stop; reconciliation novembre exacte (379/898/-0.432). Octobre NOT_TESTABLE (backfill Kaggle). 12/12 tests PASS. profitable_edge=False confirme sur 8.5 mois."
    },
    "entry_hash": "d987fc667d6ab2d85f224117be0ec8dc997b385fd0c3647ce7a8aaf74b68b09b"
+  },
+  {
+   "seq": 458,
+   "prev_hash": "d987fc667d6ab2d85f224117be0ec8dc997b385fd0c3647ce7a8aaf74b68b09b",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "STRATEGY-DISCOVERY-001",
+    "note": "Diagnostics preenregistres avant calcul: (D1) analyse conditionnelle des paniers 3 positions vs 2 positions sur trajectoires tick locales nov. 2026: etat avant 3e entree, MAE, et contrefactuel descriptif cloture-sans-3e (regle V1 appliquee au panier tronque) - etiquete DIAGNOSTIC, jamais substitut a V1; si les trajectoires ne permettent pas disoler leffet: CAUSAL_EFFECT_NOT_IDENTIFIED. (D2) decomposition de la suractivite V1 par categorie mesuree (regle, heure, duree, profondeur) sans creer de filtre. V2 candidate = architecture deja gelee seq447 (F2 unicite M15) formalisee en composants; composants sans preuve (cloture, sizing) declares NON RECONSTRUITS, regles V1 conservees comme placeholders etiquetes. Comparaison V1/V2 memes donnees/couts sur nov. local; perimetre jan-sept V2: NON execute ce cycle faute de partitions locales (CI possible ulterieurement), ne pas extrapoler. Validation independante: prospective uniquement."
+   },
+   "entry_hash": "a67c97db1e884347d164b7c787a0c61726a080700d376e3a8a8c49d60d0f448a"
+  },
+  {
+   "seq": 459,
+   "prev_hash": "a67c97db1e884347d164b7c787a0c61726a080700d376e3a8a8c49d60d0f448a",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "STRATEGY-DISCOVERY-001",
+    "resultats": "Page HFM toujours inchangee (0 nouveau panier). D1: causalite du 3e renforcement = CAUSAL_EFFECT_NOT_IDENTIFIED (contrefactuel nov. censure 126/140; sur 14 evaluables le sans-3e fait moins bien +0.64 vs +1.72). V2 formalisee en 9 composants etiquetes (sizing et exit NON RECONSTRUITS); comparaison memes donnees nov.: V2-F2 230 paniers -0.930 PF 0.663 vs V1 379 -0.432 PF 0.906: F2 ameliore la fidelite comportementale (5/5 fenetres reelles) mais degrade l economie sur jours complets - S10 refutee. Registre 10 hypotheses (3 clotures refutees conservees), matrice de preuves, plan de validation prospective. 8/8 tests PASS. profitable_edge=False."
+   },
+   "entry_hash": "47d95023913948c01c4af4093256b56c36d1894acf919fa48ba12eb01fb13e51"
   }
  ]
 }

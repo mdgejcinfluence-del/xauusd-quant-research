@@ -1,0 +1,10 @@
+element,donnees_necessaires,disponibilite,consequence,statut
+Entree initiale,decisions reelles + cotations,5 paniers (2026-11-26/27),selectivite inexpliquee,PARTIEL
+Deuxieme position,horaires et prix par position,4 paniers reels + simulation,famille de declencheurs non tranchee,PARTIEL
+Troisieme position,trajectoires completes,3 paniers reels; contrefactuel nov. censure 126/140,causalite non identifiable,PARTIEL
+Positions 4+,historique complet,0 observation,plafond inconnu,NON DETERMINABLE
+Volumes,volumes par position,12 transactions,formule inconnue,NON DETERMINABLE
+Cloture,prix et horaires de cloture,5 paniers; 3 hypotheses refutees,declencheur inconnu,PARTIEL
+Capital/equity du fournisseur,historique de compte,inconnu,risque reel non calculable,NON DETERMINABLE
+Couts reels XAUUSDc,specs HFM archivees (seq429),partielle (swap connu; historique inconnu),scenarios seulement,PARTIEL
+Validation independante,nouveaux paniers prospectifs,0 depuis 2026-11-27,H3/F2 non validees,EN ATTENTE

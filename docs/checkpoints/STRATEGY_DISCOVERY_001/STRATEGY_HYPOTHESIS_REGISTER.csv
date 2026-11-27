@@ -1,0 +1,11 @@
+id,hypothese,soutiens,contre_exemples,prediction_falsifiable,statut
+S1,Portail H3 (frontiere M15 haussiere OU voie rapide impulsion/reprise),entrees reelles A-E (RE-ENTRY-005/006),E sans impulsion 5m; simules sans equivalent,un futur panier reel hors des deux branches refute,NEEDS_INDEPENDENT_VALIDATION
+S2,F2 unicite d entree par bougie M15,5/5 entrees reelles dans 5 bougies distinctes; V2 5/5 en-echantillon,aucun contre-exemple reel,deux premieres entrees reelles dans une meme bougie M15 refutent,NEEDS_INDEPENDENT_VALIDATION
+S3,Amorcage 2e position a 16-40s signe indifferent,4 paniers reels (RE-ENTRY-004),D ferme a 17s avant amorcage,un futur panier multi-positions sans 2e rapide fragilise,SUPPORTED
+S4,3e position sur recul -4.7 a -6.6bp depuis la 1re,3 paniers reels; MAE mediane simulee avant 3e -5.73bp,aucun contre-exemple reel,seuil tres different sur futurs paniers refute,NEEDS_INDEPENDENT_VALIDATION
+S5,Cloture au premier retour au-dessus du prix moyen,compatibilite initiale,2-8 episodes au-dessus avant cloture reelle,clotures reelles au 1er retour rehabiliterait,REFUTED
+S6,Objectif fixe en bp au-dessus de la moyenne,aucun,dispersion +6.2/+7.9/-0.25/+2.8/+3.4bp,concentration future sur une valeur rehabiliterait,REFUTED
+S7,Cloture aux frontieres M15,aucun,minutes de cloture 5/2/10/0/1,concentration future aux frontieres rehabiliterait,REFUTED
+S8,Le 3e renforcement cause causalement les pertes,association agregee jan-sept (-30.68 vs +0.71),contrefactuel nov.: 14 evaluables favorables au 3e; 126/140 censures,effet causal identifiable seulement si contrefactuel non censure,NOT_TESTABLE
+S9,Progression des lots 0.01/0.01/0.02 fixe,paniers A et B,C utilise 0.03 en 3e,formule confirmee sur futurs paniers requis,REFUTED
+S10,F2 ameliore l economie du moteur,aucun,nov. complet: V2 -0.930 PF 0.663 vs V1 -0.432 PF 0.906,superiorite economique stable sur nouvelles periodes soutiendrait,REFUTED

@@ -1,0 +1,10 @@
+{
+ "nov_paniers": 379,
+ "nov_3pos": 140,
+ "pnl_3pos": -1.2842,
+ "pnl_2pos": 0.8522,
+ "cf_evalues": 14,
+ "cf_pnl_sans_3e": 0.6369,
+ "pnl_reel_sousensemble_cf": 1.7221,
+ "mae_avant_3e_median_bp": -5.73
+}
