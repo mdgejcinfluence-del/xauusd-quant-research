@@ -391,6 +391,20 @@ jobs:
         git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
         --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
         origin HEAD:arena/afe12737-xauusd-quant-research'
+    - name: Completion historique Dukascopy 2026-10-01 a 2026-11-26 (seq431)
+      run: |
+        pip install -q kaggle six
+        python ci_tools/hist_completion.py 2>&1 | tee research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
+        mkdir -p /tmp/kaggle_completion && cp /tmp/duka_completion_*.parquet /tmp/kaggle_completion/ 2>/dev/null
+        cat > /tmp/kaggle_completion/dataset-metadata.json << 'JSON'
+        {"title": "XAUUSD Dukascopy Completion 2026Q4 Ticks Bid Ask", "id": "shalom5123/xauusd-dukascopy-completion-2026q4", "licenses": [{"name": "other"}], "subtitle": "Ticks Dukascopy Bid/Ask 2026-10-01 a 2026-11-26, complement des 348 partitions"}
+        JSON
+        (kaggle datasets create -p /tmp/kaggle_completion -q 2>&1 || kaggle datasets version -p /tmp/kaggle_completion -m 'completion seq431' -q 2>&1) | tee research/HISTORICAL-DATA-COMPLETION/KAGGLE_UPLOAD_LOG.txt
+        (kaggle datasets list --mine 2>&1 | head -30) | tee research/HISTORICAL-DATA-COMPLETION/KAGGLE_ETAT.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add research/HISTORICAL-DATA-COMPLETION/
+        git diff --cached --quiet || git commit -m 'HIST seq431: completion Dukascopy 2026Q4 (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
     - name: HFM addendum seq429 pilote externe sans compte (HistData, jamais HFM)
       run: |
         pip install -q pandas numpy pyarrow requests

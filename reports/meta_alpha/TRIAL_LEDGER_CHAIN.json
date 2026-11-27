@@ -5647,6 +5647,20 @@
     "profitable_edge": false
    },
    "entry_hash": "644f085204c913d257d95cb71276f2161f317782980a113347377f07366c186a"
+  },
+  {
+   "seq": 431,
+   "prev_hash": "644f085204c913d257d95cb71276f2161f317782980a113347377f07366c186a",
+   "entry": {
+    "type": "HISTORICAL_DATA_SEQ431_OPENING_PHASES_0_2",
+    "mission": "HISTORICAL-DATA-COMPLETION-AND-REPLAY",
+    "phase0": "corpus reverifie: 348 partitions, 685 118 625 ticks, 2010-01-04 -> 2026-09-30, Bid/Ask separes, 0 partition touchee; migration Kaggle 282 fichiers distinguee de l inventaire 348",
+    "phase1": "unique manque: 2026-10-01 -> 2026-11-26 (dont 11-20 -> 11-26 deja en collecte prospective); intervalles >1h = week-ends/feries uniquement",
+    "phase2": "completion Dukascopy idempotente (hist_completion.py); HistData toujours 0 octet en CI, non comptee",
+    "phase5_6_7": "couts parametrables (spread compte une fois; profils dont HFM Cent XAUUSDc non retro-applique) + replay_engine prouve mecaniquement sur ticks reels + readiness replication",
+    "profitable_edge": false
+   },
+   "entry_hash": "2e2b70cb130aa08f325381b2f3dbf34a3dd71dad3e6808e8aacf270e68b50684"
   }
  ]
 }
