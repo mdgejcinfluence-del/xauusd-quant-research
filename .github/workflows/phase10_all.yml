@@ -2888,6 +2888,7 @@ jobs:
       run: |
         set +e
         pip install -q pandas numpy pyarrow gdown
+        mkdir -p docs/checkpoints/DATA_RECOVERY_2026 docs/checkpoints/FULL_REPLAY_2026
         python ci_tools/data_recovery_2026.py 2>&1 | tee docs/checkpoints/DATA_RECOVERY_2026/CI_CONSOLE.txt
         echo "exit_code=$?" >> docs/checkpoints/DATA_RECOVERY_2026/CI_CONSOLE.txt
         git config user.email 'actions@github.com'; git config user.name 'github-actions'
