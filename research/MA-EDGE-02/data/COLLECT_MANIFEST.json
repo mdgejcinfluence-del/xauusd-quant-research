@@ -874,5 +874,11 @@
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
+ },
+ "2026-11-27 08:00:00": {
+  "ticks": 25871,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
  }
 }
