@@ -1,0 +1,9 @@
+partitions 2026 identifiees: 7
+part_000342.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000343.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000344.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000345.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000346.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000347.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000348.parquet ERREUR 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+RECONCILIATION NOV: paniers=379 (ref 379) positions=898 (ref 898) pnl=-0.432 (ref -0.432)

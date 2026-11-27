@@ -1,0 +1,8 @@
+partition,drive_id,taille_attendue,lignes_attendues,debut_attendu,fin_attendue,statut,erreur
+part_000342.parquet,1xmIzo0vBBmzaPjDpICskjvr4tCNDtghC,469669819,12200133,2026-01-12T00:00:00.107000+00:00,2026-02-17T23:59:58.756000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000343.parquet,1fTKN8ei8IHGI7705URt_skeLHv5ZN8Sd,391503237,10440068,2026-02-18T00:00:00.264000+00:00,2026-03-26T23:59:55.845000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000344.parquet,1Y0pfBFoMiwn4ucAX09r_pUqjwv3cvT7c,331506018,9363187,2026-03-27T00:00:00.111000+00:00,2026-05-04T23:59:59.919000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000345.parquet,14wN3kiq-RfIm7P-aXiSpmevHr6-U-5DG,380253424,10688430,2026-05-05T00:00:00.070000+00:00,2026-06-10T23:59:59.746000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000346.parquet,1AuqAS27qyIR5g8WqhRrtgys1XNlnQeCj,339672628,9692435,2026-06-11T00:00:00.050000+00:00,2026-07-17T20:59:02.662000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000347.parquet,1YQ9TjOZksvLj8n0w4GlW0Cm87YpOSjzA,237688594,6658483,2026-07-19T22:00:03.067000+00:00,2026-08-24T23:59:59.829000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
+part_000348.parquet,1RrCh18vGZG6b_W0HChFFJpkjmfWDUWKu,291913210,7896153,2026-08-25T00:00:00.131000+00:00,2026-09-30T23:59:58.864000+00:00,UNAVAILABLE,AttributeError: 'pyarrow._parquet.FileMetaData' object has no attribute 'schema_arrow'
