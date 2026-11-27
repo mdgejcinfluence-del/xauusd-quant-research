@@ -45,6 +45,7 @@ def main(debut=DEBUT, fin=FIN):
             par_mois.setdefault(f"{h.year}-{h.month:02d}", []).append(df)
     for mois, morceaux in par_mois.items():
         neuf = pd.concat(morceaux)
+        mois = f"{mois}_lot{pd.Timestamp(debut).strftime('%m%d')}-{pd.Timestamp(fin).strftime('%m%d')}"  # lot hebdomadaire distinct, jamais d ecrasement mensuel
         neuf['source'] = 'DUKASCOPY_PRIMARY'; neuf['spread'] = neuf.ask - neuf.bid
         neuf = neuf.drop_duplicates('ts').sort_values('ts')
         f = pathlib.Path(f'/tmp/duka_completion_{mois}.parquet'); neuf.to_parquet(f, index=False)
