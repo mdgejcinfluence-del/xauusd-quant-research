@@ -1,0 +1,7 @@
+episodes_actifs,esperance_bp_par_episode_actif,total_bp,PF,gagnants_pct,ES95_bp,pire_perte_bp,exposition_moyenne,groupe,politique
+529,1.078,570.0,1.191,88.3,-91.9,-173.0,1.0,decouverte,P0 constante
+529,3.66,1936.0,1.484,88.3,-115.5,-246.3,1.658,decouverte,P1 inverse-volatilite
+397,2.8,1111.6,1.732,88.2,-58.9,-123.2,1.0,decouverte,P2 exclusion vol>Q75 decouverte
+1268,1.974,2502.8,1.369,92.0,-98.8,-257.5,1.0,validation,P0 constante
+1268,4.406,5586.2,1.654,92.0,-123.9,-290.6,1.508,validation,P1 inverse-volatilite
+780,3.335,2601.0,1.947,93.2,-68.8,-145.3,1.0,validation,P2 exclusion vol>Q75 decouverte

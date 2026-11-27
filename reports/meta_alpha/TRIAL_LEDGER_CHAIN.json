@@ -6232,6 +6232,26 @@
     "resultats": "ME-001.2 (garde-fou VERT): non-recuperations DEMONTREES comme aggravations profondes (profondeur mediane -186bp a 24h, quartiles -129/-267, extreme -546bp; 166/2136 episodes + 12 censures jamais comptees comme echecs); queue baseline absorbant 80.7% des gains (ES95 ~-200bp). Signatures precoces: separation mediane reelle a 300-900s (frac retracement 0.94 vs 0.53 a 900s) mais drapeau causal gele seq482 REFUTE (sensibilite 3-8%, specificite 97-100%). Familles de sortie gelees (temporelle 1h, excursions -30/-50/-80bp, non-amelioration): TOUTES inferieures a la baseline attente (+0.98/+1.56bp) en decouverte ET validation (-2.1 a -4.9bp) - proteger simplement detruit la recuperation, confirmation corpus du piege V1/V2-F2. Verdict: structure DEMONTREE; detecteur precoce COMPATIBLE MAIS NON IDENTIFIE; politiques simples REFUTEES. ME-001 reste SIGNATURE_DETECTED. Piste restante notee: risque dimensionne a l entree (nouvelle hypothese, donnees neuves requises). 5/5 tests PASS."
    },
    "entry_hash": "cda7784abab4c4666fd7851cd77d6daabe593ec1dbc693446c973986bf0efb5f"
+  },
+  {
+   "seq": 484,
+   "prev_hash": "cda7784abab4c4666fd7851cd77d6daabe593ec1dbc693446c973986bf0efb5f",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-001.3",
+    "perimetre": "Budget de risque a l entree ME-001 (garde-fou VERT). Base: episodes ME-001.2 (trajectoires, edge baseline) fusionnes a vol15_bp pre-entree de ME-001.1 (information disponible avant l entree). Fait mathematique consigne: une exposition constante multiplie PnL et risque par le meme facteur - elle ne change ni signe d esperance ni PF; seuls filtrage et ponderation peuvent modifier l economie relative. Politiques gelees: P0 exposition constante 1.0; P1 ponderation inverse de volatilite w=clip(10/vol15_bp, 0.25, 2.0) (constante d echelle declaree, non calibree); P2 exclusion a l entree si vol15_bp superieure au 75e percentile calcule sur la DECOUVERTE uniquement (par seuil), puis appliquee tel quel a la validation; P3 lecture capital: budget de perte par episode = 1% d un capital de reference 10000 pour un mouvement adverse de -200bp (enveloppe ES95 ME-001.2), rendement rapporte au capital mobilise. Metriques par politique x groupe (decouverte/validation separes): esperance ponderee, PF, ES95, pire perte, rendement/unite d exposition. Renforcements: NON DEMONTRABLE au-dela de l association LMD-008 depuis les artefacts actuels (pas de re-simulation). Aucun parametre optimise sur la validation; aucune politique declaree optimale; ME-001 reste SIGNATURE_DETECTED."
+   },
+   "entry_hash": "52edfd58a9c10fa630901fccd663b51d24f36059a1b60213e11d8c94d73388f0"
+  },
+  {
+   "seq": 485,
+   "prev_hash": "52edfd58a9c10fa630901fccd663b51d24f36059a1b60213e11d8c94d73388f0",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ME-001.3",
+    "resultats": "ME-001.3 (garde-fou VERT): fait mathematique confirme - l exposition constante ne change ni signe ni PF. Politiques gelees seq484 sur 1797 episodes avec vol pre-entree: P1 inverse-volatilite ameliore esperance/PF (decouverte PF 1.48, validation 1.65) mais aggrave la queue absolue (ES95 -124bp, exposition moy 1.5-1.7). P2 exclusion des entrees a vol pre-entree > Q75 decouverte (7.76/7.88/5.32bp): seule famille ameliorant esperance, PF (1.73/1.95) ET queue (ES95 -59/-69bp, pire -145bp validation) dans les deux groupes, gagnants conserves 88-93%. A budget 1% par -200bp, un extreme -546bp coute 2.7% du capital. Renforcements: toujours non demontrables comme necessaires. Verdict: filtrage a l entree FORTEMENT ETAYE comme gestion de queue dans ce cadre; edge net toujours COMPATIBLE MAIS NON IDENTIFIE; protocole prospectif gele (partitions post-2026-09-30, criteres pre-declares). ME-001 reste SIGNATURE_DETECTED. 5/5 tests PASS."
+   },
+   "entry_hash": "073ad393c40ec0e030cecc316a04293b3ae0b01a398a07f17f648820a8610763"
   }
  ]
 }

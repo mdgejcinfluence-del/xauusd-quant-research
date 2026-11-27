@@ -1,0 +1,3 @@
+groupe,capital_reference,profondeur_mediane_bp,profondeur_q95_bp,profondeur_max_bp,duree_mediane_h,duree_q95_h,exposition_pour_perte_1pct_a_-200bp,perte_episode_extreme_-546bp_a_cette_exposition_pct_capital
+decouverte,10000,17.9,125.7,205.9,0.5,29.7,0.05 unite/10000,2.73
+validation,10000,18.6,174.1,546.4,0.29,25.7,0.05 unite/10000,2.73
