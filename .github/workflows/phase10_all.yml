@@ -391,6 +391,17 @@ jobs:
         git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
         --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
         origin HEAD:arena/afe12737-xauusd-quant-research'
+    - name: RE-ENTRY-002 sonde page publique HFM 99001292 (commit immediat)
+      run: |
+        set +e
+        pip install -q requests
+        mkdir -p research/RE-ENTRY-002
+        python ci_tools/reentry002_probe.py 2>&1 | tee research/RE-ENTRY-002/PROBE_LOG.txt
+        rm -f research/RE-ENTRY-002/raw_strategy_view.html
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add research/RE-ENTRY-002/
+        git diff --cached --quiet || git commit -m 'RE-ENTRY-002: sonde page publique HFM (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
     - name: Echantillon Dukascopy seq431 (diagnostic codes HTTP, commit immediat)
       run: |
         set +e

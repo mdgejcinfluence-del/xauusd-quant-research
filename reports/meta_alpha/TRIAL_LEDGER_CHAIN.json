@@ -5702,6 +5702,19 @@
     "profitable_edge": false
    },
    "entry_hash": "be6cddb10f0d79e8e947f069a06b9d37a9e6e0cdcd90797e59187ec79d42d2a8"
+  },
+  {
+   "seq": 435,
+   "prev_hash": "be6cddb10f0d79e8e947f069a06b9d37a9e6e0cdcd90797e59187ec79d42d2a8",
+   "entry": {
+    "type": "RE_ENTRY_002_OPENING_PREREGISTRY",
+    "mission": "RE-ENTRY-002",
+    "objet": "elargir l echantillon de paniers reels Colorful drops (99001292) via pages publiques HFM uniquement; aucun contournement",
+    "decouverte": "page publique strategy-view?account=99001292 accessible: statistiques + Trading Activity reelle (dernieres lignes visibles); pagination a sonder en CI",
+    "regles": "paniers observes vs reconstruits separes; pas de negatifs inventes; holdout gele; Dukascopy comparatif seulement",
+    "profitable_edge": false
+   },
+   "entry_hash": "5da2c09fb5423a220c30b101d9a3d92e7415fbf5395b4046098830e4fb278ae0"
   }
  ]
 }
