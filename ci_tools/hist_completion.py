@@ -56,5 +56,28 @@ def main():
     print('heures OK:', sum(1 for v in man['heures'].values() if v['statut'] == 'OK'),
           '/ suivies:', len(man['heures']))
 
+
+def mode_echantillon():
+    """Diagnostic: 8 heures reperees, requetes sequentielles avec codes HTTP explicites."""
+    import urllib.request, urllib.error
+    heures = ['2026-10-01T10:00','2026-10-05T10:00','2026-10-12T10:00','2026-10-20T10:00',
+              '2026-11-02T10:00','2026-11-10T10:00','2026-11-17T10:00','2026-11-25T10:00']
+    res = {}
+    for hs in heures:
+        h = pd.Timestamp(hs)
+        u = f'https://datafeed.dukascopy.com/datafeed/XAUUSD/{h.year}/{h.month-1:02d}/{h.day:02d}/{h.hour:02d}h_ticks.bi5'
+        try:
+            with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 META-ALPHA-research'}), timeout=60) as r:
+                corps = r.read()
+            df = telecharger_heure(h)
+            res[hs] = {'http': r.status, 'octets': len(corps), 'ticks': 0 if df is None else int(len(df))}
+        except urllib.error.HTTPError as e:
+            res[hs] = {'http': e.code, 'octets': 0, 'ticks': 0}
+        except Exception as e:
+            res[hs] = {'erreur': f'{type(e).__name__}: {e}'}
+        print(hs, res[hs])
+    (SORTIE / 'ECHantillon.json'.replace('ECH','ECH')).write_text(json.dumps(res, indent=1))
+
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == 'echantillon': mode_echantillon()
+    else: main()

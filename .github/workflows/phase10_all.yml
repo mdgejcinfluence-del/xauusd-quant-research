@@ -391,6 +391,15 @@ jobs:
         git add reports/meta_alpha/phase10/DIAG_ACCESS_LOG.txt; git diff --cached
         --quiet || git commit -m ''Phase 10: diagnostic acces sources''; git push
         origin HEAD:arena/afe12737-xauusd-quant-research'
+    - name: Echantillon Dukascopy seq431 (diagnostic codes HTTP, commit immediat)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow
+        python ci_tools/hist_completion.py echantillon 2>&1 | tee research/HISTORICAL-DATA-COMPLETION/ECHANTILLON_LOG.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add research/HISTORICAL-DATA-COMPLETION/
+        git diff --cached --quiet || git commit -m 'HIST seq431: echantillon Dukascopy (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research
     - name: Completion historique Dukascopy 2026-10-01 a 2026-11-26 (seq431)
       run: |
         set +e
