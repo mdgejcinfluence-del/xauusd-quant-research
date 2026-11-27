@@ -1,0 +1,9 @@
+partitions 2026: 7
+part_000342.parquet VERIFIED V2 paniers 740
+part_000343.parquet VERIFIED V2 paniers 522
+part_000344.parquet VERIFIED V2 paniers 597
+part_000345.parquet VERIFIED V2 paniers 153
+part_000346.parquet VERIFIED V2 paniers 224
+part_000347.parquet VERIFIED V2 paniers 802
+part_000348.parquet VERIFIED V2 paniers 7
+TOTAL V2 janv-sept paniers 3045 PnL S0 -32.306
