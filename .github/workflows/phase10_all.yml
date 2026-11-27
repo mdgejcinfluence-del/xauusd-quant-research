@@ -3027,3 +3027,25 @@ jobs:
         git add docs/checkpoints/ME002_DISLOCATION_001/
         git diff --cached --quiet || git commit -m 'ME-002.1: detection CI desequilibres temporaires (protocole seq488)'
         for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
+  me003:
+    name: ME-003.1 continuation d impulsion (CI, seq490)
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    if: ${{ inputs.phase25b }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Telechargement partitions et detection (partitions jamais commitees)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow gdown
+        mkdir -p docs/checkpoints/ME003_IMPULSE_001
+        python ci_tools/me003_impulse_ci.py 2>&1 | tee docs/checkpoints/ME003_IMPULSE_001/CI_CONSOLE.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/ME003_IMPULSE_001/
+        git diff --cached --quiet || git commit -m 'ME-003.1: detection CI continuation impulsion (protocole seq490)'
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done

@@ -6294,6 +6294,16 @@
     "resultats": "ME-002.1 (garde-fou VERT, autorisation autonome du fondateur): phenomene de resorption DEMONTRE (mediane 15min retouchee dans 47-86% des cas, 4272 episodes, 5 partitions) mais exploitation en fade symetrique REFUTEE: esperance nette apres cout central negative dans les 6 combinaisons groupe x seuil (-2.0 a -5.2bp, PF 0.46-0.88), decouverte et validation concordantes; les non-resorptions a 4h (-136 a -301bp) dominent. ME-002 REJECTED sous cette forme; aucune source independante pour le portefeuille via ce couple. Contraste utile: ce n est pas tout retour a un niveau qui paie - la geometrie precise de ME-001 (acheteur, retour au plus haut, filtre d entree) reste la seule candidate, en attente de validation prospective (collecte D en cours, regle d arret seq486). 4/4 tests PASS."
    },
    "entry_hash": "e14c254228c07e762eb6e55059179fe54d78054c25b6249bbeef3e6a0b0edc97"
+  },
+  {
+   "seq": 490,
+   "prev_hash": "e14c254228c07e762eb6e55059179fe54d78054c25b6249bbeef3e6a0b0edc97",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-003.1",
+    "perimetre": "ME-003.1 continuation d impulsion (garde-fou VERT, programme autonome valide par le fondateur). Definition gelee: impulsion = rendement du mid sur 5 minutes >= A bp en valeur absolue, A dans {5,10,20} fixe, barres 5s causales; trade DANS le sens de l impulsion (achat a l ask apres impulsion haussiere, vente au bid apres impulsion baissiere); sorties marquees aux prix executables a horizons fixes {15min, 1h, 4h} (aucun trailing, aucun parametre adaptatif); couts comptes une fois (Bid/Ask + central 1.2bp); episodes non chevauchants avec refroidissement de 1h apres chaque declenchement pour limiter la dependance; mesures: taux de continuation (mouvement supplementaire >= A/2 en 1h), esperance nette par horizon, PF, excursions max favorable/defavorable sur 1h. Memes 5 partitions certifiees (decouverte 2012/2016, validation 2020/2024/2026). Lien documente: AESR-002 avait trouve des retours forward faibles apres les entrees H3 simulees - ce test conditionne sur l impulsion generique, pas sur H3. Aucun moteur cree; ME-001 reste en validation prospective passive."
+   },
+   "entry_hash": "86ec1ebcd8c70a193aa79b3f153ab52c1e60df4ffdac9391aa940f185abff268"
   }
  ]
 }
