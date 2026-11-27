@@ -6131,6 +6131,16 @@
     "resultats": "CTRS-007 CLOTURE DE CAMPAGNE - VERDICT B (reconstruction partielle avec frontiere didentifiabilite). Demontre: mecanique PWA/deplacement par renforcement, trajectoires de recuperation bornees, refutations completes (premiers passages de sortie 19-246s trop tot, persistance unique 35 intersections vides, cadence ancree >1s, doublement universel du sizing, H1/H2, fidelite=rentabilite), economie negative des moteurs geles V1/V2 sur 2026. Fortement contraint: entree H3+F2 (fidelite en-echantillon), renforcement -4.7 a -6.6bp, signature pre-cloture (etat favorable + jambe haussiere 5/5). Non identifie et laisse en familles bornees: declencheur exact de cloture (cadence phase libre / hybride / variable hors-Mid equivalentes), formule de sizing, stop, Sell, plafond, separation des horloges decision/transmission/execution (resolution tick 0.05-0.25s, pas de Bid/Ask ni de logs). Rentabilite du candidat non chiffrable honnetement; profitable_edge=False. Architecture 12 modules avec niveaux explicites. 7/7 tests scientifiques PASS. Identification supplementaire impossible sans observations nouvelles (clotures reelles independantes avec Bid/Ask)."
    },
    "entry_hash": "d8faaf2fe08d26d76bf0eb47430d8a88780268fd990912c0a547519d11800914"
+  },
+  {
+   "seq": 474,
+   "prev_hash": "d8faaf2fe08d26d76bf0eb47430d8a88780268fd990912c0a547519d11800914",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "BACKTEST-2026-001",
+    "perimetre": "Backtest 2026-01-01 a 2026-11-27 moteurs GELES V1 (colorful_replay.py) et V2-F2 (colorful_replay_v2.py), hashes enregistres au commit seq474, aucune modification de regle pendant le test. V1 janv-sept: rejeu CI archive FULL-REPLAY (seq457, paniers horodates reutilises comme execution gelee tracee). V2 janv-sept: nouveau rejeu CI gdown partitions 342-348 (meme protocole que seq456-457, moteur importe sans modification). Novembre: rejeu local V1+V2 sur les 7 jours de ticks presents (20,22-27). Octobre: aucune partition certifiee - declare GAP, jamais simule. Couts: spread via Bid/Ask compte une fois + scenarios moteur S0/S1/S2/S3 (CENTRAL 1.2bp) inchanges. Scenarios A/B/C deduits de ces sorties sans re-optimisation. Verdict selon signe net et couverture."
+   },
+   "entry_hash": "e0b6ec7d2af8d012122569e21fe3ba8ac108a940c544746cc4f0a65c7e5cb42e"
   }
  ]
 }
