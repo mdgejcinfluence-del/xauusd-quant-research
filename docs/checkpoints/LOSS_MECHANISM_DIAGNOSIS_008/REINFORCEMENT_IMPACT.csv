@@ -1,0 +1,5 @@
+moteur,nb_positions,paniers,pnl_net_S0,esperance,gagnants_pct,duree_moy_s,type,note
+V1,2,2732,1.561,0.0006,30.9,77.8,ASSOCIATION (non causale),le passage a 3 positions est declenche par un recul de -5.5bp: selection adverse par construction; effet causal deja NOT_IDENTIFIED seq459 (126/140 censures)
+V1,3,1375,-31.963,-0.0232,7.2,5369.3,ASSOCIATION (non causale),le passage a 3 positions est declenche par un recul de -5.5bp: selection adverse par construction; effet causal deja NOT_IDENTIFIED seq459 (126/140 censures)
+V2-F2,2,2240,-5.011,-0.0022,27.3,82.8,ASSOCIATION (non causale),le passage a 3 positions est declenche par un recul de -5.5bp: selection adverse par construction; effet causal deja NOT_IDENTIFIED seq459 (126/140 censures)
+V2-F2,3,1035,-28.225,-0.0273,5.7,4245.5,ASSOCIATION (non causale),le passage a 3 positions est declenche par un recul de -5.5bp: selection adverse par construction; effet causal deja NOT_IDENTIFIED seq459 (126/140 censures)

@@ -6162,6 +6162,16 @@
     "perimetre": "Diagnostic des pertes V1/V2-F2 sur paniers certifies BACKTEST-2026-001 (seq475). Aucune modification des moteurs geles, aucune optimisation, aucune V3. Analyses: (A) forensique par panier depuis les registres (contribution cumulee, extremes, duree, positions); MFE/MAE et temps sous PWA calcules a posteriori sur ticks (novembre local; janv-sept en CI sur partitions certifiees, approximation PWA final declaree); (B) paniers non clotures: mecanisme structurel (panier unique, sortie Mid>=PWA, aucun stop) - chronologie exacte du panier bloquant marquee NON DEMONTRABLE si non reconstructible depuis les sorties archivees, aucune cloture inventee; (C) renforcements: effet mecanique demontre anterieurement, association par nb_positions quantifiee, effet causal deja NOT_IDENTIFIED (seq459) non re-presente comme causal; (D) rendements forward apres entree par horizons (nov local, janv-sept CI, censure declaree); (E) decomposition couts S0-S3 deja certifiee; (F) attribution non additive par buckets avec interactions declarees. profitable_edge=False."
    },
    "entry_hash": "f6188ea36db9e83fc89a89602780bf295861017abe62e2ac78b60be4778a0732"
+  },
+  {
+   "seq": 477,
+   "prev_hash": "f6188ea36db9e83fc89a89602780bf295861017abe62e2ac78b60be4778a0732",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "LMD-008",
+    "resultats": "LMD-008 diagnostic des pertes (baseline seq475 inchangee). Source principale DEMONTREE: interaction accumulation x couts. Paniers 3 positions: V1 -31.96 (2 positions +1.56), V2 -28.23/-33.24; taux de gain 7.2%/5.7%; le declencheur -5.5bp selectionne les trajectoires adverses (forward median -4.7bp a 5min) et triple l exposition ou la recuperation echoue. Effet causal du renforcement toujours NOT_IDENTIFIED (censure seq459). Entrees: forward medians positifs (paniers 2 positions +2.6bp 5min, +6.5bp 1h); brut estime avant spread+cout variable +105 (V1)/+74 (V2) contre ~136/108 de couts estimes (spread median CI 1.31-1.66bp + 1.2bp, comptes une fois): marge brute/panier ~+0.026 < cout ~0.033 USD. Sortie plafonnee au PWA (gain moyen +0.035) + aucun stop: duree max 13.6j, septembre 0 cloture (panier bloquant non enregistre: identite NON DEMONTRABLE, mecanisme structurel demontre). Deficit diffus: 100 pires paniers = 7.5%/9.5% des pertes. V2-F2 plus mauvais car F2 retire proportionnellement plus de petits gagnants rapides (<=60s +6.53) que de perdants; 62 vs 40 pertes consecutives. Forensique complete 7382 paniers (MFE/MAE/temps sous PWA, CI run 46043159310 + novembre local). 6/6 tests PASS. Aucune V3 proposee."
+   },
+   "entry_hash": "f6d9815c483d8ca90f14ed8d85909efbbeecb119f1ea07b852f2dca331575651"
   }
  ]
 }

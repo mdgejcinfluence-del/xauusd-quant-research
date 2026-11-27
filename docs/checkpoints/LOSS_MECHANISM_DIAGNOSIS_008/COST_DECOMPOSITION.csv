@@ -1,0 +1,3 @@
+moteur,pnl_avant_cout_variable_1.2bp (spread deja paye via Bid/Ask),cout_variable_S0_1.2bp,net_S0,net_S1_+0.3bp,net_S2_+0.6bp,net_S3_+2bp,lecture
+V1,30.051,60.453,-30.402,-45.516,-60.634,-131.162,les moteurs sont positifs avant le cout variable de 1.2bp mais le spread Bid/Ask est deja deduit dans ce brut; decomposition exacte du spread en novembre (calcul local) dans le rapport; le signe net est negatif des S0
+V2-F2,14.615,47.852,-33.236,-45.194,-57.161,-112.994,les moteurs sont positifs avant le cout variable de 1.2bp mais le spread Bid/Ask est deja deduit dans ce brut; decomposition exacte du spread en novembre (calcul local) dans le rapport; le signe net est negatif des S0

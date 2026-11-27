@@ -1,0 +1,3 @@
+moteur,deficit_net_S0,paniers_3_positions,paniers_2_positions,paniers_<=60s,paniers_1-10min,cout_variable_1.2bp,methode,part_directement_quantifiable
+V1,-30.402,-31.963,1.561,12.992,-37.036,60.455,"decomposition par segments (chevauchants: un panier 3 positions est aussi un panier long/couteux) - NON ADDITIVE, interactions declarees",segmentation complete du net S0; attribution causale entre mecanismes NOT_IDENTIFIED
+V2-F2,-33.236,-28.225,-5.011,6.534,-31.643,47.854,"decomposition par segments (chevauchants: un panier 3 positions est aussi un panier long/couteux) - NON ADDITIVE, interactions declarees",segmentation complete du net S0; attribution causale entre mecanismes NOT_IDENTIFIED

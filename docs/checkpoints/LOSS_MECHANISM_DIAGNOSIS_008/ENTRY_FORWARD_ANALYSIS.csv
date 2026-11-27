@@ -1,0 +1,9 @@
+segment,moteur,nb_positions,paniers,MFE_median_bp,MAE_median_bp,frac_sous_pwa_mediane,fwd_30s_bp_median,fwd_60s_bp_median,fwd_300s_bp_median,fwd_900s_bp_median,fwd_1800s_bp_median,fwd_3600s_bp_median,fwd_14400s_bp_median
+janv-sept certifie,V1,2,2493,2.45,-3.27,0.599,0.81,1.66,2.62,3.24,3.8,6.52,15.26
+janv-sept certifie,V1,3,1235,4.42,-7.08,0.746,-2.33,-4.15,-4.71,-4.51,-4.36,-2.17,4.32
+janv-sept certifie,V2-F2,2,2100,2.05,-3.08,0.632,0.8,1.45,2.02,2.56,3.56,4.56,8.66
+janv-sept certifie,V2-F2,3,945,4.13,-7.36,0.775,-2.06,-3.75,-5.38,-5.47,-5.65,-5.28,-2.63
+novembre partiel,V1,2,239,3.32,-3.56,0.529,1.28,2.22,4.9,-0.38,2.12,4.68,13.82
+novembre partiel,V1,3,140,5.24,-6.83,0.677,-2.46,-4.03,-4.8,-6.58,-3.11,0.59,14.23
+novembre partiel,V2-F2,2,140,2.88,-3.5,0.56,1.23,1.98,3.23,1.2,4.81,10.92,11.19
+novembre partiel,V2-F2,3,90,4.46,-6.91,0.667,-2.43,-3.96,-5.32,-4.88,-2.84,0.72,2.08
