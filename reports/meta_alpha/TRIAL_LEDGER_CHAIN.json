@@ -6212,6 +6212,16 @@
     "resultats": "ME-001.1 (garde-fou VERT): fenetres de recuperation DEMONTREES dans le corpus certifie (2327 episodes, 5 partitions 2012-2026, protocole gele seq480): recuperation complete 68-94% en 24h apres ecart 5/10/20bp sous le plus haut 15min; retracement 50% median 1-14min; non-recuperation 6-32% avec pertes a 4h jusqu a -257bp. Edge net a execution observable (ask->bid, couts une fois): a 5bp negatif dans 4/5 segments (PF 0.75-0.96) = REFUTE a ce seuil; a 10-20bp mixte (+0.2 a +10.1bp, PF 0.95-1.96, negatif decouverte 2016 a 20bp et validation 2026 a 10bp). Aucun regime de volatilite discriminant stable. Verdict: phenomene DEMONTRE, mecanisme FORTEMENT ETAYE, edge net COMPATIBLE MAIS NON IDENTIFIE. ME-001 -> SIGNATURE_DETECTED (pas VALIDATED). Bloquant restant: gestion de l echec de recuperation. 6/6 tests PASS."
    },
    "entry_hash": "976d03a37243d88568236e337f39addd0950a38bf0efefa3bd9cbea3b6290723"
+  },
+  {
+   "seq": 482,
+   "prev_hash": "976d03a37243d88568236e337f39addd0950a38bf0efefa3bd9cbea3b6290723",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-001.2",
+    "perimetre": "Forensique des non-recuperations ME-001 (garde-fou VERT). Meme protocole episodes que seq480 (inchange). Nouveaux enregistrements par episode: rendements de trajectoire aux horizons {10,30,60,300,900,1800,3600,14400,86400}s (censures marques), raison de fin (recupere/horizon24h/fin de partition=censure), caracteristiques causales aux points de controle tau={60,300,900}s (fraction de retracement atteinte, profondeur courante, temps depuis derniere amelioration du retracement, volatilite 5min vs 15min, nombre de nouveaux plus bas). Detection preenregistree: aux tau, drapeau compromis = retracement max < 0.25 ET profondeur courante <= -2x seuil initial; sensibilite/specificite + compromis economique (sortie au bid au drapeau vs baseline recuperation/4h), regles fixees, decouverte 2012/2016 puis validation 2020/2024/2026 sans re-selection. Familles de sortie contrefactuelles fixees: temporelle {1h}, excursion {-30,-50,-80bp vs reference}, non-amelioration {900s sans nouveau max de retracement apres 300s}; aucune declaree optimale. Categories de profondeur par quartiles des non-recuperes (statistique, sans lien au PnL). Aucun moteur cree, V1/V2-F2 intouches."
+   },
+   "entry_hash": "727393de08e14e7f63a55f04d7dd75a3aeda1967d55215a0a9482690703aa699"
   }
  ]
 }

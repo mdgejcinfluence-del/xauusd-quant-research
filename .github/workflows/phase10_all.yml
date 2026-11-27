@@ -2961,3 +2961,25 @@ jobs:
         git add docs/checkpoints/ME001_RECOVERY_SIGNATURE_001/
         git diff --cached --quiet || git commit -m 'ME-001.1: detection CI fenetres de recuperation (protocole seq480)'
         for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
+  me0012:
+    name: ME-001.2 forensique non-recuperations (CI, seq482)
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    if: ${{ inputs.phase25b }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Telechargement partitions et forensique (partitions jamais commitees)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow gdown
+        mkdir -p docs/checkpoints/ME001_NONRECOVERY_002
+        python ci_tools/me0012_ci.py 2>&1 | tee docs/checkpoints/ME001_NONRECOVERY_002/CI_CONSOLE.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/ME001_NONRECOVERY_002/
+        git diff --cached --quiet || git commit -m 'ME-001.2: forensique CI non-recuperations (protocole seq482)'
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
