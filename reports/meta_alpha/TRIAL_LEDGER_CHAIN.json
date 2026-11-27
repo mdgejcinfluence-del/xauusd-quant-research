@@ -6314,6 +6314,27 @@
     "resultats": "ME-003.1 (garde-fou VERT): continuation d impulsion - extension de trajectoire reelle (60-89% des cas, MFE mediane +8/+14bp en 1h) mais edge executable REFUTE: esperance nette negative aux 3 horizons x 3 seuils x 2 groupes (-1.6 a -8.6bp, medianes negatives). Lecture croisee ME-002 x ME-003: fade vers la mediane et continuation echouent par des queues opposees (persistance des ecarts vs resorption des extensions); la geometrie asymetrique de ME-001 (acheteur, retour au plus haut, filtre d entree) reste la seule candidate, en attente de validation prospective (collecte D en cours). ME-003 REJECTED sous cette forme. 4/4 tests PASS."
    },
    "entry_hash": "16cc77414bb4732c975e55725f273d633dee61a7f80e1e91738f42aa8c5a02cd"
+  },
+  {
+   "seq": 492,
+   "prev_hash": "16cc77414bb4732c975e55725f273d633dee61a7f80e1e91738f42aa8c5a02cd",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-DESIGN-010",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Conception de l intelligence de reverse engineering economique META ALPHA (docs/architecture/META_ALPHA_ERE/): 16 documents d architecture + 5 diagrammes. Mission de CONCEPTION uniquement: aucun robot, aucun algorithme definitif, aucune optimisation, aucun backtest nouveau, moteurs geles et seuils ME-001 intouches, performances de la validation prospective ME-001 non consultees. Reutilise l existant: constitution, doctrine, garde-fou, registre ME-001..004, corpus certifie 348 partitions, registre chaine 491 entrees."
+   },
+   "entry_hash": "f34442ea427217be5ca9414bb7c8eea94f636df13d8b15ba29238ae989e87e47"
+  },
+  {
+   "seq": 493,
+   "prev_hash": "f34442ea427217be5ca9414bb7c8eea94f636df13d8b15ba29238ae989e87e47",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-DESIGN-010",
+    "resultats": "Conception META ALPHA ERE v1.0 (garde-fou VERT): 16 documents + 5 diagrammes SVG dans docs/architecture/META_ALPHA_ERE/. Neuf moteurs A-I formalises depuis la pratique reelle (seq433-491): ingestion de dossiers incomplets, reverse engineering comportemental, generateur d hypotheses concurrentes, bibliotheque scientifique sourcee, concepteur autonome d experiences (preenregistrement, regles d arret), decouverte sur corpus certifie segmente, identification avec verdicts qualifies, ingenierie de strategies independantes derriere une porte de gouvernance (AUCUN modele ne la franchit aujourd hui), validation/portefeuille. Scenario des 4 transactions entierement traite; separation identification/exploitation explicite. Aucune implementation commencee, aucun backtest, moteurs geles intacts, validation prospective ME-001 non consultee. 5 decisions reservees au fondateur. 6/6 tests PASS."
+   },
+   "entry_hash": "f5df25d333aedb00be77f77bf1faf23ed66efedffc1ab18ff02ab789d81912a7"
   }
  ]
 }
