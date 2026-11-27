@@ -1,0 +1,15 @@
+{
+ "sources": {
+  "janv-sept": "partitions Dukascopy certifiees 342-348 via Drive/gdown en CI (VERIFIED, sha256 dans CI_PARTITION_AUDIT.csv)",
+  "novembre": "research/MA-EDGE-02/data/duka_2026-11-*.parquet (repo)"
+ },
+ "moteurs": {
+  "V1": "rejeu archive FULL-REPLAY seq457 (paniers reutilises) + novembre rejoue localement, reconciliation exacte 379/-0.432",
+  "V2-F2": "rejeu CI seq474 (run 46040242849) + novembre local, reconciliation 230/-0.930"
+ },
+ "jamais": [
+  "ticks HFM reels (absents)",
+  "donnees octobre",
+  "extrapolation des gaps"
+ ]
+}

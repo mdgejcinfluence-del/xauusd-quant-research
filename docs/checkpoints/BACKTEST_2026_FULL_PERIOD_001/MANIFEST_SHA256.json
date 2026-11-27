@@ -1,0 +1,82 @@
+{
+ "BACKTEST_2026_EXECUTIVE_REPORT.md": {
+  "taille": 1805,
+  "sha256": "1b16597a53a3d5608f2c128393569df10fe95de4f3b97ce21792d08731e3f40d"
+ },
+ "BACKTEST_V1_RESULTS.csv": {
+  "taille": 596841,
+  "sha256": "1746d84311a809ac13874be4357fa48145d0eb6f862b230938c46a35c6c8e1f9"
+ },
+ "BACKTEST_V2_F2_RESULTS.csv": {
+  "taille": 477889,
+  "sha256": "bf46a8b8e89dade8410c9fda4b9a25fae742248ecf26c957eb721d4225b18911"
+ },
+ "BACKTEST_VALIDATION_REPORT.md": {
+  "taille": 1307,
+  "sha256": "8d4fa8d0ec80cb2d5c2ef87cb8442092137c7f87d7f5bebe7e5adbefa8b7411c"
+ },
+ "CI_CONSOLE.txt": {
+  "taille": 372,
+  "sha256": "9f105abab35aad100d20dacb31b94da1b0e8a0976dd312fd6a17a89b1d10dbc4"
+ },
+ "CI_PARTITION_AUDIT.csv": {
+  "taille": 1666,
+  "sha256": "ed555fcaa47b9cf4c84a159f96128803e773b31c7915ce4c895e76003a6318e5"
+ },
+ "CI_V2_BASKETS_JAN_SEP.csv": {
+  "taille": 448450,
+  "sha256": "50e89dd5bc61b3dee28c7747ebfccca1c109f8b7e3c17fc2238fd537ccd7199b"
+ },
+ "CI_V2_LOG.txt": {
+  "taille": 372,
+  "sha256": "9f105abab35aad100d20dacb31b94da1b0e8a0976dd312fd6a17a89b1d10dbc4"
+ },
+ "COST_SENSITIVITY.csv": {
+  "taille": 260,
+  "sha256": "910c3cd76402e7311ebd496c711ea8c886e7943010a7a5987c166f8dc23cea94"
+ },
+ "DATA_COVERAGE_2026.csv": {
+  "taille": 878,
+  "sha256": "62744571dce7189d720eee0f788c995d9d59f930d0bc7d9e2aa5513b032e90ff"
+ },
+ "DATA_GAPS_2026.csv": {
+  "taille": 753,
+  "sha256": "791e23db7442e3ab625192e93e603ee8affa196995500374fe1c3ec37650b199"
+ },
+ "DATA_PROVENANCE.json": {
+  "taille": 551,
+  "sha256": "a033030a4e08e5e7c8e8e5f8f7b269a53c3c06f579f8e626b35e5517647b7d73"
+ },
+ "DRAWDOWN_ANALYSIS.csv": {
+  "taille": 115,
+  "sha256": "2b40a39e875b9da6ff77ba0b614b01efa9bf45e7ab623d0f97a23a1f4c9a3981"
+ },
+ "ENGINE_COMPARISON.md": {
+  "taille": 1719,
+  "sha256": "9a388db8d6fad3997fa1578e960f8410695d135b7f266ef7daa5bdad6796ec8c"
+ },
+ "ENGINE_METRICS.csv": {
+  "taille": 1233,
+  "sha256": "682e801189f2a30bce8995f99669c31197baf60bb8ff652c098067251ddace49"
+ },
+ "FINAL_VERDICT.md": {
+  "taille": 977,
+  "sha256": "baf0808e4172f5766d8e34bf4c13d75d74bca21929a4ccf1b8c98a1fe66c3756"
+ },
+ "FROZEN_ENGINE_CONFIGS.json": {
+  "taille": 841,
+  "sha256": "a06b46b345c493f9bfdd50bc6f10f7292d8ac5891eef31311df2f35d772d1cce"
+ },
+ "MONTHLY_PERFORMANCE_COMPARISON.csv": {
+  "taille": 1727,
+  "sha256": "cf61c78824513f3c1972e828b9689bd18c893b1574eca06b75d1087eb3583e20"
+ },
+ "TRADE_AND_BASKET_LEDGER.csv": {
+  "taille": 1106573,
+  "sha256": "1c7f250da691b93946ee8c2a8f404be15b4680a9f6bdf626f98d945276de606e"
+ },
+ "chart_equity_drawdown.png": {
+  "taille": 60946,
+  "sha256": "d52b65a726ddedb8b5e13d51162a1981a5099bd300ef338e10620869544afcec"
+ }
+}

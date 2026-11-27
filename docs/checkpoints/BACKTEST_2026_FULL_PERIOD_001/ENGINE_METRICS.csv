@@ -1,0 +1,7 @@
+moteur_scenario,capital_reference_usd,paniers,positions,resultat_brut_est_usd,couts_implicites_S0_usd,resultat_net_S0_usd,rendement_net_pct,gagnants_pct,profit_factor,esperance_par_panier_usd,gain_moyen_usd,perte_moyenne_usd,drawdown_max_usd,duree_moyenne_s,duree_max_s,positions_max_par_panier,volume_max_panier,pire_panier_usd,serie_max_pertes_consecutives
+V1 / A janv-sept certifie,10000.0,3728,8691,25.993,55.963,-29.97,-0.3,22.6,0.498,-0.008,0.0353,-0.0207,-29.97,1987.1,1173194.2,3,0.04,-0.1417,40
+V2-F2 / A janv-sept certifie,10000.0,3045,7035,12.792,45.098,-32.306,-0.323,20.1,0.355,-0.0106,0.0291,-0.0206,-32.3,1484.5,1110126.2,3,0.04,-0.1493,62
+V1 / B couverture maximale,10000.0,4107,9589,30.051,60.453,-30.402,-0.304,22.9,0.528,-0.0074,0.0361,-0.0203,-31.087,1849.4,1173194.2,3,0.04,-0.1417,40
+V2-F2 / B couverture maximale,10000.0,3275,7585,14.615,47.852,-33.236,-0.332,20.5,0.371,-0.0101,0.0293,-0.0203,-33.452,1398.4,1110126.2,3,0.04,-0.1493,62
+V1 / novembre partiel,10000.0,379,898,4.058,4.49,-0.432,-0.004,26.1,0.906,-0.0011,0.0422,-0.0165,-1.215,494.9,63820.1,3,0.04,-0.0916,15
+V2-F2 / novembre partiel,10000.0,230,550,1.823,2.753,-0.93,-0.009,24.8,0.663,-0.004,0.0322,-0.016,-1.174,258.0,17698.8,3,0.04,-0.0334,17

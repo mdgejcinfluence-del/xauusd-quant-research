@@ -1,0 +1,9 @@
+segment,source,debut,fin,ticks,doublons_timestamps,statut
+part_000342,"Dukascopy certifie (Drive, audit seq457/CI seq474)",2026-01-12 00:00:00,2026-02-17 23:59:58,12200133,0,VERIFIED
+part_000343,Dukascopy certifie,2026-02-18 00:00:00,2026-03-26 23:59:55,10440068,0,VERIFIED
+part_000344,Dukascopy certifie,2026-03-27 00:00:00,2026-05-04 23:59:59,9363187,0,VERIFIED
+part_000345,Dukascopy certifie,2026-05-05 00:00:00,2026-06-10 23:59:59,10688430,0,VERIFIED
+part_000346,Dukascopy certifie,2026-06-11 00:00:00,2026-07-17 20:59:02,9692435,0,VERIFIED
+part_000347,Dukascopy certifie,2026-07-19 22:00:03,2026-08-24 23:59:59,6658483,0,VERIFIED
+part_000348,Dukascopy certifie,2026-08-25 00:00:00,2026-09-30 23:59:58,7896153,0,VERIFIED
+"novembre 20,22,23,24,25,26,27",Dukascopy local (repo),2026-11-20 00:00:00,2026-11-27 09:59:59,2868871,0,"PARTIAL (7 jours, heures partielles)"

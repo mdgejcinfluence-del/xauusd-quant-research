@@ -1,0 +1,7 @@
+gap,debut,fin,consequence,traitement
+debut janvier absent,2026-01-01,2026-01-11 23:59,janvier PARTIAL,"non simule, mention PARTIAL"
+trou juillet,2026-07-17 21:00,2026-07-19 21:59,juillet PARTIAL,non simule
+octobre entier absent,2026-10-01,2026-10-31,aucun backtest octobre possible,"GAP declare, jamais extrapole"
+novembre partiel,2026-11-01,2026-11-27,"7 jours de ticks seulement (20,22-27), heures partielles","PARTIAL, non annualise"
+septembre sans cloture,2026-09-01,2026-09-30,"donnees completes mais 0 panier cloture (panier long ouvert bloquant, sans stop)","documente, aucune cloture inventee"
+backfill Kaggle oct-nov,2026-10-01,2026-11-26,heures encore manquantes selon extractions anterieures,"non integre (non certifie), GAP maintenu"

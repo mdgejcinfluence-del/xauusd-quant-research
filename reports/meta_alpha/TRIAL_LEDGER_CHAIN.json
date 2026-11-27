@@ -6141,6 +6141,17 @@
     "perimetre": "Backtest 2026-01-01 a 2026-11-27 moteurs GELES V1 (colorful_replay.py) et V2-F2 (colorful_replay_v2.py), hashes enregistres au commit seq474, aucune modification de regle pendant le test. V1 janv-sept: rejeu CI archive FULL-REPLAY (seq457, paniers horodates reutilises comme execution gelee tracee). V2 janv-sept: nouveau rejeu CI gdown partitions 342-348 (meme protocole que seq456-457, moteur importe sans modification). Novembre: rejeu local V1+V2 sur les 7 jours de ticks presents (20,22-27). Octobre: aucune partition certifiee - declare GAP, jamais simule. Couts: spread via Bid/Ask compte une fois + scenarios moteur S0/S1/S2/S3 (CENTRAL 1.2bp) inchanges. Scenarios A/B/C deduits de ces sorties sans re-optimisation. Verdict selon signe net et couverture."
    },
    "entry_hash": "e0b6ec7d2af8d012122569e21fe3ba8ac108a940c544746cc4f0a65c7e5cb42e"
+  },
+  {
+   "seq": 475,
+   "prev_hash": "e0b6ec7d2af8d012122569e21fe3ba8ac108a940c544746cc4f0a65c7e5cb42e",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "BACKTEST-2026-001",
+    "verdict": "NEGATIF",
+    "resultats": "BACKTEST-2026-001 verdict NEGATIF. Couverture reelle: 2026-01-12 a 2026-09-30 certifiee (66,938,889 ticks, partitions VERIFIED) + novembre partiel 7 jours; octobre GAP jamais simule; janvier/juillet/septembre/novembre PARTIAL documentes. V1 gele (4107 paniers): net S0 -30.40 USD modele, PF 0.528, gagnants 22.9%, DD -31.09, esperance -0.0074/panier. V2-F2 gele (3275 paniers, dont 3045 janv-sept rejoues en CI run 46040242849, moteur importe sans modification): net S0 -33.24, PF 0.371, DD -33.45, 62 pertes consecutives. Reconciliations exactes: V1 nov 379/-0.432 (seq455), V2 nov 230/-0.930 (seq459), V1 janv-sept 3728/-29.97 (seq457). Un seul mois positif (V1 juin +0.83). Scenario couts S3: V1 -131.16, V2 -112.99. Septembre: donnees completes mais 0 cloture (panier sans stop bloquant ~13.6j max). V1 superieur a V2-F2 sur net/PF/DD/esperance; fidelite F2 != rentabilite. Aucun parametre modifie (hashes verifies). 7/7 tests PASS. profitable_edge=False confirme pour les deux moteurs."
+   },
+   "entry_hash": "c99c2d8cb35cfc0c3223417a0faa0bebf01695b3b5f14387e895bc480fe9dc8f"
   }
  ]
 }

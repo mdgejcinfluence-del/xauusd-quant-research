@@ -1,0 +1,19 @@
+{
+ "moteurs": {
+  "V1": {
+   "script": "ci_tools/colorful_replay.py",
+   "sha256": "3c190d3ea9685d27e6e4ac717e69d59bde4c96b341672a9b20d90ef04980de18",
+   "cout_bp_CENTRAL": 1.2,
+   "regles": "H3, amorcage +30s, 3e a -5.5bp vol 0.02, cloture Mid>=PWA, plafond 3, aucun stop"
+  },
+  "V2-F2": {
+   "script": "ci_tools/colorful_replay_v2.py",
+   "sha256": "54a46885a80cb00cda672c6b396822c1d69b5ff01f813c8ad08d38396996cd0c",
+   "ajout": "F2 unicite M15"
+  }
+ },
+ "capital_reference_usd": 10000,
+ "convention": "PnL moteur en USD par unite de prix x volume (contract size 1, XAUUSDc); spread via Bid/Ask compte une fois; scenarios S0 (spread+1.2bp) a S3 (spread+3.2bp cumules dans les colonnes archivees)",
+ "periode_demandee": "2026-01-01 a 2026-11-27",
+ "periode_reellement_couverte": "2026-01-12 a 2026-09-30 (certifie) + 7 jours de novembre"
+}

@@ -1,0 +1,9 @@
+moteur,scenario_cout,resultat_net_usd,paniers
+V1,pnl_net_usd_S0,-30.402,4107
+V1,pnl_S1,-45.516,4107
+V1,pnl_S2,-60.634,4107
+V1,pnl_S3,-131.162,4107
+V2-F2,pnl_net_usd_S0,-33.236,3275
+V2-F2,pnl_S1,-45.194,3275
+V2-F2,pnl_S2,-57.161,3275
+V2-F2,pnl_S3,-112.994,3275
