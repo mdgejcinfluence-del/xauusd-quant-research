@@ -1,0 +1,22 @@
+metrique,valeur
+mois,Novembre (1-27)
+jours_testes,"['20', '22', '23', '24', '25', '26', '27']"
+ticks_exploites,2868871
+paniers,379
+positions_totales,898
+renforcements,519
+pnl_net_usd_modele_S0,-0.432
+pnl_brut_approx_usd (net+cout variable moteur),4.0579
+taux_paniers_gagnants_pct,26.1
+gain_moyen_usd,0.0422
+perte_moyenne_usd,-0.0165
+profit_factor,0.906
+esperance_par_panier_usd,-0.0011
+duree_moyenne_s,494.9
+duree_mediane_s,61.2
+duree_max_s,63820.1
+drawdown_max_usd_modele (equity paniers),-1.2152
+pire_panier_usd,-0.0916
+meilleur_panier_usd,0.6443
+"volume_max_simultane (modele, 1 panier a la fois)",0.04
+statut,PARTIEL: 7 jours de ticks disponibles sur 27; mois NON integralement backteste

@@ -1,0 +1,5 @@
+scenario,definition,pnl_net_total_usd_modele,paniers_gagnants,paniers_perdants
+S0,couts moteur (spread Bid/Ask + 1.2bp CENTRAL),-0.432,99,280
+S1,cout variable +25% (1.5bp),-1.555,92,287
+S2,cout variable +50% (1.8bp),-2.6783,86,293
+S3,S0 + slippage hypothetique 2bp (ETIQUETE HYPOTHETIQUE),-7.9149,58,321

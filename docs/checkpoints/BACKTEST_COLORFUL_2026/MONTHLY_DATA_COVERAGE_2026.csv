@@ -1,0 +1,12 @@
+mois,couverture,ticks_exploites_localement,statut
+Janvier,"corpus certifie a partir du 2026-01-12 (Drive, 2.44 Go, non accessible byte-level ici)",0,NON_TESTABLE
+Fevrier,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Mars,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Avril,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Mai,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Juin,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Juillet,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Aout,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Septembre,corpus certifie Drive (non accessible byte-level ici),0,NON_TESTABLE
+Octobre,"backfill annonce, absent localement",0,NON_TESTABLE
+Novembre (1-27),"7 jours Dukascopy locaux (20,22,23,24,25,26,27)",2868871,PARTIEL

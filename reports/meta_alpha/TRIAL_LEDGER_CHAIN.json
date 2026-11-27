@@ -5930,6 +5930,26 @@
     "resultats": "Fichier HTML78 recu du fondateur APRES seq452 et integre tel quel: SHA-256 2e3a9e19d56cbfa9fe28c7fe275b0af7b7a8f3b579db623fe442c288ebddc210, 2509846 octets, source portail my.hfm provider-details 99001292, date de capture NON indiquee dans le fichier. Extraction: 6 lignes = C/D/E deja connues, 0 nouvelle, 0 ambigue; stats identiques (arrondis portail 22/-28 vs 22.37/-27.82 page publique, conserves tels quels). Classification FLUX_PUBLIC_INCHANGE confirmee sur la piece originale. 15/15 tests toujours PASS."
    },
    "entry_hash": "464dfbd8ebd9cf24ba114be3ac55f5394bc65ebb4e9bf4b4d909a1ab33ba7814"
+  },
+  {
+   "seq": 454,
+   "prev_hash": "464dfbd8ebd9cf24ba114be3ac55f5394bc65ebb4e9bf4b4d909a1ab33ba7814",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "BACKTEST-COLORFUL-2026-001",
+    "note": "Backtest modele GELE V1 (colorful_replay.py, empreinte SHA-256 archivee avant calcul) sur donnees REELLEMENT accessibles: audit prealable - corpus certifie 2026 = 7 partitions Drive 2026-01-12->09-30 (2.44 Go, fichiers >100 Mo non telechargeables via connecteur), backfill oct-nov non present localement; ticks locaux exploitables = Dukascopy journaliers 2026-11-20->27. Perimetre execute declare: novembre partiel sur jours disponibles, autres mois NON TESTABLES faute dacces byte-level (aucune interpolation). Couts: spread paye Bid/Ask une fois + CENTRAL 1.2bp du moteur; sensibilite S1 +25%, S2 +50%, S3 +2bp slippage hypothetique etiquete, appliques post-hoc sans toucher aux signaux. Metrique HFM mensuelle = HFM_DISPLAYED_MONTHLY_METRIC_UNVERIFIED, comparaison NOT_DIRECTLY_COMPARABLE. Branche de session imposee. Aucune optimisation sur 2026."
+   },
+   "entry_hash": "a0835f3eb524fe9f0d95489a9cab826ae2420d42d66255580982155b004ed388"
+  },
+  {
+   "seq": 455,
+   "prev_hash": "a0835f3eb524fe9f0d95489a9cab826ae2420d42d66255580982155b004ed388",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "BACKTEST-COLORFUL-2026-001",
+    "resultats": "Modele V1 gele execute sans modification. Couverture reelle: jan-oct 2026 NON TESTABLES (corpus certifie Drive 2026-01-12->09-30, 2.44Go non accessible byte-level; janvier 1-11 absent du corpus); novembre PARTIEL 7 jours Dukascopy (2 868 871 ticks). 379 paniers, PnL net S0 -0.432 USD modele (brut ~+4.06: couts absorbent tout), PF 0.906, gagnants 26.1%, duree max 63820s (~17.7h sans stop), DD -1.215. Sensibilite S1 -1.555, S2 -2.678, S3 -7.915. HFM mensuel = UNVERIFIED, comparaison NOT_DIRECTLY_COMPARABLE. 12/12 tests PASS. profitable_edge=False."
+   },
+   "entry_hash": "2a3bc2d48d1ccc76fb11672930a46a2e936c7809681391492584dbcb0b4758f8"
   }
  ]
 }

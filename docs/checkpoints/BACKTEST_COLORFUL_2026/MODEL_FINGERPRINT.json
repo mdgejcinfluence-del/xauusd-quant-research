@@ -1,0 +1,18 @@
+{
+ "moteur": "ci_tools/colorful_replay.py (V1 GELE)",
+ "sha256_colorful_replay.py": "3c190d3ea9685d27e6e4ac717e69d59bde4c96b341672a9b20d90ef04980de18",
+ "spec": "H3: frontiere M15 si ret15m>=+5bp OU voie rapide ret5m>=+10bp et reprise>=+7bp; amorcage +30s; renforcement -5.5bp lot 0.02; cloture Mid>=prix moyen apres 60s; cout CENTRAL 1.2bp au-dela du spread Bid/Ask (compte une fois)",
+ "cout_bp_moteur": 1.2,
+ "commit_base": "7020253",
+ "registre_prereg": "seq454",
+ "donnees": "ticks Dukascopy Bid/Ask (comparatifs, JAMAIS HFM), fichiers research/MA-EDGE-02/data/duka_2026-11-*.parquet",
+ "empreintes_donnees": {
+  "20": "57572c4f635827774a6e49dcfa017743aca3c07f71da1848665ca819cd02c7c8",
+  "22": "a7a443a862b56e5da468f1f145e4265b2b1cea12440c0cd5769b3e8563445037",
+  "23": "1cb6f7adc597efcf87845cfd5ecc5da18742de3c7c53937b2b05305ba93a9e98",
+  "24": "68ad5c3e8e24a6b93c0cdb908f5aee762b22ad9d0fe3d136b32c63c0fe7c6bc3",
+  "25": "7b7c9a97c63da334d0e870abefcee0206106744e486515fffe53d905e24e43e9",
+  "26": "21668f1c9176fcfecbe0ee070de8ab121ff4d82e716a28fa1bb5bcdf4fc0743a",
+  "27": "145987211a5f5eaf24fd12727df13ed86f4274d210bce392380ecc0995f33795"
+ }
+}

@@ -1,0 +1,4 @@
+capital_usd,rendement_net_novembre_partiel_pct,drawdown_max_pct_capital,note
+1000,-0.0432,0.1215,scenario normalise META ALPHA uniquement; ne reproduit PAS le compte du fournisseur (capital historique inconnu)
+10000,-0.0043,0.0122,scenario normalise META ALPHA uniquement; ne reproduit PAS le compte du fournisseur (capital historique inconnu)
+100000,-0.0004,0.0012,scenario normalise META ALPHA uniquement; ne reproduit PAS le compte du fournisseur (capital historique inconnu)
