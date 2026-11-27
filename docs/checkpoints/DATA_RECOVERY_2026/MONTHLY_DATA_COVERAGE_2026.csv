@@ -1,0 +1,12 @@
+mois,origine,statut,paniers_clotures
+2026-01,corpus Dukascopy certifie (partitions Drive verifiees),PARTIALLY_COVERED (a partir du 12 jan),1013
+2026-02,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",566
+2026-03,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",265
+2026-04,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",235
+2026-05,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",359
+2026-06,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",304
+2026-07,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",216
+2026-08,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",770
+2026-09,corpus Dukascopy certifie (partitions Drive verifiees),"PARTIALLY_COVERED (flux continu entre partitions, trous documentes)",0
+2026-10,voir statut,NOT_TESTABLE (backfill Kaggle non recupere ce cycle),0
+2026-11,voir statut,"PARTIALLY_COVERED (7 jours locaux, seq455)",0

@@ -1,0 +1,5 @@
+scenario,pnl_net_total
+S0 moteur (spread+1.2bp),-29.97
+S1 +25%,-43.961
+S2 +50%,-57.955
+S3 +2bp slippage hypothetique,-123.247

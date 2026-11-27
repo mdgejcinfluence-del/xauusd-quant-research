@@ -5960,6 +5960,16 @@
     "note": "Recuperation des 7 partitions 2026 (part_000342-348, IDs Drive issus de INVENTORY_348_EXHAUSTIVE, tailles 237-470 Mo) via gdown en CI (mecanisme deja prouve par les moteurs historiques), verification taille/lignes/bornes vs inventaire + SHA-256 calcule, traitement partition par partition sans les stocker dans Git. Rejeu V1 GELE inchange sur le flux; convention explicite: attribution mensuelle au mois de cloture du panier, paniers traversant une frontiere de partition classes AFFECTES_FRONTIERE (non inventes). Octobre/novembre: backfill Kaggle completion 2026Q4 si accessible, sinon NON TESTABLE documente. Aucune optimisation, aucun seuil touche."
    },
    "entry_hash": "585eba11107fa59060c59a80c32d49cf76867945fdc0f3f04411f1965f9ffaad"
+  },
+  {
+   "seq": 457,
+   "prev_hash": "585eba11107fa59060c59a80c32d49cf76867945fdc0f3f04411f1965f9ffaad",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "DATA-RECOVERY-2026-001/FULL-REPLAY",
+    "resultats": "7/7 partitions Drive recuperees en CI via gdown et VERIFIED (66 938 889 ticks, 2.44 Go, SHA-256 archives; partitions jamais commitees). Rejeu V1 gele 2026-01-12->09-30: 3728 paniers, PnL net S0 -29.97 USD modele; seul juin positif et bascule des S1; paniers 3 positions -30.68 vs 2 positions +0.71 (renforcement = premier contributeur de pertes); duree max ~13.6 jours sans stop; reconciliation novembre exacte (379/898/-0.432). Octobre NOT_TESTABLE (backfill Kaggle). 12/12 tests PASS. profitable_edge=False confirme sur 8.5 mois."
+   },
+   "entry_hash": "d987fc667d6ab2d85f224117be0ec8dc997b385fd0c3647ce7a8aaf74b68b09b"
   }
  ]
 }
