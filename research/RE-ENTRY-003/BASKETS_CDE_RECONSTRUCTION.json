@@ -1,0 +1,53 @@
+{
+ "C": {
+  "pre_entree": {
+   "ret_60s_bp": 2.01,
+   "ret_300s_bp": 3.05,
+   "ret_900s_bp": 13.81
+  },
+  "prix_mid": [
+   3674.76,
+   3674.72,
+   3672.7
+  ],
+  "depl_depuis_1ere_bp": [
+   0.0,
+   -0.09,
+   -5.58
+  ],
+  "prix_moyen": 3673.52,
+  "prix_cloture": 3673.56
+ },
+ "D": {
+  "pre_entree": {
+   "ret_60s_bp": 1.73,
+   "ret_300s_bp": 12.19,
+   "ret_900s_bp": 1.12
+  },
+  "prix_mid": [
+   3675.16
+  ],
+  "depl_depuis_1ere_bp": [
+   0.0
+  ],
+  "prix_moyen": 3675.16,
+  "prix_cloture": 3676.08
+ },
+ "E": {
+  "pre_entree": {
+   "ret_60s_bp": -0.82,
+   "ret_300s_bp": -3.01,
+   "ret_900s_bp": 6.59
+  },
+  "prix_mid": [
+   3677.59,
+   3678.36
+  ],
+  "depl_depuis_1ere_bp": [
+   0.0,
+   2.11
+  ],
+  "prix_moyen": 3677.98,
+  "prix_cloture": 3679.45
+ }
+}

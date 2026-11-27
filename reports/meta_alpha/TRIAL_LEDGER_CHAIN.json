@@ -5741,6 +5741,21 @@
     "profitable_edge": false
    },
    "entry_hash": "90b7942556564a353cfb901a517385a30c7be2a8073db77891d746f160e71b9d"
+  },
+  {
+   "seq": 438,
+   "prev_hash": "90b7942556564a353cfb901a517385a30c7be2a8073db77891d746f160e71b9d",
+   "entry": {
+    "type": "RE_ENTRY_003_RESULTS",
+    "mission": "RE-ENTRY-003",
+    "collecteur": "ci_tools/hfm_public_collector.py (fetch/ingest/baskets); environnement retenu = poste a navigation ordinaire (CI 403 et sandbox sans egress: aucune automatisation conforme possible depuis ces environnements, documente)",
+    "frequence": "15 min en session active (justifiee: ~136 transactions/jour affichees, fenetre publique de 6 lignes ~1 h en moyenne; 0 nouvelle transaction entre les 2 premiers instantanes)",
+    "archivage": "2 instantanes reels immuables SHA-256; deduplication cle composite (risque de collision signale); 6 transactions distinctes, 3 paniers groupes (C perdant, D, E)",
+    "reconstruction_CDE": "devenue possible (heure Dukascopy 08 UTC publiee): C cloture au prix moyen (3673,56 vs 3673,52) pour -6 JPY net; D entree apres +12,2 bp/5min sortie 17 s; E ajout n2 favorable +2,1 bp",
+    "hypothese_nouvelle_preenregistree": "entree en deux temps rapproches (ajout n2 a 16-40 s, parfois favorable), renforcement martingale seulement a partir de la 3e position — A TESTER, non testee",
+    "profitable_edge": false
+   },
+   "entry_hash": "7f98e589a26c6d89884c514cd0178b4824d1af33034c8723c8b330560a4cdd57"
   }
  ]
 }
