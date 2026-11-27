@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/hist_completion.py", line 8, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+exit=0
