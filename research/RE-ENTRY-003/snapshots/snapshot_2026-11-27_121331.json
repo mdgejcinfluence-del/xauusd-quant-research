@@ -1,0 +1,57 @@
+{
+ "provider_id": "99001292",
+ "url_source": "https://www.hfm.com/int/en/copy-trading/strategy-view?account=99001292",
+ "collecte_utc": "2026-11-27T12:13:31.153224+00:00",
+ "mode_acces": "ingest_fichier_licite:page_2026-11-27_fetch2.txt",
+ "transactions_visibles": [
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 11:00:00",
+   "cloture_affichee": "2026-11-27 11:01:27",
+   "profit_affiche": 1.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 11:00:16",
+   "cloture_affichee": "2026-11-27 11:01:26",
+   "profit_affiche": 2.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:45:00",
+   "cloture_affichee": "2026-11-27 10:45:17",
+   "profit_affiche": 1.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:30:00",
+   "cloture_affichee": "2026-11-27 10:40:50",
+   "profit_affiche": -4.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:30:20",
+   "cloture_affichee": "2026-11-27 10:40:49",
+   "profit_affiche": -3.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.03,
+   "ouverture_affichee": "2026-11-27 10:33:34",
+   "cloture_affichee": "2026-11-27 10:40:48",
+   "profit_affiche": 1.0
+  }
+ ],
+ "sha256_contenu": "e3070800bea26efcc34f4fd3313cd805fb68ae6d8de3bfea9bfc6f0010957d5b"
+}

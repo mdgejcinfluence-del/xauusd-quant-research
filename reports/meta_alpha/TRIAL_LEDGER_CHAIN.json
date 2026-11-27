@@ -5729,6 +5729,18 @@
     "profitable_edge": false
    },
    "entry_hash": "a8f6da81e507c8e43d4840886a955c368b3c4caa5d58853ec90a2fe071a1ceb2"
+  },
+  {
+   "seq": 437,
+   "prev_hash": "a8f6da81e507c8e43d4840886a955c368b3c4caa5d58853ec90a2fe071a1ceb2",
+   "entry": {
+    "type": "RE_ENTRY_003_OPENING",
+    "mission": "RE-ENTRY-003",
+    "objet": "collecte prospective d instantanes publics HFM 99001292: collecteur, archivage immuable SHA-256, deduplication, paniers, synchronisation cotations",
+    "contraintes": "aucun contournement anti-robot; runners CI 403 documentes non reutilises pour multiplier les requetes; frequence justifiee par le rythme observe (~136 transactions/jour affichees -> fenetre de 6 lignes ~1 h en moyenne, rafales possibles)",
+    "profitable_edge": false
+   },
+   "entry_hash": "90b7942556564a353cfb901a517385a30c7be2a8073db77891d746f160e71b9d"
   }
  ]
 }
