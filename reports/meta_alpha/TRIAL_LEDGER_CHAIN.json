@@ -6304,6 +6304,16 @@
     "perimetre": "ME-003.1 continuation d impulsion (garde-fou VERT, programme autonome valide par le fondateur). Definition gelee: impulsion = rendement du mid sur 5 minutes >= A bp en valeur absolue, A dans {5,10,20} fixe, barres 5s causales; trade DANS le sens de l impulsion (achat a l ask apres impulsion haussiere, vente au bid apres impulsion baissiere); sorties marquees aux prix executables a horizons fixes {15min, 1h, 4h} (aucun trailing, aucun parametre adaptatif); couts comptes une fois (Bid/Ask + central 1.2bp); episodes non chevauchants avec refroidissement de 1h apres chaque declenchement pour limiter la dependance; mesures: taux de continuation (mouvement supplementaire >= A/2 en 1h), esperance nette par horizon, PF, excursions max favorable/defavorable sur 1h. Memes 5 partitions certifiees (decouverte 2012/2016, validation 2020/2024/2026). Lien documente: AESR-002 avait trouve des retours forward faibles apres les entrees H3 simulees - ce test conditionne sur l impulsion generique, pas sur H3. Aucun moteur cree; ME-001 reste en validation prospective passive."
    },
    "entry_hash": "86ec1ebcd8c70a193aa79b3f153ab52c1e60df4ffdac9391aa940f185abff268"
+  },
+  {
+   "seq": 491,
+   "prev_hash": "86ec1ebcd8c70a193aa79b3f153ab52c1e60df4ffdac9391aa940f185abff268",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ME-003.1",
+    "resultats": "ME-003.1 (garde-fou VERT): continuation d impulsion - extension de trajectoire reelle (60-89% des cas, MFE mediane +8/+14bp en 1h) mais edge executable REFUTE: esperance nette negative aux 3 horizons x 3 seuils x 2 groupes (-1.6 a -8.6bp, medianes negatives). Lecture croisee ME-002 x ME-003: fade vers la mediane et continuation echouent par des queues opposees (persistance des ecarts vs resorption des extensions); la geometrie asymetrique de ME-001 (acheteur, retour au plus haut, filtre d entree) reste la seule candidate, en attente de validation prospective (collecte D en cours). ME-003 REJECTED sous cette forme. 4/4 tests PASS."
+   },
+   "entry_hash": "16cc77414bb4732c975e55725f273d633dee61a7f80e1e91738f42aa8c5a02cd"
   }
  ]
 }

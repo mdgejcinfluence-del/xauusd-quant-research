@@ -51,10 +51,11 @@ VALIDATED sur les données qui ont servi à le construire.*
 
 ## ME-003 — IMPULSE_CONTINUATION (impulsion)
 
-- **État** : DISCOVERED (famille). Chez Colorful, la voie rapide H3 est
-  une signature d'entrée compatible mais l'avantage directionnel après
-  entrées simulées est réfuté comme mécanisme principal (AESR-002 :
-  +0,31/+0,82/+0,14 bp à 60/300/900 s). Non mesuré comme modèle autonome.
+- **État** : **REJECTED sous la forme testée** (ME-003.1, seq490-491 :
+  continuation d'impulsion 5 min à horizons fixes — espérance nette
+  négative aux 3 horizons × 3 seuils × 2 groupes, −1,6 à −8,6 bp,
+  malgré une extension de trajectoire dans 60–89 % des cas ; prolonge
+  AESR-002).
 
 ## ME-004 — LIQUIDITY_PROVISION (fourniture de liquidité)
 
