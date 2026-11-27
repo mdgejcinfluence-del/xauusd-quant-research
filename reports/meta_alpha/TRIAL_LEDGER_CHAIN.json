@@ -5920,6 +5920,16 @@
     "resultats": "Fichier HTML annonce INTROUVABLE (workspace + Drive recherches, 0 resultat) - obstacle journalise seq451. Audit sur snapshots immuables RE-ENTRY-003 + controle page publique du jour: stats identiques (49595 fermes, 67.4%, 121 abonnes), 6 lignes dedupliquees = 6 deja connues, 0 nouvelle, 0 ambigue. Classification: FLUX_PUBLIC_INCHANGE. Hypotheses: NOT_TESTABLE_WITH_CURRENT_OBSERVATIONS. Conclusions gelees preservees, 15/15 tests PASS. Branche de session conservee (ecart documente vs branche dediee demandee)."
    },
    "entry_hash": "49fdeb7006c5684d2babe9332e532af3d8df57336a7a09ff700b0ac1c7b69e7f"
+  },
+  {
+   "seq": 453,
+   "prev_hash": "49fdeb7006c5684d2babe9332e532af3d8df57336a7a09ff700b0ac1c7b69e7f",
+   "entry": {
+    "type": "ADDENDUM",
+    "campaign": "RE-ENTRY-007",
+    "resultats": "Fichier HTML78 recu du fondateur APRES seq452 et integre tel quel: SHA-256 2e3a9e19d56cbfa9fe28c7fe275b0af7b7a8f3b579db623fe442c288ebddc210, 2509846 octets, source portail my.hfm provider-details 99001292, date de capture NON indiquee dans le fichier. Extraction: 6 lignes = C/D/E deja connues, 0 nouvelle, 0 ambigue; stats identiques (arrondis portail 22/-28 vs 22.37/-27.82 page publique, conserves tels quels). Classification FLUX_PUBLIC_INCHANGE confirmee sur la piece originale. 15/15 tests toujours PASS."
+   },
+   "entry_hash": "464dfbd8ebd9cf24ba114be3ac55f5394bc65ebb4e9bf4b4d909a1ab33ba7814"
   }
  ]
 }

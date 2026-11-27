@@ -1,9 +1,21 @@
 {
  "fichier_annonce": "myHF _ HFM Broker.html78.html",
- "fichier_trouve": [],
+ "fichier_trouve": [
+  "docs/checkpoints/RE_ENTRY_007/source/myHF _ HFM Broker.html78.html"
+ ],
  "classification_flux": "FLUX_PUBLIC_INCHANGE",
  "formulation_correcte": "Aucune nouvelle transaction n'est visible dans le flux public observe depuis la derniere transaction affichee (2026-11-27 11:01:27, heure affichee).",
  "preuves": [
+  {
+   "id": "EV-00",
+   "fichier_source": "docs/checkpoints/RE_ENTRY_007/source/myHF _ HFM Broker.html78.html",
+   "sha256_fichier": "2e3a9e19d56cbfa9fe28c7fe275b0af7b7a8f3b579db623fe442c288ebddc210",
+   "type": "capture_html_portail_my_hfm (saved from url provider-details 99001292)",
+   "provenance": "fichier depose par le fondateur, recu apres seq452",
+   "confiance": "haute (fichier original archive tel quel)",
+   "validation": "6 lignes extraites, dedup cle composite: 6 deja connues, 0 nouvelle",
+   "date_capture": "NON INDIQUEE dans le fichier"
+  },
   {
    "id": "EV-01",
    "fichier_source": "research/RE-ENTRY-003/snapshots/snapshot_2026-11-27_121328.json",
@@ -60,5 +72,18 @@
   "10:45 (D)": "1 position, +1 JPY",
   "11:00 (E)": "2 positions, +3 JPY"
  },
- "analyse_hypotheses": "NOT_TESTABLE_WITH_CURRENT_OBSERVATIONS"
+ "analyse_hypotheses": "NOT_TESTABLE_WITH_CURRENT_OBSERVATIONS",
+ "stats_affichees_portail_html78": {
+  "fermees": 49595,
+  "gagnantes": 33425,
+  "perdantes": 16170,
+  "ouvertes": 0,
+  "rentabilite_pct": 67.4,
+  "gain_moyen_affiche": "¥22 (arrondi portail; page publique: 22.37)",
+  "perte_moyenne_affichee": "¥-28 (arrondi portail; page publique: -27.82)",
+  "lot_moyen": 0.03,
+  "duree_moyenne": "20m 14s",
+  "dd_max_pct": 31.81,
+  "abonnes": 121
+ }
 }

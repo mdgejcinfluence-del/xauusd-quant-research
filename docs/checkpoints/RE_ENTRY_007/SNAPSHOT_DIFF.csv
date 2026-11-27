@@ -1,7 +1,8 @@
 champ,ancienne_valeur,nouvelle_valeur,evolution
-fichier_html_annonce_present,n/a,False,FICHIER_INTROUVABLE_DANS_ESPACE_ET_DRIVE
+fichier_html_annonce_present,,False,FICHIER_INTROUVABLE_DANS_ESPACE_ET_DRIVE
 transactions_fermees,49595,49595,AUCUNE
 transactions_visibles,6,6,AUCUNE (memes 6 lignes)
 dernieres_transactions,2026-11-27 11:00:00/11:01:27,2026-11-27 11:00:00/11:01:27,AUCUNE
 abonnes,121,121,AUCUNE
 gain_affiche_pct,12420.75,12420.75,AUCUNE
+fichier_html78_integre,absent lors de seq451-452,"present, SHA-256 2e3a9e19d56cbfa9...","AJOUT DARCHIVE, CONTENU IDENTIQUE"

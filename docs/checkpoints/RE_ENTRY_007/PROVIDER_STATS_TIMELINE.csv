@@ -2,3 +2,4 @@ capture,fermees,gagnantes,perdantes,rentabilite_pct,gain_moyen_jpy,perte_moyenne
 2026-11-27T12:13:28Z (snapshot_121328),49595,33425,16170,67.4,22.37,-27.82,0.03,20m 14s,31.81,121,research/RE-ENTRY-003/snapshots
 2026-11-27T12:22:40Z (snapshot_122240),49595,33425,16170,67.4,22.37,-27.82,0.03,20m 14s,31.81,121,research/RE-ENTRY-003/snapshots
 controle page publique (cycle RE-ENTRY-007),49595,33425,16170,67.4,22.37,-27.82,0.03,20m 14s,31.81,121,"fetch_page ordinaire, sans contournement"
+capture HTML78 my.hfm (date non indiquee dans le fichier),49595,33425,16170,67.4,22 (arrondi portail),-28 (arrondi portail),0.03,20m 14s,31.81,121,docs/checkpoints/RE_ENTRY_007/source/

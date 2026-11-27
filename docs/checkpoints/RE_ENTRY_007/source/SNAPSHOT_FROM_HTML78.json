@@ -1,0 +1,70 @@
+{
+ "provider_id": "99001292",
+ "source_fichier": "myHF _ HFM Broker.html78.html",
+ "url_origine_affichee": "https://my.hfm.com/en/copy-trading/provider-details?provider=99001292",
+ "sha256_fichier": "2e3a9e19d56cbfa9fe28c7fe275b0af7b7a8f3b579db623fe442c288ebddc210",
+ "date_capture_dans_fichier": "NON INDIQUEE dans le HTML (date de depot = jour de la mission RE-ENTRY-007)",
+ "transactions_visibles": [
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 11:00:00",
+   "cloture_affichee": "2026-11-27 11:01:27",
+   "profit_affiche": 1.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 11:00:16",
+   "cloture_affichee": "2026-11-27 11:01:26",
+   "profit_affiche": 2.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:45:00",
+   "cloture_affichee": "2026-11-27 10:45:17",
+   "profit_affiche": 1.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:30:00",
+   "cloture_affichee": "2026-11-27 10:40:50",
+   "profit_affiche": -4.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.01,
+   "ouverture_affichee": "2026-11-27 10:30:20",
+   "cloture_affichee": "2026-11-27 10:40:49",
+   "profit_affiche": -3.0
+  },
+  {
+   "symbole": "XAUUSDc",
+   "sens": "Buy",
+   "volume": 0.03,
+   "ouverture_affichee": "2026-11-27 10:33:34",
+   "cloture_affichee": "2026-11-27 10:40:48",
+   "profit_affiche": 1.0
+  }
+ ],
+ "stats_affichees_portail": {
+  "fermees": 49595,
+  "gagnantes": 33425,
+  "perdantes": 16170,
+  "ouvertes": 0,
+  "rentabilite_pct": 67.4,
+  "gain_moyen_affiche": "¥22 (arrondi portail; page publique: 22.37)",
+  "perte_moyenne_affichee": "¥-28 (arrondi portail; page publique: -27.82)",
+  "lot_moyen": 0.03,
+  "duree_moyenne": "20m 14s",
+  "dd_max_pct": 31.81,
+  "abonnes": 121
+ }
+}

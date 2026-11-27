@@ -5,14 +5,18 @@ imposée ; la branche dédiée demandée n'a pas été créée, règle de sessio
 écart documenté, `main` intacte). Références gelées revérifiées : V1/V2 intouchés,
 matching corrigé seq448, H3/F2 et leurs falsifications inchangés.
 
-## 1. Fichier annoncé : obstacle documenté
-`myHF _ HFM Broker.html78.html` a été recherché dans tout l'espace de travail et dans
-Google Drive connecté : **0 résultat**. Il n'a donc pas pu être examiné intégralement
-ni haché — le prétendre serait faux. L'audit a été exécuté sur les preuves
-équivalentes disponibles : les 3 snapshots immuables RE-ENTRY-003
-(`snapshot_2026-11-27_121328/121331/122240.json`) et un contrôle de la page publique
-par navigation ordinaire ce cycle. Si le fichier est déposé ultérieurement, son
-ingestion se fait par `hfm_public_collector.py ingest` sans réécrire l'historique.
+## 1. Fichier annoncé : reçu et intégré (addendum post-seq452)
+Le fichier a d'abord été introuvable (recherches documentées espace + Drive,
+seq451) ; il a ensuite été **déposé par le fondateur et intégré tel quel** :
+`docs/checkpoints/RE_ENTRY_007/source/myHF _ HFM Broker.html78.html`, SHA-256
+`2e3a9e19d56cbfa9fe28c7fe275b0af7b7a8f3b579db623fe442c288ebddc210` (2 509 846 octets).
+En-tête « saved from url » : portail `my.hfm.com/.../provider-details?provider=99001292`
+— une vue portail, à ne pas confondre avec la page publique. **Aucune date de capture
+n'est indiquée dans le fichier** (inconnue, non inventée). Extraction : 6 lignes,
+statistiques identiques (nuance d'affichage : gain/perte moyens arrondis ¥22/¥−28 sur
+le portail contre ¥22,37/¥−27,82 sur la page publique — valeurs conservées telles
+quelles, sans correction silencieuse). Verdict du fichier : **aucune transaction
+nouvelle** ; les 6 lignes sont celles de C/D/E déjà archivées.
 
 ## 2. Statistiques vérifiées (contrôle du jour, valeurs telles qu'affichées)
 49 595 fermées (33 425 gagnantes / 16 170 perdantes), 0 ouverte, rentabilité 67,4 %,
