@@ -15,13 +15,6 @@ HORIZONS = [300, 900, 3600, 14400, 86400]
 
 def bars(df):
     df = df.set_index('ts')
-    g = df.resample('5s')
-    b = pd.DataFrame({'mid_first': g.apply(lambda x: ((x.bid + x.ask) / 2).iloc[0] if len(x) else np.nan),
-                      'mid_max': g.apply(lambda x: ((x.bid + x.ask) / 2).max() if len(x) else np.nan),
-                      'mid_min': g.apply(lambda x: ((x.bid + x.ask) / 2).min() if len(x) else np.nan),
-                      'ask_first': g.bid.first() * 0 + g.ask.first(), 'bid_last': g.bid.last(),
-                      'ask_last': g.ask.last()})
-    # plus rapide et exact: recalcul vectoriel
     m = (df.bid + df.ask) / 2
     b = pd.DataFrame({'mid_first': m.resample('5s').first(), 'mid_max': m.resample('5s').max(),
                       'mid_min': m.resample('5s').min(), 'ask_first': df.ask.resample('5s').first(),
