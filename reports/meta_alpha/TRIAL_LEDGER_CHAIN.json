@@ -6152,6 +6152,16 @@
     "resultats": "BACKTEST-2026-001 verdict NEGATIF. Couverture reelle: 2026-01-12 a 2026-09-30 certifiee (66,938,889 ticks, partitions VERIFIED) + novembre partiel 7 jours; octobre GAP jamais simule; janvier/juillet/septembre/novembre PARTIAL documentes. V1 gele (4107 paniers): net S0 -30.40 USD modele, PF 0.528, gagnants 22.9%, DD -31.09, esperance -0.0074/panier. V2-F2 gele (3275 paniers, dont 3045 janv-sept rejoues en CI run 46040242849, moteur importe sans modification): net S0 -33.24, PF 0.371, DD -33.45, 62 pertes consecutives. Reconciliations exactes: V1 nov 379/-0.432 (seq455), V2 nov 230/-0.930 (seq459), V1 janv-sept 3728/-29.97 (seq457). Un seul mois positif (V1 juin +0.83). Scenario couts S3: V1 -131.16, V2 -112.99. Septembre: donnees completes mais 0 cloture (panier sans stop bloquant ~13.6j max). V1 superieur a V2-F2 sur net/PF/DD/esperance; fidelite F2 != rentabilite. Aucun parametre modifie (hashes verifies). 7/7 tests PASS. profitable_edge=False confirme pour les deux moteurs."
    },
    "entry_hash": "c99c2d8cb35cfc0c3223417a0faa0bebf01695b3b5f14387e895bc480fe9dc8f"
+  },
+  {
+   "seq": 476,
+   "prev_hash": "c99c2d8cb35cfc0c3223417a0faa0bebf01695b3b5f14387e895bc480fe9dc8f",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "LMD-008",
+    "perimetre": "Diagnostic des pertes V1/V2-F2 sur paniers certifies BACKTEST-2026-001 (seq475). Aucune modification des moteurs geles, aucune optimisation, aucune V3. Analyses: (A) forensique par panier depuis les registres (contribution cumulee, extremes, duree, positions); MFE/MAE et temps sous PWA calcules a posteriori sur ticks (novembre local; janv-sept en CI sur partitions certifiees, approximation PWA final declaree); (B) paniers non clotures: mecanisme structurel (panier unique, sortie Mid>=PWA, aucun stop) - chronologie exacte du panier bloquant marquee NON DEMONTRABLE si non reconstructible depuis les sorties archivees, aucune cloture inventee; (C) renforcements: effet mecanique demontre anterieurement, association par nb_positions quantifiee, effet causal deja NOT_IDENTIFIED (seq459) non re-presente comme causal; (D) rendements forward apres entree par horizons (nov local, janv-sept CI, censure declaree); (E) decomposition couts S0-S3 deja certifiee; (F) attribution non additive par buckets avec interactions declarees. profitable_edge=False."
+   },
+   "entry_hash": "f6188ea36db9e83fc89a89602780bf295861017abe62e2ac78b60be4778a0732"
   }
  ]
 }

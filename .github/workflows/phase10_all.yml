@@ -2917,3 +2917,25 @@ jobs:
         git add docs/checkpoints/BACKTEST_2026_FULL_PERIOD_001/
         git diff --cached --quiet || git commit -m 'BACKTEST-2026-001: rejeu CI V2 janv-sept 2026 (moteur gele)'
         for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
+  lmd008:
+    name: LMD-008 forensique trajectoires janv-sept 2026 (CI, seq476)
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    if: ${{ inputs.phase25b }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Telechargement partitions et forensique (partitions jamais commitees)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow gdown
+        mkdir -p docs/checkpoints/LOSS_MECHANISM_DIAGNOSIS_008
+        python ci_tools/lmd008_forensics.py ci 2>&1 | tee docs/checkpoints/LOSS_MECHANISM_DIAGNOSIS_008/CI_CONSOLE.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/LOSS_MECHANISM_DIAGNOSIS_008/
+        git diff --cached --quiet || git commit -m 'LMD-008: forensique CI trajectoires janv-sept 2026'
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
