@@ -1,0 +1,77 @@
+{
+ "source_cotations": "Dukascopy (reference comparative, pas HFM)",
+ "fuseaux": {
+  "UTC+0": {
+   "A": {
+    "pnl_usd_par_unite_contrat": -0.0196,
+    "prix_moyen": 3572.05,
+    "sortie_bid": 3571.57
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": -0.0004,
+    "prix_moyen": 3570.97,
+    "sortie_bid": 3570.97
+   }
+  },
+  "UTC+1": {
+   "A": {
+    "pnl_usd_par_unite_contrat": -0.1011,
+    "prix_moyen": 3569.76,
+    "sortie_bid": 3567.24
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": 0.0706,
+    "prix_moyen": 3569.8,
+    "sortie_bid": 3571.57
+   }
+  },
+  "UTC+2": {
+   "A": {
+    "pnl_usd_par_unite_contrat": 0.0695,
+    "prix_moyen": 3567.54,
+    "sortie_bid": 3569.28
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": 0.0998,
+    "prix_moyen": 3568.19,
+    "sortie_bid": 3570.68
+   }
+  },
+  "UTC+3": {
+   "A": {
+    "pnl_usd_par_unite_contrat": -0.2531,
+    "prix_moyen": 3562.05,
+    "sortie_bid": 3555.72
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": 0.0931,
+    "prix_moyen": 3557.53,
+    "sortie_bid": 3559.86
+   }
+  },
+  "UTC+4": {
+   "A": {
+    "pnl_usd_par_unite_contrat": 0.057,
+    "prix_moyen": 3573.38,
+    "sortie_bid": 3574.8
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": -0.0793,
+    "prix_moyen": 3574.47,
+    "sortie_bid": 3572.49
+   }
+  },
+  "UTC+5": {
+   "A": {
+    "pnl_usd_par_unite_contrat": 0.3353,
+    "prix_moyen": 3565.43,
+    "sortie_bid": 3573.82
+   },
+   "B": {
+    "pnl_usd_par_unite_contrat": -0.1495,
+    "prix_moyen": 3572.59,
+    "sortie_bid": 3568.85
+   }
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "UTC+2": {
+  "A": {
+   "pre_entree": {
+    "ret_30s_bp": 1.42,
+    "ret_60s_bp": 5.58,
+    "ret_180s_bp": 6.34,
+    "ret_300s_bp": 11.7,
+    "ret_900s_bp": 8.94,
+    "pos_range_15m_pct": 83.0
+   },
+   "prix_mid": [
+    3568.83,
+    3567.36,
+    3566.49
+   ],
+   "depl_depuis_1ere_bp": [
+    0.0,
+    -4.11,
+    -6.56
+   ],
+   "prix_a_cloture": 3569.47
+  },
+  "B": {
+   "pre_entree": {
+    "ret_30s_bp": 2.98,
+    "ret_60s_bp": 3.74,
+    "ret_180s_bp": 4.2,
+    "ret_300s_bp": 11.39,
+    "ret_900s_bp": 8.19,
+    "pos_range_15m_pct": 80.9
+   },
+   "prix_mid": [
+    3569.11,
+    3568.06,
+    3567.44
+   ],
+   "depl_depuis_1ere_bp": [
+    0.0,
+    -2.96,
+    -4.68
+   ],
+   "prix_a_cloture": 3570.88
+  }
+ },
+ "UTC+3": {
+  "A": {
+   "pre_entree": {
+    "ret_30s_bp": -1.28,
+    "ret_60s_bp": 0.25,
+    "ret_180s_bp": 4.63,
+    "ret_300s_bp": 2.81,
+    "ret_900s_bp": -5.24,
+    "pos_range_15m_pct": 59.0
+   },
+   "prix_mid": [
+    3563.11,
+    3561.51,
+    3561.44
+   ],
+   "depl_depuis_1ere_bp": [
+    0.0,
+    -4.52,
+    -4.7
+   ],
+   "prix_a_cloture": 3555.96
+  },
+  "B": {
+   "pre_entree": {
+    "ret_30s_bp": -0.17,
+    "ret_60s_bp": 0.66,
+    "ret_180s_bp": 5.18,
+    "ret_300s_bp": 4.14,
+    "ret_900s_bp": -15.23,
+    "pos_range_15m_pct": 41.2
+   },
+   "prix_mid": [
+    3555.96,
+    3559.72,
+    3556.74
+   ],
+   "depl_depuis_1ere_bp": [
+    0.0,
+    10.57,
+    2.19
+   ],
+   "prix_a_cloture": 3560.1
+  }
+ }
+}

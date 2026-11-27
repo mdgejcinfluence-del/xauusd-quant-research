@@ -5685,6 +5685,23 @@
     "preenregistrement": "alignement par balayage de fuseau UTC+0..+3 juge sur coherence des profits de panier affiches; hypotheses H1-H4 (martingale/pyramiding/conditionnel/periodique) departagees sur les deplacements mesures; aucun indicateur teste sans motif observe; holdout gele respecte (analyse descriptive d un cas, aucune selection de modele pour usage futur)"
    },
    "entry_hash": "78b377a6fadda0e1ad2f5c5a1955fd569b2bd01e4e72d6553b829457c4de1b75"
+  },
+  {
+   "seq": 434,
+   "prev_hash": "78b377a6fadda0e1ad2f5c5a1955fd569b2bd01e4e72d6553b829457c4de1b75",
+   "entry": {
+    "type": "RE_ENTRY_001_RESULTS",
+    "mission": "RE-ENTRY-001",
+    "inventaire": "aucun historique fournisseur dans depot ni Drive; 6 transactions de reference + ticks Dukascopy 2026-11-26 completes ce cycle",
+    "fuseau": "UTC+2 FORTEMENT ETAYE: seul a rendre les deux paniers positifs dans l ordre des profits affiches (0,070 < 0,100 pour 11 < 13)",
+    "entree": "FORTEMENT ETAYEE: Buy apres impulsion +11 bp/5min, prix a 81-83% du range 15m (2/2)",
+    "renforcement": "H1 FORTEMENT ETAYEE: ajouts contre le mouvement (-3 a -6,6 bp), intervalles 29-598 s; H2/H4 contredites; seuil exact NON DETERMINABLE (n=2)",
+    "volumes": "0,01/0,01/0,02: doublement a la 3e position seulement; regle complete HYPOTHESE",
+    "cloture": "FORTEMENT ETAYEE: TP de panier au retour au-dessus du prix moyen; B ouvre 2 s apres cloture de A; objectif chiffre NON DETERMINABLE",
+    "risque": "profil affiche gain moyen 22 < perte moyenne 28, DD 31,81%: signature martingale; queue NON MESUREE (echantillon gagnant)",
+    "profitable_edge": false
+   },
+   "entry_hash": "be6cddb10f0d79e8e947f069a06b9d37a9e6e0cdcd90797e59187ec79d42d2a8"
   }
  ]
 }
