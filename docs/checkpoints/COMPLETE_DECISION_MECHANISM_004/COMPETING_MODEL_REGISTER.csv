@@ -1,0 +1,6 @@
+modele,composants,compatibilite,ecart_avec_observations,statut
+M-A,Recuperation economique (seuil de PnL net),sortie sur seuil de couts,partielle,C cloture sous tout seuil positif,CANDIDATE affaiblie
+M-B,Epuisement de la jambe de retour,sortie sur perte de vitesse,faible,A cloture en pleine acceleration,CANDIDATE affaiblie
+M-C,Mixte temps-etat,sortie combinee,compatible mais vague,non falsifiable sur n=5,CANDIDATE
+M-D,Jambe favorable vers PWA pres du sommet local,sortie pendant la recuperation,compatible avec les 5 clotures,fondee sur des traits descriptifs partages,CANDIDATE (la mieux compatible)
+M-E,Premier retour au PWA,sortie immediate au franchissement,refutee,2-8 franchissements avant cloture,REFUTED

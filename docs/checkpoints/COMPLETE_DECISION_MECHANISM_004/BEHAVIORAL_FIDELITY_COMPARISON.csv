@@ -1,0 +1,5 @@
+modele,entrees (en-echantillon),regimes produits,clotures,sequence complete,statut
+V1 gele,4/5,82% courts (nov.),premier retour PWA (refute comme regle reelle),aucun panier integral,PARTIEL
+V2-F2,5/5,non mesures integralement,identique V1,aucun panier integral,PARTIEL
+DIRR-003 (classification),n/a,classifie reel 3/2 et simules,n/a,aucun,INSTRUMENT DE MESURE
+DIRR-004 (specification + instruments),n/a,detecteur post-entree descriptif,caracterisation M-D candidate,aucun,NOT_IDENTIFIED (declencheurs fins)

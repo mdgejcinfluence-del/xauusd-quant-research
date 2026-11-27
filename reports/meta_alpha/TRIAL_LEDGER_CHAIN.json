@@ -6050,6 +6050,26 @@
     "resultats": "Trajectoires reelles tick par tick: paniers recovery 65-88% de leur vie sous le PWA, latent min -15.3bp (C), clotures -0.25 a +7.9bp du PWA. Contrefactuels a sortie identique: le renforcement convertit lexcursion en ecart de sortie faible (C: -3.3 -> -0.25bp) contre exposition accrue - echange documente, causalite globale toujours NOT_IDENTIFIED. Regime immediat = trajectoire post-entree, non condition dentree separable. Moteurs: 82% de paniers <=120s vs 40% reel - sur-production du scalp, sous-production de la patience. PWA = reference de mesure, pas declencheur (confirme). Sizing/sortie/plafond NOT_IDENTIFIED avec familles reduites. 7/7 tests PASS. profitable_edge=False (moteurs)."
    },
    "entry_hash": "6c3bac17f0c35f935b63f9fc9ad648cc6380cc7f0909fbb0c2827b06b03e080a"
+  },
+  {
+   "seq": 466,
+   "prev_hash": "6c3bac17f0c35f935b63f9fc9ad648cc6380cc7f0909fbb0c2827b06b03e080a",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "CDME-004",
+    "note": "Analyses preenregistrees: (X1) fenetres pre-cloture 1-300s des 5 paniers reels depuis TRAJECTORY_*.csv: distance au PWA, vitesse du PnL latent, distance au sommet local 300s, passages au-dessus du PWA; comparaison aux instants anterieurs ou le panier etait a distance comparable sans cloturer (analyse discriminante descriptive, n=5). Familles A recuperation economique / B epuisement / C mixte departagees seulement si un trait est present a la cloture et absent aux instants comparables. (X2) sizing: deplacement du PWA induit par la 3e position et ratio vs volume existant et vs recul - derive mathematiquement, aucune formule retenue sans coherence sur A/B/C. (X3) regime post-entree: rendements 5-60s des 5 paniers (separation descriptive seulement). Aucun parametre ajuste presente comme identifie."
+   },
+   "entry_hash": "3aab636d28050e2d7cfa0d55cb9286a9721d900cd4f1e6ceabc294eeca36aff8"
+  },
+  {
+   "seq": 467,
+   "prev_hash": "3aab636d28050e2d7cfa0d55cb9286a9721d900cd4f1e6ceabc294eeca36aff8",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "CDME-004",
+    "resultats": "Cloture: trait commun mesure aux 5 paniers - PnL latent en hausse sur 300s et prix a -0.2/-2.2bp du sommet local 300s, au voisinage du PWA. Hypothese epuisement affaiblie (A cloture en pleine acceleration +3.9bp/30s); recuperation economique bornee par C (-0.25bp). Formulation M-D candidate (sortie pendant la jambe favorable pres du sommet local), non identifiee finement. Sizing: contraintes derivees (doublement compatible A/B, contredit par C 0.03), formule NOT_IDENTIFIED. Patience = consequence d etat (la regle de sortie moteur explique l ecart 82% vs 40%, pas un parametre de duree). Identification inverse: ensembles de parametres compatibles documentes au lieu de points. 6/6 tests PASS. profitable_edge=False (moteurs)."
+   },
+   "entry_hash": "7a4bc867d2f0c7c1b3ead773320c8887bdc76ca03b8b8cb362efadb7e7404d52"
   }
  ]
 }

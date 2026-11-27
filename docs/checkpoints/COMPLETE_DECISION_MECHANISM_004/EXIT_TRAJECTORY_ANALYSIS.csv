@@ -1,0 +1,6 @@
+panier,pnl_moins5s_bp,pnl_moins15s_bp,pnl_moins30s_bp,pnl_moins60s_bp,pnl_moins120s_bp,pnl_moins300s_bp,dist_au_sommet300_bp,pnl_a_cloture_bp,instants_comparables_sans_cloture,premier_instant_comparable
+A,2.8,2.89,3.92,4.89,6.9,12.77,-2.15,6.18,0,
+B,-0.18,0.87,3.73,4.96,11.28,6.99,-0.46,7.91,0,
+C,-0.69,-0.95,7.22,9.0,9.11,8.19,-1.37,-0.25,686,2026-11-27 08:30:00.129000
+D,2.1,2.75,2.53,2.53,2.53,2.53,-0.22,2.83,0,
+E,-0.91,1.43,1.55,2.8,3.33,3.33,-1.83,3.4,105,2026-11-27 09:00:00.668000
