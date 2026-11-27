@@ -1,0 +1,6 @@
+part_000211.parquet decouverte_2012 299
+part_000250.parquet decouverte_2016 318
+part_000289.parquet validation_2020 558
+part_000327.parquet validation_2024 469
+part_000345.parquet validation_2026 492
+TOTAL 2136
