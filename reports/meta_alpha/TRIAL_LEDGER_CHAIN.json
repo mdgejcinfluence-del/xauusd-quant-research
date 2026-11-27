@@ -5756,6 +5756,32 @@
     "profitable_edge": false
    },
    "entry_hash": "7f98e589a26c6d89884c514cd0178b4824d1af33034c8723c8b330560a4cdd57"
+  },
+  {
+   "seq": 439,
+   "prev_hash": "7f98e589a26c6d89884c514cd0178b4824d1af33034c8723c8b330560a4cdd57",
+   "entry": {
+    "type": "RE_ENTRY_004_TEST_TWOPHASE",
+    "mission": "RE-ENTRY-004",
+    "test": "hypothese deux phases testee telle que preenregistree (seq438), sans modification: ajout n2 (4 paniers): delais 16-40 s, deplacements -4,11/-2,96/-0,09/+2,11 bp (mixte, faible amplitude); ajout n3 (3 paniers): deplacements depuis 1ere -6,56/-4,68/-5,58 bp, delais 180/598/194 s (toujours defavorables, zone reproduite)",
+    "verdict": "FORTEMENT ETAYEE (non confirmee, n=4 et n=3 paniers independants); positions 4+: aucun panier -> NON DETERMINABLE",
+    "cloture": "C ferme au prix moyen (net -6 JPY apres couts); A/B ferment a +5,7/+8 bp au-dessus de leur moyenne (nets +11/+13): pas de distance fixe au-dessus du prix moyen; regle exacte NON DETERMINABLE",
+    "collecte": "3e instantane public identique (0 nouvelle transaction; compteur profil toujours 49 595) archive et deduplique",
+    "profitable_edge": false
+   },
+   "entry_hash": "012bba89657755dee66f5d48ddf4820c4cd90af6e7a9f6e45b6160e5835af9c7"
+  },
+  {
+   "seq": 440,
+   "prev_hash": "012bba89657755dee66f5d48ddf4820c4cd90af6e7a9f6e45b6160e5835af9c7",
+   "entry": {
+    "type": "RE_ENTRY_004_CLOSING",
+    "mission": "RE-ENTRY-004",
+    "livrables": "rapport final + TWOPHASE_TABLE.csv; instantane 3 archive dans RE-ENTRY-003",
+    "verdicts": "deux phases FORTEMENT ETAYEE; delai declencheur n3 REFUTE; distance fixe de cloture REFUTEE; positions 4+ et formule lots NON DETERMINABLES",
+    "profitable_edge": false
+   },
+   "entry_hash": "b870cdb26d50b92f17257a5c66b8070f087ae2e24a26ea8df620d01f45b42cc1"
   }
  ]
 }

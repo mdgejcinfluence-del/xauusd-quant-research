@@ -1,0 +1,8 @@
+panier,position,delai_depuis_precedente_s,deplacement_depuis_1ere_bp,deplacement_depuis_precedente_bp,classe,volume
+A,2,40,-4.11,-4.11,defavorable,0.01
+A,3,180,-6.56,-2.45,defavorable,0.02
+B,2,29,-2.96,-2.96,defavorable,0.01
+B,3,598,-4.68,-1.74,defavorable,0.02
+C,2,20,-0.09,-0.09,neutre,0.01
+C,3,194,-5.58,-5.49,defavorable,0.03
+E,2,16,2.11,2.11,favorable,0.01
