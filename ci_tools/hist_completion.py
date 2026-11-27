@@ -19,18 +19,25 @@ def main():
     SORTIE.mkdir(parents=True, exist_ok=True)
     man_p = SORTIE / 'COMPLETION_MANIFEST.json'
     man = json.loads(man_p.read_text()) if man_p.exists() else {'heures': {}, 'lots': {}}
+    # les 'vides anciens' d un run parallele peuvent etre des 503 transitoires (rate-limit):
+    # jamais figes dans cette mission, toujours re-essayes
+    man['heures'] = {k: v for k, v in man['heures'].items() if v.get('statut') != 'VIDE_ANCIEN_FIGE'}
     par_mois = {}
     heures = [h for h in pd.date_range(DEBUT, FIN, freq='h')
               if man['heures'].get(str(h), {}).get('statut') != 'OK']
     from concurrent.futures import ThreadPoolExecutor
     def travail(h):
-        return h, telecharger_heure(h)
-    with ThreadPoolExecutor(max_workers=12) as ex:
+        import time
+        for essai in range(3):
+            df = telecharger_heure(h)
+            if df is not None and len(df): return h, df
+            time.sleep(10 * (essai + 1))
+        return h, None
+    with ThreadPoolExecutor(max_workers=4) as ex:
         for h, df in ex.map(travail, heures):
             cle = str(h)
             if df is None or len(df) == 0:
-                if h < pd.Timestamp.now(tz='UTC').tz_localize(None) - pd.Timedelta(hours=48):
-                    man['heures'][cle] = {'statut': 'VIDE_ANCIEN_FIGE', 'ticks': 0}
+                man['heures'][cle] = {'statut': 'ECHEC_OU_VIDE_A_REESSAYER', 'ticks': 0}
                 continue
             q = qualite(df)
             man['heures'][cle] = {'statut': 'OK', 'ticks': q['ticks'],
