@@ -5835,6 +5835,31 @@
     "profitable_edge": false
    },
    "entry_hash": "62d50d6430c23e51be6ebbcf5f8f9db7cbf8999f2ddf126e1b0c25dd9cb25da7"
+  },
+  {
+   "seq": 445,
+   "prev_hash": "62d50d6430c23e51be6ebbcf5f8f9db7cbf8999f2ddf126e1b0c25dd9cb25da7",
+   "entry": {
+    "type": "COLORFUL_GLOBAL_SEQ445_SPEC",
+    "mission": "RECONSTRUCTION-INTEGRALE-COLORFUL-DROPS",
+    "spec_modele": "H3 + amorcage 30 s + renforcement -5,5 bp + cloture au prix moyen + reevaluation immediate; Buy seulement (aucun Sell observe); chaque regle etiquetee par statut; replay = fidelite en-echantillon sur A-E, jamais une validation",
+    "niveaux_vises": "N1 comprehension partielle, N2 specification ecrite, N3 reproduction executee; N4 exige de nouveaux paniers (fournisseur en pause depuis 2026-11-27 11:01 serveur, page inchangee a ce cycle)",
+    "profitable_edge": false
+   },
+   "entry_hash": "6d984b7a474468696699d304328963f3fe5f347174f5e3e4ebc24fb2fda582b9"
+  },
+  {
+   "seq": 446,
+   "prev_hash": "6d984b7a474468696699d304328963f3fe5f347174f5e3e4ebc24fb2fda582b9",
+   "entry": {
+    "type": "COLORFUL_GLOBAL_SEQ446_CONSOLIDATED",
+    "mission": "RECONSTRUCTION-INTEGRALE-COLORFUL-DROPS",
+    "moteur": "ci_tools/colorful_replay.py execute sur ticks des fenetres couvertes; REPLAY_RESULTS.json",
+    "fidelite_en_echantillon": "entrees reproduites a +-120 s: 3/5 (B 23 s, C 0 s, D 13 s); manquees A (1071 s) et E (594 s); 8 paniers simules supplementaires sans equivalent reel (3 vs 2 le 26; 10 vs 3 le 27): le portail d entree du modele est trop permissif, une condition reelle reste non isolee; aucun ajustement sur ces cas (sur-ajustement refuse)",
+    "niveaux": "N1 partiel, N2 atteint (modele candidat), N3 execute a fidelite partielle, N4 non atteint (fournisseur en pause depuis 2026-11-27 11:01 serveur), N5 descriptif seulement",
+    "profitable_edge": false
+   },
+   "entry_hash": "96bc6cd857c1b9b55ba47f9f593e52ecfd8d18f9142497707afd69e3b42eec9b"
   }
  ]
 }
