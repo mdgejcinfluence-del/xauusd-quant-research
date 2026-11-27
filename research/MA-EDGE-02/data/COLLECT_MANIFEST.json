@@ -692,5 +692,103 @@
   "statut": "OK",
   "bid_lt_ask_violations": 0,
   "ts_croissants": true
+ },
+ "2026-11-24 12:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-24 13:00:00": {
+  "ticks": 38685,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-24 22:00:00": {
+  "ticks": 0,
+  "statut": "VIDE_ANCIEN_FIGE"
+ },
+ "2026-11-25 00:00:00": {
+  "ticks": 30631,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 08:00:00": {
+  "ticks": 29318,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 17:00:00": {
+  "ticks": 48254,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 18:00:00": {
+  "ticks": 44120,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 19:00:00": {
+  "ticks": 39621,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 20:00:00": {
+  "ticks": 40374,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-25 21:00:00": {
+  "ticks": 17220,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 01:00:00": {
+  "ticks": 46617,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 09:00:00": {
+  "ticks": 19979,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 12:00:00": {
+  "ticks": 19153,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-26 16:00:00": {
+  "ticks": 17413,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-27 00:00:00": {
+  "ticks": 17510,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-27 01:00:00": {
+  "ticks": 37843,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
+ },
+ "2026-11-27 04:00:00": {
+  "ticks": 11683,
+  "statut": "OK",
+  "bid_lt_ask_violations": 0,
+  "ts_croissants": true
  }
 }
