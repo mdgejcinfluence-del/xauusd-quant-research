@@ -5807,6 +5807,34 @@
     "profitable_edge": false
    },
    "entry_hash": "799d930448a223792b43f8f8628e5952eefb66ef92883aba3673be30fe3ee9ea"
+  },
+  {
+   "seq": 443,
+   "prev_hash": "799d930448a223792b43f8f8628e5952eefb66ef92883aba3673be30fe3ee9ea",
+   "entry": {
+    "type": "RE_ENTRY_006_PREREGISTRY_DISCRIMINANTS",
+    "mission": "RE-ENTRY-006",
+    "cas_favorable_H1": "premiere entree nettement hors frontiere M15 apres impulsion+reprise compatibles",
+    "cas_favorable_H2": "premiere entree sur frontiere M15 apres repli court, impulsion immediate absente/defavorable, fond 15 min haussier",
+    "cas_ambigu": "configuration de prix favorable ET alignement M15 simultanes: ne departage pas",
+    "regle": "une seule observation ne confirme pas universellement; seuils descriptifs des modeles de reproduction figes avant evaluation (H1: ret5m>=+10 bp et reprise creux 5m>=+7 bp; H2: frontiere a 5 s et fond ret15m>=+5 bp); fidelite mesuree sur cas existants = en-echantillon, a confirmer sur nouveaux paniers",
+    "profitable_edge": false
+   },
+   "entry_hash": "d6acaaea720960f718ece5d2eded20c385f89cbe8d1fbde26fea3ed33602991d"
+  },
+  {
+   "seq": 444,
+   "prev_hash": "d6acaaea720960f718ece5d2eded20c385f89cbe8d1fbde26fea3ed33602991d",
+   "entry": {
+    "type": "RE_ENTRY_006_RESULTS",
+    "mission": "RE-ENTRY-006",
+    "audit": "A a 80 s d une ouverture M15, B a 334 s (2 s apres cloture de A); C/D/E exactement a :00 (audit sous reserve du fuseau UTC+2 fortement etaye)",
+    "discrimination": "H1 seule REFUTEE (C, E); H2 seule REFUTEE (A, B); echecs disjoints -> H3 combinee formulee selon la regle preenregistree: HYPOTHESE A TESTER (evaluation cloture M15 en fond haussier + voie rapide d impulsion)",
+    "non_entrees": "3/3 frontieres M15 libres des fenetres couvertes ont produit une entree (fond haussier a chaque fois); aucune frontiere libre en fond non haussier observee",
+    "reproduction": "H1 3/5, H2 2/5 en-echantillon; fidelite hors echantillon a etablir sur les prochains paniers; page publique inchangee (fournisseur en pause signalee)",
+    "profitable_edge": false
+   },
+   "entry_hash": "62d50d6430c23e51be6ebbcf5f8f9db7cbf8999f2ddf126e1b0c25dd9cb25da7"
   }
  ]
 }

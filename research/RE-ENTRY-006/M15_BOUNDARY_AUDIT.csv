@@ -1,0 +1,6 @@
+panier,entree_affichee_serveur,frontiere_M15_precedente,distance_depuis_frontiere_s,frontiere_suivante,distance_vers_frontiere_s,alignement,note
+A,2026-11-26 13:31:20,13:30:00,80,13:45:00,820,non (80 s apres),ouverture 80 s apres l ouverture de bougie M15
+B,2026-11-26 13:50:34,13:45:00,334,14:00:00,566,non,2 s apres la cloture du panier A (redemarrage evenementiel)
+C,2026-11-27 10:30:00,10:30:00,0,10:45:00,900,exact (:00),frontiere M15 exacte a la seconde affichee
+D,2026-11-27 10:45:00,10:45:00,0,11:00:00,900,exact (:00),frontiere M15 exacte
+E,2026-11-27 11:00:00,11:00:00,0,11:15:00,900,exact (:00),frontiere M15 exacte; entree apres repli court
