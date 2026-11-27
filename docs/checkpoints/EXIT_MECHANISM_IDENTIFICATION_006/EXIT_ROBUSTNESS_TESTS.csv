@@ -1,0 +1,36 @@
+panier,test,valeur,unite
+A,delai dernier franchissement theta=-0.5bp,94.814,s
+A,delai dernier franchissement theta=0.0bp,91.939,s
+A,delai dernier franchissement theta=0.5bp,91.672,s
+A,delai dernier franchissement (resample 1s),92.925,s
+A,cloture dans etat favorable (theta=0),True,bool
+A,duree segment final (theta=0),91.939,s
+A,ecart fin dernier segment -> cloture (theta=0),0.0,s
+B,delai dernier franchissement theta=-0.5bp,76.351,s
+B,delai dernier franchissement theta=0.0bp,71.222,s
+B,delai dernier franchissement theta=0.5bp,70.153,s
+B,delai dernier franchissement (resample 1s),77.0,s
+B,cloture dans etat favorable (theta=0),True,bool
+B,duree segment final (theta=0),71.222,s
+B,ecart fin dernier segment -> cloture (theta=0),0.0,s
+C,delai dernier franchissement theta=-0.5bp,19.048,s
+C,delai dernier franchissement theta=0.0bp,2.198,s
+C,delai dernier franchissement theta=0.5bp,3.423,s
+C,delai dernier franchissement (resample 1s),2.751,s
+C,cloture dans etat favorable (theta=0),False,bool
+C,duree segment final (theta=0),0.514,s
+C,ecart fin dernier segment -> cloture (theta=0),1.6840000000000002,s
+D,delai dernier franchissement theta=-0.5bp,5.759,s
+D,delai dernier franchissement theta=0.0bp,5.503,s
+D,delai dernier franchissement theta=0.5bp,5.096,s
+D,delai dernier franchissement (resample 1s),5.989,s
+D,cloture dans etat favorable (theta=0),True,bool
+D,duree segment final (theta=0),5.503,s
+D,ecart fin dernier segment -> cloture (theta=0),0.0,s
+E,delai dernier franchissement theta=-0.5bp,60.399,s
+E,delai dernier franchissement theta=0.0bp,60.399,s
+E,delai dernier franchissement theta=0.5bp,39.19,s
+E,delai dernier franchissement (resample 1s),60.604,s
+E,cloture dans etat favorable (theta=0),True,bool
+E,duree segment final (theta=0),60.399,s
+E,ecart fin dernier segment -> cloture (theta=0),0.0,s

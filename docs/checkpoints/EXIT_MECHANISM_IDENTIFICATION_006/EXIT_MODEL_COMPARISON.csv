@@ -1,0 +1,11 @@
+modele,parametres,prematurees,synchrones,manquees,retardees,ecart_abs_median_s,verdict
+P_continu,"theta=0,T=10s",4.0,0.0,1.0,0.0,415.6115,REFUTED comme point unique (prematures/manques)
+P_continu,"theta=0,T=1s",5.0,0.0,0.0,0.0,648.546,REFUTED comme point unique (prematures/manques)
+P_continu,"theta=0,T=30s",4.0,0.0,1.0,0.0,255.9985,REFUTED comme point unique (prematures/manques)
+P_continu,"theta=0,T=5s",4.0,1.0,0.0,0.0,644.577,REFUTED comme point unique (prematures/manques)
+P_continu,"theta=0,T=60s",2.0,1.0,2.0,0.0,31.825,REFUTED comme point unique (prematures/manques)
+P_continu,"theta=0,T=90s",2.0,0.0,3.0,0.0,143.865,REFUTED comme point unique (prematures/manques)
+P_ticks,"theta=0,K=100 ticks",4.0,0.0,1.0,0.0,261.385,REFUTED comme point unique (prematures/manques)
+P_ticks,"theta=0,K=200 ticks",4.0,0.0,1.0,0.0,173.282,REFUTED comme point unique (prematures/manques)
+P_ticks,"theta=0,K=400 ticks",1.0,0.0,4.0,0.0,275.657,REFUTED comme point unique (prematures/manques)
+P_ticks,"theta=0,K=50 ticks",5.0,0.0,0.0,0.0,190.507,REFUTED comme point unique (prematures/manques)

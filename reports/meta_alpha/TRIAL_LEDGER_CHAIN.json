@@ -6090,6 +6090,26 @@
     "resultats": "Sortie: toutes les regles causales de premier passage testees declenchent 19-246s trop tot (PWA, momentum, deceleration, retracement, seuil PnL +3bp absent chez C) - classees REFUTED comme premiers passages. Fait nouveau: la liquidation reelle est systematiquement differee apres l etat favorable: famille etat+persistance/confirmation, bornes mesurees (seuil [-1;+3]bp, persistance [19;246]s), nature exacte observationnellement equivalente sur 5 clotures. Sommet local = consequence, pas declencheur. Capture immediate compatible avec la meme famille (D: seuil +3bp a 0.4s). Aucun parametre ponctuel invente. 5/5 tests PASS. profitable_edge=False (moteurs)."
    },
    "entry_hash": "1cc0b87a6b9b07264c2d861d6c9b095748ad92b5c13bbbfe3944dc6adb46aeb4"
+  },
+  {
+   "seq": 470,
+   "prev_hash": "1cc0b87a6b9b07264c2d861d6c9b095748ad92b5c13bbbfe3944dc6adb46aeb4",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "EMI-006",
+    "perimetre": "EMI-006: distinguer persistance vs reevaluation periodique vs condition supplementaire dans les clotures A-E. Regles preenregistrees: (1) etat favorable F(theta): pnl_latent_bp>=theta, theta dans {-1,-0.5,0,0.5,1,2,3}bp fixe a priori; (2) persistance continue: intervalle compatible par panier = (duree max des segments favorables interrompus avant cloture, duree du segment final ininterrompu]; intersection sur 5 paniers = duree commune candidate ou vide; (3) persistance cumulative et avec tolerance d interruption (0.5/1/2s) memes intervalles; (4) cadence: grilles N=1..300s, phases libres, tolerance 1s; compter les couples (N,phase) compatibles avec les 5 clotures apres premier etat favorable final - nombre eleve = non-identifie; (5) condition supplementaire: statistiques des candidats a la cloture vs premiers passages (duree, ticks, variation pnl, volatilite realisee 30s, distance PWA); (6) replay causal moteur evenementiel familles P/C/H/E/U, ecarts/prematures/manques comptes. Aucun parametre ajuste presente comme identifie; aucun look-ahead (etat calcule tick par tick, passe seulement); V1/V2/EIDR-005 geles intouches; profitable_edge=False."
+   },
+   "entry_hash": "f6e50c157ece82db6c9f64664e89a89d104b63d1acc6dd4e98c61bfb5df29048"
+  },
+  {
+   "seq": 471,
+   "prev_hash": "f6e50c157ece82db6c9f64664e89a89d104b63d1acc6dd4e98c61bfb5df29048",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "EMI-006",
+    "resultats": "EMI-006: (1) persistance unique REFUTEE (pas seulement non identifiee): intersection des intervalles compatibles vide sur les 35 combinaisons theta{-1..+3bp} x {continu, tolerance 0.5/1/2s, cumulatif} - B a tenu 107.9s en etat favorable sans cloture contre segments finaux C 0.5s et D 5.5s; grille de replay 1-5 prematurees/manquees pour tout point. (2) Contre-exemple C: cloture a -0.25bp HORS etat favorable theta=0 (segment final termine 1.7s avant). (3) Cadence fixe ancree ouverture: intersection {1s} triviale seulement - REFUTEE pour N>1; cadence a phase libre NOT_IDENTIFIED (5 evenements ne contraignent pas (N,phi)). (4) Etat precedant les 5 clotures: PnL proche/au-dessus du PWA sur jambe haussiere (dPnL30s +1.6 a +7.2bp, 5/5). Restent equivalents: cadence phase libre, condition hybride, variable hors trajectoire Mid. Moteur causal evenementiel familles P/C/H/E/U livre (U n execute jamais). 7/7 tests PASS. profitable_edge=False."
+   },
+   "entry_hash": "0ac659eb80db0c6a5626cbf7cbfe4eaa419fc6d3195f65692f0aa8b0680bcdfc"
   }
  ]
 }

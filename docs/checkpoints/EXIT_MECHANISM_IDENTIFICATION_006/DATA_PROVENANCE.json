@@ -1,0 +1,14 @@
+{
+ "mission": "EMI-006",
+ "sources": {
+  "trajectoires": "docs/checkpoints/DEEP_INVENTORY_RECOVERY_003/TRAJECTORY_A..E.csv (calculees DIRR-003 depuis ticks Dukascopy nov. 2026, Mid seulement)",
+  "clotures_reelles": "5 paniers / 12 transactions Colorful drops (HTML78, RE-ENTRY-007)",
+  "rapports": "EIDR-005 seq468-469, CDME-004 seq466-467, DIRR-003 seq464-465"
+ },
+ "absences": {
+  "ticks_bid_ask_reels_HFM": "absents des trajectoires archivees: spread non re-mesurable ici, aucune execution reelle simulee sur Bid/Ask",
+  "nouvelles_clotures_reelles": "0 depuis 2026-11-27: aucune validation independante possible",
+  "logs_EA_provider": "inaccessibles (aucun contournement tente)"
+ },
+ "regle": "aucune donnee simulee melangee aux transactions reelles"
+}

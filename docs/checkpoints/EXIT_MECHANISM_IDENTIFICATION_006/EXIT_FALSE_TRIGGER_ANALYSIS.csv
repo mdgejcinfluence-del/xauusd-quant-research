@@ -1,0 +1,6 @@
+panier,theta_bp,segments_favorables_sans_cloture,segments_interrompus,note
+A,0.0,6,6,chaque segment interrompu est un faux candidat pour tout declencheur de premier passage
+B,0.0,30,30,chaque segment interrompu est un faux candidat pour tout declencheur de premier passage
+C,0.0,11,11,chaque segment interrompu est un faux candidat pour tout declencheur de premier passage
+D,0.0,3,3,chaque segment interrompu est un faux candidat pour tout declencheur de premier passage
+E,0.0,1,1,chaque segment interrompu est un faux candidat pour tout declencheur de premier passage

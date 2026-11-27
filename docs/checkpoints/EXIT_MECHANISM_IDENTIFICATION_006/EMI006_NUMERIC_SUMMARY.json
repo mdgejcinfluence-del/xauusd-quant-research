@@ -1,0 +1,119 @@
+{
+ "A": {
+  "open": "2026-11-26 11:31:20.003000",
+  "close": "2026-11-26 11:50:31.925000",
+  "duration_s": 1151.922,
+  "ticks": 4495,
+  "pnl_close_bp": 6.177630530039835,
+  "cadences_compatibles_theta0": [
+   1
+  ],
+  "n_cadences_compatibles": 1,
+  "candidats_a_la_cloture": {
+   "duree_detention_s": 1151.922,
+   "ticks_depuis_dernier_changement": 3540,
+   "variation_pnl_30s_bp": 3.9245298886236846,
+   "volatilite_30s_ecarttype_bp": 2.088356203250277,
+   "distance_pwa_bp": 6.177630530039835,
+   "ticks_segment_final": 369
+  }
+ },
+ "B": {
+  "open": "2026-11-26 11:50:34.054000",
+  "close": "2026-11-26 12:02:29",
+  "duration_s": 714.946,
+  "ticks": 3666,
+  "pnl_close_bp": 7.906971692901443,
+  "cadences_compatibles_theta0": [
+   1,
+   2,
+   3,
+   6,
+   7,
+   14,
+   17,
+   21,
+   34,
+   42,
+   51,
+   102,
+   119,
+   238
+  ],
+  "n_cadences_compatibles": 14,
+  "candidats_a_la_cloture": {
+   "duree_detention_s": 714.946,
+   "ticks_depuis_dernier_changement": 689,
+   "variation_pnl_30s_bp": 3.727522322218846,
+   "volatilite_30s_ecarttype_bp": 1.2151372009813102,
+   "distance_pwa_bp": 7.906971692901443,
+   "ticks_segment_final": 524
+  }
+ },
+ "C": {
+  "open": "2026-11-27 08:30:00.129000",
+  "close": "2026-11-27 08:40:49.751000",
+  "duration_s": 649.622,
+  "ticks": 4346,
+  "pnl_close_bp": -0.2479912909569837,
+  "cadences_compatibles_theta0": [
+   1,
+   11,
+   59
+  ],
+  "n_cadences_compatibles": 3,
+  "candidats_a_la_cloture": {
+   "duree_detention_s": 649.622,
+   "ticks_depuis_dernier_changement": 2795,
+   "variation_pnl_30s_bp": 7.219241532656628,
+   "volatilite_30s_ecarttype_bp": 2.7933013551803243,
+   "distance_pwa_bp": -0.2479912909569837,
+   "ticks_segment_final": 4
+  }
+ },
+ "D": {
+  "open": "2026-11-27 08:45:00.109000",
+  "close": "2026-11-27 08:45:16.989000",
+  "duration_s": 16.88,
+  "ticks": 140,
+  "pnl_close_bp": 2.8298896206990776,
+  "cadences_compatibles_theta0": [
+   1,
+   2,
+   4,
+   8,
+   16
+  ],
+  "n_cadences_compatibles": 5,
+  "candidats_a_la_cloture": {
+   "duree_detention_s": 16.88,
+   "ticks_depuis_dernier_changement": 139,
+   "variation_pnl_30s_bp": 2.5305743723569307,
+   "volatilite_30s_ecarttype_bp": 0.9989108599110184,
+   "distance_pwa_bp": 2.8298896206990776,
+   "ticks_segment_final": 71
+  }
+ },
+ "E": {
+  "open": "2026-11-27 09:00:00.617000",
+  "close": "2026-11-27 09:01:26.604000",
+  "duration_s": 85.987,
+  "ticks": 625,
+  "pnl_close_bp": 3.4027167627748156,
+  "cadences_compatibles_theta0": [
+   1,
+   5,
+   17,
+   85
+  ],
+  "n_cadences_compatibles": 4,
+  "candidats_a_la_cloture": {
+   "duree_detention_s": 85.987,
+   "ticks_depuis_dernier_changement": 464,
+   "variation_pnl_30s_bp": 1.5538574749718315,
+   "volatilite_30s_ecarttype_bp": 1.349908677884182,
+   "distance_pwa_bp": 3.4027167627748156,
+   "ticks_segment_final": 383
+  }
+ }
+}
