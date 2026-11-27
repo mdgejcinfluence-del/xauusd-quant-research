@@ -6172,6 +6172,26 @@
     "resultats": "LMD-008 diagnostic des pertes (baseline seq475 inchangee). Source principale DEMONTREE: interaction accumulation x couts. Paniers 3 positions: V1 -31.96 (2 positions +1.56), V2 -28.23/-33.24; taux de gain 7.2%/5.7%; le declencheur -5.5bp selectionne les trajectoires adverses (forward median -4.7bp a 5min) et triple l exposition ou la recuperation echoue. Effet causal du renforcement toujours NOT_IDENTIFIED (censure seq459). Entrees: forward medians positifs (paniers 2 positions +2.6bp 5min, +6.5bp 1h); brut estime avant spread+cout variable +105 (V1)/+74 (V2) contre ~136/108 de couts estimes (spread median CI 1.31-1.66bp + 1.2bp, comptes une fois): marge brute/panier ~+0.026 < cout ~0.033 USD. Sortie plafonnee au PWA (gain moyen +0.035) + aucun stop: duree max 13.6j, septembre 0 cloture (panier bloquant non enregistre: identite NON DEMONTRABLE, mecanisme structurel demontre). Deficit diffus: 100 pires paniers = 7.5%/9.5% des pertes. V2-F2 plus mauvais car F2 retire proportionnellement plus de petits gagnants rapides (<=60s +6.53) que de perdants; 62 vs 40 pertes consecutives. Forensique complete 7382 paniers (MFE/MAE/temps sous PWA, CI run 46043159310 + novembre local). 6/6 tests PASS. Aucune V3 proposee."
    },
    "entry_hash": "f6d9815c483d8ca90f14ed8d85909efbbeecb119f1ea07b852f2dca331575651"
+  },
+  {
+   "seq": 478,
+   "prev_hash": "f6d9815c483d8ca90f14ed8d85909efbbeecb119f1ea07b852f2dca331575651",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "FONDACTRICE-009",
+    "perimetre": "Installation de la constitution META ALPHA dans docs/governance/ (constitution, doctrine, garde-fou anti-derive, registre des modeles economiques, journal des decisions, rapport de fondation). Controle garde-fou de la presente mission: VERT (alignee, elle institue la finalite). Aucun moteur modifie, aucune V3, aucun backtest lance. Reclassification des travaux anterieurs selon leur contribution aux modeles economiques; Colorful = ME-001 INVENTORY_RECOVERY au statut HYPOTHESIS/IDENTIFICATION_IN_PROGRESS (mecanisme comportemental fortement etaye, edge net non valide, implementations V1/V2-F2 rejetees comme exploitations). Tests: verification documentaire + exemples de classification du garde-fou."
+   },
+   "entry_hash": "47bb3018a2474d8028be08fe744773e522b7c73c3174cd6fc6a1301012a550af"
+  },
+  {
+   "seq": 479,
+   "prev_hash": "47bb3018a2474d8028be08fe744773e522b7c73c3174cd6fc6a1301012a550af",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "FONDACTRICE-009",
+    "resultats": "Constitution META ALPHA installee dans docs/governance/ (constitution, doctrine de recherche, garde-fou anti-derive avec procedure 4 controles/4 niveaux et 6 exemples classes dont VERT/ORANGE/ROUGE, registre des modeles, journal des decisions, rapport de fondation, manifeste SHA-256). Doctrine: unite de recherche = modele economique; trois questions obligatoires; jamais VALIDATED sur donnees de construction. Reclassification: ME-001 INVENTORY_RECOVERY (Colorful) = HYPOTHESIS/IDENTIFICATION_IN_PROGRESS, mecanisme comportemental fortement etaye, edge net non valide; V1/V2-F2 REJECTED comme exploitations (leur echec ne condamne pas le modele suppose du provider). ME-002 DISCOVERED (non mesure), ME-003 DISCOVERED (avantage directionnel refute chez Colorful), ME-004 INSUFFICIENT_DATA. Trois prochaines recherches VERT: detection signature ME-001 dans le corpus, quantification de l echec de recuperation, detection ME-002. Aucun moteur modifie, aucune V3. 6/6 tests PASS."
+   },
+   "entry_hash": "e57c2e2905ff5cd573fe530ee6d68096da9bf3c1e4b22b0bab7153aaddf12b27"
   }
  ]
 }
