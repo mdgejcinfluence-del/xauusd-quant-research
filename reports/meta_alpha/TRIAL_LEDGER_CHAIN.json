@@ -6284,6 +6284,16 @@
     "perimetre": "ME-002.1 detection des desequilibres temporaires. Definition gelee independante de ME-001: reference = mediane causale du mid sur 15min (barres 5s, shift 1); episode quand |mid-mediane| >= A bp, A dans {5,10,20} fixe; trade de resorption (fade: vendre un pic haussier au bid, acheter un creux a l ask); sortie au premier retour a la mediane (prix executable oppose) ou horizon 4h marque au prix executable; couts une fois (Bid/Ask + central 1.2bp en sensibilite); episodes non chevauchants. Memes 5 partitions (decouverte 2012/2016, validation 2020/2024/2026, seuils non calibres). Dependance a ME-001 mesuree par le recouvrement temporel des episodes (ME-001 = retour au plus haut 15min, ME-002 = retour a la mediane, symetrique) - si recouvrement eleve, classer meme phenomene, pas diversification. Aucun moteur cree."
    },
    "entry_hash": "edde7dadcc0244b332f151113afa26fe1e0eb76944b5820cee99416c5530a4f0"
+  },
+  {
+   "seq": 489,
+   "prev_hash": "edde7dadcc0244b332f151113afa26fe1e0eb76944b5820cee99416c5530a4f0",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ME-002.1",
+    "resultats": "ME-002.1 (garde-fou VERT, autorisation autonome du fondateur): phenomene de resorption DEMONTRE (mediane 15min retouchee dans 47-86% des cas, 4272 episodes, 5 partitions) mais exploitation en fade symetrique REFUTEE: esperance nette apres cout central negative dans les 6 combinaisons groupe x seuil (-2.0 a -5.2bp, PF 0.46-0.88), decouverte et validation concordantes; les non-resorptions a 4h (-136 a -301bp) dominent. ME-002 REJECTED sous cette forme; aucune source independante pour le portefeuille via ce couple. Contraste utile: ce n est pas tout retour a un niveau qui paie - la geometrie precise de ME-001 (acheteur, retour au plus haut, filtre d entree) reste la seule candidate, en attente de validation prospective (collecte D en cours, regle d arret seq486). 4/4 tests PASS."
+   },
+   "entry_hash": "e14c254228c07e762eb6e55059179fe54d78054c25b6249bbeef3e6a0b0edc97"
   }
  ]
 }

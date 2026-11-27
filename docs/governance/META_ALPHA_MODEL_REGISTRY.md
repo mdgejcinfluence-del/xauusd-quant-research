@@ -42,10 +42,12 @@ VALIDATED sur les données qui ont servi à le construire.*
 
 ## ME-002 — TEMPORARY_DISLOCATION (déséquilibre temporaire)
 
-- **État** : DISCOVERED (famille définie par la constitution, §2).
-  Aucune observation de trader ne l'a encore isolée chez Colorful ;
-  signature (écarts inhabituels et résorption) détectable dans le
-  corpus 2010-2026. Rendement net après coûts : non mesuré.
+- **État** : **REJECTED sous la forme testée** (ME-002.1, seq488-489 :
+  fade symétrique vers la médiane 15 min — espérance nette négative
+  dans les 6 combinaisons groupe × seuil, PF 0,46–0,88, malgré une
+  résorption statistique de 47–86 %). La famille pourra être rouverte
+  uniquement avec une géométrie qualitativement différente et des
+  données neuves.
 
 ## ME-003 — IMPULSE_CONTINUATION (impulsion)
 

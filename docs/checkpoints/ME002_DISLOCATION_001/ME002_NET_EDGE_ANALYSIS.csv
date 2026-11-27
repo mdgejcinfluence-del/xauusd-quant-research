@@ -1,0 +1,13 @@
+groupe,seuil_bp,base,episodes,resorption_pct,esperance_bp,mediane_bp,gagnants_pct,PF,pire_bp
+decouverte,5.0,edge_spread_inclus_bp,711,78.8,-2.34,3.56,78.5,0.628,-162.0
+decouverte,5.0,edge_central_bp,711,78.8,-3.54,2.36,77.8,0.46,-163.2
+decouverte,10.0,edge_spread_inclus_bp,351,67.5,-2.41,8.31,70.1,0.749,-159.0
+decouverte,10.0,edge_central_bp,351,67.5,-3.61,7.11,70.1,0.638,-160.2
+decouverte,20.0,edge_spread_inclus_bp,100,47.0,-4.02,5.02,55.0,0.756,-134.8
+decouverte,20.0,edge_central_bp,100,47.0,-5.22,3.82,54.0,0.693,-136.0
+validation,5.0,edge_spread_inclus_bp,1632,85.5,-1.3,4.82,85.3,0.832,-297.7
+validation,5.0,edge_central_bp,1632,85.5,-2.5,3.62,84.9,0.685,-298.9
+validation,10.0,edge_spread_inclus_bp,1019,79.4,-1.5,9.36,80.1,0.865,-300.3
+validation,10.0,edge_central_bp,1019,79.4,-2.7,8.16,79.9,0.762,-301.5
+validation,20.0,edge_spread_inclus_bp,459,69.7,-0.84,19.37,73.0,0.949,-295.8
+validation,20.0,edge_central_bp,459,69.7,-2.04,18.17,71.9,0.88,-297.0
