@@ -1,0 +1,9 @@
+mecanisme,predictions,soutiens,contradictions,statut
+Speculation directionnelle pure,retours forward positifs apres entree; sorties sur objectif directionnel,entrees en contexte haussier,retours forward reels immediats negatifs (A/B/C); signal simule sans avantage directionnel (E1),REFUTED comme mecanisme principal
+Suivi de tendance simple,entrees apres impulsion; laisser courir les gains,impulsions pre-entree 4/5,clotures rapides au voisinage du prix moyen; achats renforces sur recul,REFUTED comme description complete
+Retour a la moyenne pur,entrees apres baisse,entrees apres hausse (impulsion) majoritairement,renforcements sur recul compatibles,REFUTED comme mecanisme d entree
+Accumulation d inventaire en excursion adverse (hybride tendance/inventaire),achats renforces quand le prix recule dans un contexte haussier; temps eleve sous le prix d entree; recuperation vers le prix moyen,A/B/C: 81-97% du temps sous la 1re entree; MAE -6.7 a -18.3bp; clotures pres du prix moyen,2 paniers (D/E) a excursion immediate favorable montrent un second regime,STRONGLY_SUPPORTED (faible n; mecanisme le mieux compatible)
+Reponse immediate favorable (scalp de continuation),cloture tres rapide si le prix part favorablement,D (17s) et E (87s),ne decrit pas A/B/C,CANDIDATE (regime secondaire observe)
+Market making / fourniture de liquidite,gains de spread systematiques,aucune observation du carnet ni des files,non observable sur Bid/Ask seuls,NOT_IDENTIFIED (non testable avec ces donnees)
+Avantage d execution/spread,remplissages systematiquement meilleurs que Bid/Ask affiche,prix d execution reels non observes,aucune preuve,NOT_IDENTIFIED
+Compensation de risque de queue,frequence elevee de petits gains; pertes moyennes superieures,profil: 67.4% gagnants; gain moy 22.37 < perte moy 27.82; esperance affichee +6.01 yen/transaction,queue reelle jamais observee dans l echantillon,STRONGLY_SUPPORTED comme signature du profil (pas comme rentabilite prouvee)

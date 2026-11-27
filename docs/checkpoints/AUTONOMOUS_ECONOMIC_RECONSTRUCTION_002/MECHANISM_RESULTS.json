@@ -1,0 +1,91 @@
+{
+ "E1_reelles": {
+  "A": {
+   "fwd60s_bp": -3.57,
+   "fwd300s_bp": -7.96,
+   "fwd900s_bp": -6.47,
+   "a_cloture_bp": 2.05
+  },
+  "B": {
+   "fwd60s_bp": -1.61,
+   "fwd300s_bp": -3.32,
+   "fwd900s_bp": 3.61,
+   "a_cloture_bp": 4.71
+  },
+  "C": {
+   "fwd60s_bp": -4.39,
+   "fwd300s_bp": -11.62,
+   "fwd900s_bp": 1.14,
+   "a_cloture_bp": -3.29
+  },
+  "D": {
+   "fwd60s_bp": 8.68,
+   "fwd300s_bp": 14.8,
+   "fwd900s_bp": 6.83,
+   "a_cloture_bp": 2.83
+  },
+  "E": {
+   "fwd60s_bp": 3.11,
+   "fwd300s_bp": 17.62,
+   "fwd900s_bp": 11.45,
+   "a_cloture_bp": 4.44
+  }
+ },
+ "E2_reelles": {
+  "A": {
+   "mae_vs_entree_bp": -12.9,
+   "mfe_vs_entree_bp": 4.2,
+   "part_temps_sous_prix_entree_pct": 96.9,
+   "duree_s": 1152.0
+  },
+  "B": {
+   "mae_vs_entree_bp": -6.67,
+   "mfe_vs_entree_bp": 5.17,
+   "part_temps_sous_prix_entree_pct": 80.7,
+   "duree_s": 715.0
+  },
+  "C": {
+   "mae_vs_entree_bp": -18.34,
+   "mfe_vs_entree_bp": 2.67,
+   "part_temps_sous_prix_entree_pct": 88.6,
+   "duree_s": 650.0
+  },
+  "D": {
+   "mae_vs_entree_bp": -0.63,
+   "mfe_vs_entree_bp": 3.05,
+   "part_temps_sous_prix_entree_pct": 22.9,
+   "duree_s": 17.0
+  },
+  "E": {
+   "mae_vs_entree_bp": -0.55,
+   "mfe_vs_entree_bp": 6.27,
+   "part_temps_sous_prix_entree_pct": 1.8,
+   "duree_s": 87.0
+  }
+ },
+ "E1_simulees": {
+  "fwd60s": {
+   "n": 379,
+   "moyenne_bp": 0.31,
+   "mediane_bp": 0.17,
+   "part_positifs_pct": 51.7
+  },
+  "fwd300s": {
+   "n": 379,
+   "moyenne_bp": 0.82,
+   "mediane_bp": 1.14,
+   "part_positifs_pct": 52.2
+  },
+  "fwd900s": {
+   "n": 379,
+   "moyenne_bp": 0.14,
+   "mediane_bp": -1.53,
+   "part_positifs_pct": 46.2
+  }
+ },
+ "E3_profil": {
+  "esperance_par_transaction_affichee_jpy": 6.01,
+  "ratio_gain_moyen_sur_perte_moyenne": 0.804,
+  "lecture": "esperance affichee positive portee par la frequence (67.4%) malgre un gain moyen inferieur a la perte moyenne: signature compatible avec un mecanisme a haute frequence de petits gains et queue negative, non une preuve"
+ }
+}

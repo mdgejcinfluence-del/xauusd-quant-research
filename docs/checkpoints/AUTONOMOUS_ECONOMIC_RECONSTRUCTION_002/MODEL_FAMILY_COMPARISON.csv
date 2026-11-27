@@ -1,0 +1,7 @@
+famille,explique_entrees,explique_renforcements,explique_clotures,explique_profil,verdict
+Directionnelle,partiellement,non,non,non,REFUTED (principal)
+Tendance pure,partiellement,non,non,partiellement,REFUTED (complete)
+Mean-reversion d entree,non,partiellement,partiellement,partiellement,REFUTED (entree)
+Hybride tendance+inventaire adverse,oui (contexte),oui,partiellement (voisinage prix moyen),oui,MIEUX COMPATIBLE (STRONGLY_SUPPORTED faible n)
+Hybride + regime immediat favorable,oui,oui,partiellement,oui,MIEUX COMPATIBLE ETENDU (a confirmer)
+Market making,non testable,non testable,non testable,non testable,NOT_IDENTIFIED

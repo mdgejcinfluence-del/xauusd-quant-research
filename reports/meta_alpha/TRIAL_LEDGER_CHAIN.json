@@ -6010,6 +6010,26 @@
     "resultats": "M1 fouille HTML78: aucun historique cache (memes 6 lignes); apport: Copy Method Proportional (parametre suiveur). M2: bougie M15 precedente a corps positif 5/5 (+0.8 a +13.5bp) - CANDIDATE faible, non tranchante. M3: objectif monetaire strict >=0 REFUTE (C -6 yen). Registre complet 15 hypotheses statuts autorises; sizing/exit/risque reel NOT_IDENTIFIED; sous-identification demontree sur 12 transactions. Niveaux: N1 partiel, N2 atteint pour le candidat, N3 partiel, N4 non atteint. 7/7 tests PASS (registre CSV corrige pour quoting puis re-teste). profitable_edge=False."
    },
    "entry_hash": "ad9814f149d0b7f1ba1a4c60542fbc57982f4bb4bc7035612dcf56867a6c5fff"
+  },
+  {
+   "seq": 462,
+   "prev_hash": "ad9814f149d0b7f1ba1a4c60542fbc57982f4bb4bc7035612dcf56867a6c5fff",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "AESR-002",
+    "note": "Tests de mecanismes economiques preenregistres sur preuves existantes: (E1) retours forward Mid apres entrees reelles (60/300/900s et cloture) et apres entrees simulees V1 novembre (n=379) pour separer qualite directionnelle du signal et gestion; (E2) trajectoires des paniers reels: MAE vs 1re entree et vs prix moyen, temps sous le prix moyen, recuperation; (E3) arithmetique du profil public: esperance par transaction affichee (0.674*22.37-0.326*27.82) et asymetrie gain/perte moyen comme signature de mecanisme (frequence contre queue); (E4) paniers simules: capture de mouvement realise vs PnL (part du mouvement total captee). Aucune affirmation market-making (pas dobservabilite du carnet). Modeles V1/V2 geles intouches; nouvelle implementation = moteur de diagnostic separe."
+   },
+   "entry_hash": "bbf0f82511dd3278b1073a679ad889e10ca9185c2a0ac46a4532ed2ffcc499df"
+  },
+  {
+   "seq": 463,
+   "prev_hash": "bbf0f82511dd3278b1073a679ad889e10ca9185c2a0ac46a4532ed2ffcc499df",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "AESR-002",
+    "resultats": "Mecanisme: signal dentree sans avantage directionnel forward (379 simulees: +0.31/+0.82/+0.14bp a 60/300/900s, ~50% positifs). Paniers reels longs A/B/C: 81-97% de leur vie sous la 1re entree, MAE -6.7 a -18.3bp, clotures pres du prix moyen; D/E regime immediat favorable (17s/87s). Mecanisme le mieux compatible: hybride contexte haussier + accumulation dinventaire en excursion adverse + sortie au voisinage du prix moyen, regime secondaire de scalp immediat (STRONGLY_SUPPORTED faible n). Profil: esperance affichee +6.01 yen/transaction portee par la frequence (67.4%), gain moyen < perte moyenne - signature queue. Market making NOT_IDENTIFIED (non observable). Fidelite et economie maintenues separees; moteurs geles perdants apres couts. 8/8 tests PASS. profitable_edge=False pour nos moteurs."
+   },
+   "entry_hash": "196585859fb3faf7f2e9a2b41c48146e70cbbdae03ea9b604429d05b0f32531a"
   }
  ]
 }
