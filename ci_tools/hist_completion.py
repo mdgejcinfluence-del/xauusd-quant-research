@@ -28,10 +28,10 @@ def main(debut=DEBUT, fin=FIN):
     from concurrent.futures import ThreadPoolExecutor
     def travail(h):
         import time
-        for essai in range(3):
+        for essai in range(2):
             df = telecharger_heure(h)
             if df is not None and len(df): return h, df
-            time.sleep(10 * (essai + 1))
+            time.sleep(3 * (essai + 1))
         return h, None
     with ThreadPoolExecutor(max_workers=1) as ex:
         for h, df in ex.map(travail, heures):
