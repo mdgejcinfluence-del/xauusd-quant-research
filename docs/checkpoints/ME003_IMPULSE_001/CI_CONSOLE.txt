@@ -1,0 +1,16 @@
+part_000211.parquet decouverte_2012 5.0 433
+part_000211.parquet decouverte_2012 10.0 242
+part_000211.parquet decouverte_2012 20.0 62
+part_000250.parquet decouverte_2016 5.0 500
+part_000250.parquet decouverte_2016 10.0 239
+part_000250.parquet decouverte_2016 20.0 56
+part_000289.parquet validation_2020 5.0 583
+part_000289.parquet validation_2020 10.0 499
+part_000289.parquet validation_2020 20.0 253
+part_000327.parquet validation_2024 5.0 519
+part_000327.parquet validation_2024 10.0 305
+part_000327.parquet validation_2024 20.0 85
+part_000345.parquet validation_2026 5.0 599
+part_000345.parquet validation_2026 10.0 523
+part_000345.parquet validation_2026 20.0 250
+TOTAL 5148
