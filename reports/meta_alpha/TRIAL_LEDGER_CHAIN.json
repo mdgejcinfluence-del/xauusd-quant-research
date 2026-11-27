@@ -5880,6 +5880,26 @@
     "resultats": "Audit matching: fidelite entree V1 corrigee 4/5 (A -15.4s; seq446 disait 3/5, non reecrit). E seul manque, par occupation (panier simule 08:50 UTC). V1 = 58 paniers fenetres completes, 54 non apparies, reentrees mediane 0.1-9s apres cloture. F1 refutee (D), F3 refutee (B), F4 non discriminant. F2 unicite M15: V2 experimental (moteur gele intouche) = 15 paniers, entrees 5/5 appariees (E +0.6s), 10 non apparies; fidelite gestion faible (positions 2/5, durees ~60s vs 650-1152s). Tout est EN-ECHANTILLON exploratoire; falsification F2/H3 reservee aux paniers futurs. Page HFM inchangee, aucune observation nouvelle. profitable_edge=False (descriptif)."
    },
    "entry_hash": "8c167c7dd12acfe09401e59486edb0deedfd517a2c4c44373aa191d9824add78"
+  },
+  {
+   "seq": 449,
+   "prev_hash": "8c167c7dd12acfe09401e59486edb0deedfd517a2c4c44373aa191d9824add78",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "COLORFUL-FILTER-002",
+    "note": "Page HFM recontrlee inchangee (aucune observation nouvelle): validation externe H3/F2 EN ATTENTE, non bloquante. Hypotheses preenregistrees avant calcul: C1 cloture au premier retour Mid>=prix moyen pondere apres la derniere entree (test: croisements avant cloture reelle). C2 objectif fixe en bp au-dessus de la moyenne (dispersion de Mid_cloture-moyenne). C3 cloture evaluee aux frontieres M15 seulement. C4 evenement de marche a la cloture (ret60s/impulsion au tick de cloture). X1: les 10 paniers supplementaires V2 se distinguent des reelles par une feature causale au tick (a chercher sur features seq447, toute regle = exploratoire en-echantillon). Machine a etats formalisee seulement si transitions observees. Moteurs V1/V2 geles intouches."
+   },
+   "entry_hash": "794ab3e0af0ca0f4b3b0db565d66a2bcce7019d763aade34364b9ec7e2c4af62"
+  },
+  {
+   "seq": 450,
+   "prev_hash": "794ab3e0af0ca0f4b3b0db565d66a2bcce7019d763aade34364b9ec7e2c4af62",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "COLORFUL-FILTER-002",
+    "resultats": "Aucune observation nouvelle (page HFM inchangee): validation H3/F2 EN ATTENTE, etat honnete. X1 negatif: aucune feature causale testee ne separe les 10 extras V2 des 5 reelles. Fermeture: C1 premier retour REFUTEE (2-8 episodes au-dessus de la moyenne avant cloture), C2 objectif fixe bp REFUTEE (+6.2/+7.9/-0.25/+2.8/+3.4), C3 frontieres M15 REFUTEE; residuel descriptif: ret60s a la cloture toujours positif. Machine a etats: squelette partiel seulement. Utilisabilite compte propre: NON en letat (queue martingale inconnue). Verdict: modele candidat partiellement fidele, non valide. profitable_edge=False."
+   },
+   "entry_hash": "67dec9cfeb830c159a47394e015269a8d4f64bc16532f55ef88a7308f7c5c4a3"
   }
  ]
 }

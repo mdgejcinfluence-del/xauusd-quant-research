@@ -1,0 +1,163 @@
+{
+ "clotures": {
+  "A": {
+   "prix_entrees_mid": [
+    3568.78,
+    3567.26,
+    3566.6
+   ],
+   "prix_moyen_pondere": 3567.31,
+   "premier_retour_au_dessus_moyenne": "2026-11-26 11:47:07.024000",
+   "delai_premier_retour_s": 727.0,
+   "episodes_au_dessus_avant_cloture": 4,
+   "mid_cloture_moins_moyenne_bp": 6.18,
+   "excursion_max_sous_moyenne_bp": -8.78,
+   "duree_reelle_s": 1152.0,
+   "cloture_minute_dans_bougie_M15": 5,
+   "cloture_seconde": 32,
+   "ret60s_a_cloture_bp": 4.74,
+   "ret300s_a_cloture_bp": 12.66
+  },
+  "B": {
+   "prix_entrees_mid": [
+    3569.19,
+    3568.0,
+    3567.51
+   ],
+   "prix_moyen_pondere": 3568.05,
+   "premier_retour_au_dessus_moyenne": "2026-11-26 12:01:02.859000",
+   "delai_premier_retour_s": 1.9,
+   "episodes_au_dessus_avant_cloture": 8,
+   "mid_cloture_moins_moyenne_bp": 7.91,
+   "excursion_max_sous_moyenne_bp": -3.47,
+   "duree_reelle_s": 715.0,
+   "cloture_minute_dans_bougie_M15": 2,
+   "cloture_seconde": 29,
+   "ret60s_a_cloture_bp": 4.96,
+   "ret300s_a_cloture_bp": 5.46
+  },
+  "C": {
+   "prix_entrees_mid": [
+    3674.64,
+    3674.79,
+    3672.72
+   ],
+   "prix_moyen_pondere": 3673.52,
+   "premier_retour_au_dessus_moyenne": "2026-11-27 08:40:30.804000",
+   "delai_premier_retour_s": 416.8,
+   "episodes_au_dessus_avant_cloture": 2,
+   "mid_cloture_moins_moyenne_bp": -0.25,
+   "excursion_max_sous_moyenne_bp": -15.3,
+   "duree_reelle_s": 650.0,
+   "cloture_minute_dans_bougie_M15": 10,
+   "cloture_seconde": 50,
+   "ret60s_a_cloture_bp": 8.91,
+   "ret300s_a_cloture_bp": 8.17
+  },
+  "D": {
+   "prix_entrees_mid": [
+    3675.06
+   ],
+   "prix_moyen_pondere": 3675.06,
+   "premier_retour_au_dessus_moyenne": "2026-11-27 08:45:00.109000",
+   "delai_premier_retour_s": 0.1,
+   "episodes_au_dessus_avant_cloture": 4,
+   "mid_cloture_moins_moyenne_bp": 2.83,
+   "excursion_max_sous_moyenne_bp": -0.63,
+   "duree_reelle_s": 17.0,
+   "cloture_minute_dans_bougie_M15": 0,
+   "cloture_seconde": 17,
+   "ret60s_a_cloture_bp": 4.0,
+   "ret300s_a_cloture_bp": 14.6
+  },
+  "E": {
+   "prix_entrees_mid": [
+    3677.56,
+    3678.32
+   ],
+   "prix_moyen_pondere": 3677.94,
+   "premier_retour_au_dessus_moyenne": "2026-11-27 09:00:16.047000",
+   "delai_premier_retour_s": 0.0,
+   "episodes_au_dessus_avant_cloture": 2,
+   "mid_cloture_moins_moyenne_bp": 3.4,
+   "excursion_max_sous_moyenne_bp": -1.59,
+   "duree_reelle_s": 87.0,
+   "cloture_minute_dans_bougie_M15": 1,
+   "cloture_seconde": 27,
+   "ret60s_a_cloture_bp": 2.64,
+   "ret300s_a_cloture_bp": 3.28
+  }
+ },
+ "extras_V2": [
+  {
+   "t0": "2026-11-26 11:01:59.248000",
+   "regle": "voie_rapide",
+   "nb": 2,
+   "duree_s": 67,
+   "pnl": -0.0123
+  },
+  {
+   "t0": "2026-11-26 11:15:00.537000",
+   "regle": "voie_rapide",
+   "nb": 3,
+   "duree_s": 123,
+   "pnl": -0.0261
+  },
+  {
+   "t0": "2026-11-26 12:00:00.176000",
+   "regle": "horloge_M15",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": -0.0043
+  },
+  {
+   "t0": "2026-11-26 12:30:12.225000",
+   "regle": "voie_rapide",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": -0.0061
+  },
+  {
+   "t0": "2026-11-26 12:45:00.047000",
+   "regle": "horloge_M15",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": -0.0026
+  },
+  {
+   "t0": "2026-11-27 07:34:25.387000",
+   "regle": "voie_rapide",
+   "nb": 3,
+   "duree_s": 1005,
+   "pnl": -0.0293
+  },
+  {
+   "t0": "2026-11-27 07:51:10.677000",
+   "regle": "voie_rapide",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": -0.0125
+  },
+  {
+   "t0": "2026-11-27 08:00:00.025000",
+   "regle": "horloge_M15",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": 0.1063
+  },
+  {
+   "t0": "2026-11-27 08:15:00.129000",
+   "regle": "voie_rapide",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": 0.0186
+  },
+  {
+   "t0": "2026-11-27 09:15:00.104000",
+   "regle": "horloge_M15",
+   "nb": 2,
+   "duree_s": 60,
+   "pnl": -0.0074
+  }
+ ]
+}
