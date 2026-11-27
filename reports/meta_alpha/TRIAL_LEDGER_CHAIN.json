@@ -6202,6 +6202,16 @@
     "perimetre": "Detection des fenetres de recuperation ME-001 dans le corpus certifie. Garde-fou: VERT. Protocole gele avant calcul: barres 5s (premier bid/ask, mid) depuis ticks Dukascopy certifies; reference causale R = max du mid sur les 15 minutes precedentes; episode long (inventaire acheteur) ouvert quand mid <= R*(1-A/10000), A dans {5,10,20}bp fixe a priori (plus variante normalisee A=1x volatilite realisee 15min en bp, descriptive); suivi jusqu a recuperation complete (mid>=R) ou horizon 24h; episodes non chevauchants (reprise apres cloture d episode seulement); mesures: profondeur max, temps vers 25/50/75/100% de retracement, recuperation dans {5m,15m,1h,4h,24h}, forward returns; edge executif: achat a l ask du premier tick de confirmation, sortie au bid a la recuperation complete ou a horizon 4h (marque au bid), couts comptes une fois (spread dans Bid/Ask + cout variable CENTRAL 1.2bp en sensibilite); regimes = terciles de volatilite realisee 15min (descriptif, calcules dans l echantillon, declares). Partitions: decouverte part_000211 (2012) et part_000250 (2016); validation part_000289 (2020), part_000327 (2024), part_000345 (2026) - seuils non calibres sur les resultats, contamination historique documentee. Aucun moteur cree, V1/V2-F2 intouches, aucun ordre reel."
    },
    "entry_hash": "7e93d4f67d09e904e293099e292fe436fb2a9f09caf0dd48d97d7b04be01b59e"
+  },
+  {
+   "seq": 481,
+   "prev_hash": "7e93d4f67d09e904e293099e292fe436fb2a9f09caf0dd48d97d7b04be01b59e",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ME-001.1",
+    "resultats": "ME-001.1 (garde-fou VERT): fenetres de recuperation DEMONTREES dans le corpus certifie (2327 episodes, 5 partitions 2012-2026, protocole gele seq480): recuperation complete 68-94% en 24h apres ecart 5/10/20bp sous le plus haut 15min; retracement 50% median 1-14min; non-recuperation 6-32% avec pertes a 4h jusqu a -257bp. Edge net a execution observable (ask->bid, couts une fois): a 5bp negatif dans 4/5 segments (PF 0.75-0.96) = REFUTE a ce seuil; a 10-20bp mixte (+0.2 a +10.1bp, PF 0.95-1.96, negatif decouverte 2016 a 20bp et validation 2026 a 10bp). Aucun regime de volatilite discriminant stable. Verdict: phenomene DEMONTRE, mecanisme FORTEMENT ETAYE, edge net COMPATIBLE MAIS NON IDENTIFIE. ME-001 -> SIGNATURE_DETECTED (pas VALIDATED). Bloquant restant: gestion de l echec de recuperation. 6/6 tests PASS."
+   },
+   "entry_hash": "976d03a37243d88568236e337f39addd0950a38bf0efefa3bd9cbea3b6290723"
   }
  ]
 }

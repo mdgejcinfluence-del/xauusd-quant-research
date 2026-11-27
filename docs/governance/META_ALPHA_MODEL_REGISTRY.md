@@ -31,8 +31,12 @@ VALIDATED sur les données qui ont servi à le construire.*
   plafonnée au PWA, aucun stop). Leur échec condamne ces
   implémentations, pas le modèle économique supposé du provider, dont
   la rentabilité reste UNVERIFIED (statistiques publiques seulement).
-- **État** : **HYPOTHESIS / IDENTIFICATION_IN_PROGRESS** (mécanisme
-  comportemental FORTEMENT ÉTAYÉ ; edge net NON VALIDÉ).
+- **État** : **SIGNATURE_DETECTED** (ME-001.1, seq480-481 : phénomène de
+  récupération DÉMONTRÉ dans le corpus 2012-2026 — 68–94 % de
+  récupération complète en 24 h après écart de 5–20 bp ; edge net à
+  exécution observable COMPATIBLE MAIS NON IDENTIFIÉ : négatif à 5 bp,
+  mixte à 10–20 bp, queue de non-récupération jusqu'à −257 bp sans
+  gestion de l'échec. Edge net NON VALIDÉ.)
 - **Dépendances** : partage le risque « excursion adverse durable »
   avec tout modèle d'accumulation futur.
 
