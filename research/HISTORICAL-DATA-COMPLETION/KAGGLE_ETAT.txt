@@ -6,7 +6,7 @@ shalom5123/xauusd-is-b05                  xauusd-is-b05                         
 shalom5123/xauusd-is-b04                  xauusd-is-b04                                 147341844  2026-11-17 14:37:24.730000             82          0  0.23529412       
 shalom5123/xauusd-is-b03                  xauusd-is-b03                                 112810896  2026-11-17 14:27:10.433000             82          0  0.23529412       
 shalom5123/xauusd-is-b02                  xauusd-is-b02                                  90004929  2026-11-17 14:17:04.647000             82          0  0.23529412       
-shalom5123/xauusd-is-b01                  xauusd-is-b01                                  74667310  2026-11-17 13:56:19.030000             90          0  0.23529412       
+shalom5123/xauusd-is-b01                  xauusd-is-b01                                  74667310  2026-11-17 13:56:19.030000             93          0  0.23529412       
 shalom5123/xauusd-is-missing13            xauusd-is-missing13                          1267886636  2026-11-17 13:25:40.103000             86          0  0.23529412       
 shalom5123/xauusd-ho-b06                  XAUUSD HO B06                                3448969886  2026-11-22 15:35:38.847000              6          0  0.23529412       
 shalom5123/xauusd-ho-b05                  XAUUSD HO B05                                2390088359  2026-11-22 15:33:32.893000              6          0  0.23529412       
