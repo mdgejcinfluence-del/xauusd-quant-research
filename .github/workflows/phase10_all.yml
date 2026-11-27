@@ -2894,4 +2894,4 @@ jobs:
         git config user.email 'actions@github.com'; git config user.name 'github-actions'
         git add docs/checkpoints/DATA_RECOVERY_2026/ docs/checkpoints/FULL_REPLAY_2026/
         git diff --cached --quiet || git commit -m 'DATA-RECOVERY-2026: recuperation partitions et rejeu V1 (run CI)'
-        git push origin HEAD:arena/afe12737-xauusd-quant-research
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
