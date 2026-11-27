@@ -20,18 +20,22 @@ def main():
     man_p = SORTIE / 'COMPLETION_MANIFEST.json'
     man = json.loads(man_p.read_text()) if man_p.exists() else {'heures': {}, 'lots': {}}
     par_mois = {}
-    for h in pd.date_range(DEBUT, FIN, freq='h'):
-        cle = str(h)
-        if man['heures'].get(cle, {}).get('statut') == 'OK': continue
-        df = telecharger_heure(h)
-        if df is None or len(df) == 0:
-            if h < pd.Timestamp.now(tz='UTC').tz_localize(None) - pd.Timedelta(hours=48):
-                man['heures'][cle] = {'statut': 'VIDE_ANCIEN_FIGE', 'ticks': 0}
-            continue
-        q = qualite(df)
-        man['heures'][cle] = {'statut': 'OK', 'ticks': q['ticks'],
-                              'bid_lt_ask_violations': q['bid_lt_ask_violations']}
-        par_mois.setdefault(f"{h.year}-{h.month:02d}", []).append(df)
+    heures = [h for h in pd.date_range(DEBUT, FIN, freq='h')
+              if man['heures'].get(str(h), {}).get('statut') != 'OK']
+    from concurrent.futures import ThreadPoolExecutor
+    def travail(h):
+        return h, telecharger_heure(h)
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        for h, df in ex.map(travail, heures):
+            cle = str(h)
+            if df is None or len(df) == 0:
+                if h < pd.Timestamp.now(tz='UTC').tz_localize(None) - pd.Timedelta(hours=48):
+                    man['heures'][cle] = {'statut': 'VIDE_ANCIEN_FIGE', 'ticks': 0}
+                continue
+            q = qualite(df)
+            man['heures'][cle] = {'statut': 'OK', 'ticks': q['ticks'],
+                                  'bid_lt_ask_violations': q['bid_lt_ask_violations']}
+            par_mois.setdefault(f"{h.year}-{h.month:02d}", []).append(df)
     for mois, morceaux in par_mois.items():
         neuf = pd.concat(morceaux)
         neuf['source'] = 'DUKASCOPY_PRIMARY'; neuf['spread'] = neuf.ask - neuf.bid
