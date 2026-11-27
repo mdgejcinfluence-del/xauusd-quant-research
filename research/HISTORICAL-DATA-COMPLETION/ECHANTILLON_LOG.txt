@@ -1,0 +1,10 @@
+2026-10-01T10:00 {'http': 200, 'octets': 59333, 'ticks': 14365}
+2026-10-05T10:00 {'http': 200, 'octets': 38202, 'ticks': 9602}
+2026-10-12T10:00 {'http': 503, 'octets': 0, 'ticks': 0}
+  2026-10-20 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/09/20/10h_ticks.bi5
+2026-10-20T10:00 {'http': 200, 'octets': 53867, 'ticks': 0}
+2026-11-02T10:00 {'http': 503, 'octets': 0, 'ticks': 0}
+2026-11-10T10:00 {'http': 200, 'octets': 68226, 'ticks': 16637}
+  2026-11-17 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/17/10h_ticks.bi5
+2026-11-17T10:00 {'http': 200, 'octets': 76308, 'ticks': 0}
+2026-11-25T10:00 {'http': 503, 'octets': 0, 'ticks': 0}
