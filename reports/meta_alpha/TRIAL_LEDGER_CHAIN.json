@@ -5715,6 +5715,20 @@
     "profitable_edge": false
    },
    "entry_hash": "5da2c09fb5423a220c30b101d9a3d92e7415fbf5395b4046098830e4fb278ae0"
+  },
+  {
+   "seq": 436,
+   "prev_hash": "5da2c09fb5423a220c30b101d9a3d92e7415fbf5395b4046098830e4fb278ae0",
+   "entry": {
+    "type": "RE_ENTRY_002_RESULTS",
+    "mission": "RE-ENTRY-002",
+    "echantillon": "5 paniers reels / 12 transactions (A-B seq434 + C-D-E page publique HFM du 2026-11-27 archivee); historique complet 49 595 transactions non accessible publiquement (pas de pagination; CI=403 anti-robot documente)",
+    "nouveautes": "C = premier panier perdant observe (-6 JPY, cloture groupee) -> TP au prix moyen non suffisant comme regle universelle; 3e lot 0,03 chez C contre 0,02 (A/B) -> progression fixe contredite; paniers de 17 s et 87 s observes",
+    "reconstructions": "C/D/E NON DETERMINABLES en prix a cette heure (heure Dukascopy 08 UTC du 27 non publiee); aucun prix invente",
+    "regles": "cloture groupee FORTEMENT ETAYEE sur 5 paniers; seuils/formule lots/objectif/coupe en perte NON DETERMINABLES",
+    "profitable_edge": false
+   },
+   "entry_hash": "a8f6da81e507c8e43d4840886a955c368b3c4caa5d58853ec90a2fe071a1ceb2"
   }
  ]
 }
