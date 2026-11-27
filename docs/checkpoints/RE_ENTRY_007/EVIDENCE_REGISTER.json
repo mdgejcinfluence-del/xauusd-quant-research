@@ -1,0 +1,64 @@
+{
+ "fichier_annonce": "myHF _ HFM Broker.html78.html",
+ "fichier_trouve": [],
+ "classification_flux": "FLUX_PUBLIC_INCHANGE",
+ "formulation_correcte": "Aucune nouvelle transaction n'est visible dans le flux public observe depuis la derniere transaction affichee (2026-11-27 11:01:27, heure affichee).",
+ "preuves": [
+  {
+   "id": "EV-01",
+   "fichier_source": "research/RE-ENTRY-003/snapshots/snapshot_2026-11-27_121328.json",
+   "sha256_fichier": "5c0dfdcd5b4223bffd8e47f381d4006eed4e8cb89d642dd67315bd21fecd5326",
+   "type": "snapshot_public_hfm",
+   "provenance": "page publique HFM 99001292 via ingest licite",
+   "confiance": "haute (archive immuable)",
+   "validation": "dedup cle composite"
+  },
+  {
+   "id": "EV-02",
+   "fichier_source": "research/RE-ENTRY-003/snapshots/snapshot_2026-11-27_121331.json",
+   "sha256_fichier": "0b8562cbdeefa1237bab04f99b173aff8f050a8343c6aaf5b6feba14b63fad29",
+   "type": "snapshot_public_hfm",
+   "provenance": "page publique HFM 99001292 via ingest licite",
+   "confiance": "haute (archive immuable)",
+   "validation": "dedup cle composite"
+  },
+  {
+   "id": "EV-03",
+   "fichier_source": "research/RE-ENTRY-003/snapshots/snapshot_2026-11-27_122240.json",
+   "sha256_fichier": "3ce6e6c8a5c54d5fc48b27c3f3830e1dd043239f1619399fcdb30c3be3e97482",
+   "type": "snapshot_public_hfm",
+   "provenance": "page publique HFM 99001292 via ingest licite",
+   "confiance": "haute (archive immuable)",
+   "validation": "dedup cle composite"
+  }
+ ],
+ "stats_verifiees_controle": {
+  "fermees": 49595,
+  "gagnantes": 33425,
+  "perdantes": 16170,
+  "rentabilite_pct": 67.4,
+  "gain_moyen_jpy": 22.37,
+  "perte_moyenne_jpy": -27.82,
+  "lot_moyen": 0.03,
+  "duree_moyenne": "20m 14s",
+  "dd_max_pct": 31.81,
+  "gain_affiche_pct": 12420.75,
+  "levier": "1:500",
+  "devise": "JPY",
+  "frais_pct": 10,
+  "depot_min_jpy": 35000,
+  "abonnes": 121
+ },
+ "transactions": {
+  "lignes": 6,
+  "deja_connues": 6,
+  "nouvelles": 0,
+  "ambigues": 0
+ },
+ "groupes": {
+  "10:30 (C)": "3 positions, -6 JPY",
+  "10:45 (D)": "1 position, +1 JPY",
+  "11:00 (E)": "2 positions, +3 JPY"
+ },
+ "analyse_hypotheses": "NOT_TESTABLE_WITH_CURRENT_OBSERVATIONS"
+}

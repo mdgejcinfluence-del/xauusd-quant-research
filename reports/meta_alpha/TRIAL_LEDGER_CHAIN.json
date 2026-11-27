@@ -5900,6 +5900,26 @@
     "resultats": "Aucune observation nouvelle (page HFM inchangee): validation H3/F2 EN ATTENTE, etat honnete. X1 negatif: aucune feature causale testee ne separe les 10 extras V2 des 5 reelles. Fermeture: C1 premier retour REFUTEE (2-8 episodes au-dessus de la moyenne avant cloture), C2 objectif fixe bp REFUTEE (+6.2/+7.9/-0.25/+2.8/+3.4), C3 frontieres M15 REFUTEE; residuel descriptif: ret60s a la cloture toujours positif. Machine a etats: squelette partiel seulement. Utilisabilite compte propre: NON en letat (queue martingale inconnue). Verdict: modele candidat partiellement fidele, non valide. profitable_edge=False."
    },
    "entry_hash": "67dec9cfeb830c159a47394e015269a8d4f64bc16532f55ef88a7308f7c5c4a3"
+  },
+  {
+   "seq": 451,
+   "prev_hash": "67dec9cfeb830c159a47394e015269a8d4f64bc16532f55ef88a7308f7c5c4a3",
+   "entry": {
+    "type": "OPENING",
+    "campaign": "RE-ENTRY-007",
+    "note": "Fichier myHF _ HFM Broker.html78.html introuvable: recherches documentees espace de travail + Google Drive (0 resultat). Obstacle journalise, mission poursuivie sur captures archivees RE-ENTRY-003 + controle page publique du jour. Branche de session imposee arena/afe12737 (branche dediee re-entry-007 non creee: regle de session). Aucune conclusion gelee modifiee."
+   },
+   "entry_hash": "29e606ac7996293a5c64fcc51d907fede423fe256d8d2f3863ab5c8b631c8305"
+  },
+  {
+   "seq": 452,
+   "prev_hash": "29e606ac7996293a5c64fcc51d907fede423fe256d8d2f3863ab5c8b631c8305",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "RE-ENTRY-007",
+    "resultats": "Fichier HTML annonce INTROUVABLE (workspace + Drive recherches, 0 resultat) - obstacle journalise seq451. Audit sur snapshots immuables RE-ENTRY-003 + controle page publique du jour: stats identiques (49595 fermes, 67.4%, 121 abonnes), 6 lignes dedupliquees = 6 deja connues, 0 nouvelle, 0 ambigue. Classification: FLUX_PUBLIC_INCHANGE. Hypotheses: NOT_TESTABLE_WITH_CURRENT_OBSERVATIONS. Conclusions gelees preservees, 15/15 tests PASS. Branche de session conservee (ecart documente vs branche dediee demandee)."
+   },
+   "entry_hash": "49fdeb7006c5684d2babe9332e532af3d8df57336a7a09ff700b0ac1c7b69e7f"
   }
  ]
 }
