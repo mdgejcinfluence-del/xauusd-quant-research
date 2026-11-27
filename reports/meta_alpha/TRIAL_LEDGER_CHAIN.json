@@ -6356,6 +6356,27 @@
     "resultats": "Revue fonctionnelle du Visuel 1 et de FUNCTIONAL_ARCHITECTURE (garde-fou VERT), livrable reviews/ERE_REVIEW_001.md. Presentation du diagramme reel sans modification; table des 15 liaisons avec objet transmis et interdits; points de controle explicites. Audit: A1-A7 conformes (responsabilites uniques, niveaux de preuve transportes, absences explicites, segmentation des donnees, porte H protegee). Ambiguites B1-B7 non corrigees: entrees de G non fermees (A-F), verdict NON DEMONTRABLE de E sans contre-seing de G, fenetre ticks de B sans contrat, enumeration des niveaux de preuve non fermee (risque principal), pas d objet etat de dossier, double role de I, estimation de cout tardive. Ecarts visuels C1-C5: module D absent du Visuel 1, fleche ticks ambigue vers G, boucles non dessinees, garde-fou mal positionne, sorties absentes. Test conceptuel sur dossier entierement fictif (4 transactions, +2000% annonce, DD 10% annonce): les 9 moteurs traverses, 3 hypotheses concurrentes conservees, verdict COMPATIBLE MAIS NON IDENTIFIE, porte H fermee. 7 corrections proposees et decisions reservees au fondateur; architecture strictement inchangee, aucun backtest, performances prospectives ME-001 non consultees."
    },
    "entry_hash": "aaffc7c1cd2014fa7200ac7474a3825a96c04b6dcf108c4aadbebef17546bdf8"
+  },
+  {
+   "seq": 496,
+   "prev_hash": "aaffc7c1cd2014fa7200ac7474a3825a96c04b6dcf108c4aadbebef17546bdf8",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-REVIEW-002",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Dossier de decision consolidant les 7 corrections ERE-REVIEW-001 sans modifier l architecture: detail individuel, taxonomie fermee des niveaux de preuve, distinction verdict E vs verdict G, contrat fenetre ticks B, liste exhaustive des entrees de G, separation proposee I-A/I-B, SVG original fourni et proposition SVG distincte, matrice de tracabilite constitutionnelle. Livrables dans reviews/. Aucune correction appliquee aux documents d architecture, aucune implementation, aucun backtest, ME-001 intact."
+   },
+   "entry_hash": "60a90caf74b9fe67ca746bfe97dd8b1d304aaaf3c6c88b4f5f46ee1ce85a805f"
+  },
+  {
+   "seq": 497,
+   "prev_hash": "60a90caf74b9fe67ca746bfe97dd8b1d304aaaf3c6c88b4f5f46ee1ce85a805f",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-REVIEW-002",
+    "resultats": "Dossier de decision ERE-REVIEW-002 livre (garde-fou VERT), architecture existante strictement inchangee (SHA-256 du Visuel 1 original verifie identique). Sept corrections detaillees individuellement (probleme, risque, correction, composants, consequences contrats): retouche Visuel 1, entrees fermees de G, contre-seing de G sur le non-demontrable de E, contrat MarketWindow pour B, taxonomie fermee des preuves, objet DossierState, estimation de cout des F. Taxonomie proposee N0 SOURCE_NON_VERIFIEE a N7 AVANTAGE_VALIDE avec 7 regles de transition (producteur ne se promeut pas, agregation au plus faible, segment voyage avec le niveau). Distinction formelle verdict experimental E (testabilite) vs verdict economique G (qualification constitutionnelle). Liste exhaustive des entrees recevables par G et pieces exclues. Separation I-A validation / I-B portefeuille proposee des la conception. Proposition SVG distincte dans reviews/ (D visible, boucles dessinees, garde-fou en cadre, sorties, I-A/I-B). Matrice de tracabilite vers les articles 6 a 11 de la Constitution. 8 decisions reservees au fondateur; aucune implementation, aucun backtest."
+   },
+   "entry_hash": "eb35d89dbf67d1c6a97f5ad7d54e698d68245453ba49fa2e3c1278fdbd86e2be"
   }
  ]
 }
