@@ -6335,6 +6335,27 @@
     "resultats": "Conception META ALPHA ERE v1.0 (garde-fou VERT): 16 documents + 5 diagrammes SVG dans docs/architecture/META_ALPHA_ERE/. Neuf moteurs A-I formalises depuis la pratique reelle (seq433-491): ingestion de dossiers incomplets, reverse engineering comportemental, generateur d hypotheses concurrentes, bibliotheque scientifique sourcee, concepteur autonome d experiences (preenregistrement, regles d arret), decouverte sur corpus certifie segmente, identification avec verdicts qualifies, ingenierie de strategies independantes derriere une porte de gouvernance (AUCUN modele ne la franchit aujourd hui), validation/portefeuille. Scenario des 4 transactions entierement traite; separation identification/exploitation explicite. Aucune implementation commencee, aucun backtest, moteurs geles intacts, validation prospective ME-001 non consultee. 5 decisions reservees au fondateur. 6/6 tests PASS."
    },
    "entry_hash": "f5df25d333aedb00be77f77bf1faf23ed66efedffc1ab18ff02ab789d81912a7"
+  },
+  {
+   "seq": 494,
+   "prev_hash": "f5df25d333aedb00be77f77bf1faf23ed66efedffc1ab18ff02ab789d81912a7",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-REVIEW-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Revue fonctionnelle du Visuel 1 et de FUNCTIONAL_ARCHITECTURE.md uniquement, coherence des interfaces A-I verifiee via DATA_CONTRACTS et SYSTEM_INTERFACES. Livrable docs/architecture/META_ALPHA_ERE/reviews/ERE_REVIEW_001.md. Aucune implementation, aucun moteur, aucun backtest, architecture non modifiee, protocole ME-001 et performances prospectives intouches. Test conceptuel sur dossier entierement fictif."
+   },
+   "entry_hash": "a95f3e41436ded37f1b254d1ec4d8687b61ffe19b22730e2e83a833133baec1d"
+  },
+  {
+   "seq": 495,
+   "prev_hash": "a95f3e41436ded37f1b254d1ec4d8687b61ffe19b22730e2e83a833133baec1d",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-REVIEW-001",
+    "resultats": "Revue fonctionnelle du Visuel 1 et de FUNCTIONAL_ARCHITECTURE (garde-fou VERT), livrable reviews/ERE_REVIEW_001.md. Presentation du diagramme reel sans modification; table des 15 liaisons avec objet transmis et interdits; points de controle explicites. Audit: A1-A7 conformes (responsabilites uniques, niveaux de preuve transportes, absences explicites, segmentation des donnees, porte H protegee). Ambiguites B1-B7 non corrigees: entrees de G non fermees (A-F), verdict NON DEMONTRABLE de E sans contre-seing de G, fenetre ticks de B sans contrat, enumeration des niveaux de preuve non fermee (risque principal), pas d objet etat de dossier, double role de I, estimation de cout tardive. Ecarts visuels C1-C5: module D absent du Visuel 1, fleche ticks ambigue vers G, boucles non dessinees, garde-fou mal positionne, sorties absentes. Test conceptuel sur dossier entierement fictif (4 transactions, +2000% annonce, DD 10% annonce): les 9 moteurs traverses, 3 hypotheses concurrentes conservees, verdict COMPATIBLE MAIS NON IDENTIFIE, porte H fermee. 7 corrections proposees et decisions reservees au fondateur; architecture strictement inchangee, aucun backtest, performances prospectives ME-001 non consultees."
+   },
+   "entry_hash": "aaffc7c1cd2014fa7200ac7474a3825a96c04b6dcf108c4aadbebef17546bdf8"
   }
  ]
 }
