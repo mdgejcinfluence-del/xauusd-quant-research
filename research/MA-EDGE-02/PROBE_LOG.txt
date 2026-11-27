@@ -1,7 +1,10 @@
 /home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/edge02_dukascopy.py:57: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
   now = pd.Timestamp.utcnow().floor('h')
 2026-11-27 09:00:00+00:00 {'ticks': 19122, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.4499999999998181, 'spread_p95_unites': 0.5199999999999818, 'ecart_max_sec': 4.116, 'premier': '2026-11-27 09:00:00.617000', 'dernier': '2026-11-27 09:59:59.888000'}
-2026-11-27 08:00:00+00:00 {'ticks': 25871, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.5049999999996544, 'spread_p95_unites': 0.5900000000001455, 'ecart_max_sec': 4.277, 'premier': '2026-11-27 08:00:00.025000', 'dernier': '2026-11-27 08:59:59.014000'}
-2026-11-26 09:00:00+00:00 {'ticks': 19979, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.45699999999987995, 'spread_p95_unites': 0.5399999999999636, 'ecart_max_sec': 4.932, 'premier': '2026-11-26 09:00:00.007000', 'dernier': '2026-11-26 09:59:59.944000'}
-2026-11-25 09:00:00+00:00 {'ticks': 25251, 'bid_lt_ask_violations': 0, 'ts_croissants': True, 'spread_mediane_unites': 0.4299999999998363, 'spread_p95_unites': 0.525000000000091, 'ecart_max_sec': 2.91, 'premier': '2026-11-25 09:00:00.010000', 'dernier': '2026-11-25 09:59:59.951000'}
+  2026-11-27 08:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/08h_ticks.bi5
+2026-11-27 08:00:00+00:00 {'ticks': 0}
+  2026-11-26 09:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/09h_ticks.bi5
+2026-11-26 09:00:00+00:00 {'ticks': 0}
+  2026-11-25 09:00:00+00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/09h_ticks.bi5
+2026-11-25 09:00:00+00:00 {'ticks': 0}
 probe ecrite: /home/runner/work/xauusd-quant-research/xauusd-quant-research/research/MA-EDGE-02/DUKASCOPY_PROBE.json
