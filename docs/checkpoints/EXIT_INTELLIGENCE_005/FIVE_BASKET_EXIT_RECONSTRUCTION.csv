@@ -1,0 +1,6 @@
+panier,duree_s,pnl_cloture_bp,dist_sommet300_bp,retard_vs_premier_retour_pwa_s,famille_compatible,statut
+A,1152,6.18,-2.15,205,etat+persistance,CANDIDATE
+B,715,7.91,-0.46,86,etat+persistance,CANDIDATE
+C,650,-0.25,-1.37,19,etat+persistance (sous seuil positif),CANDIDATE
+D,17,2.83,-0.22,17,capture immediate (meme famille),CANDIDATE
+E,87,3.40,-1.83,71,etat+persistance,CANDIDATE

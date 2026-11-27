@@ -1,0 +1,7 @@
+regle,declenchements,ecarts_vs_cloture_reelle_s,statut
+R_PWA (premier retour),5/5,17 a 205 trop tot,REFUTED
+R_ACCEL (momentum),5/5,2 a 246 trop tot,REFUTED
+R_DECEL (deceleration),4/5,17 a 174 trop tot; absent chez C,REFUTED
+R_RETRACE (1bp),5/5,3 a 178 trop tot,REFUTED
+R_PNL3 (+3bp),4/5,0 a 62 trop tot; jamais chez C,REFUTED
+Etat+persistance (famille),5/5 par construction des bornes,retards 19-246 expliques,CANDIDATE

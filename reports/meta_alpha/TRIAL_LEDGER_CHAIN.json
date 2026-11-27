@@ -6070,6 +6070,26 @@
     "resultats": "Cloture: trait commun mesure aux 5 paniers - PnL latent en hausse sur 300s et prix a -0.2/-2.2bp du sommet local 300s, au voisinage du PWA. Hypothese epuisement affaiblie (A cloture en pleine acceleration +3.9bp/30s); recuperation economique bornee par C (-0.25bp). Formulation M-D candidate (sortie pendant la jambe favorable pres du sommet local), non identifiee finement. Sizing: contraintes derivees (doublement compatible A/B, contredit par C 0.03), formule NOT_IDENTIFIED. Patience = consequence d etat (la regle de sortie moteur explique l ecart 82% vs 40%, pas un parametre de duree). Identification inverse: ensembles de parametres compatibles documentes au lieu de points. 6/6 tests PASS. profitable_edge=False (moteurs)."
    },
    "entry_hash": "7a4bc867d2f0c7c1b3ead773320c8887bdc76ca03b8b8cb362efadb7e7404d52"
+  },
+  {
+   "seq": 468,
+   "prev_hash": "7a4bc867d2f0c7c1b3ead773320c8887bdc76ca03b8b8cb362efadb7e7404d52",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "EIDR-005",
+    "note": "Evaluation causale de regles de sortie candidates sur les trajectoires reelles (aucun parametre ajuste pour maximiser l accord: grille fixee a priori, sensibilite rapportee en intervalles). Regles: R_PWA (premier Mid>=PWA, temoin deja refute), R_ACCEL (pnl>=-1bp et ret30s>=+2bp), R_DECEL (apres pnl>=0, ret30s devient negatif), R_RETRACE (apres retour pnl>=-1, recul >=1bp depuis le max courant), R_PNL3 (pnl>=+3bp). Metrique: premier declenchement apres la derniere entree vs cloture reelle (ecart en secondes, existence). Un accord sur 5 paniers ne vaut pas identification; les intervalles de parametres compatibles sont rapportes comme ensembles."
+   },
+   "entry_hash": "0cbd16e9c1e4d1e17c82d5a5bc51f30a081edbe744c13cdf08ec04d45882c892"
+  },
+  {
+   "seq": 469,
+   "prev_hash": "0cbd16e9c1e4d1e17c82d5a5bc51f30a081edbe744c13cdf08ec04d45882c892",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "EIDR-005",
+    "resultats": "Sortie: toutes les regles causales de premier passage testees declenchent 19-246s trop tot (PWA, momentum, deceleration, retracement, seuil PnL +3bp absent chez C) - classees REFUTED comme premiers passages. Fait nouveau: la liquidation reelle est systematiquement differee apres l etat favorable: famille etat+persistance/confirmation, bornes mesurees (seuil [-1;+3]bp, persistance [19;246]s), nature exacte observationnellement equivalente sur 5 clotures. Sommet local = consequence, pas declencheur. Capture immediate compatible avec la meme famille (D: seuil +3bp a 0.4s). Aucun parametre ponctuel invente. 5/5 tests PASS. profitable_edge=False (moteurs)."
+   },
+   "entry_hash": "1cc0b87a6b9b07264c2d861d6c9b095748ad92b5c13bbbfe3944dc6adb46aeb4"
   }
  ]
 }

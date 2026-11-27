@@ -1,0 +1,7 @@
+parametre,valeur_identifiable,intervalle_compatible,constraints,statut
+seuil d etat de sortie (bp vs PWA),aucune ponctuelle,[-1 ; +3] selon panier,clotures a -0.25/+2.83/+3.40/+6.18/+7.91 bp,NOT_IDENTIFIED (intervalle)
+persistance/confirmation (s),aucune ponctuelle,[19 ; 246],retards des premiers passages mesures,NOT_IDENTIFIED (intervalle)
+seuil de capture immediate,aucune,+3 bp compatible (D/E),2 cas seulement,NOT_IDENTIFIED
+recul de renforcement (bp),aucune ponctuelle,[-6.6 ; -4.7],3 renforcements reels,NOT_IDENTIFIED (intervalle sous hypothese seuil fixe)
+delai d amorcage (s),aucune ponctuelle,[16 ; 40],4 paniers reels,STRONGLY_SUPPORTED (plage observee)
+volume 3e position,aucune,0.02-0.03 avec cumul 0.02,doublement contredit par C,NOT_IDENTIFIED

@@ -1,0 +1,8 @@
+hypothese,mecanisme,compatibilite,contre_exemples,statut
+H1,Proximite retrospective du sommet local,trait descriptif partage,ne peut pas etre un declencheur causal tel quel,OBSERVED (descriptif)
+H2,Capture de momentum rentable,declenchement causal pendant l acceleration,toutes les regles de premier passage declenchent 19 a 246s TROP TOT,CANDIDATE affaiblie (premier passage refute)
+H3,Deceleration du momentum,cloture au retournement de vitesse,A cloture en acceleration; R_DECEL trop tot ou absent,CANDIDATE affaiblie
+H4,Confirmation par retracement,cloture apres recul depuis le max courant,R_RETRACE declenche 3 a 178s trop tot,CANDIDATE affaiblie (premier passage refute)
+H5,Etat de PnL acceptable,cloture au premier passage du seuil,R_PNL3 proche (A/D/E) mais jamais atteint chez C et tot chez B,REFUTED comme premier passage universel
+H6,Hybride etat + persistance/confirmation,cloture differee apres l etat favorable,compatible avec le retard systematique 19-246s,parametres de persistance non identifiables sur 5 cas,CANDIDATE (famille la mieux compatible)
+H7,Premier retour au PWA,franchissement,declenche 17 a 205s trop tot; deja refutee,episodes multiples avant cloture,REFUTED

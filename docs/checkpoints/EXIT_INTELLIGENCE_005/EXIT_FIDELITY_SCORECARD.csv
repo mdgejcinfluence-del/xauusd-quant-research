@@ -1,0 +1,7 @@
+dimension,mesure,statut
+moment de cloture,aucune regle causale simple ne coincide (toutes trop precoces),NOT_IDENTIFIED (famille bornee)
+prix de cloture,voisinage du PWA reproduit descriptivement,OBSERVED
+duree,expliquee par l etat (pas de regle temporelle),STRONGLY_SUPPORTED (mecanisme)
+capture immediate,compatible meme famille (D: ecart 0.4s pour seuil +3bp),CANDIDATE
+sequence complete,aucun panier integralement reproduit,NOT_IDENTIFIED
+validation independante,0 nouvelle cloture reelle,INSUFFICIENT_DATA
