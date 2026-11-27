@@ -1,0 +1,60 @@
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/me001_prospective_collect.py:16: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  debut = pd.Timestamp(sys.argv[1]) if len(sys.argv) > 1 else (pd.Timestamp.utcnow().tz_localize(None).normalize() - pd.Timedelta(days=2))
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/me001_prospective_collect.py:17: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  fin = pd.Timestamp(sys.argv[2]) if len(sys.argv) > 2 else pd.Timestamp.utcnow().tz_localize(None).floor('h')
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/me001_prospective_collect.py:35: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  rows.append({'jour': js, 'ticks': int(len(day)), 'sha256_parquet': sha, 'collecte_le': str(pd.Timestamp.utcnow()),
+  2026-11-25 09:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/09h_ticks.bi5
+  2026-11-25 10:00:00 INDISPONIBLE (URLError: <urlopen error timed out>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/10h_ticks.bi5
+  2026-11-25 12:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/12h_ticks.bi5
+  2026-11-25 14:00:00 INDISPONIBLE (URLError: <urlopen error timed out>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/14h_ticks.bi5
+  2026-11-25 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/16h_ticks.bi5
+  2026-11-25 18:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/18h_ticks.bi5
+  2026-11-25 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/20h_ticks.bi5
+  2026-11-25 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/21h_ticks.bi5
+  2026-11-25 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/22h_ticks.bi5
+  2026-11-25 23:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/25/23h_ticks.bi5
+2026-11-25 487136 715b9697134c
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/me001_prospective_collect.py:35: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  rows.append({'jour': js, 'ticks': int(len(day)), 'sha256_parquet': sha, 'collecte_le': str(pd.Timestamp.utcnow()),
+  2026-11-26 00:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/00h_ticks.bi5
+  2026-11-26 01:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/01h_ticks.bi5
+  2026-11-26 02:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/02h_ticks.bi5
+  2026-11-26 03:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/03h_ticks.bi5
+  2026-11-26 04:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/04h_ticks.bi5
+  2026-11-26 05:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/05h_ticks.bi5
+  2026-11-26 07:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/07h_ticks.bi5
+  2026-11-26 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/08h_ticks.bi5
+  2026-11-26 09:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/09h_ticks.bi5
+  2026-11-26 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/10h_ticks.bi5
+  2026-11-26 11:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/11h_ticks.bi5
+  2026-11-26 12:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/12h_ticks.bi5
+  2026-11-26 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/13h_ticks.bi5
+  2026-11-26 14:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/14h_ticks.bi5
+  2026-11-26 15:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/15h_ticks.bi5
+  2026-11-26 16:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/16h_ticks.bi5
+  2026-11-26 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/17h_ticks.bi5
+  2026-11-26 19:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/19h_ticks.bi5
+  2026-11-26 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/20h_ticks.bi5
+  2026-11-26 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/21h_ticks.bi5
+  2026-11-26 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/22h_ticks.bi5
+  2026-11-26 23:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/23h_ticks.bi5
+2026-11-26 41208 7d08cd55af3c
+/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/me001_prospective_collect.py:35: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  rows.append({'jour': js, 'ticks': int(len(day)), 'sha256_parquet': sha, 'collecte_le': str(pd.Timestamp.utcnow()),
+  2026-11-27 00:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/00h_ticks.bi5
+  2026-11-27 01:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/01h_ticks.bi5
+  2026-11-27 02:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/02h_ticks.bi5
+  2026-11-27 03:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/03h_ticks.bi5
+  2026-11-27 05:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/05h_ticks.bi5
+  2026-11-27 09:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/09h_ticks.bi5
+  2026-11-27 11:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/11h_ticks.bi5
+  2026-11-27 12:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/12h_ticks.bi5
+  2026-11-27 14:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/14h_ticks.bi5
+  2026-11-27 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/17h_ticks.bi5
+  2026-11-27 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 404: Not Found) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/20h_ticks.bi5
+  2026-11-27 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/21h_ticks.bi5
+  2026-11-27 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/22h_ticks.bi5
+  2026-11-27 23:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/23h_ticks.bi5
+2026-11-27 237464 d3a494791302
+registre: 3 jours
