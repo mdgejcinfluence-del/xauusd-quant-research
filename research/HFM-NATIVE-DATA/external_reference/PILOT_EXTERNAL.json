@@ -19,10 +19,10 @@
   "stooq_daily": {
    "http": 200,
    "lignes": 3,
-   "entete": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"rBNScPdVn1CZ4VGpkt0YSQ\">",
-   "premiere": "(async()=>{const c=\"AAAAAGsJOEesUBa4IMZYOzs19pJMBeSKSrNmcW2DbGbEVmZLh_ltysKmDnw\"",
+   "entete": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"dbNnqsPqwUIRxDRoGpsFyg\">",
+   "premiere": "(async()=>{const c=\"AAAAAGsJSKBwKJr1F9tqUPCIPIhoEd9LFD7_0fl8tcDe-vItU4tDgBaCwFQ\"",
    "derniere": "</script></body></html>",
-   "sha256": "073f831431b5aab8cffc591d5e791c90cd9cf71f2634dd35dbdf797a5f193548",
+   "sha256": "63d358f54e8542d5b2ebabae1f1cb5f3709ca5b462b5911a3e8ee8c688e0ad72",
    "classe": "EXTERNAL_REFERENCE barres quotidiennes (pas des ticks)"
   }
  }
