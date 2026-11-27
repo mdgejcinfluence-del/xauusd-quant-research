@@ -1,13 +1,4 @@
-  2026-11-24 12:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/12h_ticks.bi5
-  2026-11-24 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/24/22h_ticks.bi5
-  2026-11-26 07:00:00 INDISPONIBLE (URLError: <urlopen error timed out>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/07h_ticks.bi5
-  2026-11-26 11:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/11h_ticks.bi5
-  2026-11-26 13:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/13h_ticks.bi5
-  2026-11-26 14:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/14h_ticks.bi5
-  2026-11-26 15:00:00 INDISPONIBLE (URLError: <urlopen error [Errno 104] Connection reset by peer>) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/15h_ticks.bi5
-  2026-11-26 17:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/17h_ticks.bi5
-  2026-11-26 18:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/18h_ticks.bi5
-  2026-11-26 19:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/19h_ticks.bi5
+  2026-11-26 13:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/13h_ticks.bi5
   2026-11-26 20:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/20h_ticks.bi5
   2026-11-26 21:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/21h_ticks.bi5
   2026-11-26 22:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/26/22h_ticks.bi5
@@ -15,14 +6,10 @@
   2026-11-27 02:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/02h_ticks.bi5
   2026-11-27 03:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/03h_ticks.bi5
   2026-11-27 05:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/05h_ticks.bi5
-  2026-11-27 06:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/06h_ticks.bi5
   2026-11-27 07:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/07h_ticks.bi5
   2026-11-27 08:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/08h_ticks.bi5
-  2026-11-27 09:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/09h_ticks.bi5
   2026-11-27 10:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/10h_ticks.bi5
   2026-11-27 11:00:00 INDISPONIBLE (HTTPError: HTTP Error 503: Service Unavailable) URL=https://datafeed.dukascopy.com/datafeed/XAUUSD/2026/10/27/11h_ticks.bi5
-2026-11-24 478138 ticks cumules
-2026-11-25 783669 ticks cumules
-2026-11-26 326069 ticks cumules
-2026-11-27 67036 ticks cumules
-manifeste: 158 heures tracees
+2026-11-26 427929 ticks cumules
+2026-11-27 114452 ticks cumules
+manifeste: 167 heures tracees
