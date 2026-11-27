@@ -1,0 +1,7 @@
+tau_s,groupe,sensibilite,specificite,faux_positifs,recuperes_interrompus_pct,gains_baseline_sacrifies_bp,pertes_baseline_evitees_bp
+60,decouverte,0.032,0.982,10,1.8,111.8,-82.9
+60,validation,0.078,0.967,47,3.3,436.1,-525.8
+300,decouverte,0.081,0.973,15,2.7,73.1,-183.9
+300,validation,0.078,0.973,38,2.7,382.1,-613.4
+900,decouverte,0.032,0.995,3,0.5,31.7,-9.2
+900,validation,0.043,0.996,6,0.4,102.3,-430.0

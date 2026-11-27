@@ -1,0 +1,7 @@
+tau_s,issue,episodes,frac_max_mediane,profondeur_mediane_bp,sans_amelioration_median_s
+60,recupere,1958,0.322,-10.8,20.0
+60,non_recupere,178,0.28,-16.5,25.0
+300,recupere,1958,0.621,-13.3,105.0
+300,non_recupere,178,0.402,-22.3,152.5
+900,recupere,1958,0.941,-16.3,335.0
+900,non_recupere,178,0.525,-30.9,565.0

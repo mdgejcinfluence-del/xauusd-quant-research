@@ -1,0 +1,2 @@
+mesure,q50,q75_perte,q90,q95,q99,max_perte,moyenne,ecart_type,ES95 (moyenne 5% pires),gains_totaux_bp,pertes_totales_bp,part_gains_absorbee_pct
+pertes_baseline,-41.9,-93.2,-144.1,-179.1,-246.4,-257.5,-61.5,57.8,-218.4,15457.6,-12479.7,80.7

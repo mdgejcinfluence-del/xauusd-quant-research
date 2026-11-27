@@ -1,0 +1,13 @@
+groupe,famille,esperance_bp,mediane_bp,gagnants_pct,pire_bp
+decouverte,baseline recuperation/4h,0.98,4.43,88.7,-173.0
+decouverte,temporelle 1h,-3.39,2.09,60.3,-128.3
+decouverte,excursion -30bp,-3.58,2.36,67.1,-109.4
+decouverte,excursion -50bp,-2.95,3.24,79.7,-109.4
+decouverte,excursion -80bp,-2.92,3.98,85.7,-161.0
+decouverte,non-amelioration 900s,-2.75,0.97,52.7,-91.0
+validation,baseline recuperation/4h,1.56,5.73,91.2,-257.5
+validation,temporelle 1h,-3.34,3.36,71.9,-266.1
+validation,excursion -30bp,-2.48,2.93,65.8,-75.1
+validation,excursion -50bp,-2.47,4.0,78.3,-88.5
+validation,excursion -80bp,-2.2,4.79,85.9,-100.8
+validation,non-amelioration 900s,-3.43,2.39,60.0,-154.7
