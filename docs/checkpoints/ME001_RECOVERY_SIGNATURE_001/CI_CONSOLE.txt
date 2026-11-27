@@ -1,0 +1,16 @@
+part_000211.parquet decouverte_2012 A= 5.0 episodes 194
+part_000211.parquet decouverte_2012 A= 10.0 episodes 120
+part_000211.parquet decouverte_2012 A= 20.0 episodes 46
+part_000250.parquet decouverte_2016 A= 5.0 episodes 201
+part_000250.parquet decouverte_2016 A= 10.0 episodes 115
+part_000250.parquet decouverte_2016 A= 20.0 episodes 47
+part_000289.parquet validation_2020 A= 5.0 episodes 321
+part_000289.parquet validation_2020 A= 10.0 episodes 191
+part_000289.parquet validation_2020 A= 20.0 episodes 85
+part_000327.parquet validation_2024 A= 5.0 episodes 268
+part_000327.parquet validation_2024 A= 10.0 episodes 140
+part_000327.parquet validation_2024 A= 20.0 episodes 60
+part_000345.parquet validation_2026 A= 5.0 episodes 276
+part_000345.parquet validation_2026 A= 10.0 episodes 166
+part_000345.parquet validation_2026 A= 20.0 episodes 97
+TOTAL 2327
