@@ -1,0 +1,18 @@
+{
+ "27": [
+  {
+   "episode_debut_serveur": "2026-11-27 10:44:55",
+   "ret300_bp": 12.0,
+   "pos_pct": 95.0,
+   "entree_observee_a_2min": true
+  }
+ ],
+ "26": [
+  {
+   "episode_debut_serveur": "2026-11-26 13:49:10",
+   "ret300_bp": 10.1,
+   "pos_pct": 95.0,
+   "entree_observee_a_2min": true
+  }
+ ]
+}

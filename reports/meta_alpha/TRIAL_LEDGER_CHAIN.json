@@ -5782,6 +5782,31 @@
     "profitable_edge": false
    },
    "entry_hash": "b870cdb26d50b92f17257a5c66b8070f087ae2e24a26ea8df620d01f45b42cc1"
+  },
+  {
+   "seq": 441,
+   "prev_hash": "b870cdb26d50b92f17257a5c66b8070f087ae2e24a26ea8df620d01f45b42cc1",
+   "entry": {
+    "type": "RE_ENTRY_005_PREREGISTRY",
+    "mission": "RE-ENTRY-005",
+    "objet": "signal exact de premiere entree: conditions pre-entree sur 8 fenetres (15 s a 15 min), non-entrees comparables dans les fenetres couvertes uniquement, reproduction de la sequence 1-2-3",
+    "regles": "aucun indicateur sans motif observe; aucun negatif artificiel hors couverture; causalite stricte (donnees avant decision seulement); Dukascopy comparatif",
+    "profitable_edge": false
+   },
+   "entry_hash": "0432ade00d01558600aa1e2cfb95203f374c92f971d4dafd22a0206fe33e09b5"
+  },
+  {
+   "seq": 442,
+   "prev_hash": "0432ade00d01558600aa1e2cfb95203f374c92f971d4dafd22a0206fe33e09b5",
+   "entry": {
+    "type": "RE_ENTRY_005_RESULTS",
+    "mission": "RE-ENTRY-005",
+    "signal": "contexte impulsion/reprise FORTEMENT ETAYE 4/5 (+11-12 bp/5min, reprise +7,6 a +12,9 bp depuis creux 5m); impulsion NECESSAIRE REFUTEE par E (-3,1 bp/5min a l entree); cassure REFUTEE (1/5); fond haussier 15m commun 5/5 (+6,8 a +13,2); frontiere M15: HYPOTHESE (3/5 a :00)",
+    "non_entrees": "dans les fenetres couvertes (31 min x2), 2/2 episodes d impulsion forte coincident avec une entree; suffisance generale NON DETERMINABLE (couverture courte)",
+    "verdict": "signal exact NON DETERMINABLE; hypotheses concurrentes conservees (declencheur prix vs cloture M15 en fond haussier vs redemarrage evenementiel)",
+    "profitable_edge": false
+   },
+   "entry_hash": "799d930448a223792b43f8f8628e5952eefb66ef92883aba3673be30fe3ee9ea"
   }
  ]
 }
