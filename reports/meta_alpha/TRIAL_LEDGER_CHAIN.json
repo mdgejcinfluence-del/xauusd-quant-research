@@ -6262,6 +6262,17 @@
     "perimetre": "Validation prospective ME-001 (garde-fou VERT). Audit d independance prealable: donnees novembre 2026 du repo = categorie C (collectees avant le gel seq484 et massivement consultees); backfill Kaggle oct-nov = B au mieux (disponible avant gel, incomplet, non certifie); octobre = absent; aucune donnee de marche posterieure a la date de gel (2026-11-27) n existe encore. Conclusion attendue si l audit confirme: DONNEES INSUFFISANTES pour une validation forte - aucune performance ne sera calculee sur les categories B/C. Lacune documentee AVANT collecte: le protocole seq484 ne definissait pas de regle d arret; regle ajoutee maintenant, avant toute donnee prospective: evaluation unique lorsque >=60 jours de marche prospectifs collectes ET >=150 episodes admissibles apres filtre, examens intermediaires de performance interdits (registre = couverture + SHA-256 seulement). Mise en place: collecte CI quotidienne des ticks Dukascopy posterieurs au gel (categorie D), empreintes consignees, ticks non commites (re-telechargeables et verificables par hash). Filtre gele seq484 inchange (seuils 7.76/7.88/5.32bp). ME-001 reste SIGNATURE_DETECTED."
    },
    "entry_hash": "0fd8f1ea18b1e28bb197c6c4727d5ed9cd1de02552c8f0901a5a943ad80d60d4"
+  },
+  {
+   "seq": 487,
+   "prev_hash": "0fd8f1ea18b1e28bb197c6c4727d5ed9cd1de02552c8f0901a5a943ad80d60d4",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ME-001.4",
+    "verdict": "DONNEES INSUFFISANTES",
+    "resultats": "ME-001.4 (garde-fou VERT): audit d independance decisif - novembre 2026 = categorie C (collecte avant gel seq484, massivement consulte), backfill Kaggle = B (disponible avant gel, non certifie), partitions certifiees = C, donnees posterieures au gel 2026-11-27 = 0 jour ecoule. Aucune performance du filtre calculee sur B/C (les fichiers de resultats sont livres vides avec statut explicite). Lacune du protocole seq484 comblee AVANT collecte (seq486): regle d arret = evaluation unique a >=60 jours prospectifs D ET >=150 episodes admissibles, examens intermediaires interdits. Collecte CI quotidienne mise en place et verifiee (registre jours/ticks/SHA-256; heures 503 tracees non comblees). Verdict: DONNEES INSUFFISANTES; ME-001 reste SIGNATURE_DETECTED, filtre ni valide ni refute. 5/5 tests PASS."
+   },
+   "entry_hash": "f685ba9d1977074025599a5a156dbc618e2651cef6356b8bcecb064310999b0b"
   }
  ]
 }
