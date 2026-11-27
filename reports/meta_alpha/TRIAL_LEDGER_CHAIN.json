@@ -5661,6 +5661,18 @@
     "profitable_edge": false
    },
    "entry_hash": "2e2b70cb130aa08f325381b2f3dbf34a3dd71dad3e6808e8aacf270e68b50684"
+  },
+  {
+   "seq": 432,
+   "prev_hash": "2e2b70cb130aa08f325381b2f3dbf34a3dd71dad3e6808e8aacf270e68b50684",
+   "entry": {
+    "type": "HISTORICAL_DATA_SEQ432_PHASES_3_7",
+    "mission": "HISTORICAL-DATA-COMPLETION-AND-REPLAY",
+    "phase3": "completion PARTIELLE chiffree: 200/1331 heures, 3 942 897 ticks Bid/Ask reels (SHA par lot), dataset Kaggle prive xauusd-dukascopy-completion-2026q4 cree; 503 intermittents Dukascopy documentes par echantillon CI; heures restantes A_REESSAYER, jamais figees ni substituees; relances idempotentes",
+    "phase4_7": "normalisation/qualite par lot; couts parametrables; replay pret; replication prete a specification preenregistree",
+    "profitable_edge": false
+   },
+   "entry_hash": "ae8357620a0989a57f83ad2155dce38134cccc7d26fbdff82014333e3d54c2af"
   }
  ]
 }
