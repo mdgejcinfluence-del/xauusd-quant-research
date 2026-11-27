@@ -6192,6 +6192,16 @@
     "resultats": "Constitution META ALPHA installee dans docs/governance/ (constitution, doctrine de recherche, garde-fou anti-derive avec procedure 4 controles/4 niveaux et 6 exemples classes dont VERT/ORANGE/ROUGE, registre des modeles, journal des decisions, rapport de fondation, manifeste SHA-256). Doctrine: unite de recherche = modele economique; trois questions obligatoires; jamais VALIDATED sur donnees de construction. Reclassification: ME-001 INVENTORY_RECOVERY (Colorful) = HYPOTHESIS/IDENTIFICATION_IN_PROGRESS, mecanisme comportemental fortement etaye, edge net non valide; V1/V2-F2 REJECTED comme exploitations (leur echec ne condamne pas le modele suppose du provider). ME-002 DISCOVERED (non mesure), ME-003 DISCOVERED (avantage directionnel refute chez Colorful), ME-004 INSUFFICIENT_DATA. Trois prochaines recherches VERT: detection signature ME-001 dans le corpus, quantification de l echec de recuperation, detection ME-002. Aucun moteur modifie, aucune V3. 6/6 tests PASS."
    },
    "entry_hash": "e57c2e2905ff5cd573fe530ee6d68096da9bf3c1e4b22b0bab7153aaddf12b27"
+  },
+  {
+   "seq": 480,
+   "prev_hash": "e57c2e2905ff5cd573fe530ee6d68096da9bf3c1e4b22b0bab7153aaddf12b27",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-001.1",
+    "perimetre": "Detection des fenetres de recuperation ME-001 dans le corpus certifie. Garde-fou: VERT. Protocole gele avant calcul: barres 5s (premier bid/ask, mid) depuis ticks Dukascopy certifies; reference causale R = max du mid sur les 15 minutes precedentes; episode long (inventaire acheteur) ouvert quand mid <= R*(1-A/10000), A dans {5,10,20}bp fixe a priori (plus variante normalisee A=1x volatilite realisee 15min en bp, descriptive); suivi jusqu a recuperation complete (mid>=R) ou horizon 24h; episodes non chevauchants (reprise apres cloture d episode seulement); mesures: profondeur max, temps vers 25/50/75/100% de retracement, recuperation dans {5m,15m,1h,4h,24h}, forward returns; edge executif: achat a l ask du premier tick de confirmation, sortie au bid a la recuperation complete ou a horizon 4h (marque au bid), couts comptes une fois (spread dans Bid/Ask + cout variable CENTRAL 1.2bp en sensibilite); regimes = terciles de volatilite realisee 15min (descriptif, calcules dans l echantillon, declares). Partitions: decouverte part_000211 (2012) et part_000250 (2016); validation part_000289 (2020), part_000327 (2024), part_000345 (2026) - seuils non calibres sur les resultats, contamination historique documentee. Aucun moteur cree, V1/V2-F2 intouches, aucun ordre reel."
+   },
+   "entry_hash": "7e93d4f67d09e904e293099e292fe436fb2a9f09caf0dd48d97d7b04be01b59e"
   }
  ]
 }
