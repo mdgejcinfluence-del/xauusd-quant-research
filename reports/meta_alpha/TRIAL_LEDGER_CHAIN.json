@@ -6273,6 +6273,17 @@
     "resultats": "ME-001.4 (garde-fou VERT): audit d independance decisif - novembre 2026 = categorie C (collecte avant gel seq484, massivement consulte), backfill Kaggle = B (disponible avant gel, non certifie), partitions certifiees = C, donnees posterieures au gel 2026-11-27 = 0 jour ecoule. Aucune performance du filtre calculee sur B/C (les fichiers de resultats sont livres vides avec statut explicite). Lacune du protocole seq484 comblee AVANT collecte (seq486): regle d arret = evaluation unique a >=60 jours prospectifs D ET >=150 episodes admissibles, examens intermediaires interdits. Collecte CI quotidienne mise en place et verifiee (registre jours/ticks/SHA-256; heures 503 tracees non comblees). Verdict: DONNEES INSUFFISANTES; ME-001 reste SIGNATURE_DETECTED, filtre ni valide ni refute. 5/5 tests PASS."
    },
    "entry_hash": "f685ba9d1977074025599a5a156dbc618e2651cef6356b8bcecb064310999b0b"
+  },
+  {
+   "seq": 488,
+   "prev_hash": "f685ba9d1977074025599a5a156dbc618e2651cef6356b8bcecb064310999b0b",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-002.1",
+    "autorisation": "Fondateur: continuation autonome jusqu a identification du modele economique et reproduction sur nos donnees (garde-fou VERT, journalise).",
+    "perimetre": "ME-002.1 detection des desequilibres temporaires. Definition gelee independante de ME-001: reference = mediane causale du mid sur 15min (barres 5s, shift 1); episode quand |mid-mediane| >= A bp, A dans {5,10,20} fixe; trade de resorption (fade: vendre un pic haussier au bid, acheter un creux a l ask); sortie au premier retour a la mediane (prix executable oppose) ou horizon 4h marque au prix executable; couts une fois (Bid/Ask + central 1.2bp en sensibilite); episodes non chevauchants. Memes 5 partitions (decouverte 2012/2016, validation 2020/2024/2026, seuils non calibres). Dependance a ME-001 mesuree par le recouvrement temporel des episodes (ME-001 = retour au plus haut 15min, ME-002 = retour a la mediane, symetrique) - si recouvrement eleve, classer meme phenomene, pas diversification. Aucun moteur cree."
+   },
+   "entry_hash": "edde7dadcc0244b332f151113afa26fe1e0eb76944b5820cee99416c5530a4f0"
   }
  ]
 }
