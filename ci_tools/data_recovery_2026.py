@@ -35,7 +35,7 @@ def main():
             sha = hashlib.sha256(local.read_bytes()).hexdigest()
             meta = pq.ParquetFile(local).metadata
             ligne.update(taille_observee=taille, sha256_calcule=sha, lignes_observees=meta.num_rows,
-                         schema=';'.join(meta.schema_arrow.names))
+                         schema=';'.join(pq.read_schema(local).names))
             concord = (taille == p['file_bytes'] and meta.num_rows == p['rows'])
             ligne['statut'] = 'VERIFIED' if concord else 'VERIFIED_WITH_DIFFERENCES'
             df = pd.read_parquet(local, columns=['timestamp_utc', 'bid', 'ask'])
