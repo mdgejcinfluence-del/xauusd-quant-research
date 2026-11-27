@@ -393,8 +393,10 @@ jobs:
         origin HEAD:arena/afe12737-xauusd-quant-research'
     - name: Completion historique Dukascopy 2026-10-01 a 2026-11-26 (seq431)
       run: |
+        set +e
         pip install -q kaggle six
         python ci_tools/hist_completion.py 2>&1 | tee research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
+        echo "exit=$?" >> research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
         mkdir -p /tmp/kaggle_completion && cp /tmp/duka_completion_*.parquet /tmp/kaggle_completion/ 2>/dev/null
         cat > /tmp/kaggle_completion/dataset-metadata.json << 'JSON'
         {"title": "XAUUSD Dukascopy Completion 2026Q4 Ticks Bid Ask", "id": "shalom5123/xauusd-dukascopy-completion-2026q4", "licenses": [{"name": "other"}], "subtitle": "Ticks Dukascopy Bid/Ask 2026-10-01 a 2026-11-26, complement des 348 partitions"}
