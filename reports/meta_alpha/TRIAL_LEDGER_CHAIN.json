@@ -5673,6 +5673,18 @@
     "profitable_edge": false
    },
    "entry_hash": "ae8357620a0989a57f83ad2155dce38134cccc7d26fbdff82014333e3d54c2af"
+  },
+  {
+   "seq": 433,
+   "prev_hash": "ae8357620a0989a57f83ad2155dce38134cccc7d26fbdff82014333e3d54c2af",
+   "entry": {
+    "type": "RE_ENTRY_001_OPENING_PREREGISTRY",
+    "mission": "RE-ENTRY-001",
+    "cible": "Colorful drops (HFM provider 99001292, XAUUSDc) — reconstruction, pas conception",
+    "inventaire": "aucun fichier HTML HFM ni historique du fournisseur dans le depot ni dans Drive (recherches nominatives effectuees); seules transactions exploitables = les 6 de reference du 2026-11-26 fournies par le fondateur; cotations = Dukascopy (reference comparative, jamais HFM)",
+    "preenregistrement": "alignement par balayage de fuseau UTC+0..+3 juge sur coherence des profits de panier affiches; hypotheses H1-H4 (martingale/pyramiding/conditionnel/periodique) departagees sur les deplacements mesures; aucun indicateur teste sans motif observe; holdout gele respecte (analyse descriptive d un cas, aucune selection de modele pour usage futur)"
+   },
+   "entry_hash": "78b377a6fadda0e1ad2f5c5a1955fd569b2bd01e4e72d6553b829457c4de1b75"
   }
  ]
 }
