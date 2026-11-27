@@ -5,7 +5,7 @@
  },
  "urls_candidates": [],
  "mentions": {
-  "api": 1,
+  "api": 0,
   "ajax": 0,
   "page=": 0,
   "loadmore": 0,
@@ -13,7 +13,5 @@
   "DataTable": 0,
   "activity": 0
  },
- "lignes_pertinentes": [
-  "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam"
- ]
+ "lignes_pertinentes": []
 }
