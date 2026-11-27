@@ -2872,3 +2872,25 @@ jobs:
         git status --porcelain
         git diff --cached --quiet || git commit -m 'EUR-EDGE-01: socle donnees (run CI)'
         git push origin HEAD:arena/afe12737-xauusd-quant-research
+  datarec2026:
+    name: DATA-RECOVERY-2026 recuperation partitions et rejeu V1 gele
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    if: ${{ inputs.diag }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Recuperation + audit + rejeu (resultats commites, partitions jamais commitees)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow gdown
+        python ci_tools/data_recovery_2026.py 2>&1 | tee docs/checkpoints/DATA_RECOVERY_2026/CI_CONSOLE.txt
+        echo "exit_code=$?" >> docs/checkpoints/DATA_RECOVERY_2026/CI_CONSOLE.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/DATA_RECOVERY_2026/ docs/checkpoints/FULL_REPLAY_2026/
+        git diff --cached --quiet || git commit -m 'DATA-RECOVERY-2026: recuperation partitions et rejeu V1 (run CI)'
+        git push origin HEAD:arena/afe12737-xauusd-quant-research

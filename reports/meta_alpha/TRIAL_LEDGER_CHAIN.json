@@ -5950,6 +5950,16 @@
     "resultats": "Modele V1 gele execute sans modification. Couverture reelle: jan-oct 2026 NON TESTABLES (corpus certifie Drive 2026-01-12->09-30, 2.44Go non accessible byte-level; janvier 1-11 absent du corpus); novembre PARTIEL 7 jours Dukascopy (2 868 871 ticks). 379 paniers, PnL net S0 -0.432 USD modele (brut ~+4.06: couts absorbent tout), PF 0.906, gagnants 26.1%, duree max 63820s (~17.7h sans stop), DD -1.215. Sensibilite S1 -1.555, S2 -2.678, S3 -7.915. HFM mensuel = UNVERIFIED, comparaison NOT_DIRECTLY_COMPARABLE. 12/12 tests PASS. profitable_edge=False."
    },
    "entry_hash": "2a3bc2d48d1ccc76fb11672930a46a2e936c7809681391492584dbcb0b4758f8"
+  },
+  {
+   "seq": 456,
+   "prev_hash": "2a3bc2d48d1ccc76fb11672930a46a2e936c7809681391492584dbcb0b4758f8",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "DATA-RECOVERY-2026-001",
+    "note": "Recuperation des 7 partitions 2026 (part_000342-348, IDs Drive issus de INVENTORY_348_EXHAUSTIVE, tailles 237-470 Mo) via gdown en CI (mecanisme deja prouve par les moteurs historiques), verification taille/lignes/bornes vs inventaire + SHA-256 calcule, traitement partition par partition sans les stocker dans Git. Rejeu V1 GELE inchange sur le flux; convention explicite: attribution mensuelle au mois de cloture du panier, paniers traversant une frontiere de partition classes AFFECTES_FRONTIERE (non inventes). Octobre/novembre: backfill Kaggle completion 2026Q4 si accessible, sinon NON TESTABLE documente. Aucune optimisation, aucun seuil touche."
+   },
+   "entry_hash": "585eba11107fa59060c59a80c32d49cf76867945fdc0f3f04411f1965f9ffaad"
   }
  ]
 }
