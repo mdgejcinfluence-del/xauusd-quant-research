@@ -404,7 +404,12 @@ jobs:
       run: |
         set +e
         pip install -q kaggle six pandas numpy pyarrow requests
-        python ci_tools/hist_completion.py 2>&1 | tee research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
+        for PERIODE in "2026-10-01T00:00 2026-10-07T23:00" "2026-10-08T00:00 2026-10-14T23:00" "2026-10-15T00:00 2026-10-21T23:00" "2026-10-22T00:00 2026-10-31T23:00" "2026-11-01T00:00 2026-11-07T23:00" "2026-11-08T00:00 2026-11-14T23:00" "2026-11-15T00:00 2026-11-21T23:00" "2026-11-22T00:00 2026-11-26T23:00"; do
+          python ci_tools/hist_completion.py $PERIODE 2>&1 | tee -a research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
+          git add research/HISTORICAL-DATA-COMPLETION/ 2>/dev/null
+          git diff --cached --quiet || git commit -m "HIST seq431: completion $PERIODE (run CI)"
+          git push origin HEAD:arena/afe12737-xauusd-quant-research 2>/dev/null
+        done
         echo "exit=$?" >> research/HISTORICAL-DATA-COMPLETION/COMPLETION_LOG.txt
         mkdir -p /tmp/kaggle_completion && cp /tmp/duka_completion_*.parquet /tmp/kaggle_completion/ 2>/dev/null
         cat > /tmp/kaggle_completion/dataset-metadata.json << 'JSON'

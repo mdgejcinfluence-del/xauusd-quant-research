@@ -15,7 +15,7 @@ DEBUT, FIN = '2026-10-01T00:00', '2026-11-26T23:00'
 
 def sha(p): return hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
 
-def main():
+def main(debut=DEBUT, fin=FIN):
     SORTIE.mkdir(parents=True, exist_ok=True)
     man_p = SORTIE / 'COMPLETION_MANIFEST.json'
     man = json.loads(man_p.read_text()) if man_p.exists() else {'heures': {}, 'lots': {}}
@@ -33,7 +33,7 @@ def main():
             if df is not None and len(df): return h, df
             time.sleep(10 * (essai + 1))
         return h, None
-    with ThreadPoolExecutor(max_workers=4) as ex:
+    with ThreadPoolExecutor(max_workers=1) as ex:
         for h, df in ex.map(travail, heures):
             cle = str(h)
             if df is None or len(df) == 0:
@@ -80,4 +80,5 @@ def mode_echantillon():
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'echantillon': mode_echantillon()
+    elif len(sys.argv) > 2: main(sys.argv[1], sys.argv[2])
     else: main()
