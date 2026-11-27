@@ -1,0 +1,6 @@
+donnees,date_marche,date_collecte,premiere_consultation,gel_protocole,categorie,usage_autorise
+"ticks Dukascopy novembre 2026 (20,22-27) du repo",2026-11-20 a 2026-11-27,campagnes MA-EDGE-02 (avant seq409),massivement consultees (toutes les campagnes Colorful),seq484 2026-11-27,C - DEJA EXPLOREE,interdit pour certifier; aucun calcul de performance refait
+backfill Kaggle oct-nov 2026 (shalom5123),2026-10-01 a 2026-11-26,"disponible avant le gel, jamais integre ni certifie",extractions anterieures partielles,seq484,B - POSTERIEURE MAIS DEJA DISPONIBLE,controle secondaire seulement; non utilise (incomplet)
+partitions certifiees 2012-2026 (348),2010-01-04 a 2026-09-30,corpus historique,decouverte/validation ME-001.1 a .3,seq484,C - DEJA EXPLOREE,ne peut pas valider le filtre
+ticks HFM Bid/Ask reels,-,jamais collectes,-,-,ABSENT,aucune
+ticks Dukascopy posterieurs au 2026-11-27,a partir du 2026-11-28,collecte CI mise en place par cette mission (seq486),non consultes (performance interdite avant la regle d arret),seq484,D - PROSPECTIVE AUTHENTIQUE (a accumuler),seule voie de validation forte; echantillon actuel: 0 jour ecoule

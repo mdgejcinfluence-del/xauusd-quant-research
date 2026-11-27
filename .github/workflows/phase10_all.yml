@@ -2983,3 +2983,25 @@ jobs:
         git add docs/checkpoints/ME001_NONRECOVERY_002/
         git diff --cached --quiet || git commit -m 'ME-001.2: forensique CI non-recuperations (protocole seq482)'
         for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
+  me001prosp:
+    name: ME-001.4 collecte prospective categorie D (CI, seq486)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    if: ${{ inputs.phase25b || github.event_name == 'schedule' }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Collecte des jours posterieurs au gel (registre seulement, aucun calcul de performance)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow
+        mkdir -p docs/checkpoints/ME001_PROSPECTIVE_004
+        python ci_tools/me001_prospective_collect.py 2>&1 | tee docs/checkpoints/ME001_PROSPECTIVE_004/CI_COLLECT_LOG.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/ME001_PROSPECTIVE_004/
+        git diff --cached --quiet || git commit -m 'ME-001.4: collecte prospective (registre couverture/SHA-256)'
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done

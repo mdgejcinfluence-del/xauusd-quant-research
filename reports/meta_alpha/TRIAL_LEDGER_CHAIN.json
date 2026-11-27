@@ -6252,6 +6252,16 @@
     "resultats": "ME-001.3 (garde-fou VERT): fait mathematique confirme - l exposition constante ne change ni signe ni PF. Politiques gelees seq484 sur 1797 episodes avec vol pre-entree: P1 inverse-volatilite ameliore esperance/PF (decouverte PF 1.48, validation 1.65) mais aggrave la queue absolue (ES95 -124bp, exposition moy 1.5-1.7). P2 exclusion des entrees a vol pre-entree > Q75 decouverte (7.76/7.88/5.32bp): seule famille ameliorant esperance, PF (1.73/1.95) ET queue (ES95 -59/-69bp, pire -145bp validation) dans les deux groupes, gagnants conserves 88-93%. A budget 1% par -200bp, un extreme -546bp coute 2.7% du capital. Renforcements: toujours non demontrables comme necessaires. Verdict: filtrage a l entree FORTEMENT ETAYE comme gestion de queue dans ce cadre; edge net toujours COMPATIBLE MAIS NON IDENTIFIE; protocole prospectif gele (partitions post-2026-09-30, criteres pre-declares). ME-001 reste SIGNATURE_DETECTED. 5/5 tests PASS."
    },
    "entry_hash": "073ad393c40ec0e030cecc316a04293b3ae0b01a398a07f17f648820a8610763"
+  },
+  {
+   "seq": 486,
+   "prev_hash": "073ad393c40ec0e030cecc316a04293b3ae0b01a398a07f17f648820a8610763",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ME-001.4",
+    "perimetre": "Validation prospective ME-001 (garde-fou VERT). Audit d independance prealable: donnees novembre 2026 du repo = categorie C (collectees avant le gel seq484 et massivement consultees); backfill Kaggle oct-nov = B au mieux (disponible avant gel, incomplet, non certifie); octobre = absent; aucune donnee de marche posterieure a la date de gel (2026-11-27) n existe encore. Conclusion attendue si l audit confirme: DONNEES INSUFFISANTES pour une validation forte - aucune performance ne sera calculee sur les categories B/C. Lacune documentee AVANT collecte: le protocole seq484 ne definissait pas de regle d arret; regle ajoutee maintenant, avant toute donnee prospective: evaluation unique lorsque >=60 jours de marche prospectifs collectes ET >=150 episodes admissibles apres filtre, examens intermediaires de performance interdits (registre = couverture + SHA-256 seulement). Mise en place: collecte CI quotidienne des ticks Dukascopy posterieurs au gel (categorie D), empreintes consignees, ticks non commites (re-telechargeables et verificables par hash). Filtre gele seq484 inchange (seuils 7.76/7.88/5.32bp). ME-001 reste SIGNATURE_DETECTED."
+   },
+   "entry_hash": "0fd8f1ea18b1e28bb197c6c4727d5ed9cd1de02552c8f0901a5a943ad80d60d4"
   }
  ]
 }
