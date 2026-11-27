@@ -1,0 +1,37 @@
+{
+ "C": {
+  "bougie_precedente": "2026-11-27 08:15:00",
+  "corps_bp": 13.48,
+  "amplitude_bp": 30.27,
+  "cloture_pos_pct": 51.3,
+  "ret30m_bp": null
+ },
+ "D": {
+  "bougie_precedente": "2026-11-27 08:30:00",
+  "corps_bp": 0.82,
+  "amplitude_bp": 21.05,
+  "cloture_pos_pct": 92.7,
+  "ret30m_bp": null
+ },
+ "E": {
+  "bougie_precedente": "2026-11-27 08:45:00",
+  "corps_bp": 6.53,
+  "amplitude_bp": 16.72,
+  "cloture_pos_pct": 44.6,
+  "ret30m_bp": null
+ },
+ "A": {
+  "bougie_precedente": "2026-11-26 11:16:20",
+  "corps_bp": 8.79,
+  "amplitude_bp": 16.37,
+  "cloture_pos_pct": 82.1,
+  "ret30m_bp": null
+ },
+ "B": {
+  "bougie_precedente": "2026-11-26 11:35:34",
+  "corps_bp": 8.41,
+  "amplitude_bp": 17.13,
+  "cloture_pos_pct": 82.2,
+  "ret30m_bp": null
+ }
+}

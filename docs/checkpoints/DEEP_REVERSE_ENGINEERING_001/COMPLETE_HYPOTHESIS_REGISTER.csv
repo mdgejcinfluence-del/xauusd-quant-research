@@ -1,0 +1,16 @@
+id,mecanisme,origine,soutiens,contradictions,confiance,statut
+H-ENT-01,Portail H3 deux branches,RE-ENTRY-006,contexte A-E,E sans impulsion; exces simules,faible,CANDIDATE
+H-ENT-02,Unicite F2 par bougie M15,FILTER-001,5/5 bougies distinctes,aucune reelle,faible,CANDIDATE
+H-ENT-03,Bougie M15 precedente a corps positif,DEEP-001 M2,5/5 corps > 0 (+0.8 a +13.5 bp),D marginal; pas de non-entrees prouvees,faible,CANDIDATE
+H-ENT-04,Signal exact d entree,toutes campagnes,aucun,non isole apres 7 campagnes,,NOT_IDENTIFIED
+H-RNF-01,Amorcage 16-40s,RE-ENTRY-004,4 paniers reels,D clos a 17s,moyenne,STRONGLY_SUPPORTED
+H-RNF-02,3e sur recul -4.7 a -6.6bp,RE-ENTRY-004,3 paniers reels,aucun,faible,STRONGLY_SUPPORTED
+H-RNF-03,Effet causal du 3e sur les pertes,DISCOVERY-001,association agregee,contrefactuel censure 126/140,,NOT_IDENTIFIED
+H-SIZ-01,Progression fixe 0.01/0.01/0.02,missions initiales,A et B,C = 0.03,,REFUTED
+H-SIZ-02,Formule generale des volumes,aucune,aucune,12 transactions seulement,,NOT_IDENTIFIED
+H-EXT-01,Premier retour au prix moyen,FILTER-002,aucun,2-8 episodes avant cloture,,REFUTED
+H-EXT-02,Objectif fixe en bp,FILTER-002,aucun,dispersion des ecarts,,REFUTED
+H-EXT-03,Frontieres M15 de cloture,FILTER-002,aucun,minutes 5/2/10/0/1,,REFUTED
+H-EXT-04,Objectif monetaire strict par panier (>=0),DEEP-001 M3,profits +11/+13/+1/+3 yen,C cloture a -6 yen,faible,REFUTED
+H-EXT-05,Declencheur reel de cloture,aucun,sorties sur force (descriptif),inconnu,,NOT_IDENTIFIED
+H-RISK-01,Plafond d exposition / stop reel,aucun,aucun stop observe,aucun panier profond observe,,NOT_IDENTIFIED

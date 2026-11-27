@@ -1,0 +1,10 @@
+dimension,mesure,perimetre,statut
+Precision des entrees,non mesurable hors fenetres couvertes (absence reelle non prouvee),nov. 2026,INSUFFICIENT_DATA
+Rappel des entrees (V2-F2),5/5 a +-120s,5 paniers historiques (en-echantillon),OBSERVED
+Rappel des entrees (V1),4/5 apres correction seq448,5 paniers historiques,OBSERVED
+Volumes,0 formule reproduite,12 transactions,NOT_IDENTIFIED
+Renforcements,delais/reculs compatibles en-echantillon,paniers A-C reels,STRONGLY_SUPPORTED (faible n)
+Sorties,declencheur non reproduit; durees moteur fausses,5 paniers reels,NOT_IDENTIFIED
+Sequence complete,aucun panier reel integralement reproduit de l entree a la cloture,5 paniers,NOT_IDENTIFIED
+Exposition,plafond reel inconnu,observations,NOT_IDENTIFIED
+Validation independante,0 observation nouvelle depuis 2026-11-27,prospectif,INSUFFICIENT_DATA

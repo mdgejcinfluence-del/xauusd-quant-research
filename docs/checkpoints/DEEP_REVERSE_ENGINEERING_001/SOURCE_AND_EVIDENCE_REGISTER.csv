@@ -1,0 +1,10 @@
+source,contenu,provenance,periode,granularite,qualite,limites,variables_exploitables
+Snapshots publics HFM (3),6 dernieres transactions + stats,page publique 99001292 via ingest licite,2026-11-27,tick affiche a la seconde,haute (immuables SHA-256),6 lignes seulement; pas de pagination,horaires/volumes/profits affiches des paniers C D E
+HTML78 portail my.hfm,capture complete du portail fournisseur,fichier depose par le fondateur (SHA-256 archive),date inconnue,page rendue,haute (original archive),memes 6 lignes; aucun historique cache; stats arrondies,Copy Method Proportional; stats financieres; memes transactions
+Page publique (controles fetch),profil + 6 lignes,navigation ordinaire,2026-11-27 -> present,page,inchangee a chaque controle,ne prouve pas l inactivite,stats de controle
+Ticks Dukascopy journaliers, Bid/Ask,flux public Dukascopy,2026-11-20 -> 27 (7 jours),tick,bonne (spread median 1.2-1.8bp),jamais HFM; jours partiels,prix Mid/Bid/Ask causaux
+Partitions certifiees 342-348,ticks Bid/Ask corpus,Google Drive via gdown CI,2026-01-12 -> 09-30,tick,VERIFIED (taille/lignes/bornes),accessibles seulement via CI; janvier 1-11 absent,rejeu moteur gele
+Backfill Kaggle 2026Q4,ticks oct-nov,Kaggle (jeton CI),2026-10-01 -> 11-26 annonce,heure,non recupere a ce jour,acces jeton CI a verifier,potentiel octobre
+Transactions A/B (fondateur),2 paniers 2026-11-26,references RE-ENTRY-001,2026-11-26,seconde,moyenne (pas de snapshot original),provenance moins forte que C/D/E,horaires/volumes/prix reconstruits
+Specs contrat HFM,captures compte reel Cent,RE-ENTRY/HFM seq429,date de consultation,contrat,documentee,versions historiques inconnues,couts/swap/marges en scenarios
+Moteurs V1 et V2-F2,code gele + resultats,depot Git,2026,tick,empreintes archivees,placeholders sizing/exit non reconstruits,toutes decisions simulees
