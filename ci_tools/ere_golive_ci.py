@@ -43,11 +43,30 @@ def main():
     for y in sorted(by_year):
         ps = by_year[y]; chosen.append(ps[0])
         if len(ps) > 2: chosen.append(ps[len(ps) // 2])
-    rows = []
+    csv_p = OUT / 'GO_LIVE_001_PARTITION_METRICS.csv'
+    done = {}
+    if csv_p.exists():  # reprise idempotente: ne retraiter que les partitions manquantes
+        for r in pd.read_csv(csv_p).to_dict('records'):
+            if r.get('statut') == 'OK': done[r['partition']] = r
+    rows = list(done.values())
     for p in chosen:
+        if p['name'] in done: continue
         y = int(str(p['timestamp_min_footer'])[:4]); local = pathlib.Path(f"/tmp/{p['name']}")
-        subprocess.run(['gdown', '-q', '--output', str(local), p['drive_id']], capture_output=True, timeout=1800)
-        if not local.exists():
+        ok_dl = False
+        for attempt in range(3):
+            subprocess.run(['gdown', '-q', '--output', str(local), p['drive_id']], capture_output=True, timeout=1800)
+            if local.exists() and local.stat().st_size > 0: ok_dl = True; break
+            try:  # repli: telechargement direct (patron kaggle_migrate.dl)
+                import requests as rq
+                url = f"https://drive.usercontent.google.com/download?id={p['drive_id']}&export=download&confirm=t"
+                with rq.get(url, stream=True, timeout=600, headers={'User-Agent': 'Mozilla/5.0'}) as resp:
+                    resp.raise_for_status()
+                    with open(local, 'wb') as f:
+                        for ch in resp.iter_content(1 << 20): f.write(ch)
+                if local.exists() and local.stat().st_size > 0: ok_dl = True; break
+            except Exception as e:
+                print('dl echec', p['name'], 'tentative', attempt, type(e).__name__, flush=True)
+        if not ok_dl:
             rows.append({'partition': p['name'], 'annee': y, 'segment': segment(y), 'statut': 'UNAVAILABLE'}); continue
         df = pd.read_parquet(local, columns=['timestamp_utc', 'bid', 'ask']).rename(columns={'timestamp_utc': 'ts'})
         df['ts'] = pd.to_datetime(df.ts).dt.tz_localize(None)
