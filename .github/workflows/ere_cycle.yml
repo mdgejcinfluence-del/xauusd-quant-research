@@ -1,6 +1,9 @@
 name: ERE cycle autonome (etat transfere par Git, aucun secret)
 on:
   workflow_dispatch: {}
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/ere_cycle.txt"]
 permissions: { contents: write }
 concurrency:
   group: ere-cycle
