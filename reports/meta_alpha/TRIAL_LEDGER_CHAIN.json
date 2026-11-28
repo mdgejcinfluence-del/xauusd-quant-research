@@ -6503,6 +6503,17 @@
     "resultats": "Capacite d inference sous incertitude implementee (ere/uncertainty.py: identification partielle par bornes, conclusions conditionnelles plafonnees N2, sensibilite invariant/fragile, classification de fiabilite des dossiers, priorisation d experiences bloquee sans segment autorise); 23/23 tests PASS. TRADER-CANDIDATE-002: scenarios de fuseau calcules sur ticks 2026-11-27 - GMT+2 seul coherent avec 3/3 profits acheteurs (+25,6/+7,0/+9,7 bp), GMT+3 fragilise (3 mouvements negatifs), UTC incoherent; fuseau officiel maintenu UNKNOWN (la coherence n est pas une preuve documentaire), verdict NOT_IDENTIFIED N2 avec incertitude structuree. Recherche independante nouvelle sur nov. 2026 (decouverte 20-24, validation 25-27): H-ASYM volatilite asymetrique REFUTEE sous cette forme (signe inverse entre segments), H-BOUNCE reversion 1min NON DETECTEE (49-54%, pile ou face). Portee limitee a 7 jours, extension corpus preenregistree. Aucun acces ME-001 protege, aucun ordre, main intacte."
    },
    "entry_hash": "b1ad69716dd39c762df507e38b4c47430027e2c30f0d20f31bd126471a1c88ae"
+  },
+  {
+   "seq": 510,
+   "prev_hash": "b1ad69716dd39c762df507e38b4c47430027e2c30f0d20f31bd126471a1c88ae",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-INTELLIGENCE-002",
+    "classification_garde_fou": "VERT",
+    "protocole_gele": "Campagne de decouverte independante sur corpus certifie: 12 partitions stratifiees (1 sur 29, 2010-2026), segments geles par annee de partition: decouverte <=2016, validation 2017-2022, confirmation >=2023 (jamais recyclee). Familles preenregistrees: (1) asymetrie de volatilite apres barre 5min haussiere/baissiere; (2) reversion apres mouvement extreme 1min >=10bp; (3) persistance de volatilite (autocorrelation |ret| 5min lag1); (4) persistance de signe des rendements 5min; (5) expansion apres contraction (barre 5min de volatilite dans le quintile bas -> amplitude suivante); (6) saisonnalite intrajournaliere de volatilite (heure UTC). Mesures descriptives au Mid, intervalles par partition (blocs), aucun seuil optimise, aucune strategie construite sans signature invariante inter-segments. Branche: branche de session Arena (le suivi de session interdit toute autre branche; main intacte)."
+   },
+   "entry_hash": "a414423aa777853ba68cc76980f084a9baa8802589c34034a5db647554770d20"
   }
  ]
 }
