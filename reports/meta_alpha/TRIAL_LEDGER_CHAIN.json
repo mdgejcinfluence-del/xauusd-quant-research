@@ -6637,6 +6637,16 @@
     "resultats": "Flux A: portefeuille TA-1/TA-2/TA-3/TA-NULLE depuis dossier reel (N2, PARTIEL). Flux B: decouverte complete 12 partitions/22,4M ticks: continuation post-impulsion mediane -0,25bp (3/12 positives, EXPLORATOIRE non valide), range~cloture (pas de gain de representation), transitions de regime persistantes. 22 partitions UNAVAILABLE: interstitiels Drive 2040 octets (quota transitoire, memes partitions OK le matin en INTEL3); 3 defauts de script corriges; reprise idempotente prete, verdict inter-segments interdit sans segments. Missions OPEN, endurance toujours bloquee par autorisation."
    },
    "entry_hash": "fd7099c2f5ed8373d838b3c871f92d3d657a5d0e9fb80e9439cd4f4ed2b02e4c"
+  },
+  {
+   "seq": 523,
+   "prev_hash": "fd7099c2f5ed8373d838b3c871f92d3d657a5d0e9fb80e9439cd4f4ed2b02e4c",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "MISSION-004-CONTINUITY",
+    "protocole": "Reprise des 22 partitions GO-LIVE-001 manquantes uniquement (checkpoints conserves, verification taille exacte + PAR1); verdict inter-segments gele seq521 ensuite seulement si validation+confirmation executes. Blocage reveil autonome inscrit dans l etat persistant si aucun mecanisme autorise. Communication conversationnelle reduite au minimum desormais."
+   },
+   "entry_hash": "5848d26a514a0b41666d4d0b81f6d252d29cbdc95273f4c031106766df62484a"
   }
  ]
 }
