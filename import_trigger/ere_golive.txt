@@ -8,3 +8,4 @@ go-live-001 resume6 size-check 2026-11-28T09:52:06Z
 go-live-001 resume7 is_parquet-fixed 2026-11-28T09:54:12Z
 mission004 retry quota 2026-11-28T10:14:49Z
 mission004 kaggle-recovery 2026-11-28T10:20:29Z
+mission004 retry2 drive-only 2026-11-28T10:26:03Z
