@@ -1,1 +1,34 @@
-python: can't open file '/home/runner/work/xauusd-quant-research/xauusd-quant-research/ci_tools/ere_discovery2_ci.py': [Errno 2] No such file or directory
+part_000001.parquet 2010 decouverte
+part_000098.parquet 2010 decouverte
+part_000196.parquet 2011 decouverte
+part_000201.parquet 2011 decouverte
+part_000206.parquet 2012 decouverte
+part_000211.parquet 2012 decouverte
+part_000216.parquet 2013 decouverte
+part_000221.parquet 2013 decouverte
+part_000226.parquet 2014 decouverte
+part_000230.parquet 2014 decouverte
+part_000235.parquet 2015 decouverte
+part_000240.parquet 2015 decouverte
+part_000245.parquet 2016 decouverte
+part_000250.parquet 2016 decouverte
+part_000255.parquet 2017 validation
+part_000259.parquet 2017 validation
+part_000264.parquet 2018 validation
+part_000269.parquet 2018 validation
+part_000274.parquet 2019 validation
+part_000279.parquet 2019 validation
+part_000284.parquet 2020 validation
+part_000289.parquet 2020 validation
+part_000294.parquet 2021 validation
+part_000298.parquet 2021 validation
+part_000303.parquet 2022 validation
+part_000308.parquet 2022 validation
+part_000313.parquet 2023 confirmation
+part_000318.parquet 2023 confirmation
+part_000323.parquet 2024 confirmation
+part_000327.parquet 2024 confirmation
+part_000332.parquet 2025 confirmation
+part_000337.parquet 2025 confirmation
+part_000342.parquet 2026 confirmation
+termine 34
