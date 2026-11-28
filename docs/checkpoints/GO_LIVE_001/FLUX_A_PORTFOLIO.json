@@ -1,0 +1,52 @@
+{
+ "flux": "A — Trader Intelligence",
+ "source": "docs/checkpoints/TRADER_CANDIDATE_002/dossier_brut.json",
+ "niveau_preuve": "N2 INFERENCE — NOT_IDENTIFIED (seq504-507), 6 observations partielles, historique incomplet",
+ "observations": {
+  "n_lignes": 6,
+  "episodes": 3,
+  "tous_buy": true,
+  "positions_simultanees_par_episode": {
+   "2026-11-27 04:05:31": 2,
+   "2026-11-27 07:22:04": 2,
+   "2026-11-27 10:19:39": 2
+  },
+  "durees_connues_s": [
+   "2026-11-27 04:05:31",
+   "2026-11-27 07:22:04",
+   "2026-11-27 10:19:39"
+  ],
+  "prix": "ABSENTS (null) — aucune reconstruction depuis les profits",
+  "fuseau": "UNKNOWN (scenarios GMT+2/UTC/GMT+3 documentes, aucun retenu)"
+ },
+ "hypotheses_concurrentes": [
+  {
+   "id": "TA-1",
+   "enonce": "entrees groupees par impulsion de prix (2 positions simultanees)",
+   "statut": "OPEN",
+   "experience_discriminante": "croiser les heures d'episode avec les prix sous chaque scenario de fuseau des qu'un export prix+horodatage source est disponible"
+  },
+  {
+   "id": "TA-2",
+   "enonce": "gestion asymetrique: sorties tres rapides (14s-60s observees)",
+   "statut": "OPEN",
+   "experience_discriminante": "durees completes d'un historique etendu; les 3 episodes actuels sont insuffisants (puissance, mode B)"
+  },
+  {
+   "id": "TA-3",
+   "enonce": "dependance au regime de volatilite au moment de l'entree",
+   "statut": "OPEN",
+   "experience_discriminante": "volatilite realisee XAUUSD aux fenetres candidates (subordonnee au fuseau, toujours UNKNOWN)"
+  },
+  {
+   "id": "TA-NULLE",
+   "enonce": "echantillon trop partiel: aucune regularite identifiable",
+   "statut": "OPEN — retenue par defaut tant que N2"
+  }
+ ],
+ "piece_unique_reouvrant_l_identification": "fuseau documente OU export prix+identifiants source",
+ "interdits": [
+  "inventer prix/fuseau/resultats manquants",
+  "presenter 6 lignes comme historique complet"
+ ]
+}

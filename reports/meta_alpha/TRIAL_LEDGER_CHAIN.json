@@ -6617,6 +6617,16 @@
     "resultats": "Preuves reelles: run Kaggle 46129180262 success; run cycle ERE 46129488012 success, etat committe par le bot (eec51f7), IDs de missions/taches identiques local/CI (hash). Incident: bloc concurrency de tete rejete silencieusement par GitHub, corrige. Limite: SQLite CI ephemere, continuite par STATE.json. Endurance 72h toujours bloquee par autorisation (cron sur main)."
    },
    "entry_hash": "c5a8b8ec495c921a71ae0575cc360a57fe53791252742422d60613df7b854842"
+  },
+  {
+   "seq": 521,
+   "prev_hash": "c5a8b8ec495c921a71ae0575cc360a57fe53791252742422d60613df7b854842",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "GO-LIVE-001",
+    "protocole": "GO LIVE fondateur. Flux B (nouveau, non teste): (1) post-impulsion 5min: |ret|>=d90 intra-partition -> rendement signe suivant dans le sens de l impulsion (continuation bp) et amplitude suivante; (2) efficacite de representation: amplitude range tick intra-1min (high-low) vs |ret| cloture pour predire volatilite 5min suivante (splits mediane); (3) persistance d etat de regime: P(agite->agite) vs P(calme->agite), etats=terciles |ret| 5min. Segments geles annee: decouverte <=2016, validation 2017-2022, confirmation >=2023; ~2 partitions/an. Mid uniquement, aucun cout applique, aucune rentabilite. Flux A: portefeuille qualifie depuis dossier_brut.json TRADER-CANDIDATE-002 (6 obs partielles, NOT_IDENTIFIED N2), hypotheses concurrentes + nulle, aucune donnee inventee. Dedup: familles deja refutees/closes non retestees."
+   },
+   "entry_hash": "51fd551e20ffbd873eb973b4ec951564e734566019157652b4e576d1c2f7aa1c"
   }
  ]
 }
