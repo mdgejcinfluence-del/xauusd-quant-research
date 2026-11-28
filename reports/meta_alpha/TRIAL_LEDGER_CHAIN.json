@@ -6419,6 +6419,27 @@
     "resultats": "Construction ERE executee sous autorisation autonome (seq500). Phase 1: decisions D1-D11 journalisees, taxonomie N0-N7 officielle codee (ere/taxonomy.py, autorites de promotion, correspondance E0-E5 secondaire), contrats types stdlib testes (ere/contracts.py: TraderDossier, MarketWindow, BehaviorProfile, HypothesisSet avec posterior interdit sans likelihood, ExperimentPlan hashe anti-modification, SignatureReport NOT_EXECUTED sans chiffres, liste fermee des entrees de G, porte H N5, verdict positif exigeant mesures), Visuel 1 propose promu et original archive. Phase 2: lock pip freeze (111 distributions), benchmark reel (barres 5s sur 2M ticks): DuckDB 0,21s retenu pour les scans F, pandas 0,94s conserve pour la logique a etat, Polars 4,12s rejete sur mesure; Pydantic non adopte (stdlib suffit). Phase 3: TaskRunner deterministe, checkpoints atomiques relus, reprise idempotente testee. Phase 4: neuf moteurs en fonctions pures a frontieres appliquees par le code (H refuse sous N5, I-A refuse tout positif sans segment independant, G ne declare jamais d identification sur une signature seule, contre-seing du NON_TESTABLE). Phase 5: tranche verticale 100% synthetique A->I concluant NOT_IDENTIFIED, porte H fermee, preuve JSON commise. Phase 6: F.catalog verifie en lecture seule sur l inventaire reel (348 partitions, 685118625 lignes, 0 erreur), zones protegees ME-001 non accedees, aucun backtest reel. Phase 7: moteur A pret pour un deuxieme dossier sans code specifique, choix du trader reserve au fondateur. 13 tests pytest PASS + gouvernance 009 verte. Aucun ordre, aucune depense, main intacte."
    },
    "entry_hash": "df824936d247849a8950e62e998ef589ae5d58b4de62df4e15e5f1abf3152781"
+  },
+  {
+   "seq": 502,
+   "prev_hash": "df824936d247849a8950e62e998ef589ae5d58b4de62df4e15e5f1abf3152781",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-NEXT-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Audit post-implementation ERE (checkpoints, contrats, moteurs, 13 tests, echec gouvernance 5/6), qualification du moteur A pour un deuxieme dossier trader (formats, provenance, doublons, manques), protocole de parcours reel A-G, preparation des donnees en lecture seule. Aucun backtest reel, aucun acces ME-001 protege, main intacte."
+   },
+   "entry_hash": "e85d8bf8a28e74c6a1c5449824260bf9c585d20605cd26f447931e06b629e0a7"
+  },
+  {
+   "seq": 503,
+   "prev_hash": "e85d8bf8a28e74c6a1c5449824260bf9c585d20605cd26f447931e06b629e0a7",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-NEXT-001",
+    "resultats": "Audit post-implementation: 5 checkpoints ERE verifies (f391a39 a 8f8a3b1), 13 tests initiaux rejoues PASS, registre coherent. Echec gouvernance 5/6 explique et date: le terme HYPOTHESIS a disparu du registre au commit bf3dd58 (ME-001.1 seq480-481), avant ERE; diff ERE sur le registre vide - aucune regression, test non modifie (interdit), decision de vocabulaire reservee au fondateur. Qualification du moteur A implementee (ere/intake.py): formats listes, deduplication par empreinte listee, manques comptes champ par champ jamais combles, provenance par source_ref, fuseau DECLARE/PARTIEL/ABSENT sans conversion silencieuse, drapeau b_ready (instrument+sens+horaire indispensables a B). 16/16 tests PASS. Protocole A-G conditionne publie, H ferme par defaut, I non declenche. Corpus reverifie par recalcul en lecture seule: 348 partitions, 685118625 lignes egales au declare, 0 erreur. Blocages scientifiques et plan de premiere campagne listes. Verdict: SECOND_TRADER_INGESTION_READY. Aucun backtest reel, zones protegees non accedees, main intacte."
+   },
+   "entry_hash": "ef782269e5ca599504cb0c3677fec189f031bc6998e76e219eece9a45c412cf6"
   }
  ]
 }
