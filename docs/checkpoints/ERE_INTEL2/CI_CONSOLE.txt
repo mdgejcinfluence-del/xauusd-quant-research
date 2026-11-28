@@ -1,0 +1,13 @@
+part_000001.parquet 2010 decouverte ticks 40112
+part_000030.parquet 2010 decouverte ticks 41316
+part_000059.parquet 2010 decouverte ticks 69457
+part_000088.parquet 2010 decouverte ticks 52573
+part_000117.parquet 2010 decouverte ticks 75119
+part_000146.parquet 2010 decouverte ticks 98246
+part_000175.parquet 2010 decouverte ticks 49974
+part_000204.parquet 2011 decouverte ticks 2197682
+part_000233.parquet 2014 decouverte ticks 2682675
+part_000262.parquet 2017 validation ticks 5440731
+part_000291.parquet 2020 validation ticks 5478373
+part_000320.parquet 2023 confirmation ticks 3265882
+termine 12
