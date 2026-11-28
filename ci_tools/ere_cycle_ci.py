@@ -15,7 +15,12 @@ DB = '/tmp/ere_cycle.db'
 
 def export_state(k, missions):
     out = {"missions": [], "journal_head_count": k.db.execute("SELECT COUNT(*) FROM events").fetchone()[0],
-           "publications": k.publication_count()}
+           "publications": k.publication_count(),
+           "blocages": [
+             {"id": "REVEIL-AUTONOME", "cause": "GitHub n'execute schedule/workflow_dispatch que depuis la branche par defaut; main protegee sans autorisation de modification; les poussees du bot (GITHUB_TOKEN) ne declenchent pas de workflows",
+              "condition_resolution": "autorisation fondateur: workflow planifie minimal sur main OU declencheur externe autorise", "statut": "BLOQUE_PAR_AUTORISATION"},
+             {"id": "PARTITIONS-2021-2026", "cause": "Drive renvoie des interstitiels de 2040 octets (quota/rate-limit) pour 14 partitions 2021-2026 non migrees vers Kaggle; les partitions IS ont ete recuperees via Kaggle avec SHA verifies (8 recuperees)",
+              "condition_resolution": "reset du quota Drive ou source autorisee equivalente; reprise idempotente prete (ci_tools/ere_golive_ci.py)", "statut": "EN_ATTENTE_CONDITION_EXTERNE"}]}
     for mid in missions:
         m = k.mission(mid)
         out["missions"].append({**m, "open_hypotheses": k.open_hypotheses(mid),

@@ -6647,6 +6647,16 @@
     "protocole": "Reprise des 22 partitions GO-LIVE-001 manquantes uniquement (checkpoints conserves, verification taille exacte + PAR1); verdict inter-segments gele seq521 ensuite seulement si validation+confirmation executes. Blocage reveil autonome inscrit dans l etat persistant si aucun mecanisme autorise. Communication conversationnelle reduite au minimum desormais."
    },
    "entry_hash": "5848d26a514a0b41666d4d0b81f6d252d29cbdc95273f4c031106766df62484a"
+  },
+  {
+   "seq": 524,
+   "prev_hash": "5848d26a514a0b41666d4d0b81f6d252d29cbdc95273f4c031106766df62484a",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "MISSION-004-CONTINUITY",
+    "resultats": "Recuperation Kaggle (SHA verifies contre la migration certifiee): 8 partitions recuperees; etat 20/34 OK (decouverte 14/14 complete, validation 6/12). 14 partitions 2021-2026 restent UNAVAILABLE: Drive interstitiels 2040 octets persistants, aucune source alternative autorisee (non migrees vers Kaggle). Aucun verdict inter-segments. Blocages REVEIL-AUTONOME et PARTITIONS-2021-2026 inscrits dans l etat persistant (ere_state/STATE.json) avec causes et conditions. Missions A et B OPEN. Comportement corrige: plus de compte rendu par cycle."
+   },
+   "entry_hash": "1d74fe256a8d9a2c8abff450d9384c80c43ae4eaab4895112fd3062615b22e7f"
   }
  ]
 }
