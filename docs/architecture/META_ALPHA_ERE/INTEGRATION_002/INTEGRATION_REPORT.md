@@ -119,3 +119,11 @@ ERE, endurance — listés comme tels, non simulés.
 
 Aucun accès ME-001, aucune écriture dans le corpus source, aucun ordre
 réel, `main` inchangée (vérifiée au registre seq519).
+
+## Addendum d'exécution (seq520) — preuves réelles obtenues après rédaction
+
+- **Contrôle Kaggle redéclenché** : run `46129180262`, **success** (authentification API réelle, aucun secret affiché).
+- **Cycle ERE réel sur GitHub** : run `46129488012`, **success** ; le bot a committé l'état (`eec51f7`). Les identifiants de missions et de tâches de méta-recherche produits en CI sont **identiques** à ceux de la démonstration locale (dérivés par hash du contenu) : la continuité d'identité entre environnements est démontrée.
+- **Incident documenté** : le premier `ere_cycle.yml` n'était pas enregistré par GitHub (bloc `concurrency` de tête rejeté silencieusement dans ce contexte) ; trois déclenchements sans effet, puis correction et succès. La protection anti-double-exécution repose donc sur l'idempotence du noyau et les commits conditionnels, pas sur ce bloc.
+- **Limite honnête** : le noyau SQLite du job CI est éphémère ; la continuité entre cycles est portée par `STATE.json` committé (missions, portefeuilles, compteurs), pas par la base elle-même. Une base persistante exigerait l'hôte de la Phase 9 (autorisation fondateur).
+- Le run de cycle réel fait passer la Phase 7 de « en cours de certification » à **VÉRIFIÉ pour un cycle unique déclenché par push** ; la continuité planifiée (cron) reste BLOQUÉE PAR AUTORISATION (branche par défaut).

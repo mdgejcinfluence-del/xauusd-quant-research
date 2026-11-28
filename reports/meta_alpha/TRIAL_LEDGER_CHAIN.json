@@ -6607,6 +6607,16 @@
     "resultats": "Phase1: orchestration de reference inspectee dans le depot (declenchement ARENA par push/import_trigger, Kaggle authentifie KGAT par CI, checkpoints STATE.json par lot <6h, chainage workflow_call, etat par commits Git; cron seulement sur main = PARTIEL). Phases3-6 implementees dans ere/kernel.py: Mission OPEN survivant aux refutations, leases/fencing (rejet 100pct en test), outbox sans relance aveugle, dedup canonique, meta-recherche auto, backup/restore; 37/37 tests. Phase7: ere_cycle.yml + etat Git, demo locale idempotente. Phase8: controle Kaggle redeclenche. Phase9: endurance 72h BLOQUEE PAR AUTORISATION (cron sur main interdit), identite I au premier N5+. Aucun acces ME-001."
    },
    "entry_hash": "568eca5591235108337260a78c4dd774030fc5548bad5e61a29bce69d8c11ba3"
+  },
+  {
+   "seq": 520,
+   "prev_hash": "568eca5591235108337260a78c4dd774030fc5548bad5e61a29bce69d8c11ba3",
+   "entry": {
+    "type": "RESULTS-ADDENDUM",
+    "campaign": "META-ALPHA-002-ORCHESTRATION",
+    "resultats": "Preuves reelles: run Kaggle 46129180262 success; run cycle ERE 46129488012 success, etat committe par le bot (eec51f7), IDs de missions/taches identiques local/CI (hash). Incident: bloc concurrency de tete rejete silencieusement par GitHub, corrige. Limite: SQLite CI ephemere, continuite par STATE.json. Endurance 72h toujours bloquee par autorisation (cron sur main)."
+   },
+   "entry_hash": "c5a8b8ec495c921a71ae0575cc360a57fe53791252742422d60613df7b854842"
   }
  ]
 }
