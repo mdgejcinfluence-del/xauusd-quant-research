@@ -9,22 +9,22 @@
   "shalom5123/xauusd-is-b07",
   "shalom5123/xauusd-is-missing13"
  ],
- "fichiers_distants": 153,
+ "fichiers_distants": 282,
  "doublons": [],
  "par_statut": {
-  "PRESENTE_VERIFIEE": 153,
-  "ABSENTE_DISTANTE_MAIS_MIGREE": 129,
+  "PRESENTE_VERIFIEE": 282,
   "ABSENTE": 66
  },
  "par_annee_presentes_verifiees": {
-  "2010": 100,
-  "2011": 5,
+  "2010": 195,
+  "2011": 10,
   "2012": 10,
-  "2013": 5,
-  "2015": 4,
+  "2013": 10,
+  "2014": 9,
+  "2015": 10,
   "2016": 10,
-  "2017": 6,
-  "2018": 4,
+  "2017": 9,
+  "2018": 10,
   "2019": 9
  }
 }
