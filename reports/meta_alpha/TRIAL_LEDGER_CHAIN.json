@@ -6545,6 +6545,17 @@
     "resultats": "Consolidation executee. Dossier externe RESEARCH_001 lu (SHA a791be92): option A retenue (monolithe modulaire a journal durable), variantes ARENA-native/Postgres/Temporal ecartees faute de besoin demontre. Construit et teste (28/28 tests): ere/kernel.py - noyau durable SQLite (taches idempotentes par hash, journal d evenements chaine verifiable, budgets, reprise INTERRUPTED->PENDING sans duplication, memoire semantique versionnee avec STALE sans effacement); ere/cycle.py - cycle autonome OBSERVE->SELECT_NEXT avec hypotheses concurrentes + nulle et criteres geles (monde sans signal -> NOT_IDENTIFIED, monde a regimes de volatilite -> hypothese retenue, segment protege jamais selectionne); ere/forecast.py - baseline probabiliste de volatilite a quantiles passes sans fuite, couverture reelle 79,6% pour 80% nominal sur 927 previsions (ticks nov. 2026). Matrice finale publiee: aucune strategie validee, porte H fermee, capacites non qualifiees listees (multi-workers, prevision directionnelle, autonomie sans session). Aucun acces ME-001, aucun ordre, main intacte."
    },
    "entry_hash": "61ae5564c57f7c89a25aff0b112e8ef549104221693025c848c2ef27d9ea5f05"
+  },
+  {
+   "seq": 514,
+   "prev_hash": "61ae5564c57f7c89a25aff0b112e8ef549104221693025c848c2ef27d9ea5f05",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "RESEARCH-INTELLIGENCE-EXPANSION-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Audit reproductible de la baseline de volatilite (couverture conditionnelle par regime, largeur, comparaison a une reference inconditionnelle, test de fuite); campagne independante n.2 par annee civile (2 partitions/an 2012-2026, segments geles par annee) sur familles nouvelles: activite tick->volatilite suivante, sequence de 3 barres de meme signe, decroissance apres rafale de volatilite; taxonomie de diagnostic des echecs A-H codee; selection autonome adaptative avec penalite de nouveaute. Aucun acces ME-001, aucun ordre, main intacte."
+   },
+   "entry_hash": "479bd0ffca7bc8317c555bcab8dd0a961553bc05ff86615ab63bc000f5c9508e"
   }
  ]
 }

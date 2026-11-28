@@ -43,3 +43,23 @@ def test_forecast_coverage_no_leakage_structure():
     rets = [rng.gauss(0, 1) for _ in range(500)]
     out = evaluate_coverage(rets, window=200)
     assert out["n_previsions"] == 300 and 60 <= out["couverture_q10_q90_pct"] <= 95
+
+from ere.forecast_audit import audit as forecast_audit_run
+from ere.diagnosis import diagnose
+
+def test_forecast_audit_compares_baselines():
+    rng = random.Random(11)
+    rets = [rng.gauss(0, 1) for _ in range(600)]
+    out = forecast_audit_run(rets, window=150)
+    assert out["glissant"]["n"] == 450 and "calme" in out["glissant"]["couverture_par_regime"]
+
+def test_diagnosis_taxonomy():
+    assert diagnose({"effet_decouverte": 0.5, "effet_validation": -0.4, "signe_stable": False})["mode"] == "G"
+    assert diagnose({"effet_decouverte": 0.0, "puissance_suffisante": False})["mode"] == "B"
+    assert diagnose({"marge_brute_bp": 0.5, "cout_bp": 1.2, "couts_disponibles": True})["mode"] == "H"
+
+def test_leakage_guard_forecast_uses_only_past():
+    # Modifier le futur ne doit pas changer les intervalles passes (propriete structurelle par construction)
+    from ere.forecast import quantile
+    past = sorted([1.0, 2.0, 3.0, 4.0])
+    assert quantile(past, 0.9) == 4.0

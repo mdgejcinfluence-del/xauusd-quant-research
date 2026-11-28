@@ -3071,3 +3071,25 @@ jobs:
         git add docs/checkpoints/ERE_INTEL2/
         git diff --cached --quiet || git commit -m 'ERE-INTEL2: decouverte CI corpus stratifie (protocole seq510)'
         for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
+  ereintel3:
+    name: EXPANSION-001 campagne par annee civile (CI, seq514)
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    if: ${{ inputs.phase11c }}
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Campagne annee civile (partitions jamais commitees)
+      run: |
+        set +e
+        pip install -q pandas numpy pyarrow gdown
+        mkdir -p docs/checkpoints/ERE_INTEL3
+        python ci_tools/ere_discovery2_ci.py 2>&1 | tee docs/checkpoints/ERE_INTEL3/CI_CONSOLE.txt
+        git config user.email 'actions@github.com'; git config user.name 'github-actions'
+        git add docs/checkpoints/ERE_INTEL3/
+        git diff --cached --quiet || git commit -m 'EXPANSION-001: campagne CI annee civile (protocole seq514)'
+        for i in 1 2 3 4 5 6; do git pull --rebase origin arena/afe12737-xauusd-quant-research && git push origin HEAD:arena/afe12737-xauusd-quant-research && break || sleep 20; done
