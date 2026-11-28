@@ -16,7 +16,9 @@ jobs:
         with: { python-version: "3.11" }
       - run: pip install -q gdown pandas pyarrow numpy requests
       - name: Campagne GO-LIVE-001 (post-impulsion, representation, regimes)
-        run: python3 ci_tools/ere_golive_ci.py
+        run: |
+          python3 ci_tools/ere_golive_ci.py > docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt 2>&1; echo "exit=$?" >> docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt
+          tail -5 docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt
       - name: Commit resultats (toujours)
         if: always()
         run: |
