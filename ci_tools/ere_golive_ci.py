@@ -72,6 +72,26 @@ def main():
                 if local.exists() and is_parquet(local): ok_dl = True; break
             except Exception as e:
                 print('dl echec', p['name'], 'tentative', attempt, type(e).__name__, flush=True)
+        if not ok_dl:  # strategie de recuperation: source alternative Kaggle (migration certifiee, SHA verifie)
+            try:
+                kag = json.loads((R / 'reports/meta_alpha/kaggle_migration/STATE.json').read_text())['uploaded'].get(p['name'])
+                if kag:
+                    from kaggle.api.kaggle_api_extended import KaggleApi
+                    api = KaggleApi(); api.authenticate()
+                    user = api.config_values.get('username')
+                    api.dataset_download_file(f"{user}/{kag['batch']}", p['name'], path='/tmp', force=True, quiet=True)
+                    cand = pathlib.Path(f"/tmp/{p['name']}")
+                    if not is_parquet(cand):  # parfois archive
+                        import zipfile
+                        zp = pathlib.Path(f"/tmp/{p['name']}.zip")
+                        if zp.exists():
+                            with zipfile.ZipFile(zp) as z: z.extractall('/tmp')
+                    import hashlib
+                    h = hashlib.sha256(cand.read_bytes()).hexdigest() if cand.exists() else ''
+                    if is_parquet(cand) and h == kag['sha256']: ok_dl = True; print('recuperation Kaggle OK', p['name'], flush=True)
+                    else: print('Kaggle rejete (integrite)', p['name'], flush=True)
+            except Exception as e:
+                print('recuperation Kaggle echec', p['name'], type(e).__name__, flush=True)
         if not ok_dl:
             rows.append({'partition': p['name'], 'annee': y, 'segment': segment(y), 'statut': 'UNAVAILABLE'}); continue
         try:

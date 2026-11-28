@@ -14,8 +14,12 @@ jobs:
         with: { ref: arena/afe12737-xauusd-quant-research }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - run: pip install -q gdown pandas pyarrow numpy requests
+      - run: pip install -q gdown pandas pyarrow numpy requests kaggle six
       - name: Campagne GO-LIVE-001 (post-impulsion, representation, regimes)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
         run: |
           python3 ci_tools/ere_golive_ci.py > docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt 2>&1; echo "exit=$?" >> docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt
           tail -5 docs/checkpoints/GO_LIVE_001/CAMPAIGN_LOG.txt
