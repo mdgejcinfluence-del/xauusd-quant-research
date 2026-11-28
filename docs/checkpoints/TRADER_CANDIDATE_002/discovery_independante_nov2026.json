@@ -1,0 +1,28 @@
+{
+ "H-ASYM asymetrie de volatilite apres hausse/baisse (barres 5min)": {
+  "decouverte": {
+   "n_up": 230,
+   "n_dn": 266,
+   "vol_apres_hausse_bp": 9.52,
+   "vol_apres_baisse_bp": 9.78
+  },
+  "validation": {
+   "n_up": 300,
+   "n_dn": 324,
+   "vol_apres_hausse_bp": 9.26,
+   "vol_apres_baisse_bp": 8.76
+  }
+ },
+ "H-BOUNCE reversion apres mouvement 1min extreme >=10bp": {
+  "decouverte": {
+   "episodes_extremes": 206,
+   "part_reversion_suivante_pct": 49.0,
+   "amplitude_moy_suivante_bp": 6.51
+  },
+  "validation": {
+   "episodes_extremes": 257,
+   "part_reversion_suivante_pct": 54.1,
+   "amplitude_moy_suivante_bp": 6.39
+  }
+ }
+}

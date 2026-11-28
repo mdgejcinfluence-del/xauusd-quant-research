@@ -1,0 +1,60 @@
+{
+ "question": "Mouvement du Mid pendant chaque épisode selon le fuseau supposé",
+ "conclusions_par_scenario": [
+  {
+   "enonce": "épisode 04:05:31: mouvement -0.1 bp sur 18 ticks",
+   "scenario_id": "UTC",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 07:22:04: mouvement +6.0 bp sur 314 ticks",
+   "scenario_id": "UTC",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 10:19:39: fenêtre vide ou quasi vide (0 tick)",
+   "scenario_id": "UTC",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 04:05:31: mouvement +25.6 bp sur 219 ticks",
+   "scenario_id": "GMT+2",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 07:22:04: mouvement +7.0 bp sur 436 ticks",
+   "scenario_id": "GMT+2",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 10:19:39: mouvement +9.7 bp sur 656 ticks",
+   "scenario_id": "GMT+2",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 04:05:31: mouvement -2.0 bp sur 176 ticks",
+   "scenario_id": "GMT+3",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 07:22:04: mouvement -1.6 bp sur 189 ticks",
+   "scenario_id": "GMT+3",
+   "niveau_max": "N2"
+  },
+  {
+   "enonce": "épisode 10:19:39: mouvement -2.9 bp sur 300 ticks",
+   "scenario_id": "GMT+3",
+   "niveau_max": "N2"
+  }
+ ],
+ "invariant_sous_tous_scenarios": [
+  "3 épisodes de 2 positions simultanées, tous Buy (indépendant du fuseau)",
+  "détentions affichées de 14, 60 et 81 secondes (indépendant du fuseau)",
+  "aucun prix observé: aucun rendement en bp n'est calculable (indépendant du fuseau)"
+ ],
+ "fragile_selon_scenario": [
+  "le mouvement de marché pendant les détentions dépend entièrement du scénario de fuseau",
+  "toute lecture impulsion/support est conditionnelle au scénario"
+ ],
+ "observation_qui_departagerait": "fuseau documenté du serveur ou export avec prix: un seul document lève l'ensemble de l'incertitude"
+}

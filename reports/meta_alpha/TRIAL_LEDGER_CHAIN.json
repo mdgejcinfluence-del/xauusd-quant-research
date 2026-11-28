@@ -6482,6 +6482,27 @@
     "resultats": "Issue C (donnees indisponibles), verdict NOT_IDENTIFIED N2 maintenu. Inspection profonde des HTML: aucun etat serialise, aucun prix, aucun identifiant, aucun fuseau dans les sources (seul le tableau rendu). Fuseau: sources tierces indiquent GMT+2 hiver pour les serveurs HFM, mais non officielles et non probantes pour l affichage web - statut officiel UNKNOWN, candidat documente, preuve levee precisee. Prix: absents, jamais reconstruits depuis les profits; demande documentaire minimale au fondateur (export historique avec identifiants et prix). Audit deduplication: empreinte etendue a position_id, 4 tests de non-regression ajoutes (20/20 PASS), build_episodes tracable jusqu aux source_refs, aucun autre dossier affecte. Alignement ticks: protocole pret mais NON execute par regle (horaires non qualifies). Hypotheses H-SR/H-IMP/H-SCALP/H-FRAC/inconnue toutes ouvertes. Aucun acces ME-001, aucun trading, preuves historiques intactes."
    },
    "entry_hash": "42b1a56782fb0c8af69d7e55e21c75fc13ea0ff22cd4008361ad1329b27a5f19"
+  },
+  {
+   "seq": 508,
+   "prev_hash": "42b1a56782fb0c8af69d7e55e21c75fc13ea0ff22cd4008361ad1329b27a5f19",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-INTELLIGENCE-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Inference sous incertitude (scenarios, identification partielle, sensibilite) implementee et testee; reprise TRADER-CANDIDATE-002 par scenarios de fuseau UTC/GMT+2/GMT+3 presentes comme conclusions conditionnelles, jamais comme fuseau deduit; recherche economique independante NOUVELLE (familles non couvertes par ME-001/002/003): asymetrie de volatilite apres mouvements hauss/baiss et rebond microstructurel a 1 minute, sur ticks locaux nov. 2026 autorises, segment decouverte/validation declare, couts comptes; aucun acces ME-001 protege, aucun ordre, main intacte."
+   },
+   "entry_hash": "1d237b0d3332758137038618013f3fae0405625424a6bc82ee9a7faac2a157cd"
+  },
+  {
+   "seq": 509,
+   "prev_hash": "1d237b0d3332758137038618013f3fae0405625424a6bc82ee9a7faac2a157cd",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-INTELLIGENCE-001",
+    "resultats": "Capacite d inference sous incertitude implementee (ere/uncertainty.py: identification partielle par bornes, conclusions conditionnelles plafonnees N2, sensibilite invariant/fragile, classification de fiabilite des dossiers, priorisation d experiences bloquee sans segment autorise); 23/23 tests PASS. TRADER-CANDIDATE-002: scenarios de fuseau calcules sur ticks 2026-11-27 - GMT+2 seul coherent avec 3/3 profits acheteurs (+25,6/+7,0/+9,7 bp), GMT+3 fragilise (3 mouvements negatifs), UTC incoherent; fuseau officiel maintenu UNKNOWN (la coherence n est pas une preuve documentaire), verdict NOT_IDENTIFIED N2 avec incertitude structuree. Recherche independante nouvelle sur nov. 2026 (decouverte 20-24, validation 25-27): H-ASYM volatilite asymetrique REFUTEE sous cette forme (signe inverse entre segments), H-BOUNCE reversion 1min NON DETECTEE (49-54%, pile ou face). Portee limitee a 7 jours, extension corpus preenregistree. Aucun acces ME-001 protege, aucun ordre, main intacte."
+   },
+   "entry_hash": "b1ad69716dd39c762df507e38b4c47430027e2c30f0d20f31bd126471a1c88ae"
   }
  ]
 }
