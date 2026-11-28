@@ -1,0 +1,32 @@
+dataset_list echec: TypeError KaggleApi.dataset_list() got an unexpected keyword argument 'page_size'
+{
+ "datasets_listes": [
+  "shalom5123/xauusd-is-b01",
+  "shalom5123/xauusd-is-b02",
+  "shalom5123/xauusd-is-b03",
+  "shalom5123/xauusd-is-b04",
+  "shalom5123/xauusd-is-b05",
+  "shalom5123/xauusd-is-b06",
+  "shalom5123/xauusd-is-b07",
+  "shalom5123/xauusd-is-missing13"
+ ],
+ "fichiers_distants": 153,
+ "doublons": [],
+ "par_statut": {
+  "PRESENTE_VERIFIEE": 153,
+  "ABSENTE_DISTANTE_MAIS_MIGREE": 129,
+  "ABSENTE": 66
+ },
+ "par_annee_presentes_verifiees": {
+  "2010": 100,
+  "2011": 5,
+  "2012": 10,
+  "2013": 5,
+  "2015": 4,
+  "2016": 10,
+  "2017": 6,
+  "2018": 4,
+  "2019": 9
+ }
+}
+exit=0
