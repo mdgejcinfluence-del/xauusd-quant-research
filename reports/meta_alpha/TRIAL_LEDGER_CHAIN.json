@@ -6377,6 +6377,27 @@
     "resultats": "Dossier de decision ERE-REVIEW-002 livre (garde-fou VERT), architecture existante strictement inchangee (SHA-256 du Visuel 1 original verifie identique). Sept corrections detaillees individuellement (probleme, risque, correction, composants, consequences contrats): retouche Visuel 1, entrees fermees de G, contre-seing de G sur le non-demontrable de E, contrat MarketWindow pour B, taxonomie fermee des preuves, objet DossierState, estimation de cout des F. Taxonomie proposee N0 SOURCE_NON_VERIFIEE a N7 AVANTAGE_VALIDE avec 7 regles de transition (producteur ne se promeut pas, agregation au plus faible, segment voyage avec le niveau). Distinction formelle verdict experimental E (testabilite) vs verdict economique G (qualification constitutionnelle). Liste exhaustive des entrees recevables par G et pieces exclues. Separation I-A validation / I-B portefeuille proposee des la conception. Proposition SVG distincte dans reviews/ (D visible, boucles dessinees, garde-fou en cadre, sorties, I-A/I-B). Matrice de tracabilite vers les articles 6 a 11 de la Constitution. 8 decisions reservees au fondateur; aucune implementation, aucun backtest."
    },
    "entry_hash": "eb35d89dbf67d1c6a97f5ad7d54e698d68245453ba49fa2e3c1278fdbd86e2be"
+  },
+  {
+   "seq": 498,
+   "prev_hash": "eb35d89dbf67d1c6a97f5ad7d54e698d68245453ba49fa2e3c1278fdbd86e2be",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-ENGINEERING-RECONCILIATION-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Reconciliation du dossier externe DOSSIER_META_ALPHA.html (lu integralement, 315 Ko) avec l existant reel: depot, gouvernance, architecture ERE seq492-497, moteurs, donnees, CI, Kaggle. Livrables: 12 documents dans docs/architecture/META_ALPHA_ERE/ENGINEERING_RECONCILIATION/. Audit et conception uniquement: aucune implementation, aucun contrat modifie, aucune dependance installee, aucun backtest, aucun job Kaggle soumis, zones protegees ME-001 non accedees, main intacte."
+   },
+   "entry_hash": "a81faafc9088ff48916203a4d6a3c41707ec4076cc09555e07b2d0bfe2dde86f"
+  },
+  {
+   "seq": 499,
+   "prev_hash": "a81faafc9088ff48916203a4d6a3c41707ec4076cc09555e07b2d0bfe2dde86f",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-ENGINEERING-RECONCILIATION-001",
+    "resultats": "Reconciliation livree (garde-fou VERT, verdict READY_FOR_FOUNDER_REVIEW): 12 documents dans docs/architecture/META_ALPHA_ERE/ENGINEERING_RECONCILIATION/. Dossier externe DOSSIER_META_ALPHA.html (315238 octets) lu integralement et confronte au reel verifie (branche arena/afe12737, HEAD 07f6999 a l ouverture, main 98bfd359 intacte, 206 scripts ci_tools, registre chaine). Decisions recommandees: monolithe modulaire (option A); calcul conserve sur GitHub Actions prouve (gdown/Drive, commits CI) et NON migre vers des kernels Kaggle non verifies chez nous (Kaggle reel = stockage de migration, STATE/VERIFY presents); taxonomie officielle N0-N7 avec correspondance E0-E5 sans fusion (E5 plus faible que N7); huit contrats externes comme base future amendes par MarketWindow, AvisDeTestabilite/contre-seing, liste fermee des entrees de G, bloc cout F; aucune bibliotheque installee (Pydantic candidat, DuckDB/Polars a benchmark, vectorbt/Backtrader exclus pour licences); F decoupe en catalog/index/signatures/execute sans dixieme moteur; ARENA superviseur en session sans API inventee; securite: aucun PAT dans Kaggle, zones prospectives ME-001 non accedees. Incompatibilites et 5 decisions fondateur documentees. Aucune implementation, aucun backtest, aucun job Kaggle soumis, contrats existants inchanges."
+   },
+   "entry_hash": "6b841c9a0922e9d7c852f23564b97fd772ac6a303525f97db47a28f641e66c04"
   }
  ]
 }
