@@ -6398,6 +6398,17 @@
     "resultats": "Reconciliation livree (garde-fou VERT, verdict READY_FOR_FOUNDER_REVIEW): 12 documents dans docs/architecture/META_ALPHA_ERE/ENGINEERING_RECONCILIATION/. Dossier externe DOSSIER_META_ALPHA.html (315238 octets) lu integralement et confronte au reel verifie (branche arena/afe12737, HEAD 07f6999 a l ouverture, main 98bfd359 intacte, 206 scripts ci_tools, registre chaine). Decisions recommandees: monolithe modulaire (option A); calcul conserve sur GitHub Actions prouve (gdown/Drive, commits CI) et NON migre vers des kernels Kaggle non verifies chez nous (Kaggle reel = stockage de migration, STATE/VERIFY presents); taxonomie officielle N0-N7 avec correspondance E0-E5 sans fusion (E5 plus faible que N7); huit contrats externes comme base future amendes par MarketWindow, AvisDeTestabilite/contre-seing, liste fermee des entrees de G, bloc cout F; aucune bibliotheque installee (Pydantic candidat, DuckDB/Polars a benchmark, vectorbt/Backtrader exclus pour licences); F decoupe en catalog/index/signatures/execute sans dixieme moteur; ARENA superviseur en session sans API inventee; securite: aucun PAT dans Kaggle, zones prospectives ME-001 non accedees. Incompatibilites et 5 decisions fondateur documentees. Aucune implementation, aucun backtest, aucun job Kaggle soumis, contrats existants inchanges."
    },
    "entry_hash": "6b841c9a0922e9d7c852f23564b97fd772ac6a303525f97db47a28f641e66c04"
+  },
+  {
+   "seq": 500,
+   "prev_hash": "6b841c9a0922e9d7c852f23564b97fd772ac6a303525f97db47a28f641e66c04",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-AUTONOMOUS-EXECUTION-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Autorisation fondateur d execution autonome: construction de l infrastructure ERE (phases 1-7 de la mission). Decisions ouvertes tranchees de facon conservatrice et documentees; contrats types testes; environnement reproductible; neuf moteurs a frontieres verifiables; tranche verticale synthetique devant pouvoir conclure NOT_IDENTIFIED; integration reelle limitee aux donnees autorisees; aucun ordre, aucune depense, zones protegees ME-001 intactes, main intacte."
+   },
+   "entry_hash": "f5915c142315077dc2a09b1f98f7a8420660e1e8393473d549eee09ba37be94f"
   }
  ]
 }
