@@ -6440,6 +6440,27 @@
     "resultats": "Audit post-implementation: 5 checkpoints ERE verifies (f391a39 a 8f8a3b1), 13 tests initiaux rejoues PASS, registre coherent. Echec gouvernance 5/6 explique et date: le terme HYPOTHESIS a disparu du registre au commit bf3dd58 (ME-001.1 seq480-481), avant ERE; diff ERE sur le registre vide - aucune regression, test non modifie (interdit), decision de vocabulaire reservee au fondateur. Qualification du moteur A implementee (ere/intake.py): formats listes, deduplication par empreinte listee, manques comptes champ par champ jamais combles, provenance par source_ref, fuseau DECLARE/PARTIEL/ABSENT sans conversion silencieuse, drapeau b_ready (instrument+sens+horaire indispensables a B). 16/16 tests PASS. Protocole A-G conditionne publie, H ferme par defaut, I non declenche. Corpus reverifie par recalcul en lecture seule: 348 partitions, 685118625 lignes egales au declare, 0 erreur. Blocages scientifiques et plan de premiere campagne listes. Verdict: SECOND_TRADER_INGESTION_READY. Aucun backtest reel, zones protegees non accedees, main intacte."
    },
    "entry_hash": "ef782269e5ca599504cb0c3677fec189f031bc6998e76e219eece9a45c412cf6"
+  },
+  {
+   "seq": 504,
+   "prev_hash": "ef782269e5ca599504cb0c3677fec189f031bc6998e76e219eece9a45c412cf6",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "TRADER-CANDIDATE-002",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Premier dossier trader reel traite par l infrastructure ERE: provider HFM 147053644 (T W.B.U), sources = 2 fichiers HTML HFM + 3 captures fournis par le fondateur (empreintes calculees). Moteur A (qualification), B (comportement), C (hypotheses concurrentes), D/E (plan d experiences preenregistre), F/G bornes aux segments autorises sans acces ME-001 protege et sans backtest de rentabilite. Aucun ordre, aucune copie de trades, gain affiche jamais utilise comme preuve."
+   },
+   "entry_hash": "760dec65110cc839b97c345f31544fe58808fdfc595d38231c919e252c452577"
+  },
+  {
+   "seq": 505,
+   "prev_hash": "760dec65110cc839b97c345f31544fe58808fdfc595d38231c919e252c452577",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "TRADER-CANDIDATE-002",
+    "resultats": "Premier dossier reel traite par ERE. Sources: 2 HTML HFM (instantanes du meme profil a 1 minute d intervalle, Trading Activity identique) + 3 captures, archivees avec SHA-256. Moteur A: dossier accepte, 6 lignes conservees, provenance complete, prix d entree/sortie et fuseau absents sur 6/6. Defaut reel corrige: l empreinte de deduplication fusionnait a tort les deux positions de 04:05:31 (meme lot, profits differents); empreinte etendue a tous les champs descriptifs, 16/16 tests PASS. Structure demontree: 3 episodes de 2 positions simultanees (14s/60s/81s, tous Buy, aucun ajout differe) - geometrie opposee a Colorful. Contexte ticks 2026-11-27 (descriptif): episode 07:22 haussier +6bp, 04:05 plat malgre +98 affiches, fenetre 10:19 vide en UTC - fuseau serveur = donnee bloquante. Hypotheses concurrentes H-SR, H-IMP, H-SCALP, H-FRAC + inconnue, toutes N3. Plan d experiences preenregistre non execute (alignement d abord). Qualification G: COMPATIBLE MAIS NON IDENTIFIE, niveau N2, verdict NOT_IDENTIFIED. Gain affiche 5620,95% jamais utilise comme preuve. Aucun acces ME-001 protege, aucun backtest, aucun ordre."
+   },
+   "entry_hash": "3d88954d7d7c3d488ea0841c517efd8a67eb069c8a6d7d506ac59903e734d051"
   }
  ]
 }

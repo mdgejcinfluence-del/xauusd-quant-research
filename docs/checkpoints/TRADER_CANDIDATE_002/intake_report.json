@@ -1,0 +1,24 @@
+{
+ "accepted": true,
+ "n_trades": 6,
+ "doublons_retires": [],
+ "manques_par_champ": {
+  "close_price": 6,
+  "close_time": 0,
+  "instrument": 0,
+  "open_price": 6,
+  "open_time": 0,
+  "result": 0,
+  "side": 0,
+  "source_ref": 0,
+  "timezone": 6,
+  "volume": 0
+ },
+ "provenance_complete": true,
+ "fuseau": "ABSENT",
+ "b_ready": true,
+ "blocages_b": [],
+ "avertissements": [
+  "fuseau horaire absent: les horaires seront marqués incertains, jamais convertis en silence"
+ ]
+}

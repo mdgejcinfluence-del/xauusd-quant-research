@@ -1,0 +1,16 @@
+{"provider_id":"147053644","nom_affiche":"T W.B.U","plateforme":"HFM Copy Trading",
+ "bio":"A price-action strategy built around key Support & Resistance levels, market structure and price reactions.",
+ "selection_process":"6 lignes de Trading Activity visibles sur les captures et les HTML du 2026-11-27, fournies par le fondateur le 2026-11-28. Page publique du provider; historique complet non fourni.",
+ "trades":[
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 04:05:31","close_time":"2026-11-27 04:05:45","open_price":null,"close_price":null,"volume":0.08,"result":53.12,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 5"},
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 04:05:31","close_time":"2026-11-27 04:05:45","open_price":null,"close_price":null,"volume":0.08,"result":45.12,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 6"},
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 07:22:04","close_time":"2026-11-27 07:23:04","open_price":null,"close_price":null,"volume":0.01,"result":0.57,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 3"},
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 07:22:04","close_time":"2026-11-27 07:23:04","open_price":null,"close_price":null,"volume":0.1,"result":5.6,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 4"},
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 10:19:39","close_time":"2026-11-27 10:21:00","open_price":null,"close_price":null,"volume":0.01,"result":1.35,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 2"},
+  {"instrument":"XAUUSDr","side":"buy","open_time":"2026-11-27 10:19:39","close_time":"2026-11-27 10:21:00","open_price":null,"close_price":null,"volume":0.1,"result":13.0,"timezone":null,"source_ref":"source_hfm_22.html#TradingActivity ligne 1"}],
+ "claims":[
+  {"texte":"Gain affiche 5 620,95 % (page provider, 2026-11-28)","verified":false},
+  {"texte":"Max. Drawdown affiche 23,76 %","verified":false},
+  {"texte":"Balance/Equity affiches $630,08 ; gain mensuel nov. 645,02 %","verified":false},
+  {"texte":"Average Profit $4,10 / Average Loss $-3,32 / lot moyen 0,02 (statistiques de page)","verified":false}],
+ "missing_information":["prix d entree et de sortie de chaque ligne","fuseau horaire des horodatages affiches","historique complet des transactions (seules 6 lignes visibles)","tailles de compte et levier reels par position","commissions, spread et swap appliques","nombre total de transactions derriere les statistiques de page"]}

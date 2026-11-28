@@ -39,7 +39,10 @@ class IntakeReport:
 
 
 def _trade_key(t: dict) -> str:
-    core = {k: t.get(k) for k in sorted(REQUIRED_FOR_B | {"open_price", "volume"})}
+    # Empreinte sur TOUS les champs descriptifs sauf la référence de source:
+    # deux positions simultanées de même lot mais de résultats différents
+    # (cas réel TRADER-CANDIDATE-002, 04:05:31) sont distinctes, pas des doublons.
+    core = {k: t.get(k) for k in sorted(TRADE_FIELDS - {"source_ref"})}
     return hashlib.sha256(json.dumps(core, sort_keys=True, default=str).encode()).hexdigest()
 
 
