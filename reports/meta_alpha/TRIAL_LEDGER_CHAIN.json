@@ -6514,6 +6514,16 @@
     "protocole_gele": "Campagne de decouverte independante sur corpus certifie: 12 partitions stratifiees (1 sur 29, 2010-2026), segments geles par annee de partition: decouverte <=2016, validation 2017-2022, confirmation >=2023 (jamais recyclee). Familles preenregistrees: (1) asymetrie de volatilite apres barre 5min haussiere/baissiere; (2) reversion apres mouvement extreme 1min >=10bp; (3) persistance de volatilite (autocorrelation |ret| 5min lag1); (4) persistance de signe des rendements 5min; (5) expansion apres contraction (barre 5min de volatilite dans le quintile bas -> amplitude suivante); (6) saisonnalite intrajournaliere de volatilite (heure UTC). Mesures descriptives au Mid, intervalles par partition (blocs), aucun seuil optimise, aucune strategie construite sans signature invariante inter-segments. Branche: branche de session Arena (le suivi de session interdit toute autre branche; main intacte)."
    },
    "entry_hash": "a414423aa777853ba68cc76980f084a9baa8802589c34034a5db647554770d20"
+  },
+  {
+   "seq": 511,
+   "prev_hash": "a414423aa777853ba68cc76980f084a9baa8802589c34034a5db647554770d20",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-INTELLIGENCE-002",
+    "resultats": "Campagne corpus executee en CI (run 46117842461, job ERE success; run annule ensuite pour stopper les jobs parasites du declencheur diag). 12 partitions stratifiees, 19,5M ticks, segments geles seq510. Resultats: persistance de volatilite INVARIANTE (acf1 |ret| 5min positive 12/12 partitions, medianes 0,24-0,29 par segment, 2010-2023); reversion apres extreme 1min faible au Mid (51-55%, NON IDENTIFIEE comme edge); persistance de signe absente (47-49%); asymetrie de volatilite REFUTEE comme structure stable (signe inverse entre segments, 2e refutation); contraction->expansion CONTREDITE (la persistance domine 12/12); saisonnalite: pic de volatilite 13-16 UTC. Aucune candidate strategique (la persistance est un fait de regime, pas une regle d entree); verdicts plafonnes N4. Couverture inegale declaree (7 journees uniques de 2010). Prochaine experience: re-echantillonnage par annee civile et pont vers la queue des episodes ME-001 sans toucher ses seuils ni sa collecte. Branche de session conservee (suivi Arena), main intacte."
+   },
+   "entry_hash": "c740a9f3fac674e8e54579e496b8b491e3284a7b8e9c2a6f30e52ce178271a4b"
   }
  ]
 }
