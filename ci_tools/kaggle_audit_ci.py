@@ -29,10 +29,16 @@ def main():
     remote = {}  # nom -> {dataset, size}
     doublons = []
     for ref in datasets:
+        files, token = [], None
         try:
-            files = api.dataset_list_files(ref).files
+            for _page in range(20):  # pagination complete (defaut API: 20/page)
+                res = api.dataset_list_files(ref, page_token=token, page_size=100)
+                files.extend(res.files)
+                token = getattr(res, 'nextPageToken', None) or getattr(res, 'next_page_token', None)
+                if not token: break
         except Exception as e:
             print('list_files echec', ref, type(e).__name__, flush=True); continue
+        print('dataset', ref, 'fichiers physiques:', len(files), flush=True)
         for f in files:
             name = getattr(f, 'name', None) or str(f)
             size = getattr(f, 'total_bytes', None) or getattr(f, 'totalBytes', None)
