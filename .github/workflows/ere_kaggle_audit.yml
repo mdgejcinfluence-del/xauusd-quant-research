@@ -1,0 +1,34 @@
+name: ERE Kaggle Audit 005 (physique, aucun telechargement)
+on:
+  workflow_dispatch: {}
+  push:
+    branches: ["arena/afe12737-xauusd-quant-research"]
+    paths: ["import_trigger/ere_kaggle_audit.txt"]
+permissions: { contents: write }
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: arena/afe12737-xauusd-quant-research }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -q kaggle six
+      - name: Audit physique Kaggle vs manifeste 348
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          python3 ci_tools/kaggle_audit_ci.py > docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt 2>&1; echo "exit=$?" >> docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt
+          tail -40 docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt
+      - name: Commit inventaire (toujours)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/checkpoints/KAGGLE_AUDIT_005 || true
+          git diff --cached --quiet && exit 0
+          git commit -m "KAGGLE-AUDIT-005: inventaire physique Kaggle vs manifeste 348"
+          git pull --rebase origin arena/afe12737-xauusd-quant-research || true
+          git push origin HEAD:arena/afe12737-xauusd-quant-research

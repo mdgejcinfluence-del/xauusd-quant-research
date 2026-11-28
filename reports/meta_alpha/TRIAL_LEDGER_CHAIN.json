@@ -6657,6 +6657,16 @@
     "resultats": "Recuperation Kaggle (SHA verifies contre la migration certifiee): 8 partitions recuperees; etat 20/34 OK (decouverte 14/14 complete, validation 6/12). 14 partitions 2021-2026 restent UNAVAILABLE: Drive interstitiels 2040 octets persistants, aucune source alternative autorisee (non migrees vers Kaggle). Aucun verdict inter-segments. Blocages REVEIL-AUTONOME et PARTITIONS-2021-2026 inscrits dans l etat persistant (ere_state/STATE.json) avec causes et conditions. Missions A et B OPEN. Comportement corrige: plus de compte rendu par cycle."
    },
    "entry_hash": "1d74fe256a8d9a2c8abff450d9384c80c43ae4eaab4895112fd3062615b22e7f"
+  },
+  {
+   "seq": 525,
+   "prev_hash": "1d74fe256a8d9a2c8abff450d9384c80c43ae4eaab4895112fd3062615b22e7f",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "KAGGLE-AUDIT-005",
+    "protocole": "Audit physique Kaggle via API CI (datasets du compte, fichiers, tailles), comparaison aux 348 partitions du manifeste certifie + etat de migration SHA. Classification par partition: PRESENTE_VERIFIEE/PRESENTE_NON_VERIFIEE/ABSENTE/CORROMPUE/DOUBLON. Aucun telechargement massif: les lignes/ticks physiques complets ne seront pas re-comptes sans telechargement, ce sera dit. Correction strategie: Kaggle prioritaire si verifie, Drive seulement pour absents reels. Missions OPEN."
+   },
+   "entry_hash": "36183b19e0c59a82af6f487788ad96b92371059837ab13107fec8a86f28cdadf"
   }
  ]
 }
