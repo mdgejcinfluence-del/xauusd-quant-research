@@ -63,13 +63,16 @@ def main():
                     resp.raise_for_status()
                     with open(local, 'wb') as f:
                         for ch in resp.iter_content(1 << 20): f.write(ch)
-                if local.exists() and local.stat().st_size > 0: ok_dl = True; break
+                if local.exists() and is_parquet(local): ok_dl = True; break
             except Exception as e:
                 print('dl echec', p['name'], 'tentative', attempt, type(e).__name__, flush=True)
         if not ok_dl:
             rows.append({'partition': p['name'], 'annee': y, 'segment': segment(y), 'statut': 'UNAVAILABLE'}); continue
         try:
-            df = pd.read_parquet(local, columns=['timestamp_utc', 'bid', 'ask']).rename(columns={'timestamp_utc': 'ts'})
+            df = pd.read_parquet(local)  # schema variable selon les blocs du corpus (seq503)
+            low = {c.lower(): c for c in df.columns}
+            ts_c = next(low[k] for k in ('timestamp_utc', 'timestamp', 'ts', 'time', 'date') if k in low)
+            df = df.rename(columns={ts_c: 'ts', low['bid']: 'bid', low['ask']: 'ask'})[['ts', 'bid', 'ask']]
             df['ts'] = pd.to_datetime(df.ts).dt.tz_localize(None)
             m = metrics(df); m.update(partition=p['name'], annee=y, segment=segment(y), ticks=int(len(df)), statut='OK')
             rows.append(m); print(p['name'], y, segment(y), flush=True)
