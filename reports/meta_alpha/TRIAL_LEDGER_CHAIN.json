@@ -6556,6 +6556,16 @@
     "perimetre": "Audit reproductible de la baseline de volatilite (couverture conditionnelle par regime, largeur, comparaison a une reference inconditionnelle, test de fuite); campagne independante n.2 par annee civile (2 partitions/an 2012-2026, segments geles par annee) sur familles nouvelles: activite tick->volatilite suivante, sequence de 3 barres de meme signe, decroissance apres rafale de volatilite; taxonomie de diagnostic des echecs A-H codee; selection autonome adaptative avec penalite de nouveaute. Aucun acces ME-001, aucun ordre, main intacte."
    },
    "entry_hash": "479bd0ffca7bc8317c555bcab8dd0a961553bc05ff86615ab63bc000f5c9508e"
+  },
+  {
+   "seq": 515,
+   "prev_hash": "479bd0ffca7bc8317c555bcab8dd0a961553bc05ff86615ab63bc000f5c9508e",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "RESEARCH-INTELLIGENCE-EXPANSION-001",
+    "resultats": "Audit de prevision: couverture glissante 79,6% vs 79,0% inconditionnelle, intervalles 18,88 vs 20,43 bp, couverture par regime 77,5-82,4% - baseline calibree, gain marginal, PARTIELLEMENT QUALIFIEE. Campagne CI n.2 par annee civile: 33 partitions, 136M ticks, 2010-2026: activite->volatilite suivante invariante (ratio ~2,3x dans les 3 segments), rafale->persistance confirmee, aucune continuation/reversion apres 3 barres de meme signe. Diagnostic des echecs A-H code et applique (asymetrie=mode G close apres replication, reversion 1min=mode B/H en attente de mesure executable). 31/31 tests. Incidents traces: premier dispatch CI sans le script (fichier non suivi, corrige et relance avec succes). Aucune strategie, porte H fermee, main intacte."
+   },
+   "entry_hash": "c0e6188a039160a1b90ba56d549aa25eee34d3b5a623013d35017d35cf74536f"
   }
  ]
 }

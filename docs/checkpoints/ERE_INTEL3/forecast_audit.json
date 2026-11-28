@@ -1,0 +1,22 @@
+{
+ "glissant": {
+  "n": 927,
+  "couverture_pct": 79.6,
+  "largeur_moyenne": 18.88,
+  "couverture_par_regime": {
+   "calme": 77.5,
+   "moyen": 79.1,
+   "agite": 82.4
+  }
+ },
+ "inconditionnel": {
+  "n": 927,
+  "couverture_pct": 79.0,
+  "largeur_moyenne": 20.43,
+  "couverture_par_regime": {
+   "calme": 80.1,
+   "moyen": 77.1,
+   "agite": 79.5
+  }
+ }
+}
