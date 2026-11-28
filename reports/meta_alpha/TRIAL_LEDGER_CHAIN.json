@@ -6409,6 +6409,16 @@
     "perimetre": "Autorisation fondateur d execution autonome: construction de l infrastructure ERE (phases 1-7 de la mission). Decisions ouvertes tranchees de facon conservatrice et documentees; contrats types testes; environnement reproductible; neuf moteurs a frontieres verifiables; tranche verticale synthetique devant pouvoir conclure NOT_IDENTIFIED; integration reelle limitee aux donnees autorisees; aucun ordre, aucune depense, zones protegees ME-001 intactes, main intacte."
    },
    "entry_hash": "f5915c142315077dc2a09b1f98f7a8420660e1e8393473d549eee09ba37be94f"
+  },
+  {
+   "seq": 501,
+   "prev_hash": "f5915c142315077dc2a09b1f98f7a8420660e1e8393473d549eee09ba37be94f",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-AUTONOMOUS-EXECUTION-001",
+    "resultats": "Construction ERE executee sous autorisation autonome (seq500). Phase 1: decisions D1-D11 journalisees, taxonomie N0-N7 officielle codee (ere/taxonomy.py, autorites de promotion, correspondance E0-E5 secondaire), contrats types stdlib testes (ere/contracts.py: TraderDossier, MarketWindow, BehaviorProfile, HypothesisSet avec posterior interdit sans likelihood, ExperimentPlan hashe anti-modification, SignatureReport NOT_EXECUTED sans chiffres, liste fermee des entrees de G, porte H N5, verdict positif exigeant mesures), Visuel 1 propose promu et original archive. Phase 2: lock pip freeze (111 distributions), benchmark reel (barres 5s sur 2M ticks): DuckDB 0,21s retenu pour les scans F, pandas 0,94s conserve pour la logique a etat, Polars 4,12s rejete sur mesure; Pydantic non adopte (stdlib suffit). Phase 3: TaskRunner deterministe, checkpoints atomiques relus, reprise idempotente testee. Phase 4: neuf moteurs en fonctions pures a frontieres appliquees par le code (H refuse sous N5, I-A refuse tout positif sans segment independant, G ne declare jamais d identification sur une signature seule, contre-seing du NON_TESTABLE). Phase 5: tranche verticale 100% synthetique A->I concluant NOT_IDENTIFIED, porte H fermee, preuve JSON commise. Phase 6: F.catalog verifie en lecture seule sur l inventaire reel (348 partitions, 685118625 lignes, 0 erreur), zones protegees ME-001 non accedees, aucun backtest reel. Phase 7: moteur A pret pour un deuxieme dossier sans code specifique, choix du trader reserve au fondateur. 13 tests pytest PASS + gouvernance 009 verte. Aucun ordre, aucune depense, main intacte."
+   },
+   "entry_hash": "df824936d247849a8950e62e998ef589ae5d58b4de62df4e15e5f1abf3152781"
   }
  ]
 }

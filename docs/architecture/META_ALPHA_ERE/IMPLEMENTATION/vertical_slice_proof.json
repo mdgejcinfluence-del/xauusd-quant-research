@@ -1,0 +1,40 @@
+{
+ "type": "TRANCHE_VERTICALE_SYNTHETIQUE",
+ "donnees": "100% synthétiques, aucun tick réel, aucun trader réel",
+ "etapes": {
+  "A_transactions": 3,
+  "A_claims_non_verifiees": 1,
+  "B_faits": 3,
+  "B_interpretations": 2,
+  "C_hypotheses": 4,
+  "C_inconnu_inclus": true,
+  "D_methodes": [
+   "premier_retour",
+   "distributions_conditionnelles"
+  ],
+  "E_avis": "TESTABLE",
+  "E_plan_hash": "b2d366cdf86318ad8c8a5ab906f3487c19cae130e7f6f7331cab954aa1a40feb",
+  "F_statut": "MEASURED",
+  "F_mesures": {
+   "episodes": 1920,
+   "recuperations": 1505,
+   "taux": 0.7838541666666666
+  },
+  "G_qualification": "COMPATIBLE MAIS NON IDENTIFIÉ",
+  "porte_H": "FERMÉE (Porte H fermée: mécanisme insuffisamment étayé (N5 minimum))",
+  "I-B_sources_admises": 0
+ },
+ "verdict_final": "NOT_IDENTIFIED",
+ "run_manifest": {
+  "task_hash": "0416bb97a357538c5e381cffa5844183cca710e20dedb7b471d7ba69d812e8dd",
+  "spec": {
+   "slice": "verticale-v1",
+   "plan_hash": "b2d366cdf86318ad8c8a5ab906f3487c19cae130e7f6f7331cab954aa1a40feb"
+  },
+  "completed_shards": [
+   "shard-001"
+  ],
+  "attempts": 1,
+  "checkpoint_sha256": "89218e02abe4ec1c0975b56c002f4fe279f936672fad47b58a7e603900f884c4"
+ }
+}
