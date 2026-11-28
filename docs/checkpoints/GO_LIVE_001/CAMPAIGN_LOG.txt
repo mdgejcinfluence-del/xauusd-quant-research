@@ -1,24 +1,46 @@
+dl echec part_000245.parquet tentative 0 NameError
 erreur partition part_000245.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000245.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000250.parquet tentative 0 NameError
 erreur partition part_000250.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000250.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000255.parquet tentative 0 NameError
 erreur partition part_000255.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000255.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000259.parquet tentative 0 NameError
 erreur partition part_000259.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000259.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000264.parquet tentative 0 NameError
 erreur partition part_000264.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000264.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000269.parquet tentative 0 NameError
 erreur partition part_000269.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000269.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000274.parquet tentative 0 NameError
 erreur partition part_000274.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000274.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000279.parquet tentative 0 NameError
 erreur partition part_000279.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000279.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000284.parquet tentative 0 NameError
 erreur partition part_000284.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000284.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000289.parquet tentative 0 NameError
 erreur partition part_000289.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000289.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000294.parquet tentative 0 NameError
 erreur partition part_000294.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000294.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000298.parquet tentative 0 NameError
 erreur partition part_000298.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000298.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000303.parquet tentative 0 NameError
 erreur partition part_000303.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000303.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000308.parquet tentative 0 NameError
 erreur partition part_000308.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000308.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000313.parquet tentative 0 NameError
 erreur partition part_000313.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000313.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000318.parquet tentative 0 NameError
 erreur partition part_000318.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000318.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000323.parquet tentative 0 NameError
 erreur partition part_000323.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000323.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000327.parquet tentative 0 NameError
 erreur partition part_000327.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000327.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000332.parquet tentative 0 NameError
 erreur partition part_000332.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000332.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000337.parquet tentative 0 NameError
 erreur partition part_000337.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000337.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000342.parquet tentative 0 NameError
 erreur partition part_000342.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000342.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl echec part_000345.parquet tentative 0 NameError
 erreur partition part_000345.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000345.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
 termine 34
 exit=0
