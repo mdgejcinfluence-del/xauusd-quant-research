@@ -6524,6 +6524,27 @@
     "resultats": "Campagne corpus executee en CI (run 46117842461, job ERE success; run annule ensuite pour stopper les jobs parasites du declencheur diag). 12 partitions stratifiees, 19,5M ticks, segments geles seq510. Resultats: persistance de volatilite INVARIANTE (acf1 |ret| 5min positive 12/12 partitions, medianes 0,24-0,29 par segment, 2010-2023); reversion apres extreme 1min faible au Mid (51-55%, NON IDENTIFIEE comme edge); persistance de signe absente (47-49%); asymetrie de volatilite REFUTEE comme structure stable (signe inverse entre segments, 2e refutation); contraction->expansion CONTREDITE (la persistance domine 12/12); saisonnalite: pic de volatilite 13-16 UTC. Aucune candidate strategique (la persistance est un fait de regime, pas une regle d entree); verdicts plafonnes N4. Couverture inegale declaree (7 journees uniques de 2010). Prochaine experience: re-echantillonnage par annee civile et pont vers la queue des episodes ME-001 sans toucher ses seuils ni sa collecte. Branche de session conservee (suivi Arena), main intacte."
    },
    "entry_hash": "c740a9f3fac674e8e54579e496b8b491e3284a7b8e9c2a6f30e52ce178271a4b"
+  },
+  {
+   "seq": 512,
+   "prev_hash": "c740a9f3fac674e8e54579e496b8b491e3284a7b8e9c2a6f30e52ce178271a4b",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "AUTONOMOUS-RESEARCH-ENGINE-001",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Consolidation: audit reel, matrice externe/interne, noyau autonome durable (agenda, journal d evenements, taches, budgets, reprise idempotente), memoire scientifique triple (episodique/semantique/procedurale avec obsolescence STALE), cycle autonome executable OBSERVE->...->SELECT_NEXT, baseline predictive probabiliste calibree sur donnees autorisees, tests scientifiques (monde sans signal, rupture, manquants, fuite temporelle). Dossier externe RESEARCH_001 (SHA a791be92) lu; ses tests synthetiques ne sont pas des preuves reelles. Aucun acces ME-001, aucun ordre, main intacte, branche de session Arena."
+   },
+   "entry_hash": "80c6395b7cb1ed5bea07a95cf937236e290eacf68d886737093d776e2f5f5775"
+  },
+  {
+   "seq": 513,
+   "prev_hash": "80c6395b7cb1ed5bea07a95cf937236e290eacf68d886737093d776e2f5f5775",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "AUTONOMOUS-RESEARCH-ENGINE-001",
+    "resultats": "Consolidation executee. Dossier externe RESEARCH_001 lu (SHA a791be92): option A retenue (monolithe modulaire a journal durable), variantes ARENA-native/Postgres/Temporal ecartees faute de besoin demontre. Construit et teste (28/28 tests): ere/kernel.py - noyau durable SQLite (taches idempotentes par hash, journal d evenements chaine verifiable, budgets, reprise INTERRUPTED->PENDING sans duplication, memoire semantique versionnee avec STALE sans effacement); ere/cycle.py - cycle autonome OBSERVE->SELECT_NEXT avec hypotheses concurrentes + nulle et criteres geles (monde sans signal -> NOT_IDENTIFIED, monde a regimes de volatilite -> hypothese retenue, segment protege jamais selectionne); ere/forecast.py - baseline probabiliste de volatilite a quantiles passes sans fuite, couverture reelle 79,6% pour 80% nominal sur 927 previsions (ticks nov. 2026). Matrice finale publiee: aucune strategie validee, porte H fermee, capacites non qualifiees listees (multi-workers, prevision directionnelle, autonomie sans session). Aucun acces ME-001, aucun ordre, main intacte."
+   },
+   "entry_hash": "61ae5564c57f7c89a25aff0b112e8ef549104221693025c848c2ef27d9ea5f05"
   }
  ]
 }
