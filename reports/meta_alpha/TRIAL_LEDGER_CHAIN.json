@@ -6587,6 +6587,26 @@
     "resultats": "Reconciliation livree: docs/architecture/META_ALPHA_ERE/RECONCILIATION_001/RECONCILIATION_MATRIX.md. Etude externe (SHA eb0d6e13) confrontee symbole par symbole au code reel (0435207, descendant verifie de 9c4f9a6, 31/31 tests rejoues). Verdicts: noyau/journal/idempotence/gates/protocoles VERIFIES mais mono-processus; leases/fencing, outbox, objet Mission, meta-recherche, deduplication canonique A CONSTRUIRE; reveil hors session NON DISPONIBLE; broker API ARENA et service persistant BLOQUES par autorisation externe (aucune cle manipulee). Ordre d implementation en 9 etapes avec dependances et criteres mesurables; etapes 1-6 realisables sans autorisation nouvelle, 7-9 non simulees. Aucune reecriture, aucun acces ME-001, main intacte."
    },
    "entry_hash": "984b2cbbad80abbbd9698f14c5775a0cf25f668057555285cbf3f42bd5c2315d"
+  },
+  {
+   "seq": 518,
+   "prev_hash": "984b2cbbad80abbbd9698f14c5775a0cf25f668057555285cbf3f42bd5c2315d",
+   "entry": {
+    "type": "PREREGISTRATION",
+    "campaign": "META-ALPHA-002-ORCHESTRATION",
+    "protocole": "Phase1 audit orchestration reference (fichiers/workflows reels uniquement, rien suppose). Phases 3-6: Mission persistante, leases/fencing, outbox, dedup canonique + meta-recherche dans ere/kernel.py sans casser l existant; tests de certification locaux. Phase7: workflow ere_cycle a etat transfere par Git (snapshot signe hash). Phase8: demonstration Kaggle limitee a un controle de statut sans calcul couteux si le workflow le permet. Phase9/72h: non simulee, statut honnete. Aucun acces ME-001, main intacte, aucun secret ecrit."
+   },
+   "entry_hash": "16cc871ced5551042f427bef59152a91b3a7bbeb818946e8fa558a23184758ab"
+  },
+  {
+   "seq": 519,
+   "prev_hash": "16cc871ced5551042f427bef59152a91b3a7bbeb818946e8fa558a23184758ab",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "META-ALPHA-002-ORCHESTRATION",
+    "resultats": "Phase1: orchestration de reference inspectee dans le depot (declenchement ARENA par push/import_trigger, Kaggle authentifie KGAT par CI, checkpoints STATE.json par lot <6h, chainage workflow_call, etat par commits Git; cron seulement sur main = PARTIEL). Phases3-6 implementees dans ere/kernel.py: Mission OPEN survivant aux refutations, leases/fencing (rejet 100pct en test), outbox sans relance aveugle, dedup canonique, meta-recherche auto, backup/restore; 37/37 tests. Phase7: ere_cycle.yml + etat Git, demo locale idempotente. Phase8: controle Kaggle redeclenche. Phase9: endurance 72h BLOQUEE PAR AUTORISATION (cron sur main interdit), identite I au premier N5+. Aucun acces ME-001."
+   },
+   "entry_hash": "568eca5591235108337260a78c4dd774030fc5548bad5e61a29bce69d8c11ba3"
   }
  ]
 }

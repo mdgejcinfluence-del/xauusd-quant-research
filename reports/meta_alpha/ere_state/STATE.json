@@ -1,0 +1,22 @@
+{
+ "journal_head_count": 8,
+ "missions": [
+  {
+   "meta_research_task": "T-cec016746a0e48bc",
+   "mission_id": "M-877d24f6dc927e1a",
+   "objective": "Identifier un mecanisme economique XAUUSD reproductible (flux marche)",
+   "open_hypotheses": [],
+   "status": "OPEN",
+   "stream": "B"
+  },
+  {
+   "meta_research_task": "T-cc42495ea9f0e453",
+   "mission_id": "M-47e5ea8298d96be9",
+   "objective": "Comprendre les comportements trader observes et leurs inconnues (flux trader)",
+   "open_hypotheses": [],
+   "status": "OPEN",
+   "stream": "A"
+  }
+ ],
+ "publications": 0
+}
