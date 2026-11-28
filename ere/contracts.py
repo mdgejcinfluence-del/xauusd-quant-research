@@ -48,7 +48,11 @@ class Envelope:
     warnings: list = field(default_factory=list)
 
     def validate(self) -> None:
-        check_promotion(self.producer, self.evidence_level)
+        # Le niveau d'une enveloppe décrit le contenu transporté ; l'autorité
+        # de promotion (check_promotion) s'applique à l'attribution d'un
+        # verdict/niveau par un moteur, vérifiée dans les contrats concernés
+        # et dans les moteurs (voir ere/engines.py). Un plan de E transporte
+        # des hypothèses N3 sans les attribuer.
         for a in self.artifacts:
             a.validate()
 
