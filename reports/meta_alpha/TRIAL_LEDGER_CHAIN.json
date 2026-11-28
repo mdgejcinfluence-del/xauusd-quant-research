@@ -6667,6 +6667,16 @@
     "protocole": "Audit physique Kaggle via API CI (datasets du compte, fichiers, tailles), comparaison aux 348 partitions du manifeste certifie + etat de migration SHA. Classification par partition: PRESENTE_VERIFIEE/PRESENTE_NON_VERIFIEE/ABSENTE/CORROMPUE/DOUBLON. Aucun telechargement massif: les lignes/ticks physiques complets ne seront pas re-comptes sans telechargement, ce sera dit. Correction strategie: Kaggle prioritaire si verifie, Drive seulement pour absents reels. Missions OPEN."
    },
    "entry_hash": "36183b19e0c59a82af6f487788ad96b92371059837ab13107fec8a86f28cdadf"
+  },
+  {
+   "seq": 526,
+   "prev_hash": "36183b19e0c59a82af6f487788ad96b92371059837ab13107fec8a86f28cdadf",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "KAGGLE-AUDIT-005",
+    "resultats": "Audit physique Kaggle (pagination corrigee, piege des 20/page documente): 282/348 partitions presentes et verifiees (8 datasets, tailles conformes, SHA migration), 2010-2019, 288086588 ticks manifeste; 66 absentes (2020-2026, jamais migrees); 0 corrompue, 0 doublon. Strategie corrigee: Kaggle prioritaire certifie, Drive seulement pour absents reels. GO-LIVE: decouverte+validation <=2019 servies par Kaggle; 2021-2026 restent le seul manque, migration Kaggle de ces 66 = voie de completion. Aucun verdict inter-segments."
+   },
+   "entry_hash": "13c8370acc3f0ac26257b555b2f7668041b68baa7ebcc090141a1182a501b12f"
   }
  ]
 }

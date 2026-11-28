@@ -58,7 +58,10 @@ def main():
                 with open(path, 'rb') as f: return f.read(4) == b'PAR1'
             except Exception: return False
         ok_dl = False
-        for attempt in range(3):
+        # MISSION 005: Drive n'est plus la source par defaut des partitions
+        # verifiees sur Kaggle (audit physique seq525-526); une seule tentative
+        # Drive, puis la recuperation Kaggle certifiee ci-dessous prend le relais.
+        for attempt in range(1):
             subprocess.run(['gdown', '-q', '--output', str(local), p['drive_id']], capture_output=True, timeout=1800)
             if local.exists() and is_parquet(local): ok_dl = True; break
             if local.exists(): print('dl rejete (taille/magie)', p['name'], local.stat().st_size, 'attendu', p.get('file_bytes'), flush=True); local.unlink()
