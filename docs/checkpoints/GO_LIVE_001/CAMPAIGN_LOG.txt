@@ -1,46 +1,46 @@
-dl echec part_000245.parquet tentative 0 NameError
-erreur partition part_000245.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000245.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000250.parquet tentative 0 NameError
-erreur partition part_000250.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000250.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000255.parquet tentative 0 NameError
-erreur partition part_000255.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000255.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000259.parquet tentative 0 NameError
-erreur partition part_000259.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000259.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000264.parquet tentative 0 NameError
-erreur partition part_000264.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000264.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000269.parquet tentative 0 NameError
-erreur partition part_000269.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000269.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000274.parquet tentative 0 NameError
-erreur partition part_000274.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000274.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000279.parquet tentative 0 NameError
-erreur partition part_000279.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000279.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000284.parquet tentative 0 NameError
-erreur partition part_000284.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000284.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000289.parquet tentative 0 NameError
-erreur partition part_000289.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000289.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000294.parquet tentative 0 NameError
-erreur partition part_000294.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000294.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000298.parquet tentative 0 NameError
-erreur partition part_000298.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000298.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000303.parquet tentative 0 NameError
-erreur partition part_000303.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000303.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000308.parquet tentative 0 NameError
-erreur partition part_000308.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000308.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000313.parquet tentative 0 NameError
-erreur partition part_000313.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000313.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000318.parquet tentative 0 NameError
-erreur partition part_000318.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000318.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000323.parquet tentative 0 NameError
-erreur partition part_000323.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000323.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000327.parquet tentative 0 NameError
-erreur partition part_000327.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000327.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000332.parquet tentative 0 NameError
-erreur partition part_000332.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000332.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000337.parquet tentative 0 NameError
-erreur partition part_000337.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000337.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000342.parquet tentative 0 NameError
-erreur partition part_000342.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000342.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
-dl echec part_000345.parquet tentative 0 NameError
-erreur partition part_000345.parquet ArrowInvalid Could not open Parquet input source '/tmp/part_000345.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+dl rejete (taille/magie) part_000245.parquet 2040 attendu 154667651
+dl rejete (taille/magie) part_000245.parquet 2040 attendu 154667651
+dl rejete (taille/magie) part_000250.parquet 2040 attendu 146755323
+dl rejete (taille/magie) part_000250.parquet 2040 attendu 146755323
+dl rejete (taille/magie) part_000255.parquet 2040 attendu 163067890
+dl rejete (taille/magie) part_000255.parquet 2040 attendu 163067890
+dl rejete (taille/magie) part_000259.parquet 2040 attendu 122829309
+dl rejete (taille/magie) part_000259.parquet 2040 attendu 122829309
+dl rejete (taille/magie) part_000264.parquet 2040 attendu 191244794
+dl rejete (taille/magie) part_000264.parquet 2040 attendu 191244794
+dl rejete (taille/magie) part_000269.parquet 2040 attendu 109253731
+dl rejete (taille/magie) part_000269.parquet 2040 attendu 109253731
+dl rejete (taille/magie) part_000274.parquet 2040 attendu 57907881
+dl rejete (taille/magie) part_000274.parquet 2040 attendu 57907881
+dl rejete (taille/magie) part_000279.parquet 2040 attendu 150484402
+dl rejete (taille/magie) part_000279.parquet 2040 attendu 150484402
+dl rejete (taille/magie) part_000284.parquet 2040 attendu 178017009
+dl rejete (taille/magie) part_000284.parquet 2040 attendu 178017009
+dl rejete (taille/magie) part_000289.parquet 2040 attendu 264871195
+dl rejete (taille/magie) part_000289.parquet 2040 attendu 264871195
+dl rejete (taille/magie) part_000294.parquet 2040 attendu 264498325
+dl rejete (taille/magie) part_000294.parquet 2040 attendu 264498325
+dl rejete (taille/magie) part_000298.parquet 2040 attendu 128501891
+dl rejete (taille/magie) part_000298.parquet 2040 attendu 128501891
+dl rejete (taille/magie) part_000303.parquet 2040 attendu 168003330
+dl rejete (taille/magie) part_000303.parquet 2040 attendu 168003330
+dl rejete (taille/magie) part_000308.parquet 2040 attendu 195277891
+dl rejete (taille/magie) part_000308.parquet 2040 attendu 195277891
+dl rejete (taille/magie) part_000313.parquet 2040 attendu 144155736
+dl rejete (taille/magie) part_000313.parquet 2040 attendu 144155736
+dl rejete (taille/magie) part_000318.parquet 2040 attendu 90571482
+dl rejete (taille/magie) part_000318.parquet 2040 attendu 90571482
+dl rejete (taille/magie) part_000323.parquet 2040 attendu 96031163
+dl rejete (taille/magie) part_000323.parquet 2040 attendu 96031163
+dl rejete (taille/magie) part_000327.parquet 2040 attendu 227858173
+dl rejete (taille/magie) part_000327.parquet 2040 attendu 227858173
+dl rejete (taille/magie) part_000332.parquet 2040 attendu 250442764
+dl rejete (taille/magie) part_000332.parquet 2040 attendu 250442764
+dl rejete (taille/magie) part_000337.parquet 2040 attendu 202983469
+dl rejete (taille/magie) part_000337.parquet 2040 attendu 202983469
+dl rejete (taille/magie) part_000342.parquet 2040 attendu 469669819
+dl rejete (taille/magie) part_000342.parquet 2040 attendu 469669819
+dl rejete (taille/magie) part_000345.parquet 2040 attendu 380253424
+dl rejete (taille/magie) part_000345.parquet 2040 attendu 380253424
 termine 34
 exit=0
