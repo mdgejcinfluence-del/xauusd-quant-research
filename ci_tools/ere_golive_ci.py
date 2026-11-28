@@ -68,12 +68,17 @@ def main():
                 print('dl echec', p['name'], 'tentative', attempt, type(e).__name__, flush=True)
         if not ok_dl:
             rows.append({'partition': p['name'], 'annee': y, 'segment': segment(y), 'statut': 'UNAVAILABLE'}); continue
-        df = pd.read_parquet(local, columns=['timestamp_utc', 'bid', 'ask']).rename(columns={'timestamp_utc': 'ts'})
-        df['ts'] = pd.to_datetime(df.ts).dt.tz_localize(None)
-        m = metrics(df); m.update(partition=p['name'], annee=y, segment=segment(y), ticks=int(len(df)), statut='OK')
-        rows.append(m); print(p['name'], y, segment(y), flush=True)
+        try:
+            df = pd.read_parquet(local, columns=['timestamp_utc', 'bid', 'ask']).rename(columns={'timestamp_utc': 'ts'})
+            df['ts'] = pd.to_datetime(df.ts).dt.tz_localize(None)
+            m = metrics(df); m.update(partition=p['name'], annee=y, segment=segment(y), ticks=int(len(df)), statut='OK')
+            rows.append(m); print(p['name'], y, segment(y), flush=True)
+        except Exception as e:  # jamais perdre la campagne pour une partition: statut diagnostique journalise
+            rows.append({'partition': p['name'], 'annee': y, 'segment': segment(y), 'statut': f'ERROR_{type(e).__name__}'})
+            print('erreur partition', p['name'], type(e).__name__, str(e)[:200], flush=True)
         local.unlink(missing_ok=True)
-    pd.DataFrame(rows).to_csv(OUT / 'GO_LIVE_001_PARTITION_METRICS.csv', index=False)
+        pd.DataFrame(rows).to_csv(csv_p, index=False)  # checkpoint incremental
+    pd.DataFrame(rows).to_csv(csv_p, index=False)
     print('termine', len(rows))
 
 if __name__ == '__main__':
