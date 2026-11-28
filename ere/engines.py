@@ -176,7 +176,8 @@ def engine_g_identify(hypothesis_set: HypothesisSet, reports: list[SignatureRepo
 # ---------------- H. Independent Strategy Engineering (porte) ----------------
 
 def engine_h_gate(model_dossier: ModelDossier, approval: dict | None) -> EngineSpec:
-    check_promotion("G", model_dossier.envelope.evidence_level)  # le dossier doit venir de G
+    if model_dossier.envelope.producer != "G":
+        raise PermissionError("Porte H fermée: le dossier doit émaner du moteur G")
     if model_dossier.envelope.evidence_level < EvidenceLevel.N5_MECANISME_ETAYE:
         raise PermissionError("Porte H fermée: mécanisme insuffisamment étayé (N5 minimum)")
     if not model_dossier.candidat_h:
