@@ -21,6 +21,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_KEY }}
         run: |
+          mkdir -p docs/checkpoints/KAGGLE_AUDIT_005
           python3 ci_tools/kaggle_audit_ci.py > docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt 2>&1; echo "exit=$?" >> docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt
           tail -40 docs/checkpoints/KAGGLE_AUDIT_005/AUDIT_LOG.txt
       - name: Commit inventaire (toujours)
