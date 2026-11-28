@@ -52,10 +52,16 @@ def main():
     for p in chosen:
         if p['name'] in done: continue
         y = int(str(p['timestamp_min_footer'])[:4]); local = pathlib.Path(f"/tmp/{p['name']}")
+        def is_parquet(path):
+            try:
+                if p.get('file_bytes') and path.stat().st_size != p['file_bytes']: return False
+                with open(path, 'rb') as f: return f.read(4) == b'PAR1'
+            except Exception: return False
         ok_dl = False
         for attempt in range(3):
             subprocess.run(['gdown', '-q', '--output', str(local), p['drive_id']], capture_output=True, timeout=1800)
-            if local.exists() and local.stat().st_size > 0: ok_dl = True; break
+            if local.exists() and is_parquet(local): ok_dl = True; break
+            if local.exists(): print('dl rejete (taille/magie)', p['name'], local.stat().st_size, 'attendu', p.get('file_bytes'), flush=True); local.unlink()
             try:  # repli: telechargement direct (patron kaggle_migrate.dl)
                 import requests as rq
                 url = f"https://drive.usercontent.google.com/download?id={p['drive_id']}&export=download&confirm=t"
