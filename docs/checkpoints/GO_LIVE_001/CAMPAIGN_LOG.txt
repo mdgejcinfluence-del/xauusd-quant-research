@@ -1,19 +1,43 @@
 dl rejete (taille/magie) part_000245.parquet 2040 attendu 154667651
 dl rejete (taille/magie) part_000245.parquet 2040 attendu 154667651
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b07
+recuperation Kaggle OK part_000245.parquet
+part_000245.parquet 2016 decouverte
 dl rejete (taille/magie) part_000250.parquet 2040 attendu 146755323
 dl rejete (taille/magie) part_000250.parquet 2040 attendu 146755323
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b07
+recuperation Kaggle OK part_000250.parquet
+part_000250.parquet 2016 decouverte
 dl rejete (taille/magie) part_000255.parquet 2040 attendu 163067890
 dl rejete (taille/magie) part_000255.parquet 2040 attendu 163067890
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b07
+recuperation Kaggle OK part_000255.parquet
+part_000255.parquet 2017 validation
 dl rejete (taille/magie) part_000259.parquet 2040 attendu 122829309
 dl rejete (taille/magie) part_000259.parquet 2040 attendu 122829309
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b07
+recuperation Kaggle OK part_000259.parquet
+part_000259.parquet 2017 validation
 dl rejete (taille/magie) part_000264.parquet 2040 attendu 191244794
 dl rejete (taille/magie) part_000264.parquet 2040 attendu 191244794
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-b07
+recuperation Kaggle OK part_000264.parquet
+part_000264.parquet 2018 validation
 dl rejete (taille/magie) part_000269.parquet 2040 attendu 109253731
 dl rejete (taille/magie) part_000269.parquet 2040 attendu 109253731
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13
+recuperation Kaggle OK part_000269.parquet
+part_000269.parquet 2018 validation
 dl rejete (taille/magie) part_000274.parquet 2040 attendu 57907881
 dl rejete (taille/magie) part_000274.parquet 2040 attendu 57907881
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13
+recuperation Kaggle OK part_000274.parquet
+part_000274.parquet 2019 validation
 dl rejete (taille/magie) part_000279.parquet 2040 attendu 150484402
 dl rejete (taille/magie) part_000279.parquet 2040 attendu 150484402
+Dataset URL: https://www.kaggle.com/datasets/shalom5123/xauusd-is-missing13
+recuperation Kaggle OK part_000279.parquet
+part_000279.parquet 2019 validation
 dl rejete (taille/magie) part_000284.parquet 2040 attendu 178017009
 dl rejete (taille/magie) part_000284.parquet 2040 attendu 178017009
 dl rejete (taille/magie) part_000289.parquet 2040 attendu 264871195
