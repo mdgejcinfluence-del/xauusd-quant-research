@@ -18,7 +18,7 @@ from .engines import engine_a_ingest
 # Champs reconnus par transaction. Tout champ hors liste est signalé, pas ignoré.
 TRADE_FIELDS = {
     "instrument", "side", "open_time", "close_time", "open_price", "close_price",
-    "volume", "result", "timezone", "source_ref",
+    "volume", "result", "timezone", "source_ref", "position_id",
 }
 REQUIRED_FOR_B = {"instrument", "side", "open_time"}  # minimum pour que B puisse décrire
 
@@ -93,3 +93,26 @@ def qualify_dossier(raw: dict) -> tuple[TraderDossier, IntakeReport]:
     rep.dossier_id = dossier.envelope.object_id
     rep.accepted = True
     return dossier, rep
+
+
+def build_episodes(trades: list) -> list:
+    """Regroupe les positions simultanées en épisodes traçables.
+
+    Chaque épisode conserve les source_ref de ses positions : la
+    reconstruction reste auditable jusqu'à l'observation brute.
+    Deux positions ne sont jamais fusionnées en une seule ligne.
+    """
+    groups: dict = {}
+    for t in trades:
+        groups.setdefault((t.get("instrument"), t.get("open_time"), t.get("close_time")), []).append(t)
+    episodes = []
+    for (instrument, open_t, close_t), members in sorted(groups.items(), key=lambda kv: str(kv[0][1])):
+        episodes.append({
+            "instrument": instrument, "open_time": open_t, "close_time": close_t,
+            "n_positions": len(members),
+            "lots": [m.get("volume") for m in members],
+            "lot_total": sum(m.get("volume") or 0 for m in members),
+            "profit_total_affiche": sum(m.get("result") or 0 for m in members),
+            "source_refs": [m.get("source_ref") for m in members],
+        })
+    return episodes

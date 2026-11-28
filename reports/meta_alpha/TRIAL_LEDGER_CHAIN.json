@@ -6461,6 +6461,27 @@
     "resultats": "Premier dossier reel traite par ERE. Sources: 2 HTML HFM (instantanes du meme profil a 1 minute d intervalle, Trading Activity identique) + 3 captures, archivees avec SHA-256. Moteur A: dossier accepte, 6 lignes conservees, provenance complete, prix d entree/sortie et fuseau absents sur 6/6. Defaut reel corrige: l empreinte de deduplication fusionnait a tort les deux positions de 04:05:31 (meme lot, profits differents); empreinte etendue a tous les champs descriptifs, 16/16 tests PASS. Structure demontree: 3 episodes de 2 positions simultanees (14s/60s/81s, tous Buy, aucun ajout differe) - geometrie opposee a Colorful. Contexte ticks 2026-11-27 (descriptif): episode 07:22 haussier +6bp, 04:05 plat malgre +98 affiches, fenetre 10:19 vide en UTC - fuseau serveur = donnee bloquante. Hypotheses concurrentes H-SR, H-IMP, H-SCALP, H-FRAC + inconnue, toutes N3. Plan d experiences preenregistre non execute (alignement d abord). Qualification G: COMPATIBLE MAIS NON IDENTIFIE, niveau N2, verdict NOT_IDENTIFIED. Gain affiche 5620,95% jamais utilise comme preuve. Aucun acces ME-001 protege, aucun backtest, aucun ordre."
    },
    "entry_hash": "3d88954d7d7c3d488ea0841c517efd8a67eb069c8a6d7d506ac59903e734d051"
+  },
+  {
+   "seq": 506,
+   "prev_hash": "3d88954d7d7c3d488ea0841c517efd8a67eb069c8a6d7d506ac59903e734d051",
+   "entry": {
+    "type": "PREENREGISTREMENT",
+    "campaign": "ERE-TR002-002",
+    "classification_garde_fou": "VERT",
+    "perimetre": "Completion des preuves TRADER-CANDIDATE-002: audit profond des sources archivees (HTML, etats serialises, scripts), recherche documentaire du fuseau HFM sans deduction par coincidence de marche, audit et tests de non-regression de la deduplication du moteur A, protocole d alignement prepare mais non execute tant que les horaires ne sont pas qualifies. Aucune signature recherchee sur horaires incertains, aucun acces ME-001, main intacte."
+   },
+   "entry_hash": "763d8a0a8639fb1e0bfb02ef6d345d2c6f77aee415e590d928efe40cfb497022"
+  },
+  {
+   "seq": 507,
+   "prev_hash": "763d8a0a8639fb1e0bfb02ef6d345d2c6f77aee415e590d928efe40cfb497022",
+   "entry": {
+    "type": "RESULTS",
+    "campaign": "ERE-TR002-002",
+    "resultats": "Issue C (donnees indisponibles), verdict NOT_IDENTIFIED N2 maintenu. Inspection profonde des HTML: aucun etat serialise, aucun prix, aucun identifiant, aucun fuseau dans les sources (seul le tableau rendu). Fuseau: sources tierces indiquent GMT+2 hiver pour les serveurs HFM, mais non officielles et non probantes pour l affichage web - statut officiel UNKNOWN, candidat documente, preuve levee precisee. Prix: absents, jamais reconstruits depuis les profits; demande documentaire minimale au fondateur (export historique avec identifiants et prix). Audit deduplication: empreinte etendue a position_id, 4 tests de non-regression ajoutes (20/20 PASS), build_episodes tracable jusqu aux source_refs, aucun autre dossier affecte. Alignement ticks: protocole pret mais NON execute par regle (horaires non qualifies). Hypotheses H-SR/H-IMP/H-SCALP/H-FRAC/inconnue toutes ouvertes. Aucun acces ME-001, aucun trading, preuves historiques intactes."
+   },
+   "entry_hash": "42b1a56782fb0c8af69d7e55e21c75fc13ea0ff22cd4008361ad1329b27a5f19"
   }
  ]
 }
